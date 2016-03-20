@@ -1,0 +1,9 @@
+.m-table-poreport{
+    overflow-x:auto;
+    th{text-align:center;white-space:nowrap;}
+    .nowrap{
+        white-space:nowrap;
+        a{padding:0 5px;}
+    }
+    .disb{color:#999;cursor:default;pointer-events:none;}
+}

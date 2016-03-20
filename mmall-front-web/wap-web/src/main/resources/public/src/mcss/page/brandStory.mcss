@@ -1,0 +1,35 @@
+@abstract '../_config.mcss';
+
+$cover = {background-size:cover;}
+.m-header{
+	background:$fc0;
+	.m-pobanner{
+		    padding-top:43.4%;
+		    .follow{
+		        position:absolute;right:0;bottom:0;width:140px;height:25px;line-height:25px;font-size:14px;color:$fc0;background:url(/res/3g/images/schedule/follow.png) no-repeat left center;$cover();
+		        .i{width:15px;height:12px;line-height:12px;@extend bg-icon;background-position:-78px -284px;$inline-block();}
+		    }
+		    .j-follow{
+		        .i{background-position:-121px -284px;}
+		    }
+	}
+	.u-logo{
+		position:relative;padding:22px 27px 20px;
+		.m-img-wrap{
+		 width:84px;height:36px;position:absolute;left:27px;top:-2.25rem;
+		}
+	}
+	
+	
+}
+	
+.m-banner{
+	padding:0px 10px;margin:20px 0 15px;
+	.header{
+	    font-size:0.825rem;margin-bottom:0.5rem;
+		&-1{color:$fc2;}
+		&-2{color:$fc3;}
+	}
+}
+.m-map{background:$fc0}
+

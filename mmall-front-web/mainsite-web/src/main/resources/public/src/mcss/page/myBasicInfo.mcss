@@ -1,0 +1,25 @@
+@abstract '../_config.mcss';
+.m-box{padding:40px 64px;background:#fff;}
+.m-form-myinfo{
+	.w-select{width:70px;}
+	.num{margin-right:16px;}
+}
+.m-form-phone .fitm{
+	&-btns{margin-left:52px;}
+	.flab{width:52px;}
+	.w-ipt,.w-btn{float:left;}
+}
+/*
+// ie6+ => ie678
+.w-select{height:auto \9;*position:relative;*top:4px;*border:0;}
+// ie9+
+:root .w-select{height:30px;}*/
+
+/* For JS */
+.js-mhd-parent .js-error{top:-8px;*top:0;color:#f20;}
+.fitm-phone .err{margin-left:10px;}
+
+.m-form-phone .js-mhd-parent{float:left;}
+.m-window .zbar .zttl{font-size:14px;font-weight:bold;}
+.m-topnav .bar li.item{z-index:99;}
+.w-btn-disb{pointer-events:none;cursor:default;$opacity(0.65);}

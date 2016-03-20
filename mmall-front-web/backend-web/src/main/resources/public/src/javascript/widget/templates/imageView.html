@@ -1,0 +1,18 @@
+<div class="m-imgview m-imgview-2">
+  {{#list imgs as img}}
+    <div class="img animated" r-animation="on: enter; class: fadeIn; on:leave; class: fadeOut;">
+      <div class="imgwrap" >
+        <img src={{img.src}} ></div>
+      <span class="del" on-click={{imgs.splice(img_index,1)}}>xbs</span>
+    </div>
+  {{/list}}
+  <div class="img img-void">
+    <div class="imgwrap">
+      <label on-upload={{this.handleUpload($event)}}></label>
+      <img src={{preview}} r-hide="!preview">
+      <div class="progress" r-hide="!percent || percent == 1">
+        <div class="progress-bar  progress-bar-striped active" role="progressbar" style="width: {{percent * 100}}%"></div>
+      </div>
+    </div>
+  </div>
+</div>

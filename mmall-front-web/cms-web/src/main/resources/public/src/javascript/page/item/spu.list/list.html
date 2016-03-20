@@ -1,0 +1,46 @@
+<div class="form-group" >
+	<div class="control-label" style="width:300px;float:left;">
+		<span class="btn btn-primary" on-click={{this.createSpu()}}>新建单品</span>
+		<label class="btn btn-primary j-img" data-name="importSpu" id="importSpu" on-click={{this.importSpu()}}>单品导入</label>
+		<input type="hidden" name="importSpu" data-message="单品导入">
+		<a href="/download/spu-template.xlsx" style="text-decoration:underline;">模板下载</a>
+	</div>
+	
+	<span class="btn btn-primary" on-click={{this.filtrate()}}>筛选</span>
+	<div class="col-sm-2">
+		<select class="form-control j-flag" id="brands" name="brands">
+			<option id="-1" name="-1" value="-1" selected="selected">全部商品品牌</option>
+		</select>
+	</div>
+	
+	<div class="col-sm-2 control-label"><div id="categories"></div></div>
+</div>
+
+<table class="table  table-hover">
+	<tr>
+		<td>序号</td>
+		<td>单品条码</td>
+		<td>单品名称</td>
+   	 	<td>品牌</td>
+    	<td>分类</td>
+		<td>操作</td>
+	</tr>
+ <tbody id="listBody">
+  	{{#list list as item}}
+  		<tr id={{"" + item.spuId}}>
+  			<td>{{item_index + 1}}</td>
+   			<td>{{(item.spuBarCode)}}</td>
+   			<td>{{(item.spuName)}}</td>
+      		<td>{{(item.brandName)}}</td>
+      		<td>{{(item.categoryNormalName)}}</td>
+      		
+   			<td>
+   				<a class="j-update" on-click={{this.updateSpu(item.spuId,item.spuBarCode,item.spuName,item.brandId,item.categoryNormalId,item.categoryNormalName,$event)}}>修改</a>
+   				<a class="j-update" on-click={{this.deleteSpu(item.spuId)}}>删除</a>
+   				<a class="j-update" on-click={{this.synchronizeSpu(item.spuId,event)}}>同步</a>
+   			</td>
+  		</tr>
+  	{{/list}}
+  </tbody>
+  </table>
+<mmallpager totalPages={{totalPages}} currentPage={{currentPage}}></mmallpager>

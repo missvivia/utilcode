@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>倒计时器</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../javascript/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../../../css/page/builder.css" />
+    <style>
+        .abc{position:relative;width:500px;height:300px;margin:50px;border:1px solid #aaa;}
+    </style>
+  </head>
+  <body>
+    <div class="abc" id="xx"></div>
+    <script src="../../../../../javascript/lib/nej/src/define.js?pro=../../../../../javascript/"></script>
+    <script>
+        NEJ.define([
+            './timer.js'
+        ],function(_i){
+            _i._$$Timer._$allocate({
+                parent:'xx'
+            });
+        });
+    </script>
+  </body>
+</html>

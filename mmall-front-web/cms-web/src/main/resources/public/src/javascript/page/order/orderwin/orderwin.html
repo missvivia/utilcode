@@ -1,0 +1,251 @@
+<textarea name="jst" id='#<operateLog>'>
+	<div class="orderbox" style="width:700px;">
+		<div class="form-horizontal" id=operateLogForm>
+			<div class="form-group">
+				<div class="col-sm-2" style="width:90px;line-height:34px;"><a href="#" data="1">全部日志</a></div>
+				<div class="col-sm-2" style="width:90px;line-height:34px;"><a href="#" data="2">最近一周</a></div>
+				<div class="col-sm-2" style="width:90px;line-height:34px;"><a href="#" data="3">最近一月</a></div>
+				<div class="col-sm-3"><span id="startTime"></span></div>
+				<div class="col-sm-3"><span id="endTime"></span></div>
+				<div class="col-sm-1"><button class="btn btn-primary" id="searchLog">查询</button></div>
+			</div>
+	     	 <div id="logContent" style="height:200px;overflow:auto;">
+		     	 
+	     	 </div>
+	   	 </div>
+   	</div>
+</textarea>
+
+<textarea name="jst" id='#<modifyInfo>'>
+	<div class="orderbox" style="width:520px;">
+		<form class="form-horizontal" id="infoForm">
+			<input type="hidden" name="userId" value=${item.userId}>
+			<input type="hidden" name="orderId" value="${item.orderId}">
+			<input type="hidden" name="province" value="${item.province}">
+			<input type="hidden" name="city" value="${item.city}">
+			<input type="hidden" name="section" value="${item.section}">
+			<input type="hidden" name="street" value="${item.province}">
+			<div class="form-group">
+				<label class="col-sm-3 control-label">城市：</label>
+				<div class="col-sm-7">
+					<p class="form-control">${item.province}&nbsp;${item.city}&nbsp;${item.section}&nbsp;${item.street}</p>
+				</div>
+			</div>
+			<div class="form-group">
+	     	 	<label class="col-sm-3 control-label"><span>*</span>详细地址：</label>
+	     	 	<div class="col-sm-7">
+	     	 		<input type="text" name="address" class="form-control" value="${item.address}" data-focus="true" data-required="true" data-message="必填"/>
+	     	 	</div>
+	     	 </div>
+	     	 
+	     	 <div class="form-group">
+	     	 	<label class="col-sm-3 control-label"><span>*</span>收货人：</label>
+	     	 	<div class="col-sm-7">
+	     	 		<input type="text" name="consigneeName" class="form-control" value="${item.consigneeName}" data-focus="true" data-required="true" data-message="必填"/>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="form-group">
+	     	 	<label class="col-sm-3 control-label"><span>*</span>手机：</label>
+	     	 	<div class="col-sm-7">
+	     	 		<input type="text" name="consigneeMobile" class="form-control" value="${item.consigneeMobile}" data-focus="true" data-required="true" data-message="必填"/>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="form-group">
+	     	 	<!-- 
+	     	 	<label class="col-sm-3 control-label">固定电话：</label>
+	     	 	<div class="col-sm-7 sform">
+	     	 		<div class="col-sm-3">
+	     	 		<input type="text" name="areaCode" class="form-control number" value="${item.areaCode}" maxlength="4"/>
+	     	 		</div>
+	     	 		<div class="col-sm-1" style="line-height:34px;color:#ccc;padding:0 0 0 8px;">-</div>
+	     	 		<div class="col-sm-5">
+     	 			<input type="text" name="consigneeTel" class="form-control number" value="${item.consigneeTel}" maxlength="8"/>
+	     	 		</div>
+	     	 	</div> 
+	     	 	-->
+	     	 	<label class="col-sm-3 control-label"><span>*</span>邮编：</label>
+	     	 	<div class="col-sm-7">
+                    <input type="text" name="zipcode" class="form-control" value="${item.zipcode}" data-focus="true" data-required="true" data-message="必填"/>
+                </div>
+	     	 </div>
+	     	 <div class="form-group">
+	     	 	<div class="col-sm-8 col-sm-offset-4">
+	     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>&nbsp;&nbsp;
+	     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+	     	 </div>
+		</form>
+	</div>
+</textarea>
+<textarea name="jst" id='#<modifyInvoice>'>
+	<div class="orderbox-a" style="width:500px;">
+		<form class="form-horizontal" id="invoiceForm">
+			{if item.id}
+			<input type="hidden" value="${item.id}" name="id"/>
+			{/if}
+			<div class="form-group">
+				<label class="col-sm-3 control-label">发票抬头：</label>
+				<div class="col-sm-4">
+					<input type="text" value="${item.title}" name="title" class="form-control" data-required="true"   data-message="必填"/>
+				</div>
+			</div>
+			<div class="form-group">
+	     	 	<label class="col-sm-3 control-label">发票号：</label>
+	     	 	<div class="col-sm-4">
+	     	 		<input type="text" value="${item.invoiceNo}" name="invoiceNo" class="form-control" data-required="true"   data-message="必填"/>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="form-group">
+	     	 	<label class="col-sm-3 control-label">状态：</label>
+	     	 	<div class="col-sm-4">
+	     	 		<select name="state" class="form-control">
+	     	 			<option value="INIT" {if item.state == "INIT"} selected{/if}>未开票</option>
+	     	 			<option value="KP_ING" {if item.state == "KP_ING"} selected{/if}>已开票</option>
+	     	 			<option value="UN_KP" {if item.state == "UN_KP"} selected{/if}>不开票</option>
+	     	 		</select>
+	     	 	</div>
+	     	 </div>
+ 	 	     <div class="form-group">
+	     	 	<label class="col-sm-3 control-label">备注：</label>
+	     	 	<div class="col-sm-4">
+	     	 		<input type="text" name="comment" class="form-control" data-required="true"   data-message="必填"/>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="form-group">
+	     	 	<div class="col-sm-12 col-sm-offset-3">
+	     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>&nbsp;&nbsp;
+	     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+	     	 </div>
+		</form>
+	</div>
+</textarea>
+<textarea name="jst" id='#<addBz>'>
+	<div class="orderbox-a">
+		<form class="form-horizontal" id="bzForm">
+			<input type="hidden" name="userId" value=${item.userId}>
+			<input type="hidden" name="orderId" value="${item.orderId}">
+			<div class="form-group bgroup">
+				<div class="col-sm-12 col-sm-offset-3 btn-group">
+		     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>
+		     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+				<div class="col-sm-12">
+					<textarea class="form-control" name="comment"></textarea>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</textarea>
+<textarea name="jst" id='#<modifyPrice>'>
+	<div class="orderbox-a" style="width:500px;">
+		<form class="form-horizontal" id="priceForm">
+			<div class="form-group">
+				<label class="col-sm-4 control-label">修改金额为：</label>
+				<div class="col-sm-4">
+		     		<input type="text" name="totalCash" class="form-control" data-required="true"  data-message="必填"/>
+		     	</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-4 control-label">操作备注：</label>
+				<div class="col-sm-4">
+		     		<input type="text" name="comment" class="form-control" maxlength="" data-required="true"  data-message="必填"/>
+		     	</div>
+			</div>
+			<div class="form-group">
+	     	 	<div class="col-sm-12 col-sm-offset-4">
+	     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>&nbsp;&nbsp;
+	     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+	     	</div>
+		</form>
+	</div>
+</textarea>
+<textarea name="jst" id='#<modifyLogistics>'>
+	<div class="orderbox-a" style="width:500px;">
+		<form class="form-horizontal" id="logisticsForm">
+			<input type="hidden" name="orderId" value=${item.orderId}>
+			<input type="hidden" name="businessId" value="${item.businessId}">
+			<input type="hidden" name="expressId" value="${item.expressId}"/>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">物流公司：</label>
+				<div class="col-sm-6">
+	     	 		<select name="expressCompany" class="form-control">
+	     	 			{list item.expressCompany as i}
+	     	 			{if i.code == expressCode}
+	     	 			<option value="${i.code}" selected></option>
+	     	 			{else}
+	     	 			<option value="${i.code}">${i.name}</option>
+	     	 			{/if}
+	     	 			{/list}
+	     	 		</select>
+	     	 	</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">物流单号：</label>
+				<div class="col-sm-6">
+	     	 		<input type="text" name="mailNO" class="form-control" value="${item.mailNO}" data-required="true"   data-message="必填"/>
+	     	 	</div>
+			</div>
+			<div class="form-group">
+	     	 	<label class="col-sm-3 control-label">发货时间：</label>
+	     	 	<div class="col-sm-6">
+	     	 		<span id="sendTime"></span>
+	     	 	</div>
+	     	 </div>
+	     	 <div class="form-group">
+				<label class="col-sm-3 control-label">操作备注：</label>
+				<div class="col-sm-6">
+	     	 		<input type="text" name="comment" class="form-control" value="${item.comment}"/>
+	     	 	</div>
+			</div>
+	     	 <div class="form-group">
+	     	 	<div class="col-sm-12 col-sm-offset-3">
+	     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>&nbsp;&nbsp;
+	     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+	     	 </div>
+		</form>
+	</div>
+</textarea>
+<textarea name="jst" id='#<modifyState>'>
+	<div class="orderbox-a" style="width:500px;">
+		<form class="form-horizontal" id="stateForm">
+			<input type="hidden" name="newState" value="${item.newState}"/>
+			<input type="hidden" name="orderCount" value="${item.orderCount}"/>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">操作备注：</label>
+				<div class="col-sm-6">
+	     	 		<input type="text" name="comment" class="form-control" value="" data-required="true"   data-message="必填"/>
+	     	 	</div>
+			</div>
+			<div class="form-group" style="display:none;"><input type="text"/></div>
+			<div class="form-group">
+	     	 	<div class="col-sm-12 col-sm-offset-3">
+	     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>&nbsp;&nbsp;
+	     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+	     	 </div>
+		</form>
+	</div>
+</textarea>
+<textarea name="jst" id='#<modifyComment>'>
+	<div class="orderbox-a" style="width:500px;">
+		<form id="commentForm" class="form-horizontal" style="position:relative;height:120px;">
+			<div class="form-group" style="position:absolute;top:60px;left:180px;">
+	     	 	<div style="width:150px;margin:20px auto;">
+	     	 		<input type="button" class="btn btn-primary jbtn" value="确定"/>&nbsp;&nbsp;
+	     	 		<input type="button" class="btn btn-primary jcancel" value="取消"/>
+	     	 	</div>
+	     	 </div>
+			<div class="form-group" style="position:absolute;top:0;left:0;width:500px;">
+				<label class="col-sm-3 control-label">订单附言：</label>
+				<div class="col-sm-9">
+	     	 		<textarea name="comment" rows="3" cols="30" data-required="true" data-max-length="200" data-message="最多输入200个字" style="resize:none;">${item.comment}</textarea>
+	     	 	</div>
+			</div>
+
+		</form>
+	</div>
+</textarea>

@@ -1,0 +1,59 @@
+
+<div class="m-box m-box-2">
+	<div class="padbox">
+		<div class="u-tt">
+			<h2>商家信息</h2>
+		</div>
+	</div>
+
+	<div class="m-merchant">
+		<div class="u-tb f-fs1">
+			<div class="item">
+
+				<div class="lb">
+					<div class="s-fc3">公司名称</div>
+				</div>
+				<div class="mgl10">{{companyName}}</div>
+			</div>
+			<div class="item">
+				<div class="lb">
+					<div class="s-fc3">法人姓名</div>
+				</div>
+				<div class="mgl10">{{legalPerson}}</div>
+			</div>
+			<div class="item">
+				<div class="lb">
+					<div class="s-fc3">联系地址</div>
+				</div>
+				<div class="mgl10">{{contactAddress}}</div>
+			</div>
+			<div class="item">
+				<div class="lb">
+					<div class="s-fc3">营业执照编号</div>
+				</div>
+				<div class="mgl10">{{registrationNumber}}</div>
+			</div>
+			<div class="item">
+				<div class="lb">
+					<div class="s-fc3">营业执照有效期</div>
+				</div>
+				<div class="mgl10">{{#if registrationNumberAvaliable}}长期有效{{#else}}{{registrationNumberStart|format}}至{{registrationNumberEnd|format}}{{/if}}</div>
+			</div>
+		</div>
+		<div class="u-pb">
+			<div class="imgb">
+				<img src="{{registrationImg}}?imageView&thumbnail=258x172" width="258px" height="172px">
+				<img src="{{registrationImg2}}" style="display:none" class="m-img-hide">
+				<div class="amp" on-click={{ this.popic(this.data.registrationImg2) }}></div>
+			</div>
+
+			<div class="imgb">
+				<img src="{{brandAuthImg}}?imageView&thumbnail=258x172" width="258px" height="172px" class="m-img-hide">
+				<img src="{{brandAuthImg2}}" style="display:none">
+				<div class="amp" on-click={{ this.popic(brandAuthImg2) }}></div>
+			</div>
+
+		</div>
+
+	</div>
+</div>

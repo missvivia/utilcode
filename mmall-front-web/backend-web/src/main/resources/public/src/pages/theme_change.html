@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>新云联百万店 - 销售管理</title>
+  <!-- @STYLE -->
+<link rel="stylesheet" href="/src/javascript/lib/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/src/css/base.css">
+<script src="/src/javascript/lib/bootstrap/respond.min.js"></script> </head>
+<body>
+
+<div class="g-sd col-sm-2">
+<div class="u-logo">
+  <a href="/index">
+    <img src="https://avatars1.githubusercontent.com/u/731333?v=2&s=460" alt="xx">
+  </a>
+  <h3>闪购－商家后台</h3>
+</div>
+<div class="m-snav">
+  <h4>配置</h4>
+  <ul class="nav" id="nav">
+      <li class="snav_item  ">
+        <a href="/brand" class="j-firstnav">
+          <span class="glyphicon glyphicon-briefcase"></span>
+          品牌管理
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/brand/display" >品牌介绍页管理</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  ">
+        <a href="/product" class="j-firstnav">
+          <span class="glyphicon glyphicon-barcode"></span>
+          商品管理
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/product/list" >商品列表</a>
+            </li>
+            <li class=''>
+              <a href="/product/edit" >商品新建</a>
+            </li>
+            <li class=''>
+              <a href="/product/size" >尺寸模板</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  ">
+        <a href="/schedule" class="j-firstnav">
+          <span class="glyphicon glyphicon-folder-close"></span>
+          商务管理
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/schedule/manage" >档期管理</a>
+            </li>
+            <li class=''>
+              <a href="/schedule/pages" >品购页列表</a>
+            </li>
+            <li class=''>
+              <a href="/schedule/blist" >档期banner管理</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  ">
+        <a href="/jit" class="j-firstnav">
+          <span class="glyphicon glyphicon-record"></span>
+          JIT管理
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/jit/polist" >po列表</a>
+            </li>
+            <li class=''>
+              <a href="/jit/pkList" >拣货单列表</a>
+            </li>
+            <li class=''>
+              <a href="/jit/inList" >出仓/发货管理</a>
+            </li>
+            <li class=''>
+              <a href="/jit/poreport" >PO单报表</a>
+            </li>
+            <li class=''>
+              <a href="/jit/phones" >短信接收号码绑定</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  ">
+        <a href="/supply" class="j-firstnav">
+          <span class="glyphicon glyphicon-record"></span>
+          供货管理
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/supply/pkList" >拣货单列表</a>
+            </li>
+            <li class=''>
+              <a href="/supply/inList" >出仓/发货管理</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  active">
+        <a href="/sell" class="j-firstnav">
+          <span class="glyphicon glyphicon-picture"></span>
+          销售管理
+            <span class="glyphicon glyphicon-chevron-up pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class='active'>
+              <a href="/sell/return" >退货管理</a>
+            </li>
+            <li class=''>
+              <a href="/sell/invoice" >发票</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  ">
+        <a href="/authority" class="j-firstnav">
+          <span class="glyphicon glyphicon-wrench"></span>
+          权限管理
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/authority/authority" >权限管理</a>
+            </li>
+            <li class=''>
+              <a href="/authority/account" >账户管理</a>
+            </li>
+        </ul>
+      </li>
+      <li class="snav_item  ">
+        <a href="/image" class="j-firstnav">
+          <span class="glyphicon glyphicon-picture"></span>
+          图片空间
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        </a>
+        <ul class='nav'>
+            <li class=''>
+              <a href="/image/index" >图片上传</a>
+            </li>
+            <li class=''>
+              <a href="/image/manage" >图片管理</a>
+            </li>
+            <li class=''>
+              <a href="/image/category" >分类管理</a>
+            </li>
+        </ul>
+      </li>
+  </ul>
+</div>
+<div class="m-snav">
+  <h4>货物</h4>
+</div>
+
+</div>
+<div class="g-bd col-sm-10">
+  <!-- 顶栏 -->
+  <div class="row m-header">
+    <!--<ul class="nav navbar-right">
+      <li class="dropdown">
+        <a href="/logout"> <i class="glyphicon glyphicon-log-out"></i>
+          登出
+        </a>
+      </li>
+    </ul>-->
+    <p class="navbar-text pull-right"> Login as <span id="username-ct"></span><a href="/logout" class="navbar-link">&nbsp;&nbsp;退出</a> </p>
+  </div>
+<!-- 面包削 -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="m-card m-card-bread">
+        <ul class="breadcrumb">
+          <li><a href=""><span class="glyphicon glyphicon-home"></span></a></li>
+          <li><a href="/sell/return">销售管理</a></li>
+          <li class="active">退货管理</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!-- card -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="m-card">
+      <h2 class="card_b">
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        退货需求
+      </h2>
+      <div class="card_c">
+        <form method="get" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="col-sm-1 control-label">PO编号：</label>
+                    <div class="col-sm-2">
+                      <input name="ponum" type="text" class="form-control j-save">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-1 control-label">退货类型：</label>
+                    <div class="col-sm-2">
+                      <select name="type" id="" class="form-control j-save">
+                        <option value="0">请选择</option>
+                        <option value="1">一退</option>
+                        <option value="2">二退</option>
+                        <option value="3">三退</option>
+                      </select>
+                    </div>
+                    <label class="col-sm-1 control-label">退货单：</label>
+                    <div class="col-sm-2">
+                      <select name="returnnum" id="" class="form-control j-save">
+                        <option value="0">未生成</option>
+                        <option value="1">已生成</option>
+                      </select>
+                    </div>
+                    <label class="col-sm-1 control-label">退货单号：</label>
+                    <div class="col-sm-2">
+                      <input name="poname" type="text" class="form-control j-save">
+                    </div>
+                  </div>
+ 
+                  <div class="form-group">
+                    <label class="col-sm-1 control-label">单据时间：</label>
+                    <div class="col-sm-2">
+                      <input name="returndate1" type="text" class="form-control j-save">
+                    </div>
+                    <div class="col-sm-2">
+                      <span class="sep">至</span><input name="returndate2" type="text" class="form-control j-save">
+                    </div>
+                    <div class="col-sm-2 col-sm-offset-1">
+                    <a class="btn btn-primary btn-block ">查询</a>
+                    </div>
+                  </div>
+
+            </form>
+      </div>
+
+
+
+      <div class="card_c">
+        <div class="clst_action">
+          <m-actlist></m-actlist>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

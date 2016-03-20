@@ -1,0 +1,45 @@
+<form id="addressform" class="j-flag">
+  	<ul class="m-add">
+  		<li class="f-cb">
+  			<input type="hidden" name="id" data-required="true" value="">
+  			<label for="consigneeName">收货人</label><div class="iptbox"><input type="text" name="consigneeName" class="j-size" data-required="true" value="" maxLength=25></div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="consigneeMobile">手机号</label><div class="iptbox"><input type="text" name="consigneeMobile" data-contact="contact" maxLength=11 value=""></div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="consigneeTel">固定电话</label>
+  			<div class="iptbox f-cb">
+  			  <input type="text" class="w-ipt w-ipt-1" name="consigneeTel"  data-contact="contact" placeholder="区号" data-pattern="\\d{3,4}+" maxlength=4/>
+  			  <input type="text" class="w-ipt w-ipt-2" name="consigneeTel"  data-contact="contact" placeholder="号码" maxLength=8 data-patter="\\d{7,8}+"/>
+  			  <input type="text" class="w-ipt w-ipt-3" name="consigneeTel"  data-contact="contact"  placeholder="分机" maxlength=4/>
+  			</div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="province">省份</label>
+  			<div class="iptbox">
+  				<select name="provinceId" data-value="">
+  					<option value=-1>请选择</option>
+  				</select>
+  			</div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="city">城市</label><div class="iptbox"><select name="cityId" data-value=""><option value=-1>请选择</option></select></div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="section">县区</label><div class="iptbox"><select name="sectionId" data-value=""><option value=-1>请选择</option></select></div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="street">街道</label><div class="iptbox"><select name="streetId" data-value=""><option value=-1>请选择</option></select></div>
+  		</li>
+  		<li class="f-cb">
+  			<label for="address">详细地址</label><div class="iptbox"><textarea name="address" class="j-size" data-required="true" maxLength=100></textarea></div>
+  		</li>
+  	</ul>
+</form>
+<div class="btns m-table">
+	<div class="tr">
+		<span class="td"><input type="checkbox" id="default" name="isDefault" class="j-flag"><label for="default">设为默认</label></span>
+		<span class="td"><span id="submit" class="j-flag"><i class="u-save"></i><label>保存</label></span></span>
+	</div>
+</div>

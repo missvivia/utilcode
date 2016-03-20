@@ -1,0 +1,24 @@
+<div class="bd">
+  <form method="GET" class="m-form m-form-phone" id="phoneform">
+      <input type="hidden" value="" name="credential" id="credential"/>
+	  <input type="hidden" value="" name="expiredTime" id="expiredTime"/>
+	  <input type="hidden" value="" name="sign" id="sign"/>
+      <div class="fitm">
+        <label class="flab">手机号</label>
+        <div class="fipt">
+          <input type="text" class="w-ipt w-ipt-2" value="" minlength="11" maxlength="11" data-required="true" data-pattern="^1\d{10}$" name="phonenum" id="iptphone"/><span class="w-btn" id="yzmBtn"><a><span>发送验证码</span></a></span>
+        </div>
+      </div>
+      <div class="fitm">
+        <label class="flab">验证码</label>
+        <div class="fipt">
+          <input type="text" class="w-ipt w-ipt-2" value="" data-required="true" name="code" id="iptyzm"/><span class="err" id="codeErrmsg" style="display:none;">验证码错误</span>
+        </div>
+      </div>
+      <div class="fitm fitm-btns">
+        <div class="fipt">
+          <a href="#" class="w-btn3" id="okBtn">确 定</a><a href="#" class="w-btn3 w-btn3-1" id="ccBtn">取 消</a>
+        </div>
+      </div>
+  </form>
+</div>

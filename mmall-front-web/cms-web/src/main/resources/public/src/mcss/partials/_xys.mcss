@@ -1,0 +1,16 @@
+/* product-list */
+.from-group{padding-bottom: 50px; }
+.list-page-up ,.list-page-down {float: right;}
+/* business-bualist */
+.form-group .sep{position:absolute;left:-7px;top:7px;}
+/* business-buadd */
+.control-buadd{text-align: left;padding-top: 7px;}
+.buadd-id{color: #cc0000;font-size: 16px;font-weight: 700;padding-bottom: 20px;}
+.buadd-team{color: #333;font-size: 16px;font-weight: 700;padding-bottom: 20px;}
+/* po-returndetail */
+.detail-team{color: #333;font-size: 16px;font-weight: 700;padding-bottom: 20px;}
+.form-returndetail span{color: #cc0000}
+/* cms-returndetail */
+.m-returndetail,.m-winbot{padding: 10px;}
+.line{padding-bottom: 10px;}
+

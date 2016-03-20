@@ -1,0 +1,34 @@
+{{#if list.length>0}}
+<div class="title">
+  <div class="bd s-fc1 f-fs2 f-fw1">
+    <span class="slash" r-html={{'&nbsp;'}}></span>地址选择
+  </div>
+</div>
+<div class="bd f-pdb20">
+  <ul class="m-address">
+  {{#list 0 .. viewCount as i}}
+    {{#if !!list[i]}}
+    <li class="itm {{list[i].checked?'active':''}}" on-click={{this.check(list[i])}}>
+      <div class="f-fs2 f-cb"><span class="f-fl name">{{list[i].consigneeName}}</span><span class="s-fc3 f-fl">(收)</span>
+        {{#if list[i].isDefault}}
+        <span class="s-fc3 dft f-fs0">默认地址</span>
+        {{#else}}
+        <span class="s-fc9 setdft f-fs0 f-cp" on-click={{this.setDefault($event, list[i])}}>设为默认</span>
+        {{/if}}
+      </div>
+      <div>{{#if !!list[i].consigneeMobile}}{{list[i].consigneeMobile}}{{#else}}{{list[i].consigneeTel}}{{/if}}</div>
+      <div class="dtladdress">{{list[i].province}}{{#if (list[i].cityId>0)}}{{list[i].city}}{{/if}}{{#if (list[i].sectionId>0)}}{{list[i].section}}{{/if}}{{#if (list[i].streetId>0)}}{{list[i].street||''}}{{/if}}{{list[i].address||''}}</div>
+      <ul class="act s-fc9 f-cp"><li on-click={{this.updateAddress($event, list[i], i)}}>修改</li><li class="f-cp" on-click={{this.deleteAddress($event, list[i], i)}}>删除</li></ul>
+    <span class="check"></span>
+    </li>
+    {{/if}}
+  {{/list}}
+  </ul>
+  <div class="addresact">
+    <div class="f-fl">
+      <span class="w-btn" on-click={{this.addAddress($event)}}><a><span>新增地址</span></a></span> <span class="s-fc3 tip">最多只能保存10条地址</span>
+    </div>
+    {{#if list.length>4 && viewCount<4 }}<span class="more f-fr s-fc9" on-click={{this.viewAll()}}>显示全部地址<span class="p-more p-more-1"></span></span>{{/if}}
+  </div>
+</div>
+{{/if}}

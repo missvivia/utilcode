@@ -1,0 +1,15 @@
+<textarea name='jst' id='#<boxsimple>'>
+<div>确定要取消订单</div>
+</textarea>
+
+
+<textarea name='jst' id='#<boxcomplate>'>
+  <form class="j-form">
+    <label>取消理由：</label>
+    <select name="reason" class="w-select w-select-long">
+      {list options as x}
+        <option value="${x}">${x}</option>
+      {/list}
+    </select>
+  </form>
+</textarea>

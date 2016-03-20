@@ -1,0 +1,62 @@
+<table class="table  table-striped">
+  <thead>
+    <tr>
+      <th>PO编号</th>
+      <th>名称</th>
+      <th>销售站点</th>
+      <th>入库仓库</th>
+      <th>档期时间</th>
+      <th>商品总件数</th>
+      <th>款数</th>
+      <th>审核状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list list as act}}
+      <tr class='animated' r-animation="on: enter; class: fadeIn">
+        <td>{{act.id}}</td>
+        <td>{{act.title}}</td>
+        <td>{{#list act.saleSiteList as item}}{{item.name}}{{#if item_index!=act.saleSiteList.length-1}},{{/if}}{{/list}}</td>
+        <td>{{#if act.poType==1}}{{@(act.supplierStoreName)}}{{#elseif act.poType==2}}{{@(act.brandStoreName)}}{{#elseif act.poType==3}}{{@(act.supplierStoreName)}},{{@(act.brandStoreName)}}{{/if}}</td>
+        <td>
+         {{act.startTime|format}}
+         至
+         {{act.endTime|format}} 
+        </td>
+        <td>{{act.productTotalCnt}}</td>
+        <td>{{act.unitCnt}}</td>
+        <td>{{act.status|statusName}}</td>
+        <td>
+          {{!status: 1-新建  2-审核中  3-审核通过 4-审核未通过 -1-失效!}}
+          {{!showFlag:  1-档期结束  2-档期中 3-档期前4天内  4-档期前4填外!}}
+          {{#if act.status === 1}}
+            {{#if act.showFlag==4}}
+            <a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>添加/查看售卖商品</a>
+            <a href="javascript:void(0)" class='btn btn-primary btn-xs' on-click={{this.judge(act)}}>提交审核</a>
+            {{#else}}
+             <a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>查看售卖商品</a>                      
+            {{/if}}
+          {{#elseif act.status === 2}}
+            <a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>查看售卖商品</a>
+          {{#elseif act.status === 3}}
+            <a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>查看售卖商品</a>
+          {{#elseif act.status === 4}}
+            {{#if act.showFlag===4}}
+            <a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>添加/查看售卖商品</a>
+            <a href="javascript:void(0)" class='btn btn-primary btn-xs' on-click={{this.judge(act)}}>提交审核</a>
+            {{#else}}
+            <a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>查看售卖商品</a>
+            {{/if}}
+          {{#elseif act.status === 5||act.status === -1}}
+          	<a href="/schedule/add?id={{act.id}}" class='btn btn-primary btn-xs'>查看售卖商品</a> 
+          {{/if}}
+          
+        </td>
+      </tr>
+    {{/list}}
+  </tbody>
+</table>
+<div class="text-right m-wpager">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

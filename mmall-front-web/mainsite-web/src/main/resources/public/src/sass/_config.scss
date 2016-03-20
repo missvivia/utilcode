@@ -1,0 +1,10 @@
+$browser-minimum-versions: (
+  'chrome':  null,
+  'firefox': null,
+  'ie':      '7',
+  'safari':  null,
+  'opera':   null
+);
+@mixin carticon(){
+  background: url(/res/images/carticon.png) 9999px 9999px no-repeat;
+}

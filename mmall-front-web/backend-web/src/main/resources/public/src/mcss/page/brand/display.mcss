@@ -1,0 +1,53 @@
+
+.m-bdisplay{
+  border: 1px solid #eee;
+  margin-bottom: 25px;
+  &:last-child{
+    margin-right: 0px;
+  }
+  .bd_info{
+    padding: 20px 28px;
+    line-height: 28px;
+    word-break:break-all;
+  }
+   .img{
+       width: 100%;
+       position: relative;
+       height: 0;
+       padding-bottom: 19000% / 432;
+       background: #eee;
+       overflow: hidden;
+       img{
+        width: 100%;
+       }
+    }
+    .img-void{
+      img{display: none}
+      .place{
+          content: "";
+          width: 60px;
+          height: 84px;
+          background-image: url(/res/images/img-placeholder.png);
+          position: absolute;
+          margin-top: -42px;
+          margin-left: -30px;
+          left: 50%;
+          top: 50%;
+       }
+    }
+  ul{
+    padding-left: 0px;
+    list-style: none;
+  }
+  blockquote{
+    padding: 0px;
+    margin:0;
+    font-size: 14px;
+    color: #aaa;
+    border: none;
+  }
+  .btns{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

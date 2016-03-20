@@ -1,0 +1,3 @@
+.pass{background:#00cc00;color:#fff}
+.fail{background:#ff3300;color:#fff}
+.pending{background:#ff9900;color:#fff}

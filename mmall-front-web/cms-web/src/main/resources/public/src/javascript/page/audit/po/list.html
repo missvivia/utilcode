@@ -1,0 +1,24 @@
+<table class="table table-hover table-product table-condensed table-fixed">
+  <tr><th width=60px>PO编号</th><th>站点</th><th>商家帐号</th><th>公司名称</th><th>品牌名称</th><th>档期时间</th><th  width="80px">审核状态</th><th>操作</th></tr>
+  <tbody>
+  {{#list list as item}}
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.siteName}}</td>
+      <td>{{item.supplierAcct}}</td>
+      <td>{{item.supplierName}}</td>
+      <td>{{item.brandName}}</td>
+      <td>{{item.startTime|format:'yyyy-MM-dd'}} 至  {{item.endTime|format:'yyyy-MM-dd'}}</td>
+      <td>{{this.statusData(item)}}</td>
+      <td>
+      {{#if item.isValid}}
+       <p><a href="/audit/product/detail?poId={{item.id}}&startTime={{item.startTime}}" target="_blank" >查看审核商品资料</a></p>
+       {{#else}}
+       <p><a href="/audit/product/detail?poId={{item.id}}&startTime={{item.startTime}}&disabled=1" target="_blank" >查看审核商品资料</a></p>
+       {{/if}}
+      </td>
+    </tr>
+  {{/list}}
+  </tbody>
+</table>
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

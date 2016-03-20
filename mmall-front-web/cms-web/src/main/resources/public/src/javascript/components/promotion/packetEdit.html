@@ -1,0 +1,129 @@
+
+<!-- card -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="m-card">
+      <h2 class="card_b">
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        红包编辑
+      </h2>
+      <div class="card_c">
+        <form class="form-horizontal m-form-product" role="form" id="editForm">
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label"><span class="u-required">*</span>红包名称</label>
+            <div class="col-sm-8">
+              <input type="name" class="form-control" id="name" r-model="vo.name" name="name">
+              <span class="help-block">{{vo.name.length}}/15</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="desc" class="col-sm-2 control-label"><span class="u-required">*</span>红包描述</label>
+            <div class="col-sm-8">
+              <textarea class="form-control" id="desc" r-model="vo.description" name="description"></textarea>
+              <span class="help-block">{{vo.description.length}}/60</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label"><span class="u-required">*</span>有效时间</label>
+            <div class="col-sm-8  form-inline">
+                <datepicker select={{vo.startTime}} name="startTime"></datepicker>
+                <datepicker select={{vo.endTime}} name="endTime"></datepicker>
+              <span class="help-block">对于分享红包，该有效时间指的是分享的有效期；对于不可分享的红包，该有效时间指的是红包使用的有效期；</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label"><span class="u-required">*</span>是否分享</label>
+            <div class="col-sm-8">
+              <div class="radio">
+                <label>
+                  <input type="radio" value="1" name="shareString"  r-model='shareString'>是
+                </label>
+                <label>
+                  <input type="radio" value="0" name="shareString"  r-model='shareString'>否
+                </label>
+              </div>
+              <span class="help-block">备注：不可分享的红包，需绑定用户，发到指定用户；可分享的红包，在领取时绑定用户；</span>
+            </div>
+          </div>
+          {{#if vo.share == true}}
+          <div class="form-group">
+            <label for="timeSpan" class="col-sm-2 control-label"><span class="u-required">*</span>可用天数</label>
+            <div class="col-sm-8">
+              <input type="timeSpan" class="form-control"  id="timeSpan" r-model="vo.validDay" name="validDay">
+              <span class="help-block">指的是红包可用天数，红包从成功领取的当天开始可用</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="unitPrice" class="col-sm-2 control-label"><span class="u-required">*</span>每个金额</label>
+            <div class="col-sm-8">
+              <input type="unitPrice" class="form-control"  id="unitPrice" r-model="vo.cash" name="cash">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="total" class="col-sm-2 control-label"><span class="u-required">*</span>红包数量</label>
+            <div class="col-sm-8">
+              <input type="total" class="form-control" id="total" r-model="vo.count" name="count">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="u-required">*</span>裂变方式</label>
+            <div class="col-sm-8">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="distributeRule"  value="EQUALLY" r-model="vo.distributeRule">均分
+                </label>
+                <label>
+                  <input type="radio" name="distributeRule" value="RANDOM" r-model="vo.distributeRule">随机
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="shareNum" class="col-sm-2 control-label"><span class="u-required">*</span>裂变份数</label>
+            <div class="col-sm-8">
+              <input type="shareNum" class="form-control" id="shareNum" r-model="vo.copies" name="copies">
+              <span class="help-block">备注：随机分配时单个红包最低金额需大于均分的10%；可分享的有效期统一为7天；</span>
+            </div>
+          </div>
+          {{#elseif vo.share == false}}
+          <div class="form-group">
+            <label for="unitPrice" class="col-sm-2 control-label"><span class="u-required">*</span>红包金额</label>
+            <div class="col-sm-8">
+              <input type="unitPrice" class="form-control"  id="unitPrice" r-model="vo.cash" name="cash">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="u-required">*</span>绑定用户</label>
+            <div class="col-sm-8">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="binderType"  value="USER_BINDER" r-model="vo.binderType">导入用户名单绑定
+                </label>
+              </div>
+              <div>
+                {{#if vo.binderType == "USER_BINDER"}}
+                  <textarea class="form-control"  r-model="vo.users" name="users" placeholder="输入用户ID，多个用户ID以,（英文逗号）隔开"></textarea>
+                {{/if}}
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="binderType" value="SYSTEM_BINDER" r-model="vo.binderType">系统自动绑定
+                </label>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="m-card-btn m-card">
+      {{#if editable==1}}<div class="cbtn_left"><a href="#" class="btn  btn-primary j-submit" on-click={{this.confirm()}}>提交</a></div>{{/if}}
+      <div class="cbtn_right" {{#if editable!=1}}style="width:100%;"{{/if}}><a href="javascript:void(0);" onclick="window.history.back();" class="btn  btn-default">返回</a></div>
+  </div>
+</div>
+</div>

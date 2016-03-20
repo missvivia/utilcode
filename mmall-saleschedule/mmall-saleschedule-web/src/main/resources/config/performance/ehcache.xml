@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+        
+        <cacheManagerPeerListenerFactory
+		class="org.terracotta.ehcachedx.monitor.probe.ProbePeerListenerFactory"
+		properties="monitorAddress=10.165.124.37, monitorPort=9889" />
+        <!-- DefaultCache setting. -->
+        <defaultCache maxBytesLocalHeap="2G"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3000"
+                timeToLiveSeconds="3000" overflowToDisk="false" diskPersistent="false" />
+
+        <!-- Special objects setting. -->
+        <!--  <cache name="siftCache" eternal="false" maxElementsInMemory="10"
+                overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="5"
+                timeToLiveSeconds="5" memoryStoreEvictionPolicy="LFU" /> -->
+        <!-- Special objects setting. -->
+        <cache name= "poCache"  maxBytesLocalHeap="1G"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                
+        <cache name= "brandCache"  maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+                timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+   </ehcache>

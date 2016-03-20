@@ -1,0 +1,1 @@
+mcss -c ../public/src/mcss/mcss_r.json&nej-build release.conf

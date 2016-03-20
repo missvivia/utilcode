@@ -1,0 +1,25 @@
+<div class="card_c">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>用户ID</th>
+      <th>用户名</th>
+      <th>昵称</th>
+      <th>绑定手机号</th>
+      <th>绑定邮箱</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list list as x}}
+      <tr>
+        <td><a target="_blank" href="/user/info?userId={{x.userId}}">{{x.userId}}</a></td>
+        <td>{{x.userName}}</td>
+        <td>{{x.nickName}}</td>
+        <td>{{x.mobile}}</td>
+        <td>{{x.email}}</td>
+      </tr>
+    {{/list}}
+  </tbody>
+</table>
+<pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

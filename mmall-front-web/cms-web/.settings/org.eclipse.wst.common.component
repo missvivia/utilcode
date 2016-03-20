@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="cms-web">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="mmall-framework-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-framework/mmall-framework">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-facade-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-facade/mmall-facade">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-push-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-push-api/mmall-push-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-jms-service-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-jms-service/mmall-jms-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-oms-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-oms-api/mmall-oms-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-cart-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-cart-api/mmall-cart-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-saleschedule-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-saleschedule-api/mmall-saleschedule-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-photomgr-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-photomgr-api/mmall-photomgr-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-front-service-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-front-service/mmall-front-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-member-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-member-api/mmall-member-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-promotion-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-promotion-api/mmall-promotion-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-order-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-order-api/mmall-order-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-ip-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-ip-api/mmall-ip-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-itemcenter-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-itemcenter-api/mmall-itemcenter-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-content-api-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-content-api/mmall-content-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mmall-security-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mmall-security/mmall-security">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bi-core-0.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bi-core/bi-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="mmall"/>
+        <property name="java-output-path" value="/cms-web/target/classes"/>
+    </wb-module>
+</project-modules>

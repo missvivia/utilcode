@@ -1,0 +1,24 @@
+.m-adduser{padding:10px;margin:10px;}
+.m-adduser .line{min-height:40px;line-height:40px;}
+.m-adduser .lineri{display:inline-block;width:420px;padding-top:8px;height:150px;overflow:auto;}
+.m-adduser .btns{text-align:center;}
+.m-adduser label{width:100px;text-align:right;}
+.m-adduser input{line-height:24px;height:24px;}
+.m-adduser .chkbox{margin-top:0px;}
+.m-adduser .item{margin-right:10px;width:120px;display:inline-block;}
+.m-adduser .item span{width:103px;line-height:20px;word-wrap:break-word;}
+.m-winbot{border-top:1px solid #ccc;padding:10px 0 20px 0;}
+.m-winbot .btns{text-align:center;}
+/*权限配置-win*/
+.m-addusergp{width:400px;max-height:400px;overflow-y:scroll;padding:10px;}
+.m-addusergp .line{height:40px;line-height:40px;}
+.m-addusergp label{width:120px;}
+.m-addusergp .u-ipt{height:24px;line-height:24px;width:150px;border:1px solid #ccc;}
+
+span.js-error, .js-error {
+  line-height: 16px;
+  margin-left: 10px;
+}
+label.itemCheck{width:auto;vertical-align:top;text-align:left;}
+.m-adduser .itemCheck span {line-height:24px;}
+.point{padding:0 5px;font-weight:bold;}

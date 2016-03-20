@@ -1,0 +1,27 @@
+{{#if !!orderdetail}}
+{{#list orderdetail.cartStoreList as store}}
+<div class="p-section p-store">
+  <div class="wrap" style="padding-left:0;">
+    <div class="menu">
+      <a href="{{store.storeUrl}}" class="s-fc1 f-fs15">{{store.storeName}}</a>
+    </div>
+    <div class="p-plist">
+      {{#list store.skulist as sku}}
+      <div class="prod f-cb">
+        <div class="p-img f-fl"><img src="{{sku.thumb}}" alt=""/></div>
+        <div class="p-info">
+          <p>
+          	<a class="name f-fs13" href="{{sku.url}}">{{sku.name}}</a>
+          </p>
+          <p>
+          	<span class="s-fc9 f-fwb f-fs13" style="float:left;">￥{{sku.cartPrice|fixed}}</span>
+          	<span class="s-fc4 f-fs13" style="float:right;">X{{sku.count}}</span>
+          </p>
+        </div>
+      </div>
+      {{/list}}
+    </div>
+  </div>
+</div>
+{{/list}}
+{{/if}}

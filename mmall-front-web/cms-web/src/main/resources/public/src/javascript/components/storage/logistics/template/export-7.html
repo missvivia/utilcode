@@ -1,0 +1,40 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>发货日期</th>
+       <th>物流商</th>
+       <th>仓库</th>
+       <th>订单号</th>
+       <th>订单金额</th>
+       <th>商品名称</th>
+       <th>商品数量</th>
+       <th>订单的配送地址</th>
+       <th>配送类型</th>
+       <th>运单号</th>
+       <th>是否COD</th>
+       <th>快递状态</th>
+       <th>返回运单号</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.date|format}}</td>
+         <td>{{item.expressCompany}}</td>
+         <td>{{item.warehouseName}}</td>
+	       <td>{{item.omsOrderFormId}}</td>
+         <td>{{item.price}}</td>
+         <td>{{item.productName}}</td>
+         <td>{{item.productCount}}</td>
+         <td>{{""+item.province+item.city+item.consigneeAddress}}</td>
+         <td>{{item.mailType}}</td>
+         <td>{{item.mailNO}}</td>
+         <td>{{(item.cashOnDelivery)?"是":"否"}}</td>
+         <td>{{(item.omsOrderPackageState)=="SHIP"?"已发货":(item.omsOrderPackageState)=="DONE"?"妥投":(item.omsOrderPackageState)=="REJECT"?"拒收":"丢失"}}</td>
+         <td>{{item.mailNOReturn}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

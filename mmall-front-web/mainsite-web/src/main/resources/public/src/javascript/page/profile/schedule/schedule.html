@@ -1,0 +1,27 @@
+
+{{#if list.length>0}}
+<div class="bd">
+ <ul class="list">
+  {{#list list as item}}
+	 <li class="">
+		  <a href="/schedule?id={{item.scheduleId}}" target="_blank">
+		    <img src="{{item.img}}" height="90px" width="208px"/>
+		    <span class="desc">
+		        {{item.activeTitle}} <br/><span class="s-fc10 f-fw1">{{item.minDiscount/10}}折起</span><span class="s-fc2">  剩{{item.remain}}天</span>
+		    </span>
+		  </a>
+		  <a class="u-btn2" href="javascript:void(0)" on-click={{this.unfollow(item,item_index)}}>取消关注</a>
+	 </li>
+	 {{/list}}
+ </ul>
+</div>
+{{#elseif loading}}
+<div class="bd">数据加载中...</div>
+{{#else}}
+<div class="bd">
+	<div class="u-empt">
+		<span class="u-icon3 u-icon3-2">&nbsp;</span>
+		<p class="txt">还没有关注特卖，赶快<a href="#">去逛逛</a>吧！</p>
+	</div>
+</div>
+{{/if}}

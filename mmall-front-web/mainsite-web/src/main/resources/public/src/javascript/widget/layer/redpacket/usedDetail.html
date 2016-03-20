@@ -1,0 +1,33 @@
+<div class="w-win-usedDetail">
+	<div class="bd">
+	  <p class="s-fc2 f-fs1">
+	    <span class="itm">初始额度：￥<span class="f-fs4">${cash}</span></span><span class="itm">剩余：<span class="s-fc19">￥<span class="f-fs4">${remainCash}</span></span></span>
+	  </p>
+	  {if dtos && dtos.length >0}
+	  <table class="m-table" border="0" cellspacing="0" cellpadding="0">
+	  	<tbody>
+
+	      <tr>
+	        <th>时间</th><th>使用金额</th><th>订单号</th>
+	      </tr>
+	      {list dtos as item}
+	      {if item.redPacketHandlerType=='DEFAULT' && (item.redPacketOrderType == 'USE_RED_PACKET' || item.redPacketOrderType == 'USE_RED_PACKET_FOR_EXPRESS')}
+	      <tr>
+	        <td>${new Date(item.usedTime)|format:"yyyy-MM-dd"}</td>
+	        <td>-￥${item.cash}</td>
+	         <td>${item.orderSerial}</td>
+	      </tr>
+	      {elseif item.redPacketHandlerType=='GRANT' && (item.redPacketOrderType == 'RETURN_RED_PACKET')}
+	       <tr>
+	        <td>${new Date(item.usedTime)|format:"yyyy-MM-dd"}</td>
+	        <td>+￥${item.cash}</td>
+	         <td>${item.orderSerial}</td>
+	       </tr>
+	      {/if}
+	      {/list}
+	      </tbody>
+	  </table>
+	  {/if}
+	  <div class="btns"><a href="javascript:void(0);" class="w-btn3 j-flag">确 定</a></div>
+	</div>
+</div>

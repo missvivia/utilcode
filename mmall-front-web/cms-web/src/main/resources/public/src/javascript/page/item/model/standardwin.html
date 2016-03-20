@@ -1,0 +1,90 @@
+<div class="attrwin row">
+<form method="get" class="form-horizontal" id="standForm">
+	<div class="form-group">
+		<label class="col-sm-3 control-label" ><span class="u-required">*</span>规格名:</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" name="specificationName" data-focus="true" data-required="true" data-message="必填" placeholder="请输入名称" {if !!item.specificationName} value="${item.specificationName}" {/if}>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label"><span class="u-required">*</span>显示类型：</label>
+		<div class="col-sm-4">
+			<div class="radio-inline">
+		        <label>
+		          <input type="radio" value="1" name="specificationType"  checked="checked">文字
+		        </label>
+		    </div>
+			<!--  
+			<div class="radio-inline">
+		        <label>
+		          <input type="radio" value="1" name="specificationType" {if (!!item.specificationType && item.specificationType=='1') || !item.specificationType} checked="checked" {/if}>文字
+		        </label>
+		    </div>
+		    
+		    <div class="radio-inline">
+		        <label>
+		          <input type="radio" value="2" name="specificationType" {if !!item.specificationType && item.specificationType=='2'} checked="checked" {/if}>图片
+		        </label>
+		    </div>
+		    -->
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label"><span class="u-required">*</span>规格数据：</label>
+		<div class="col-sm-4">
+			<div class="input-group">
+		      <input type="text" class="form-control" data-message="必填添加" placeholder="请输入数据内容进行添加"/>
+		      {if !item.specificationId}
+		      <div class="btn input-group-addon" id="addStand">添加规格数据</div>
+		      {/if}
+		      {if !!item.specificationId}
+		      <div class="btn input-group-addon" id="subStandOption" data-parame="${item.specificationId}" data-model="${item.itemModelId}">提交规格数据</div>
+		      {/if}
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-8 col-sm-offset-3">
+			<p>还没有数据哦，赶快添加吧。</p>
+			<div class="addStand-box">
+			{if !!item.speciOptionList}
+				{list item.speciOptionList as ol}
+					<span><label>${ol.speciOption}</label><span class="close" {if !!ol.speciOptionId} data-option="${ol.speciOptionId}" data-parame="${ol.specificationId}"{/if}>×</span></span>
+				{/list}
+			{/if}
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label"><span class="u-required">*</span>作为商品筛选项：</label>
+		<div class="col-sm-4">
+			<div class="radio-inline">
+		        <label>
+		          <input type="radio" value="1" name="show" {if !!item.show && item.show=='1'|| !item.show} checked="checked" {/if}>是
+		        </label>
+		    </div>
+		    <div class="radio-inline">
+		        <label>
+		          <input type="radio" value="2" name="show" {if !!item.show && item.show=='2'} checked="checked" {/if}>否
+		        </label>
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">
+	    <div class="col-sm-12 col-sm-offset-3">
+	      {if !!item.itemModelId}
+	      	  <input type="hidden" name="itemModelId"  value="${item.itemModelId}"/>
+	      {/if}
+	      {if !!item.specificationId}
+	      	  <input type="hidden" name="specificationId"  value="${item.specificationId}"/>
+	      {/if}
+	   	  {if modelId==""}
+	      <span class="btn btn-primary j-flag" id="confrim">确定</span>
+	      {/if}
+	      {if modelId!=""}
+	      <span class="btn btn-primary j-flag" id="standsubmit">提交</span>
+	      {/if}
+	    </div>
+	</div>
+</form>
+</div>

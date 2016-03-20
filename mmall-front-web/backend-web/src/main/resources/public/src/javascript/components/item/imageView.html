@@ -1,0 +1,15 @@
+<div class="m-imgview {{clazz}}">
+  {{#list imgs as img}}
+    <div class="img  animated" >
+      <div class="imgwrap" >
+        <img src={{img.picPath}} ></div>
+      <span class="del" on-click={{this.del(img_index)}}>×</span>
+    </div>
+  {{/list}}
+  <div class="img" r-hide="imgs.length >= limit">
+    <div class="imgwrap img-void"></div>
+      <div class="btns">
+      <label class="local btn  btn-primary btn-sm" on-upload={{this.handleUpload($event)}} >本地上传</label>
+      </div>
+  </div>
+</div>

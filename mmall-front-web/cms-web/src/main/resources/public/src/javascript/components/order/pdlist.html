@@ -1,0 +1,49 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>包裹序列号</th>
+        <th>商品名称</th>
+        <th>商家ID</th>
+        <th>SKU</th>
+        <th>货号</th>
+        <th>数量</th>
+        <th>零售价</th>
+        <th>实付金额</th>
+        <th>是否赠品</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list.list as tpl}}
+        <tr>
+          {{#if tpl_index!=0 && tpl.packageId != list.list[tpl_index-1].packageId}}
+            <td rowspan={{this.getPackLength(tpl.packageId)}}>{{tpl.packageId}}</td>
+          {{#elseif tpl_index==0}}
+            <td rowspan={{this.getPackLength(tpl.packageId)}}>{{tpl.packageId}}</td>
+          {{/if}}
+          <td>【{{tpl.brandName}}】 {{tpl.colorName}} <a  target="_blank" href="{{mainsite}}/detail?id={{tpl.productId}}&isSnapShot=true">{{tpl.name}}</a>  {{tpl.attributes['尺码']}}</td>
+          <td>{{tpl.brandId}}</td>
+          <td>{{tpl.sku}}</td>
+          <td>{{tpl.number}}</td>
+          <td>{{tpl.prodNum}}</td>
+          <td>{{tpl.price}}</td>
+          <td>{{tpl.pay}}</td>
+          {{#if tpl.gift === true}}
+          <td>是</td>
+          {{#else}}
+          <td>否</td>
+          {{/if}}
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="m-wtableb">
+  <div>总计:</div>
+  <div>
+    <span>商品数量<b>{{list.number}}</b>商品原价<b>￥{{list.price}}</b>实付总价<b>￥{{list.pay}}</b>商品优惠<b>￥{{list.discount}}</b></span>
+  </div>
+</div>
+<div class="text-right">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

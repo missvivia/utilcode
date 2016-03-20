@@ -1,0 +1,50 @@
+{{#if sku.deleted}}
+<p class="p-alert">您已删除 <a href="{{sku.url}}" target="_blank" class="s-fc12">{{sku.name}}</a> 如有误，请 <span class="f-cp s-fc12" on-click={{this.onRecover(item)}}>撤销本次删除</span></p>
+{{#else}}
+<ul class="f-fs1 s-fc3 f-cb {{sku.overTime? 'over-time': ''}}">
+  <li class="col0 f-fl" r-html={{'&nbsp;'}}></li>
+  <li class="col1 f-fl">
+    <div class="inner-wrap f-cb">
+      <div class="p-img f-fl">
+        <a href="{{sku.url}}" target="_blank"><img src="{{sku.thumb||'#'}}" class="f-vam" alt="" width="70" height="70"/></a>
+        {{#if sku.overTime}}<a href="{{sku.url}}" target="_blank"><span class="u-mask">已超时</span></a>{{/if}}
+      </div>
+      <div class="p-info f-fl">
+        <div class="p-name">
+          <a href="{{sku.url}}" target="_blank" class="link over"> {{#if !!sku.brandName}}<span class="s-fc3 over">[{{sku.brandName}}]</span>{{/if}}{{sku.name}}</a>
+        </div>
+        <p class="p-param over">
+          <span>{{sku.color||''}}</span><span>{{sku.size||''}}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+  <li class="col2 f-fl">
+    <div class="inner-wrap">
+      <div><span class="over" r-html={{'&yen;'}}></span><span class="over">{{sku.originalPrice|fixed}}</span></div>
+      <div class="s-fc11 f-dt f-fs0"><span r-html={{'&yen;'}}></span>{{sku.marketPrice |fixed}}</div>
+    </div>
+  </li>
+  <li class="col3 f-fl">
+    <div class="inner-wrap">
+      <amountpick amount={{sku.count}} maxamount=2 disabled={{!!sku.overTime? true: false}} on-change={{this.onAmountChange($event, sku)}} on-over={{this.showMsg($event, sku)}}></amountpick>
+      {{#if !!sku.msg}}<div class="msg s-fc15 f-fs0">{{sku.msg||''}}</div>{{/if}}
+    </div>
+  </li>
+  <li class="col4 f-fl">
+    <div class="inner-wrap">
+      <div class="over s-fc5"><span r-html={{'&yen;'}}></span>{{sku.count*sku.retailPrice|fixed}}</div>
+      {{#if !!sku.promotionDiscountAmount && sku.promotionDiscountAmount!= 0}}<div class="s-fc3 f-fs0">已优惠<span r-html={{'&yen;'}}></span>{{sku.promotionDiscountAmount*sku.count|fixed}}</div>{{/if}}
+    </div>
+  </li>
+  <li class="col5 f-fl">
+    <div class="inner-wrap">
+      <span class="f-cp s-fc9" on-click={{this.onDelete(sku)}}>删除</span>
+      {{#if sku.overTime}}<div class="btn-box">
+        <span class="w-btn" on-click={{this.onReBuy(sku)}}><a><span>重新购买</span></a></span>
+      </div>
+      {{/if}}
+    </div>
+  </li>
+</ul>
+{{/if}}

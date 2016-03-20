@@ -1,0 +1,107 @@
+<textarea name='jst' id='#<seedList>'>
+  {list beg..end as i}
+    {var x = xlist[i]}
+
+	  {if x.subOrderFormListVO}
+	  	{list x.subOrderFormListVO as subOrderList}
+    	<div class="w-order">
+	      <div class="head f-cb">
+	        <div class="time"><a href="${subOrderList.storeUrl}">${subOrderList.storeName}</a></div>
+	        <div class="paytime">等待电脑端支付</div>
+	      </div>
+			<a href="/myorder/detail?orderId=${subOrderList.orderId}">
+		        <div class="bd m-order-box m-order-box-ext">
+		           <div class="w-good f-cb">
+		              {list subOrderList.orderSkuList as c}  
+		                <div class="img"> 
+		                  <div class="m-img" orderId="${subOrderList.orderId}" skuid="${c.skuId}" count="${c.totalCount}">
+		                    <img class="u-loading-1" data-src="${c.skuSPDTO.picUrl}">
+		                  </div>
+		                </div>
+		              {/list}
+		             </div>
+			      </div>
+	          </a>
+		      <div class="sum">
+		        <p>
+		        	实付：<i>¥ ${subOrderList.cartRPrice}</i>
+		        	{if subOrderList.spSource == 7}
+		        	<i style="color:red;">(客服代下单)</i>
+		        	{/if}
+		        </p>
+		        <div class="btn">
+		          <a class="u-btn u-btn-two" data-action="reBuy" data-oid="${subOrderList.orderId}" href="javascript:void(0);">再次购买</a>
+		          {if subOrderList.orderFormState.intValue == 21}
+		          <a class="u-btn u-btn-two" data-action="delete" data-oid="${subOrderList.orderId}" href="javascript:void(0);">删除</a>
+		          {/if}
+		          
+	          	 	{if subOrderList.orderFormState.intValue == 10}
+				 		<a class="u-btn u-btn-two" data-action="confirm" data-oid="${subOrderList.orderId}" href="javascript:void(0);">确认收货</a>
+				 	{/if}
+		        </div>
+		      </div>
+	        </div>
+	     </div>	  		
+	  	{/list}
+	  {else}
+	      <div class="w-order">
+	      <div class="head f-cb">
+	        <div class="time"><a href="${x.storeUrl}">${x.storeName}</a></div>
+	        <div class="paytime">${x.orderFormState.intValue == 0 ? "等待电脑端支付" : x.orderFormState.desc}</div>
+	      </div>
+			<a href="/myorder/detail?orderId=${x.orderId}">
+		        <div class="bd m-order-box m-order-box-ext">
+		           <div class="w-good f-cb">
+		              {list x.orderSkuList as item}  
+		                <div class="img"> 
+		                  <div class="m-img" orderId="${x.orderId}" skuid="${item.skuId}" count="${item.totalCount}">
+		                    <img class="u-loading-1" data-src="${item.skuSPDTO.picUrl}">
+		                  </div>
+		                </div>
+		              {/list}
+		             </div>
+			      </div>
+	          </a>
+		      <div class="sum">
+		        <p>
+		        	实付：<i>¥ ${x.cartRPrice}</i>
+		        	{if x.spSource == 7}
+		        	<i style="color:red;font-weight:normal;">(客服代下单)</i>
+		        	{/if}
+		        </p>
+		        <div class="btn">
+		          <a class="u-btn u-btn-two" data-action="reBuy" data-oid="${x.orderId}" href="javascript:void(0);">再次购买</a>
+		          {if x.orderFormState.intValue == 21}
+		          <a class="u-btn u-btn-two" data-action="delete" data-oid="${x.orderId}" href="javascript:void(0);">删除</a>
+		          {/if}
+		          
+	          	 	{if x.orderFormState.intValue == 10}
+				 		<a class="u-btn u-btn-two" data-action="confirm" data-oid="${x.orderId}" href="javascript:void(0);">确认收货</a>
+				 	{/if}
+		        </div>
+		      </div>
+	        </div>
+	     </div>	  
+	  {/if}
+  {/list}
+</textarea>
+
+<textarea name='ntp' id='#<seedBox>'>
+<div></div>
+</textarea>
+
+<textarea name='ntp' id='#<seedLoading>'>
+<div class="m-schedule-loading">
+  <div class="load">
+    <div class="w-loading"></div>
+    <div class="text f-fs1 s-fc2">努力加载中...</div>
+  </div>
+</div>
+</textarea>
+
+<textarea name='ntp' id='#<seedState>'>
+  <div class="u-empt">
+    <div class="u-icon3">&nbsp;</div>
+    <p class="txt">还没有订单</p>
+  </div>
+</textarea>

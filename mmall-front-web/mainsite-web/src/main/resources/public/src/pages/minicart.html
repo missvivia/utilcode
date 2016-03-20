@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>新云联百万店-首页</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="../css/unit.css">
+  <link rel="stylesheet" href="../css/module.css">
+  <link rel="stylesheet" href="../css/page/cart.css">
+</head>
+<body>
+
+<div class="g-hd">
+  <div class="m-topnav m-topnav-1">
+    <div class="g-bd">
+      <div class="logo"><a href="#">新云联百万店</a></div>
+      <ul class="bar">
+        <li class="item">
+          <a href="#" class="menu">趴趴熊趴趴熊趴趴熊<i class="u-icon u-icon-arrow1"></i></a>
+          <div class="u-menu">
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <i class="menupointer"></i>
+          </div>
+        </li>
+        <li class="sep"></li>
+        <li class="item "><!-- item-active -->
+          <a href="#" class="menu">我的订单<i class="u-icon u-icon-arrow1"></i></a>
+          <div class="u-menu">
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <div class="menuitem"><a href="#">个人中心</a></div>
+            <i class="menupointer"></i>
+          </div>
+        </li>
+        <li class="sep"></li>
+        <li class="item">
+          <a href="#">优惠券</a>
+        </li>
+        <li class="sep"></li>
+        <li class="item">
+          <a href="#">自助退货</a>
+        </li>
+        <li class="sep"></li>
+        <li class="item">
+          <a href="#">帮助中心</a>
+        </li>
+        <li class="sep"></li>
+        <li class="item">
+          <a href="#" class="cart s-fc4"><span class="u-iconf">&#xe607;</span>购物车<span class="u-tag"><span class="inner">12</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="g-bd" id="cart-body" style="width: 280px;padding: 100px;background: #fff;">
+  <div class="m-sidebar-cart">
+    <div class="cart-wrap">
+      <div class="tip-wrap">
+        <span class="f-fl">请在&nbsp;</span>
+        <span class="s-fc13 f-fl u-countdown" r-countdown="cartInfoVO.leftTime" on-countdown={{this.onCountDown($event)}}>
+          <span class="dash min_dash">
+            <span class="digit">0</span>
+            <span class="digit">0</span>
+            <span class="dash_title">分</span>
+          </span>
+          <span class="dash sec_dash">
+            <span class="digit">0</span>
+            <span class="digit">0</span>
+            <span class="dash_title">秒</span>
+          </span>
+        </span>
+        <span class="f-fl">&nbsp;内付款</span>
+      </div>
+      <div class="cart-bd">
+        <div class="cart-item">
+          <div class="title-wrap f-toe">
+            <span class="f-fs0 s-fc1">诗凡黎2014新款专场诗凡黎2014新款专场诗凡黎2014新款专场诗凡黎2014新款专场</span>
+          </div>
+          <div class="list-wrap">
+            <div class="prod-item f-fs0 f-cb ">
+              <img src="http://placekitten.com/g/70/70" alt="" class="f-fl f-vam" width="70" height="70"/>
+              <div class="p-info f-fl">
+                <a href="" target="_blank" class="p-name">2014秋装新款韩版印花圆领波点雪纺衫女</a>
+                <div class="p-param s-fc3">
+                  <span class="m0">黑色</span><span>M</span>
+                </div>
+                <div>
+                  <span class="s-fc5 m1">&yen;210</span><span>X1</span>
+                </div>
+              </div>
+              <i class="del f-cp"></i>
+            </div>
+            <div class="split"></div>
+            <div class="prod-item f-fs0 f-cb">
+              <img src="http://placekitten.com/g/70/70" alt="" class="f-fl f-vam" width="70" height="70"/>
+              <div class="p-info f-fl">
+                <a href="" target="_blank" class="p-name">2014秋装新款韩版印花圆领波点雪纺衫女</a>
+                <div class="p-param s-fc3">
+                  <span class="m0">黑色</span><span>M</span>
+                </div>
+                <div>
+                  <span class="s-fc5 m1">&yen;210</span><span>X1</span>
+                </div>
+              </div>
+              <i class="del f-cp"></i>
+            </div>
+          </div>
+        </div>
+        <div class="link">
+          <a href="" target="_blank" class="s-fc12">查看超时或失效的商品 (3)</a>
+        </div>
+      </div>
+      <div class="cart-ft">
+        <span class="cart-total f-fr">
+          <span>共 4 件商品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总计 </span><span class="s-fc5">&yen;2630</span>
+        </span>
+        <span class="w-btn4 w-btn4-1 f-cp">去购物车结算</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../javascript/lib/nej/src/define.js?pro=../javascript/"></script>
+<script src="../javascript/page/minicart/minicart.js"></script>
+</body>

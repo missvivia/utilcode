@@ -1,0 +1,23 @@
+{{#if !!permission}}
+	{{#if !!isnew}}
+		<div class="success">
+			<h1>恭喜您获得价值118元的新人大礼包</h1>
+			<img src="/res/images/activity/activity_discount_show.jpg"/>
+			<a class="go" target="_blank" href="/coupon">查看我的优惠券</a>
+			<a class="btn-close">OK</a>
+		</div>
+	{{#else}}
+		<div class="fail">
+			<h1>您已经领取过新人大礼包了</h1>
+			<img src="/res/images/activity/activity_discount_show.jpg"/>
+			<a class="go" target="_blank" href="/coupon">查看我的优惠券</a>
+			<a class="btn-close">OK</a>
+		</div>
+	{{/if}}
+{{#else}}
+	<div class="error">
+		<h1>{{errmsg}}</h1>
+		<label class="err-close">确定</label>
+	</div>
+{{/if}}
+

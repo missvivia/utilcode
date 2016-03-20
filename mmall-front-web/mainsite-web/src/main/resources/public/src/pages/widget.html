@@ -1,0 +1,825 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>静态页面控件集合页</title>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/grid.css">
+  <link rel="stylesheet" href="../css/unit.css">
+  <link rel="stylesheet" href="../css/module.css">
+  <link rel="stylesheet" href="../css/layer.css">
+  <style>
+    .colorbox{width:60px;height:60px;}
+  </style>
+</head>
+<body>
+<div class="g-bd" style="padding:50px 0;">
+  <table>
+    <tr>
+      <td width=100px>类名</td>
+      <td width=100px>值</td>
+      <td width=100px>色彩</td>
+      <td width=200px></td>
+      <td width=100px>类名</td>
+      <td width=100px>值</td>
+      <td width=100px>色彩</td>
+      <td width=200px></td>
+    </tr>
+    <tr>
+      <td >s-fc0</td>
+      <td>#fff</td>
+      <td><span class="f-ib colorbox" style="background:#fff">&nbsp;</span></td>
+      <td></td>
+      <td>s-fc1</td>
+      <td>#333</td>
+      <td><span class="f-ib colorbox" style="background:#333">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc1"><span class="u-iconf"></span>购物车
+          </a>
+      </td>
+    </tr>
+    <tr>
+      <td>s-fc2</td>
+      <td>#666</td>
+      <td><span class="f-ib colorbox" style="background:#666">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc2"><span class="u-iconf"></span>购物车
+          </a>
+      </td>
+       <td>s-fc3</td>
+      <td>#999</td>
+      <td><span class="f-ib colorbox" style="background:#999">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc3"><span class="u-iconf"></span>购物车
+          </a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>s-fc4</td>
+      <td>#6b2f92</td>
+      <td><span class="f-ib colorbox" style="background:#6b2f92">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc4"><span class="u-iconf"></span>购物车
+          </a>
+      </td>
+      <td>s-fc5</td>
+      <td>#9944ae</td>
+      <td><span class="f-ib colorbox" style="background:#9944ae">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc5"><span class="u-iconf"></span>购物车
+          </a>
+      </td>
+    </tr>
+    <tr>
+      <td>s-fc6</td>
+      <td>#e878b2</td>
+      <td><span class="f-ib colorbox" style="background:#e878b2">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc6"><span class="u-iconf"></span>购物车
+          </a>
+      </td>
+      <td>s-fc7</td>
+      <td>#d6aff7</td>
+      <td><span class="f-ib colorbox" style="background:#d6aff7">&nbsp;</span></td>
+      <td>
+        逛超时啦，请 <a class="s-fc7">返回购物车</a> 添加有库存的商品，尽快结算哦！
+      </td>
+    </tr>
+    <tr>
+      <td>s-fc9</td>
+      <td>#7594b3</td>
+      <td><span class="f-ib colorbox" style="background:#7594b3">&nbsp;</span></td>
+      <td>
+        逛超时啦，请 <a class="s-fc9">返回购物车</a> 添加有库存的商品，尽快结算哦！
+      </td>
+      <td>s-fc10</td>
+      <td>#96c</td>
+      <td><span class="f-ib colorbox" style="background:#96c">&nbsp;</span></td>
+      <td>
+        <a href="#" class="cart s-fc10"><span class="u-iconf"></span>购物车</a>
+      </td>
+    </tr>
+  </table>
+
+  <div>
+    按钮
+    <div>
+      <span class="w-btn"><a><span>新增地址</span></a></span>
+      <span class="w-btn w-btn-1"><a href="#"><span>提现</span></a></span>
+      <span class="w-btn1"><a><span>使用</span></a></span>
+      <a href="#" class="w-btn3">确 定</a>
+      <a href="#" class="w-btn3 w-btn3-1">取 消</a>
+      <a href="#" class="w-btn3 w-btn3-2">继续申请</a>
+      <span class="w-btn4">结算</span>
+    </div>
+  </div>
+  <div>
+    数量选择
+    <div class="u-amount">
+      <b class="minus">-</b>
+      <input class="amount f-ff1" type="text" maxlength="3"/>
+      <b class="plus">+</b>
+    </div>
+  </div>
+
+  <p>品牌区块</p>
+  <span class="u-brandlogo">
+    <img src="../../res/images/img/brand.png" width="153px" height="70px"/>
+    <span class="name">EIFINI 伊芙丽</span>
+    <a class="u-btn4" href="#">关注品牌</a>
+  </span>
+  <p>个人中心 面包屑</p>
+  <div class="m-crumbs">
+    <span>首页</span><span>&gt;</span><span>个人中心</span><span>&gt;</span><span class="selected">我的mmall</span>
+  </div>
+  <p>个人中心 Tab</p>
+ <div class="m-tab1">
+    <ul>
+      <li class="item active"><a href="#">我的优惠券</a></li>
+      <li class="item"><a href="#">我的红包</a></li>
+    </ul>
+  </div>
+  <p>个人中心 左侧导航</p>
+  <div class="m-sdnav">
+        <ul>
+          <li class="item top leaf active"><a href="#">我的mmall</a></li>
+          <li class="item top leaf"><a href="#">我的订单</a></li>
+          <li class="item top"><span>个人资料</span></li>
+          <li class="item top"><a href="#">基本信息</a></li>
+          <li class="item top"><a href="#">收货地址</a></li>
+          <li class="item top"><span>管理账户</span></li>
+          <li class="item top active"><a href="#">我的钱包</a></li>
+          <li class="item top"><a href="#">优惠券/红包</a></li>
+          <li class="item top"><a href="#">我的关注</a></li>
+          <li class="item top"><a href="#">消息推送</a></li>
+        </ul>
+    </div>
+    <p>个人中心 表格</p>
+    <div style="background:#fff;padding:20px;">
+      <table class="m-table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <th>名称</th><th>描述</th><th>代码</th><th>有效期</th><th>状态</th>
+            </tr>
+            <tr>
+              <td>全场通用券</td><td>全场通用券</td><td>45481454848</td><td>2014-9-1至2014-10-1</td><td>未使用</td>
+            </tr>
+            <tr>
+              <td>全场通用券</td><td>全场通用券</td><td>45481454848</td><td>2014-9-1至2014-10-1</td><td>未使用</td>
+            </tr>
+             <tr class="used">
+              <td>全场通用券</td><td>全场通用券</td><td>45481454848</td><td>2014-9-1至2014-10-1</td><td>已使用</td>
+            </tr>
+             <tr class="used">
+              <td>全场通用券</td><td>全场通用券</td><td>45481454848</td><td>2014-9-1至2014-10-1</td><td>已使用</td>
+            </tr>
+             <tr class="old">
+              <td>全场通用券</td><td>全场通用券</td><td>45481454848</td><td>2014-9-1至2014-10-1</td><td>已过期</td>
+            </tr>
+             <tr class="old">
+              <td>全场通用券</td><td>全场通用券</td><td>45481454848</td><td>2014-9-1至2014-10-1</td><td>已过期</td>
+            </tr>
+      </table>
+    </div>
+    <p>分页</p>
+    <div class="m-page2">
+      <div class="pointer">
+        <a class="prev" href="#">上一页</a>
+        <ul>
+          <li><a href="#">1</a></li>
+          <li class="z-active"><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li class="ellips">...</li>
+        </ul>
+        <a class="next" href="#">下一页</a>
+      </div>
+    </div>
+    <!--
+    <p>custom select</p>
+    <div style="background:#fff">
+    	<a class="w-select1">
+              <select class="select">
+                <option selected=true>请选择取消理由1</option>
+                <option>请选择取消理由2</option>
+                <option>请选择取消理由3</option>
+                <option>请选择取消理由4</option>
+              </select>
+              <span class="arrow">&nbsp;</span>
+         </a>
+    </div>
+    -->
+    <p>关注的特卖和品牌列表</p>
+    <div style="padding:20px;background:#fff">
+      <div class="m-focus m-focus-1">
+        <ul class="list">
+            <li class="j-hover">
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                    EIFINI 伊芙丽<br/><span class="s-fc2">正在特卖中  </span><span class="s-fc10">立即查看 <span class="f-ff2">&gt;</span></span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                  EIFINI 伊芙丽<br/><span class="s-fc2">正在特卖中  </span><span class="s-fc10">立即查看 <span class="f-ff2">&gt;</span></span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                    EIFINI 伊芙丽<br/><span class="s-fc2">正在特卖中  </span><span class="s-fc10">立即查看 <span class="f-ff2">&gt;</span></span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                  EIFINI 伊芙丽<br/><span class="s-fc2">正在特卖中  </span><span class="s-fc10">立即查看 <span class="f-ff2">&gt;</span></span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                    EIFINI 伊芙丽<br/><span class="s-fc2">正在特卖中  </span><span class="s-fc10">立即查看 <span class="f-ff2">&gt;</span></span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                  EIFINI 伊芙丽<br/><span class="s-fc2">正在特卖中  </span><span class="s-fc10">立即查看 <span class="f-ff2">&gt;</span></span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                    EIFINI 伊芙丽<br/><span class="s-fc3">下次活动档期 2014.9.1至10.1</span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/barnd_intro.jpg" height="90px" width="208px"/>
+                <span class="desc">
+                  EIFINI 伊芙丽<br/><span class="s-fc3">敬请期待！</span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li class="j-hover">
+              <a href="#1">
+                <img src="../../res/images/img/myfocus.png" height="90px" width="208px"/>
+                <span class="desc">
+                  韩都衣舍秋季新品<br/><span class="s-fc10 f-fw1">7折起</span><span class="s-fc2">  剩7天</span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/myfocus.png" height="90px" width="208px"/>
+                <span class="desc">
+                  韩都衣舍秋季新品<br/><span class="s-fc10 f-fw1">7折起</span><span class="s-fc2">  剩7天</span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/myfocus.png" height="90px" width="208px"/>
+                <span class="desc">
+                  韩都衣舍秋季新品<br/><span class="s-fc10 f-fw1">7折起</span><span class="s-fc2">  剩7天</span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+            <li>
+              <a href="#1">
+                <img src="../../res/images/img/myfocus.png" height="90px" width="208px"/>
+                <span class="desc">
+                  韩都衣舍秋季新品<br/><span class="s-fc10 f-fw1">7折起</span><span class="s-fc2">  剩7天</span>
+                </span>
+              </a>
+              <a class="u-btn2" href="#2">取消关注</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+
+  <ul class="m-address f-cb">
+        <li class="itm active">
+          <div class="name f-fs2"><span class="f-fw1"><span class="f-fw1">张小景云</span></span><span class="s-fc3">(收)</span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm f-fs0">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="f-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+        <li class="itm">
+          <div class="name f-fs2"><span class="f-fw1">张小景云</span><span><span class="s-fs0 setdft">默认地址</span></div>
+          <div>13588231066</div>
+          <div class="f-pre dtladdress">浙江省杭州市滨江区江汉路1785号
+网易杭州研究院B座4F</div>
+          <ul class="act s-fc9"><li>修改</li><li>删除</li></ul>
+          <span class="check">&nbsp;</span>
+        </li>
+      </ul>
+      <div>订单页弹出框:简单版</div>
+      <div class="w-win w-win-reason" style="position:relative;">
+        <span class="close"></span>
+        <div class="title">您确定要取消订单吗？</div>
+        <ul class="w-reason">
+          <li>
+              <select class="w-select w-select-long">
+                <option selected=true>请选择取消理由</option>
+                <option>请选择取消理由</option>
+                <option>请选择取消理由</option>
+                <option>请选择取消理由</option>
+              </select>
+          </li>
+          <li class="s-fc3">取消后您的商品就会被别人抢走了哦！</li>
+        </ul>
+        <div class="btns"><span class="ok">保 存</span> <span class="cc">取 消</span></div>
+      </div>
+      <div>订单页弹出框:复杂版</div>
+      <div class="w-win w-win-reason" style="position:relative;">
+        <span class="close"></span>
+        <div class="title">您确定要取消订单吗？</div>
+        <ul class="w-reason">
+          <li class="word">您可以将订单金额：</li>
+          <li>
+            <input type="radio" name="type" value="type1" />
+            <span class="way">原理退回</span>
+            <span class="note">3-15个工作日到帐，请注意查询支付帐户</span>
+          </li>
+          <li>
+            <input type="radio" name="type" value="type2" />
+            <span class="way">退至网易宝</span>
+            <span class="note">即时到帐</span>
+          </li>
+          <li>
+              <select class="w-select w-select-long">
+                <option selected=true>请选择取消理由</option>
+                <option>请选择取消理由</option>
+                <option>请选择取消理由</option>
+                <option>请选择取消理由</option>
+              </select>
+          </li>
+          <li class="s-fc3 f-fs0">取消后您的商品就会被别人抢走了哦！</li>
+        </ul>
+        <div class="btns"><span class="ok">保 存</span> <span class="cc">取 消</span></div>
+      </div>
+      <div>个人中心-我的优惠券页面 弹窗</div>
+      <div class="w-win w-win-1" style="">
+        <div class="hd">
+          <h3 class="title1">使用详情</h3>
+          <span class="close"></span>
+        </div>
+        <div class="bd">
+          <p class="s-fc2 f-fs1">
+            <span class="itm">初始额度：￥<span class="f-fs4">10</span></span><span class="itm">剩余：<span class="s-fc5">￥<span class="f-fs4">0</span></span></span>
+          </p>
+          <table class="m-table" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th>时间</th><th>使用金额</th><th>订单号</th>
+              </tr>
+              <tr>
+                <td>2014-9-15</td><td>+￥5</td><td>------</td>
+              </tr>
+               <tr>
+                <td>2014-9-15</td><td>-￥5</td><td>213548796543</td>
+              </tr>
+              <tr>
+                <td>2014-9-15</td><td>-￥5</td><td>213548796543</td>
+              </tr>
+          </table>
+          <div class="btns"><a href="#" class="w-btn3">确 定</a></div>
+        </div>
+      </div>
+      <div>个人中心-收货地址 弹窗</div>
+      <div class="w-win w-win-1 w-win-1-2" style="">
+        <div class="hd">
+          <h3 class="title1">新增收货地址</h3>
+          <span class="close"></span>
+        </div>
+        <div class="bd">
+          <div class="m-form m-form-addr">
+            <div class="fitm">
+              <label class="flab"><span class="important">*</span>收件人</label>
+              <div class="fipt">
+                <input type="text" class="w-ipt w-ipt-3"/>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab"><span class="important">*</span>所在地区</label>
+              <div class="fipt fipt-addr">
+                <div class="w-select-addr">
+                    <input type="text" class="select" placeholder="请选择城市">
+                    <span class="arrow">&nbsp;</span>
+                    <!--<label class="s-fc3">请选择城市</label>-->
+                    <div class="layer">
+                      <div class="tabs"><span class="itm first crt">省份</span><span class="itm">城市</span><span class="itm">县区</span><span class="itm">街道</span><span class="itm">&nbsp;</span></div>
+                      <div class="cont">
+                        <ul class="pro">
+                          <li>
+                            <div class="tit"><span class="s-fc3">A-G</span></div>
+                            <div class="itms">
+                              <a href="" class="itm">安徽</a><a href="" class="itm">北京</a><a href="" class="itm">重庆</a><a href="" class="itm">福建</a><a href="" class="itm">甘肃</a><a href="" class="itm">广东</a><a href="" class="itm">广西</a><a href="" class="itm">贵州</a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="tit"><span class="s-fc3">H-K</span></div>
+                            <div class="itms">
+                              <a href="" class="itm">海南</a><a href="" class="itm">河北</a><a href="" class="itm">黑龙江</a><a href="" class="itm">河南</a><a href="" class="itm">湖北</a><a href="" class="itm">湖南</a><a href="" class="itm">江苏</a><a href="" class="itm">江西</a><a href="" class="itm">吉林</a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="tit"><span class="s-fc3">L-S</span></div>
+                            <div class="itms">
+                              <a href="" class="itm">辽宁</a><a href="" class="itm">内蒙古</a><a href="" class="itm">宁夏</a><a href="" class="itm">青海</a><a href="" class="itm">山东</a><a href="" class="itm">上海</a><a href="" class="itm">山西</a><a href="" class="itm">陕西</a><a href="" class="itm">四川</a>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="tit"><span class="s-fc3">T-Z</span></div>
+                            <div class="itms">
+                              <a href="" class="itm">天津</a><a href="" class="itm">新疆</a><a href="" class="itm">西藏</a><a href="" class="itm">云南</a><a href="" class="itm active">浙江</a>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="city">
+                          <a href="" class="itm active">杭州</a><a href="" class="itm">湖州</a><a href="" class="itm">嘉兴</a><a href="" class="itm">金华</a><a href="" class="itm">丽水</a><a href="" class="itm">宁波</a><a href="" class="itm">衢州</a><a href="" class="itm">绍兴</a><a href="" class="itm">台州</a><a href="" class="itm">温州</a><a href="" class="itm">舟山</a>
+                        </div>
+                        <div class="section">
+                          <a href="" class="itm active">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a>
+                        </div>
+                        <div class="street">
+                          <a href="" class="itm active">浦沿街道</a><a href="" class="itm">长河街道</a><a href="" class="itm">长河街道</a>
+                          <div class="btm"><a href="" class="itm">我不知道</a></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab"><span class="important">*</span>街道地址</label>
+              <div class="fipt">
+                <input type="text" class="w-ipt w-ipt-4"/>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab err"><span class="important">*</span>手机号</label>
+              <div class="fipt">
+                <input type="text" class="w-ipt w-ipt-3"/><label class="flab flab-1">或固定电话</label><input type="text" class="w-ipt w-ipt-5"/>
+                <span class="tip">两者至少填一项</span>
+                <!-- removed <div class="err">手机号格式错误</div> -->
+              </div>
+            </div>
+            <div class="fitm fitm-btns">
+              <div class="fipt">
+                <span class="w-chkbox"><input id="addr1" type="checkbox" checked="checked"><label for="addr1">设为默认地址</label></span>
+                <a href="#" class="w-btn3 w-btn3-1">取 消</a><a href="#" class="w-btn3">保 存</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/><br/>
+      <div style="height:500px;margin-top:300px;">
+      <div class="w-select-addr">
+          <input type="text" class="select" placeholder="请选择城市">
+          <span class="arrow">&nbsp;</span>
+          <div class="layer">
+            <div class="tabs"><span class="itm first crt">省份</span><span class="itm">县区</span><span class="itm">街道</span><span class="itm">&nbsp;</span></div>
+            <div class="cont">
+              <ul class="pro">
+                <li>
+                  <div class="tit"><span class="s-fc3">A-G</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">安徽</a><a href="" class="itm">北京</a><a href="" class="itm">重庆</a><a href="" class="itm">福建</a><a href="" class="itm">甘肃</a><a href="" class="itm">广东</a><a href="" class="itm">广西</a><a href="" class="itm">贵州</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tit"><span class="s-fc3">H-K</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">海南</a><a href="" class="itm">河北</a><a href="" class="itm">黑龙江</a><a href="" class="itm">河南</a><a href="" class="itm">湖北</a><a href="" class="itm">湖南</a><a href="" class="itm">江苏</a><a href="" class="itm">江西</a><a href="" class="itm">吉林</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tit"><span class="s-fc3">L-S</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">辽宁</a><a href="" class="itm">内蒙古</a><a href="" class="itm">宁夏</a><a href="" class="itm">青海</a><a href="" class="itm">山东</a><a href="" class="itm">上海</a><a href="" class="itm">山西</a><a href="" class="itm">陕西</a><a href="" class="itm">四川</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tit"><span class="s-fc3">T-Z</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">天津</a><a href="" class="itm">新疆</a><a href="" class="itm">西藏</a><a href="" class="itm">云南</a><a href="" class="itm active">浙江</a>
+                  </div>
+                </li>
+              </ul>
+              <div class="city">
+                <a href="" class="itm active">杭州</a><a href="" class="itm">湖州</a><a href="" class="itm">嘉兴</a><a href="" class="itm">金华</a><a href="" class="itm">丽水</a><a href="" class="itm">宁波</a><a href="" class="itm">衢州</a><a href="" class="itm">绍兴</a><a href="" class="itm">台州</a><a href="" class="itm">温州</a><a href="" class="itm">舟山</a>
+              </div>
+              <div class="section">
+                <a href="" class="itm active">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a><a href="" class="itm">上城</a>
+              </div>
+              <div class="street">
+                <a href="" class="itm active">浦沿街道</a><a href="" class="itm">长河街道</a><a href="" class="itm">长河街道</a>
+                <div class="btm"><a href="" class="itm">我不知道</a></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div style="height:400px;">
+      <div class="w-select-addr w-select-addr-1">
+          <input type="text" class="select" placeholder="请选择城市">
+          <span class="arrow">&nbsp;</span>
+          <div class="layer" style="">
+            <div class="tabs"><span class="itm first crt">省份</span><span class="itm">城市</span></div>
+            <div class="cont">
+              <ul class="pro">
+                <li>
+                  <div class="tit"><span class="s-fc3">A-G</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">安徽</a><a href="" class="itm">北京</a><a href="" class="itm">重庆</a><a href="" class="itm">福建</a><a href="" class="itm">甘肃</a><a href="" class="itm">广东</a><a href="" class="itm">广西</a><a href="" class="itm">贵州</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tit"><span class="s-fc3">H-K</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">海南</a><a href="" class="itm">河北</a><a href="" class="itm">黑龙江</a><a href="" class="itm">河南</a><a href="" class="itm">湖北</a><a href="" class="itm">湖南</a><a href="" class="itm">江苏</a><a href="" class="itm">江西</a><a href="" class="itm">吉林</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tit"><span class="s-fc3">L-S</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">辽宁</a><a href="" class="itm">内蒙古</a><a href="" class="itm">宁夏</a><a href="" class="itm">青海</a><a href="" class="itm">山东</a><a href="" class="itm">上海</a><a href="" class="itm">山西</a><a href="" class="itm">陕西</a><a href="" class="itm">四川</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="tit"><span class="s-fc3">T-Z</span></div>
+                  <div class="itms">
+                    <a href="" class="itm">天津</a><a href="" class="itm">新疆</a><a href="" class="itm">西藏</a><a href="" class="itm">云南</a><a href="" class="itm active">浙江</a>
+                  </div>
+                </li>
+              </ul>
+              <div class="city">
+                <a href="" class="itm active">杭州</a><a href="" class="itm">湖州</a><a href="" class="itm">嘉兴</a><a href="" class="itm">金华</a><a href="" class="itm">丽水</a><a href="" class="itm">宁波</a><a href="" class="itm">衢州</a><a href="" class="itm">绍兴</a><a href="" class="itm">台州</a><a href="" class="itm">温州</a><a href="" class="itm">舟山</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <p>品牌介绍页面 正在热卖 广告区块</p>
+      <div class="m-list3 m-list3-2">
+        <ul>
+          <li>
+            <div class="pic">
+              <a href="#"><img src="../../res/images/img/po.jpg" alt=""/></a>
+            </div>
+            <div class="aside">
+              <a href="#2" class="logo">
+                <img src="../../res/images/img/shop_logo.png" alt=""/>
+                <span class="fav">
+                  <i class="u-iconf">&#xF004;</i>加入收藏
+                </span>
+              </a>
+              <span class="xicon"></span>
+              <div class="info">
+                <h3>2014xxx女装专场</h3>
+                <div class="selloff">
+                  <span class="num">3</span>折起
+                </div>
+                <div class="countdown">
+                  <i class="u-iconf">&#xF003;</i><b>4</b>天<b>07</b>时<b>19</b>分<b>18</b>秒
+                </div>
+              </div>
+            </div>
+            <a class="u-icon2" href="#2">&nbsp;</a>
+          </li>
+        </ul>
+      </div>
+      <p>页面数据为空元件：</p>
+      <p>1）我的订单为空</p>
+      <div class="u-empt">
+      	<span class="u-icon3 u-icon3-3">&nbsp;</span>
+      	<p class="txt">你的列表页为空　去看看<a href="#">最新特卖</a>吧</p>
+      </div>
+      <div class="u-empt">
+      	<span class="u-icon3 u-icon3-3">&nbsp;</span>
+      	<p class="txt">还没有待支付订单</p>
+      </div>
+      <div class="u-empt">
+      	<span class="u-icon3 u-icon3-3">&nbsp;</span>
+      	<p class="txt">还没有待发货订单</p>
+      </div>
+      <div class="u-empt">
+      	<span class="u-icon3 u-icon3-3">&nbsp;</span>
+      	<p class="txt">还没有已发货订单</p>
+      </div>
+      <p>2）购物车为空</p>
+      <div class="u-empt">
+      	<span class="u-icon3 u-icon3-4">&nbsp;</span>
+      	<p class="txt">购物袋还是空的哦，再<a href="#">去逛逛</a>吧！</p>
+      </div>
+      <br/><br/><br/>
+      <div class="m-word">
+        <p>123</p>
+        <span class="u-close"></span>
+        <div class="u-arrowx">&nbsp;</div>
+      </div>
+
+
+      <div class="m-2code">
+        <img class="code" src="../../res/images/img/po.jpg" alt="">
+        <p class="lk">
+          <a href="">点击链接手动下载APP</a>
+        </p>
+      </div>
+
+      <div class="m-myfollow">
+        <div class="f-cb tabp">
+          <div class="tab z-active">品牌</div>
+          <div class="tab">活动</div>
+        </div>
+        <div class="cnt">
+          <div class="brand z-active">
+            <img class="small" src="../../res/images/img/po.jpg" alt="">
+            <div class="word">
+              <p>韩都衣舍</p>
+              <p><span class="num">1</span> 个活动进行中</p>
+            </div>
+            <div class="f-dn mask">查看品牌</div>
+          </div>
+          <div class="brand">
+            <img class="small" src="../../res/images/img/po.jpg" alt="">
+            <div class="word">
+              <p>韩都衣舍</p>
+              <p><span class="num">1</span>个活动进行中</p>
+            </div>
+          </div>
+          <div class="brand">
+            <img class="small" src="../../res/images/img/po.jpg" alt="">
+            <div class="word">
+              <p>韩都衣舍</p>
+              <p><span class="num">1</span>个活动进行中</p>
+            </div>
+          </div>
+        </div>
+        <div class="cart-ft">
+          <a href="#" target="_blank" class="w-btn4 w-btn4-1 f-cp s-fc0">查看更多</a>
+        </div>
+      </div>
+
+
+
+      <div class="m-myfollow">
+        <div class="f-cb tabp">
+          <div class="tab z-active">品牌</div>
+          <div class="tab">活动</div>
+        </div>
+        <div class="cnt">
+          <div class="sales z-active">
+            <img class="big" src="../../res/images/img/po.jpg" alt="">
+            <div class="bar0"><span>8.5</span>折起</div>
+            <div class="bar1"><span>韩都衣舍秋季新品专场</span>　<span class="time">4天07时19分18秒</span></div>
+            <div class="f-dn mask">立即抢购</div>
+          </div>
+          <div class="sales">
+            <img class="big" src="../../res/images/img/po.jpg" alt="">
+            <div class="bar0"><span>8.5</span>折起</div>
+            <div class="bar1"><span>韩都衣舍秋季新品专场</span>　<span class="time">4天07时19分18秒</span></div>
+            <div class="f-dn mask">立即抢购</div>
+          </div>
+          <div class="sales">
+            <img class="big" src="../../res/images/img/po.jpg" alt="">
+            <div class="bar0"><span>8.5</span>折起</div>
+            <div class="bar1"><span>韩都衣舍秋季新品专场</span>　<span class="time">4天07时19分18秒</span></div>
+            <div class="f-dn mask">立即抢购</div>
+          </div>
+        </div>
+        <div class="cart-ft">
+          <a href="#" target="_blank" class="w-btn4 w-btn4-1 f-cp s-fc0">查看更多</a>
+        </div>
+      </div>
+
+      <div class="m-myfollow">
+        <div class="f-cb tabp">
+          <div class="tab z-active">品牌</div>
+          <div class="tab">活动</div>
+        </div>
+        <div class="cnt">
+          <div class="empty">
+            <img class="normal" src="../../res/images/img/po.jpg" alt="">
+            <div class="word">
+              <p class="big">关注为空</p>
+              <p>快去看看最新的活动吧</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-win">
+        <div class="btns">
+          <a class="w-btn3 w-btn3-3">在线支付</a>
+        </div>
+        <div class="btns">
+          <a class="w-btn4 w-btn4-3">货到付款</a>
+        </div>
+      </div>
+
+      <div style="margin-top:100px;">
+        <div class="m-notecb">
+          <span>添加提醒成功</span>
+          <div class="arrow">
+            <span class="green0"></span>
+            <span class="green1"></span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:100px;">
+        <div class="m-notecb-red">
+          <span>输入正确的邮箱或手机号</span>
+          <div class="arrow">
+            <span class="green0"></span>
+            <span class="green1"></span>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+</body>
+</html>

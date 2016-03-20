@@ -1,0 +1,66 @@
+{
+  "code": 200,
+  "result": {
+    "userId": 1,
+    "poList": [
+      {
+        "id": 0,
+        "type": "po",
+        "po": null,
+        "name": "onlypo",
+        "skulist": [
+          {
+            "id": 4,
+            "type": "cartsku",
+            "name": "超值的衣服，完美的身材4",
+            "url": "http://baidu.com",
+            "originalPrice": null,
+            "retailPrice": 22.0,
+            "cartPrice": 44.0,
+            "count": 2,
+            "inventroyCount": 5,
+            "overTime": false,
+            "selected": false,
+            "delete": false
+          },
+          {
+            "id": 4,
+            "type": "cartsku",
+            "name": "超值的衣服，完美的身材4",
+            "url": "http://baidu.com",
+            "originalPrice": null,
+            "retailPrice": 22.0,
+            "cartPrice": 44.0,
+            "count": 2,
+            "inventroyCount": 5,
+            "overTime": false,
+            "selected": false,
+            "delete": false
+          },
+          {
+            "id": 4,
+            "type": "cartsku",
+            "name": "超值的衣服，完美",
+            "url": "http://baidu.com",
+            "originalPrice": null,
+            "retailPrice": 22.0,
+            "cartPrice": 44.0,
+            "count": 2,
+            "inventroyCount": 5,
+            "overTime": false,
+            "selected": false,
+            "delete": false
+          }
+        ],
+        "selected": true,
+        "delete": false
+      }
+    ],
+    "cartInfoVO": {
+      "leftTime": 5000,
+      "totalPrice": 199.90,
+      "disCountUrl": null,
+      "free": false
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+        <!-- DefaultCache setting. -->
+        <defaultCache maxBytesLocalHeap="100M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3000"
+                timeToLiveSeconds="3000" overflowToDisk="false" diskPersistent="false" />
+
+        <!-- Special objects setting. -->
+        <cache name= "albumCache"  maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+                timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+   </ehcache>

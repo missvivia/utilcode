@@ -1,0 +1,114 @@
+<ul class="nav nav-tabs" id="j-tab-box">
+  <li class="{{status==0?'active':''}}" on-click={{this.changeStatus(0)}}><a>全部</a></li>
+  <li class="{{status==1?'active':''}}" on-click={{this.changeStatus(1)}}><a>待收货</a></li>
+  <li class="{{status==2?'active':''}}" on-click={{this.changeStatus(2)}}><a>异常件待退款</a></li>
+  <li class="{{status==3?'active':''}}" on-click={{this.changeStatus(3)}}><a>正常件待退款</a></li>
+  <li class="{{status==4?'active':''}}" on-click={{this.changeStatus(4)}}><a>拒绝</a></li>
+  <li class="{{status==5?'active':''}}" on-click={{this.changeStatus(5)}}><a>已退款</a></li>
+  <li class="{{status==6?'active':''}}" on-click={{this.changeStatus(6)}}><a>已取消</a></li>
+</ul>
+<div class="row f-mgtb">
+  <div class="col-sm-7">
+      <div class="col-sm-12 form-inline">
+        按申请时间
+        <datepicker select={{startTime}}> </datepicker>
+        至
+        <datepicker select={{endTime}}></datepicker>
+        <button class="btn btn-primary" on-click={{this.search(0)}}>查找</button>
+      </div>
+  </div>
+  <div class="col-sm-5" id="searchbox">
+    <div class="col-sm-12 form-inline">
+      <select class="col-sm-3 form-control j-flag">
+        {{#list typeList as item}}
+        <option value="{{item.id}}">{{item.name}}</option>    
+        {{/list}}
+      </select>
+      <input type="text" class="col-sm-7 form-control j-flag" on-keyup={{this.onKeyUp($event)}}>
+      <button class="col-sm-2 btn btn-primary" id="search1" on-click={{this.search(1)}}>搜索</button>
+    </div>
+  </div>
+</div>
+<div class="m-wtable m-wtable-1" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>销售站点</th>
+        <th>退款商品及原因</th>
+        <th>实付金额</th>
+        <th>运费</th>
+        <th>应退款金额</th>
+        <th>退货物流信息</th>
+        <th>实退金额及方式</th>
+        <th>处理人</th>
+        <th>状态</th>
+        <th>操作原因</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td colspan=12>
+            <div>
+              <div class="col-sm-2">售后编号:{{tpl.retId}}</div>
+              <div class="col-sm-2">原订单号:<a target="_blank" href="/order/orderdetail?type=0&key={{tpl.orderId}}">{{tpl.orderId}}</a></div>
+              <div class="col-sm-2">原包裹号:<a target="_blank" href="/order/orderdetail?type=0&key={{tpl.orderId}}">{{tpl.ordPkgId}}</a></div>
+              <div class="col-sm-3">申请时间:{{tpl.requestTime|format}}</div>
+              <div class="col-sm-3">最后处理时间:{{tpl.dealTime|format}}</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>{{tpl.saleArea}}</td>
+          <td>
+            <div class="wproduct">
+              {{#list tpl.products as item}}
+              <div>【{{item.product.brand}}】 {{item.product.product}} {{item.product.color}} {{item.product.size}} ({{item.product.reason}})</div>
+              {{/list}}
+            </div>
+          </td>
+          <td>{{tpl.pay}}</td>
+          <td>{{tpl.expressPay}}</td>
+          <td>{{tpl.returnPrice}}</td>
+          <td>
+            <div>{{tpl.expressCompany}}</div>
+            <div>{{tpl.expressNum}}</div>
+          </td>
+          <td>
+            {{#list tpl.returnMethod as item}}
+              <div>{{item.refundType}}：￥{{item.price}}</div>
+            {{/list}}
+          </td>
+          <td>{{tpl.dealer}}</td>
+          <td>{{statusMap[tpl.status.intValue]}}</td>
+          <td>{{tpl.optionExplain}}</td>
+          <td>
+            {{#if tpl.status.intValue===4 || tpl.status.intValue===8}}
+            <div><a target="_blank" href="/order/returndetail?returnId={{tpl.retId}}&userId={{tpl.userId}}">查看详情</a></div>
+              {{#if tpl.canCancelRefuse}}
+              <div><a on-click={{this.goback(tpl)}}>撤销拒绝</a></div>
+              {{/if}}
+              {{#if tpl.canDeprecateReturn}}
+              <div><a on-click={{this.cancelRequest(tpl)}}>取消申请</a></div>
+              {{/if}}
+            {{#elseif tpl.status.intValue===3 || tpl.status.intValue===7}}
+            <div><a target="_blank" href="/order/returndetail?returnId={{tpl.retId}}&userId={{tpl.userId}}">查看详情</a></div>
+              {{#if tpl.canPass}}
+              <div><a on-click={{this.pass(tpl)}}>退款</a></div>
+              {{/if}}
+              {{#if tpl.canRefuse}}
+              <div><a on-click={{this.reject(tpl)}}>拒绝</a></div>
+              {{/if}}
+            {{#else}}
+            <div><a target="_blank" href="/order/returndetail?returnId={{tpl.retId}}&userId={{tpl.userId}}">查看详情</a></div>
+            {{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

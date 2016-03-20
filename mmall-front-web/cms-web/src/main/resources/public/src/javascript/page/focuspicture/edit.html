@@ -1,0 +1,108 @@
+<form method="post" class="form-horizontal m-form-polist">
+  <div class="form-group">
+    <div>
+      <label class="col-sm-3 control-label">标题：</label>
+      <div class="{{form.title.$inValidate? 'm-error': ''}}">
+        <div class="col-sm-4">
+          <input type="text" name="title" data-auto-focus="true"  class="form-control" r-model={{spread.title}}>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">推广类型：</label>
+    <div class="col-sm-9">
+      <label class="radio-inline">
+        <input type="radio" name="promotionType"  value=0 r-model={{spread.promotionType}}> PO
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="promotionType" value=1 r-model={{spread.promotionType}}> 活动/其他
+      </label>
+    </div>
+  </div>
+  {{#if spread.promotionType == 0}}
+  <div class="form-group">
+    <label class="col-sm-3 control-label">PO编号：</label>
+    <div class="{{poInvalidate || form.scheduleId.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-4">
+        <input type="text" class="form-control" placeholder="PO编号" r-model={{spread.scheduleId}} on-change={{this.checkPo(spread.scheduleId)}}>
+      </div>
+      <div class="col-sm-4">
+        <label class="text f-dn">无效PO编号</label>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if spread.promotionType == 1}}
+  <div class="form-group">
+    <label class="col-sm-3 control-label">活动链接：</label>
+    <div class="{{form.activityUrl.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-6">
+        <input type="url" class="form-control" placeholder="活动链接" r-model={{spread.activityUrl}}>
+      </div>
+      <div class="col-sm-3">
+        <label class="text f-dn">链接格式错误</label>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  <div class="form-group">
+    <label class="col-sm-3 control-label">推广平台：</label>
+    <div class="{{form.platforms.$inValidate? 'm-error': ''}}">
+      {{#list platformsList as x}}
+        <div class="col-sm-2">
+          <input class="f-fl" type="checkbox" r-model={{platforms[x]}}/><label>{{x}}</label>
+        </div>
+      {{/list}}
+      <div class="col-sm-2">
+        <label class="text f-dn">选择推广平台</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">图片：</label>
+    <div>
+      <div class="col-sm-3">
+        <imgupload img={{spread.imgUrl}}></imgupload>
+      </div>
+      <div class="{{form.imgUrl.$inValidate? 'm-error': ''}}">
+        <div class="col-sm-3">
+          <input name="imgUrl" value={{spread.imgUrl}} class="form-control" placeholder="输入图片URL" r-model={{spread.imgUrl}} />
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <label class="text f-dn">图片地址不正确</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">上线日期：</label>
+    <div class="col-sm-6">
+      <datepicker select={{spread.startTime}}></datepicker>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">下线日期：</label>
+    <div >
+      <div class="col-sm-6">
+        <datepicker select={{spread.endTime}} start={{spread.startTime}}></datepicker>
+      </div>
+      <div class="col-sm-3 {{form.endTime.$inValidate? 'm-error': ''}}">
+        <label class="text f-dn">日期错误</label>
+      </div>
+    </div>
+  </div>
+  <!--div  class="form-group">
+    <label class="col-sm-3 control-label">展示站点：</label>
+    <div class="m-sites col-sm-9 f-cb">
+      {{#list cityList as x}}
+        <div class="col-sm-3">
+          <input type="checkbox" r-model={{citys[x]}} id={{x}} /><label>{{citysname[x]}}</label>
+        </div>
+      {{/list}}
+      <div class="col-sm-3 {{form.citys.$inValidate? 'm-error': ''}}">
+        <label class="text f-dn">请选择站点</label>
+      </div>
+    </div>
+  </div-->
+</form>

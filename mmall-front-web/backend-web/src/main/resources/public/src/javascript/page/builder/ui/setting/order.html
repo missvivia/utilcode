@@ -1,0 +1,24 @@
+<textarea name="ntp" id="#<mtpl>">
+    <div class="modal w-bd-setting w-bd-setting-cat">
+      <div class="modal-dialog">
+        <form class="modal-content form-horizontal">
+          <div class="modal-header j-dragger">
+            <button type="button" class="close" data-action="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">设置类目顺序</h4>
+          </div>
+          <div class="modal-body m-bd-srt j-flag"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-action="close">取消</button>
+            <button type="button" class="btn btn-primary" data-action="submit">确定</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</textarea>
+<textarea name="jst" id="#<ltpl>">
+  <ol class="list-group">
+  {list xlist as x}
+  <li class="list-group-item j-item move" data-value="${x.id}">${x.name}</li>
+  {/list}
+  </ol>
+</textarea>

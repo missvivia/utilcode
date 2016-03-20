@@ -1,0 +1,13 @@
+{
+	"code": 200,
+	"result": {
+		"total": 100,
+		"list": [{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"},
+{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"},
+{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"},
+{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"},
+{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"},
+{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"},
+{"brandNameEn":"adidas","brandNameZh":"阿迪达思","logo40":"/res/images/logo/adidas.jpg","logo80":"/res/images/logo/adidas.jpg","logo120":"/res/images/logo/adidas.jpg","logo160":"/res/images/logo/adidas.jpg"}]
+			}
+}

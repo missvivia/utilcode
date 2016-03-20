@@ -1,0 +1,37 @@
+
+<table class="m-table" border="0" cellspacing="0" cellpadding="0">
+<tbody>
+    <tr>
+      <th style="width:240px;">名称</th><th style="width:120px;">描述</th><th style="width:100px;">代码</th><th style="width:210px;">有效期</th>
+      <th>
+        <select class='w-select' on-change={{this.onChange($event)}}>
+           <option value="-1">全部状态</option>
+           <option value="0">可用</option>
+           <option value="8">未生效</option>
+           <option value="3">已使用</option>
+           <option value="2">已过期</option>
+           <option value="5">已失效</option>
+         </select>
+      </th>
+    </tr>
+    {{#if list.length > 0}}
+    {{#list list as item}}
+    <tr {{#if item.couponState ==3}}class="used"{{#elseif item.couponState !=0 && item.couponState !=3 && item.couponState !=5}}class="old"{{/if}}>
+      <td>{{item.name}}</td>
+      <td style="width:90px;">{{item.description}}</td>
+      <td>{{item.couponCode}}</td>
+      <td>{{item.startTime|format}}至{{item.endTime|format}}</td>
+      <td>{{#if item.couponState ==0}}<span class="s-fc17">可用</span>{{#elseif item.couponState ==8}}未生效<br/>{{#elseif item.couponState ==5}}已失效<br/>{{#elseif item.couponState ==3}}已使用<br/> 订单：{{#list item.orderSerial as orderId}}<a class="s-fc3" href="/myorder/detail?orderId={{orderId}}" target="_blank">{{orderId}}</a><br/>{{/list}}{{#else}}已过期{{/if}}</td>
+    </tr>
+    {{/list}}
+    {{/if}}
+  </tbody>
+</table>
+{{#if list.length > 0}}
+<ucenterpager total={{Math.ceil(total/limit)}} current={{current}}></ucenterpager>
+{{#else}}
+<div class="u-empt">
+  <span class="u-icon3">&nbsp;</span>
+  <p class="txt">您暂时还没有{{#if state ==0}}可用的{{#elseif state == 8}}未生效的{{#elseif state == 5}}已失效的{{#elseif state ==3}}已使用的{{#elseif state ==2}}已过期的{{/if}}优惠券哦！</p>
+</div>
+{{/if}}

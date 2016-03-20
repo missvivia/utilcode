@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 1999-2011 Alibaba Group.
+ -  
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -  
+ -      http://www.apache.org/licenses/LICENSE-2.0
+ -  
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:reference id="consigneeAddressService" interface="com.xyl.mmall.order.service.ConsigneeAddressService" />	
+	<dubbo:reference id="tradeService" interface="com.xyl.mmall.order.service.TradeService" />
+	<dubbo:reference id="orderBriefService" interface="com.xyl.mmall.order.service.OrderBriefService" />
+	<dubbo:reference id="orderService" interface="com.xyl.mmall.order.service.OrderService" />
+	<dubbo:reference id="orderCalService" interface="com.xyl.mmall.order.service.OrderCalService" />
+	<dubbo:reference id="orderMiscService" interface="com.xyl.mmall.order.service.OrderMiscService" />
+	<dubbo:reference id="orderTCCService" interface="com.xyl.mmall.order.service.OrderTCCService" >
+		<dubbo:method name="tryAddOrderByTCC" async="true" />
+		<dubbo:method name="tryCallOffOrderByTCC" async="true" />
+	</dubbo:reference>
+	<dubbo:reference id="skuOrderStockService" interface="com.xyl.mmall.order.service.SkuOrderStockService" />
+	<dubbo:reference id="returnQueryService" interface="com.xyl.mmall.order.service.ReturnQueryService" />
+	<dubbo:reference id="returnUpdateService" interface="com.xyl.mmall.order.service.ReturnUpdateService" />
+	<dubbo:reference id="CODAuditService" interface="com.xyl.mmall.order.service.CODAuditService" />
+	<dubbo:reference id="orderExpInfoService" interface="com.xyl.mmall.order.service.OrderExpInfoService" />
+	<dubbo:reference id="orderUnreadService" interface="com.xyl.mmall.order.service.OrderUnreadService" />
+	<dubbo:reference id="invoiceService" interface="com.xyl.mmall.order.service.InvoiceService" />
+	<dubbo:reference id="returnPackageQueryService" interface="com.xyl.mmall.order.service.ReturnPackageQueryService" />
+	<dubbo:reference id="returnPackageUpdateService" interface="com.xyl.mmall.order.service.ReturnPackageUpdateService" />
+	<dubbo:reference id="orderPackageSimpleService" interface="com.xyl.mmall.order.service.OrderPackageSimpleService"/>
+	<dubbo:reference id="returnFormService" interface="com.xyl.mmall.order.service.ReturnFormService" />
+	<dubbo:reference id="tradeInternalProxyService" interface="com.xyl.mmall.order.service.TradeInternalProxyService" />
+	<dubbo:reference id="hbRecycleLogService" interface="com.xyl.mmall.order.service.HBRecycleLogService" />
+	<!-- Participant -->
+	<dubbo:reference id="addOrderParticipant" interface="com.xyl.mmall.order.service.AddOrderParticipant" />
+	<dubbo:reference id="callOffOrderParticipant" interface="com.xyl.mmall.order.service.CallOffOrderParticipant" />
+	<dubbo:reference id="orderReplenishService" interface="com.xyl.mmall.order.service.OrderReplenishService" />
+</beans>

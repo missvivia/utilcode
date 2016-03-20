@@ -1,0 +1,59 @@
+{{#if loading}}
+<div class="g-load">
+    <div class="m-load">
+        <span class="icon u-loading-2"></span>
+        <span class="text">加载中...</span>
+    </div>
+</div>
+{{/if}}
+<div {{#if loading}}class="f-dn"{{/if}}>
+    <div id="couponSelect" {{#if !!hasCoupon }}class="g-select"{{#else}}class="g-select f-dn"{{/if}}></div>
+    {{#if list.length > 0}}
+    <div class="g-couponlist">
+        {{#list list as item}}
+        <div on-click="{{this.__tap(item_index)}}"
+            {{#if item.couponState ==2||item.couponState ==3||item.couponState ==5||item.couponState ==8}}
+                class="m-coupon m-coupon-3"
+            {{#elseif item_index%3 ==0}}
+                class="m-coupon"
+            {{#elseif item_index%3 ==1}}
+                class="m-coupon m-coupon-1"
+            {{#else}}
+                class="m-coupon m-coupon-2"
+            {{/if}}>
+            <div class="title">
+                <div>
+                    <p class="name">{{item.name}}</p>
+                    <p>{{item.condition}}</p>
+                </div>
+            </div>
+            <div class="sbg"></div>
+            <div class="info">
+                {{#if item.couponState ==0}}
+                    <div>
+                        <p>有效期</p>
+                        <p>从{{item.startTime|format}}</p>
+                        <p>至{{item.endTime|format}}</p>
+                    </div>
+                {{#elseif item.couponState ==2}}
+                    <p>已过期</p>
+                {{#elseif item.couponState ==3}}
+                    <p>已使用</p>
+                {{#elseif item.couponState ==5}}
+                    <p>已失效</p>
+                {{#elseif item.couponState ==8}}
+                    <p>未生效</p>
+                {{/if}}
+            </div>
+        </div>
+        {{/list}}
+    </div>
+    {{#else}}
+    <div class="g-norecord">
+        <div class="m-nocoupon">
+            <div class="icon"></div>
+            <p class="desc">您还没有{{#if state==0}}可用的{{#elseif state==2}}已过期的{{#elseif state==3}}已使用的{{#elseif state==5}}已失效的{{#elseif state==8}}未生效的{{/if}}优惠券</p>
+        </div>
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,13 @@
+<form method="get" class="form-horizontal">
+  <div class="form-group">
+  	{{#if message}}
+    <div class="col-sm-10">
+      <textarea type="text" class="form-control" r-model='message' style="height:200px"></textarea>
+    </div>
+    {{#else}}
+    <div class="col-sm-10">
+      	导入成功
+    </div>
+    {{/if}}
+  </div>
+</form>

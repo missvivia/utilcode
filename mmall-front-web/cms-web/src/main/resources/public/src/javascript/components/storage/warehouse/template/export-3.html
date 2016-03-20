@@ -1,0 +1,34 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>日期</th>
+       <th>仓库</th>
+       <th>供应商</th>
+       <th>应到数量</th>
+       <th>正品实入数量</th>
+       <th>良品率</th>
+       <th>预约时间</th>
+       <th>实到时间</th>
+       <th>到货及时率</th>
+       <th>送货得分</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.dateTime|format}}</td>
+         <td>{{item.warehouseName}}</td>
+         <td>{{item.supplierName}}</td>
+         <td>{{item.total}}</td>
+         <td>{{item.arrivedNormalCount}}</td>
+         <td>{{(item.normalRatio)+'%'}}</td>
+         <td>12:00</td>
+         <td>{{item.arrivalTime|format:"HH:mm"}}</td>
+         <td>{{item.arrivalRatio}}</td>
+         <td>{{item.score}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

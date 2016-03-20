@@ -1,0 +1,36 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>门店名</th>
+        <th>详细地址</th>
+        <th>联系电话</th>
+        <th>门店联系人</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+           <td>{{tpl.shopName}}</td>
+          <td>{{tpl.province.name}}{{#if tpl.city.id>0}}{{tpl.city.name}}{{/if}}{{#if tpl.district.id>0}}{{tpl.district.name}}{{/if}}{{#if tpl.street.id>0}}{{tpl.street.name}}{{/if}}{{tpl.shopAddr}}</td>
+          <td>{{tpl.shopZone}}-{{tpl.shopTel}}</td>
+          <td>{{tpl.shopContact}}</td>
+          <td>{{tpl.status.desc}}</td>
+          <td class="op">
+           {{#if tpl.status.intValue !==2}}
+           <a href="javascript:void(0)" class="btn btn-primary f-mgl" on-click="{{this.edit(tpl)}}">编辑</a>
+           <a href="javascript:void(0)" class="btn btn-primary f-mgl" on-click={{this.active(tpl)}}>启用</a>
+           <a href="javascript:void(0)" class="btn btn-primary f-mgl" on-click={{this.del(tpl)}}>删除</a> 
+          {{#else}}
+          <a href="javascript:void(0)" class="btn btn-primary f-mgl" on-click="{{this.stop(tpl)}}">停用</a>
+          <a href="javascript:void(0)" class="btn btn-primary f-mgl" on-click={{this.view(tpl)}}>查看</a>
+          {{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<pager total={{Math.ceil(total/5)}} current={{current}}></pager>

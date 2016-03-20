@@ -1,0 +1,5 @@
+/*container*/
+.g-container{position:relative;min-width:320px;max-width:640px;-webkit-overflow-scrolling:touch;overflow:scroll;}
+
+/*主页Iframe*/
+#m-misshome{position:absolute;top:60px;left:0px;width:100%;-webkit-overflow-scrolling:touch;overflow:scroll; }

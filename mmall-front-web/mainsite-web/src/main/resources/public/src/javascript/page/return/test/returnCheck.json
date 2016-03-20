@@ -1,0 +1,27 @@
+{
+		returnPrice:{
+			expPrice:8,//扣除的运费
+			couponPrice:99,//扣除优惠券费用
+			promotion：100,//扣除的活动费用
+			goodsTotalRPrice：20000,//商品总金额
+			hbPrice：2937.20，//退款金额
+		},
+		returnWay:[//退回的类型
+			{
+				returnType:"优惠券",
+				sum:10,//签
+				account:""
+			},
+			{
+				returnType:"招商银行",
+				sum:100,//签
+				account:"6225 **** **** 5648"
+			},
+			{
+				returnType:"网易宝",
+				sum:100,//签
+				account:"6225 **** **** 5648"
+
+			}
+		]
+}

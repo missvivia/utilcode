@@ -1,0 +1,42 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>导出状态</th>
+      <th>拣货单号</th>
+      <th>拣货总数</th>
+      <th>创建日期</th>
+      <th>首次导出时间</th>
+      <th>导出数</th>
+      <th>出仓状态</th>
+      <th>入库状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list currentlist as item}}
+      <tr class="info">
+          <td colspan="9" style="text-align:left;"><span>{{item.title}}</span></td>
+      </tr>
+      {{#list item.pickList as tpl}}
+      <tr>
+          <td>{{#if tpl.exportTimes>0}}已导出{{#else}}未导出{{/if}}</td>
+					<td>{{tpl.pickOrderId}}</td>
+					<td>{{tpl.pickTotalQuantity}}</td>
+					<td>{{tpl.createTime|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+					<td>{{tpl.firstExportTime|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+					<td>{{tpl.exportTimes}}</td>
+                    <td>{{#if tpl.pickState=='UNPICK'}}未出仓{{#elseif tpl.pickState=='PICKING'}}拣货中{{#elseif tpl.pickState=='PICKED'}}已出仓{{/if}}</td>
+                    <td>{{#if tpl.shipState=='RECEIVED'}}已入库，仓库已接收{{#elseif tpl.shipState=='UNSEDN'}}未入库，未推送给仓库{{#elseif tpl.shipState=='SEND'}}未入库，已推送给仓库{{#elseif tpl.shipState=='CANCEL'}}未入库，超时取消{{/if}}</td>
+        <td class="f-tal">
+            <a class="j-flag" href="/jit/exportPK/{{tpl.pickOrderId}}" target="_blank" on-click={{this.onExport(tpl,item_index,tpl_index)}}>导出</a>
+            <a href="/jit/pkDetail/{{tpl.pickOrderId}}">详情</a>
+            {{#if tpl.pickState=='UNPICK'}}<a href="javascript:void(0)" on-click={{this.confirmPick(tpl.pickOrderId)}}>确认出仓</a>{{/if}}
+        </td>
+      </tr>
+      {{/list}}
+    {{/list}}
+  </tbody>
+</table>
+<div class="text-right">
+    <pager total={{Math.ceil(total / limit)}} current={{current}} ></pager>
+</div>

@@ -1,0 +1,13 @@
+{
+    "udImgIds": "11,12",
+    "udProductIds": "2,5",
+    "udSetting": "[{\"hotspots\":[{\"top\":147,\"left\":216,\"height\":249,\"width\":227,\"id\":\"2\"},{\"top\":305,\"left\":445,\"height\":245,\"width\":211,\"id\":\"5\"}],\"imgId\":\"11\",\"spaceTop\":326,\"type\":\"2\"},{\"hotspots\":[{\"top\":88,\"left\":6,\"height\":401,\"width\":202,\"id\":\"5\"},{\"top\":88,\"left\":217,\"height\":401,\"width\":210,\"id\":\"5\"},{\"top\":87,\"left\":434,\"height\":404,\"width\":209,\"id\":\"\"},{\"top\":88,\"left\":650,\"height\":402,\"width\":210,\"id\":\"\"},{\"top\":87,\"left\":868,\"height\":405,\"width\":209,\"id\":\"\"},{\"top\":656,\"left\":19,\"height\":388,\"width\":188,\"id\":\"\"},{\"top\":657,\"left\":216,\"height\":389,\"width\":210,\"id\":\"\"},{\"top\":657,\"left\":434,\"height\":389,\"width\":210,\"id\":\"\"},{\"top\":655,\"left\":651,\"height\":391,\"width\":207,\"id\":\"\"},{\"top\":655,\"left\":867,\"height\":390,\"width\":212,\"id\":\"\"}],\"imgId\":\"12\",\"spaceTop\":10,\"type\":\"2\"}]",
+    "bgImgId": "1",
+    "bgSetting": "{}",
+    "headerImgId": "2",
+    "headerSetting": "{\"top\":0,\"left\":421,\"fontFamily\":\"Arial\",\"fontWeight\":\"normal\",\"fontSize\":20,\"fontColor\":\"rgb(0, 0, 0)\",\"bgColor\":\"rgb(255, 255, 255)\",\"opacity\":50}",
+    "allListPartVisiable": true,
+    "allListPartOthers": "{\"sortList\":[],\"sortType\":0,\"bgColor\":\"rgb(229, 229, 229)\",\"opacity\":100,\"spaceTop\":46}",
+    "mapPartVisiable": true,
+    "mapPartOthers": null
+}

@@ -1,0 +1,18 @@
+{
+	"code": 200,
+	"result": {
+		"total": 100,
+		"list": [{"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"},
+				 {"scheduleId":123,"name":"韩都衣舍秋季新品","discount":"7","remain":7,"imgUrl":"/res/images/img/myfocus.png"}
+				 ]
+	}
+}

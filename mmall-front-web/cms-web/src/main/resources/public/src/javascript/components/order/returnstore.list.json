@@ -1,0 +1,69 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "barCode": "米白色简约箱型短款宽松外套",
+        "productCode": 12,
+        "name": 10,
+        "color": 1,
+        "url": 0,
+        "returnNum": "xxx",
+        "getNum": "xxx",
+        "orderNum": "xxx",
+        "expressCompany": "xxx",
+        "expressNum": "xxx",
+        "sendTime": 1413117199642,
+        "status": 1,
+        "remark": "xxx"
+      },
+      {
+        "barCode": "米白色简约箱型短款宽松外套",
+        "productCode": 11,
+        "name": 10,
+        "color": 1,
+        "url": 0,
+        "returnNum": "xxx",
+        "getNum": "xxx",
+        "orderNum": "xxx",
+        "expressCompany": "xxx",
+        "expressNum": "xxx",
+        "sendTime": 1413117199642,
+        "status": 1,
+        "remark": "xxx"
+      },
+      {
+        "barCode": "xx",
+        "productCode": 13,
+        "name": 10,
+        "color": 1,
+        "url": 0,
+        "returnNum": "xxx",
+        "getNum": "xxx",
+        "orderNum": "xxx",
+        "expressCompany": "xxx",
+        "expressNum": "xxx",
+        "sendTime": 1413117199642,
+        "status": 1,
+        "remark": "xxx"
+      },
+      {
+        "barCode": "米白色简约箱型短款宽松外套",
+        "productCode": 14,
+        "name": 10,
+        "color": 1,
+        "url": 0,
+        "returnNum": "xxx",
+        "getNum": "xxx",
+        "orderNum": "xxx",
+        "expressCompany": "xxx",
+        "expressNum": "xxx",
+        "sendTime": 1413117199642,
+        "status": 1,
+        "remark": "xxx"
+      }
+    ]
+  }
+}
+  

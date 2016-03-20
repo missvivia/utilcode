@@ -1,0 +1,86 @@
+{
+	"code": 200,
+	"result": {
+	"orderList": [{"orderId":1,"orderTime":1412912005646,"orderDate":"2014-10-10 11:33:25","payCloseCD":0,"payTime":0,"omsTime":0,"confirmTime":0,"cartRPrice":1000.00,"cartOriRPrice":2000.00,"expOriPrice":10.00,"expUserPrice":10.00,"expSysPayPrice":0.00,"payState":{"desc":"网易宝未支付","intValue":20},"orderFormState":{"name":"未付款","desc":"等待付款","intValue":0},"cancelSource":null,"returnState":null,"orderFormPayMethod":{"desc":"网易宝支付","intValue":0},"expInfo":{"province":"浙江省","city":"杭州","section":"西湖区","address":"一个犄角旮旯的地方","zipcode":"310000","consigneeName":"王小二","consigneeTel":"13333333333","consigneeMobile":"13333333333"},"packageList":[{"packageIndex":0,"packageId":1,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]},{"packageIndex":1,"packageId":2,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]}]},
+	{"orderId":1,"orderTime":1412912005646,"orderDate":"2014-10-10 11:33:25","payCloseCD":0,"payTime":0,"omsTime":0,"confirmTime":0,"cartRPrice":1000.00,"cartOriRPrice":2000.00,"expOriPrice":10.00,"expUserPrice":10.00,"expSysPayPrice":0.00,"payState":{"desc":"网易宝未支付","intValue":20},"orderFormState":{"name":"未付款","desc":"等待付款","intValue":0},"cancelSource":null,"returnState":null,"orderFormPayMethod":{"desc":"网易宝支付","intValue":0},"expInfo":{"province":"浙江省","city":"杭州","section":"西湖区","address":"一个犄角旮旯的地方","zipcode":"310000","consigneeName":"王小二","consigneeTel":"13333333333","consigneeMobile":"13333333333"},"packageList":[{"packageIndex":0,"packageId":1,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]},{"packageIndex":1,"packageId":2,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]}]},
+	{"orderId":1,"orderTime":1412912005646,"orderDate":"2014-10-10 11:33:25","payCloseCD":0,"payTime":0,"omsTime":0,"confirmTime":0,"cartRPrice":1000.00,"cartOriRPrice":2000.00,"expOriPrice":10.00,"expUserPrice":10.00,"expSysPayPrice":0.00,"payState":{"desc":"网易宝未支付","intValue":20},"orderFormState":{"name":"未付款","desc":"等待付款","intValue":0},"cancelSource":null,"returnState":null,"orderFormPayMethod":{"desc":"网易宝支付","intValue":0},"expInfo":{"province":"浙江省","city":"杭州","section":"西湖区","address":"一个犄角旮旯的地方","zipcode":"310000","consigneeName":"王小二","consigneeTel":"13333333333","consigneeMobile":"13333333333"},"packageList":[{"packageIndex":0,"packageId":1,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]},{"packageIndex":1,"packageId":2,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]}]},
+	{"orderId":1,"orderTime":1412912005646,"orderDate":"2014-10-10 11:33:25","payCloseCD":0,"payTime":0,"omsTime":0,"confirmTime":0,"cartRPrice":1000.00,"cartOriRPrice":2000.00,"expOriPrice":10.00,"expUserPrice":10.00,"expSysPayPrice":0.00,"payState":{"desc":"网易宝未支付","intValue":20},"orderFormState":{"name":"未付款","desc":"等待付款","intValue":0},"cancelSource":null,"returnState":null,"orderFormPayMethod":{"desc":"网易宝支付","intValue":0},"expInfo":{"province":"浙江省","city":"杭州","section":"西湖区","address":"一个犄角旮旯的地方","zipcode":"310000","consigneeName":"王小二","consigneeTel":"13333333333","consigneeMobile":"13333333333"},"packageList":[{"packageIndex":0,"packageId":1,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]},{"packageIndex":1,"packageId":2,"mailNO":null,"expressCompany":"EMS_BJTK","expressCompany2":"NULL","orderPackageState":{"name":"未向OMS发送信息","desc":"待发货","intValue":0},"omsTime":0,"expSTime":0,"confirmTime":0,"cartList":[{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]},{"retailPrice":250.00,"originalPrice":500.00,"count":1,"orderSkuList":[{"oriRPrice":500.00,"rprice":250.00,"hdSPrice":0.00,"couponSPrice":0.00,"totalCount":1,"productId":1,"skuId":1,"skuSPVO":{"productName":"产品名----","picUrl":"http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358","colorName":"红色","skuSpecValueMap":{"尺寸":"s"},"linkUrl":"http://023.baiwandian.cn","brandName":"小品牌"}}]}]}]}],
+	"couponList": [
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":0
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":1
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":1
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":0
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":2
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":2
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":2
+            },
+            {
+                "name":"全场5折这券",
+                "description":"全场5折",
+                "couponCode":"8989789797",
+                "startTime":1411715295070,
+                "endTime":1411715295070,
+                "state":2
+            }
+
+        ],
+  	"focusList": [{"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1","status":0,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽2","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽3","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽4","status":2,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽5","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽6","status":0,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽7","status":2,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽8","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽9","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽10","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123}]
+	}
+}

@@ -1,0 +1,52 @@
+{{#if !!firstLoad}}
+<div class="m-loading">
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+</div>
+{{#else}}
+  <div class="m-empty f-tac" r-hide={{!!cartStoreList && cartStoreList.length>0}}>
+    <div><i class="u-cartempt"></i></div>
+    <p class="text f-fs16">很遗憾，进货单里还没有商品</p>
+    <a href="/index">马上去逛逛</a>
+  </div>
+  {{#if !!cartStoreList && cartStoreList.length>0}}
+
+  {{#list cartStoreList as item}}
+
+	  <div class="menu" id="{{item.storeUrl}}">
+		<img src="/src/img/svg/{{item.selected == true ? 'checked' : 'check'}}.svg" class="skuCheck f-fl" on-click={{this.onStoreCheck($event,item)}}/>
+		<span class="s-fc1 f-fl col1 f-toe storeName">{{item.storeName||''}}</span>
+	    <a href="{{item.storeUrl}}">
+		    <div class="m-act {{item.selected && (item.storeBatchCash > item.totalPrice) ? 'error' : ''}}">
+		    	<span>{{item.storeBatchCash|fixed}}元起送</span>
+		    	<img src="/src/img/svg/arrow-right.svg" class="f-fr"/>
+		    </div>
+    	</a>
+	    <div class="m-condition-list">
+	  		<p>总金额≥{{item.storeBatchCash}}元</p>
+	    </div>
+	  </div>
+  	  <wgt-item-product-list item={{item}} cartInfoVO={{cartInfoVO}}  on-change={{this.refresh($event)}}></wgt-item-product-list>
+  {{/list}}
+  
+
+  <div id="float-bar">
+    <div class="m-summarybar j-flag">
+      <div class="f-cb">
+		<img src="/src/img/svg/{{cartInfoVO.selectAll ? 'checked' : 'check'}}.svg" width="18" height="18" class="allCheck f-fl" on-click={{this.onAllCheck($event)}}/>
+        <span class="s-fc4" style="margin-right:5px;">全选</span>
+        <span class="s-fc4">总金额：</span>
+        <span class="price red f-fs15">￥{{cartInfoVO.selectedTotal|fixed}}</span>
+        <span class="u-btn1 f-fr f-cp {{cartInfoVO.payAble ? '' : 'payDisabled'}}" on-click={{this.pay()}}>结算</span>
+        <form action="/purchase/index" method="post" target="_self" id="postForm">
+          <input type="hidden" name="cartIds" value={{form.cartIds}}/>
+          <input type="hidden" name="skusPrice" value={{form.skusPrice}}/>
+        </form>
+      </div>
+    </div>    	
+  </div>
+  {{/if}}
+{{/if}}

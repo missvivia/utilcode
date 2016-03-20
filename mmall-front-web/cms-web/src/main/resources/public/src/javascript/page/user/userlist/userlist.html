@@ -1,0 +1,42 @@
+<div class="card_c">
+{{#if totalResults == 0}}
+	<div class="f-tac">未找到相关用户</div>
+{{#else}}
+	<table class="table table-bordered">
+	  <thead>
+	    <tr>
+	      <th>用户ID</th>
+	      <th>用户名</th>
+	      <th>开户来源</th>
+	      <th>用户类型</th>
+	      <th>昵称</th>
+	      <th>手机号</th>
+	      <th>邮箱</th>
+	      <th>操作</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    {{#list list as x}}
+	      <tr>
+	        <td><a target="_blank" href="/userInfo/userDetail/{{x.uid}}">{{x.uid}}</a></td>
+	        <td>{{x.account}}</td>
+	        <td>{{platMap[x.platType]}}</td>
+	        <td>{{#if x.userType == 0}}普通用户{{#else}}中烟用户{{/if}}</td>
+	        <td>{{x.nick}}</td>
+	        <td>{{x.mobileNumber}}</td>
+	        <td>{{x.emailAddress}}</td>
+	        <td>
+	            <a target="_blank" href="/userInfo/userDetail/{{x.uid}}">详情</a>
+	            {{#if x.isActive == 1}}
+	              <a on-click={{this.lock(x)}} class="f-mgl">冻结</a>
+	            {{#else}}
+	              <a on-click={{this.unlock(x)}} class="f-mgl" style="color:#00CC66">解冻</a>
+	            {{/if}}
+	        </td>
+	      </tr>
+	    {{/list}}
+	  </tbody>
+	</table>
+	<mmallpager totalPages={{totalPages}} currentPage={{currentPage}}></mmallpager>
+{{/if}}
+</div>

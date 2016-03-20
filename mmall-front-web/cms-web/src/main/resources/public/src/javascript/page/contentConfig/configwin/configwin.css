@@ -1,0 +1,39 @@
+.infowin{
+	width:700px;
+	margin: 30px auto;
+}
+.txt-ct{
+	text-align: center;
+}
+.progress-group{
+    width:530px;
+    margin:0 auto;
+}
+.progress-group .progress{
+    width:500px;
+    float:left;
+}
+.progress-group .waitMsg{
+	clear: both;
+}
+.progress-group .tip{
+	margin-top: 30px;
+}
+.uploadsuccess,.uploadfail,#progressIssue,.publishsuccess,.publishfail{
+    display:none;
+}
+.uploadfail p{
+    font-size:16px;
+    margin:0px;
+}
+.uploadfail .btn{
+    margin-top:20px;
+}
+.btn-gray{
+   background:#e4e4e4;
+   border:1px solid #bfbfbf;
+   color:#474747;
+}
+.btn-gray:hover{
+   background:#bfbfbf;
+}

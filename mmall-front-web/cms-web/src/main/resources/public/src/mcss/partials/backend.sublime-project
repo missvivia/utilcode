@@ -1,0 +1,10 @@
+{
+ "folders": [
+  {
+   "folder_exclude_patterns": [
+    "target"
+   ], 
+   "path": "/E/code/mmall/mmall-parent/mmall-front-web/backend-web"
+  }
+ ]
+}

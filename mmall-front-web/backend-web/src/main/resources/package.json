@@ -1,0 +1,8 @@
+{
+  "name":"package",
+  "version":"0.0.0",
+  "scripts":{
+    "preinstall":"npm i -g commander puer mcss bower"
+  },
+  "dependencies":{"mcss":"0.4.8","puer":"0.1.1","nej":"0.2.5"}
+}

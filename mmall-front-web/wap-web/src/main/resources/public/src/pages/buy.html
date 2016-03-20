@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>购物袋</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <link rel="apple-touch-startup-image" href="/res/3g/startup.png">
+  <!-- @STYLE -->
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/grid.css">
+  <link rel="stylesheet" href="/src/css/unit.css">
+  <link rel="stylesheet" href="/src/css/module.css">
+  <!-- @STYLE -->
+  <link rel="stylesheet" type="text/css" href="/src/css/page/buy.css">
+</head>
+<body id="index-netease-com">
+<div class="g-hd">
+  <div class="m-topnav f-tac" id="topbar-box">
+    <i class="f-fl u-menu"></i> <span class="tt">女装</span>
+    <ul class="f-cb f-fr">
+      <li class="f-fr"><i class="u-face"></i></li>
+      <li class="f-fr"><i class="u-bag"></i></li>
+    </ul>
+  </div>
+</div>
+<div class="g-bd">
+  <div class="m-tipbar">
+    <i class="u-time"></i><span>为您保留商品19分59秒</span>
+  </div>
+  <div>
+    <div class="p-section">
+      <div class="p-address">
+        <i class="u-location"></i>
+        <i class="u-arrow-right"></i>
+        <p class="f-fs16"><span class="name">收货人：楼小明</span><span class="f-fs15">13912345678</span></p>
+        <p class="ads s-fc3">收货地址：浙江省杭州市滨江区江汉路1785号双城国际4号楼6楼</p>
+      </div>
+    </div>
+    <div class="p-section">
+      <div class="p-paymethod">
+        <i class="u-paymethod"></i>
+        <p class="tt f-fs13">支付方式</p>
+        <ul class="list s-fc3">
+          <li class="row selected"><input type="radio" id="paymethod" checked class="f-vam"/> <label for="paymethod" class="mgr10 f-vam">支付宝</label></li>
+          <li class="row"><input type="radio" id="paymethod" class="f-vam"/> <label for="paymethod" class="mgr10 f-vam">网易宝</label></li>
+          <li class="row"><input type="radio" id="paymethod" class="f-vam"/> <label for="paymethod" class="mgr10 f-vam">货到付款</label></li>
+        </ul>
+      </div>
+    </div>
+    <div class="p-section">
+      <div class="wrap">
+        <div class="menu">
+          <span class="s-fc1">秋水伊人2014秋冬新款专场</span>
+          <span class="f-fr s-fc4">全场满300减30</span>
+        </div>
+        <div class="p-plist">
+          <div class="prod f-cb">
+            <div class="p-img f-fl"><img src="http://placekitten.com/g/200/300" alt=""/></div>
+            <div class="p-info g-flex-wrap">
+              <div class="col1">
+                <a class="name"><span class="s-fc4">[xxxxxxx]</span>2104秋季新款钻石波点卫衣新款秋季新款钻石波点衣</a>
+                <span class="param s-fc4">粉红色</span><span class="param s-fc4">S</span>
+              </div>
+              <div class="col2">
+                <span class="s-fc1 f-fwb">￥110.00</span><br/>
+                <span class="s-fc4">X1</span>
+              </div>
+            </div>
+          </div>
+          <div class="prod f-cb">
+            <div class="p-img f-fl"><img src="http://placekitten.com/g/200/300" alt=""/></div>
+            <div class="p-info g-flex-wrap">
+              <div class="col1">
+                <a class="name">2104秋季新款钻石波点卫衣新款秋季新款钻石波点衣</a>
+                <span class="param s-fc4">粉红色</span><span class="param s-fc4">S</span>
+              </div>
+              <div class="col2">
+                <span class="s-fc1 f-fwb">￥110.00</span><br/>
+                <span class="s-fc4">X1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-section">
+      <div class="p-promotion f-cb">
+        <i class="u-promotion f-fl"></i>
+        <ul class="f-fl">
+          <li>订单已享受满4件打9折；包邮</li>
+          <li>订单已享受满4件打9折；包邮</li>
+        </ul>
+      </div>
+    </div>
+    <div class="p-section">
+      <div class="p-coupon f-cb">
+        <select class="sel">
+          <option class="opt" value="">选择优惠券/输入优惠券</option></select>
+      </div>
+      <div class="p-redpacket f-fs16 f-cb">
+        <input type="checkbox" id="hbchk"/> <label for="hbchk" class="f-vam">使用红包 &yen;20</label>
+      </div>
+      <!--<div class="p-invoicewin">
+        <div class="types">
+          <input type="radio" id="invo" class="f-vam"/> <label for="invo" class="mgr70 f-vam">个人</label>
+          <input type="radio" id="invo1" class="f-vam"/> <label for="invo1" class="f-vam">公司</label>
+        </div>
+        <div class="areawp">
+          <textarea name="" class="area" r-model={{orderdetail.receiptValue}} required ></textarea>
+          <div class="desc f-cb">
+            <div class="f-cb">
+              <i class="u-change f-fl"></i>
+              <div class="f-fl">
+                <div>请填写发票抬头</div>
+                <div>如不填写，则默认为个人</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="u-btn1 f-cp surebtn">确定</span>
+      </div>-->
+  </div>
+  <div class="p-section">
+    <div class="p-invoice">
+      <input type="checkbox" id="ivchk"/> <label for="ivchk" class="f-vam f-fs16">开具发票</label>
+    </div>
+    <div class="p-invoicewin">
+      <div class="types">
+        <input type="radio" id="invo" class="f-vam"/> <label for="invo" class="mgr70 f-vam">个人</label>
+        <input type="radio" id="invo1" class="f-vam"/> <label for="invo1" class="f-vam">公司</label>
+      </div>
+      <div class="areawp">
+        <textarea name="" class="area" r-model={{orderdetail.receiptValue}} required ></textarea>
+        <div class="desc f-cb">
+          <div class="f-cb">
+            <i class="u-change f-fl"></i>
+            <div class="f-fl">
+              <div>请填写发票抬头</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-summarybar">
+    <div class="wrap g-flex-wrap">
+      <div class="col1">
+        <p class="s-fc4">商品金额：￥466.00</p>
+        <p class="s-fc1">合计：<span class="s-fc9 f-fs15">￥466.00</span> (含运费￥10)</p>
+      </div>
+      <span class="u-btn1 f-fr f-cp">结算</span>
+    </div>
+  </div>
+</div>
+<div class="g-ft"></div>
+
+</body>
+</html>

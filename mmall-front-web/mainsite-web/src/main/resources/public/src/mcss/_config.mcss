@@ -1,0 +1,128 @@
+@abstract '_prefix.mcss';
+/**
+ * 	配置信息，在mcss文件顶部用@abstract调用，但不会被解析成css
+ */
+/* 字体 */
+$ff0 = arial,'simsun';
+$ff1 = helvetica,'Hiragino Sans GB','Microsoft YaHei','微软雅黑','宋体';
+$ff2 = 'simsun',arial;
+$ff3 = '微软雅黑',helvetica,'Hiragino Sans GB','Microsoft YaHei','宋体';
+/* 文字大小 */
+$fs0 = 12px;
+$fs1 = 14px;
+$fs2 = 16px;
+$fs3 = 18px;
+$fs4 = 20px;
+$fs5 = 22px;
+$fs6 = 24px;
+/* 文字色 */
+$fc0 = #fff;/* 灰色系 */
+$fc1 = #333;/* 灰色系 */
+$fc2 = #666;/* 灰色系 */
+$fc3 = #999;/* 灰色系 */
+$fc4 = #6b2f92;/* 紫色系 */
+$fc5 = #d951b5;/* 紫色系 */
+$fc6 = #e878b2;/* 紫色系 */
+$fc7 = #d6aff7;/* 紫色系 */
+$fc8 = #a090b8;/* 紫色系 */
+$fc9 = #7594b3;/* 蓝色系 */
+$fc10 = #9144ae;/* 紫色系 */
+$fc11 = #ccc;/* 紫色系 */
+$fc30 = #d951b5;/* 紫色系 */
+$fc12 = #7594b3;/* 蓝色系 */
+$fc13 = #68449e;/* 灰色系 */
+$fc31 = #eaeaea;/* 灰色系 */
+$fc14 = #8055bf;
+$fc15 = #ff2200;
+$fc16 = #e94da0;
+$fc17 = #35b779;
+$fc40 = #d951b5;
+$fc41 = #863aa3; /*紫色系，画过颜色1，和fc5配合*/
+$fc42 = #d951b5; /* 紫色系 */
+$fc43 = #5893cd; /* link */
+$fc50 = #e587cc;
+
+
+$lcolor-blue = #5893cd;
+$border-color1 = #99329b;
+
+
+$fc43 = #5893cd; /* link */
+$bd0 = #ddd;
+/* 背景色 */
+$bg0 = #fff;
+$bg1 = #f2f9ff;
+$bg2 = #c5e0f4;
+$bg3 = #8db6d4;
+/* timing function */
+$endslowly = cubic-bezier(0, 0.5, 0, 1);/* 结束慢 */
+$beginslowly = cubic-bezier(1, 0, 0.5, 0);/* 开始慢 */
+/* functions */
+$clearfix = {
+    zoom:1;
+	&:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+$inline-block = {display:inline-block;*display:inline;*zoom:1;}
+$justify = {text-align:justify;text-justify:inter-ideograph;}
+$nowrap = {word-wrap:normal;white-space:nowrap;}
+$pre = {overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+$break = {white-space:normal;word-wrap:break-word;word-break:break-all;}
+$ellipsis = {overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+$noselect = {$user-select:none;}
+$opacity = ($oc=0){opacity:$oc;filter:alpha(opacity=round($oc * 100));}
+$background-radial = ($from,$to){
+    background-image:-webkit-radial-gradient($from,$to);
+    background-image:-moz-radial-gradient($from,$to);
+    background-image:-ms-radial-gradient($from,$to);
+    background-image:-o-radial-gradient($from,$to);
+    background-image:radial-gradient($from,$to);
+}
+$background-linear = ($from,$to){
+    background-image:-webkit-linear-gradient($from,$to);
+    background-image:-moz-linear-gradient($from,$to);
+    background-image:-ms-linear-gradient($from,$to);
+    background-image:-o-linear-gradient($from,$to);
+    background-image:linear-gradient($from,$to);
+}
+$background-rgba = ($rgba){
+    background: $rgba;
+    filter: t("progid:DXImageTransform.Microsoft.gradient(startColorstr="+#{argb($rgba)}+", endColorstr="+#{argb($rgba)}+")");
+}
+$keyframes = ($name, $block){
+    @-webkit-keyframes $name{
+        $block(-webkit-);
+    }
+    @-moz-keyframes $name{
+        $block(-moz-);
+    }
+    @-ms-keyframes $name{
+        $block(-ms-);
+    }
+    @-o-keyframes $name{
+        $block(-o-);
+    }
+    @keyframes $name{
+        $block('');
+    }
+}
+/* to be extended */
+clearfix{
+    zoom:1;
+    &:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+/* background image to be extended */
+bg-logo{background:url(/res/images/logo.png) 9999px 9999px no-repeat;}
+bg-icon{background: url(/res/images/icon.png) 9999px 9999px no-repeat;}
+bg-icon2{background: url(/res/images/icon2.png) 9999px 9999px no-repeat;_background-image:url(/res/images/icon2_8.png);}
+bg-icon3{background: url(/res/images/icon3.png) 9999px 9999px no-repeat;}
+bg-slide{background: url(/res/images/slide.png?v=1) 9999px 9999px no-repeat;_background-image:url(/res/images/slide_8.png);}
+bg-logobg{background: url(/res/images/logobg.png) 9999px 9999px no-repeat;}
+/*bg-empty{background: url(/res/images/empty.png);}*/
+mem-icon{background: url(/res/images/memicon.png?v=1) 9999px 9999px no-repeat;}
+btns-icon{background: url(/res/images/btns.png) 9999px 9999px no-repeat;}
+layer-icon{background: url(/res/images/layer.png) 9999px 9999px no-repeat;_background-image:url(/res/images/layer_8.png);}
+carticon-icon{background: url(/res/images/carticon.png)  9999px 9999px no-repeat;}
+login-icon{background: url(/res/images/login-icon.png)  9999px 9999px no-repeat;}
+bg-load{background: url(/res/images/loading.gif)  no-repeat;}
+bg-load-s{background: url(/res/images/loading_s.gif)  no-repeat;}
+sd-icon{background: url(/res/images/sidebar.png)  no-repeat;}

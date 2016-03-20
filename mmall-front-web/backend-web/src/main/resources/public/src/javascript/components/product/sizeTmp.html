@@ -1,0 +1,68 @@
+<textarea name="jst" id="#<size-tmp>">
+  <div class="card_c">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="m-szlist j-tmp" id="sizeList">
+          <ul>
+            <li>
+              <ul class="hd_b clearfix">
+                {list items as item}
+                  <li class="j-head" data-id="${item.id}">
+                    {if !!item.id}
+                      ${item.name}(${item.unit}) {if item.required == true}<span class="u-required">*</span>{/if}
+                    {else}
+                      <input type="text" value="${item.name}">
+                      <a data-index="${item_index}"><span data-index="${item_index}" class="glyphicon glyphicon-minus-sign j-delTd"></span></a>
+                    {/if}
+                  </li>
+                {/list}
+                <li>
+                  操作
+                  <!-- 增删列功能 -->
+                  <!-- <a class="j-tmp"><span class="glyphicon glyphicon-plus-sign"></span></a> -->
+                </li>
+              </ul>
+            </li>
+            <div id="size-type-box">
+              
+            </div>
+            <li>
+              <ul class="clearfix">
+                <li>
+                  <div class="m-btns">
+                    <button class="btn btn-primary btn-block j-tmp j-view" id="addLi">
+                      <span class="glyphicon glyphicon-plus"></span>增加
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</textarea>
+<textarea name="jst" id="#<size-type>">
+  {list liList as li}
+  <li class="j-li">
+    <ul class="clearfix">
+      {list li as item}
+      <li><input type="text" {if items[item_index].name == "号型"}placeholder="155/80A"{/if} value="${item}" class="j-view"></li>
+      {/list}
+      <li>
+        {if liList.length != 1}
+        <div class="m-btns">
+          <button data-index="${li_index}" class="btn btn-danger btn-block j-del  j-view">
+            <span data-index="${li_index}" class="glyphicon glyphicon-remove j-del"></span>删除
+          </button>
+        </div>
+        {/if}
+      </li>
+    </ul>
+  </li>
+  {/list}
+</textarea>
+<textarea name="ntp" id="#<seedBox>">
+  <div></div>
+</textarea>

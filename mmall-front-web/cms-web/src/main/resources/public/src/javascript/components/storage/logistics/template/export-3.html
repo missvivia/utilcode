@@ -1,0 +1,42 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>发货日期</th>
+       <th>物流商</th>
+       <th>仓库</th>
+       <th>发货量</th>
+       <th>24H</th>
+       <th>妥投率</th>
+       <th>48H</th>
+       <th>妥投率</th>
+       <th>72H</th>
+       <th>妥投率</th>
+       <th>&gt;72H</th>
+       <th>妥投率</th>
+       <th>未签收</th>
+       <th>退单率</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.date|format}}</td>
+         <td>{{item.express}}</td>
+         <td>{{item.warehouse}}</td>
+         <td>{{item.total}}</td>
+         <td>{{item.total_24}}</td>
+         <td>{{item.rate_24|toFixed}}</td>
+	       <td>{{item.total_48}}</td>
+	       <td>{{item.rate_48|toFixed}}</td>
+	       <td>{{item.total_72}}</td>
+	       <td>{{item.rate_72|toFixed}}</td>
+	       <td>{{item.total_after_72}}</td>
+	       <td>{{item.rate_after_72|toFixed}}</td>
+         <td>{{item.no_receipt}}</td>
+         <td>{{item.returnOrder|toFixed}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

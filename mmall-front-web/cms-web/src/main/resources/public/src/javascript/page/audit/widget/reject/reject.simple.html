@@ -1,0 +1,4 @@
+<form class="w-reject">
+  <textarea class="form-control" r-model="reason"  on-keydown={{this.onKeyDown($event)}}></textarea>
+  <p {{#if !message}}style="visibility:hidden;"{{/if}}>{{message}}</p>
+</form>

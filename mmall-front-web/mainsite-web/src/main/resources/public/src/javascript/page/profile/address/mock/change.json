@@ -1,0 +1,5 @@
+{
+	"code": 200,
+	"result": 
+		{"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇111","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":true}
+}

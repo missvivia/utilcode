@@ -1,0 +1,39 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "id": 1,
+        "name": "name",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969
+      },
+      {
+        "id": 2,
+        "name": "name",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969
+      },
+      {
+        "id": 3,
+        "name": "name",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969
+      },
+      {
+        "id": 4,
+        "name": "name",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969
+      },
+      {
+        "id": 5,
+        "name": "xx",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969
+      }
+    ]
+  }
+}
+  

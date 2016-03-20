@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "thumb":"/res/builder/thumb/text.png",
+        "desc":"文字栏"
+    },
+    {
+        "id":2,
+        "thumb":"/res/builder/thumb/banner.png",
+        "desc":"BANNER"
+    },
+    {
+        "id":3,
+        "thumb":"/res/builder/thumb/product-2.png",
+        "desc":"商品橱窗1<br/>2图"
+    },
+    {
+        "id":4,
+        "thumb":"/res/builder/thumb/product-3a.png",
+        "desc":"商品橱窗2<br/>3图"
+    },
+    {
+        "id":5,
+        "thumb":"/res/builder/thumb/product-3b.png",
+        "desc":"商品橱窗3<br/>3图"
+    },
+    {
+        "id":6,
+        "thumb":"/res/builder/thumb/product-4.png",
+        "desc":"商品橱窗4<br/>4图"
+    }
+]

@@ -1,0 +1,52 @@
+<div class="m-blst">
+  {{#list list as product}}
+  <div class="m-bitm f-cb">
+    <div class="act">
+      <p>状态：{{product.status|statusMap}}</p>
+      {{!status: 1-新建  2-审核中  3-审核通过 4-审核未通过!}}
+        {{!showFlag:  1-档期结束  2-档期中 3-档期前4天内  4-档期前4填外 http://jira6.hz.netease.com/browse/MMALL-300 !}}
+        {{#if product.status==2}}
+        	{{#if product.showFlag==4}}
+        		<p><button type="button" class="btn btn-primary btn-sm" on-click={{this.audit(product,true)}}>通过</button></p>
+        		<p><button type="button" class="btn btn-primary btn-sm" on-click={{this.audit(product,false)}}>拒绝</button></p>
+        	{{/if}}
+        {{#elseif product.status==3}}
+        	{{#if product.showFlag==3||product.showFlag==4}}
+        		<p><button type="button" class="btn btn-primary btn-sm" on-click={{this.audit(product,false)}}>拒绝</button></p>
+        	{{/if}}
+        {{#elseif product.status==4}}
+        {{#elseif product.status==-1}}
+        {{/if}}
+    </div>
+    <div class="man">
+      <div class="ifo f-cb">
+      	<div class="">
+	        <label class="">PO编号：</label>
+	        <span class="">{{product.scheduleId}}</span>
+	        <label class="">站点：</label>
+	        <span class="">{{#list product.saleSiteList as item}}{{@(item.name)}} {{/list}}</span>
+	        <label class="">商家帐号：</label>
+	        <span class="">{{product.supplierName}}</span>
+	        <label class="">品牌名：</label>
+	        <span class="">{{product.brandName}}</span>
+        </div>
+        <div class="">
+        	<label class="">档期时间：</label>
+        	<span class="">{{product.startTime|format:"yyyy-MM-dd"}} 至 {{product.endTime|format:"yyyy-MM-dd"}}</span>
+        </div>
+      </div>
+      <div class="shw">
+        <div class="img img0">
+          <p>上新BANNER</p>
+          <img src="{{product.homeBannerImgUrl}}?imageView&thumbnail=372x120" width="372" height="120"/>
+        </div>
+        <div class="img img1">
+          <p>预告BANNER</p>
+          <img src="{{product.preBannerImgUrl}}?imageView&thumbnail=165x108" width="165" height="108"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/list}}
+</div>
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

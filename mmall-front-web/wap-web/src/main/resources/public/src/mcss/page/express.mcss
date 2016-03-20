@@ -1,0 +1,118 @@
+@abstract '../_config.mcss';
+
+.m-package{
+    font-size:0.864rem;
+    background:$fc0;
+    .box{
+        background:$fc0;
+        margin-bottom:20px;
+        border-bottom:solid 1px $fc46;
+    }
+    .msg-box{
+        padding:20px;
+    }
+    .cnt{
+        margin-left:20px;
+        padding-left:20px;
+        border-left:solid 1px $fc6;
+    }
+    .package{
+        font-size:1rem;
+        padding-left:20px;
+        line-height:3;
+        border-bottom:solid 1px $fc30;
+    }
+    .arrow{
+        @extend bg-icon;
+        background-size: 500px 1000px;
+        background-position:-60px -400px;
+        float:right;width:55px;height:48px;
+    }
+    .close-arrow{
+        background-position:-10px -400px;
+    }
+    .cnt-box{
+
+    }
+}
+
+.up-arrow{
+    .arrow{
+        @extend bg-icon;
+        background-size: 500px 1000px;
+        background-position:7px -400px;
+        float:right;width:55px;height:48px;
+    }
+}
+
+.u-msg{
+    overflow:hidden;
+    i{
+        width:78px;
+        color:$fc4;
+        display:inline-block;
+    }
+}
+.msg{
+    background:$fc42;
+    border:solid 1px $fc30;
+    padding:20px 40px;
+}
+.details{
+    border-bottom:solid 1px $fc30;
+    padding:10px 0;
+    position:relative;
+    .circle{
+        width:10px;
+        height:10px;
+        border-radius:5px;
+        border:solid 2px $fc6;
+        display:inline-block;
+        position:absolute;
+        left:-26px;
+        top:46%;
+        background-color:$fc0;
+    }
+    .address, .time{
+        -webkit-line-clamp:3;
+        -webkit-box-orient:vertical;
+        display:-webkit-box;
+        overflow:hidden;
+    }
+    .address{
+        padding-right:20px;
+    }
+    .phone{
+        color:$fc43;
+        font-weight:bolder;
+        font-size:0.75rem;
+    }
+    .time{
+        color:$fc5;
+        font-size:0.625rem;
+        line-height:2;
+    }
+}
+.active .circle{
+    border:none;
+    width:20px;
+    height:20px;
+    display:inline-block;
+    position:absolute;
+    left:-30px;
+    top:32%;
+    @extend bg-icon;
+    background-size: 500px 1000px;
+    background-position:-250px -773px;
+    i{
+        @extend bg-icon;
+        background-size: 500px 1000px;
+        background-position:-286px -773px;
+        display:inline-block;
+        width:100%;
+        height:100%;
+    }
+}
+.active .address{
+    color:$fc11;
+}

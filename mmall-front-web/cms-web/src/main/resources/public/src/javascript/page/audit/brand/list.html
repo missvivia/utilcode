@@ -1,0 +1,24 @@
+<div class="m-blst f-cb">
+{{! 1-审核中 2-审核通过暂未使用 3-通过使用中  4-审核拒绝!}}
+  {{#list list as brand}}
+  <div class="m-ditm">
+    <p>{{brand.brandName}}（{{brand.id}}）</p>
+    <p class="sites f-toe" title={{this.areaNames(brand.areaNames)}}>站点（{{#list brand.areaNames as item}}{{item}} {{/list}}）</p>
+    <p>提交时间：{{brand.updateTime|format:"yyyy-MM-dd HH:mm:ss"}}</p>
+    <div class="shw">
+      <img src="{{brand.imageUrl}}"/>
+      <p class="dsc">{{brand.intro}}</p>
+    </div>
+    <div class="adt f-cb">
+      <p class="l">{{brand.status.desc}}</p>
+      <div class="r">
+        {{#if brand.status.type!=2&&brand.status.type!=3}}<button type="button" class="btn btn-primary btn-sm" on-click={{this.audit(brand,true)}}>通过</button>{{/if}}
+        {{#if brand.status.type!=4&&brand.status.type!=3}}<button type="button" class="btn btn-primary btn-sm" on-click={{this.audit(brand,false)}}>拒绝</button>{{/if}}
+        <button href="javascript:void(0)" class="btn btn-primary btn-sm"  on-click={{this.preview(brand)}}>查看</button>
+      </div>
+    </div>
+  </div>
+  {{/list}}
+</div>
+<form  ref=pform action="{{config.MAINSITE}}/mainbrand/backend2" target="_blank" method="post" enctype="application/x-www-form-urlencoded"><input type="hidden" name="data"/></form>
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

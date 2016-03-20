@@ -1,0 +1,38 @@
+    <div class="m-box">
+      <div class="m-returnmoney">
+          <div class="hd">
+              <h2>退款金额</h2>
+          </div>
+          <div class="bd">  
+              <p class="total">
+                <label class="tit">退款金额</label><span class="val"><span class="s-fc5">&yen;<span class="f-fs30" >{{returnPrice.payedTotalPriceToUser}}</span></span><span class="f-fs0 s-fc3">
+               {{#if  returnPrice&&returnPrice.payedCashPriceToUser != undefined}} （ {{#list returnWay as item}}
+               	{{#if item.returnType =="银行卡"}}
+                                                  退至 <span class="s-fc2 f-fw1">{{item.returnType}}{{item.account}}&yen;{{item.sum}}</span>&nbsp;3-15个工作日到帐
+                {{#else}}
+                                               退至 {{item.returnType}}{{item.account}}<span class="s-fc2 f-fw1">　&yen;{{item.sum}}</span>
+                 {{/if}}
+              {{/list}}）{{/if}}</span></span>
+              </p>
+              <div class="end">
+              {{#if returnCoupon&&returnCoupon.length}}
+              	<p>
+              		<label class="tit">退回优惠券</label>
+              		{{#list returnCoupon as coupon}}
+              		<span>{{coupon.couponCode}}&nbsp;</span>
+              		{{/list}}
+              	</p>
+              	{{/if}}
+              	{{#if returnExpCompensation&&returnExpCompensation.length}}
+              	<p>
+              		{{#list returnExpCompensation as comp}}
+              		<label class="tit">回寄运费补贴</label><span class="val">{{comp.returnType}}&yen;{{comp.sum}}元</span>
+              		{{/list}}
+              	</p>
+              	{{/if}}
+              </div>
+          </div>
+      </div>
+    </div>
+
+

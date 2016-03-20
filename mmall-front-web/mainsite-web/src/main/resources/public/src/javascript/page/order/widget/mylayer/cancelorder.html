@@ -1,0 +1,55 @@
+<textarea name='jst' id='#<boxsimple>'>
+<form class="j-form">
+  <ul class="w-reason">
+    <li>
+        <select name="reason" class="w-select w-select-long">
+          <option selected=true>请选择取消理由</option>
+          {list options as x}
+            <option>${x}</option>
+          {/list}
+        </select>
+    </li>
+    <li class="s-fc3 f-fs0 warn"> 将为您尝试取消订单，如商品即将出库则无法取消，请您谅解！</li>
+  </ul>
+</form>
+</textarea>
+
+<textarea name='jst' id='#<boxCombine>'>
+<form class="j-form">
+  <ul class="w-reason" style="border-top:1px solid #000;margin-top:10px;">
+    <li>
+                         由于该订单使用了优惠，取消订单将同时取消相关联优惠的其他订单。
+    </li>
+    <li>
+         <input name="reason" type="hidden" value=""/>
+    </li>
+  </ul>
+</form>
+</textarea>
+
+<textarea name='jst' id='#<boxcomplate>'>
+<form class="j-form">
+  <ul class='w-reason'>
+    <li class='word'>您可以将订单金额：</li>
+    <li>
+      <input checked="checked" type='radio' name='type' value='0' />
+      <span class='way f-ib'>原路退回</span>
+      <span class='note'>3-15个工作日到帐，请注意查询支付帐户</span>
+    </li>
+    <li>
+      <input type='radio' name='type' value='1' />
+      <span class='way f-ib'>退至网易宝余额</span>
+      <span class='note'>即时到帐<span class="s-fc3 f-fs0">（如需提现，请实名认证网易宝账号）</span></span>
+    </li>
+    <li class="reason-con">
+        <select name="reason" class='w-select w-select-long'>
+          <option selected=true>请选择取消理由</option>
+          {list options as x}
+            <option>${x}</option>
+          {/list}
+        </select>
+    </li>
+    <li class='s-fc3 f-fs0 warn'> 将为您尝试取消订单，如商品即将出库则无法取消，请您谅解！</li>
+  </ul>
+</form>
+</textarea>

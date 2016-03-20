@@ -1,0 +1,21 @@
+.#<uispace>{
+  width:310px;
+  background: #fff;
+  border: solid 1px #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 0 10px;
+  line-height: 2rem;
+  font-size:1rem;
+}
+.#<uispace> .opt a{color:#5893cd;display:block;}
+.#<uispace> .opt{
+    border-bottom:solid 1px #999;
+}
+.#<uispace> .opt-last{
+    border-bottom:solid 0px #999;
+}
+.#<uispace> .tit{
+    border-bottom:solid 1px #999;
+    color:#333;
+}

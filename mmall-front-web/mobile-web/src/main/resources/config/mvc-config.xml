@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- <bean id="jsonConverter" class="com.xyl.mmall.framework.util.MappingFastJsonConverter"> 
+		<property name="supportedMediaTypes" value="application/json" /> <property 
+		name="useGzip" value="false" /> <property name="serializerFeature"> <list> 
+		<value>SkipTransientField</value> <value>QuoteFieldNames</value> </list> 
+		</property> </bean> <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"> 
+		<property name="messageConverters"> <list> <ref bean="jsonConverter" />json转换器 
+		</list> </property> </bean> -->
+	<bean id="springUtils" class="com.xyl.mmall.framework.util.SpringContextUtils" />
+	<bean id="config" class="com.xyl.mmall.mobile.facade.converter.MobileConfig">
+		<property name="mobile_web_url" value="http://m.023.baiwandian.cn" />
+		<property name="mobile_pay_url" value="http://pay.paopao.163.com" />
+	</bean>
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="defaultContentType" value="text/html" />
+		<!-- 扩展名至mimeType的映射,即 /user.json => application/json -->
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="json" value="application/json" />
+				 <entry key="xls" value="application/vnd.ms-excel"/>
+			</map>
+		</property>
+		<!-- 用于开启 /userinfo/123?format=json 的支持 -->
+		<property name="favorParameter" value="false" />
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean
+					class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+					<property name="cache" value="true" />
+					<property name="suffix" value=".ftl" />
+					<property name="contentType" value="text/html;charset=utf-8" />
+					<property name="exposeRequestAttributes" value="true" />
+					<property name="exposeSessionAttributes" value="true" />
+					<property name="exposeSpringMacroHelpers" value="true" />
+					<property name="allowSessionOverride" value="true" />
+				</bean>
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+
+			</list>
+		</property>
+	</bean>
+
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="${spring.freemarker.templateLoaderPath}" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">0</prop>
+				<prop key="default_encoding">utf-8</prop>
+				<prop key="locale">zh_cn</prop>
+				<prop key="number_format">0.##########</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="template_exception_handler">html_debug</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/m/purchase/*" />
+			<ref bean="initToken" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/m/purchase/*" />
+			<ref bean="tokenInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+</beans>

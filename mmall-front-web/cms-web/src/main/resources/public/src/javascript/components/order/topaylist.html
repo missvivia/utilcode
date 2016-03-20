@@ -1,0 +1,93 @@
+<ul class="nav nav-tabs" id="j-tab-box">
+  <li class="{{status==0?'active':''}}" on-click={{this.changeStatus(0)}}><a>全部</a></li>
+  <li class="{{status==6?'active':''}}" on-click={{this.changeStatus(6)}}><a>待审核</a></li>
+  <li class="{{status==7?'active':''}}" on-click={{this.changeStatus(7)}}><a>已通过</a></li>
+  <li class="{{status==8?'active':''}}" on-click={{this.changeStatus(8)}}><a>拒绝</a></li>
+</ul>
+<div class="row f-mgtb">
+  <form name=formdata>
+  <div class="col-sm-8">
+      <div class="col-sm-12 form-inline">
+        按申请时间
+        <datepicker select={{startTime}}> </datepicker>
+        <input class="u-dtime" placeholder="H:M" type="text" r-pattern="^([0-1]?[0-9]|2[0-4]):[0-5]?[0-9]$" r-model={{startHour}} on-blur={{this.checkTime($event)}} on-focus={{this.onInput($event)}} on-keyup={{this.onKeyUpTime($event)}} name=startHour >
+        至
+        <datepicker select={{endTime}}></datepicker>
+        <input class="u-dtime" placeholder="H:M" type="text" on-blur={{this.checkTime($event)}} on-focus={{this.onInput($event)}} on-keyup={{this.onKeyUpTime($event)}} r-model={{endHour}}>
+        <a class="btn btn-primary" id="searchTime" on-click={{this.search(0)}}>查找</a>
+      </div>
+  </div>
+  <div class="col-sm-4" id="searchbox">
+    <div class="col-sm-12 form-inline">
+      <select class="col-sm-3 form-control j-flag">
+        {{#list typeList as item}}
+        <option value="{{item.id}}">{{item.name}}</option>
+        {{/list}}
+      </select>
+      <input type="text" class="col-sm-7 form-control j-flag" on-keyup={{this.onKeyUpID($event)}}>
+      <a class="col-sm-2 btn btn-primary" id="searchId" on-click={{this.search(1)}}>搜索</a>
+    </div>
+  </div>
+  </form>
+</div>
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>申请编号</th>
+        <th>用户ID</th>
+        <th>收货人姓名</th>
+        <th>收货人电话</th>
+        <th>收货地址</th>
+        <th>订单金额</th>
+        <th>所属订单ID</th>
+        <th>状态</th>
+        <th>审核人</th>
+        <th>处理说明</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{tpl.id}}</td>
+          <td><a target="_blank" href="/user/info?userId={{tpl.userId}}">{{tpl.userId}}</a></td>
+          <td>{{tpl.name}}</td>
+          <td>{{tpl.telp}}</td>
+          <td>{{tpl.address}}</td>
+          <td>{{tpl.orderPay}}</td>
+          <td><a target="_blank" href="/order/orderdetail?type=0&key={{tpl.orderId}}">{{tpl.orderId}}</a></td>
+          {{#if tpl.status === 6}}
+            <td>待审核</td>
+          {{#elseif tpl.status === 7}}
+            <td>已通过</td>
+          {{#elseif tpl.status === 8}}
+            <td>拒绝</td>
+          {{/if}}
+          <td>{{tpl.checkName}}</td>
+          <td>{{tpl.account}}</td>
+          <td>
+            {{#if tpl.status === 6}}
+              {{#if tpl.canPass}}
+              <div><a on-click={{this.pass(tpl,tpl_index)}}>通过</a></div>
+              {{/if}}
+              {{#if tpl.canRefuse}}
+              <div><a on-click={{this.reject(tpl,tpl_index)}}>拒绝</a></div>
+              {{/if}}
+            {{#elseif tpl.status === 7}}
+            {{#elseif tpl.status === 8}}
+              {{#if tpl.canCancelRefuse}}
+              <div><a on-click={{this.goback(tpl,tpl_index)}}>撤销</a></div>
+              {{/if}}
+            <div><a on-click={{this.addressblist(tpl,tpl_index)}}>加入地址黑名单</a></div>
+            <div><a on-click={{this.adduserblist(tpl,tpl_index)}}>加入用户黑名单</a></div>
+            {{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

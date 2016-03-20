@@ -1,0 +1,45 @@
+<div class="form-group">
+  <label class="col-sm-2 control-label"><span class="u-required">*</span>优惠券代码</label>
+  <div class="col-sm-3">
+    <label class="radio-inline">
+      <input type="radio" name="codeType" value="PUBLIC" r-model="couponVO.codeType">公码</label>
+<!--
+    <label class="radio-inline">
+      <input type="radio" name="codeType" value="RANDOM" r-model="couponVO.codeType">随机码
+	</label>
+-->
+  </div>
+
+</div>
+<div class="form-group" r-hide="couponVO.codeType != 'PUBLIC'" on-animation="on:enter;class:fadeIn animated">
+  <label class="col-sm-2 control-label"><span class="u-required">*</span>代码</label>
+  <div class="col-sm-3">
+    <input type="text" class="form-control" name="couponCode" r-model="couponVO.couponCode" placeholder="1-20位字母,数字或二者组合">
+  </div>
+</div>
+<div class="form-group" r-hide="couponVO.codeType != 'RANDOM'" on-animation="on:enter;class:fadeIn animated">
+  <label class="col-sm-2 control-label"><span class="u-required">*</span>申请数量</label>
+  <div class="col-sm-3">
+    <input type="text" class="form-control" name="randomCount" r-model="couponVO.randomCount">
+  </div>
+</div>
+<div class="form-group" r-hide="couponVO.codeType != 'PUBLIC'" on-animation="on:enter;class:fadeIn animated">
+  <label class="col-sm-2 control-label"><span class="u-required">*</span>使用次数/人</label>
+  <div class="col-sm-3">
+    <input type="text" class="form-control" name="times" r-model="couponVO.times" onkeyup="this.value = this.value.replace(/\D+/g, '');">
+  </div>
+</div>
+<div class="form-group" r-hide="couponVO.codeType != 'PUBLIC'" on-animation="on:enter;class:fadeIn animated">
+  <label class="col-sm-2 control-label"><span class="u-required">*</span>是否与用户绑定</label>
+  <label class="radio radio-inline"><input type="radio" name="binderType" value="USER_BINDER" r-model="couponVO.binderType">导入用户名单绑定</label>
+  <label class="radio radio-inline"><input type="radio" name="binderType" value="SYSTEM_BINDER" r-model="couponVO.binderType">系统自动绑定</label>
+  <label class="radio radio-inline"><input type="radio" name="binderType" value="DISTRIBUTE_BINDER" r-model="couponVO.binderType">模板绑定</label>
+  
+</div>
+<div class="form-group" r-hide="couponVO.codeType != 'PUBLIC'||(couponVO.binderType != 'USER_BINDER')" on-animation="on:enter;class:fadeIn animated">
+  <label class="col-sm-2 control-label"><span class="u-required">*</span>用户名单</label>
+  <div class="col-sm-4">
+    <input type="text" class="form-control" name="users" r-model="couponVO.users" >
+    <span class="help-block">帐号用之间用英文逗号隔开</span>
+  </div>
+</div>

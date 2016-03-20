@@ -1,0 +1,27 @@
+<!--div class="f-cb">
+        <b>是否到付黑名单</b>
+        <p>{{#if result.blackListUser}}是{{#else}}否{{/if}}</p>
+        <a on-mouseover={{this.showBad(true)}} on-mouseout={{this.showBad(false)}} href="javascript:void(0);">黑名单历史</a>
+        {{#if result.black == 0}}
+            <div {{#if showb}}class="m-black"{{#else}}class="m-black f-dn"{{/if}}>
+            <table>
+                <thead>
+                    <tr>
+                        <th>变更时间</th>
+                        <th>变更情况</th>
+                        <th>审核人</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#list result.blackList as b}}
+                    <tr>
+                        <td>{{b.time}}</td>
+                        <td>{{b.action}}</td>
+                        <td>{{b.who}}</td>
+                    </tr>
+                    {{/list}}
+                </tbody>
+            </table>
+           </div>
+        {{/if}}
+</div-->

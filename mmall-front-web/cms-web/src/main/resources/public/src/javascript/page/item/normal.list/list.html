@@ -1,0 +1,38 @@
+<div class="form-group" >
+	<div class="form-control itemCategory" on-click = {{this.openContent($event)}}>
+		全部商品分类
+	</div>
+</div>
+<div class="listTable">
+	<table class="table  table-hover">
+	 <tbody class="listBody">
+	 	<tr name="firstclasscategory"><td><a class="j-update" on-click={{this.selectCategory(-1,"全部商品分类")}}>全部商品分类</a></td></tr>
+	  	{{#list list as item}}
+	   		<tr class={{"" + item.categoryId + item_index}} name="firstclasscategory">
+	   			<td>
+	   				<a class="j-update" on-click={{this.packUpCategory($event,item.categoryId,"1")}}>
+	   					{{item.categoryName}}
+	   				</a>
+	   			</td>
+	  		</tr>
+	  		
+	  		 {{#list @(item.subCategoryList) as second}}
+	  		 	<tr style="display:none" name={{"" + item.categoryId + "2"}}>
+	   				<td style="padding-left: 30px;">
+	   					<a class="j-update" on-click={{this.packUpCategory($event,item.categoryId, "2")}}>
+	   						{{second.categoryName}}
+	   					</a>
+	   				</td>
+	  			</tr>
+	  			
+	  			{{#list @(second.subCategoryList) as third}}
+	  		 		<tr style="display:none" name={{"" + item.categoryId + "3"}}>
+	   					<td style="padding: 8px 8px 8px 60px;" on-click={{this.selectCategory(third.categoryId,third.categoryName)}}>{{third.categoryName}}</td>
+	  				</tr>
+	         	{{/list}}
+	  			
+	         {{/list}}
+	  	{{/list}}
+	  </tbody>
+	  </table>
+</div>

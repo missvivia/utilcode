@@ -1,0 +1,78 @@
+<div>{{condition.startDate|format:'yyyy-MM-dd'}}至{{condition.endDate|format:'yyyy-MM-dd'}} 期间待跟进PO清单:</div>
+<table class="table table-condensed table-bordered" id="table">
+<tbody>
+    <tr>
+    		      <td>待上线PO</td>
+              <td><a href="javascript:void(0)" on-click="{{this.searchSchedule(5)}}">{{cntReadyOnline}}</a></td>
+              <td>待提交 商品清单PO</td>
+              <td><a href="javascript:void(0)" on-click="{{this.searchSchedule(1)}}">{{cntUncheckedPrdList}}</a></td>
+              <td>待提交 商品资料PO</td>
+              <td><a href="javascript:void(0)" on-click="{{this.searchSchedule(2)}}">{{cntUncheckedPrdInfo}}</a></td>
+              <td>待提交 品购页PO</td>
+              <td><a href="javascript:void(0)" on-click="{{this.searchSchedule(3)}}">{{cntUncheckedPage}}</a></td>
+              <td>待提交 推广资料PO</td>
+              <td><a href="javascript:void(0)" on-click="{{this.searchSchedule(4)}}">{{cntUncheckedBanner}}</a></td>
+    </tr>
+</tbody>
+</table>
+
+<h6>档期PO状态详细</h6>
+<table class="table table-condensed table-bordered">
+	<tr>
+		<th>PO编号</th>
+		<th>品牌</th>
+		<th>PO名称</th>
+		<th>站点</th>
+		<th>商家帐号</th>
+		<th>跟进人</th>
+		{{!<th>档期名称</th>!}}
+		<th>创建日期</th>
+		<th>商品清单</th>
+		<th>商品资料</th>
+		<th>品购页</th>
+		<th>推广资料</th>
+		<th>件数通过比</th>
+		<th>款数通过比</th>
+		<th>SKU通过比</th>
+		<th>状态</th>
+		<th>操作</th>
+	</tr>
+	<tbody>
+	{{#list list as item}}
+	<tr><td colspan=16>档期时间 {{item.date|format}}</td></tr>
+	{{#list item.poList as po}}
+		<tr>
+			<td>{{po.id}}</td>
+			<td>{{@(po.brandName)}}</td>
+			<td>{{@(po.title)}}</td>
+			<td>{{#list po.saleSiteList as site}}{{site.name}} {{/list}}</td>
+			<td>{{po.supplierName}}</td>
+			<td>{{po.poFollowerUserName}}</td>
+			{{!<td>{{po.title}}</td>!}}
+			<td>{{po.createDate|format:'yyyy-MM-dd'}}</td>
+			<td class={{po.prdListStatus?"pass":"fail"}}>{{po.prdListStatus}}</td>
+			<td class={{po.prdInfoStatus?"pass":"fail"}}>{{po.prdInfoStatus}}</td>
+			<td class={{po.pageStatus?"pass":"fail"}}>{{po.pageStatus}}</td>
+			<td class={{po.bannerStatus?"pass":"fail"}}>{{po.bannerStatus}}</td>
+			<td>{{po.itemPassRate}}</td>
+			<td>{{po.productPassRate}}</td>
+			<td>{{po.skuPassRate}}</td>
+			<td>{{po.poStatus|statusMap}}</td>
+			<td>
+			{{!"1":"未完备","2":"待上线","3":"待开场","4":"结束","5":"售卖中","6":"失效"!}}
+			{{#if po.poStatus==2}}
+				<a on-click={{this.online(po)}} href="javascript:void(0)">上线</a>
+			{{#elseif po.poStatus==3}}
+				<a on-click={{this.offline(po)}} href="javascript:void(0)">下线</a>
+			{{#elseif po.poStatus==1}}
+				<a on-click={{this.remind(po)}} href="javascript:void(0)">提醒</a>
+			
+			{{/if}}
+			</td>
+		</tr>
+	{{/list}}
+	{{/list}}
+	</tbody>
+</table>
+        
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

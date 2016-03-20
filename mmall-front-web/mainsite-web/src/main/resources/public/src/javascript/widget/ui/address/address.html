@@ -1,0 +1,38 @@
+<form class="m-form m-form-addr j-flag">
+    <div class="fitm">
+      <label class="flab"><span class="important">*</span>收件人</label>
+      <div class="fipt">
+        <input type="text" class="w-ipt w-ipt-3" name="consigneeName" data-required="true" data-message="请填写收件人" maxLength=25/>
+      </div>
+    </div>
+    <div class="fitm">
+      <label class="flab"><span class="important">*</span>所在地区</label>
+      <div class="fipt fipt-addr f-cb">
+        <div class="w-select-addr f-fl">
+            <input type="text" class="select select-1 j-flag" placeholder="请选择城市" readonly>
+            <span class="arrow">&nbsp;</span>
+        </div>
+        <label class="s-fc3 err err-1  f-fl j-flag">请选择城市</label>
+      </div>
+    </div>
+    <div class="fitm">
+      <label class="flab"><span class="important">*</span>详细地址</label>
+      <div class="fipt">
+        <input type="text" class="w-ipt w-ipt-4" name="address"  data-required="true" data-message="请填写详细地址" maxLength=50/>
+      </div>
+    </div>
+    <div class="fitm">
+      <label class="flab"><span class="important"></span>邮编</label>
+      <div class="fipt">
+        <input type="text" class="w-ipt w-ipt-3" name="zipcode" data-zipcode="true" data-message="邮编为6位" maxlength=6/>
+      </div>
+    </div>
+    <div class="fitm fitm-1 f-cb">
+      <label class="flab"><span class="important">*</span>手机号</label>
+      <div class="fipt">
+        <input type="text" class="w-ipt w-ipt-3" name="consigneeMobile"  data-contact="contact" maxLength=11/>
+        <!-- <label class="flab flab-1">或固定电话</label><input type="text" class="w-ipt w-ipt-7" name="consigneeTel"  data-contact="contact" placeholder="区号" data-pattern="\\d{3,4}+" maxlength=4/><input type="text" class="w-ipt w-ipt-8" name="consigneeTel"  data-contact="contact" placeholder="号码" maxLength=8 data-patter="\\d{7,8}+"/><input type="text" class="w-ipt w-ipt-7" name="consigneeTel"  data-contact="contact"  placeholder="分机" maxlength=4/>
+        <span class="tip">两者至少填一项</span> -->
+      </div>
+    </div>
+  </form>

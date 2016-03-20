@@ -1,0 +1,18 @@
+{
+ "code": 200,
+ "result": {
+  "total": 100,
+  "list": [{"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"},
+       {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1"}
+       ]
+ }
+}

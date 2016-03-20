@@ -1,0 +1,78 @@
+ {{#if loading}}
+   <div class="m-order-loading">
+        <div class="load">
+            <div class="w-loading"></div>
+            <div class="text f-fs1 s-fc2">努力加载中...</div>
+        </div>
+   </div>
+ {{#elseif list.length>0}}
+ <!-- <div class="bd">
+ <ul class="list">
+  {{#list list as item}}
+	 <li class="">
+		  <a href="/mainbrand/story?id={{item.brandId}}" target="_blank">
+		    <div class="imgbox">
+		    	<img src="{{item.logo}}?imageView&quality=90&thumbnail=140x60"/>
+		    </div>
+		    <span class="desc">
+		        {{item.brandNameEn}} {{item.brandNameZh}}<br/>
+		        {{#if item.poCount!=0}}
+		        <span class="s-fc2">正在特卖中 </span>
+		        <a class="s-fc10" target="_blank" href="/mainbrand/story?id={{item.brandId}}">立即查看 <span class="f-ff2">&gt;</span></a>
+		        {{#elseif item.nextPoTime==0}}
+		         <span class="s-fc2">敬请期待！ </span>
+		        {{#elseif item.nextPoTime!=0}}
+		         <span class="s-fc2">下次活动档期  {{item.nextPoTime|format:'yyyy.MM.dd'}}至{{item.nextPoEndTime|format:'MM.dd'}}</span>
+		        {{/if}}
+		        
+		    </span>
+		  </a>
+		  <span class="u-btn2"  on-click={{this.unfollow(item,item_index)}}>取消关注</span>
+	 </li>
+	 {{/list}}
+ </ul>
+ </div> -->
+ 
+ <div class="m-collect" id="good">
+       <div class="bd"> 
+           <ul class="list">
+              {{#list list as item}}
+               <li class="collect"> 
+                 <a href="{{item.productUrl}}" target="_blank"> 
+                   <span class="img-box"> 
+                     <img src="{{item.showPicPath}}" style="width: 268px; height:200px;"> 
+                   </span> 
+                 </a> 
+                 <span class="desc"> 
+                    <p class="desc-brand f-fs1">
+                        <a href="{{item.storeUrl}}" target="_blank" class="s-fc3">[{{item.storeName}}]</a>
+                    </p> 
+                    <p class="f-fs1 s-fc1" title="{{item.productName}}">
+                        <a class="pn f-toe" target="_blank" href="{{item.productUrl}}">{{item.productName}}</a>
+                    </p>
+                    <p class="unshelf">
+                      {{#if item.prodStatus == 5}} 
+                         <span>该商品已下架</span>
+                      {{/if}}  
+                    </p>
+                    <p class="desc-price f-cb"> 
+                       <b class="f-fwb">￥{{item.priceList[0].prodPrice}}</b>
+                    </p> 
+                 </span> 
+                 <span class="u-btn2" on-click={{this.unfollow(item,item_index)}}>取消收藏</span> 
+               </li> 
+              {{/list}} 
+            </ul>
+        </div> 
+  </div>
+{{#else}}
+<div class="bd" style="padding-top:100px;">
+	<div class="u-empt">
+		<span class="u-icon3 u-icon3-2">&nbsp;</span>
+		<p class="txt">还没有收藏的商品信息和店铺信息！</p>
+	</div>
+</div>
+{{/if}}
+<div class="m-centerpager">
+   <ucenterpager total={{Math.ceil(total/limit)}} current={{current}}></ucenterpager>
+</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/rabbit
+           https://raw.github.com/SpringSource/spring-amqp/master/spring-rabbit/src/main/resources/org/springframework/amqp/rabbit/config/spring-rabbit-1.0.xsd
+	 http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	">
+
+	<description>NQS配置</description>
+
+	<bean id="defaultConnectionFactory"
+		class="com.xyl.mmall.jms.service.base.DefaultConnectionFactory"></bean>
+
+	<bean id="rabbitTemplate" class="org.springframework.amqp.rabbit.core.RabbitTemplate">
+		<property name="connectionFactory" ref="defaultConnectionFactory" />
+	</bean>
+	
+	<context:component-scan base-package="com.xyl.mmall"></context:component-scan>
+
+</beans>

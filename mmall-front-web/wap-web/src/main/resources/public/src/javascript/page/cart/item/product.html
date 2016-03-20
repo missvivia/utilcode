@@ -1,0 +1,50 @@
+{{#if sku.offline || sku.inventroyCount < sku.min}}
+<div class="prod f-cb prod-offline">
+	<div class="p-check f-fl">失效</div>
+	<a class="p-img f-fl" href="javascript:;"><img src="{{sku.thumb||'#'}}" alt=""/></a>
+	<div class="p-info g-flex-wrap">
+	  <div class="col1">
+	    <a class="name" href="javascript:;">{{sku.name||'商品名称占位'}}</a>
+	    <span class="cartPrice f-fwb red">￥{{sku.cartPrice|fixed}}</span><br/>
+	    <a class="u-del" href="javascript: void(0);" on-click={{this.onDelete(sku)}}></a>
+	    <div class="red" style="margin-top:10px;">{{sku.inventroyCount < sku.min ? "商品暂时缺货" : "商品已下架"}}</div>
+	    
+	  </div>
+	</div>
+</div>
+{{#else}}
+<div class="prod f-cb" id="{{sku.id}}">
+  <div class="p-check f-fl">
+  	<img src="/src/img/svg/{{sku.selected ? 'checked' : 'check'}}.svg"  class="skuCheck" on-click={{this.onCheck($event,sku)}}/>
+  </div>
+
+  <a class="p-img f-fl" href="/product/detail?skuId={{sku.id}}"><img src="{{sku.thumb||'#'}}" alt=""/></a>
+  <div class="p-info g-flex-wrap">
+    <div class="col1">
+      <a class="name" href="/product/detail?skuId={{sku.id}}">{{sku.name||'商品名称占位'}}</a>
+      <span class="cartPrice f-fwb red">￥{{sku.cartPrice|fixed}}</span>
+		{{#if sku.limitConfigVO}}
+		    {{#if sku.limitConfigVO.startTime > cartInfoVO.now}}<span class="limitBuy">即将开始</span>
+		    {{#elseif cartInfoVO.now > sku.limitConfigVO.endTime}}<span class="limitBuy">已经结束</span>
+		    {{#else}}
+		    <span class="limitBuy">{{sku.limitConfigVO.limitDescrp}}</span>
+		    {{/if}}
+		{{/if}}
+      <a class="u-del" href="javascript: void(0);" on-click={{this.onDelete(sku)}}></a>
+    </div>
+    <span class="pos-left">
+      <numcount count={{sku.count}} max={{sku.max}} min={{sku.min}}  on-change={{this.onNumChange($event, sku)}}></numcount>
+    </span>
+    <span class="pos-right">
+      <div class="param s-fc4">{{sku.min}}件起批</div>
+    </span>
+  </div>
+    {{#if sku.inventroyCount < sku.count}}
+      <div class="error" style="margin-left:32px;padding-top:5px;">库存不足</div>
+    {{/if}} 
+    {{#if sku.min > sku.count}}
+      <div class="error" style="margin-left:32px;padding-top:5px;">未达到起批数量</div>
+    {{/if}}     
+</div>
+{{/if}}
+

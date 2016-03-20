@@ -1,0 +1,61 @@
+/*
+ * --------------------------------------------
+ * 弹窗组件
+ * @version  1.0
+ * @author   hzzhenghaibo(hzzhenghaibo@corp.netease.com)
+ * --------------------------------------------
+ */
+define([
+  'text!./activity.win.r.html',
+  "{pro}widget/BaseComponent.js",
+  '{pro}extend/util.js'
+  ], function(tpl, BaseComponent, _){
+
+
+  /**
+   * 弹窗组件
+   * 直接调用, this.destroy() 来关闭弹窗和回收
+   * Event:
+   *   -close (data): 关闭事件, 事件对象即data
+   *   -confirm (data): 确认时间，时间对象即data
+   * 配置: 
+   *   content: 即弹窗body处的内容
+   */
+
+
+  var Modal = BaseComponent.extend({
+    template: tpl,
+    // 默认属性
+    // 计算属性
+    data:{mask:false,clazz:''},
+    init: function(){
+      // 证明不是内嵌组件
+      if(this.$root == this) this.$inject(document.body);
+    },
+    confirm: function(){
+      this.$emit("confirm", this.data);
+    },
+    close: function(){
+      this.$emit("close", this.data);
+    },
+    $show:function(){
+    	setTimeout(function(){
+    		this.data.clazz = 'show';
+    		this.$update();
+    	}._$bind(this),10)
+    }
+    // 使用timeout模块
+  });
+
+
+
+  return Modal;
+
+  /**
+   * 使用:
+   *    progress.start() 开始进度条
+   *    progress.end(isError) 结束进度条
+   *    progress.move() 移动到某个进度条位置，最大100
+   */
+
+})

@@ -1,0 +1,33 @@
+/* product-list */
+.from-group{padding-bottom: 50px; }
+.list-page-up ,.list-page-down {float: right;}
+/* po-alist */
+.form-group .sep{position:absolute;left:-7px;top:7px;}
+/* po-add */
+.control-buadd{text-align: left;padding-top: 7px;}
+.buadd-id{color: #cc0000;font-size: 16px;font-weight: 700;padding-bottom: 20px;}
+.buadd-team{color: #333;font-size: 16px;font-weight: 700;padding-bottom: 20px;}
+.addlist-hd{clear: both;margin-top: 40px;overflow:hidden; margin-bottom: -1px}
+.addlist-hd ul{width: 356px;height: 40px;padding:0px;margin: 0px; border: 1px solid #bbb;border-width: 1px 0 0 1px;}
+.addlist-hd ul li{font-size: 16px;float: left; list-style: none;width: 177px;height: 40px;line-height: 40px;cursor: pointer;text-align: center;border: 1px solid #bbb;border-width: 0 1px 0px 0;background-color: #f7f7f7;}
+.addlist-hd .addclick{font-weight: 700;border-bottom: 1px solid #fff; color: #2b2b2b;background-color: #fff;}
+.clst_action{
+  padding: 20px;
+  border: 1px solid #bbb;
+}
+.table{border:1px solid #ccc;}
+.table-2{border: none}
+/* dell-detail */
+.selldetail-dh{margin-left: 15px;font-size: 16px;font-weight: 700}
+.form-returndetail span{color: #cc0000}
+/* sell-invoice */
+.m-addexpress ,.m-addnumber{padding: 10px;}
+.m-winbot{padding-left: 10px;}
+/* schedule-add */
+.add1much{margin-bottom: 5px;}
+.add1Amuch{margin-top: 5px;}
+.addtable2{width: 800px;}
+.addbarCode{word-wrap:break-word;}
+
+
+

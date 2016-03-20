@@ -1,0 +1,12 @@
+{
+  "name": "paopao3g",
+  "version": "0.0.1",
+  "dependencies": {
+    "nej": "0.2.*",
+    "jquery": "1.11.1",
+    "regularjs": "~0.2.10",
+    "regular-hub": "*",
+	"hammer.js":"*",
+    "modernizr":"~2.8.3"
+  }
+}

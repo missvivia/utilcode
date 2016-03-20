@@ -1,0 +1,7 @@
+{"result":
+    {
+    "active":[{"from":"dhfdfdf","value":"20","time":"2014.01.01 - 2014.01.01","range":"xxxxx","note":"备注备注备注备注"},{"from":"dhfdfdf","value":"20","time":"2014.01.01 - 2014.01.01","range":"xxxxx","note":"备注备注备注备注"}],
+    "over":[{"from":"dhfdfdf","value":"21","time":"2014.01.01 - 2014.01.01","range":"xxxxx","note":"备注备注备注备注"},{"from":"dhfdfdf","value":"20","time":"2014.01.01 - 2014.01.01","range":"xxxxx","note":"备注备注备注备注"}],
+    "past":[{"from":"dhfdfdf","value":"22","time":"2014.01.01 - 2014.01.01","range":"xxxxx","note":"备注备注备注备注"},{"from":"dhfdfdf","value":"20","time":"2014.01.01 - 2014.01.01","range":"xxxxx","note":"备注备注备注备注"}]
+    }
+}

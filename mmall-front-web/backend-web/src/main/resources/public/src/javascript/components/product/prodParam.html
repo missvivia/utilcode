@@ -1,0 +1,29 @@
+<form class="form-horizontal form-param" nz-form >
+  <div class="form-group has-feedback">
+{{#list productParamList as param}}
+    <div class="col-sm-{{@(param.type===4? '12': '4')}}">
+    <label class="col-sm-{{@(param.type===4? '1': '3')}} control-label" ><span class="u-required" r-hide='!param.isRequired'>*</span>{{@(param.name)}}</label>
+    <div class="col-sm-{{@(param.type===4? '11': '9')}}">
+    {{#if @(param.type === 2) }} 
+    <input type="text" value={{@(param.value)}} name={{@(param.id)}}  data-required={{@(param.isRequired?'true':'')}}  class="form-control"/>
+    {{#elseif @(param.type === 3 ) }}
+    <textarea name={{ @(param.id)}} value={{@(param.value)}} data-required={{@(param.isRequired?'true':'')}} class="form-control" ></textarea>
+    {{#elseif @(param.type === 1 ) }}
+    <select  class="form-control" name={{@(param.id)}} data-required={{@(param.isRequired? 'true': '')}}>
+      <option value="">请选择</option> 
+      {{#list @(param.list) as option}}
+        <option value="{{@(option.optId)}}" {{#if @(param.value==option.optId)}} selected {{/if}}>{{@(option.optValue)}}</option>
+      {{/list}}
+    </select>
+    {{#else}}
+      {{#list @(param.list) as option}}
+      <label class="checkbox-inline">
+        <input type="checkbox" name={{@(param.id)}} value={{@(option.optId)}}  checked={{@(!!option.checked)}}> {{option.optValue}}
+      </label>
+      {{/list}}
+    {{/if}}
+    </div>
+    </div>
+{{/list}}
+  </div>
+</form>

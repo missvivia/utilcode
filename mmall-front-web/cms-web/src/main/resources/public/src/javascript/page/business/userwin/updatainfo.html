@@ -1,0 +1,56 @@
+<div class="infowin row">
+  <div style="padding: 10px 15px;">
+    <div id="tab-box"></div>
+    <div id="add-box" class="content-box">
+			<form method="get" class="form-horizontal" onsubmit="return false;">
+				<div class="form-group">
+				    <div class="col-sm-6 col-sm-offset-3">
+						<input type="text" class="form-control" id="addUserInput" placeholder = "输入账号添加" autocomplete="off">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-3">
+					     <span class="btn btn-primary" id="addUser" style="width:100%">添加</span> 
+					</div>
+				</div>
+			</form>
+	</div>
+	<div id="userlist-box" class="row" style="display:none;">
+		  <div class="col-sm-12">
+		    <div class="m-card">
+		      <div class="card_c">
+		      	<form class="form-horizontal" id="search-form" onsubmit="return false;">
+		      		<div class="form-group">
+				        <div class="col-sm-12">
+				       		<input type="text" class="form-control" id="searchUserInput" placeholder="输入关键字查找(至少4位)" autocomplete="off">
+				       		<ul class="bindedUserList searchUserList userList-hide" id="searchUserList"></ul>
+				        </div>
+			     	</div>
+			    </form>
+		         <div id="userlist">
+		             
+		         </div>
+		      </div>
+		    </div>
+		  </div>
+      </div>
+      <div id="import-box" class="content-box" style="display:none;">
+			<form method="get" class="form-horizontal">
+				<div class="form-group">
+					<div class="col-sm-6 col-sm-offset-3">
+					     <label class="btn btn-primary j-img" data-name="importUserFile" id="importUser" style="width:100%">批量导入用户</label>
+		                 <input type="hidden" name="importUserFile" data-message="批量导入用户">
+					</div>
+					<div style="margin-top:6px;">
+					     <a href="/download/seller-template.xlsx">点击下载模板</a>
+					 </div>
+			    </div>
+			    <div class="form-group">
+					<div class="col-sm-6 col-sm-offset-3">
+					     <a href="#" class="btn btn-primary" id="exportUser" style="width:100%">导出所有用户</a> 
+					</div>
+				</div>
+			</form>
+	</div>
+  </div>
+</div>

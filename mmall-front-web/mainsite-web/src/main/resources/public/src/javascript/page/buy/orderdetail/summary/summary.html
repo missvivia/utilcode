@@ -1,0 +1,74 @@
+<div class="title orderinfo orderinfo-1">
+  <div class="bd s-fc1 f-fs2 f-fw1">
+    <span class="slash" r-html={{'&nbsp;'}}></span>结算信息
+  </div>
+</div>
+<div class="bd">
+  <table class="p-settle f-fl f-fs1">
+    <tbody>
+      <tr>
+        <td class="s-fc3 col1 f-vat">送货地址</td>
+        <td class="s-fc1">
+          {{#if !!orderdetail.currentAddress}}
+            {{orderdetail.currentAddress.consigneeName||''}}
+            {{#if !!orderdetail.currentAddress.consigneeMobile}}{{orderdetail.currentAddress.consigneeMobile}}{{#else}}{{orderdetail.currentAddress.consigneeTel}}{{/if}}
+            {{orderdetail.currentAddress.province||''}}{{#if (orderdetail.currentAddress.cityId>0)}}{{orderdetail.currentAddress.city||''}}{{/if}}{{#if (orderdetail.currentAddress.sectionId>0)}}{{orderdetail.currentAddress.section||''}}{{/if}}{{#if (orderdetail.currentAddress.streetId>0)}}{{orderdetail.currentAddress.street||''}}{{/if}}{{orderdetail.currentAddress.address||''}}
+          {{#else}}
+            请先选择收货地址
+          {{/if}}
+        </td>
+      </tr>
+      <tr r-hide="{{orderdetail.realCash<=0}}">
+        <td class="s-fc3">支付方式</td>
+        <td class="s-fc1">{{#if !!orderdetail.currentPayMethod}}使用{{this.paymethodMap[orderdetail.currentPayMethod.value]}}{{#else}}请先选择支付方式{{/if}}</td>
+      </tr>
+      <tr>
+        <td class="s-fc3">其他信息</td>
+        <td class="s-fc1">
+          <input type="checkbox" id="receipt" name="receipt" r-model={{receipt}}><label for="receipt" class="mgl7">开发票</label> <span class="s-fc3">发票将在所有产品签收后的15个工作日内单独寄出。</span>
+        </td>
+      </tr>
+      <tr r-hide={{!receipt}}>
+        <td></td>
+        <td>
+          <div class="p-dropdown p-dropdown-1 f-fl">
+            <i class="arrow-up"></i>
+            <div class="rd-wrap f-fl"><input type="radio" name="receipttype" value="0" id="receipttype0" r-model={{receipttype}} checked="checked" /><label class="mgl10 f-vam" for="receipttype0">个人</label></div>
+            <div class="rd-wrap f-fl mgl50"><input type="radio" name="receipttype" value="1" id="receipttype1" r-model={{receipttype}} /><label class="mgl10 f-vam" for="receipttype1">公司</label></div>
+            <div class="f-fl receipt" r-hide={{receipttype!=1}}>
+              <div r-hide={{receiptOK}} class="f-cb">
+                <input type="text" class="w-ipt ipt f-fl" id="receipt-value" name="receiptValue" placeholder="请填写发票抬头" r-model={{receiptValue}} on-blur={{this.onBlur()}}/><span class="w-btn f-fl" on-click={{this.sureReceipt()}}><a><span>确定</span></a></span>
+              </div>
+              <div r-hide={{!receiptOK}} class="f-cb">
+                <span class="f-fl mgl10 f-fs1">{{receiptValue}}</span><a class="s-fc9 mgl5 f-fl f-fs1" on-click={{this.sureReceipt()}}>修改</a>
+              </div>
+              <div class="s-fc3 tip">增值税发票请联系客服开具</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="f-fr p-settle-r f-fs1">
+    <dl class="f-cb">
+      <dd><span r-html={{'&yen;'}}></span>{{(orderdetail.cartOriRPrice|fixed)||'0.00'}}</dd>
+      <dt>商品总额</dt>
+      <dd><span r-html={{'&yen;'}}></span>{{(orderdetail.expOriPrice|fixed)||'0.00'}}</dd>
+      <dt>运费</dt>
+      <dd>-<span r-html={{'&yen;'}}></span>{{((orderdetail.expOriPrice - orderdetail.expUserPrice)|fixed) || '0.00'}}</dd>
+      <dt>运费减免</dt>
+      {{#if orderdetail.hdSPrice > 0 }}
+      <dd>-<span r-html={{'&yen;'}}></span>{{orderdetail.hdSPrice|fixed}}</dd>
+      <dt>活动优惠</dt>
+      {{/if}}
+      {{#if orderdetail.couponSPrice>0 }}
+      <dd>-<span r-html={{'&yen;'}}></span>{{orderdetail.couponSPrice|fixed}}</dd>
+      <dt>优惠券优惠</dt>
+      {{/if}}
+      {{#if orderdetail.redPacketSPrice>0 }}
+      <dd>-<span r-html={{'&yen;'}}></span>{{orderdetail.redPacketSPrice|fixed}}</dd>
+      <dt>红包减免</dt>
+      {{/if}}
+    </dl>
+  </div>
+</div>

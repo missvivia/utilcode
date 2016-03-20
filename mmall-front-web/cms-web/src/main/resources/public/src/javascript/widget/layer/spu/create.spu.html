@@ -1,0 +1,44 @@
+<div class="m-movewin">
+	<div class="wincnt">
+		<form class="form-horizontal j-flag">
+		
+			<input type ="hidden" value="0" class="" name="type">
+			<input type ="hidden" value="" class="" name="spuId">
+			<div class="form-group">
+				<label class="col-sm-3 control-label">单品条码：</label>
+				<div class="col-sm-9">
+					<div><input type ="text" value="" class="" name="spuBarCode"/> </div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">单品名称：</label>
+				<div class="col-sm-9">
+					<div> <input type ="text" value="" class="" name="spuName" data-message="请输入单品名称" maxLength="60"/> </div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">品牌：</label>
+				<div class="col-sm-9">
+					<select name="brandId" class="" id="brandId">
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">分类名称：</label>
+				<div class="col-sm-3" style="margin-left:15px;">
+					<div name="categoryNormalId" class="" id="categoryNormalId">
+					</div>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+	<div class="f-tac winbnts">
+		<span class="btn btn-primary j-flag">确定</span>
+		<span class="f-mgl btn btn-primary j-flag">取消</span>
+		<span class="btn btn-primary j-flag" id="syncBtn" style="display:none;">同步商品信息</span>
+	</div>
+</div>

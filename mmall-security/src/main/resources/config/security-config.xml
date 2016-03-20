@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	default-lazy-init="true" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<description>Shiro Security</description>
+
+	<import resource="classpath:application-context-account-conf.xml" />
+
+	<!-- Shiro's main business-tier object for web-enabled applications -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="neAuthorizingRealm" />
+		<property name="sessionManager" ref="defaultWebSessionManager"/>
+	</bean>
+	
+	<bean id="defaultWebSessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">  
+	    <property name="sessionDAO" ref="mmallSessionDAO" />  
+	</bean> 
+	
+	<bean id="mmallSessionDAO" class="com.xyl.mmall.security.session.MmallSessionDAO">  
+	    <property name="sessionHelper" ref="nkvSessionHelper" />  
+	</bean> 
+	
+	<bean id="nkvSessionHelper" class="com.xyl.mmall.security.session.NkvSessionHelper">  
+	    <property name="defaultExtendNkvClient" ref="mdbSessionNkvClient" />  
+		<property name="webSessionKeyPrefix" value="${security.webSessionKeyPrefix}"/>
+	</bean> 
+
+	<!-- 自定义的Realm -->
+	<bean id="neAuthorizingRealm" class="com.xyl.mmall.security.realm.MmallAuthorizingRealm">
+		<property name="simpleUserService" ref="applicationAuthUserService" />
+	</bean>
+
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<!-- Account Validator -->
+	<bean id="accountValidator" class="com.netease.print.security.authc.AccountValidatorImpl"
+		init-method="init">
+		<property name="userValidator">
+			<bean parent="baseUserValidator" />
+		</property>
+		<property name="testMode" value="${urs.testMode}" />
+		<property name="testUserName" value="${urs.testUserName}" />
+	</bean>
+
+	<!-- Account Validator for Oauth -->
+	<bean id="accountValidatorOauth"
+		class="com.xyl.mmall.security.service.AccountValidatorOauthImpl"
+		init-method="init">
+		<property name="userValidator">
+			<bean parent="baseUserValidator" />
+		</property>
+		<property name="testMode" value="${urs.testMode}" />
+		<property name="testUserName" value="${urs.testUserName}" />
+	</bean>
+
+	<!-- Logout Service -->
+	<bean id="logoutService" class="com.netease.print.security.authc.LogoutServiceImpl">
+		<property name="authCookies">
+			<list>
+				<!-- 163 blog -->
+				<value>NETEASE_AUTH_USERNAME</value>
+				<value>NETEASE_AUTH_SOURCE</value>
+				<!-- 163 urs -->
+				<value>NTES_SESS</value>
+				<value>USERNAME_FROM_URS</value>
+				<value>NTES_PASSPORT</value>
+				<value>P_INFO</value>
+				<value>S_INFO</value>
+				<value>NTES_OSESS</value>
+				<value>P_OINFO</value>
+				<value>S_OINFO</value>
+				<!-- 188 -->
+				<value>NTES_188SS</value>
+				<!-- 3rd -->
+				<value>MISS_THA</value>
+				<value>NETEASE_WDA_UID</value>
+			</list>
+		</property>
+		<property name="domain" value="${web.cookie.domain}" />
+	</bean>
+
+	<!-- Spring Shiro AOP -->
+	<aop:config proxy-target-class="true" />
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+</beans>

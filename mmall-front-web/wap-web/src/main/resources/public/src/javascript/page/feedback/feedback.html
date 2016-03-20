@@ -1,0 +1,26 @@
+<div class="m-feedback">
+    <div class="content">
+        <div class="suggestion">
+            <textarea placeholder="输入建议（请控制在300字内）" maxlength="300" r-model="suggestion"></textarea>
+            {{#if remain<300}}
+            <div class="tips">(还剩{{remain}}个字)</div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="title"><span>请留下您的联系方式（可不填）</span></div>
+    <div class="contact">
+        <div class="tel">
+            <div class="icon"><span class="u-tel"></span></div>
+            <div class="cnt"><input placeholder="电话" type="tel" r-model={{tel}} on-focus={{telFocus=true}} on-blur={{telFocus=false}}/></div>
+            {{#if telClearVisible}}<div class="clear" on-tap={{tel=""}}><span class="u-clear"></span></div>{{/if}}
+        </div>
+        <div class="email">
+            <div class="icon"><span class="u-email"></span></div>
+            <div class="cnt"><input placeholder="邮箱" maxlength="50" type="email" r-model={{email}}  on-focus={{emailFocus=true}} on-blur={{emailFocus=false}}/></div>
+            {{#if emailClearVisible}}<div class="clear" on-tap={{email=""}}><span class="u-clear"></span></div>{{/if}}
+        </div>
+    </div>
+    <div class="submit">
+        <a {{#if valid}}on-click={{this.submit()}} class="btn"{{#else}}class="btn disabled"{{/if}}><span>提交</span></a>
+    </div>
+</div>

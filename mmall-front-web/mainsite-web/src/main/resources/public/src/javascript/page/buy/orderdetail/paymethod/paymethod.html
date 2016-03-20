@@ -1,0 +1,35 @@
+<div>
+  <div class="title orderinfo orderinfo-2">
+    <div class="bd s-fc1 f-fs2 f-fw1">
+      <span class="slash" r-html={{'&nbsp;'}}></span>支付方式
+    </div>
+  </div>
+  <div class="bd">
+    <div class="p-hb f-fs1">
+      <input type="checkbox" {{#if orderdetail.canOrderRedPackets<=0}}disabled{{/if}} name="hongbao" r-model={{useHb}} on-change={{this.useHb(useHb)}}/><span>使用红包支付<span class="f-fw1">￥{{orderdetail.canOrderRedPackets|fixed}}</span></span><span class="s-fc3">( 当前可用余额 ￥{{orderdetail.canUseRedPackets|fixed}}) </span>
+    </div>
+    <div class="p-pay f-fs1" r-hide={{!show}}>
+      {{#list orderdetail.payMethodArray as payMethod}}
+      {{#if payMethod.isValid}}
+      <div class="payitem {{payMethod.value==this.data.orderdetail.currentPayMethodId? ' selected': ''}}">
+        <input type="radio" name="paytype" class="f-cp" id="payforget{{payMethod.value}}" value={{payMethod.value}} checked={{payMethod.value==this.data.orderdetail.currentPayMethodId? 'checked': ''}} on-click={{this.onPayMethodChange(payMethod.value)}}/>
+        {{#if payMethod.value==1}}
+        <label for="payforget{{payMethod.value}}" class="f-cp"><div class="method-box"><i class="u-pay-hd"></i><span class="hd-desc f-fw1">{{payMethod.desc}}</span></div></label>
+        <span class="f-vam tip">送货上门后再现金支付</span>
+        {{#else}}
+        <label for="payforget{{payMethod.value}}" class="f-cp"><div class="method-box"><img src="/res/images/paymethod/{{payMethod.value}}.png" alt="{{payMethod.desc}}" class="f-vam"/></div></label>
+        {{/if}}
+      </div>
+      {{#else}}
+        {{#if payMethod.value==1}}
+        <div class="payitem disabled" r-hide="{{payMethod.invalidMess == '地址黑名单'}}">
+          <input type="radio" name="paytype" id="payforget{{payMethod.value}}" disabled class="f-cp"/>
+          <label for="payforget{{payMethod.value}}" class="f-cp"><div class="method-box"><i class="u-pay-hd"></i><span class="hd-desc f-fw1">{{payMethod.desc}}</span></div></label>
+          <span class="f-vam tip">{{payMethod.invalidMess||""}}</span>
+        </div>
+        {{/if}}
+      {{/if}}
+      {{/list}}
+    </div>
+  </div>
+</div>

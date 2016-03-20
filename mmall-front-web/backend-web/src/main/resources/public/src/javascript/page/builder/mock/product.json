@@ -1,0 +1,176 @@
+{
+    "code": 200,
+    "result": {
+        "total": 8,
+        "list": [
+            {
+                "id": 1,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品1",
+                "marketPrice": 1000,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/7.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品2",
+                "marketPrice": 900,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/9.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品3",
+                "marketPrice": 700,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/a.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品4",
+                "marketPrice": 500,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/b.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品5",
+                "marketPrice": 2200,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/c.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品6",
+                "marketPrice": 2100,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/d.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品7",
+                "marketPrice": 1200,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/e.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "goodsNo": "手动阀",
+                "colorName": "黑色",
+                "categoryName": "女款吊带",
+                "productName": "商品8",
+                "marketPrice": 1200,
+                "salePrice": 200,
+                "basePrice": 200,
+                "showPicPath": "../../res/test/f.png",
+                "skuList": [
+                    {
+                        "barCode": "k1111",
+                        "size": "L",
+                        "num": 200,
+                        "addStatus": 1,
+                        "reviewStatus": 0,
+                        "reviewText": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

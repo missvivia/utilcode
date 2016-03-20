@@ -1,0 +1,31 @@
+@abstract '_config.mcss';
+/* grid */
+html,body{height:100%;}
+body{min-width:1090px;}
+.g-bd{
+	width:1090px;margin:0 auto;@extend clearfix;
+	&-1{position:relative;zoom:1;height:30px;}
+	&-2{
+		width:950px;
+	}
+	&-3{
+		background:#fff;
+	}
+  &-4{
+    position: relative;
+    margin-top: 16px;
+  }
+}
+.g-box{
+	padding:20px 40px;
+	&-2{border-top:1px solid #e0e0e0;}
+}
+.g-mn{float:left;width:744px;}
+.g-mn-sub{width:1090px;}
+.g-sd{float:right;width:320px;}
+.g-mn1{float:right;width:920px;}
+.g-sd1{float:left;width:150px;}
+.g-ft{
+  margin-top:40px;padding:30px 0 0;background-color:#fff;
+  &-1{margin:0;padding-top:46px;border:none;background-color:#fff;}
+}

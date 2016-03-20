@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 1999-2011 Alibaba Group.
+ -  
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -  
+ -      http://www.apache.org/licenses/LICENSE-2.0
+ -  
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:reference interface="com.xyl.mmall.oms.service.OmsOutsideService" id="omsService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.PickOrderService" id="pickOrderService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.PickSkuService" id="pickSkuService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.PoOrderService" id="poOrderService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.PoReturnService" id="poReturnService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.ShipOrderService" id="shipOrderService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.ShipSkuService" id="shipSkuService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.WarehouseService" id="warehouseService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.BusinessPhoneService" id="businessPhoneService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.OmsOrderFormService" id="omsOrderFormService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.OmsReturnOrderFormService" id="omsReturnOrderFormService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.WarehouseStockInService" id="warehouseStockInService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.OmsOrderPackageService" id="omsOrderPackageService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.OrderTraceService" id="orderTraceService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.RejectPackageService" id="rejectPackageService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.OmsFeeService" id="omsFeeService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.FreightService" id="freightService"/>
+	<dubbo:reference interface="com.xyl.mmall.oms.service.WarehouseReturnService" id="warehouseReturnService" />
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsNoReceiptService" id="omsNoReceiptService" />
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsReceiptService" id="omsReceiptService" />
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsReturnService" id="omsReturnService" />
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsSendOutService" id="omsSendOutService" />	
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsShipOutReportService" id="omsShipOutReportService" />
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsOrderReportService" id="omsOrderReportService" />
+	<dubbo:reference interface="com.xyl.mmall.oms.report.service.OmsMakerReportService" id="omsMakerReportService" />
+</beans>

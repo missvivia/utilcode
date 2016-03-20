@@ -1,0 +1,72 @@
+.tree-head{
+	background:#ededed;
+	height:30px;
+	line-height:30px;
+}
+.tree {margin:0; padding:5px 5px 50px; color:#333;}
+.tree li{padding:0; margin:0; list-style:none; line-height:28px; text-align:left; white-space:nowrap; outline:0;*zoom:1;}
+.tree li:before,.tree li:after{display:table;content:"";line-height:0;}
+.tree li:after{clear:both;}
+
+.tree li ul{ margin:0; padding:0;}
+.tree li span{
+	cursor:pointer;
+}
+.tree li .level1,.tree li .level2,.tree li .level3{
+	cursor:pointer;
+}
+.tree li .level2{
+	padding-left:30px;
+}
+.tree li .level3{
+	padding-left:60px;
+}
+.tree .make{cursor:pointer;margin-right:10px;}
+
+
+.tree-box{
+	width:700px;
+	height:500px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+
+.categrod-wrap{
+	padding:0; margin:0;
+}
+.categrod-wrap li{
+	padding:0; margin:0; list-style:none; line-height:28px;border-bottom:1px solid #ccc;
+}
+
+.district{
+	position:relative;
+}
+.d-wrap{
+	position:relative;
+}
+.d-wrap ul{
+	position:absolute;
+	top:28px;
+	left:0px;
+	display:none;
+	border:1px solid #ccc;
+	background:#fff;
+	z-index:1000;
+	max-height:200px;
+	overflow-y:auto;
+	width:100%;
+}
+.d-wrap ul li{
+	padding:0px 10px;
+}
+.btnfixed{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	text-align:center;
+	background:#fff;
+	width:100%;
+	padding:10px 0px;
+	margin:0;
+}

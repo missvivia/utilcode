@@ -1,0 +1,8 @@
+<td><input type="radio" disabled {if exportTimes>0}checked{/if}/></td>
+<td><a class="j-flag" href="/supply/exportPK/${pickOrderId}" target="_blank">导出</a><a class="" href="/supply/pkDetail/${pickOrderId}">详情</a></td>
+<td>${pickOrderId}</td>
+<td>${pickTotalQuantity}</td>
+<td>${poOrderId}</td>
+<td>${comStartTime|format:"yyyy-MM-dd HH:mm:ss"}--${comEndTime|format:"yyyy-MM-dd HH:mm:ss"}</td>
+<td>${firstExportTime|format:"yyyy-MM-dd HH:mm:ss"}</td>
+<td>${exportTimes}</td>

@@ -1,0 +1,349 @@
+/**
+    @ name  : xyl ios style
+    @ time  : 2015.12.16
+    @ author: fuzhongkuo.com
+    @ page  : ios
+**/
+/* var */
+/* public */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+a,
+em,
+img,
+strong,
+sub,
+sup,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: inherit;
+  box-sizing: border-box;
+  font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, Arial, sans-serif;
+}
+html {
+  height: 100%;
+  font-size: 50px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+em,
+i {
+  font-style: normal;
+}
+a,
+a:active,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #f00;
+}
+input,
+select,
+textarea {
+  border-radius: 0;
+  padding: 0;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.wrap {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: #e6e6e6;
+  position: relative;
+}
+/* banner */
+.banner {
+  height: 6em;
+  position: relative;
+}
+.banner .img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.banner .img ul {
+  height: 100%;
+  width: 9999em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.banner .img ul li {
+  height: 100%;
+  float: left;
+  width: 12.8em;
+  background-size: cover;
+  cursor: pointer;
+}
+.banner .btn {
+  position: absolute;
+  left: 5.4em;
+  bottom: 10px;
+  z-index: 2;
+}
+.banner .btn li {
+  display: inline-block;
+  height: 0.24em;
+  width: 0.24em;
+  border-radius: 0.12em;
+  background: #fff;
+  margin-left: 0.2em;
+}
+.banner .btn li.active {
+  background: #000000;
+}
+.swiper-container {
+  width: 100%;
+  height: 6rem;
+}
+.swiper-container .swiper-wrapper {
+  z-index: 1;
+  height: 100%;
+  width: 9999rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  height: 100%;
+  width: 12.8rem;
+  background-size: cover;
+  cursor: pointer;
+}
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 1;
+}
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background: #000000;
+}
+/* home title */
+.home-tit {
+  height: 1.4em;
+  line-height: 1.4em;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  color: #323232;
+  background: #fff;
+  margin-top: 0.68em;
+}
+.home-tit span {
+  display: inline-block;
+  font-size: 0.52em;
+  font-weight: normal;
+  padding-left: 0.3rem;
+  margin-left: 0.4rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  border-left: 2px solid #f30000;
+  float: left;
+  margin-top: 0.4rem;
+  font-weight: bold;
+}
+.home-tit .more {
+  float: right;
+  color: #ec312d;
+  font-size: 0.48rem;
+  margin-right: 0.4rem;
+}
+.home-tit .more i {
+  background-image: url("/src/img/icon/home-more.png");
+  background-size: cover;
+  width: 0.48rem;
+  height: 0.48rem;
+  display: inline-block;
+  float: right;
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+}
+/* home hot */
+.hot {
+  background: #fff;
+  padding: 3.125% 3.125% 3.125% 0;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+}
+.hot .list {
+  height: 100%;
+}
+.hot .list li {
+  float: left;
+  width: 3.8rem;
+  text-align: center;
+}
+.hot .list li img {
+  width: 3.6rem;
+  margin-left: 0.2rem;
+  height: 3.16rem;
+  border-right: 1px solid #ddd;
+}
+.hot .list li .name {
+  color: #323232;
+  font-size: 0.48rem;
+  margin-top: 0.4rem;
+  display: block;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  overflow: hidden;
+}
+.hot .list li .price {
+  color: #323232;
+  font-size: 0.6rem;
+  display: block;
+  height: .7rem;
+  line-height: .7rem;
+}
+.hot .list li .store {
+  color: #999;
+  font-size: 0.4rem;
+  display: block;
+  width: 100%;
+  height: .7rem;
+  line-height: .7rem;
+  overflow: hidden;
+}
+/* home list */
+.home-list {
+  background: #fff;
+}
+.home-list:before,
+.home-list:after {
+  content: " ";
+  display: table;
+}
+.home-list:after {
+  clear: both;
+}
+.home-list li {
+  float: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  width: 4.26666667rem;
+  padding: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+.home-list li img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.home-list li .name {
+  font-size: 0.48rem;
+  color: #323232;
+  margin-top: 0.4rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+.home-list li .tit {
+  font-size: 0.48rem;
+  color: #ec312d;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+.home-list li .price {
+  color: #323232;
+  font-size: 0.6rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  display: block;
+  width: 100%;
+}
+.home-list li .price em {
+  font-family: "Aria";
+}

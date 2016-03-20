@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<description>数据库相关配置</description>
+
+	<aop:aspectj-autoproxy proxy-target-class="true" expose-proxy="true"/>
+	
+	<bean id="dataSource" class="com.netease.print.daojar.basic.ConnectionManagerQSImpl"
+		init-method="init" p:url="${db.url}" p:user="${db.user}" p:pass="${db.pass}"
+		p:driver="${db.driver}" p:maxActive="100" p:maxIdle="60000" p:maxWait="60000" p:testOnBorrow="true" p:validationQuery="select 1"/>
+
+
+	<bean id="dbTransactionManager"
+		class="com.netease.dbsupport.transaction.impl.DBTransactionManagerImpl" />
+
+	<!-- Sql Support -->
+	<bean id="sqlSupport" class="com.netease.dbsupport.impl.SqlDAOSupportImpl">
+		<property name="connectionManager" ref="dataSource" />
+		<property name="transactionManager" ref="dbTransactionManager" />
+	</bean>
+
+	<bean id="commonDaoSqlBase" class="com.netease.space.framework.dao.sql.CommonDaoSqlBase"
+		abstract="true">
+		<property name="sqlSupport" ref="sqlSupport" />
+	</bean>
+</beans>

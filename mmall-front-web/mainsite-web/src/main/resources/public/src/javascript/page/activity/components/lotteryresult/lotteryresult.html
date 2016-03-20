@@ -1,0 +1,118 @@
+{{#if this.data.type=="101"}}
+<div class="m-lottery-r m-ly-101">
+	<div class="m-ly-ct">
+		<div class="m-tt-box">
+			<header class="title">好幸运！恭喜你获得自拍神器一台!</header>
+		</div>
+		<section class="m-phone-box">
+			<div>我们客服会将中奖信息发送至你{{phoneNum}}的手机</div>
+			<div>并将在5个工作日内与你联系安排寄送事宜</div>
+		</section>
+		<div class="m-third-box">
+			<div class="m-share-title"><span class="f-fl">把你的幸运分享给朋友</span><div class="f-fl line"></div></div>
+			{{#include this.data.m3dl || '' }}
+		</div>
+		<section class="m-contact">如有疑问请拨打客服热线 4008666163</section>
+	</div>
+</div>
+{{#elseif this.data.type=="102"}}
+<div class="m-lottery-r m-ly-102">
+	<div class="m-ly-ct">
+		<div class="m-tt-box">
+			<header class="title">好幸运！恭喜您获得洗脸神器一套!</header>
+		</div>
+		<section class="m-phone-box">
+			<div>我们客服会将中奖信息发送至你{{phoneNum}}的手机</div>
+			<div>并将在5个工作日内与你联系安排寄送事宜</div>
+		</section>
+		<div class="m-third-box">
+			<div class="m-share-title"><span class="f-fl">把你的幸运分享给朋友</span><div class="f-fl line"></div></div>
+			{{#include this.data.m3dl || '' }}
+		</div>
+		<section class="m-contact">如有疑问请拨打客服热线 4008666163</section>
+	</div>
+</div>
+{{#elseif this.data.type=="103"}}
+<div class="m-lottery-r m-ly-103">
+	<div class="m-ly-ct">
+		<div class="m-tt-box">
+			<header class="title">好幸运！恭喜您获得补水神器一套！</header>
+		</div>
+		<section class="m-phone-box">
+			<div>我们客服会将中奖信息发送至你{{phoneNum}}的手机</div>
+			<div>并将在5个工作日内与你联系安排寄送事宜</div>
+		</section>
+		<div class="m-third-box">
+			<div class="m-share-title"><span class="f-fl">把你的幸运分享给朋友</span><div class="f-fl line"></div></div>
+			{{#include this.data.m3dl || '' }}
+		</div>
+		<section class="m-contact">如有疑问请拨打客服热线 4008666163</section>
+	</div>
+</div>
+{{#elseif this.data.type=="1288"}}
+<div class="m-lottery-r m-ly-1288">
+	<div class="m-ly-ct">
+		<div class="m-tt-box">
+			<header class="title">您已成功下单满1288元<br/>恭喜您获得mmall赠送的网易旅行箱一个！</header>
+		</div>
+		<section class="m-phone-box">
+			<div>我们客服会将中奖信息发送至你{{phoneNum}}的手机</div>
+			<div>并将在5个工作日内与你联系安排寄送事宜</div>
+		</section>
+		<div class="m-third-box">
+			<div class="m-share-title"><span class="f-fl">把你的幸运分享给朋友</span><div class="f-fl line"></div></div>
+			{{#include this.data.m3dl || '' }}
+		</div>
+		<section class="m-contact">如有疑问请拨打客服热线 4008666163</section>
+	</div>
+</div>
+{{#elseif this.data.type=="104"}}
+<div class="m-lottery-r m-ly-104">
+	<div class="m-btn-box">
+		<a class="m-btn-1" on-click={{this.on104close()}}></a>
+	</div>
+</div>
+{{#elseif this.data.type=="105"}}
+<div class="m-lottery-r m-ly-105">
+	<div class="m-ly-ct">
+		<div class="m-tt-box">
+			<header class="title">你是万中无一的幸运儿！<br/>恭喜您获得特等奖—巴厘岛双人游！</header>
+		</div>
+		<section class="m-phone-box">
+			<div>我们客服会将中奖信息发送至你{{phoneNum}}的手机</div>
+			<div>并将在5个工作日内与你联系安排寄送事宜</div>
+		</section>
+		<div class="m-third-box">
+			<div class="m-share-title"><span class="f-fl">把你的幸运分享给朋友</span><div class="f-fl line"></div></div>
+			{{#include this.data.m3dl || '' }}
+		</div>
+		<section class="m-contact">如有疑问请拨打客服热线 4008666163</section>
+	</div>
+</div>
+{{#elseif this.data.type=="20"}}
+<div class="m-lottery-r m-ly-20">
+	<div class="m-btn-box">
+		<a class="m-btn-1" href="/coupon">查看优惠券</a>
+	</div>
+</div>
+{{#elseif this.data.type=="cp1"}}
+<div class="m-lottery-r m-ly-cp1">
+	<div class="m-ly-ct">
+		<div class="m-third-box">
+			{{#include this.data.m3dl || '' }}
+		</div>
+		</div>
+</div>
+{{#elseif this.data.type=="cp2"}}
+<div class="m-lottery-r m-ly-cp2">
+	<div class="m-btn-box">
+		<a class="m-btn-1" on-click={{this.close()}}></a>
+	</div>
+</div>
+{{#else}}
+<div class="m-lottery-r m-ly-400" on-click={{this.close()}}>
+	<div class="m-btn-box m-btn-box-2">
+		<a class="m-btn-1"></a>
+	</div>
+</div>
+{{/if}}

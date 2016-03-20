@@ -1,0 +1,43 @@
+<div class="m-redpaketdetail">
+    <div class="summary">
+        <div class="wrap">
+            <table>
+                <tr class="head">
+                    <th class="f-tal">剩余额度</th>
+                    <th class="f-tar">初始额度</th>
+                </tr>
+                <tr class="content">
+                    <td class="currentvalue f-tal">&yen; {{redpacketDetail.remainCash}}</td>
+                    <td class="originalvalue f-tar">&yen; {{redpacketDetail.cash}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="list">
+        {{#if redpacketDetail.state !=5 && redpacketDetail.state !=8}}
+            <div class="validtime">
+                <span class="value">有效期：{{redpacketDetail.validStartTime|format}}-{{redpacketDetail.validEndTime|format}}</span>
+            </div>
+        {{/if}}
+        {{#if  redpacketDetail.dtos && redpacketDetail.dtos.length > 0}}
+            <div class="head">
+                <span class="f-tal">时间</span>
+                <span class="f-tar">收支金额（&yen;）</span>
+            </div>
+            {{#list redpacketDetail.dtos as item}}
+                {{#if item.redPacketHandlerType=='DEFAULT' && (item.redPacketOrderType == 'USE_RED_PACKET' || item.redPacketOrderType == 'USE_RED_PACKET_FOR_EXPRESS')}}
+                    <div class="item">
+                        <span class="f-tal">{{item.usedTime|format}}</span>
+                        <span class="value f-tar">-{{item.cash}}</span>
+                    </div>
+                {{#elseif item.redPacketHandlerType=='GRANT' && (item.redPacketOrderType == 'RETURN_RED_PACKET')}}
+                    <div class="item">
+                        <span class="f-tal">{{item.usedTime|format}}</span>
+                        <span class="value f-tar">+{{item.cash}}</span>
+                    </div>
+                {{/if}}
+            {{/list}}
+        {{/if}}
+    </div>
+
+</div>

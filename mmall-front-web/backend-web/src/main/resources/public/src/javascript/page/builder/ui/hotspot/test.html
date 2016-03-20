@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>热区裁剪器</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../javascript/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../../../css/page/builder.css" />
+    <style>
+        .bbox{position:relative;height:400px;margin:50px;text-align:center;border:1px solid #aaa;}
+        .bbox .xi{height:100%;margin:0 auto;}
+    </style>
+  </head>
+  <body>
+    
+    <div class="bbox" id="abc">
+      <img class="xi" id="def" src="http://g.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e4b4bd372d3c8a786c8175cc8.jpg" draggable="false"/>
+    </div>
+    
+    <script src="../../../../../javascript/lib/nej/src/define.js?pro=../../../../../javascript/"></script>
+    <script>
+        NEJ.define([
+            './hotspot.js'
+        ],function(_i){
+            _i._$$HotSpot._$allocate({
+                parent:'abc',
+                image:'def'
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>操作内容</th>
+      <th>操作人</th>
+      <th>操作时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list this.getCurrents(current) as tpl}}
+    <tr>
+      <td>{{(current-1)*10+tpl_index+1}}</td>
+      <td>{{tpl.oldphone==''?'新增导单提醒手机号':'更新导单提醒手机号'}}</td>
+      <td>{{tpl.businessAccount}}</td>
+      <td>{{(tpl.createTime)|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+    </tr>
+    {{/list}}
+  </tbody>
+</table>
+<div class="text-right">
+    <pager total={{Math.ceil(lists.length / 10)}} current={{current}} ></pager>
+</div>

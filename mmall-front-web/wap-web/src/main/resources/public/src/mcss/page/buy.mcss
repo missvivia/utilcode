@@ -1,0 +1,200 @@
+@abstract '../_config.mcss';
+
+.p-section{
+  padding: 0 20px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  .menu{
+    padding: 0 20px;
+    a{display:block;}
+  }
+  .wrap{padding-left:17px;}
+  .mgr10{margin-right: 5px;}
+  .mgr5{margin-right:5px;}
+  &-1{margin-bottom: 0px;}
+}
+.p-store{
+	padding:0;
+	.menu{
+		padding:9px 20px;
+		border-bottom:1px solid #e6e6e6;
+		a{background:url(/src/img/svg/store-orderinfo.svg) no-repeat;background-position:left 3px;padding-left:26px;}		
+	}
+	.p-plist{
+		padding:0;
+		background:#fff;
+		.prod{
+			padding:8px 20px 10px 20px;
+			margin-bottom:1px solid #fff;
+			background:#F8F8F8;
+		}
+	}
+}
+.p-address{
+  padding: 13px 17px 21px 26px;
+  position: relative;
+  .ads{padding-top: 3px;padding-right: 15px;}
+  .name{padding-right: 15px;}
+  .u-location{width:16px;height:23px;position: absolute;left: 0; top: 13px;background:url(/src/img/svg/location_black.svg) no-repeat;background-position:left top;}
+  .u-arrow-right{position: absolute;right: 0; top: 45%;}
+}
+
+.p-paymethod{
+  padding: 13px 17px 15px 26px;
+  position: relative;
+  input[type="radio"]{margin-right: 7px;}
+  .selected{color: $fc36;}
+  .tt{padding-bottom: 3px;}
+  .u-paymethod{width:19px;height:18px;position: absolute;left: 0; top: 13px;background:url(/src/img/svg/pay.svg) no-repeat;background-position:left top;}
+  .list{margin-top: 5px;}
+  .row{height: 36px; line-height: 35px;padding: 0 11px;margin:0 -11px;}
+  .row:last-child{border: none}
+}
+
+.p-plist{
+  background:#f8f8f8;
+  .prod{
+    padding: 8px 20px 10px 20px;
+    margin-bottom:1px;
+    .p-img {
+      margin: 2px 5px 0 0;
+      width: 65px;
+      height: 65px;
+      border:1px solid #e6e6e6;
+      overflow: hidden;
+      background:#fff;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    .p-info{
+      line-height: 16px;
+      .col2{text-align: right;}
+      .name{display: block;max-height: 32px;overflow: hidden;}
+      .param{margin-right: 7px;display: inline-block;margin-top: 20px;}
+      p{margin-bottom:10px;}
+    }
+  }
+}
+
+.p-promotion{
+  padding: 16px 17px;
+  i{margin-right: -28px;}
+  ul{margin-left: 28px;}
+
+}
+.p-coupon{
+  padding:13px 17px 21px 26px;
+  position:relative;
+  font-size:0.56rem;
+  .u-coupon{
+	position: absolute;
+    left: 0;
+    top: 17px;
+    background: url("/src/img/svg/coupon.svg") no-repeat;
+    background-position: left top;  
+    width:19px;
+    height:18px;	
+  }
+  .tt{margin-bottom:10px;}
+  .iptwp{
+    margin-right:74px;
+    input{
+	    width: 100%;
+	    line-height: 28px;
+	    border-radius: 2px;
+	    outline: none;
+	    border: 1px solid #959595;
+	    text-indent: 8px; 
+	    font-size:0.56rem;
+    }
+  }
+  .u-btn{height:30px;line-height:30px;}
+  .sel{width:100%;height: 30px;padding: 0 4px;font-size:0.56rem;}
+}
+.p-redpacket{
+  padding:14px 17px;
+}
+.p-invoice{
+  padding:10px 0 10px 17px;
+  line-height:32px;
+}
+.p-invoicewin{
+  border-top: 1px solid #cbcbcb;
+  background-color: #fff;
+  padding-bottom:18px;
+  .types{
+    text-align:center;
+    font-size:14px;
+    height: 56px;line-height: 55px;
+  };
+  .mgr70{
+    margin-right:30px;
+  };
+  .areawp{
+    position:relative;
+    height:70px;
+    overflow:hidden;
+      .area{
+        z-index:3;
+        display:block;
+        position:relative;
+        padding: 8px;
+        width:100%;
+        height:100%;
+        border:1px solid #f2f2f2;
+        background:none;
+        &:valid, &:focus{
+          background:#fff;
+        };
+        &:disabled + .desc{
+          background-color:#efefef;
+        }
+      }
+      .desc{
+      position:absolute;
+      display:block;
+      top:0;
+      bottom:0;
+      right:100%;
+      width:100%;
+      margin-right:-100%;
+      padding:10px;
+      color:#ccc;
+      line-height:20px;
+      font-size:14px;
+      }
+  }
+}
+
+input[type="radio"]{
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align:middle;
+  $inline-block();width:18px;height:18px;
+@extend bg-icon;
+  background:url(/src/img/svg/check.svg) no-repeat left top;
+  border:0;
+} 
+input[type="radio"]:checked{
+  background:url(/src/img/svg/checked.svg) no-repeat left top;
+}
+input[type="radio"][disabled]{
+  background:url(/src/img/svg/check.svg) no-repeat left top;
+}
+input[type="checkbox"]{
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align:middle;
+  border:0;
+  border-radius: 0;
+  $inline-block();width:18px;height:18px;
+@extend bg-icon;background-position:-338px -213px;
+}
+input[type="checkbox"]:checked{
+  background-position:-428px -213px;
+}
+input[type="checkbox"][disabled] {
+  background-position: -382px -213px;
+}

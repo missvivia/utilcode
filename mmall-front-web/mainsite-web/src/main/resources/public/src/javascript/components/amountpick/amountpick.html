@@ -1,0 +1,14 @@
+<div class="u-amount">
+  <b class="{{!!noMinus || disabled? 'no-minus': 'minus'}}" {{#if !disabled}}on-click={{this.onMinus($event)}}{{/if}}>-</b>
+  <input class="amount f-ff1" type="text" maxlength="3" {{#if inputDisabled}}disabled="disabled"{{/if}} {{#if disabled}}disabled="disabled"{{/if}} r-model={{amount}} on-keyup={{this.onAmountChange()}}/>
+  <b class="{{!!noPlus || disabled? 'no-plus': 'plus'}}" {{#if !disabled}}on-click={{this.onPlus($event)}}{{/if}}>+</b>
+  {{#if !animationEnd }}
+  <div class="slide f-ff1">
+    <div class="wrap" r-style={{ {top: offsetTop+'px'} }}>
+      <span class="top">{{amount-1}}</span>
+      <span class="center">{{amount}}</span>
+      <span class="bottom">{{amount+1}}</span>
+    </div>
+  </div>
+  {{/if}}
+</div>

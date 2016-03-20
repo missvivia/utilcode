@@ -1,0 +1,9 @@
+<!-- notify modal -->
+<div class="m-modal m-modal-2" r-hide={{isHide}} r-animation="on:enter;class: animated fadeIn; on:leave;class:animated fadeOut;">
+  <div class="placeholder"></div>
+  <div class="container m-notify">
+    <div class="main">
+      <span class="icon u-warn2"></span>{{message && message.message}}
+    </div>
+  </div>
+</div>

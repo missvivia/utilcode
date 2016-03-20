@@ -1,0 +1,29 @@
+{trim}
+<div class="m-slide2 padbox">
+    <div class="bd">
+        <ul class="list">
+            {list data as x}
+            <li class="item ${'js-c-'|seed}">
+                <a href="javascript:void(0)"><img src="${x.src}" width="950px" height="420px"/></a>
+            </li>
+            {/list}
+
+        </ul>
+        {if data&&data.length&&data.length>1}
+        <span class="btn btn-prev ${'js-p-'|seed}">&nbsp;</span>
+        <span class="btn btn-next ${'js-n-'|seed}" >&nbsp;</span>
+        {/if}
+    </div>
+    {if data&&data.length&&data.length>1}
+    <div class="tab-box">
+        <ul class="tab-list">
+            <li class="first"></li>
+            {list data as x}
+            <li class="${'js-i-'|seed}"></li>
+            {/list}
+            <li class="last"></li>
+        </ul>
+    </div>
+    {/if}
+</div>
+{trim}

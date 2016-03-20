@@ -1,0 +1,24 @@
+@abstract '../_config.mcss';
+.m-box{
+	position:relative;background:#fff;min-height:324px;_height:324px;
+	.hd{
+		padding:0 20px;border-bottom:1px solid #eaeaea;line-height:40px;@extend clearfix;
+		h3{float:left;font-size:14px;font-weight:bold;}
+		a,a:hover{float:right;font-size:12px;color:#666;}
+	}
+	.bd{
+		position:relative;zoom:1;padding:20px 20px 40px;
+	}
+}
+.u-empt{
+	padding:48px 0;
+	.w-btn a{
+		&,&:hover{text-decoration:none;}
+	}
+}
+.m-table td a{color:#5893cd;}
+.m-table .first{padding:0 30px;}
+.m-addr .info{
+	margin:26px 0 0 30px;
+	.txt{margin:0 0 0 20px;color:#999;}
+}

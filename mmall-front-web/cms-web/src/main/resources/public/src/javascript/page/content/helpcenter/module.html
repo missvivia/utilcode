@@ -1,0 +1,47 @@
+<div class="m-addpic f-cb">
+  <a class="f-fr btn btn-primary" href="/content/helpcenter/articleEdit" target="_blank">新建文章</a>
+</div>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+        <th>分类</th>
+        <th>子类</th>
+        <th>关键词</th>
+        <th>标题</th>
+        <th>保存时间</th>
+        <th>发布时间</th>
+        <th>发布平台</th>
+        <th>编辑人</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+   </thead>
+   <tbody>
+   	  {{#if list&&list.length==0}}
+   	  <tr>
+        <td colspan="10" class="f-tac">
+       	 查询记录为空
+        </td>
+      </tr>
+   	  {{#else}}
+      {{#list list as x}}
+      <tr>
+        <td>{{#if x.parentCategoryName==""}}{{x.categoryName}}{{#else}}{{x.parentCategoryName}}{{/if}}</td>
+        <td>{{#if x.parentCategoryName!=""}}{{x.categoryName}}{{/if}}</td>
+        <td>{{x.keywords}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.lastSaveTime|format:'yyyy-MM-dd HH:mm'}}</td>
+        <td>{{x.publishTime|format:'yyyy-MM-dd HH:mm'}}</td>
+        <td>{{x.publishTypeName}}</td>
+        <td>{{x.lastModifiedUser}}</td>
+        <td>{{x.status}}</td>
+        <td>
+          <a href="/content/helpcenter/articleEdit?id={{x.id}}" class="text-info" target="_blank">编辑</a>
+          {{#if x.status=="未发布"}}<a href="javascript:void(0);" class="text-info" on-click={{this.release(x_index)}}>发布</a>{{#else}}<a href="javascript:void(0);" class="text-info" on-click={{this.offline(x_index)}}>下线</a>{{/if}}
+          <span href="javascript:void(0);" class="text-info" on-click={{this.del(x_index)}}>删除</span>
+        </td>
+      </tr>
+      {{/list}}
+      {{/if}}
+   </tbody>
+</table>

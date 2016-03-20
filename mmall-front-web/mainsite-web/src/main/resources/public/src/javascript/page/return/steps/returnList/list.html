@@ -1,0 +1,86 @@
+   <div class="m-box m-box-1">
+      <div class="m-productlist">
+          <div class="hd">
+              <h2>请选择要退回的商品及退货原因</h2>
+          </div>
+          <div class="bd">  
+             <table class="m-tabler1" border="0" cellspacing="0" cellpadding="0" width="100%">
+              <thead>
+                <tr>
+                  <th class="col0" width="60px">
+                    <span class="w-chkbox"><input  type="checkbox" r-model={{checkAll}}><label for="checkall">全选</label></span>
+                  </th>
+                  <th class="col1" width="330px">商品</th>
+                  <th class="col2" width="130px">结算价</th>
+                  <th class="col3" width="170px">数量</th>
+                  <th class="col3" width="210px">操作</th>
+                  <th class="col4" width="130px">小计</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#list list as item}}
+                 <tr {{#if this.checkStatus(item)}}class="toprow"{{#else}}class="toprow returned"{{/if}}>
+                  <td class="col0">
+                    {{#if this.checkStatus(item)}}
+                    <span class="w-chkbox"><input type="checkbox" class="checkitm012" r-model={{item.checked}}></span>
+                    {{#else}}
+                    <span class="status">{{item.status.desc}}</span>
+                    {{/if}}
+                  </td>
+                  <td class="col1">
+                    <img src="{{item.thumb}}?imageView&quality=90&thumbnail=70y70" width="70" height="70">
+                    <div class="desc">
+                      <div class="name">{{item.productName}}</div>
+                      <div class="s-fc3"><span class="color">颜色分类：{{item.colorName}}</span><span class="size">{{item.attributes[0].desc}}</span></div>
+                    </div>
+                  </td>
+                  <td class="col2" r-html='&yen;{{item.salePrice}}'></td>
+                  <td class="col3">
+                  {{#if this.checkStatus(item)}}
+                    <div class="u-selnum">
+                        <amountpick amount={{item.quantity}}   maxamount={{(item.quantity)}}  inputDisabled="{{true}}" on-change={{this.onAmountChange($event, item)}} ></amountpick>
+                    </div>
+                  {{#else}}
+                    {{item.quantity}}
+                  {{/if}}
+                  </td>
+                  <td class="col4">
+                  {{#if this.checkStatus(item)}}
+                      <select {{#if item.showNoCommentError}} class="w-select w-select-1 w-select-error" {{#else}} class="w-select w-select-1"{{/if}} r-model='{{item.comment}}' on-change="{{this.selectChange(item)}}}">
+                        <option value="">请选择退货理由</option>
+                        <option value="七天无理由退货">七天无理由退货</option>
+                        <option value="尺码偏大">尺码偏大</option>
+                        <option value="尺码偏小">尺码偏小</option>
+                        <option value="商品错发">商品错发</option>
+                        <option value="商品漏发">商品漏发</option>
+                        <option value="收到商品破损">收到商品破损</option>
+                        <option value="商品质量问题">商品质量问题</option>
+                        <option value="收到商品与页面描述不符">收到商品与页面描述不符</option>
+                        <option value="商品吊牌价与平台专柜价">商品吊牌价与平台专柜价</option>
+                        <option value="其它">其它</option>
+                      </select>
+                    {{#else}}
+                    <span class="s-fc2">{{item.comment}}</span>
+                    {{/if}}
+                  </td>
+                  <td class="col5" r-html='&yen;{{item.sum}}'></td>
+                </tr>
+                 <tr {{#if this.checkStatus(item)}}class="btmrow"{{#else}}class="btmrow old"{{/if}}>
+                  <td class="col0"></td>
+                  <td class="col1" colspan="5">
+                    <div class="tip">
+                    {{#if item.promotion&&item.promotion.description}}
+                    <span class="itm"><label class="tit">活动：</label>{{item.promotion.description}}</span>
+                    {{/if}}
+                    {{#if item.coupon&&item.coupon.name}}
+                    <span class="itm"><label class="tit">已用优惠券：</label>{{item.coupon.name}}{{item.coupon.description}}</span>
+                    {{/if}}  
+                    </div>
+                  </td>
+                </tr>
+               {{/list}}
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>

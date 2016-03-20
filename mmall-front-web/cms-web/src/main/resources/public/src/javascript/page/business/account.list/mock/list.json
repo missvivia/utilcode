@@ -1,0 +1,13 @@
+{
+	"code": 200,
+	"result": {
+		"total": 100,
+		"list": [
+					{"areaName":"浙江省","area":"浙江省","id":"xxx","brandName":"秋水","actingBrandId":"1","contactName":"小峰","contactTel":"139123456787","contactAddress":"江汉路1785号","bankType":"1","bank":"工商银行","bankAccount":"1234","idCard":"1234444","companyName":"xx公司","registrationNumber":"123333","positiveImageUrl":"positiveImageUrl","negativeImageUrl":"negativeImageUrl","createTime":1410853328601,"warehouseName":"浙江省","warehouseId":"浙江省"},
+					{"areaName":"浙江省","area":"浙江省","id":"xxx","brandName":"秋水","actingBrandId":"1","contactName":"小峰","contactTel":"139123456787","contactAddress":"江汉路1785号","bankType":"2","bank":"商银银行","bankAccount":"1234","idCard":"1234444","companyName":"xx公司","registrationNumber":"123333","positiveImageUrl":"positiveImageUrl","negativeImageUrl":"negativeImageUrl","createTime":1410853328601,"warehouseName":"浙江省","warehouseId":"浙江省"},
+					{"areaName":"浙江省","area":"浙江省","id":"xxx","brandName":"秋水","actingBrandId":"1","contactName":"小峰","contactTel":"139123456787","contactAddress":"江汉路1785号","bankType":"3","bank":"工商银行","bankAccount":"1234","idCard":"1234444","companyName":"xx公司","registrationNumber":"123333","positiveImageUrl":"positiveImageUrl","negativeImageUrl":"negativeImageUrl","createTime":1410853328601,"warehouseName":"浙江省","warehouseId":"浙江省"},
+					{"areaName":"浙江省","area":"浙江省","id":"xxx","brandName":"秋水","actingBrandId":"1","contactName":"小峰","contactTel":"139123456787","contactAddress":"江汉路1785号","bankType":"4","bank":"工商银行","bankAccount":"1234","idCard":"1234444","companyName":"xx公司","registrationNumber":"123333","positiveImageUrl":"positiveImageUrl","negativeImageUrl":"negativeImageUrl","createTime":1410853328601,"warehouseName":"浙江省","warehouseId":"浙江省"},
+					{"areaName":"浙江省","area":"浙江省","id":"xxx","brandName":"秋水","actingBrandId":"1","contactName":"小峰","contactTel":"139123456787","contactAddress":"江汉路1785号","bankType":"2","bank":"工商银行","bankAccount":"1234","idCard":"1234444","companyName":"xx公司","registrationNumber":"123333","positiveImageUrl":"positiveImageUrl","negativeImageUrl":"negativeImageUrl","createTime":1410853328601,"warehouseName":"浙江省","warehouseId":"浙江省"}
+				]
+			}
+}

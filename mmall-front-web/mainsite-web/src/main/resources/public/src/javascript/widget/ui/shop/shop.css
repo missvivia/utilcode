@@ -1,0 +1,33 @@
+.#<uispace>{background:#fff;padding:29px 70px 70px;text-align:left;}
+.#<uispace> .ttl{padding-bottom:14px;font-size:18px;color:#000;}
+.#<uispace> .map{float:left;width:670px;height:550px;margin-right:-670px;border:1px solid #c8c8c8;}
+.#<uispace> .lbx{margin-left:670px;padding-left:31px;}
+.#<uispace> .lbox{margin-top:15px;}
+.#<uispace> .pbox{padding-top:30px;text-align:right;}
+.#<uispace> .u-pager-m a{border-color:#dadada;color:#999999;background-color:transparent;}
+.#<uispace> .u-pager-m a:hover,
+.#<uispace> .u-pager-m a.js-selected{border-color:#e878b2;color:#e878b2;}
+.#<uispace> .u-pager-m .js-disabled,
+.#<uispace> .u-pager-m .js-disabled:hover,
+.#<uispace> .u-pager-m .js-disabled.js-selected{border-color:#cccccc;color:#cccccc;}
+.#<uispace> .u-pager-m .zdot{color:#cccccc;}
+.#<uispace> .u-pager-m .zbtn{background:url(#<root>images/pager-shop.png) no-repeat;}
+.#<uispace> .u-pager-m .zprv{background-position:8px 7px;}
+.#<uispace> .u-pager-m .znxt{background-position:-22px 7px;}
+.#<uispace> .area .p{margin-right:5px;}
+.#<uispace> .area .s{width:120px;height:28px;line-height:28px;border:1px solid #dadada;}
+
+.#<uispace>-it{position:relative;padding:15px 0 12px 30px;color:#999999;border-bottom:1px solid #f3f3f3;zoom:1;cursor:pointer;}
+.#<uispace>-it .mxk{position:absolute;top:15px;left:0;width:19px;height:26px;color:#FFFFFF;background:url(#<root>images/marker_list.png) no-repeat 100px 0;text-align:center;}
+.#<uispace>-it .mxk-0{background-position:0px 0px;}
+.#<uispace>-it .mxk-1{background-position:-24px 0px;}
+.#<uispace>-it .mxk-2{background-position:-48px 0px;}
+.#<uispace>-it .mxk-3{background-position:-72px 0px;}
+.#<uispace>-it .mxk-4{background-position:-96px 0px;}
+.#<uispace>-it.js-hover .mxk-0,.#<uispace>-it.js-selected .mxk-0{background-position:0px -32px;}
+.#<uispace>-it.js-hover .mxk-1,.#<uispace>-it.js-selected .mxk-1{background-position:-24px -32px;}
+.#<uispace>-it.js-hover .mxk-2,.#<uispace>-it.js-selected .mxk-2{background-position:-48px -32px;}
+.#<uispace>-it.js-hover .mxk-3,.#<uispace>-it.js-selected .mxk-3{background-position:-72px -32px;}
+.#<uispace>-it.js-hover .mxk-4,.#<uispace>-it.js-selected .mxk-4{background-position:-96px -32px;}
+.#<uispace>-it .ln0{font-size:14px;color:#333333;}
+.#<uispace>-it .lnx{line-height:21px;}

@@ -1,0 +1,38 @@
+@abstract '../_config.mcss';
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+.g-bd{
+	font-size:1rem;
+	.m-section{
+		padding:1.5rem;background:$fc0;
+		.u-icon{
+			&-2{
+			$inline-block();
+			width:1.5rem;height:1.5rem;
+				$border-radius:50%;
+				border:1px solid $fc31;
+				text-align:center;
+			}
+		}
+		.m-ct{
+			padding-left:0.5rem;
+		}
+	}
+	.m-nav{
+      margin-bottom:1.6rem;font-size: 15px;
+      .m-table-1{margin:1rem auto;}
+      .td{
+      	border-left:1px solid $fc3;
+      }
+      .active a{color:$fc2}
+      .m-table-1 td:not(:last-child){width:26%}
+      .m-table-2 td:not(:last-child){width:22%}
+    }
+    .m-channel{
+    	border-top:1px solid $fc31;padding-top:0.8rem;
+    	.lang{
+    		$inline-block();
+    		&-en{margin-right:0.5rem};
+    	}
+    }
+}

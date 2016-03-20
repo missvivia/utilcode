@@ -1,0 +1,8 @@
+// 暂时用这个代替 后续等视觉
+.m-notify{
+transition:opacity 0.5s ease-in; z-index: 100;
+position:fixed;width:185px;height:100px;top:50%;left:50%;margin-top:-50px;margin-left:-92px;border-radius:4px;background:#3d383d;}
+.m-notify .placeholder{height:23px;width:25px;display:block;margin:25px auto 10px;}
+.m-notify .text{text-align:center;font-size:15px;color:#ccc;}
+.m-notify.show{opacity:1;}
+.m-notify.hide{opacity:0;}

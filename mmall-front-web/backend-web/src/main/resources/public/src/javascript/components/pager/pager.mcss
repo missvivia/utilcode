@@ -1,0 +1,4 @@
+
+.m-pager{
+  test: "components include";
+}

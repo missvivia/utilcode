@@ -1,0 +1,48 @@
+<div class="m-addpic">
+  <a class="f-fr btn btn-primary" on-click={{this.edit()}}>添加焦点图</a>
+</div>
+<div class="m-table">
+  <table class="table table-bordered">
+       <tr>
+         <th>序号</th>
+         <th>类型</th>
+         <th>状态</th>
+         <th>平台</th>
+         <th>PO编号</th>
+         <th>图片</th>
+         <th>链接</th>
+         <th>标题</th>
+         <th>上线时间</th>
+         <th>下线时间</th>
+         <th>操作</th>
+       </tr>
+     <tbody>
+        {{#list list as x}}
+        <tr>
+          <td>{{x_index}}</td>
+          <td>{{#if x.promotionType}}活动/其它{{#else}}PO推广{{/if}}</td>
+          <td>{{#if x.online}}下线{{#else}}上线{{/if}}</td>
+          <td>{{x.platformType}}</td>
+          <td>{{x.scheduleId}}</td>
+          <td>{{x.imgUrl}}</td>
+          <td>{{x.activityUrl}}</td>
+          <td>{{x.title}}</td>
+          <td>{{x.startTime|format}}</td>
+          <td>{{x.endTime|format}}</td>
+          <td>
+            <a on-click={{this.edit(x,x_index)}}>编辑</a>
+            <a on-click={{this.delete(x_index)}}>删除</a>
+            {{#if x_index !=0 }}
+            <a on-click={{this.move(x_index,-1,x)}}>上移</a>
+            {{/if}}
+            {{#if x_index !=list.length-1 }}
+            <a on-click={{this.move(x_index,1,x)}}>下移</a>
+            {{/if}}
+            <a on-click={{this.online(x_index,x.id,0)}}>上线</a>
+            <a on-click={{this.online(x_index,x.id,1)}}>下线</a>
+          </td>
+        </tr>
+        {{/list}}
+     </tbody>
+  </table>
+</div>

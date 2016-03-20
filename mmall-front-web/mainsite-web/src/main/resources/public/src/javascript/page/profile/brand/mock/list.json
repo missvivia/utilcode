@@ -1,0 +1,16 @@
+{
+	"code": 200,
+	"result": {
+		"total": 100,
+		"list": [{"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽1","status":0,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽2","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽3","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽4","status":2,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽5","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽6","status":0,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽7","status":2,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽8","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽9","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123},
+  				 {"imgUrl":"/res/images/img/barnd_intro.jpg","id":123,"brandNameEn":"EIFINI","brandNameZh":"伊芙丽10","status":1,"nextStartTime":1412929817478,"nextEndTime":1413016268030,"scheduleId":123}]
+	}
+}

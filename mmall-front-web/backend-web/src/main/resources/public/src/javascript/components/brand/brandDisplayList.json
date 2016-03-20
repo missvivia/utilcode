@@ -1,0 +1,72 @@
+{
+    "code": 200,
+    "result": {
+        "total": 100,
+        "list": [{
+            "id": 1,
+            "status":{
+                "type":1,
+                "desc": "新建"
+            },
+            "imageUrl":"/res/images/cut.jpg",
+            "updateTime": 24,
+            "editor": "oushutian",
+            "intro": "与时尚紧密接轨的年轻女装品牌，在淘宝立足不久...."
+        },
+        {
+            "id": 2,
+            "status":{
+                "type":2,
+                "desc": "审核中"
+            },
+            "imageUrl":"/res/images/cut.jpg",
+            "updateTime": 24,
+            "editor": "oushutian",
+            "intro": "与时尚紧密接轨的年轻女装品牌，在淘宝立足不久...."
+        },
+        {
+            "id": 3,
+            "status":{
+                "type":3,
+                "desc": "审核通过-使用中"
+            },
+            "imageUrl":"/res/images/cut.jpg",
+            "updateTime": 24,
+            "editor": "oushutian",
+            "intro": "与时尚紧密接轨的年轻女装品牌，在淘宝立足不久...."
+        },
+        {
+            "id": 4,
+            "status":{
+                "type":4,
+                "desc": "审核通过-暂未使用"
+            },
+            "imageUrl":"/res/images/cut.jpg",
+            "updateTime": 24,
+            "editor": "oushutian",
+            "intro": "与时尚紧密接轨的年轻女装品牌，在淘宝立足不久...."
+        },
+        {
+            "id": 5,
+            "status":{
+                "type":5,
+                "desc": "审核拒绝"
+            },
+            "imageUrl":"/res/images/cut.jpg",
+            "updateTime": 24,
+            "editor": "oushutian",
+            "intro": "与时尚紧密接轨的年轻女装品牌，在淘宝立足不久...."
+        },
+        {
+            "id": 6,
+            "status":{
+                "type":6,
+                "desc": "已作废"
+            },
+            "imageUrl":"/res/images/cut.jpg",
+            "updateTime": 24,
+            "editor": "oushutian",
+            "intro": "与时尚紧密接轨的年轻女装品牌，在淘宝立足不久...."
+        }]
+    }
+}

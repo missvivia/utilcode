@@ -1,0 +1,27 @@
+{
+  "name": "regularjs",
+  "version": "0.2.12",
+  "main": "dist/regular.js",
+  "description": "reactjs + angularjs = regularjs",
+  "authors": "@leeluolee <87399126@163.com>",
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "node_modules",
+    "bin",
+    "test",
+    "gulpfile.js",
+    "*.json",
+    "*.md"
+  ],
+  "homepage": "https://github.com/regularjs/regular",
+  "_release": "0.2.12",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.12",
+    "commit": "07c17a81dd59f9a157e11dd045277b3731cbb545"
+  },
+  "_source": "git://github.com/regularjs/regular.git",
+  "_target": "~0.2.6",
+  "_originalSource": "regularjs"
+}

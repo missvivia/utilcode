@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>新云联百万店-关于我们</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<link rel="stylesheet" href="/src/less/common.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="headerbox">
+			     <div class="m-topnav">
+			        <a class="curp go-back" href="javascript:void(0);">
+					    <i class="f-fl u-menu"></i>
+				    </a>
+				    <span class="tt">关于我们</span>
+			  	 </div>
+			     <div class="u-top" id="gotop"></div>
+			</header>
+            <section class="content">
+                <p>新云联“百万店”是一个可以节约零售门店采购成本，提供增值服务的综合性电商平台。</p>
+                <p>“百万店”深入全国560万家烟店，展开B2B电商业务，并充分开发线下服务，提供系统支持，提升门店服务能力。</p>
+            </section>
+        </div>
+    </body>
+    <script src="/src/frame/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+         $(function(){
+        	 $(".go-back").click(function(){
+        		 window.history.go(-1);
+        	 });
+        	 
+        	 function setFontSize() {
+       			 var wrapWidth = $(".wrap").width(),
+       				 fontSize = (wrapWidth / 640) * 50;
+       			 $("html").css("font-size", fontSize + "px");
+       		 }
+       		 setFontSize();
+       		 
+       		 $(window).resize(function() {
+       			 setFontSize();
+       		 });
+         });
+         
+    </script>
+</html>

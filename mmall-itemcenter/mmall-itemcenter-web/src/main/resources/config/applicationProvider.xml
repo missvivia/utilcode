@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="mmall-itemcenter-web"   />
+	<dubbo:protocol name="dubbo" port="-1" />
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.CategoryService"
+		ref="categoryService"   />
+	<bean id="categoryService"
+		class="com.xyl.mmall.itemcenter.service.impl.CategoryServiceImpl" />
+
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.ProductService"
+		ref="productService"    />
+	<bean id="productService"
+		class="com.xyl.mmall.itemcenter.service.impl.ProductServiceImpl"   />
+
+	<dubbo:service
+		interface="com.xyl.mmall.itemcenter.service.SizeTemplateService"
+		ref="sizeTemplateService"  />
+	<bean id="sizeTemplateService"
+		class="com.xyl.mmall.itemcenter.service.impl.SizeTemplateServiceImpl"   />
+
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.POProductService"
+		ref="poProductService"   />
+	<bean id="poProductService"
+		class="com.xyl.mmall.itemcenter.service.impl.POProductServiceImpl"  />
+
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.POSizeService"
+		ref="poSizeService"   />
+	<bean id="poSizeService"
+		class="com.xyl.mmall.itemcenter.service.impl.POSizeServiceImpl"  />
+		
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.PoProductUserFavService"
+		ref="poProductUserFavService"   />
+	<bean id="poProductUserFavService"
+		class="com.xyl.mmall.itemcenter.service.impl.PoProductUserFavServiceImpl"   />
+		
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.ItemModelService"
+		ref="itemModelService"   />
+	<bean id="itemModelService"
+		class="com.xyl.mmall.itemcenter.service.impl.ItemModelServiceImpl" />
+		
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.ItemSPUService"
+		ref="itemSPUService"   />
+	<bean id="itemSPUService"
+		class="com.xyl.mmall.itemcenter.service.impl.ItemSPUServiceImpl" />
+		
+	<dubbo:service interface="com.xyl.mmall.itemcenter.service.ItemProductService"
+		ref="itemProductService" />
+	<bean id="itemProductService"
+		class="com.xyl.mmall.itemcenter.service.impl.ItemProductServiceImpl" />
+</beans>

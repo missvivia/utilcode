@@ -1,0 +1,22 @@
+@abstract '../_config.mcss';
+
+.orderitm{
+	padding-top:50px;
+	padding-bottom:30px;
+	border-bottom:1px dashed #ccc;
+	padding-left:190px;
+	line-height:33px;
+	.status{position:relative;}
+	&-1{
+		padding-top:30px;padding-bottom:30px;
+	}
+	&-2{padding-top:30px;padding-bottom:50px;line-height:26px};
+	.mgl5{margin-left:5px};
+	.mg5{margin:0 5px};
+	.mgl10{margin-left:10px}
+	.mgl70{margin-left:70px}
+}
+
+.u-icon-warn,.u-icon-succ{
+	position:absolute;top:5px;left:-40px;
+}

@@ -1,0 +1,87 @@
+<div class="modal fade in show">
+  <div class="modal-dialog" style="width: {{width||640}}px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" on-click={{this.close()}}><span aria-hidden="true" class="glyphicon glyphicon-remove"></span><span class="sr-only" on-click={{this.close()}}>Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{title || 'Modal title'}}</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+			    <h2>拣货信息</h2>
+		      <form method="get" class="form-horizontal" >
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label">拣货单号：</label>
+		          <div class="col-sm-4">
+		            <span>{{pickOrderIdStr}}</span>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label">发货数量：</label>
+		          <div class="col-sm-4">
+		            <span>{{totalNum}}</span>
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label">PO单号：</label>
+		          <div class="col-sm-4">
+		            <span>{{poId}}</span>
+		          </div>
+		        </div>
+		      </form>
+				</div>
+				<div>
+			    <h2>物流信息</h2>
+		      <form method="get" class="form-horizontal invoiceForm" id="invoiceForm">
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label"><span style="color:red;">*</span>运单号：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="expressNO"  data-required="true"/>
+		          </div>
+		          <label class="col-sm-3 control-label"><span style="color:red;">*</span>承运公司：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="courierCompany" data-required="true"/>
+		          </div>
+		          
+		        </div>
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label"><span style="color:red;">*</span>发货箱数：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="shipBoxQTY" data-required="true"/>
+		          </div>
+		          <label class="col-sm-3 control-label"><span style="color:red;">*</span>预计到货时间：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control datePicker" name="viewExpectArrivalTime" data-required="true" />
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label"><span style="color:red;">*</span>联系电话：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="courierComPhone"  data-required="true"/>
+		          </div>
+		          <label class="col-sm-3 control-label">司机姓名：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="driverName" />
+		          </div>
+		        </div>
+		        <div class="form-group">
+		          <label class="col-sm-2 control-label">司机电话：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="driverPhone" />
+		          </div>
+		          <label class="col-sm-3 control-label">车牌号：</label>
+		          <div class="col-sm-3">
+		            <input type="text" class="form-control" name="licensePlate" />
+		          </div>
+		        </div>
+		        <input type="hidden" name="pickOrderId" value="{{pickOrderIdStr}}" />
+		        <input type="hidden" name="poOrderId" value="{{poId}}" />
+		      </form>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" on-click={{this.close()}}>{{coloseText || "关闭" }}</button>
+        <button type="button" class="btn btn-primary" on-click={{this.confirm()}}>{{confirmTitle || "确认"}}</button>
+      </div>
+    </div>
+  </div>
+</div>

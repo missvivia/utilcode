@@ -1,0 +1,3 @@
+<div class="u-selnum">
+  <span class="less {{count <= min || disable? 'z-dis' : '' }}" on-click={{this.setNum(count-1)}}><i class="hx"></i></span><input type="text" value={{count}} disabled/><span class="more {{count >= max || disable? 'z-dis' : '' }}" on-click={{this.setNum(count+1)}}><i class="hx"></i><i class="sx"></i></span>
+</div>

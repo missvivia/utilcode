@@ -1,0 +1,11 @@
+// 工具库
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+@import "../_config";
+
+.js-error{display:none}
+.js-invalid .js-error{display:block}
+.logo img{width:140px;height:60px;border:1px solid #ccc;padding:1px}
+.m-brandlogos li{float:left;margin-right:10px;list-style:none}
+.m-brandlogos{padding:0}
+

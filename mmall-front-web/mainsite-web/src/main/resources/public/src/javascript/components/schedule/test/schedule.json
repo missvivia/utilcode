@@ -1,0 +1,20 @@
+{
+    "code":200,
+    "result":{
+        "total":100,
+        "list":[
+            {"banner":{"scheduleId":"1","homeBannerImgUrl":"/res/images/img/barnd_intro.jpg"},
+            "brandId":"1","brandLogo":"/res/images/img/logo.png","title":"title","minDiscount":9000,"startTime":190000,"endTime":290000
+            },
+            {"banner":{"scheduleId":"2","homeBannerImgUrl":"/res/images/img/barnd_intro.jpg"},
+            "brandId":"2","brandLogo":"/res/images/img/logo.png","title":"title","minDiscount":9000,"startTime":190000,"endTime":290000
+            },
+            {"banner":{"scheduleId":"3","homeBannerImgUrl":"/res/images/img/barnd_intro.jpg"},
+            "brandId":"3","brandLogo":"/res/images/img/logo.png","title":"title","minDiscount":9000,"startTime":190000,"endTime":290000
+            },
+            {"banner":{"scheduleId":"4","homeBannerImgUrl":"/res/images/img/barnd_intro.jpg"},
+            "brandId":"4","brandLogo":"/res/images/img/logo.png","title":"title","minDiscount":9000,"startTime":190000,"endTime":290000
+            }
+        ]
+    }
+}

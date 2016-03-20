@@ -1,0 +1,5 @@
+.form-horizontal .control-label{text-align:left;}
+
+.m-info p{margin:0;line-height:34px;}
+.m-info .w-msg{color:red;}
+.m-info .w-msg-1{color:green;}

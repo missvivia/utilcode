@@ -1,0 +1,82 @@
+@abstract '../_config.mcss';
+.m-box{
+	margin:0 0 20px;background:#fff;
+	.hd{
+		padding:0 20px;border-bottom:1px solid #eaeaea;line-height:40px;@extend clearfix;
+		h3{float:left;font-size:14px;font-weight:bold;}
+		a,a:hover{float:right;font-size:12px;color:#666;}
+	}
+	.bd{position:relative;zoom:1;padding:10px 0;}
+	.m-rstlist .bd{padding:20px 30px 40px;}
+	&-1{padding:15px;}
+}
+.m-sch{
+	position:relative;zoom:1;
+	.u-btn{position:absolute;right:0;top:0;}
+	.u-icon5{position:absolute;left:15px;top:9px;}
+}
+
+/* 
+**首页 **
+*/
+.m-question{
+	padding-bottom:50px;
+	li{float:left;*display:inline;width:400px;margin:0 30px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+	a{
+		font-size:14px;line-height:36px;
+		&:hover{color:#5893cd;}
+	}
+}
+.m-itmlist{
+	float:left;*display:inline;width:430px;padding-bottom:60px;
+	&-1{margin-right:60px;}
+	.bd{position:relative;zoom:1;padding:10px 0 0 16px;}
+	li{
+		float:left;padding:0 12px;border-right:1px solid #dedede;line-height:16px;margin:10px 0;font-size:14px;white-space:nowrap;
+		&.last{border-right:0;}
+	}
+	a:hover{color:#5893cd;}
+}
+
+/* 
+**列表页 **
+*/
+.m-rstlist{
+	.tit{
+		@extend clearfix;padding-top:20px;line-height:30px;border-top:1px dashed #ececec;
+		h4{float:left;font-size:14px;font-weight:bold;}
+	}
+	.desc{
+		margin-bottom:24px;line-height:24px;
+		&-digest{overflow:hidden;height:24px;}
+		/* types in <desc> */
+		ul,ol{padding:0 0 0 25px;}
+		ul li{list-style:disc outside;}
+		ol li{list-style:decimal outside;}
+		blockquote{zoom:1;border-left:solid 1px #ccc;padding-left:10px;}
+		/*p,ul,ol,blockquote{margin:0 0 20px;}
+		img{max-width:100% !important;_width:100%;}*/
+		.img img,img{display:block;width:830px;margin:10px auto 6px;}
+		a:hover{color:#5893cd;}
+	}
+	.first{padding-top:0;border:0}
+	.last{margin-bottom:0;}
+	
+	.lnk{
+		float:right;
+		&,&:hover{color:#5893cd;}
+		.u-icon6{margin:0 0 0 8px;}
+	}
+}
+
+/*
+**新手引导页**
+*/
+.m-guide{
+	padding:25px 35px 50px;
+	.itm{
+		padding:0 0 20px;
+		h3,h4{font-size:14px;line-height:24px;}
+		img{display:block;width:850px;margin:6px auto;}
+	}
+}

@@ -1,0 +1,25 @@
+<div class="card_c">
+{{#if totalResults == 0}}
+	<div>该用户不存在</div>
+{{#else}}
+	<table class="table table-bordered">
+	  <tbody>
+	    {{#list list as x}}
+	      <tr>
+	        <td>
+	            <div style="float:left;font-size:40px;"><span class="glyphicon glyphicon-user"></span></div>
+	            <div style="float:left;margin-left:5px;">
+	                <div>{{x.account}}{{#if x.isActive != 1}}&nbsp;&nbsp;<span style="color:#f00;">[已冻结]</span>{{/if}}</div>
+	                <div>{{x.nickName}}</div>
+	            </div>
+	        </td>
+	        <td><p><span class="glyphicon glyphicon-phone"></span>&nbsp;{{x.phone}}</p><p><span class="glyphicon glyphicon-envelope"></span>&nbsp;{{x.email}}</p></td>
+	        <td><span class="glyphicon glyphicon-home"></span>&nbsp;{{x.address}}</td>
+	        <td style="vertical-align:middle;"><a target="_blank" class="btn btn-primary" href="/userInfo/proxy/userLogin?userId={{x.userId}}">代Ta下单&nbsp;&gt;&gt;</a></td>
+	      </tr>
+	    {{/list}}
+	  </tbody>
+	</table>
+	<mmallpager totalPages={{totalPages}} currentPage={{currentPage}}></mmallpager>
+{{/if}}
+</div>

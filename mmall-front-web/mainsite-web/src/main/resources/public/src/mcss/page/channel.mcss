@@ -1,0 +1,4 @@
+@abstract '../_config.mcss';
+.p-po{
+	
+}

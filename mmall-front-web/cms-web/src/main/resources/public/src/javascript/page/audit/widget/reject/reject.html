@@ -1,0 +1,14 @@
+<form class="w-reject">
+  <div class="form-group row">
+  	<div class="col-sm-4">
+	  <select r-model="descp" class="form-control">
+	  	<option value="基本资料不全">基本资料不全</option>
+	  	<option value="规格图片尺寸不符">规格图片尺寸不符</option>
+	  	<option value="详情HTML描述不符合规范">详情HTML描述不符合规范</option>
+	  	<option value="商品描述与实物不符">商品描述与实物不符</option>
+	  </select>
+	 </div>
+  </div>
+  <textarea class="form-control" r-model="reason" on-keydown={{this.onKeyDown()}}></textarea>
+  <p {{#if !message}}style="visibility:hidden;"{{/if}}>{{message}}</p>
+</form>

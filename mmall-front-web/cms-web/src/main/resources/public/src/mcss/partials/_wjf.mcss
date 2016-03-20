@@ -1,0 +1,20 @@
+/*搜索框*/
+.m-wsearch{margin:20px 0;}
+.m-wsearch ul{margin:0 0 0 -40px;color:#428bca;display:inline-flex;}
+.m-wsearch li{float:left;padding:5px 10px;list-style:none;text-align:center;}
+.m-wsearch li:hover{cursor:pointer;color:#f17288;}
+.m-wsearch .onli{background:#4d5d77;color:#fff;border-radius:5px 5px 0 0;}
+.m-wsearch .u-btn{width:120px;height:34px;background:#4d5d77;border:none;color:#fff;}
+.m-wsearch .searchbox{border:3px solid #4d5d77;}
+/*table*/
+.m-wtable .u-img{width:40px;}
+.m-wtable td{vertical-align:middle;}
+#wtable td{vertical-align:middle;}
+.m-wpager .u-delbtn{float:left;margin:20px 0;}
+/*window公共部分样式*/
+body .m-window{border:5px solid #ccc;border-radius:5px;}
+body .m-window .zcnt{padding:10px;}
+body .m-window .zbar{padding-left:10px;background:#fff}
+body .m-window .zcls{font-size:20px;font-weight:bold;height:30px;line-height:30px;}
+body .m-window .zcls:hover{color:#666;}
+body .m-window .zttl{height:40px;line-height:40px;}

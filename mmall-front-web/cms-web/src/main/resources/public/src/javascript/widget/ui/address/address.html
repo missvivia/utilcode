@@ -1,0 +1,43 @@
+<form class="m-form m-form-addr j-flag">
+  <div class="fitm">
+    <label class="flab"><span class="important">*</span>收件人</label>
+    <div class="fipt">
+      <input type="text" class="w-ipt w-ipt-3" name="consigneeName" data-max-length="16" data-message="不能大于16个字" data-required="true"/>
+    </div>
+  </div>
+  <div class="fitm">
+    <label class="flab"><span class="important">*</span>所在地区</label>
+    <div class="fipt fipt-addr">
+      <div class="w-select w-select-addr">
+          <input type="text" class="select j-flag w-ipt w-ipt-3" placeholder="请选择城市"  data-message="请选择地地区" data-required="true">
+          <span class="arrow">&nbsp;</span>
+          <!--<label class="s-fc3">请选择城市</label>-->
+      </div>
+    </div>
+  </div>
+  <div class="fitm">
+    <label class="flab"><span class="important">*</span>详细地址</label>
+    <div class="fipt">
+      <input type="text" class="w-ipt w-ipt-4" name="address" data-max-length="64" data-message="不能大于64个字" data-required="true"/>
+    </div>
+  </div>
+  <div class="fitm">
+    <label class="flab"><span class="important"></span>邮编</label>
+    <div class="fipt">
+      <input type="text" class="w-ipt w-ipt-4" name="zipcode" data-pattern="^\d{6}|\d{0}$" data-message="邮政编码格式必须是6位数字"/>
+    </div>
+  </div>
+  <div class="fitm">
+    <label class="flab"><span class="important">*</span>手机号</label>
+    <div class="fipt">
+      <input type="text" class="w-ipt w-ipt-3" name="consigneeMobile" data-pattern="^1[34578][0-9]{9}$" data-message="请输入正确的手机号码"  data-required="true"/>
+      <div class="tel">
+      	<span class="flab flab-1">或固定电话</span><input type="text" class="w-ipt w-ipt-7" name="consigneeTel" maxlength=4/><input type="text" class="w-ipt w-ipt-8" name="consigneeTel" maxlength=8/><input type="text" class="w-ipt w-ipt-7" name="consigneeTel" maxlength=4/>
+      	<!-- removed <div class="err">手机号格式错误</div> -->
+      </div>
+    </div>
+    <div class="f-fr">
+      <span class="tip">两者至少填一项</span>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,113 @@
+<form action="" class="form-horizontal form-size">
+<div class="form-group">
+  <div class="col-sm-10 ">
+    <div class="row u-vmargin">
+      <div class="col-sm-10">
+        <ul class="nav nav-pills nav-justified nav-noborder">
+          <li 
+            class="{{sizeType==1?'active': ''}}" on-click={{ (!schedule) && (sizeType=1)}}><a href="javascript:;">无尺码表</a>
+          </li>
+          <li 
+          class="{{sizeType==3?'active': ''}}" on-click={{!schedule && (sizeType=3)}} ><a href="javascript:;">自定义</a></li>
+          <li class="dropdown {{showMenu?'open':''}} {{sizeType==2?'active':''}}" >
+            {{#if !template.sizeTemplate || !template.sizeTemplate.length}}
+            <select class='form-control' >
+              <option value="">选择尺码模板</option>
+              <option value="" disabled>无</option>
+            </select>
+            {{#else}}
+            <a class="dropdown-toggle" href="javascript:;" on-click={{ (!schedule) && (showMenu=!showMenu)}}> {{selectedSize? selectedSize.name : "选择尺码模板" }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              {{#list template.sizeTemplate as size}}
+              <li><a href="#" on-click={{this.selectSize(size)}} >{{@(size.name)}}</a></li> 
+              {{/list}}
+            </ul>
+            {{/if}}
+          </li>
+          <li>
+            <a class="inverse" target="_blank" href="/sizeTemplate/edit?id=0&view=0">添加尺码模板</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-12">
+      {{#if sizeType == 3 && template.sizeHeader}}
+        <table class="table  table-striped" r-table>
+          <thead>
+            <tr>
+              <th>条形码<span class='u-required'>*</span></th>
+              {{#list template.sizeHeader as hd}}
+                <th>{{@(hd.name + (hd.unit || ""))}}<span class='u-required' r-hide='!hd.required'>*</span></th>
+              {{/list}}
+              <th>&nbsp; </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#list skuList as bd}}
+            <tr r-animation="on: enter; class: animated fadeIn;" >
+              <td><input  class='form-control  form-control-sm' type="text" r-model={{bd.barCode}} {{#if @(schedule)}} disabled {{/if}} ></td>
+                {{#list template.sizeHeader as hd}}
+                  <td><input  class='form-control  form-control-sm' type="text" r-model={{bd.body[hd_index]}} {{#if @(schedule)}} disabled {{/if}}></td>
+                {{/list}}
+                <td>
+                  <a href="#" r-hide="skuList.length < 2 && bd_index==0" r-animation="on: enter; class: animated bounceIn;"
+                    class="btn btn-sm btn-default {{schedule? 'disabled': ''}}" 
+                    on-click={{ (!schedule) && this.delRow(bd_index)}}
+                    >删除</a>
+                </td>
+            </tr>
+            {{/list}}
+          </tbody>
+        </table>
+        <a href="#" class='btn btn-default {{schedule?"disabled":""}}' on-click={{ (!schedule) && this.addRow()}}>新增一行</a>
+      {{#elseif sizeType == 2 }}
+        {{#list selectedSize && selectedSize.list as size}}
+              <div class="col-sm-2 u-vmargin">
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon"><input type="checkbox" r-model={{size.selected}} class='u-checked'  {{#if @(schedule)}} disabled {{/if}}  ></span>
+                  <span type="text" class="form-control">{{size.size}}</span>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+        {{/list}}
+        <table class="table  table-striped" r-table>
+          <thead>
+            <tr>
+              <th>尺码</th>
+              {{#list this.findSelected(selectedSize) as size}}
+                <th>{{@(size.size)}}</th>
+              {{/list}}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>条形码<span class="u-required">*</span></td>
+              {{#list this.findSelected(selectedSize) as size}}
+              <td>
+                <input type="text"  r-model="size.barCode"  class="form-control form-control-sm"  {{#if @(schedule)}} disabled {{/if}} >
+              </td>
+              {{/list}}
+            </tr>
+        </tbody>
+      </table>
+      {{#elseif sizeType == 1}}
+      <div class="col-sm-10">
+      <table class="table  table-striped">
+        <tbody>
+          <tr>
+            <td>条形码<span class="u-required">*</span></td>
+            <td>
+            <input type="text"  r-model="defaultCode" class="form-control form-control-sm" {{#if @(schedule)}} disabled {{/if}}>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      {{/if}}
+      </div>
+</div>
+</form>
+
+
+

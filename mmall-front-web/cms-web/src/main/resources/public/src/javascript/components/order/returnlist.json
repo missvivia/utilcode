@@ -1,0 +1,130 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "id":11,
+        "products":{
+                "product":"衣服",
+                "gifts":[{
+                            "name":"裤子",
+                            "number":2
+                        },{
+                           "name":"裤子",
+                            "number":1 
+                        }],
+                "number":2
+            },
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": "150xxxxx",
+        "reason": "xxxxxxxxxx号",
+        "returnMethod": {
+            "redpak":"$12",
+            "epay":"$123",
+            "original":"$1"
+            },
+        "expressInfo": {"name":"xxxxx","telp":1111},
+        "status": 1,
+        "dealer": "大叔",
+        "optionExplain": "xx",
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      },{
+        "id":14,
+        "products":{
+                "product":"衣服",
+                "gifts":[{
+                            "name":"裤子",
+                            "number":2
+                        },{
+                           "name":"裤子",
+                            "number":1 
+                        }],
+                "number":2
+            },
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": "150xxxxx",
+        "reason": "xxxxxxxxxx号",
+        "returnMethod": {
+            "redpak":"$12",
+            "epay":"$123",
+            "original":"$1"
+            },
+        "expressInfo": {"name":"xxxxx","telp":1111},
+        "status": 2,
+        "dealer": "大叔",
+        "optionExplain": "xx",
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      },{
+        "id":12,
+        "products":{
+                "product":"衣服",
+                "gifts":[{
+                            "name":"裤子",
+                            "number":2
+                        },{
+                           "name":"裤子",
+                            "number":1 
+                        }],
+                "number":2
+            },
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": "150xxxxx",
+        "reason": "xxxxxxxxxx号",
+        "returnMethod": {
+            "redpak":"$12",
+            "epay":"$123",
+            "original":"$1"
+            },
+        "expressInfo": {"name":"xxxxx","telp":1111},
+        "status": 3,
+        "dealer": "大叔",
+        "optionExplain": "xx",
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      },{
+        "id":13,
+        "products":{
+                "product":"衣服",
+                "gifts":[{
+                            "name":"裤子",
+                            "number":2
+                        },{
+                           "name":"裤子",
+                            "number":1 
+                        }],
+                "number":2
+            },
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": "150xxxxx",
+        "reason": "xxxxxxxxxx号",
+        "returnMethod": {
+            "redpak":"$12",
+            "epay":"$123",
+            "original":"$1"
+            },
+        "expressInfo": {"name":"xxxxx","telp":1111},
+        "status": 1,
+        "dealer": "大叔",
+        "optionExplain": "xx",
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      }
+    ]
+  }
+}
+  

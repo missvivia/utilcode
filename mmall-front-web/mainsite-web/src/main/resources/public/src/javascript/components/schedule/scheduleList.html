@@ -1,0 +1,65 @@
+<textarea name='jst' id='#<seedList>'>
+  {list beg..end as x}
+    {var s = xlist[x]}
+    <div class='m-list3 j-node'>
+      <ul>
+        <li class='j-li'>
+          <a target="_blank" href='/schedule?scheduleId=${s.banner.scheduleId}'>
+          <div class='pic'>
+            <img class='u-loading-1'
+            data-src='${s.banner.homeBannerImgUrl}' alt=''/>
+            <!--a class='fav'>
+              {if s.hasFav}
+                <i title='取消关注' data-hasFav='${s.brandId}' data-action='${s.brandId}' class='u-iconlove '> &#xe606; </i>
+              {else}
+                <i title='添加关注' data-action='${s.brandId}' class='u-iconlove '> &#xe607; </i>
+              {/if}
+            </a-->
+          </div>
+          <div class='aside'>
+            <span class='logo'>
+              <span class='logobox' style='background:url(${s.brandLogo}?imageView&thumbnail=110x47&quality=90) center center no-repeat;
+              _background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${s.brandLogo}?imageView&thumbnail=110x47&quality=90'),sizingMethod='noscale';'>&nbsp;</span>
+              <div class='selloff'>
+                <span class='num'>${s.minDiscount/10}</span>折起
+              </div>
+            </span>
+            <div class='info'>
+              <h3 title="${s.title}">${s.title}</h3>
+              {var now = new Date().getTime()}
+              {if s.startTime > now}
+              <div class='countdown'>
+                <i class='u-iconf'>&#xF003;</i><span class='j-bcd'>
+                  将于${s.startTime|format:'yyyy-MM-dd HH:mm:ss'}开始
+                </span>
+              </div>
+              {elseif s.endTime < now}
+              <div class='countdown'>
+                <i class='u-iconf'>&#xF003;</i><span
+                class='j-bcd'>活动已结束</span>
+              </div>
+              {elseif s.endTime > now}
+              <div class='countdown'>
+                <i class='u-iconf'>&#xF003;</i><span
+                data-countdown='${s.endTime-now}' class='j-bcd'></span>
+              </div>
+              {/if}
+            </div>
+          </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  {/list}
+</textarea>
+<textarea name='ntp' id='#<seedBox>'>
+<div></div>
+</textarea>
+<textarea name='ntp' id='#<seedLoading>'>
+<div class="m-schedule-loading">
+  <div class="load">
+    <div class="w-loading"></div>
+    <div class="text f-fs1 s-fc2">努力加载中...</div>
+  </div>
+</div>
+</textarea>

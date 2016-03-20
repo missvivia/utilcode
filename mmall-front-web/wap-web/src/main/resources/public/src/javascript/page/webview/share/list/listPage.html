@@ -1,0 +1,39 @@
+{{!分享PO商品列表!}}
+{{#list list as l}}
+<li>
+	<div class="m-module">
+		{{!点击跳转!}}
+		<a target="_blank" href={{"http://023.baiwandian.cn/product/detail?id=" + l.id}}>
+			{{!商品大图!}}
+			<p class="m-module-img">
+				<img src={{l.listShowPicList[0] + "?imageView&quality=100&thumbnail=320x0"}} onerror="this.src='/mobile/images/default.jpg'"/>
+				{{!售罄提示!}}
+				{{#if l.saleout}}
+				<span class="m-module-saleout">
+					<img src="/mobile/images/saleout.png"/>
+				</span>		
+				{{/if}}	
+			</p>
+			{{!商品信息!}}
+			<div class="m-module-info">
+				{{!商品名称!}}
+				<p class="m-module-title">
+					{{l.productName}}
+				</p>
+				{{!价格信息(售价，商场价，折扣(保留一位小数))!}}
+				<p class="m-module-price">
+					<span class="m-price-now">￥{{l.salePrice}}</span>
+					<del class="m-price-old">￥{{l.marketPrice}}</del>
+					<span class="m-price-discount">
+						{{#if l.marketPrice != 0}}
+							{{Math.round(l.salePrice/l.marketPrice*100)/10}}折
+						{{#else}}
+							0折
+						{{/if}}
+					</span>
+				</p>
+			</div> 
+		</a>
+	</div>
+</li>
+{{/list}}

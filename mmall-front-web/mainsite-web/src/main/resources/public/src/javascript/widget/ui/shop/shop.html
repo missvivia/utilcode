@@ -1,0 +1,27 @@
+<textarea name="ntp" id="#<mtpl>">
+  <div>
+    <div class="ttl">店铺位置</div>
+    <div class="f-cb">
+      <div class="map j-flag"></div>
+      <div class="lbx">
+        <div class="area">
+          <select class="s p j-flag" id="map-p"></select>
+          <select class="s c j-flag" id="map-c"></select>
+        </div>
+        <div class="lbox j-flag"></div>
+        <div class="pbox j-flag"></div>
+      </div>
+    </div>
+  </div>
+</textarea>
+<textarea name="jst" id="#<ltpl>">
+  {list beg..end as y}
+    {var x=xlist[y]}
+    <div class="${css}-it j-xit" id="it-${|rand}" data-index="${y-beg}" data-city="${x.city.id<0?x.province.name:x.city.name}" data-coordinate="${x.longitude},${x.latitude}" data-title="${x.shopName}">
+      <span class="mxk mxk-${y-beg}">&nbsp;</span>
+      <p class="ln0">${x.shopName}</p>
+      <p class="ln1 lnx">地址：${x.shopAddr}</p>
+      <p class="ln2 lnx">电话：${x.shopZone}-${x.shopTel}</p>
+    </div>
+  {/list}
+</textarea>

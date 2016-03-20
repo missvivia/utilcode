@@ -1,0 +1,32 @@
+.#<uispace>{width:250px;}
+.#<uispace> .ipt{border:1px solid #d3d3d3;font-size:14px;padding:12px 10px;width:227px;line-height:16px;height:16px;color:#999999;-webkit-transition:box-shadow 0.2s;-moz-transition:box-shadow 0.2s;transition:box-shadow 0.2s;}
+.#<uispace> .ipt:focus{-webkit-box-shadow:0 0 4px #c8c3d5;box-shadow:0 0 4px #c8c3d5;border:1px solid #c3bdd1;}
+.#<uispace> .ipt:-moz-placeholder {color: #999999;opacity: 1;}
+.#<uispace> .ipt:-ms-input-placeholder {color: #999999;}
+.#<uispace> .ipt:-webkit-input-placeholder {color: #999999;}
+.#<uispace> .form-group{padding:5px 0;position:relative;}
+.#<uispace> .form-group-uname{z-index:1;}
+.#<uispace> .form-group .h-link{font-size:12px;color:#5893cd;}
+.#<uispace> .form-group .h-link:hover{color:#5893cd;text-decoration:underline;}
+.#<uispace> .form-group .user{color:#333;}
+.#<uispace> .form-group .psd{color:#666;}
+.#<uispace> ul.txtlist{position:absolute;top:46px;left:0;padding:1px 0;z-index:1;width:247px;background-color:#fff;border:1px solid #d7d7d7;}
+.#<uispace> ul.txtlist li{padding:0 12px;height:32px;line-height:32px;}
+.#<uispace> ul.txtlist li.unit{font-size:14px;color:#8f8e94;}
+.#<uispace> ul.txtlist li.unit:hover{cursor:pointer;}
+.#<uispace> ul.txtlist li.tip{font-size:12px;color:#696864;}
+.#<uispace> ul.txtlist li.js-selected{background-color:#e7e7e7;}
+.#<uispace> .js-placeholder{font-size:16px;color:#d3d3d3;position:absolute;top:0;*top:10px;padding-left:10px;}
+.#<uispace> .third .head{font-size:12px;color:#333;padding:27px 0 14px;line-height:14px;}
+.#<uispace> .third .item{background:url("../../../res/images/login-icon.png") 9999px 9999px no-repeat;}
+.#<uispace> .third .item{display:block;width:35px;height:35px;margin-right:10px;}
+.#<uispace> .third .item-yixin{background-position:0 0;}
+.#<uispace> .third .item-yixin:hover{background-position:0 -45px;}
+.#<uispace> .third .item-qq{background-position:-45px 0;}
+.#<uispace> .third .item-qq:hover{background-position:-45px -45px;}
+.#<uispace> .third .item-sina{background-position:-90px 0;}
+.#<uispace> .third .item-sina:hover{background-position:-90px -45px;}
+.#<uispace> .third .item-weixin{background-position:-135px 0;}
+.#<uispace> .third .item-weixin:hover{background-position:-135px -45px;}
+.#<uispace> .btn{display:inline-block;*display:inline;*zoom:1;height:40px;width:250px;font-size:14px;line-height:40px;color:#fff;text-align:center;background:#9144ae;}
+.#<uispace> .btn:hover{background:#863aa3;color:#fff;}

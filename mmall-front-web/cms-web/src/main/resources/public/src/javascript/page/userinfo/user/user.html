@@ -1,0 +1,30 @@
+<div class='m-user'>
+	<div class="tit">基本信息</div>
+	<div class="cnt f-cb">
+	    <div class="f-cb"><b>用户名</b><p>{{result.userName}}</p></div>
+	    <div class="f-cb"><b>用户ID</b><p>{{result.userId}}</p></div>
+	    <div class="f-cb"><b>绑定手机</b>
+        {{#if !showmobilemodify}}
+        <p>{{result.mobile}}</p><a on-click={{this.update('mobile',0)}} href="#">修改</a>
+        {{#else}}
+        <p><input r-model={{result.mobile}} value={{result.mobile}} type="text" /></p><a on-click={{this.update('mobile',1)}} href="#">保存</a>
+        {{/if}}
+        </div>
+	    <div class="f-cb"><b>绑定邮箱</b>
+        {{#if !showemailmodify}}
+        <p>{{result.email}}</p><a on-click={{this.update('email',0)}} href="#">修改</a>
+        {{#else}}
+        <p><input r-model={{result.email}} value={{result.email}} type="text" /></p><a on-click={{this.update('email',1)}} href="#">保存</a>
+        {{/if}}
+        </div>
+	    <div class="f-cb"><b>激活时间</b><p>{{result.activateTime|format}}</p></div>
+	    <div class="f-cb"><b>昵称</b><p>{{result.nickName}}</p></div>
+	    <div class="f-cb"><b>性别</b><p>{{result.gender}}</p></div>
+	    <div class="f-cb"><b>生日</b><p>{{result.birthDay}}</p></div>
+	    <div class="f-cb"><b>上次登录IP</b><p>{{result.lastLoginIp}}</p></div>
+	    <div class="f-cb"><b>上次登录所属区域</b><p>{{result.loginProvince}}</p></div>
+	    <div class="f-cb"><b>上次登录时间</b><p>{{result.lastLoginTime|format}}</p></div>
+	    <div class="f-cb"><b>红包有效余额</b><p>{{result.redPocketBalance}}</p></div>
+	    <div class="f-cb"><b>是否到付黑名单</b><p>{{result.blackListUser?'是':'否'}}</p></div>
+	</div>
+</div>

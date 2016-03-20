@@ -1,0 +1,504 @@
+@abstract '_config.mcss';
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;outline:none;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:normal;}
+del,ins,u,s,a,a:hover{text-decoration:none;outline:none;}
+u, ins { text-decoration: underline; }
+body,textarea,input,button,select,keygen,legend{font:$fs0/1.5 $ff1;color:$fc1;outline:0;}
+body{background:#f5f5f5;}
+a,a:hover{color:$fc1;}
+input::-ms-clear,input::-ms-reveal{display:none;}
+.z-placeholder{color:#a6a6a6 !important;}
+:-moz-placeholder{color:#a6a6a6 !important;}
+::-moz-placeholder{color:#a6a6a6 !important;}
+:-ms-input-placeholder{color:#a6a6a6 !important;}
+::-webkit-input-placeholder{color:#a6a6a6 !important;}
+:root *{filter:none\9 !important;}
+/* function */
+.f-cb{$clearfix();}
+.f-fs0{font-size:$fs0;}
+.f-fs1{font-size:$fs1;}
+.f-fs2{font-size:$fs2;}
+.f-fs3{font-size:$fs3;}
+.f-fs4{font-size:$fs4;}
+.f-fs20{font-size:20px;}
+.f-fs30{font-size:30px;}
+.f-ff0{font-family:arial,'simsun';}
+.f-ff1{font-family:helvetica,'Hiragino Sans GB','Microsoft YaHei','微软雅黑','宋体';}
+.f-ff3{font-family:'Microsoft YaHei','微软雅黑','宋体';}
+.f-fw1{font-weight: bold;}
+.f-ff2{font-family:'simsun',arial;}
+.f-ib{$inline-block();}
+.f-taj{$justify();}
+.f-wsn{$nowrap();}
+.f-pre{$pre();}
+.f-wwb{$break();}
+.f-toe{$ellipsis();}
+.f-usn{$noselect();}
+.f-dn{display:none!important;}
+.f-db{display: block}
+.f-fl{float:left;}
+.f-fr{float:right;}
+.f-cp{cursor:pointer;}
+.f-vam{vertical-align:middle;}
+.f-vat{vertical-align: top;}
+.f-tal{text-align: left;}
+.f-tar{text-align: right;}
+.f-mgt5{margin-top: 5px;}
+.f-mgr5{margin-right: 5px;}
+.f-mgl5{margin-left: 5px;}
+.f-mgr10{margin-right: 10px;}
+.f-pdb20{padding-bottom: 20px;}
+.f-fwb{font-weight: bold;}
+.f-pr{position: relative;}
+.f-pa{position: absolute;}
+.f-tac{text-align: center;}
+.f-du,.f-du:hover{text-decoration:underline;}
+.f-dt,.f-dt:hover{text-decoration:line-through;}
+.f-oh{overflow: hidden}
+
+/* skin */
+.s-fc0,a.s-fc0:hover{color: $fc0;}
+.s-fc1,a.s-fc1:hover{color: $fc1;}
+.s-fc2,a.s-fc2:hover{color: $fc2;}
+.s-fc3,a.s-fc3:hover{color: $fc3;}
+.s-fc4,a.s-fc4:hover{color: $fc4;}
+.s-fc5,a.s-fc5:hover{color: $fc5;}
+.s-fc6,a.s-fc6:hover{color: $fc6;}
+.s-fc7,a.s-fc7:hover{color: $fc7;}
+.s-fc8,a.s-fc8:hover{color: $fc8;}
+.s-fc9,a.s-fc9:hover{color: $fc43;}
+.s-fc10,a.s-fc10:hover{color: $fc10;}
+.s-fc11,a.s-fc11:hover{color: $fc11;}
+.s-fc12,a.s-fc12:hover{color: $fc12;}
+.s-fc13,a.s-fc13:hover{color: $fc13;}
+.s-fc14,a.s-fc14:hover{color: $fc14;}
+.s-fc15,a.s-fc15:hover{color: $fc15;}
+.s-fc16,a.s-fc16:hover{color: $fc16;}
+.s-fc17,a.s-fc17:hover{color: $fc17;}
+.s-fc18,a.s-fc18:hover{color: #68449e;}
+.s-fc19,a.s-fc19:hover{color: $fc42;}
+
+.s-fc40,a.s-fc40:hover{color: $fc40;}
+
+$keyframes(fadeInRight,{
+  0%{ opacity:0; $transform: translateX(60px);}
+  100%{opacity:1; $transform: translateX(0px);}
+});
+
+$keyframes(bounceIn, {
+  0%, 20%, 40%, 60%, 80%, 100% {transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);}
+  0% {opacity: 0;transform: scale3d(.3, .3, .3);}
+  20% {transform: scale3d(1.1, 1.1, 1.1);}
+  40% {transform: scale3d(.9, .9, .9);}
+  60% {opacity: 1;transform: scale3d(1.03, 1.03, 1.03);}
+  80% {transform: scale3d(.97, .97, .97);}
+  100% {opacity: 1;transform: scale3d(1, 1, 1); }
+});
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-animation-duration: .9s;
+  animation-duration: .9s;
+}
+
+input[type="radio"]{
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align:middle;
+  $inline-block();width:15px;height:15px;
+  @extend mem-icon;
+  background-position:-306px 0;
+}
+input[type="radio"]:checked{
+  background-position:-288px 0;
+}
+input[type="radio"][disabled] {
+  background-position: -270px 0px;
+}
+input[type="checkbox"]{
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align:middle;
+  $inline-block();width:15px;height:15px;
+  @extend mem-icon;background-position:-336px 0;
+}
+input[type="checkbox"]:checked{
+  background-position:-367px 0;
+}
+input[type="checkbox"][disabled] {
+  background-position: -362px -56px;
+}
+.z-overy{
+  overflow-y: auto;
+  padding-right: 17px;
+}
+.z-overy, .z-overy body {
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+
+.u-modal-anchor{
+  width: 100%;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+/**
+	*新加文件
+**/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, em, img, strong, sub, sup, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 100%;
+    font-family: \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif, arial;
+}
+/* HTML5 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-size: 12px
+}
+ol, ul {
+    list-style: none;
+}
+em, i {
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:focus {
+    outline: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/**
+    * 全局样式
+    *
+    * 一些常用的样式单独定义，一次定义多次使用。
+    *
+**/
+.clear {
+    clear: both;
+    overflow: hidden;
+    height: 1px;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.abs {
+    position: absolute;
+}
+.rel {
+    position: relative;
+}
+.l {
+    float: left;
+}
+.r {
+    float: right;
+}
+.wrap {
+    width: 1190px;
+    margin: 0 auto;
+}
+/**
+    * 公用模块
+    *
+**/
+.top-bar {
+    background: #f5f5f5;
+    height: 30px;
+    line-height: 30px;
+}
+.region-select {
+    height: 30px;
+    line-height: 30px;
+}
+.region-select * {
+    display: inline-block;
+    height: 19px;
+    line-height: 19px;
+    float: left;
+    margin-top: 5px;
+}
+.region-select span {
+    color: #888;
+    padding-right: 5px;
+}
+.region-select select {
+    border: 1px solid #bfbfbf;
+    color: #f00;
+}
+.region-select i {
+    background-position: -10px -5px;
+    display: inline-block;
+    width: 40px;
+}
+
+.top-bar-menu a, .top-bar-menu span {
+    display: inline-block;
+}
+.top-bar-menu span {
+    color: #ccc;
+}
+.top-bar-menu a {
+    color: #888;
+    padding: 0 5px;
+}
+.top-bar-menu a:hover {
+    background: #343434;
+}
+.top-bar-menu .user {
+    color: #318dcd;
+}
+.top-bar-menu .user:hover {
+    background: none;
+}
+.top-bar-menu .active em {
+    color: #fff;
+}
+.top-bar-menu .cart i {
+    background-position: -90px -5px;
+    display: inline-block;
+    width: 18px;
+    height: 15px;
+    margin: 7px 5px 7px 0;
+    float: left;
+}
+.top-bar-menu .cart:hover i {
+    background-position: -60px -5px;
+}
+
+.top {
+    padding: 30px 0;
+}
+.top .logo {
+    padding-right: 110px;
+}
+.top .search {
+    border: 3px solid #f00;
+    height: 30px;
+    line-height: 30px;
+}
+.top .search i {
+    display: inline-block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 6px 5px;
+    background-position: -10px -10px;
+}
+.top .search input {
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 10px;
+    border: none;
+    outline: none;
+    color: #888;
+    width: 400px;
+}
+.top .search button {
+    border: none;
+    outline: none;
+    background: #f00;
+    font-size: 16px;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    font-family: \5FAE\8F6F\96C5\9ED1;
+    float: right;
+    cursor: pointer;
+    padding: 0 30px;
+}
+.top .menu {
+    padding-top: 10px;
+}
+.top .menu a {
+    color: #888;
+}
+.top .menu a:hover, .top .menu .active {
+    color: #f00;
+}
+.top .menu span {
+    padding: 0 7px;
+    color: #ccc;
+}
+
+.ads {
+    padding-top: 20px;
+}
+
+.footer {
+    border-top: 20px solid #f9f9f9;
+    padding: 25px 0;
+}
+.footer dl {
+    float: left;
+    color: #666;
+    margin-right: 130px;
+}
+.footer dl:last-child{
+    margin-right: 0; 
+}
+.footer dt {
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.footer a {
+    color: #666;
+    height: 24px;
+    line-height: 24px;
+}
+.footer a:hover {
+    color: #f00;
+}
+
+.copyright {
+    background: #343434;
+    padding: 30px 0;
+    text-align: center;
+}
+.copyright a {
+    color: #888;
+}
+.copyright a:hover {
+    color: #f00;
+}
+.copyright span {
+    color: #888;
+    padding: 0 5px;
+}
+
+.fixed-side {
+    background: #343434;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    text-align: center;
+}
+.fixed-side ul {
+    padding-top: 100px;
+}
+.fixed-side a {
+    color: #888;
+}
+.fixed-side a:hover {
+    color: #f00;
+}
+.fixed-side i {
+    display: block;
+}
+.fixed-side span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0 40px 0;
+}
+.fixed-side .card {
+    position: relative;
+}
+.fixed-side .card .number {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #f00;
+    color: #fff;
+    border-radius: 10px;
+    display: block;
+    right: 10px;
+    top: -10px;
+}
+.fixed-side .card i {
+    width: 22px;
+    height: 19px;
+    background-position: -10px -10px;
+    margin-left: 15px;
+}
+.fixed-side .collect i {
+    width: 24px;
+    height: 23px;
+    background-position: -10px -40px;
+    margin-left: 17px;
+}
+.fixed-side .history i {
+    width: 25px;
+    height: 24px;
+    background-position: -10px -70px;
+    margin-left: 19px;
+}
+.fixed-side .download i {
+    width: 18px;
+    height: 24px;
+    background-position: -10px -100px;
+    margin-left: 21px;
+}
+.fixed-side .gotop i {
+    width: 24px;
+    height: 24px;
+    background-position: -10px -130px;
+    padding-bottom: 5px;
+}
+.fixed-side .gotop {
+    color: #888;
+    text-align: center;
+    cursor: pointer;
+    border-top: 1px solid #888;
+    padding-top: 20px;
+    position: absolute;
+    bottom: 100px;
+    left: 15px;
+}
+/**
+    *
+    * CSS 精灵
+    *
+**/
+.region-select i, .top-bar-menu .cart i {
+    background-image: url(../images/top-bar.png);
+}
+.top .search i {
+    background-image: url(../images/icon.png);
+}
+.fixed-side i {
+    background: url(../images/fixed.png);
+}

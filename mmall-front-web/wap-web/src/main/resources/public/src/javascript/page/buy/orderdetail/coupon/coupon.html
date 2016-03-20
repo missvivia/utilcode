@@ -1,0 +1,34 @@
+<div class="p-section">
+  <div class="p-coupon f-cb">
+    <i class="u-coupon"></i>
+    <p class="tt f-fs15">优惠券</p>
+    {{#if !hidden && !!orderdetail}}
+    <div>
+      <select class="sel" r-model={{orderdetail.currentCouponId}} on-change={{this.changeCoupon($event)}}>
+        <option class="opt" value="-">不使用</option>
+        {{#if orderdetail.couponList}}
+	        {{#list orderdetail.couponList as coupon}}
+	        	{{#list coupon.items as item}}
+	        		{{#if coupon.userCouponId == orderdetail.currentCouponId}}
+	        		<option class="opt" value="{{coupon.userCouponId}}"  minus="{{item.result[0].value}}" selected>满{{item.condition.value}}{{item.result[0].value}}元</option>
+	        		{{#else}}
+	        		<option class="opt" value="{{coupon.userCouponId}}"  minus="{{item.result[0].value}}">满{{item.condition.value}}{{item.result[0].value}}元</option>
+	        		{{/if}}
+	        	{{/list}}
+	        {{/list}}
+        {{/if}}
+        <option class="opt" value="+">输入优惠代码</option>
+      </select>
+    </div>
+    {{/if}}
+    {{#if showInputCode}}
+    <br/>
+    <div>
+      <span class="u-btn f-fr f-cp" on-click={{this.bindCoupon(inputcode)}}>确认</span>
+      <div class="iptwp">
+      	<input type="text" value="" maxlength="20" r-model="{{inputcode}}" placeholder="输入优惠券码" on-keydown={{this.checkSize(inputcode)}}/>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>

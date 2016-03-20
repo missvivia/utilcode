@@ -1,0 +1,21 @@
+<div class="m-express">
+  <i class="menupointer"></i>
+  <div class="nav item f-cb">
+    <p class="time">
+      <span>处理时间</span>
+    </p>
+    <p class="address">处理地点</p>
+    <p class="state">邮件状态</p>
+  </div>
+  {{#if result}}
+    {{#list result as r}}
+    <div {{#if r_index + 1 == result.length}}class="item f-cb now"{{#else}}class="item f-cb"{{/if}}>
+      <p class="time">
+        <span>{{r.acceptDate}}</span>
+      </p>
+      <p class="address">{{r.acceptAddress}}</p>
+      <p class="state">{{r.remark}}</p>
+    </div>
+    {{/list}}
+  {{/if}}
+</div>

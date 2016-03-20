@@ -1,0 +1,30 @@
+/*专场定位相同  活动中  container*/
+.g-container{position:relative;background:#fff;}
+.g-part-name{padding:5px 10px;color:#333;font-size:14px;}
+.g-part-name:before{content:"|";position:absolute;left:8px;height:9px;color:#9944ae;}
+
+/*尺码*/
+.g-part-size{padding:5px 10px;border-bottom:1px solid #dcdcdc;}
+/*尺码对照表*/
+.m-table-name{padding-left:10px;margin-top:5px;}
+.g-size-table{width:100%;margin-top:5px;padding:15px 0;table-layout:fixed;text-align:center;border:1px solid #dcdcdc;border-collapse:collapse;}
+.g-size-table th{padding:8px;border:1px solid #dcdcdc;background-color:#f5f5f5;color:#9c9c9c;font-weight:normal;}
+.g-size-table td{padding:8px 0;word-wrap:break-word;border:1px solid #dcdcdc;background-color:#fff;color:#8b8b8b;}
+.m-size-tip{padding:8px 5px;text-align:left;color:#8b8b8b;}
+.m-size-tip span{color:#fb6666;}
+/*尺码助手*/
+.g-helper-table{width:100%;margin-top:5px;padding:15px 0;table-layout:fixed;text-align:center;border:1px solid #dcdcdc;border-collapse:collapse;}
+.g-helper-table th:nth-child(n+2){padding:1px;border:1px solid #dcdcdc;background-color:#f5f5f5;color:#9c9c9c;font-weight:normal;}
+.m-helper-head{position:relative;padding:1px;width:70px;height:40px;border:1px solid #dcdcdc;overflow:hidden;font-weight:normal;}
+.m-helper-head span{position:absolute;}
+.m-helper-info1{top:0px;right:0px}
+.m-helper-info2{bottom:0px;left:0px;}
+.m-helper-corner{
+position:absolute;top:20px;left:-15px;width:100px;height:0px;border-bottom:1px solid #dcdcdc;
+-webkit-transform: rotate(30deg); 
+-moz-transform: rotate(30deg);   
+-ms-transform: rotate(30deg);   
+-o-transform: rotate(30deg);   
+transform: rotate(30deg);
+}
+.g-helper-table td{padding:1px 0;word-wrap:break-word;border:1px solid #dcdcdc;background-color:#fff;color:#8b8b8b;}

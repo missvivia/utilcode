@@ -1,0 +1,51 @@
+<div class="m-movewin">
+	<div class="wincnt">
+		<form class="form-horizontal j-flag">
+			<div class="form-group">
+				<label class="col-sm-3 control-label">
+                 	 品牌名称:
+                </label>
+				<div class="col-sm-9">
+					<div><label>英文名 或 拼音</label></div>
+					<input type ="hidden" value="" class="" name="brandId">
+					<div><input type ="text" value="" class="" name="brandNameEn" data-message="请输入品牌英文名"></div>
+					<div><label>中文名</label></div>
+					<div>
+						<input type ="text" value="" class="" name="brandNameZh" data-message="请输入品牌中文名"/>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">
+                 	 品牌资料:
+                </label>
+				<div class="col-sm-9">
+					<ul class="f-cb m-brandlogos j-flag">
+						<li>
+							<img src="" width=153 height=70>
+							<div>LOGO</div>
+							<div>270X116</div>
+							<label class="btn btn-primary j-img" data-name="logo">上传</label>
+							<input type="hidden" name="logo" data-message="上传logo">
+						</li>
+						<li>
+							<img src="" width=153 height=70>
+							<div>该图在悬停于logo时显示</div>
+							<div>310X180</div>
+							<label class="btn btn-primary j-img" data-name="brandVisualImgWeb">上传</label>
+							<input type="hidden" name="brandVisualImgWeb" data-message="上传品牌形象图">
+						</li>
+						<li>
+							<img src="" width=153 height=70>
+							<div>该图应用于APP品牌关注页</div>
+							<div>710X350</div>
+							<label class="btn btn-primary j-img" data-name="brandVisualImgApp">上传</label>
+							<input type="hidden" name="brandVisualImgApp" data-message="上传APP品牌形象图">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="f-tac winbnts"><span class="btn btn-primary j-flag">确定</span><span class="f-mgl btn btn-primary j-flag">取消</span></div>
+</div>

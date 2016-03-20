@@ -1,0 +1,59 @@
+<div class="form-group" >
+	<span class="btn btn-primary" on-click={{this.createCategory()}}>新建一级分类</span>
+	<span class="btn btn-primary" on-click={{this.unPackUpAllCategory()}}>全部展开</span>
+	<span class="btn btn-primary" on-click={{this.packUpAllCategory()}}>全部收起</span>
+</div>
+
+<table class="table  table-hover">
+<tr name="firstclasscategory">
+	<td>分类名称</td>
+	<td>分类ID</td>
+	<td>操作</td>
+</tr>
+ <tbody id="listBody">
+  	{{#list list as item}}
+   		<tr id={{"" + item.categoryId + item_index}} name="firstclasscategory">
+   			<td>
+   				<a class="j-update" on-click={{this.packUpCategory(item.categoryId,"", "1")}}>
+   					{{item.categoryName}}
+   				</a>
+   			</td>
+        	<td>{{item.categoryId}}</td>
+     		<td>
+     			<a class="j-update" on-click={{this.updateCategory(item.categoryId,"",item.categoryId,item.categoryName,"","无上级分类",1,this.packUpCategory)}}>修改</a>
+     			<a class="j-update" on-click={{this.remove(item.categoryId, "" + item.categoryId + item_index)}}>删除</a>
+     			<a class="j-update" on-click={{this.createSubCategory(item.categoryId,item.categoryId,item.categoryName,1, this.packUpCategory)}}>新建二级子分类</a>
+     		</td>
+  		</tr>
+  		
+  		 {{#list @(item.subCategoryList) as second}}
+  		 	<tr style="display:none" name={{"" + item.categoryId + "2"}} id={{"0" + second.categoryId + third_index}}>
+   				<td style="padding-left: 30px;">
+   					<a class="j-update" on-click={{this.packUpCategory(item.categoryId, second.categoryId, "2")}}>
+   						{{second.categoryName}}
+   					</a>
+   				</td>
+        		<td>{{second.categoryId}}</td>
+     			<td>
+     				<a class="j-update" on-click={{this.updateCategory(item.categoryId,"",second.categoryId,second.categoryName,item.categoryId,item.categoryName,2,this.packUpCategory)}}>修改</a>
+     				<a class="j-update" on-click={{this.remove(second.categoryId, "0" + second.categoryId + third_index)}}>删除</a>
+     				<a class="j-update" on-click={{this.createSubCategory(item.categoryId,second.categoryId,second.categoryName,2, this.packUpCategory)}}>新建三级子分类</a>
+     			</td>
+  			</tr>
+  			
+  			{{#list @(second.subCategoryList) as third}}
+  		 		<tr style="display:none" name={{"" + item.categoryId + "3"}} id={{"" + second.categoryId + third_index}}>
+   					<td style="padding-left: 60px;">{{third.categoryName}}</td>
+        			<td>{{third.categoryId}}</td>
+     				<td>
+     					<a class="j-update" on-click={{this.updateCategory(item.categoryId,second.categoryId,third.categoryId,third.categoryName,second.categoryId,second.categoryName,2,this.packUpCategory)}}>修改</a>
+     					<a class="j-update" on-click={{this.remove(third.categoryId, "" + second.categoryId + third_index)}}>删除</a>
+     				</td>
+  				</tr>
+         	{{/list}}
+  			
+         {{/list}}
+  		
+  	{{/list}}
+  </tbody>
+  </table>

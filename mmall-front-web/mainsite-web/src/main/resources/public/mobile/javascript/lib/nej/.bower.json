@@ -1,0 +1,12 @@
+{
+  "name": "nej",
+  "_release": "ef369899dd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ef369899dd361485c8dcd0c3bd103d68604c8e6e"
+  },
+  "_source": "http://gitlab.hz.netease.com/caijf/nej.git",
+  "_target": "*",
+  "_originalSource": "http://gitlab.hz.netease.com/caijf/nej.git"
+}

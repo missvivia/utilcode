@@ -1,0 +1,44 @@
+@abstract '../_config.mcss';
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+/* widget */
+.w-reject textarea{width:100%;height:150px}
+
+/* banner */
+.m-search{margin:15px 0;}
+.form-search-l{float:left;width:70%;}
+.form-search-r .f{float:right;}
+.form-search-r .a{width:100px;}
+.form-search-r .b{width:200px;}
+
+.m-bitm{margin:15px 0;padding:10px 0;border:1px solid #ddd;}
+.m-bitm .act{float:right;width:200px;margin-left:-200px;}
+.m-bitm .act p{margin-bottom:15px;}
+.m-bitm .man{margin-left:15px;margin-right:300px;}
+.m-bitm .man .ifo{line-height:30px;text-align:left;}
+.m-bitm .man .ifo span{margin-right:10px;}
+.m-bitm .man .img{text-align:left;}
+.m-bitm .man .img0{float:left;width:70%;}
+.m-bitm .man .img1{float:right;width:20%;}
+.m-bitm .man .img img{}
+
+/* brand */
+.m-brand .form-horizontal{margin-top:20px;}
+
+.m-dlst{margin:20px 0;}
+
+.m-ditm{float:left;width:33%;line-height:20px;height:275px;margin:20px 0;text-align:center;}
+.m-ditm .shw,.m-ditm .adt{width:80%;margin:0 auto;text-align:left;}
+.m-ditm .shw{position:relative;height:150px;}
+.m-ditm .shw img{width:100%;height:100%;}
+.m-ditm .shw .dsc{position:absolute;left:0;bottom:0;width:100%;height:40px;background:#000;color:#fff;$opacity:0.7;overflow: hidden;margin-bottom: 0;}
+.m-ditm .adt{margin-top:15px;}
+.m-ditm .adt .l{float:left;width:80px;margin-right:-80px;height:100px;overflow:hidden}
+.m-ditm .adt .r{margin-left:80px;}
+.m-ditm .sites{height:20px;}
+
+/* product */
+.table-product td{vertical-align:middle;}
+.table-product img{width:50px;}
+
+.table-fixed{table-layout:fixed;}
+.table-fixed td{word-break: break-all;}

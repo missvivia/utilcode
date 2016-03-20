@@ -1,0 +1,125 @@
+@abstract '../_config.mcss';
+.m-feedback{
+    .content,.title,.contact{
+        padding-left:20px;
+        padding-right:20px;
+        font-size:15px;
+    }
+    .content{
+        padding:20px;
+        background-color:$fc0;
+        border-bottom:1px solid $fc6;
+        .suggestion{
+            border:1px solid $fc46;
+            height:190px;
+            position:relative;
+            padding-bottom:5px;
+        }
+        textarea{
+            display:block;
+            width:100%;
+            font-size:16px;
+            padding:5px 5px 0 5px;
+            border:none;
+            height:160px;
+         }
+         .tips{
+            height:30px;
+            color:$fc6;
+            font-size:16px;
+            text-align:right;
+            padding:0 5px;
+            position:absolute;
+            bottom:0;
+            right:0;
+         }
+    }
+    .title{
+        padding-top: 28px;
+        padding-bottom: 8px;
+    }
+    .contact{
+        background-color:$fc0;
+        border-bottom:1px solid $fc6;
+        &>div{
+            padding:15px 0px;
+        }
+        .tel{
+            border-bottom:1px solid $fc6;
+
+        }
+        .tel,.email{
+            display:table;
+            width:100%;
+            .icon{
+               display:table-cell;
+                width:15px;
+            }
+            .cnt{
+               display:table-cell;
+                input{
+                    width:100%;
+                    padding:0 5px;
+                    border:none;
+                    font-size:16px;
+
+                }
+            }
+            .clear{
+               display:table-cell;
+                width:22px;
+                text-align:center;
+
+            }
+        }
+    }
+    .submit{
+        padding: 18px 20px;
+        .btn{
+            width:100%;
+        }
+    }
+}
+.m-success{
+    text-align:center;
+    margin: 70px 0;
+    .message{
+        margin-top:10px;
+        font-size: 17px;
+        color:$fc10;
+    }
+    .icon{
+        background: url("/res/3g/images/bigicon.png") 9999px 9999px no-repeat;
+        background-size: 300px auto;
+        width:66px;
+        height:66px;
+        display:inline-block;
+        vertical-align:baseline;
+        background-position:-230px -304px;
+        vertical-align:middle;
+    }
+
+}
+.m-return .btn{
+    width:80%;
+    margin:0 auto;
+}
+.m-feedback,.m-return{
+    .btn{
+        text-align:center;
+        font-size:19px;
+        color:$fc0;
+        display: block;
+        height: 50px;
+        min-width: 100px;
+        background-color: $brand-primary;
+        border-radius: 2px;
+        span{
+            line-height:50px;
+        }
+    }
+    .disabled{
+        background-color: $fc6;
+    }
+}
+

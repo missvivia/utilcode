@@ -1,0 +1,3 @@
+.m-form1 .form-group{margin-top:10px;margin-bottom:10px;}
+.m-form2 .sep{position:absolute;left:-7px;top:7px;}
+.table{margin-top:30px;}

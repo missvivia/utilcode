@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<description>NQS配置</description>
+
+	<bean id="clientConfig" class="com.netease.cloud.nqs.client.ClientConfig">
+		<property name="host" value="${nqs.clientConfig.host}" />
+		<property name="port" value="${nqs.clientConfig.port}" />
+		<property name="productId" value="${nqs.clientConfig.productId}" />
+		<property name="accessKey" value="${nqs.clientConfig.accessKey}" />
+		<property name="accessSecret" value="${nqs.clientConfig.accessSecret}" />
+		<property name="authMechanism" value="${nqs.clientConfig.authmachanism}" />
+	</bean>
+	
+	<bean id="nqsTemplate" class="com.xyl.mmall.bi.core.service.NQSTemplate">
+		<property name="clientConfig" ref="clientConfig" />
+	</bean>
+	
+	<bean id="nqsBILogMessageProducer" class="com.xyl.mmall.bi.core.service.NQSBILogMessageProducer">
+		<property name="nqsTemplate" ref="nqsTemplate" />
+		<property name="queueName" value="${nqs.biLog.queueName}" />
+	</bean>
+	
+</beans>

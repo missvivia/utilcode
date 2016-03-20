@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/javascript/lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/page/product_manage.css"></head>
+<body>
+  <div class="g-sd col-sm-2">
+    <div class="m-nav">
+      <div class="u-logo">
+        <img src="https://avatars1.githubusercontent.com/u/731333?v=2&s=460" alt="xx">
+        <h3>新云联-伪品汇</h3>
+      </div>
+      <div class="m-snav">
+        <h4>配置</h4>
+        <ul class="nav">
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-inbox"></span>
+              商品管理
+              <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            </a>
+            <ul class='nav'>
+              <li>
+                <a href="">商品列表</a>
+              </li>
+              <li>
+                <a href="">商品添加</a>
+              </li>
+              <li>
+                <a href="">尺寸模板</a>
+              </li>
+            </ul>
+          </li>
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-record"></span>
+              JIT管理
+              <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            </a>
+            <ul></ul>
+          </li>
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-briefcase"></span>
+              商务管理
+            </a>
+            <ul></ul>
+          </li>
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-picture"></span>
+              图片空间
+            </a>
+            <ul></ul>
+          </li>
+          <li class="snav_item">
+            <a href="" class='active'>
+              <span class="glyphicon glyphicon-wrench"></span>
+              权限管理
+            </a>
+            <ul></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="m-snav">
+        <h4>统计</h4>
+        <ul class="nav">
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-inbox"></span>
+              商品统计
+            </a>
+            <ul class="nav"></ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="g-bd col-sm-10">
+    <!-- 顶栏 -->
+    <div class="row m-header">
+      <ul class="nav navbar-right">
+        <li class="dropdown">
+          <a href="/logout"> <i class="glyphicon glyphicon-log-out"></i>
+            登出
+          </a>
+
+        </li>
+      </ul>
+    </div>
+    <!-- 面包削 -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="m-card m-card-bread">
+          <ul class="breadcrumb">
+            <li>
+              <a href="">
+                <span class="glyphicon glyphicon-home"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">商品管理</a>
+            </li>
+            <li class="active">商品添加</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- card -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="m-card">
+          <h2 class="card_b">
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            商品基本信息
+          </h2>
+          <div class="card_c">
+            <p-bform></p-bform>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="m-card">
+          <h2 class="card_b">
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            规格图片上传
+          </h2>
+          <div class="card_c">
+            <form method="get" class="form m-form-product">
+              <div class="form-group">
+                <label for="exampleInputEmail1">商品展示</label>
+                <div class="m-imgview m-imgview-2">
+                  <div class="img">
+                    <div class="imgwrap" >
+                      <img src='img' alt="" ></div>
+                    <span class="j-del del">×</span>
+                  </div>
+                  <div class="img">
+                    <div class="imgwrap" >
+                      <img src='img' alt="" ></div>
+                    <span class="j-del del">×</span>
+                  </div>
+                  <div class="img img-void">
+                    <div class="imgwrap">
+                      <input type="file" class="form-control" id="" title="点击上传">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hr-dashed"></div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">列表展示</label>
+                <div class="m-imgview m-imgview-2">
+                  <div class="img">
+                    <div class="imgwrap" >
+                      <img src='img' alt="" ></div>
+                    <span class="j-del del">×</span>
+                  </div>
+                  <div class="img">
+                    <div class="imgwrap" >
+                      <img src='img' alt="" ></div>
+                    <span class="j-del del">×</span>
+                  </div>
+                  <div class="img img-void">
+                    <div class="imgwrap">
+                      <span></span>
+                      <input type="file" class="form-control" id=""></div>
+                  </div>
+                </div>
+              </div>
+              <div class="hr-dashed"></div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">详情展示</label>
+                <div class="m-imgview m-imgview-2">
+                  <div class="img">
+                    <div class="imgwrap" >
+                      <img src='img' alt="" ></div>
+                    <span class="j-del del">×</span>
+                  </div>
+                  <div class="img">
+                    <div class="imgwrap" >
+                      <img src='img' alt="" ></div>
+                    <span class="j-del del">×</span>
+                  </div>
+                  <div class="img img-void">
+                    <div class="imgwrap">
+                      <span></span>
+                      <input type="file" class="form-control" id=""></div>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="m-card">
+          <h2 class="card_b">
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            详情自定义
+          </h2>
+          <div class="card_c">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="/src/javascript/lib/nej/src/define.js?pro=/src/javascript/"></script>
+<script src="/src/javascript/page/product/edit.js"></script>
+
+</body>
+</html>

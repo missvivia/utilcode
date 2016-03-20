@@ -1,0 +1,104 @@
+<div class="title orderinfo">
+  <div class="bd s-fc1 f-fs2 f-fw1">
+    <span class="slash" r-html={{'&nbsp;'}}></span>订单信息
+  </div>
+</div>
+<div class="bd">
+  <table class="p-proinfo">
+    <thead class="s-fc3">
+      <tr>
+        <th class="col1">商品</th>
+        <th class="col2">闪购价</th>
+        <th class="col3">数量</th>
+        <th class="col4">小计</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#if!!orderdetail && !!orderdetail.actionList}}
+      {{#list orderdetail.actionList as action}}
+      <tr class="activity">
+        <td colSpan="4" class="col1">
+          <span class="f-fs2 f-mgr10">{{action.title}}</span>
+          {{#list action.tagList as tag}}<span class="u-tag-coupon f-mgr10 f-cp" data-clazz="u-tooltip-2" data-placement="bottom" data-content="{{tag.desc||''}}" r-tooltip><i></i>{{tag.title}}</span>{{/list}}
+        </td>
+      </tr>
+      {{#list action.cartList as cart}}
+      {{#list cart.orderSkuList as sku}}
+      <tr class="f-fs1">
+        <td class="col1 col">
+          <div>
+            <a target="_blank" href="{{sku.skuSPVO.linkUrl}}" class="f-fl"><img src="{{sku.skuSPVO.picUrl}}" class="f-fl p-img" width="70" height="70" alt="{{sku.skuSPVO.productName}}"></a>
+            <div class="desc">
+              <div class="name">
+                <a target="_blank" href="{{sku.skuSPVO.linkUrl}}" class="link"><span class="s-fc3">[{{sku.skuSPVO.brandName}}]</span>{{sku.skuSPVO.productName}}</a>
+              </div>
+              <div class="s-fc3"><span class="color">{{sku.skuSPVO.colorName}}</span><span class="size">{{sku.skuSPVO.skuSpecValueMap|concatObjValue:' '}}</span></div>
+            </div>
+          </div>
+        </td>
+        <td class="col2 col">
+          <div class="s-fc3"><span r-html={{'&yen;'}}></span>{{sku.oriRPrice|fixed}}</div>
+          <div class="s-fc11 f-dt f-fs0"><span r-html={{'&yen;'}}></span>{{sku.marketPrice|fixed}}</div>
+        </td>
+        <td class="col3 col">{{sku.totalCount}}</td>
+        <td class="col4 col">
+          <div class="s-fc5"><span r-html={{'&yen;'}}></span>{{sku.totalRPrice|fixed}}</div>
+          {{#if !!sku.totalSPrice && sku.totalSPrice!= 0}}<div class="s-fc3 f-fs0">已优惠<span r-html={{'&yen;'}}></span>{{sku.totalSPrice|fixed}}</div>{{/if}}
+        </td>
+      </tr>
+      {{/list}}
+      {{/list}}
+      {{/list}}
+    {{/if}}
+    {{#if !!orderdetail && !!orderdetail.noActionList}}
+      {{#list orderdetail.noActionList as action}}
+      <tr class="activity">
+        <td colSpan="4" class="col1">
+          <span class="f-fs2">{{action.title}}</span>
+        </td>
+      </tr>
+      {{#list action.cartList as cart}}
+      {{#list cart.orderSkuList as sku}}
+      <tr class="f-fs1">
+        <td class="col1 col">
+          <div>
+            <a target="_blank" href="{{sku.skuSPVO.linkUrl}}" class="f-fl"><img src="{{sku.skuSPVO.picUrl}}" class="f-fl p-img" width="70" height="70" alt="{{sku.skuSPVO.productName}}"></a>
+            <div class="desc">
+              <div class="name">
+                <a target="_blank" href="{{sku.skuSPVO.linkUrl}}" class="link"><span class="s-fc3">[{{sku.skuSPVO.brandName}}]</span>{{sku.skuSPVO.productName}}</a>
+              </div>
+              <div class="s-fc3"><span class="color">{{sku.skuSPVO.colorName}}</span><span class="size">{{sku.skuSPVO.skuSpecValueMap|concatObjValue:' '}}</span></div>
+            </div>
+          </div>
+        </td>
+        <td class="col2 col">
+          <div class="s-fc3"><span r-html={{'&yen;'}}></span>{{sku.oriRPrice|fixed}}</div>
+          <div class="s-fc11 f-dt f-fs0"><span r-html={{'&yen;'}}></span>{{sku.marketPrice|fixed}}</div>
+        </td>
+        <td class="col3 col">{{sku.totalCount}}</td>
+        <td class="col4 col">
+          <div class="s-fc5"><span r-html={{'&yen;'}}></span>{{sku.totalRPrice|fixed}}</div>
+          {{#if !!sku.totalSPrice && sku.totalSPrice!= 0}}<div class="s-fc3 f-fs0">已优惠<span r-html={{'&yen;'}}></span>{{sku.totalSPrice|fixed}}</div>{{/if}}
+        </td>
+      </tr>
+      {{/list}}
+      {{/list}}
+      {{/list}}
+    {{/if}}
+    {{#if !!orderdetail.yhTagList && orderdetail.yhTagList.length>0}}
+    <tr class="ln">
+      <td colSpan="4">
+        <div class="coupondesc">
+          <div class="lbl">订单优惠：</div>
+          {{#list orderdetail.yhTagList as yh}}
+          <div class="type f-mgr5">
+            <span class="coupontip">{{yhMap[yh.type]||''}}</span> <span>{{yh.desc}}</span>
+          </div>
+          {{/list}}
+        </div>
+      </td>
+    </tr>
+    {{/if}}
+    </tbody>
+  </table>
+</div>

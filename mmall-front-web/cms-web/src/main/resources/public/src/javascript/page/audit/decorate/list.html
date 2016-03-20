@@ -1,0 +1,36 @@
+<table class="table table-hover table-decorate table-condensed">
+  <tr><th>品购页编号</th><th>品购页title</th><th>PO编号</th><th>站点</th><th>商家帐号</th><th>品牌名称</th><th>档期时间</th><th>审核状态</th><th>审核理由</th><th>操作</th></tr>
+  <tbody>
+  {{#list list as product}}
+    <tr>
+      <td>{{product.id}}</td>
+      <td>{{product.title}}</td>
+      <td>{{product.scheduleId}}</td>
+      <td>{{#list product.saleSiteList as item}}{{@(item.name)}} {{/list}}</td>
+      <td>{{product.supplierName}}</td>
+      <td>{{product.brandName}}</td>
+      <td>{{product.startTime|format}}至{{product.endTime|format}}</td>
+      <td>{{product.status|statusMap}}</td>
+      <td>{{product.statusMsg}}</td>
+      <td>
+      	{{!status: 1-新建  2-审核中  3-审核通过 4-审核未通过!}}
+        {{!showFlag:  1-档期结束  2-档期中 3-档期前4天内  4-档期前4填外!}}
+        <p><a href="{{config.MAINSITE}}/schedule/show?pageId={{product.id}}" target="_blank">查看</a></p>
+        {{#if product.status==2}}
+        	{{#if product.showFlag==3||product.showFlag==4}}
+        		<p><a href="javascript:void(0)" on-click={{this.audit(product,true)}}>通过</a></p>
+        		<p><a href="javascript:void(0)" on-click={{this.audit(product,false)}}>拒绝</a></p>
+        	{{/if}}
+        {{#elseif product.status==3}}
+        	{{#if product.showFlag==3||product.showFlag==4}}
+        		<p><a href="javascript:void(0)" on-click={{this.audit(product,false)}}>拒绝</a></p>
+        	{{/if}}
+        {{#elseif product.status==4}}
+        {{#elseif product.status==-1}}
+        {{/if}}
+      </td>
+    </tr>
+  {{/list}}
+  </tbody>
+</table>
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

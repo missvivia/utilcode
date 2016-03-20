@@ -1,0 +1,145 @@
+.form-control{display:inline-block;}
+.orderbtn{
+	background-color:#fff;
+	display:inline-block;
+	line-height:22px;
+	color:#333;
+	border-radius:3px;
+	padding:0px 15px;
+	margin-top:3px;
+}
+.order-d{
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:15px;
+	height:38px;
+	line-height:38px;
+}
+.order-d1{
+	margin-bottom:15px;
+}
+.state{
+	width:50px;
+	height:50px;
+	border:1px solid #ddd;
+	border-radius:50%;
+	display:block;
+	margin:0 auto;
+	font-size:24px;
+	font-weight:bolder;
+	text-align:center;
+	line-height:50px;
+	color:#333;
+	margin: 0 auto;
+}
+.state.focus{
+	background:#555;
+	color:#fff;
+}
+.state.hover{
+	background:#ccc;
+	color:#fff;
+}
+.order-d1 ul{margin:0px;padding:0px;}
+.order-d1 ul li{float:left;list-style:none;margin:0px;padding:0px;}
+.order-d1 ul li p{text-align:center;}
+.order-d2{
+	margin-bottom:15px;
+}
+.d2-wrap{
+	
+}
+.d2-box{
+	box-shadow:0px 1px 1px rgba(221,221,221,0.6);
+	-webkit-box-shadow:0px 1px 1px rgba(221,221,221,0.6);
+	max-height:300px;
+	overflow-y:auto;
+	border-width:0px 1px 1px;
+	border-style:solid;
+	border-color:#ccc;
+	border-radius:0px 0px 3px 3px;
+}
+.d2-wrap .d2-title{margin:0px;}
+.d2-wrap .d2-title,.gl-box .gl-t{
+	background:#ccc;
+	padding:0px 10px;
+	line-height:30px;
+	height:30px;
+	border-radius:3px 3px 0px 0px;
+	margin:0px;
+	border-width:1px 1px 0px;
+	border-style:solid;
+	border-color:#ccc;
+}
+.d2-wrap .d2-title a{
+	float:right;
+	color:#333;
+}
+.d2-box{border-top:1px solid #ccc;}
+.d2-wrap .d2-p{
+	padding:5px 10px;
+}
+.d2-wrap .d2-p:before,.d2-wrap .d2-p:after{
+	content: " ";
+    display: table;
+}
+.d2-wrap .d2-p:after{
+	clear: both;
+}
+.d2-wrap .d2-p label{
+	float:left;
+}
+.d2-wrap .d2-p .d2-ptext{
+	float:left;
+	display:inline-block;
+}
+.d2-wrap .d2-p .d2-status{
+    font-weight: bolder;
+}
+.order-d3{
+	
+}
+.gl-tt{
+	float:left;
+}
+.gl-tr{
+	float:right;
+	font-size:16px;
+}
+.sform div{padding:0px;}
+.f-cb img{width:50px;height:50px;}
+.f-cb a{float:left;}
+.textarea{
+	height:150px;
+}
+.orderbox{
+	width:700px;
+}
+.orderbox-a{
+	width:400px;
+}
+.bgroup{
+	height:100px;
+	position:relative;
+}
+.bgroup .btn-group{
+	position:absolute;
+	bottom:0px;
+}
+.bgroup .btn-group input.jbtn{margin-right:10px;}
+.form-group p{border:none;}
+div.cartPrice{position:relative;}
+#viewCoupon{color:#f00;font-weight:bold;cursor:pointer;}
+div.couponBox{position:absolute;left:0;top:30px;padding:10px;background:url("/res/images/coupon-suc-bg.png") repeat-x left top;	width:235px;height:94px;z-index:99;}
+div.couponBox .condition{text-align:center;}
+div.couponBox .info{text-align:left;}
+div.couponBox .info span{
+	color: #fff;
+    display: block;
+    font-size: 6px;
+    padding-bottom: 2px;
+    line-height:18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;	
+}

@@ -1,0 +1,19 @@
+<meta charset="utf-8"/>
+<textarea name="txt" id="builder-module-widget">
+  <div class="m-bd-lst m-bd-wgt">
+    <div class="lbox f-cb j-mbox"></div>
+    <div class="pbox j-mbox"></div>
+  </div>
+</textarea>
+<textarea name="jst" id="builder-module-widget-list">
+  {list beg..end as y}
+    {var x=xlist[y]}
+    <div class="item col-md-6" data-res-type="3" data-res-id="${x.id}">
+      <div class="img img-thumbnail"><img src="${x.thumb}" /></div>
+      <p>${x.desc}</p>
+    </div>
+  {/list}
+</textarea>
+<!-- @TEMPLATE -->
+<textarea name="js" data-src="./module.js"></textarea>
+<!-- /@TEMPLATE -->

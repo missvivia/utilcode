@@ -1,0 +1,100 @@
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+
+.m-downlbtn{margin-right:10px;margin-left:20px}
+/**
+	*
+	* @ author:fzk name: add product time:15.5.19  
+	*
+**/
+.m-side {
+	margin-top: 12px;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 1px 1px rgba(221,221,221,0.6);
+}
+.m-side .m-tit {
+	padding: 10px 0 10px 15px;
+}
+.m-side .m-nav {
+	padding-bottom: 20px;
+}
+.m-side .m-nav li {
+	list-style: none;
+	padding: 10px 0;
+}
+.m-side .m-nav li span {
+	float: right;
+	padding-right: 10px;
+}
+
+.m-search {
+	padding: 15px 15px 0 15px;
+}
+.m-search label {
+	height: 33px;
+	line-height: 33px;
+	margin-bottom: 0;
+}
+.m-search .form-control {
+	width: 300px;
+	display: inline-block;
+	margin: 0 20px 0 10px;
+}
+.m-search .btn {
+	padding: 6px 16px;
+}
+
+.add-product .info-box {
+	padding: 15px 15px 0 15px;
+}
+.add-product h3 {
+	font-size: 16px;
+	border-bottom: 1px dotted #dfdfdf;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 15px;
+	color: #68449e;
+}
+
+.section-price .group label {
+	width: 50%;
+	float: left;
+}
+.section-price .group input {
+	width: 80%;
+	margin-right: 5px;
+}
+
+.only-invenyory label {
+	width: 50%;
+	float: left;
+}
+.only-invenyory input {
+	width: 60%;
+	margin-right: 5px;
+}
+
+.m-model dl {
+	border-bottom: 1px solid #dfdfdf;
+}
+.m-model dt, .m-model dd {
+	float: left;
+	height: 25px;
+	line-height: 25px;
+}
+.m-model dt {
+	padding: 0 15px;
+	background: #f5f5f5;
+	border-right: 1px solid #ddd;
+}
+.m-model dd {
+	padding-left: 15px;
+}
+.form-horizontal .control-label{text-align:left;}
+.noRight{padding-right:0;}
+.form-horizontal .col-sm-1{min-width:85px;}
+.form-horizontal .col-sm-2{
+	min-width:170px;
+}
+.current a,.current span{color:#ff9000;font-weight:bold;}

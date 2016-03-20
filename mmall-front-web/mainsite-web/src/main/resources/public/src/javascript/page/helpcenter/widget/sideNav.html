@@ -1,0 +1,21 @@
+<ul>
+<li class="item top leaf"><a href="#/help/index/" >帮助中心</a></li>
+{{#list list as item}}
+  {{#if item.name == "新手指南"}}
+  <li class="item top leaf {{selCateId==item.id?'active':''}}"><a href="/help/newer?type=0">新手指南</a></li>
+  {{#elseif !!item.children}}
+  <li class="item top">
+    <span on-click={{this.toggle(item)}}>{{item.name}}<i class="{{selCateId==item.id?'u-icon4':'u-icon4 u-icon4-1'}}">&nbsp;</i></span>
+    <ul r-hide={{selCateId!=item.id}}>
+    {{#list item.children as sub}}
+      <li class="item secd {{selSubCateId==sub.id?'active':''}}">
+        <a href="#/help/articlelist/?categoryId={{item.id}}&subCategoryId={{sub.id}}">{{sub.name}}</a>
+      </li>
+    {{/list}}
+    </ul>
+  </li>
+  {{#else}}
+  <li class="item top leaf {{selCateId==item.id?'active':''}}"><a href="#/help/articlelist/?categoryId={{item.id}}" >{{item.name}}</a></li>
+  {{/if}}
+{{/list}}
+</ul>

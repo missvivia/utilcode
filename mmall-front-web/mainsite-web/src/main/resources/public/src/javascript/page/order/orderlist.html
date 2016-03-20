@@ -1,0 +1,172 @@
+<div class="p-order">
+    <div class="p-order-nav f-cb">
+        <div class="nav" id="tab-box"></div>
+        <div class="search" id="search-box"></div>
+    </div>
+    <div class="p-order-table f-cb">
+        {{#if loading}}
+        <div class="m-order-loading">
+            <div class="load">
+                <div class="w-loading"></div>
+                <div class="text f-fs1 s-fc2">努力加载中...</div>
+            </div>
+        </div>
+        {{#elseif list}}
+        <div class="m-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="50%" class="start">订单信息</th>
+                        <th width="10%" class="realpay">订单金额</th>
+                        <th width="10%" class="wait">订单状态</th>
+                        <th width="30%" class="end">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#list list as x}}
+                       {{#if x.orderFormState.intValue == 0 && x.subOrderFormListVO}}
+                           <tr class="itemTop">
+                               <td>
+                                   <div class="f-fl orderhead">
+                                       <span>订单号：</span><span class="pleft">{{x.parentId}}</span>
+                                       <span class="orderTime">{{x.orderTime}}</span>
+                                   </div>
+                               </td>
+                               <td><p class="state">{{x.orderFormState.desc}}</p></td>
+                               <td><p class="price">¥{{x.cartRPrice|fixed}}</p></td>
+                               <td>
+                                   <p><span id="{{x.parentId}}"></span></p>
+                                   <a href="javascript:void(0);" on-click={{this.onCancelOrder(x,x_index,1)}}>取消订单</a>
+                                   <a href='javascript:void(0);' on-click={{this.gopay(x)}}>去付款</a>
+                               </td>
+                           </tr>
+                           {{#list x.subOrderFormListVO as s}}
+                           <tr {{#if s_index != x.subOrderFormListVO.length-1}}class="subtr"{{/if}}>
+                                <td>
+                                    <p class="storeName"><a href="{{s.storeUrl}}" style="color:#444;">{{s.storeName}}</a></p>
+                                    {{#list s.orderSkuList as c}}
+                                        <div class="productDetail">
+                                            <a href="{{c.skuSPDTO.snapShotUrl}}" target="_blank">
+                                               <img src="{{c.skuSPDTO.picUrl}}" class="proImg"/>
+                                            </a>
+                                            <a class="rprice" href="/product/detail?skuId={{c.skuId}}" target="_blank">
+                                                 <p style="margin:30px 0px 5px 0px;"><span>¥{{c.rprice|fixed}}</span>/件</p>
+                                                 <p>共{{c.totalCount}}件</p>
+                                            </a>
+                                        </div> 
+                                    {{/list}}
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                	<p><a href="javascript:void(0);" class='buy-again' on-click={{this.buyAgain(s)}}>再次购买</a></p>
+                                    <p><a target="_blank" href="/myorder/detail?orderId={{s.orderId}}">订单详情</a></p>
+                                </td>
+                           </tr>
+                           {{/list}}
+                        {{#else}}
+                           <tr class="itemTop">
+                               <td>
+                                   <div class="f-fl orderhead">
+                                       <span>订单号：</span><span class="pleft">{{x.orderId}}</span>
+                                       <span class="orderTime">{{x.orderTime}}</span>
+                                       <a target="_blank" href="{{x.storeUrl}}">{{x.storeName}}</a> 
+                                   </div>
+                               </td>
+                               <td></td>
+                               <td colspan="2">
+                                   <span id="{{x.orderId}}" style="float: right;"></span>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td>
+                                  {{#list x.orderSkuList as c}}
+                                       <div class="productDetail">
+                                            <a href="{{c.skuSPDTO.snapShotUrl}}" target="_blank">
+                                               <img src="{{c.skuSPDTO.picUrl}}" class="proImg"/>
+                                            </a>
+                                            <a class="rprice" href="/product/detail?skuId={{c.skuId}}" target="_blank">
+                                                 <p class="rprice-p" style="margin:30px 0px 5px 0px;"><span>¥{{c.rprice|fixed}}</span>/件</p>
+                                                 <p class="rprice-p">共{{c.totalCount}}件</p>
+                                            </a>
+                                        </div> 
+                                  {{/list}}
+                               </td>
+                                <td>
+                                   <p class="price">¥{{x.cartRPrice|fixed}}</p>
+                                   {{#if x.spSource == 7}}<p class="instead">（客服代下单）</p>{{/if}}
+                               </td>
+                               <td>
+                                   <p class="state">{{x.orderFormState.desc}}</p>
+                               </td>
+                               <td rowSpan="{{countH}}">
+                                    {{#if x.payCloseCD > 0 }}
+                                    <a href='javascript:void(0);' on-click={{this.gopay(x)}}>去付款</a>
+                                    {{/if}}
+                                    <div class="action">
+                                        {{#if x.onpay == true && x.orderFormState.intValue == 0}}
+                                        <p><a href="javascript:void(0);" on-click={{this.onCancelOrder(x,x_index,0)}}>取消订单</a></p>
+                                        {{/if}}
+                                        {{#if x.orderFormState.intValue == 10}}
+                                        <!-- href="/myorder/detail?orderId={{x.orderId}}" -->
+                                        <p>
+                                        	<a class="getGoods" data-id="{{x.orderId}}" on-click={{this.getGoods(x)}}>确认收货</a> 
+                                        </p>
+                                        {{/if}}
+                                        <p><a href="javascript:void(0);" class='buy-again' on-click={{this.buyAgain(x)}}>再次购买</a></p>
+                                        <p><a target="_blank" href="/myorder/detail?orderId={{x.orderId}}">订单详情</a></p>
+                                        {{#if x.orderFormState.intValue >= 15}}
+                                        <p><a on-click={{this.onDelete(x)}} href="javascript:void(0);">删除</a></p>
+                                        {{/if}}
+                                    </div>
+                                </td>
+                           </tr>
+                        {{/if}}
+                    {{/list}}      
+                </tbody>
+            </table>
+        </div>
+        {{/if}}
+    </div>
+    <div class="m-page">
+        <div class="m-slide">
+            <orderpager total={{Math.ceil(total/limit)}} current={{current}}></orderpager>
+        </div>
+    </div>
+</div>
+
+<form action="" method="post" name="orderForm" id="orderForm">
+     <input type="hidden" name="version"  value="">
+     <input type="hidden" name="serial_id"  value="">
+     <input type="hidden" name="start_time"  value="">
+     <input type="hidden" name="expire_time"  value="">
+     <input type="hidden" name="customer_ip"  value="">
+     <input type="hidden" name="order_details"  value="">
+     <input type="hidden" name="total_amount"  value="">
+     <input type="hidden" name="type"  value="">
+     <input type="hidden" name="buyer_id"  value="">
+     
+     <input type="hidden" name="paymethod"  value="">
+     <input type="hidden" name="org_code"  value="">
+     <input type="hidden" name="currency_code"  value="">
+     <input type="hidden" name="direct_flag"  value="">
+     <input type="hidden" name="borrowing_marked"  value="">
+     <input type="hidden" name="coupon_flag"  value="">
+     <input type="hidden" name="least_pay"  value="">
+     <input type="hidden" name="coupon"  value="">
+     
+     <input type="hidden" name="return_url"  value="">
+     <input type="hidden" name="notice_url"  value="">
+     <input type="hidden" name="partner_id"  value="">
+     <input type="hidden" name="cashier_type"  value="">
+     <input type="hidden" name="split_rule_code"  value="">
+     <input type="hidden" name="split_rule"  value="">
+     <input type="hidden" name="bonus"  value="">
+     <input type="hidden" name="settle_amount"  value="">
+     <input type="hidden" name="token"  value="">
+     <input type="hidden" name="remark"  value="">
+     <input type="hidden" name="charset"  value="">
+      
+     <input type="hidden" name="sign_type"  value="">
+     <input type="hidden" name="sign_msg"  value="">
+</form>

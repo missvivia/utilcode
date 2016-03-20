@@ -1,0 +1,18 @@
+{{#list attrs as attr}}
+  <div class="form-group">
+    <label class="col-sm-2 control-label">{{@(attr.label)}}</label>
+    <div class="col-sm-4">
+    {{#if @(attr.type === "text" ) }} 
+    <input type="text" r-lazy-model="attr.name" class= "form-control"/>
+    {{#elseif @(attr.type === "textarea" ) }}
+    <textarea r-lazy-model="attr.name" class="form-control" ></textarea>
+    {{#elseif @(attr.type === "select" ) }}
+    <select r-lazy-model="attr.name"  class="form-control">
+      {{#list @(attr.options) as option}}
+        <option value="{{@(option.value)}}">{{@(option.label)}}</option>
+      {{/list}}
+    </select>
+    {{/if}}
+    </div>
+  </div>
+{{/list}}

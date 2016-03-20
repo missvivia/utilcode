@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>新云联百万店-首页</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection"content="telephone=no, email=no" />
+		<link rel="stylesheet" type="text/css" href="/src/less/swiper-3.2.7.min.css"/>
+		<link rel="stylesheet" href="/src/less/wap.css" />
+		<script>
+        function clientSideInclude(id, url) {
+            var req = false;
+
+            // Safari, Firefox, 及其他非微软浏览器
+            if (window.XMLHttpRequest) {
+                try {
+                    req = new XMLHttpRequest();
+                } catch (e) {
+                    req = false;
+                }
+            } else if (window.ActiveXObject) {
+
+                // For Internet Explorer on Windows
+                try {
+                    req = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        req = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        req = false;
+                    }
+                }
+            }
+            var element = document.getElementById(id);
+
+            if (!element) {
+                alert("函数clientSideInclude无法找到id " + id + "。" + "你的网页中必须有一个含有这个id的div 或 span 标签。");
+                return;
+            }
+            if (req) {
+            // 同步请求，等待收到全部内容
+                req.open('GET', url, false);
+                req.send(null);
+                element.innerHTML = req.responseText;
+            } else {
+                element.innerHTML =
+                "对不起，你的浏览器不支持" +
+                "XMLHTTPRequest 对象。这个网页的显示要求" +
+                "Internet Explorer 5 以上版本, " +
+                "或 Firefox 或 Safari 浏览器，也可能会有其他可兼容的浏览器存在。";
+            }
+        }
+    </script>
+    </head>
+    <body onLoad="clientSideInclude('includefooter', 'preIndex.html')">
+        <div class="wrap">
+            <header class="header">
+                <div class="location">
+                    <a href="/location/page/province">
+                        <i><img src="/src/img/svg/location.svg" /></i>
+                    </a>
+                </div>
+                <div class="search">
+                    <input class="form-control searchPlace" type="text" placeholder="输入关键字查找" id="key"/>
+                    <span class="cancel">取消</span>
+                </div>
+                <div class="myInfo">
+                    <a href="/profile/index/">
+                        <i><img src="/src/img/svg/head-my.svg" /></i>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="/page/category/">
+                        <i><img src="/src/img/svg/head-cate.svg" /></i>
+                    </a>
+                </div>
+            </header>
+            <div class='category-show'>
+		        <span id="includefooter"></span>
+		    </div>
+            <footer class="footer">
+                <p class='tel'><span>客服0571-87651759</span><a href='http://023.baiwandian.cn'>电脑版</a></p>
+                <p class='copyright'>&copy;2014-2015 023.baiwandian.cn 版权所有</p>
+            </footer>
+            <div class="down-app">
+		        <i class="close"></i>
+		        <i class="logo"></i>
+		        <span class="text">App新用户专享福利，快来领取！</span>
+		        <a href="####" class="btn">立即领取</a>
+		    </div>
+            <div class="fix-right">
+		        <span class='gotop' style='display: none;'></span>
+		        <a class="fix-cart" href="/cartlist">
+		            <em class="CartNum"></em>
+		        </a>
+		    </div>
+        </div>
+    </body>
+    <script src="/src/frame/jquery-1.11.3.min.js"></script>
+    <script src="/src/js/wap.js"></script>
+    <script src="/src/frame/swiper-3.2.7.jquery.min.js"></script>
+    <script type="text/javascript">
+    
+	    setTimeout(function () {
+	    	/* banner　*/
+	        var banner = new Swiper ('.swiper-container', {
+			    loop: true,
+			    pagination: '.swiper-pagination',
+			    autoplay: 3000,
+			    autoplayDisableOnInteraction: false
+			});
+	    	
+	        /* close app down */
+	        $(".down-app .close").on("click", function () {
+	            $(this).closest(".down-app").remove();
+	            $(".footer").css({
+	                paddingBottom: 0.4 + "rem"
+	            });
+	        });
+	
+	        /* hot set width */
+	        var len = $(".hot .list li").length;
+	        $(".hot .list").css({
+	            width: len * 3.8 + "rem"
+	        });
+	        
+	        /* banner module */
+	        var bannerImg = $(".swiper-slide");
+
+	        bannerImg.on("click", function () {
+	            var link = $(this).data("link");
+	            window.location.href = link;
+	        });
+	
+	        $(window).resize(function() {
+	            wrapWidth   = $(".wrap").width();
+	        });
+	
+	        /* get cart number */
+	        getCartNum();
+	    }, 1000);
+    </script>
+</html>

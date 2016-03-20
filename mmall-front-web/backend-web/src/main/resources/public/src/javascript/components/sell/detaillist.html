@@ -1,0 +1,34 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>商品条码</th>
+        <th>商品名称</th>
+        <th>退货数量</th>
+        <th>箱号</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{tpl.code}}</td>
+          <td>{{tpl.poname}}</td>
+          <td>{{tpl.much}}</td>
+          <td>{{tpl.box}}</td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+  <div class="col-sm-2">
+    <button class="btn btn-primary btn-block u-delbtn">导出</button>
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-primary btn-block u-delbtn">确认退货</button>
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-primary btn-block u-delbtn">确认已收货</button>
+  </div>
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

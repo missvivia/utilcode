@@ -1,0 +1,19 @@
+<table class="table  table-striped">
+  <thead>
+    <tr>
+      <th  class='th-xl'>时间</th>
+      <th >标题</th>
+      <th class='th-xl'>重要</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list list as msg}}
+      <tr class='animated' r-animation="on: enter; class: fadeIn">
+        <td>{{ @(msg.createTime|format) }}</td>
+        <td>{{ @(msg.message) }}</td>
+        <td><span class="glyphicon glyphicon-heart{{!msg.important? '-empty': ''}}" on-click={{this.mark(msg)}}></span></td>
+      </tr>
+    {{/list}}
+  </tbody>
+</table>
+<pager total={{Math.ceil(total/5)}} current={{current}}></pager>

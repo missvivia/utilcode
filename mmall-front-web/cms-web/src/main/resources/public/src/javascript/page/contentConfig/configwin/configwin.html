@@ -1,0 +1,56 @@
+<div class="infowin row">
+     <div class="progress-group" id="progressUpload">
+          <div class="progress progress-striped active">
+			   <div class="progress-bar progress-bar-info" role="progressbar" 
+			      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+			      style="width: 100%;">
+			   </div>
+		  </div>
+		  <div class="waitMsg txt-ct">正在上传，请耐心等待...</div>
+	 </div>
+	 <div class="progress-group" id="progressIssue">
+	      <div class="progress progress-striped active">
+			   <div class="progress-bar progress-bar-info" role="progressbar" 
+			      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+			      style="width: 100%;">
+			   </div>
+		  </div>
+		  <div class="txt-ct" style="clear:both;">
+		       <p>正在发布页面，请耐心等待...</p>
+		  </div>
+	 </div>
+	 <div class="uploadfail txt-ct" id="uploadfail">
+	      <p id="msg">文件上传失败...</p>
+	      <div>
+		      <span class="btn btn-primary" id="reupload">重新上传</span>
+          </div>
+	  </div>
+	  <div class="uploadsuccess txt-ct" id="uploadsuccess">
+	      <p style="font-size:16px;">文件上传成功！</p>
+	      <p>您可以预览及发布页面&nbsp;&nbsp;或&nbsp;&nbsp;<a href="/content/config">重新上传</a></p>
+	      <div class="btnGroup" style="margin-top:20px;">
+		      <span class="btn btn-primary" id="preview">预览</span>&nbsp;&nbsp;
+              <span class="btn btn-primary" id="issue">发布</span>
+          </div>
+	  </div>
+	  <div class="publishsuccess txt-ct" id="publishsuccess">
+	      <p style="font-size:16px;">页面发布成功！</p>
+	      <div class="btnGroup" style="margin-top:20px;">
+	          {if item.type == 1}
+		      <a target="_blank" class="btn btn-primary" href="http://023.baiwandian.cn">查看</a>&nbsp;&nbsp;
+		      {elseif item.type == 2}
+		      <a target="_blank" class="btn btn-primary" href="http://m.023.baiwandian.cn">查看</a>&nbsp;&nbsp;
+		      {elseif item.type == 3}
+		      <a target="_blank" class="btn btn-primary" href="http://192.168.24.10:8096">查看</a>&nbsp;&nbsp;
+		      {/if}
+		      <a class="btn btn-gray" href="/content/config">关闭</a>
+          </div>
+	  </div>
+	  <div class="publishfail txt-ct" id="publishfail">
+	      <p id="publishmsg" style="font-size:16px;">页面发布失败...</p>
+	      <div class="btnGroup" style="margin-top:20px;">
+	          <span class="btn btn-primary" id="issueAgain">重新发布</span>&nbsp;&nbsp;
+		      <span class="btn btn-primary" id="goBack">上一步</span>
+          </div>
+	  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="p-section">
+  <div class="p-paymethod">
+    <i class="u-paymethod"></i>
+    <p class="tt f-fs15">支付方式</p>
+    <ul class="list s-fc3">  
+      <li class="row {{this.data.orderdetail.currentPayMethodId == 1? 'selected': ''}}">
+        <img id="paymethod1" name="paytype" class="f-vam" value="1" src="/src/img/svg/{{this.data.orderdetail.currentPayMethodId == 1? 'checked': 'check'}}.svg" on-click={{this.onPayMethodChange(1)}}/>
+        <label for="paymethod1" class="mgr10 f-vam f-fs13"  on-click={{this.onPayMethodChange(1)}}>货到付款</label>
+      </li>
+      <li class="row {{this.data.orderdetail.currentPayMethodId == 2? 'selected': ''}}">
+        <img id="paymethod2" name="paytype" class="f-vam" value="2" src="/src/img/svg/{{this.data.orderdetail.currentPayMethodId == 2? 'checked': 'check'}}.svg" on-click={{this.onPayMethodChange(2)}}/>
+        <label for="paymethod2" class="mgr10 f-vam f-fs13"  on-click={{this.onPayMethodChange(2)}}>在线支付<span style="color:red;">[需要在电脑上完成支付]</span></label>
+      </li>    
+    </ul>
+  </div>
+</div>

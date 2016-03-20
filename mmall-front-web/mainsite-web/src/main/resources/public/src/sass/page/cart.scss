@@ -1,0 +1,276 @@
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/self/_mixin";
+@import "../_config.scss";
+
+html{
+  overflow-y: scroll;
+}
+.p-wrap{
+  padding-bottom: 130px;
+}
+.p-tipbar{
+  position: relative; *zoom: 1;
+  padding: 20px 0 16px 45px;
+  @include legacy-pie-clearfix();
+  .i-time{
+    @include float-left();
+    @include size(15px);
+    @include carticon();
+    background-position: -40px 0;
+    position: relative;*zoom: 1;
+    top: 3px;
+  }
+  .i-warn{
+    @extend .i-time;
+    @include size(14px);
+    background-position: -60px 0;
+  }
+  .text{
+    padding: 0 5px;
+    line-height: 20px;
+    @include float-left();
+  }
+}
+
+.p-alert{
+  margin-bottom: -1px;
+  padding: 10px 65px;
+  border: 1px solid #f3e9dc;
+  background: #fffdf4;
+  line-height: 19px;
+  text-align: left;
+}
+.p-cart {
+  padding: 10px 45px 50px 45px;
+  background: #fff;
+  text-align: center;
+  .cart-hd {
+    padding: 16px 0;
+    line-height: 19px;
+  }
+  .cart-bd {
+    .product-list {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .title-wrap {
+      position: relative;
+      *zoom: 1;
+      padding: 10px 0;
+      border-top: 1px solid #cdced4;
+      background: #f5f6f8;
+      line-height: 19px;
+      .title {
+        margin-right: 20px;
+      }
+
+      .note {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 12px;
+      }
+    }
+    .list-wrap {
+      .p-img{
+        position: relative;*zoom: 1;
+        height: 70px;width: 70px;
+      }
+      .p-info {
+        width: 285px;
+        height: 70px;
+        margin-left: 10px;
+        text-align: left;
+        overflow: hidden;
+      }
+      .p-name {
+        display: block;
+        margin-top: -2px;
+        line-height: 18px;
+      }
+      .p-param {
+        line-height: 19px;
+        padding-top: 20px;
+        span {
+          padding-right: 20px;
+        }
+      }
+      .btn-box{
+        margin-top: 8px;
+      }
+      .split {
+        border-top: 1px dashed #ececec;
+        height: 0;
+        overflow: hidden;
+        margin-bottom: -1px;
+      }
+      .msg{
+        padding: 4px 0;
+      }
+      .over-time{
+        .over{
+          color: #ccc;
+          &:hover{
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+  .cart-ft {
+    margin-top: 20px;
+    .opbar{
+      padding: 15px 0;
+      line-height: 19px;
+      border-top: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+    }
+    .promobar {
+      padding: 18px 0 2px 65px;
+      height: 20px;
+      line-height: 19px;
+      .text0{
+        margin-right: 10px;
+      }
+      .text1{
+        margin-right: 8px;
+      }
+    }
+    .accountbar{
+      height: 40px;
+      line-height: 45px;
+      .account{
+        line-height: 35px;
+        font-size: 30px;
+      }
+      .pay span{
+        margin-left: 20px;
+      }
+      .pay-false span{
+        &, &:hover{
+          background: #9b9ea5;
+        }
+      }
+      .text0{margin-right: 30px;}
+      .text1{margin-right: 10px;}
+    }
+    .btn-del {
+      margin-left: 65px;
+    }
+  }
+  .chk {
+    position: relative;
+    *zoom: 1;
+    .text {
+      position: absolute;
+      text-align: left;
+      width: 50px;
+      left: 65px;
+      top: 0;
+    }
+  }
+  .i-check {
+    position: absolute;
+    top: 2px;
+    left: 30px;
+    @include carticon();
+    @include size(15px);
+    background-position: 0 0;
+    cursor: pointer;
+  }
+  .allcheck {
+    .i-check {
+      background-position: -20px 0;
+    }
+  }
+  .col0 {
+    width: 65px;
+    height: 1px;
+  }
+  .col1 {
+    width: 365px;
+  }
+  .col2 {
+    width: 120px;
+  }
+  .col3 {
+    width: 180px;
+  }
+  .col4 {
+    width: 112px;
+  }
+  .col4 {
+    width: 112px;
+  }
+  .col5 {
+    width: 158px;
+  }
+  .inner-wrap {
+    padding: 20px 0;
+  }
+
+}
+
+
+.p-invalid{
+  padding: 0px 45px;
+  background: #fff;
+  margin-top: 20px;
+  width: 1000px;
+  overflow: hidden;
+  .title-wrap{
+    padding: 18px 0;
+    line-height: 20px;
+    .title{
+      font-weight: normal;
+    }
+  }
+  .list-wrap{
+    padding: 10px 0 30px 0;
+    height: 70px;
+    position: relative;*zoom: 1;
+    overflow: hidden;
+    .left{
+      @include size(11px, 19px);
+      position: absolute;
+      z-index: 10;
+      top: 35px;
+      left: 0;
+      background: #000;
+    }
+    .right{
+      @extend .left;
+      left: auto;
+      right: 0;
+    }
+    .wrap{
+      width: 10000px;
+      position: relative;left:0;
+    }
+    .item{
+      width: 185px;
+      line-height: 16px;
+      margin-left: 30px;
+      margin-right: 35px;
+    }
+    .p-img{
+      position: relative;*zoom: 1;
+    }
+    .p-info {
+      width: 105px;
+      margin-left: 10px;
+      text-align: left;
+    }
+    .p-name {
+      display: block;
+      margin-top: -2px;
+    }
+    .p-param {
+      padding-top: 8px;
+      span {
+        padding-right: 12px;
+      }
+    }
+  }
+}

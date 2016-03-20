@@ -1,0 +1,24 @@
+.#<uispace>{background:#fff;position:relative;}
+.#<uispace> .ttl{font-size:17px;color:#000;margin-bottom:41px;}
+.#<uispace> .map{position: fixed;top: 50px;left: 0;bottom: 0;right: 0;display: block;z-index: 50000;}
+.#<uispace> .m-map-close{position:absolute;right:20px;top:80px;z-index:10;background-color: #000;height:30px;width:30px;background:url(#<root>3g/images/icon.png) no-repeat -424px -830px;}
+.#<uispace> .pbox{padding-top:30px;text-align:right;}
+.#<uispace> .u-pager-m a{border-color:#dadada;color:#999999;background-color:transparent;}
+.#<uispace> .u-pager-m a:hover,
+.#<uispace> .u-pager-m a.js-selected{border-color:#e878b2;color:#e878b2;}
+.#<uispace> .u-pager-m .js-disabled,
+.#<uispace> .u-pager-m .js-disabled:hover,
+.#<uispace> .u-pager-m .js-disabled.js-selected{border-color:#cccccc;color:#cccccc;}
+.#<uispace> .u-pager-m .zdot{color:#cccccc;}
+.#<uispace> .u-pager-m .zbtn{background:url(#<root>3g/images/pager-shop.png) no-repeat;}
+.#<uispace> .u-pager-m .zprv{background-position:8px 7px;}
+.#<uispace> .u-pager-m .znxt{background-position:-22px 7px;}
+
+.#<uispace> .area{position: absolute;top: 55px;width:80%;max-width: 720px; z-index: 10;line-height: 28px;cursor: pointer;margin: 0px 20px;}
+.#<uispace> .area .p{margin-right:5px;}
+.#<uispace> .area .s{width:120px;height:28px;line-height:28px;border:1px solid #dadada;}
+
+.#<uispace> .j-xit{position:relative;padding:21px 20px 23px;;border-bottom:1px solid #f3f3f3;zoom:1;cursor:pointer;}
+.#<uispace> .j-xit .mxk{position:absolute;top:40px;right:30px;color:#FFFFFF;text-align:center;}
+.#<uispace> .j-xit .ln0{font-size:16px;color:#000;}
+.#<uispace> .j-xit .lnx{font-size:13px;line-height:24px;}

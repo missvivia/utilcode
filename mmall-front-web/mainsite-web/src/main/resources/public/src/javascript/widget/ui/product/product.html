@@ -1,0 +1,89 @@
+<textarea name="ntp" id="#<mtpl>">
+  <div>
+    <div class="zmenu">
+      <div class="zcat f-cb">
+        <label>分类：</label>
+        <div class="lst f-cb j-flag"></div>
+      </div>
+      <div class="zflt f-cb">
+        <div class="zsrt fl j-flag">
+          <a class="d" href="#" data-value="0">默认</a><a href="#" class="b j-it" id="c-a1" data-value="1" data-desc="false">价格</a><a href="#" class="b j-it" id="c-a3" data-value="3" data-desc="true">折扣</a>
+        </div>
+        <form class="zprc fl j-flag">
+          <label>¥<input type="text" name="priceFrom"/></label>
+          <span class="p">-</span>
+          <label>¥<input type="text" name="priceTo"/></label>
+          <a href="#" class="b j-flag">&nbsp;</a>
+        </form>
+      </div>
+    </div>
+    <div class="zlist f-cb j-flag"></div>
+    <div class="zpage j-flag"></div>
+  </div>
+</textarea>
+<textarea name="txt" id="#<dtpl>">
+  <div class="zldg">加载中...</div>
+</textarea>
+<textarea name="jst" id="#<ctpl>">
+  {trim}
+  <a href="#" data-value="" class="j-flag js-selected">全部(${total})</a>
+  {list xlist as x}
+  <a href="#" data-value="${x.id}" class="j-flag">${x.name}(${x.count})</a>
+  {/list}
+  {/trim}
+</textarea>
+<textarea name="jst" id="#<ltpl>">
+  {list beg..end as y}
+  {var x = xlist[y]}
+  <div class="m-pdi ${css}-it j-pitm" data-hover="j-phover">
+    <div class="pic">
+      {var imgs = x.listShowPicList||[]}
+      <a href="/detail?id=${x.id}" target="_blank">
+        {if x.sameAsShop == 1}
+        <i class="u-same"></i>
+        {/if}
+        {if !imgs[0]}
+        <img class="zm" src="/res/images/default.png"/>
+        {else}
+        <img class="zm u-loading-1" data-src="${imgs[0]}?imageView&quality=90&thumbnail=254x320"/>
+        {/if}
+        {if !imgs[1]}
+        <img class="fm" src="/res/images/default.png"/>
+        {else}
+        <img class="fm u-loading-1" data-src="${imgs[1]}?imageView&quality=90&thumbnail=254x320"/>
+        {/if}
+      </a>
+      {var state = priced?getState(x.skuList):1}
+      {if state==3}
+      <div class="mxk">&nbsp;</div>
+      <div class="out">&nbsp;</div>
+      {elseif state==2}
+      <div class="opp">&nbsp;</div>
+      {/if}
+      <div class="size">
+        <div class="mxk">&nbsp;</div>
+        <div class="lst">
+          <label>尺码：</label>
+          {list x.skuList as z}
+          {var state = z.state}
+          <a target="_blank" href="/detail?id=${x.id}&skuId=${z.id}" {if state==3}class="iot" title="已售罄"{elseif state==2}class="iop" title="还有机会"{/if}>${z.size}</a>
+          {/list}
+        </div>
+      </div>
+    </div>
+    <p class="lnx ln0" title="${x.productName||"商品名称"}">
+      <a target="_blank" class="pn" href="/detail?id=${x.id}">${x.productName||"商品名称"}</a>
+    </p>
+    <p class="ln2">
+      {var sale = x.salePrice||0}
+      {var market = x.marketPrice||1000}
+      {if priced}
+      <span class="sp">¥${formatPrice(sale)}(${(sale*10/market)|toFixed:1}折)</span>
+      {else}
+      <span class="sp">¥<em>?</em>　(?折)</span>
+      {/if}
+      <span class="mp">专柜价：<del>¥${market}</del></span>
+    </p>
+  </div>
+  {/list}
+</textarea>

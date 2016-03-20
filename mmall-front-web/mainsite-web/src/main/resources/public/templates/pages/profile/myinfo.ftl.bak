@@ -1,0 +1,115 @@
+<#escape x as x?html>
+<@compress>
+<!DOCTYPE html>
+<html>
+  <head>
+    <#include "/wrap/common.ftl">
+    <#include "/wrap/my.common.ftl">
+    <@title type="myInfo" />
+    <@css/>
+    <@cssCore />
+  </head>
+  <body>
+    <@fixedTop />
+    <@topbar />
+    <@top />
+    <@mainCategory />
+    <div class="bg-french-gray clearfix">
+    	<@crumbs>
+			<a href="/">首页</a><span>&gt;</span><a href="/profile/basicinfo">个人中心</a><span>&gt;</span><span class="selected">个人资料</span>
+    	</@crumbs>
+      <@myModule sideIndex=2>
+  		<div class="m-box m-main l my-info">
+  			<div class="hd">
+                    <h3>个人资料</h3>
+                </div>
+        <div class="my-info" style="padding: 50px 100px;">
+    		  <input type="hidden" value="${(profile.birthYear)?default('')}" name="oldyear" class="ztag"/>
+    		  <input type="hidden" value="${(profile.birthMonth)?default('')}" name="oldmonth" class="ztag"/>
+    		  <input type="hidden" value="${(profile.birthDay)?default('')}" name="oldday" class="ztag"/>
+          <form method="GET" class="m-form m-form-myinfo" id="profileform">
+              <div class="fitm">
+                <label class="flab">帐号</label>
+                <div class="fipt">
+                  <p class="val">${(profile.account)?default('')}</p>
+                </div>
+              </div>
+              <div class="fitm">
+                <label class="flab"><span class="important">*</span>昵称</label>
+                <div class="fipt">
+                  <input type="text" class="w-ipt ztag" value="${(profile.nickname)?default('')}" maxlength="30" data-required="true" data-message="请输入正确的昵称！" name="nickname"/>
+                </div>
+              </div>
+              <div class="fitm">
+                <label class="flab">生日</label>
+                <div class="fipt">
+                  <select class="w-select ztag" name="birthYear">
+                  </select>
+                  <select class="w-select ztag" name="birthMonth">
+                  </select>
+                  <select class="w-select ztag" name="birthDay">
+                  </select>
+                  <span class="msg">生日当天会有惊喜哦~</span>
+                  <#--<input type="hidden" value="" name="birthday" class="ztag"/>-->
+                </div>
+              </div>
+              <div class="fitm">
+                <label class="flab">性别</label>
+                <div class="fipt">
+                   <#if (profile.gender)?exists && (profile.gender)==1>
+                     <span class="w-radiobox"><input name="gender" id="male" value="0" type="radio" class="ztag"/><label for="male">男</label></span>
+                     <span class="w-radiobox"><input name="gender" id="female" value="1" type="radio" class="ztag" checked="checked"/><label for="female">女</label></span>
+                   <#else>
+                     <span class="w-radiobox"><input name="gender" id="male" value="0" type="radio" class="ztag" checked="checked"/><label for="male">男</label></span>
+                     <span class="w-radiobox"><input name="gender" id="female" value="1" type="radio" class="ztag"/><label for="female">女</label></span>
+                   </#if>
+                </div>
+              </div>
+              <div class="fitm fitm-phone">
+                <label class="flab"><span class="important">*</span>手机</label>
+                <div class="fipt">
+                  <#--<#if (profile.phone)?exists && (profile.phone)!=''>-->
+                  <#--<span class="num" id="txtphone">${(profile.phone)?default('')}</span>-->
+                  <#--<span class="w-btn w-btn-2" id="bindBtn"><a class="btn-base btn-default">重新绑定手机号</a></span>-->
+                  <#--<span class="msg">绑定手机后，及时了解订单状态和最新抢购活动-->
+                  		<p>${(profile.phone)?default('')}</p>
+                      <#--<input type="text" class="w-ipt w-ipt-1 ztag" value="${(profile.phone)?default('')}" name="phone" id="iptphone0" data-phone="phone" data-message="请输入正确的手机号码"/>
+                   </span>
+                 <#else>
+                <span class="num" id="txtphone" style="display:none;"></span>
+                <span class="w-btn w-btn-2" id="bindBtn"><a><span>绑定手机号</span></a></span>
+                <span class="msg">绑定手机后，及时了解订单状态和最新抢购活动<input type="hidden" value="" name="phone" id="iptphone0"/></span>
+                -->
+                <#--</#if>-->
+                <#-- <input type="text" style="display:none;" value="${(profile.phone)?default('')}" data-required="true" data-message="请绑定正确的手机号码！" name="phone" id="iptphone0"/> -->
+                <#--<span class="err" id="phoneErrmsg" style="display:none;">请绑定正确的手机号码！</span>-->
+                </div>
+                <span class="btn-base btn-submit modify-mobile-btn">修改手机号码</span>
+              </div>
+              <div class="fitm">
+                <label class="flab">邮箱</label>
+                <div class="fipt">
+                  <input type="text" class="w-ipt w-ipt-1 ztag" value="${(profile.email)?default('')}" maxlength="50" name="email" id="email" data-email="true" data-message="请填写正确的邮箱"/>
+                </div>
+              </div>
+              <div class="fitm fitm-btns">
+                <div class="fipt">
+                  <a href="#" class="w-btn3 ztag" id="saveBtn">保 存</a><#--<span class="err ztag" style="display:none;">基本信息保存失败！</span><span class="suc ztag" style="display:none;">基本信息保存成功！</span>-->
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+      </@myModule>
+    </div>
+    <@footer/>
+    <@copyright/>
+    <@cityChange />
+    <div class="popup"></div>
+    <@js />
+    <script src="${jslib}define.js?${jscnf}"></script>
+    <script src="${jspro}page/profile/myinfo.js"></script>
+  </body>
+</html>
+</@compress>
+</#escape>

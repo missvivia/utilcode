@@ -1,0 +1,31 @@
+.#<uispace>{width:640px;height:345px;}
+.#<uispace> .m-lottery-r{height:100%;position:relative;font-size:14px;line-height:1.2;}
+.#<uispace> .m-ly-101{background:url(/res/images/activity/0117/jp/lb-r-101.png?v=1) no-repeat}
+.#<uispace> .m-ly-ct{position:absolute;bottom:0px;right:0px;width:424px;}
+.#<uispace> .m-ly-ct .title{font-size:22px;font-weight:bold; color:#f12dbd; }
+.#<uispace> .m-ly-ct .m-phone-box{margin:15px auto 20px;}
+.#<uispace> .m-ly-ct .m-share-title{overflow:hidden;}
+.#<uispace> .m-ly-ct .m-share-title .line{height:2px; width:182px;background-color:#e1e1e1;position:relative;margin-top:7px;margin-left:5px;}
+.#<uispace> .m-ly-ct .m-3d-login{height:60px;overflow:hidden;margin:10px auto 25px;}
+.#<uispace> .m-ly-ct .m-3d-login .m-s-login{float:left;display:inline-block;*display:inline;*zoom:1;width:60px;height:100%;background:url(/res/images/activity/0117/jp/m-3d-ln.png?v=1) no-repeat}
+.#<uispace> .m-ly-ct .m-3d-login .m-weibo{background-position:0px 0px;}
+.#<uispace> .m-ly-ct .m-3d-login .m-weibo:hover{background-position:0px -70px;}
+.#<uispace> .m-ly-ct .m-3d-login .m-weixin{margin:0 10%;background-position:-70px 0px;}
+.#<uispace> .m-ly-ct .m-3d-login .m-weixin:hover{background-position:-70px -70px;}
+.#<uispace> .m-ly-ct .m-3d-login .m-yixin{background-position:-140px 0px;}
+.#<uispace> .m-ly-ct .m-3d-login .m-yixin:hover{background-position:-140px -70px;}
+.#<uispace> .m-ly-ct .m-contact{margin-bottom:20px;}
+.#<uispace> .m-ly-20{background:url(/res/images/activity/0117/jp/lb-r-20.png?v=1) no-repeat}
+.#<uispace> .m-ly-102{background:url(/res/images/activity/0117/jp/lb-r-102.png?v=1) no-repeat}
+.#<uispace> .m-ly-103{background:url(/res/images/activity/0117/jp/lb-r-103.png?v=1) no-repeat}
+.#<uispace> .m-ly-104{background:url(/res/images/activity/0117/jp/lb-r-104.png?v=1) no-repeat}
+.#<uispace> .m-ly-105{background:url(/res/images/activity/0117/jp/lb-r-105.png?v=2) no-repeat}
+.#<uispace> .m-ly-400{background:url(/res/images/activity/0117/jp/lb-r-400.png?v=1) no-repeat}
+.#<uispace> .m-ly-1288{background:url(/res/images/activity/0117/jp/lb-r-1288.png?v=1) no-repeat}
+.#<uispace> .m-ly-cp1{background:url(/res/images/activity/0117/jp/lb-r-cp1.png?v=1) no-repeat}
+.#<uispace> .m-ly-cp2{background:url(/res/images/activity/0117/jp/lb-r-cp2.png?v=1) no-repeat}
+.#<uispace> .m-lottery-r .m-btn-box{position:absolute;bottom:50px;left:0px;width:100%;height:80px;}
+.#<uispace> .m-lottery-r .m-btn-box-1{bottom:30px;}
+.#<uispace> .m-lottery-r .m-btn-box-2{bottom:70px;}
+.#<uispace> .m-lottery-r .m-btn-box .m-btn-1{width:160px;height:100%;margin:0 auto;display:block;text-align:center;line-height:160px;}
+.#<uispace> .m-ly-cp1 .m-ly-ct{position:absolute;bottom:30px;left:50%;margin-left:-150px;}

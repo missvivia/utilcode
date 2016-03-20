@@ -1,0 +1,33 @@
+<div class="item item-size f-cb {{error?'item-error': ''}}">
+  <h5 class="lab">尺寸</h5>
+  <div class="cnt">
+    <div class="cntc">
+      <div class="sels f-cb">
+      {{#list @(sizes) as size}}
+      <div
+        class="{{classMaps[size.type||1]}} {{selected==size? 'u-sel-size-selected': ''}}"
+        title="{{size.size}}"
+        {{#if !disable}}
+        on-click={{this.select(size)}}
+        on-mouseenter={{this.toggle(size, true)}}
+        on-mouseleave={{this.toggle(size, false)}}
+        {{/if}}
+        > &nbsp;{{@(size.size)}}<i></i>
+        {{#if size.type == 2}}<div class="u-pophover u-pophover-top u-pophover-2">有机会<span class="arrow"></span></div>{{/if}}<div class="u-tooltip u-tooltip-3" r-hide="!size.isShow">
+          {{#if size.type === 2 && size.isNotified != undefined}}<a href="javascript:;" class='u-btn-sm u-btn-block'><input type='checkbox' checked={{!size.isNotified?false:"checked"}} on-click={{size.isNotified!=undefined && this.notify(size)}} /> {{size.isNotified? "有货时自动加入购物袋（您将收到站内提醒）": "有货时自动加入购物袋（您将收到站内提醒）"}}</a>{{/if}}<ul class="m-stable">
+            {{#list @(size.sizeTips) as tip}}
+               <li class="sel">{{@(tip.name? tip.name +":" + tip.value : "") }} &nbsp;</li>
+            {{/list}}
+          </ul>
+          <span class="arrow-top"></span>
+        </div>
+      </div>
+      {{/list}}
+      </div>
+    </div>
+  </div>
+  {{#if error}}
+  <span class="tip">{{error.msg}}</span>
+  {{/if}}
+</div>
+

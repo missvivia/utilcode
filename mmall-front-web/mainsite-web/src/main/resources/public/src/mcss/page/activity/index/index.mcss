@@ -1,0 +1,141 @@
+.g-activity{
+    position:relative;
+}
+.pg_part{
+    position:relative;
+}
+.pg_cnt{
+    position:relative;
+    background:no-repeat center 0;
+}
+.cnt_part{
+    position:relative;
+    margin:0 auto;
+    width:1090px;
+    background:no-repeat;
+}
+.pg_part1{
+    height:860px;
+    background:url('/res/images/activity/0117/index/bg_repeat1.jpg') top repeat-x;
+    .m-banner{
+ 		height:860px;
+    	background-image:url('/res/images/activity/0117/index/banner_bg.jpg');
+    	.cnt{
+			height:860px;
+	        background-image:url('/res/images/activity/0117/index/banner_cnt.jpg');
+	        .rule{
+		        display:block;
+		        position:absolute;
+		        top:640px;
+		        width:200px;
+		        height:200px;
+		        background:url(about:blank);
+	        }
+			.rule1{left:5px;}
+			.rule2{left:298px;}
+			.rule3{right:300px;}
+			.rule4{right:5px;}
+		}
+	}
+}
+.pg_part4{
+	height:40px;
+	background:#fff6fb url('/res/images/activity/0117/index/bg_repeat4.jpg') top repeat-x;
+}
+.pg_act{
+	.cartoon{
+		-webkit-transition:all .5s ease .0s;
+		-moz-transition:all .5s ease .0s;
+		-o-transition:all .5s ease .0s;
+		transition:all .5s ease .0s;
+	}
+	.m-products{
+		margin-top:48px;
+		padding:30px 0 40px 0;
+		border-top:2px solid #d951b5;
+		.title{
+			position:absolute;
+			top:-11px;
+			left:425px;
+			width:240px;
+			height:22px;
+			text-align:center;
+			line-height:22px;
+			font-weight:bold;
+			font-size:23px;
+			color:#d951b5;
+			background-color:#f5f5f5;
+		}
+		.products{
+			position:relative;
+			top:0;
+			left:0;
+			width:1110px;
+		}
+		.product{
+			position:relative;
+			margin:0px 20px 20px 0px;
+			width:350px;
+			height:550px;
+			background:#fff;
+			.pic{
+				width:350px;
+				height:450px;
+			}
+			.tip{
+				position:absolute;
+				top:420px;
+				left:0px;
+				width:110px;
+				height:30px;
+				text-align:center;
+				line-height:30px;
+				font-size:16px;
+				color:#fff;
+				background:url('/res/images/activity/0117/index/mask_1.png')repeat-x;
+			}
+			.brand{
+				_display:none;
+				opacity:0;
+				filter:alpha(opacity=0);
+				position:absolute;
+				top:300px;
+				left:110px;
+				width:110px;
+				height:110px;
+				text-align:center;
+				line-height:110px;
+				background:url('/res/images/activity/0117/index/mask_2.png')no-repeat;
+				img{
+					width:84px;
+					height:36px;
+					vertical-align:middle;
+				}
+			}
+			.info{
+				margin:23px 40px;
+				width:270px;
+				height:46px;
+				.name{
+					line-height:18px;
+					font-size:16px;
+					color:#000;
+				}
+				.price{
+					line-height:38px;
+					font-size:16px;
+					color:#d951b5;
+				}
+				.marketPrice{
+					margin-left:20px;
+					line-height:40px;
+					font-size:14px;
+					color:#999;
+					del{text-decoration:line-through;}
+				}
+			}
+			&:hover .brand{_display:block;opacity:1;filter:alpha(opacity=100);}
+		}
+	}
+}
+

@@ -1,0 +1,30 @@
+{{#if !!orderdetail.currentAddress && !firstLoad}}
+<wgt-orderinfo ref="orderinfo" orderdetail={{orderdetail}} on-change={{this.fetch($event)}}></wgt-orderinfo>
+<wgt-coupon ref="coupon" orderdetail={{orderdetail}} cartIds={{cartIds}} on-change={{this.fetch($event)}}></wgt-coupon>
+<wgt-paymethod ref="paymethod" orderdetail={{orderdetail}} on-change={{this.fetch($event)}}></wgt-paymethod>
+<wgt-summary ref="summary" orderdetail={{orderdetail}} on-change={{this.checkValidate($event)}}></wgt-summary>
+<div class="p-total">
+  <div class="bd">
+    <div class="f-fs1 f-pr f-cb">
+      <div class="submit f-fs1 f-fl"><input type="checkbox" id="agree" r-model={{agree}}/><label for="agree" class="mgl10">同意</label><a href="http://023.baiwandian.cn/help#/help/articlelist/?categoryId=8&subCategoryId=82" class="s-fc9 mgl5" target="_blank" r-html={{'《mmall平台服务协议》'}}></a></div>
+      <span class="w-btn4 f-fr f-cp {{(payerr!='')? 'w-btn4-dis': ''}}" on-click={{this.pay($event)}}>提交订单</span>
+      <div class="f-fr">
+        <a class="tocart s-fc9" target="_self" href="/cart">返回购物袋</a>
+        <span class="totallbl">应付总额（含运费）</span>
+        <span class="s-fc5 money f-fs1"><span r-html={{'&yen;'}}></span><span class="f-fs30 f-fw1">{{(orderdetail.realCash|fixed).split('.')[0]||'0'}}</span><span class="f-fw1">.{{(orderdetail.realCash|fixed).split('.')[1]||'00'}}</span></span>
+      </div>
+      <span class="errtext" r-hide={{payerr==''}}>{{payerr}}</span>
+    </div>
+  </div>
+  <form action="/purchase/buy" method="post" target={{!!orderdetail.currentPayMethod && (orderdetail.currentPayMethodId == 1)? "_self": "_blank"}} id="postForm">
+    <input type="hidden" name="cartIds" r-model={{cartIds}}/>
+    <input type="hidden" name="cartEndTime" r-model={{cartEndTime}}/>
+    <input type="hidden" name="requestId" r-model={{requestId}}/>
+    <input type="hidden" name="addressId" r-model={{orderdetail.currentAddress.id}}/>
+    <input type="hidden" name="userCouponId" r-model={{orderdetail.currentCouponId||''}}/>
+    <input type="hidden" name="payMethod" r-model={{orderdetail.currentPayMethodId||''}}/>
+    <input type="hidden" name="hbCash" r-model={{orderdetail.currentHbCash}}/>
+    <input type="hidden" name="receipt" r-model={{orderdetail.receiptValue||''}}/>
+  </form>
+</div>
+{{/if}}

@@ -1,0 +1,12 @@
+{
+	"code": 200,
+	"result": {
+		"list": [{
+			"brandId": 1,
+			"brandNameZh": "秋水"
+		},{
+			"id": 2,
+			"brandNameZh": "耐克"
+		}]
+	}
+}

@@ -1,0 +1,67 @@
+/*global*/
+body{font-family:'Microsoft YaHei';font-size:14px;margin:0;padding:0;height:100%;background:#f2f2f2;}
+
+/*模块修正*/
+*{margin:0;padding:0;border:none;outline:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+a:link, a:active, a:visited{text-decoration:none;}
+ul, ol, li{list-style:none;}
+
+/*container*/
+.g-container{position: relative;}
+
+/*下拉菜单中的文字*/
+.g-help-list a{display:block;padding:0 17px;height:45px;border-bottom:1px solid #dedede;position:relative;overflow:hidden;}
+.m-help-tip1{color:#333;font-size:15px;background:#fff;line-height:45px;}
+.m-help-tip2{color:#666;width:100%;}
+.m-help-tip2 p{padding-right:30px;width:100%;height:45px;line-height:22px;word-break:break-all;display:table-cell;vertical-align:middle;}
+
+/*一级菜单 （有二级目录）*/
+.m-help-dropdown{
+position:relative;overflow:hidden;height:45px;
+-webkit-transition: height ease-in-out .3s;
+-moz-transition: height ease-in-out .3s;
+-o-transition: height ease-in-out .3s;
+transition: height ease-in-out .3s;
+}
+.check .m-help-icon1{
+-webkit-transform: rotate(-180deg);
+-moz-transform: rotate(-180deg);
+-ms-transform: rotate(-180deg); 
+-o-transform: rotate(-180deg); 
+transform: rotate(-180deg);
+}
+/*一级菜单无二级目录*/
+.m-help-check{background:#fff;}
+
+/*二级菜单*/
+.m-help-dropdownMenu{
+visible:hidden;position:relative;position:relative;overflow:hidden;z-index:-999;
+-webkit-transition: top ease-in-out .3s;
+-moz-transition: top ease-in-out .3s;
+-o-transition: top ease-in-out .3s;
+transition: top ease-in-out .3s;
+}
+.show{visible:visible;}
+
+/*下拉菜单中的图标提示*/
+.m-help-icon1{
+position:absolute;top:18px;right:10px;width:15px;height:9px;background:url(/res/3g/images/webview/help.png) -2px -5px no-repeat;background-size:40px;
+-webkit-transition: all ease-in-out .3s;
+-moz-transition: all ease-in-out .3s;
+-o-transition: all ease-in-out .3s;
+transition: all ease-in-out .3s;
+}
+.m-help-icon2{position:absolute;top:17px;right:10px;width:7px;height:11px;background:url(/res/3g/images/webview/help.png) -19px -3px no-repeat;background-size:40px;}
+.m-help-icon3{position:absolute;top:16px;right:10px;width:11px;height:15px;background:url(/res/3g/images/webview/help.png) -29px -1px no-repeat;background-size:40px;}
+
+/*暂无数据*/
+.g-no-ans{margin-top:10px;text-align:center;}
+
+/*帮助详情*/
+.m-help-container{margin-left:17px;padding:22px 17px 22px 0;border-bottom:1px solid #dedede;}
+.m-ans-title{font-size:18px;color:#333;}
+.m-ans-detail{margin-top:10px;font-size:16px;line-height:20px;color:#999;word-break:break-all;}
+.m-ans-detail img{display:block;max-width:100%;}
+
+/*暂无数据*/
+.g-no-ans{margin-top:10px;text-align:center;}

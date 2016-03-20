@@ -1,0 +1,48 @@
+<div class="m-addpic f-cb">
+  <a class="f-fr btn btn-primary" on-click={{this.edit()}}>新建通知</a>
+</div>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+        <th>推送时间</th>
+        <th>平台</th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>更新时间</th>
+        <th>编辑人</th>
+        <th>推送状态</th>
+        <th>操作</th>
+      </tr>
+   </thead>
+   <tbody>
+   	  {{#if list&&list.length==0}}
+   	  <tr>
+        <td colspan="9" class="f-tac">
+       	 查询记录为空
+        </td>
+      </tr>
+   	  {{#else}}
+      {{#list list as x}}
+      <tr>
+        <td>{{x.pushTime|format:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>{{x.platformType}}</td>
+        <td>{{x.title}}</td>
+        <td>{{x.content}}</td>
+        <td>{{x.updateTime|format:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>{{x.operator}}</td>
+        <td>{{#if x.pushSuccess==0}}未发送{{#elseif x.pushSuccess==1}}推送成功{{#elseif x.pushSuccess==2}}推送失败{{/if}}</td>
+        <td>
+          <span href="javascript:void(0);" class="text-info" on-click={{this.edit(x)}}>编辑</span>
+          <span href="javascript:void(0);" class="text-info" on-click={{this.del(x_index)}}>删除</span>
+          <span href="javascript:void(0);" class="text-info" on-click={{this.edit(x,true)}}>查看</span>
+        </td>
+      </tr>
+      {{/list}}
+      {{/if}}
+   </tbody>
+</table>
+<div class="f-cb">
+	<div class="f-fr">
+		<pager total={{Math.ceil(total/10)}} current={{current}} on-nav={{this.onPageChange($event)}}></pager>
+	</div>
+</div>

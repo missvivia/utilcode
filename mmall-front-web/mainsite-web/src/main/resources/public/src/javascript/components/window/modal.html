@@ -1,0 +1,15 @@
+
+<div class="m-modal {{clazz}}">
+  <div class="placeholder"></div>
+  <div class="w-win container">
+      <span class="close" on-click={{this.close()}}></span>
+      <div class="title">{{title}}</div>
+      <div class="f-cb">
+          {{#include this.content || content }}
+      </div>
+      <div class="btns">
+          <span class="ok" on-click={{this.confirm()}}>确  定</span>
+          <span class="cc" on-click={{this.close()}}>取 消</span>
+      </div>
+  </div>
+</div>

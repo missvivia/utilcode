@@ -1,0 +1,26 @@
+{{#if !!orderdetail.currentAddress && !firstLoad}}
+<wgt-orderinfo ref="orderinfo" orderdetail={{orderdetail}} on-change={{this.fetch($event)}}></wgt-orderinfo>
+<wgt-paymethod ref="paymethod" orderdetail={{orderdetail}} on-change={{this.fetch($event)}}></wgt-paymethod>
+<wgt-coupon ref="coupon" orderdetail={{orderdetail}} cartIds={{cartIds}} on-change={{this.fetch($event)}}></wgt-coupon>
+
+<div class="m-summarybar">
+  <div class="wrap f-cb">
+    <span class="u-btn1 f-fr f-cp {{(payerr!='')? 'u-btn1-dis': ''}}" on-click={{this.pay()}}>确认</span>
+    <div>
+      <p class="s-fc4">商品金额：￥{{(orderdetail.cartInfoVO.totalPrice|fixed)||'0.00'}}</p>
+      <p class="s-fc1">合计：<span class="s-fc9 f-fs15">￥{{(orderdetail.cartInfoVO.realPrice|fixed)||'0.00'}}</span> ({{orderdetail.cartInfoVO.minusPrice}}元优惠券)</p>
+    </div>
+  </div>
+</div>
+<form action="/purchase/buy" method="post" id="postForm">
+  <input type="hidden" name="cartIds" r-model={{cartIds}}/>
+  <input type="hidden" name="addressId" r-model={{orderdetail.currentAddress.id}}/>
+  {{#if orderdetail.currentCouponId}}
+  <input type="hidden" name="userCouponId" r-model={{orderdetail.currentCouponId||''}}/>
+  {{/if}}
+  <input type="hidden" name="payMethod" r-model={{orderdetail.currentPayMethodId||''}}/>
+  <input type="hidden" name="requestId" r-model={{requestId}}/>
+  <input type="hidden" name="skusPrice" r-model={{orderdetail.selectedPrice}}/>
+  <input type="hidden" name="formToken" r-model={{formToken}}/>
+</form>
+{{/if}}

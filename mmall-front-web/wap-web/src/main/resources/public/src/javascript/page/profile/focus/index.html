@@ -1,0 +1,25 @@
+{{#if list.length>0}}
+<ul class="m-focus">
+	{{#list list as item}}
+	<li class="m-liitem">
+		<a href="/product/detail?skuId={{item.skuId}}" class="img">
+			<img src="{{item.showPicPath}}">
+		</a>
+		<div class="brandinfo">
+			<a href="/product/detail?skuId={{item.skuId}}">{{item.productName||'null'}}</a>
+		</div>
+		{{#list item.priceList as price}}
+		<p class="price">￥{{price.prodPrice}}</p>
+		{{/list}}
+	</li>
+	{{/list}}
+</ul>
+{{#elseif loading}} 
+<div class="m-lstloading f-tac"><img src="/res/3g/images/loading-2.gif" class="f-vam"><p class="load-txt">数据加载中</p></div>
+{{#else}}
+<div class="m-empty">
+	<div class="f-tac"><i class="u-focusempt"></i></div>
+	<p class="lbl f-tac">抱歉，您的收藏为空！</p>
+	<div class="btnbox f-tac"><a href="/index" class="btn">马上去逛逛</a></div>
+</div>
+{{/if}} 

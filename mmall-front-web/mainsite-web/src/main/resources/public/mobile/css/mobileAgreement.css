@@ -1,0 +1,19 @@
+/*global*/
+body{font-family:'Microsoft YaHei';font-size:14px;margin:0;padding:0;height:100%;background:#f2f2f2;}
+
+/*模块修正*/
+*{margin:0;padding:0;border:none;outline:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+a:link, a:active, a:visited{text-decoration:none;}
+ul, ol, li{list-style:none;}
+
+/*container*/
+.g-container{position:relative;}
+
+/*帮助详情*/
+.m-help-container{margin-left:17px;padding:22px 17px 22px 0;border-bottom:1px solid #dedede;}
+.m-ans-title{font-size:15px;color:#333;}
+.m-ans-detail{margin-top:10px;font-size:14px;color:#999;word-break:break-all;}
+.m-ans-detail img{display:block;max-width:100%;}
+
+/*暂无数据*/
+.g-no-ans{margin-top:10px;text-align:center;}

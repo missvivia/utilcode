@@ -1,0 +1,53 @@
+{"result": [
+  {
+    "type": "index",
+    "list": [
+      {"id": "i0", "type":"po"},
+      {"id": "11", "type":"active"}
+    ],
+    "name": "首页"
+  },
+  {
+    "type": "woman",
+    "list": [
+      {"id": "w0", "type":"po"},
+      {"id": "w1", "type":"active"},
+      {"id": "w2", "type":"po"},
+      {"id": "w3", "type":"po"}
+    ],
+    "name": "女装"
+  },
+  {
+    "type": "man",
+    "list": [
+      {"id": "m0", "type":"po"},
+      {"id": "m1", "type":"active"},
+      {"id": "m2", "type":"po"},
+      {"id": "m3", "type":"active"}
+    ],
+    "name": "男装"
+  },
+  {
+    "type": "child",
+    "list": [
+      {"id": "c0", "type":"po"},
+      {"id": "c1", "type":"active"},
+      {"id": "c2", "type":"po"}
+    ],
+    "name": "童婴"
+  },
+  {
+    "type": "home",
+    "list": [
+      {"id": "h0", "type":"active"},
+      {"id": "h1", "type":"active"},
+      {"id": "h2", "type":"po"},
+      {"id": "h3", "type":"active"},
+      {"id": "h0", "type":"po"},
+      {"id": "h1", "type":"po"},
+      {"id": "h2", "type":"po"},
+      {"id": "h3", "type":"po"}
+    ],
+    "name": "家装"
+  }
+]}

@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------
+ * 主站首页实现文件
+ * @version  1.0
+ * @author   cheng-lin(cheng-lin@corp.netease.com)
+ * ------------------------------------------
+ */
+NEJ.define([
+    'base/klass',
+    'base/element',
+    'base/event',
+    'base/util',
+    'pro/widget/module',
+    'pro/widget/slide/slide',
+    'pro/components/countdown/countdown',
+    'pro/components/schedule/scheduleList'
+],function(_k,_e,_v,_u,_w,_slide,_countdown,_pl,_p,_o,_f,_r){
+    var _pro;
+
+    _p._$$SubPage = _k._$klass();
+    _pro = _p._$$SubPage._$extend(_w._$$Module);
+
+    /**
+     * 初始化方法
+     * @return {Void}
+     */
+    _pro.__init = function(){
+        this.__super();
+        // 0:slide的父容器，做translate3d用
+        // 1:图片切换后的小图标展示，没实际作用
+        this.__nodes = _e._$getByClassName(document,'j-node');
+        this.__bcds = _e._$getByClassName(document,'j-bcd');
+        _slide._$$Slide._$allocate({
+          slideBox:this.__nodes[0],
+          iconBox:this.__nodes[1],
+          selected:'z-active',
+          width:document.body.scrollWidth,
+          duration:300,
+          stop:5000
+        });
+        // 最新品牌倒计时
+        _u._$forEach(this.__bcds,function(_node){
+            var _time = _e._$dataset(_node,'countdown');
+            var _ct = new _countdown({
+                data:{
+                    content:'',
+                    time:_time,
+                    updatetime:60000,
+                    onchange:function(_opt){
+                        if (_opt.isdown){
+                            var _pd = _node.parentNode.parentNode.parentNode.parentNode;
+                            _e._$addClassName(_pd,'f-dn');
+                        }else{
+                            if (_opt.meta.dd == '00' && _opt.meta.HH == '00' && _opt.meta.mm == '00'){
+                                _node.innerHTML = _opt.meta.ss + '秒';
+                            }else if (_opt.meta.dd == '00' && _opt.meta.HH == '00'){
+                                _node.innerHTML = _opt.meta.mm +　'分钟';
+                            }else if(_opt.meta.dd == '00'){
+                                _node.innerHTML = _opt.meta.HH +　'小时';
+                            }else{
+                                _node.innerHTML = _opt.meta.dd +　'天';
+                            }
+                        }
+                    }._$bind(_node)
+                }
+            });
+            _ct.$inject(_node);
+        }._$bind(this));
+    };
+
+    /**
+     * 重置方法
+     * @param  {Object} _options - 配置参数
+     * @return {Void}
+     */
+    _pro.__reset = function(_options){
+        this.__super(_options);
+    };
+
+    _p._$$SubPage._$allocate({});
+
+    return _p;
+});

@@ -1,0 +1,39 @@
+<div class="m-clst table">
+  <div class="clst_action form-inline">
+    <div class="input-group">
+        <input type="text" class="form-control" r-model={{qvalue}} on-enter='updatelist'>
+        <span class="input-group-btn">
+          <button class="btn btn-default" on-click='updatelist' type="button">搜索</button>
+        </span>
+      </div><!-- /input-group -->
+  </div>
+  <table class="table  table-striped">
+    <thead>
+      <tr>
+        <th>选择</th>
+        <th>名称</th>
+        <th class='th-xl' >描述</th>
+        <th class='th-xl'>有效时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as coupon}}
+        <tr class='animated' on-click={{this.select(coupon)}} >
+          <td>
+            <span class="glyphicon glyphicon-ok {{(!!selected && selected.couponCode==coupon.couponCode)? 'text-primary': 'text-warning'}}"></span>
+          </td>
+          <td>{{ coupon.name }}</td>
+          <td>{{ coupon.description }}</td>
+          <td>
+            {{ coupon.startTime|format}}
+            到
+            {{ coupon.endTime|format }}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+  <pager total={{Math.ceil(total/limit)}} current={{current}}></pager> 
+</div>
+
+

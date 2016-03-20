@@ -1,0 +1,94 @@
+<div class="m-sidebar-follow" r-style={{ {height: height+'px'} }}>
+  <div class="title-bar">
+    <div class="j-cnt">我的关注</div>
+    <div class="u-close j-cnt" on-click={{this.close()}}>&nbsp;</div>
+  </div>
+  <div class="follow-wrap" r-style={{ {height: (height-60)+'px'} }}>
+    <!--div class="f-cb tabp">
+      <div on-mouseover={{this.change('brand')}} {{#if active == 'brand'}}class="tab z-active"{{#else}}class="tab"{{/if}}>品牌</div>
+      <div on-mouseover={{this.change('sales')}} {{#if active == 'sales'}}class="tab z-active"{{#else}}class="tab"{{/if}}>活动</div>
+    </div-->
+     {{#if loading}}
+
+    <div class="load">
+      <div class="w-loading"></div>
+      <div class="text f-fs1 s-fc2">努力加载中...</div>
+    </div>
+
+    {{#else}}
+
+    {{#if active == 'brand'}}
+        {{#if result.length>0 }}
+            <div class="cart-bd" r-style={{ {height: (height-60-150)+'px'} }}>
+              {{#list result as x}}
+              <div {{#if overIndex == x_index}}class="brand z-active"{{#else}}class="brand"{{/if}}>
+                <div class="small">
+                  <img src="{{x.logo}}?imageView&quality=90&thumbnail={{brandsize}}" alt="">
+                </div>
+                <div class="word">
+                  <p>{{x.brandNameEn}}&nbsp;{{x.brandNameZh}}</p>
+                  {{#if x.poCount!=0}}
+                  <p><span class="num">{{x.poCount}}</span>个活动进行中</p>
+                  {{#elseif x.nextPoTime==0}}
+                  <p>敬请期待！</p>
+                  {{#elseif x.nextPoTime!=0}}
+                  <p>下次活动档期  {{x.nextPoTime|format:'yyyy.MM.dd'}}至{{x.nextPoEndTime|format:'MM.dd'}}</p>
+                  {{/if}}
+                </div>
+                <a target="_blank" href="/mainbrand/story?id={{x.brandId}}">
+                <div on-mouseout={{this.onmouseover(-1)}} on-mouseover={{this.onmouseover(x_index)}} class="mask">查看品牌</div>
+                </a>
+              </div>
+              {{/list}}
+            </div>
+        {{#else}}
+            <div class="cart-bd">
+              <div class="empty">
+                <img class="normal" src="../../res/images/follow_empty.png" alt="">
+                <div class="word">
+                  <p class="big">品牌为空</p>
+                  <p>快去看看新品牌吧</p>
+                </div>
+              </div>
+            </div>
+        {{/if}}
+            <div class="cart-ft">
+              <a target="_blank" href="/profile/focus?index=0" target="_blank" class="w-btn4 w-btn4-1 f-cp s-fc0">查看更多</a>
+            </div>
+    {{#else}}
+        {{#if result.length>0 }}
+            <div class="cart-bd" r-style={{ {height: (height-60-150)+'px'} }}>
+              {{#list result as x}}
+              <div
+              {{#if overIndex == x_index}}class="{{salesmap[x.activeStatus]}} z-active"{{#else}}class="{{salesmap[x.activeStatus]}}"{{/if}} on-mouseout={{this.onmouseover(-1)}} on-mouseover={{this.onmouseover(x_index)}}>
+                {{#if x.activeStatus == 1}}
+                <img class="big" src="{{x.img}}?imageView&quality=90&thumbnail={{schedulesize}}" alt="">
+                <div class="bar0"><span>{{x.minDiscount/10}}</span>折起{{x.activeStatus}}</div>
+                <div class="bar1"><span>{{x.activeTitle}}</span>　<span class="time" id="time-{{x.scheduleId}}"></span></div>
+                <div class="mask"><a target="_blank" {{#if true}}href="/schedule?scheduleId={{x.scheduleId}}"{{#else}}href="javascript:void(0);"{{/if}}>立即抢购</a></div>
+                {{#else}}
+                <img class="big2" src="{{x.logo}}?imageView&quality=90&thumbnail={{schedulesize2}}" alt="">
+                <div class="bar1"><span>{{x.activeTitle}}</span>　<span class="pretime">2014.12.12开始</span></div>
+                {{/if}}
+              </div>
+              {{/list}}
+            </div>
+            <div class="cart-ft">
+              <a href="/profile/focus?index=1" target="_blank" class="w-btn4 w-btn4-1 f-cp s-fc0">查看更多</a>
+            </div>
+        {{#else}}
+            <div class="cart-bd">
+              <div class="empty">
+                <img class="normal" src="../../res/images/follow_empty.png" alt="">
+                <div class="word">
+                  <p class="big">关注为空</p>
+                  <p>快去看看最新的活动吧</p>
+                </div>
+              </div>
+            </div>
+        {{/if}}
+    {{/if}}
+
+    {{/if}}
+  </div>
+</div>

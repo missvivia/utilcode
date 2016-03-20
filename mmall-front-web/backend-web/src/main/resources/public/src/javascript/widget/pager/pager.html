@@ -1,0 +1,13 @@
+{trim}
+<ul class="pagination">
+ {if !defined("noprv")||!noprv}
+ <li ><a href="#" class="pageprv ${'js-p-'|seed}">上一页</a></li>
+ {/if}
+ {list 1..number as x}
+ <li ><a href="#" class="zpgi zpg${x} ${'js-i-'|seed}"></a></li>
+ {/list}
+ {if !defined("nonxt")||!nonxt}
+ <li ><a href="#" class="pagenxt ${'js-n-'|seed}">下一页</a></li> 
+ {/if}
+</ul>
+{/trim}

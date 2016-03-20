@@ -1,0 +1,25 @@
+/*专场定位相同  活动中  container*/
+.g-container{position:relative;}
+
+/*无物流信息*/
+.g-noinfo{font-size:14px;margin-top:10px;text-align:center;}
+
+/*物流信息*/
+.g-info{padding:15px;background:#fff;border:1px solid #dedede;}
+.g-info span{position:absolute;left:85px;color:#333;}
+.g-info p+p{margin-top:5px;}
+
+/*物流*/
+.g-order{margin-top:15px;padding-left:20px;background:#fff;border:1px solid #dedede;overflow:hidden;}
+.g-order-flow{position:relative;padding-left:20px;border-left:1px solid #ccc;}
+.g-order-storey li{position:relative;padding:15px 20px 15px 0;border-bottom:1px solid #dedede;}
+.g-order-storey li a{color:#007aff;}
+.g-order-storey li span{display:block;}
+.g-order-storey li:first-child span{color:#68449e;}
+.g-order-storey li:first-child .m-order-icon:before{content:"";position:absolute;bottom:19px;left:5px;width:9px;height:100px;background:#fff;z-index:1;}
+.g-order-storey li:first-child .m-order-icon{top:17px;left:-30px;width:19px;height:19px;background:url(../images/track.png) -1px -1px no-repeat;background-size:36px;}
+.g-order-storey li:last-child{border:none;}
+.m-order-details:last-child .m-order-icon:after{content:"";position:absolute;top:9px;width:9px;height:100px;background:#fff;z-index:1;}
+.m-order-detail .m-order-icon:after{content:"";position:absolute;top:18px;left:5px;width:9px;height:100px;background:#fff;z-index:1;}
+.m-order-icon{position:absolute;top:42%;left:-25px;width:9px;height:9px;background:url(../images/track.png) -24px -6px no-repeat;background-size:36px;z-index:2;}
+.m-order-time{font-size:10px;margin-top:10px;}

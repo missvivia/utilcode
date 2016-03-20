@@ -1,0 +1,66 @@
+@abstract '../_config.mcss';
+
+body{
+    background:$fc30;
+}
+.g-index-hd{
+    width:100%;
+    position:relative;
+    $transform:translate3d(0,0,0);
+}
+.g-index-bd{
+    padding:0 10px;
+}
+.g-index-ft{
+    height:20px;
+}
+
+.m-head{
+    width:100%;height:37px;line-height:37px;
+    .new{@extend bg-icon;
+        background-size: 500px 1000px;
+        background-position:-90px -140px;
+        float:left;width:30px;height:100%;}
+    .word{
+        padding-left:4px;
+        .time{color:$fc11;font-weight:bolder;}
+    }
+}
+
+
+
+.u-time{
+    @extend bg-icon;
+    margin-right: 5px;
+    width:14px;height:14px;
+    background-position: -184px -249px;
+    $inline-block();
+    vertical-align:middle;
+    background-size: 500px 1000px;
+}
+
+
+.w-nav{
+    background:$fc0;
+    a{
+        height:60px;
+        display:block;
+        line-height:60px;
+        width:78px;
+        margin:0 auto;
+    }
+    section{width:33.333%;float:left;}
+    i{@extend bg-icon;display:inline-block;height:100%;width:48px;float:left;margin-right:5px;}
+    .nav0{
+        background-position: -7px -29px;
+        background-size:500px 1000px;
+    }
+    .nav1{
+        background-position: -117px -29px;
+        background-size:500px 1000px;
+    }
+    .nav2{
+        background-position: -226px -29px;
+        background-size:500px 1000px;
+    }
+}

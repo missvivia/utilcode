@@ -1,0 +1,10 @@
+{
+    "code":200,
+    "result":[
+        {"id":1,"name":"类目1","count":9},
+        {"id":2,"name":"类目2","count":20},
+        {"id":3,"name":"类目3","count":100},
+        {"id":4,"name":"类目4","count":1000},
+        {"id":5,"name":"类目5","count":30}
+    ]
+}

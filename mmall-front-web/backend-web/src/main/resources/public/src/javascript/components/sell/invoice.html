@@ -1,0 +1,45 @@
+
+  <div class="addlist-hd">
+    <ul id="addlist-tab">
+      <li class="{{stateInt==0?'addclick': ''}}" on-click={{stateInt=0}}>待开票</li>
+      <li class="{{stateInt==1?'addclick': ''}}" on-click={{stateInt=1}}>已开票</li>
+    </ul>
+  </div>
+<div class="clst_action">
+  <form method="get" class="form-horizontal" ref=invoice>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">按更新时间：</label>
+      <div class="col-sm-2">
+        <span class="sep">从</span>
+        <datepicker name="sdate" select={{sdate}}></datepicker>
+      </div>
+      <div class="col-sm-2">
+        <span class="sep">到</span>
+        <datepicker name="edate" select={{edate}}></datepicker>
+      </div>
+      <div class="col-sm-2">
+        <select name="type" id="" class="form-control" r-model={{queryType}}>
+          <option value=0>不选择</option>
+          <option value=1>so编号</option>
+          <option value=2>抬头</option>
+        </select>
+      </div>
+      <div class="col-sm-2" r-hide={{queryType == "0"}}>
+        <input r-model={{queryValue}} type="text" class="form-control">
+      </div>
+      <div class="col-sm-2 ">
+        <a class="btn btn-primary btn-block" on-click={{this.search()}}>查找</a>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-2  col-sm-offset-2" >
+        <a class="btn btn-default btn-block" href="javascript:;" target="_blank" on-click={{this.search(true, $event)}}
+          >导出EXCEL表格</a>
+      </div>
+      <div class="col-sm-2" r-hide='stateInt==1'>
+        <label class="btn btn-default btn-block" label-upload="/sell/invoiceUpload" >批量导入物流信息</label>
+      </div>
+    </div>
+  </form>
+  <intable ref=intable stateInt={{stateInt}}></intable>
+</div>

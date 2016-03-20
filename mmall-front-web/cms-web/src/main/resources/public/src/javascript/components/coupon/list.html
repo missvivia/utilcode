@@ -1,0 +1,99 @@
+<div class="m-clst table">
+  <div class="clst_action form-inline f-cb" style="margin-bottom:10px;">
+    {{#if audit == 0}}
+    <a class="btn btn-primary" href="/promotion/couponEdit">添加优惠券</a>
+    {{/if}}
+    <div class="input-group form-group" style="float:right;">
+     	<input type="text" class="form-control" id="key" placeholder="输入关键字查找" on-keyup={{this.onKeyUp($event)}}/>
+     	<div class="input-group-addon" id="search" on-click={{this.onSearch($event)}}><span class="glyphicon glyphicon-search"></span></div>
+    </div>    
+  </div>
+  <table class="table  table-striped">
+    <thead>
+      <tr>
+        <th class='th-xl'>优惠券名称</th>
+        <th class='th-xl' >优惠券描述</th>
+        <th class='th-xl'>区域</th>
+        <th class='th-xl' >代码类型</th>
+        <th class='th-xl'>有效时间</th>
+        <th style="min-width:100px;">编辑人</th>
+        <th style="min-width:130px;">
+          <select class='form-control form-control-sm' on-change={{this.onChange($event)}}>
+            {{#if audit == 0}}
+            <option value="-1">全部状态</option>
+            <option value="0">新建</option>
+            <option value="1">审核中</option>
+            <option value="2">审核通过</option>
+            <option value="3">审核拒绝</option>
+            <option value="4">已删除</option>
+            {{#else}}
+            <option value="1">审核中</option>
+            <option value="2">审核通过</option>
+            {{/if}}
+          </select>
+        </th>
+        <th style="min-width:100px;">审核说明</th>
+        <th class='th-xl' style="min-width:130px;">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as act}}
+        <tr class='animated' r-animation="on: enter; class: fadeIn">
+          <td>{{ act.name }}</td>
+          <td>{{ act.description}}</td>
+          <td>
+          	{{#list act.areaList as area}}
+          	<p>{{area.areaName}}</p>
+          	{{/list}}
+          </td>
+          <td>
+		        {{#if act.codeType =="PUBLIC"}}公码{{#else}}随机码{{/if}}
+		      </td>
+          <td>
+           {{ @(act.startTime|format) }}
+                                  至
+           {{ @(act.endTime|format) }} 
+          </td>
+          <td>{{@(act.applyUserName)}}</td>
+          <td>
+            {{#if act.auditState ===0}}
+                                    新建
+            {{#elseif act.auditState === 1 }}
+                                    提交审核
+            {{#elseif act.auditState === 2 }}
+                                     审核通过
+            {{#elseif act.auditState === 3 }}
+                                      拒绝
+            {{#elseif act.auditState === 4 }}
+                                      删除
+            {{/if}}
+          </td>
+          <td>{{@(act.reason)}}</td>
+          <td>
+            <a href="/promotion/couponEdit?id={{act.id}}&editable={{(act.auditState===0||act.auditState===3)?1:0}}" class='btn btn-primary btn-xs'>{{(act.auditState===0||act.auditState===3)?'编辑': '查看'}}</a>
+            {{#if act.auditState ===0}} 
+              <a href="#" on-click={{this.operate(act.id,"auditcommit",1)}} class='btn btn-primary btn-xs'>提交</a>
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"delete",4)}}>删除</a>
+            {{#elseif act.auditState === 2 }}
+              {{#if act.codeType !="PUBLIC"}}
+              <a href="/coupon/exportCode?id={{act.id}}" class='btn btn-dft btn-xs' target="_blank">导出</a>
+              {{/if}}
+              {{#if audit == 1}}
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"discard",5)}}>撤销</a>
+              {{/if}} 
+            {{#elseif act.auditState === 1 && audit ==1}}
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"audit",2)}}>通过</a>
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"audit",3)}}>拒绝</a>
+            {{#elseif act.auditState === 3 }}
+              <a href="#" on-click={{this.operate(act.id,"auditcommit",1)}} class='btn btn-primary btn-xs'>重新提交</a>
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"delete",4)}}>删除</a>
+            {{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+  <pager total={{Math.ceil(total/limit)}} current={{current}}></pager> 
+</div>
+
+

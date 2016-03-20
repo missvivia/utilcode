@@ -1,0 +1,7 @@
+<table class="tab-table">
+	<tr>
+	      <td {{#if selectedIndex==0}}class="active"{{/if}}><button class="btn" on-click={{this.go(0)}}>基本信息</button></td>
+		  <td {{#if selectedIndex==2}}class="active"{{/if}}><button class="btn" on-click={{this.go(2)}}>优惠券&红包</button></td>
+		  <td {{#if selectedIndex==3}}class="active"{{/if}}><button class="btn" on-click={{this.go(3)}}>订单信息</button></td>
+	</tr>
+</table>

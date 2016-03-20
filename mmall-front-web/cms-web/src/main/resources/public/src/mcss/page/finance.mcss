@@ -1,0 +1,39 @@
+/*日期控件-时间输入框*/
+.u-dtime{height:34px;width:50px;margin-left:-5px;padding-bottom:3px;}
+
+.u-label{line-height:34px;text-align:right;margin-bottom:0px;}
+
+.u-wtd{height:100px;overflow-y:scroll;}
+
+/*验证输入框错误样式 */
+.j-invalid{border-color: #d9534f;
+-webkit-box-shadow: inset 0px 0px 3px #d9534f;
+box-shadow: inset 0px 0px 3px #d9534f;}
+
+/*首付款确认单*/
+.m-billtable{width:80%;margin:0 auto;}
+.m-billtable .title{text-align:center;font-size:24px;}
+.m-billtable td,.m-billtable th{width:16%;padding-left:10px;border:1px solid #aaa;}
+.m-billtable td{height:30px;}
+.m-billtable li{list-style:none;}
+.m-billtable-1{width:100%;}
+.m-billtable-1 td,.m-billtable th{width:auto;}
+.m-billtable-1 .f-bc1{background-color:#C5D9F1;}
+
+
+/*table头部样式*/
+.m-tabletop .title{font-size:32px;font-weight:bold;text-align:center;}
+.m-tabletop .f-mr40{margin-right:40px;}
+
+/*table底部列表样式*/
+.m-bottomtitle{font-size:16px;font-weight:bold;text-align:right;}
+.m-bottomlist{margin:20px 0;}
+.m-bottomlist ul{margin-left:-40px;}
+.m-bottomlist li{list-style:none;}
+.m-bottomlist .f-mr160{margin-right:160px;}
+
+.m-wbtns{text-align:center;margin:20px 0;}
+.m-wbtns button{background-color:#e878b2;color:#fff;}
+
+/*f*/
+.f-fc1{color:#BF4B4B;}

@@ -1,0 +1,555 @@
+package com.xyl.mmall.controller;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.netease.print.security.util.SecurityContextUtils;
+import com.netease.push.util.JSONUtils;
+import com.xyl.mmall.backend.facade.POItemFacade;
+import com.xyl.mmall.bi.core.aop.BILog;
+import com.xyl.mmall.cms.dto.BusinessDTO;
+import com.xyl.mmall.cms.enums.SupplierType;
+import com.xyl.mmall.cms.facade.BusinessFacade;
+import com.xyl.mmall.cms.facade.CategoryFacade;
+import com.xyl.mmall.cms.facade.ItemModelFacade;
+import com.xyl.mmall.cms.facade.ItemSPUFacade;
+import com.xyl.mmall.cms.vo.CategoryContentVO;
+import com.xyl.mmall.cms.vo.CategoryNormalVO;
+import com.xyl.mmall.cms.vo.ItemModelVO;
+import com.xyl.mmall.common.facade.ItemCenterCommonFacade;
+import com.xyl.mmall.common.facade.OrderFacade;
+import com.xyl.mmall.content.constants.CategoryContentLevel;
+import com.xyl.mmall.content.dto.CategoryContentDTO;
+import com.xyl.mmall.framework.enums.ErrorCode;
+import com.xyl.mmall.framework.protocol.ResponseCode;
+import com.xyl.mmall.framework.util.DateUtil;
+import com.xyl.mmall.framework.util.ItemCenterExceptionHandler;
+import com.xyl.mmall.framework.util.JsonUtils;
+import com.xyl.mmall.framework.util.RegexUtils;
+import com.xyl.mmall.framework.vo.BaseJsonListResultVO;
+import com.xyl.mmall.framework.vo.BaseJsonVO;
+import com.xyl.mmall.framework.vo.BasePageParamVO;
+import com.xyl.mmall.itemcenter.dto.ProductPriceDTO;
+import com.xyl.mmall.itemcenter.dto.ProductSKUDTO;
+import com.xyl.mmall.itemcenter.enums.ProductStatusType;
+import com.xyl.mmall.itemcenter.util.ItemCenterUtil;
+import com.xyl.mmall.mainsite.facade.ItemProductFacade;
+import com.xyl.mmall.mainsite.facade.MainsiteItemFacade;
+import com.xyl.mmall.mainsite.util.MainsiteHelper;
+import com.xyl.mmall.mainsite.vo.DetailColorVO;
+import com.xyl.mmall.mainsite.vo.DetailProductVO;
+import com.xyl.mmall.mainsite.vo.DetailPromotionVO;
+import com.xyl.mmall.mainsite.vo.PoProductListSearchVO;
+import com.xyl.mmall.mainsite.vo.ProductSKUMainSiteVO;
+import com.xyl.mmall.mainsite.vo.ProductSearchMainSiteVO;
+import com.xyl.mmall.order.dto.OrderSkuDTO;
+import com.xyl.mmall.order.dto.SkuSPDTO;
+import com.xyl.mmall.util.AreaUtils;
+
+@Controller
+public class ItemCenterController extends BaseController {
+
+	private static final Logger logger = LoggerFactory.getLogger(ItemCenterController.class);
+	
+	@Resource
+	private MainsiteItemFacade itemFacade;
+
+	@Resource
+	private POItemFacade poItemFacade;
+
+	@Resource(name = "poCommonFacade")
+	private ItemCenterCommonFacade commonFacade;
+
+	@Autowired
+	private MainsiteHelper mainsiteHelper;
+	
+	@Autowired
+	private CategoryFacade categoryFacade;
+	
+	@Autowired
+	private ItemModelFacade itemModelFacade;
+	
+	@Autowired
+	private ItemSPUFacade itemSPUFacade;
+	
+	@Autowired
+	private ItemProductFacade itemProductFacade;
+	
+	@Autowired
+	private BusinessFacade businessFacade;
+	
+	@Autowired
+	private OrderFacade orderFacade;
+
+	@RequestMapping(value = "/search/{searchValue}")
+	public String search(Model model, @PathVariable String searchValue) {
+		try {
+			searchValue = URLDecoder.decode(searchValue, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			logger.error("SearchValue decode error!", e);
+		}
+		// 品牌筛选项
+		List<JSONObject> brandList = 
+				itemProductFacade.getBrands(null, searchValue, AreaUtils.getAreaCode());
+		model.addAttribute("brandList", brandList);
+		
+		
+		return "pages/product/search";
+	}
+	
+	/**
+	 * 商品列表页面请求
+	 * @return
+	 */
+	@RequestMapping(value = "/list/{id}", method = RequestMethod.GET)
+	public String list(Model model, @PathVariable String id) {
+		List<Long> categoryNormalIds = new ArrayList<Long>();
+		List<CategoryContentVO> retList = new ArrayList<CategoryContentVO>();
+		if (StringUtils.isBlank(id)) {
+			List<CategoryContentDTO> categoryContentDTOs = mainsiteHelper.getCategoryList(AreaUtils.getAreaCode());
+			for(CategoryContentDTO categoryContentDTO: categoryContentDTOs) {
+				retList.add(new CategoryContentVO(categoryContentDTO));
+			}
+		} else {
+			String[] str = id.split("-");
+			if (RegexUtils.isAllNumber(str[0])) {
+				long categoryContentId = Long.parseLong(str[0]);
+				CategoryContentVO contentVO = categoryFacade.getCategoryContentById(categoryContentId);
+				if (contentVO != null && contentVO.getId() > 0l) {
+					// 一级内容分类
+					if (contentVO.getLevel() == CategoryContentLevel.LEVEL_FIRST.getIntValue()) {
+						// 获取二级内容分类
+						List<CategoryContentVO> secondList = categoryFacade.getSubCategoryContentList(categoryContentId);
+						if (!CollectionUtils.isEmpty(secondList)) {
+							for (CategoryContentVO c : secondList) {
+								// 获取三级内容分类
+								List<CategoryContentVO> thirdList = categoryFacade.getSubCategoryContentList(c.getId());
+								if (!CollectionUtils.isEmpty(thirdList)) {
+									c.setSubCategoryContentList(thirdList);
+									retList.add(c);
+								}
+							}
+						}
+					} else if (contentVO.getLevel() == CategoryContentLevel.LEVEL_SECOND.getIntValue()) {
+						// 二级内容分类
+						List<CategoryContentVO> thirdList = categoryFacade.getSubCategoryContentList(categoryContentId);
+						if (!CollectionUtils.isEmpty(thirdList)) {
+							contentVO.setSubCategoryContentList(thirdList);
+							contentVO.setSendDistrictDTOs(null);
+							retList.add(contentVO);
+						}
+					} else {
+						// 三级内容分类
+						JSONObject categoryNormalNav = new JSONObject(2);
+						if (!CollectionUtils.isEmpty(contentVO.getCategoryNormalVOs())) {
+							if (str.length > 1) {
+								if (RegexUtils.isAllNumber(str[1])) {
+									long categoryNormalId = Long.parseLong(str[1]);
+									boolean isFound = false;
+									for (CategoryNormalVO c : contentVO.getCategoryNormalVOs()) {
+										// 获取属性规格筛选项
+										if (categoryNormalId == c.getCategoryId()) {
+											ItemModelVO modelVO = itemModelFacade.getItemModel(categoryNormalId, 1);
+											if (modelVO != null) {
+												model.addAttribute("parameterList", modelVO.getParameterList());
+												model.addAttribute("specificationList", modelVO.getSpecificationList());
+											}
+											categoryNormalIds.add(categoryNormalId);
+											List<JSONObject> brandList = 
+													itemProductFacade.getBrands(categoryNormalIds, null, AreaUtils.getAreaCode());
+											if (!CollectionUtils.isEmpty(brandList)) {
+												model.addAttribute("brandList", brandList);
+											}
+											categoryNormalNav.put("id", categoryNormalId);
+											categoryNormalNav.put("name", c.getCategoryName());
+											isFound = true;
+											break;
+										}
+									}
+									if (!isFound) {
+										model.addAttribute("contentVO", contentVO);
+									}
+								}
+							} else {
+								// 商品分类id获取品牌列表
+								if (!CollectionUtils.isEmpty(contentVO.getCategoryNormalVOs())) {
+									for (CategoryNormalVO c : contentVO.getCategoryNormalVOs()) {
+										categoryNormalIds.add(c.getCategoryId());
+									}
+									List<JSONObject> brandList = 
+											itemProductFacade.getBrands(categoryNormalIds, null, AreaUtils.getAreaCode());
+									model.addAttribute("brandList", brandList);
+								}
+								model.addAttribute("contentVO", contentVO);
+							}
+						}
+						// 设置导航
+						model.addAttribute("categoryNav", initCategoryNav(contentVO, categoryNormalNav));
+						return "pages/product/list";
+					}
+					// 商品分类id获取品牌列表
+					if (!CollectionUtils.isEmpty(contentVO.getCategoryNormalVOs())) {
+						for (CategoryNormalVO c : contentVO.getCategoryNormalVOs()) {
+							categoryNormalIds.add(c.getCategoryId());
+						}
+						List<JSONObject> brandList = 
+								itemProductFacade.getBrands(categoryNormalIds, null, AreaUtils.getAreaCode());
+						model.addAttribute("brandList", brandList);
+					}
+				}
+				// 设置导航
+				model.addAttribute("categoryNav", initCategoryNav(contentVO, null));
+			}
+		}
+		model.addAttribute("categoryContentList", retList);
+		return "/pages/product/list";
+	}
+	
+	@RequestMapping(value = "/rest/product/list")
+	public @ResponseBody BaseJsonVO listProductByCategroy(BasePageParamVO<ProductSKUMainSiteVO> pageParamVO, 
+			ProductSearchMainSiteVO productSearchVO, Model model) {
+		BaseJsonVO ret = new BaseJsonVO();
+		productSearchVO.setAreaCode(AreaUtils.getAreaCode());
+		pageParamVO.setList(itemProductFacade.getProudctByParameters(pageParamVO, productSearchVO));
+		ret.setCode(ResponseCode.RES_SUCCESS);
+		ret.setResult(pageParamVO);
+		return ret;
+	}
+	
+	@RequestMapping(value = "/rest/product/search")
+	public @ResponseBody BaseJsonVO searchProduct(BasePageParamVO<ProductSKUMainSiteVO> pageParamVO, 
+			ProductSearchMainSiteVO productSearchVO) {
+		if (StringUtils.isNotBlank(productSearchVO.getSearchValue())) {
+			try {
+				productSearchVO.setSearchValue(URLDecoder.decode(productSearchVO.getSearchValue(), "UTF-8"));
+			} catch (UnsupportedEncodingException e) {
+				logger.error("SearchValue decode error!", e);
+			}
+		}
+		BaseJsonVO ret = new BaseJsonVO();
+		productSearchVO.setAreaCode(AreaUtils.getAreaCode());
+		pageParamVO.setList(itemProductFacade.getProudctByParameters(pageParamVO, productSearchVO));
+		ret.setCode(ResponseCode.RES_SUCCESS);
+		ret.setResult(pageParamVO);
+		return ret;
+	}
+	
+	@BILog(action = "page", type = "goodsPage")
+	@RequestMapping(value = "/product/detail", method = RequestMethod.GET)
+	public String detailPage(Model model, HttpServletRequest request) {
+		long uid = SecurityContextUtils.getUserId();
+		String sku = request.getParameter("skuId");
+		if (!RegexUtils.isAllNumber(sku)) {
+			return "/pages/404";
+		}
+		long skuId = Long.parseLong(sku);
+		
+		String snapShot = request.getParameter("isSnapShot");
+		if (!StringUtils.isBlank(snapShot) && "true".equals(snapShot)) {
+			model.addAttribute("isSnapshot", true);
+		}
+		ProductSKUDTO skuDTO = new ProductSKUDTO();
+		skuDTO.setId(skuId);
+		skuDTO.setStatus(ProductStatusType.ONLINE.getIntValue());
+		ProductSKUMainSiteVO productVO = itemProductFacade.getProductSKUVO(skuDTO);
+		if (productVO != null) {
+			// 获取店铺信息
+			long businessId = productVO.getSupplierId();
+			BusinessDTO store = businessFacade.getBusinessById(businessId);
+			// 是否是特许经营
+			boolean allowed = false;
+			if (SupplierType.SPECIALMANAGE.getIntValue() == store.getType()) {
+				// 用户是否登录
+				if (uid > 0l) {
+					allowed = isBusinessAllowed(businessId, uid);
+				}
+			}
+			// 获取商家区域是否允许
+			allowed = isIPAllowed(businessId);
+			model.addAttribute("isAllowed", allowed);
+			model.addAttribute("product", productVO);
+			model.addAttribute("storeInfo", store);
+			appendStaticMethod(model);
+		}
+		return "/pages/product/detail";
+	}
+
+	@BILog(action = "page", type = "skuSnapShotPage")
+	@RequestMapping(value = "/product/snapShot", method = RequestMethod.GET)
+	public String snapShot(Model model, @RequestParam(value = "skuId") long skuId,
+			@RequestParam(value = "orderId") long orderId, @RequestParam(value = "userId") long userId) {
+		// 取商品快照
+		OrderSkuDTO orderSkuDTO = orderFacade.getSkuSnapShot(userId, orderId, skuId);
+		if (orderSkuDTO == null) {
+			return "/pages/404";
+		}
+		String snapShot = orderSkuDTO.getSkuSnapshot();
+		if (StringUtils.isBlank(snapShot)) {
+			return "/pages/404";
+		}
+		SkuSPDTO skuSnapShot = JsonUtils.fromJson(snapShot, SkuSPDTO.class);
+		if (skuSnapShot == null) {
+			return "/pages/404";
+		}
+		skuSnapShot.setSkuId(skuId);
+		
+		// 判断商品是否有更新
+		ProductSKUDTO skuDTO = new ProductSKUDTO();
+		skuDTO.setId(skuId);
+		skuDTO.setStatus(ProductStatusType.ONLINE.getIntValue());
+		skuDTO = itemProductFacade.getProductSKUDTO(skuDTO);
+		if (skuDTO != null 
+				&& skuDTO.getUpdateTime() != null && orderSkuDTO.getCreateTime() != null
+				&& skuDTO.getUpdateTime().getTime() > orderSkuDTO.getCreateTime().getTime()) {
+			skuSnapShot.setUpdateTime(DateUtil.dateToString(skuDTO.getUpdateTime(), DateUtil.LONG_PATTERN));
+		}
+		model.addAttribute("snapshot", skuSnapShot);
+		// 获取店铺信息
+		long businessId = orderSkuDTO.getSupplierId();
+		BusinessDTO store = businessFacade.getBusinessById(businessId);
+		model.addAttribute("storeInfo", store);
+		if (StringUtils.isNotBlank(skuSnapShot.getCustomEditHTML())) {
+			try {
+				Map<String, String> map = 
+						ItemCenterUtil.getEditHTML_Param(skuSnapShot.getCustomEditHTML(), null);
+				if (!CollectionUtils.isEmpty(map)) {
+					skuSnapShot.setCustomEditHTML(map.get("html"));
+				}
+			} catch (Exception e) {
+				logger.error("SKU snapshot, get customEditHTML error! customEditHTML : " 
+						+ skuSnapShot.getCustomEditHTML(), e);
+			}
+		}
+		
+		return "/pages/product/snapShot";
+	}
+	
+	public String detailPageOld(Model model, HttpServletRequest request) {
+		appendStaticMethod(model);
+		long loginId = SecurityContextUtils.getUserId();
+		String productId = request.getParameter("id");
+		String sku = request.getParameter("skuId");
+
+		String snapShot = request.getParameter("isSnapShot");
+		if (!StringUtils.isBlank(snapShot) && "true".equals(snapShot)) {
+			model.addAttribute("isSnapshot", true);
+		}
+		long pid = Long.valueOf(productId);
+
+		DetailProductVO productVO = commonFacade.getDetailPageProduct(pid, true, true);
+		if (!StringUtils.isBlank(sku)) {
+			productVO.setSkuId(sku);
+		}
+		long poId = Long.valueOf(productVO.getPoId());
+		long brandId = productVO.getBrand().getId();
+		int isFollow = itemFacade.isFollowBrand(loginId, brandId);
+		productVO.setIsFollow(isFollow);
+		model.addAttribute("product", productVO);
+		DetailPromotionVO promotionVO = itemFacade.getDetailPagePromotionInfo(poId);
+		model.addAttribute("activity", promotionVO);
+		List<DetailColorVO> colorList = commonFacade.getDetailPageColorList(poId, productVO.getGoodsNo());
+		model.addAttribute("colors", colorList);
+		model.addAttribute("notAllowed", !isIPAllowed(poId));
+		List<ProductPriceDTO> priceList = itemFacade.getProductPriceDTOByProductId(pid);
+		model.addAttribute("priceList", priceList);
+		return "/pages/product/detail";
+	}
+
+	@RequestMapping(value = "/cart/checkSkuNum", method = RequestMethod.GET)
+	public @ResponseBody BaseJsonVO checkCartSkuNum(Model model, @RequestParam long skuId) {
+		try {
+			int area = AreaUtils.getProvinceCode();
+			long loginId = SecurityContextUtils.getUserId();
+			int skuNum = itemFacade.getCartSkuNum(loginId, area, skuId);
+			BaseJsonVO retObj = new BaseJsonVO(skuNum);
+			retObj.setCode(ErrorCode.SUCCESS);
+			return retObj;
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			return ItemCenterExceptionHandler.getAjaxExceptionJsonVO(e);
+		}
+	}
+
+	@RequestMapping(value = "/preview", method = RequestMethod.POST)
+	public String previewPage(Model model, @RequestParam Map product) {
+		appendStaticMethod(model);
+		String param = (String) product.get("product");
+		Map paramMap = JSONUtils.fromJson(param, Map.class);
+		JSONObject productJson = (JSONObject) paramMap.get("product");
+		DetailProductVO productVO = JSONUtils.fromJson(productJson.toJSONString(), DetailProductVO.class);
+		productVO.setPreview(1);
+		JSONArray colorListJson = (JSONArray) paramMap.get("colors");
+		List<DetailColorVO> colorList = JSONUtils.parseArray(colorListJson.toJSONString(), DetailColorVO.class);
+		DetailPromotionVO promotionVO = new DetailPromotionVO();
+		model.addAttribute("product", productVO);
+		model.addAttribute("activity", promotionVO);
+		model.addAttribute("colors", colorList);
+		return "/pages/detail";
+	}
+
+//	@RequestMapping(value = "/rest/schedule/category", method = RequestMethod.GET)
+	public @ResponseBody BaseJsonVO getCategory(Model model, HttpServletResponse response, HttpServletRequest request) {
+		response.setContentType("text/html;charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		String poIdStr = request.getParameter("scheduleId");
+		BaseJsonVO retObj = poItemFacade.getPoCategory(Long.valueOf(poIdStr), true);
+		return retObj;
+	}
+
+//	@RequestMapping(value = "/rest/schedule/product", method = RequestMethod.POST)
+	public @ResponseBody BaseJsonVO getProductList(@RequestBody PoProductListSearchVO param) {
+		try {
+			logger.debug("==getProductList");
+			long oldTime = System.currentTimeMillis();
+			if (!param.isPreview()) {
+				if (param.getPriceFrom() == null && param.getPriceTo() == null) {
+					logger.debug("===getProductList from cache");
+					BaseJsonListResultVO result = mainsiteHelper.getProductList(param.getScheduleId(),
+							param.getCategoryId(), param.isDesc(), param.getOrder(), param.getOffset(),
+							param.getLimit());
+					BaseJsonVO retObj = new BaseJsonVO(result);
+					retObj.setCode(ErrorCode.SUCCESS);
+					return retObj;
+				}
+				BaseJsonListResultVO result = itemFacade.getProductList(param);
+				BaseJsonVO retObj = new BaseJsonVO(result);
+				retObj.setCode(ErrorCode.SUCCESS);
+				long cost = System.currentTimeMillis() - oldTime;
+				logger.debug("===cost for getProductList:" + cost);
+				return retObj;
+			} else {
+				BaseJsonListResultVO result = itemFacade.getProductList(param);
+				BaseJsonVO retObj = new BaseJsonVO(result);
+				retObj.setCode(ErrorCode.SUCCESS);
+				long cost = System.currentTimeMillis() - oldTime;
+				logger.debug("===cost for getProductList:" + cost);
+				return retObj;
+			}
+
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			return ItemCenterExceptionHandler.getAjaxExceptionJsonVO(e);
+		}
+	}
+
+	private boolean isIPAllowed(long businessId) {
+		int areaCode = AreaUtils.getProvinceCode();
+		return itemProductFacade.isIPAllowedByBusinessId(areaCode, businessId);
+	}
+	
+	private boolean isBusinessAllowed(long businessId, long uid) {
+		return itemProductFacade.isBusinessAllowed(businessId, uid);
+	}
+	
+	public @ResponseBody BaseJsonVO detailCheckSize(@RequestParam long id, @RequestParam long scheduleId) {
+		// youhua
+		// BaseJsonVO result = itemFacade.detailSizeCheck(scheduleId, id);
+		BaseJsonVO result = itemFacade.detailSizeCheckForYouhua(scheduleId, id);
+		return result;
+	}
+
+	public @ResponseBody BaseJsonVO getProductListByCategory(@RequestBody PoProductListSearchVO param) {
+		try {
+			logger.debug("==getProductListByCategory");
+			long oldTime = System.currentTimeMillis();
+			if (StringUtils.isBlank(param.getBrandIds()))
+				param.setBrandIds("[]");
+			if (!param.isPreview()) {
+				logger.debug("===getProductList from cache");
+				BaseJsonListResultVO result = mainsiteHelper.getProductListByCategory(param);
+				BaseJsonVO retObj = new BaseJsonVO(result);
+				retObj.setCode(ErrorCode.SUCCESS);
+				long cost = System.currentTimeMillis() - oldTime;
+				logger.debug("===cost for getProductList:" + cost);
+				return retObj;
+			} else {
+				BaseJsonListResultVO result = itemFacade.getProductDTOListByCategory(param);
+				BaseJsonVO retObj = new BaseJsonVO(result);
+				retObj.setCode(ErrorCode.SUCCESS);
+				long cost = System.currentTimeMillis() - oldTime;
+				logger.debug("===cost for getProductList:" + cost);
+				return retObj;
+			}
+
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			return ItemCenterExceptionHandler.getAjaxExceptionJsonVO(e);
+		}
+	}
+	
+	/**
+	 * 分类导航栏
+	 * @param contentVO
+	 * @param categoryNormalNav
+	 * @return JSONObject 导航栏
+	 */
+	private JSONObject initCategoryNav(CategoryContentVO contentVO, JSONObject categoryNormalNav) {
+		JSONObject firstNav = new JSONObject(3);
+		try {
+			// 一级内容分类，直接设置
+			if (contentVO.getLevel() == CategoryContentLevel.LEVEL_FIRST.getIntValue()) {
+				firstNav.put("id", contentVO.getId());
+				firstNav.put("name", contentVO.getName());
+			} else if (contentVO.getLevel() == CategoryContentLevel.LEVEL_SECOND.getIntValue()) {
+				// 设置二级内容分类
+				JSONObject secondNav = new JSONObject(3);
+				secondNav.put("id", contentVO.getId());
+				secondNav.put("name", contentVO.getName());
+				// 获取父内容分类
+				CategoryContentVO superContenVO = 
+						categoryFacade.getBriefCategoryContentById(contentVO.getParentId());
+				// 设置一级内容分类
+				firstNav.put("id", superContenVO.getId());
+				firstNav.put("name", superContenVO.getName());
+				firstNav.put("sub", secondNav);
+			} else if (contentVO.getLevel() == CategoryContentLevel.LEVEL_THIRD.getIntValue()) {
+				// 设置三级内容分类
+				JSONObject thirdNav = new JSONObject(3);
+				thirdNav.put("id", contentVO.getId());
+				thirdNav.put("name", contentVO.getName());
+				thirdNav.put("sub", categoryNormalNav);
+				// 获取二级内容分类
+				CategoryContentVO superContenVO = 
+						categoryFacade.getBriefCategoryContentById(contentVO.getParentId());
+				// 设置二级内容分类
+				JSONObject secondNav = new JSONObject(3);
+				secondNav.put("id", superContenVO.getId());
+				secondNav.put("name", superContenVO.getName());
+				secondNav.put("sub", thirdNav);
+				// 获取一级内容分类
+				superContenVO = 
+						categoryFacade.getBriefCategoryContentById(superContenVO.getParentId());
+				// 设置一级内容分类
+				firstNav.put("id", superContenVO.getId());
+				firstNav.put("name", superContenVO.getName());
+				firstNav.put("sub", secondNav);
+			}
+		} catch (Exception e) {
+			logger.error("Init categoryNav error! CategoryContentId : " + contentVO.getId());
+		}
+		return firstNav;
+	}
+}

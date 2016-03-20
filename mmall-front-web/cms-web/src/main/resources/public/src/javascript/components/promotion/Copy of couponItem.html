@@ -1,0 +1,85 @@
+<div class="m-couponcond">
+  <div class="conds">
+    {{#list items as item}}
+    <div class="cond animated row form-horizontal" r-animation=
+          "on: enter; class: fadeInX; 
+           on: leave; class: fadeOutX;"
+
+           nz-focuserror="item.$error"
+           >
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">条件</label>
+              <div class="col-sm-10 form-inline">
+                {{#if type == 0}}
+                <div class="row u-vmargin">
+                  <input type="radio" name="condition_{{@(item_index)}}"  value="1" r-model="item.condition.type">
+                  订单金额
+                    <div class="input-group input-group-sm"  r-hide="item.condition.type != 1" on-animation="on:enter;class:fadeIn animated">
+                      <input class="form-control form-control-fix1 form-control-sm" type="text"  r-model='item.condition.minPrice'>
+                      <span class="input-group-addon">至</span>
+                      <input class="form-control form-control-fix1 form-control-sm" type="text" r-model='item.condition.maxPrice'>
+                      <span class="input-group-addon">元</span>
+                    </div>
+                </div>
+                {{#else}}
+                <div class="row u-vmargin">
+                  <input type="radio" name="condition_{{@(item_index)}}" value="2" r-model="item.condition.type">
+                  商品件数
+                  <div class="input-group input-group-sm"  r-hide="item.condition.type != 2" on-animation="on:enter;class:fadeIn animated">
+                    <input class="form-control form-control-fix1 form-control-sm" type="text"  r-model='item.condition.minNum'>
+                    <span class="input-group-addon">至</span>
+                    <input class="form-control form-control-fix1 form-control-sm" type="text" r-model='item.condition.maxNum'>
+                    <span class="input-group-addon">件</span>
+                  </div>
+              </div>
+              {{/if}}
+            </div>
+          </div>
+          </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">效果</label>
+                <div class="col-sm-10 form-inline">
+                  <div class="row u-vmargin" r-hide="type">
+                    <input type="checkbox" 
+
+                      on-change={{this.pickConflict($event, 1, item.result)}}
+                      checked={{item.result[0].selected}}
+                      >
+                    <label style="vertical-align:middle;">直降</label>
+                    <span r-hide="!item.result[0].selected">
+                      <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" r-model="item.result[0].value">
+                        <span class="input-group-addon">元</span>
+                      </div>
+                    </span>
+                  </div>
+                  <div class="row u-vmargin">
+                    <input type="checkbox"  
+                    on-change={{this.pickConflict($event, 2, item.result)}}
+                    checked={{item.result[1].selected}}
+                    >
+                    <label style="vertical-align:middle;">折扣</label>
+                    <span r-hide="!item.result[1].selected">
+                      <div class="input-group  input-group-sm">
+                        <input type="text" class="form-control" r-model="item.result[1].value">
+                        <span class="input-group-addon">%</span>
+                      </div>
+                    </span>
+                  </div>
+                  <div class="row u-vmargin">
+                    <input type="checkbox"  value="3" r-model='item.result[2].selected'>
+                    <label style="vertical-align:middle;">包邮</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="close glyphicon-remove glyphicon" on-click={{items.splice(item_index, 1)}}></span>
+        </div>
+          {{/list}}
+        <div class="cond-add row">
+          <a href="#" class='btn btn-block' on-click={{this.add()}}>+添加</a>
+        </div>
+  </div>
+</div>

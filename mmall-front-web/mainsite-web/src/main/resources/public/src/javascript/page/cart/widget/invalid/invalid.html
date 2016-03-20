@@ -1,0 +1,26 @@
+<div class="p-invalid">
+  <div class="title-wrap f-cb">
+    <h2 class="title f-fl f-fs2">失效的商品</h2>
+    <span class="f-fr"><span class="s-fc6">{{current}}</span><span class="s-fc1">/{{total}}</span></span>
+  </div>
+  <div class="list-wrap s-fc11">
+    <span class="left f-cp" on-click={{this.prev()}}></span>
+    <span class="right f-cp" on-click={{this.next()}}></span>
+    <ul class="wrap f-cb" r-style={{ {left: left+'px'} }}>
+    {{#list invalidList as item}}
+      <li class="item f-fl">
+        <div class="p-img f-fl">
+          <a href="{{item.url||'#'}}" target="_blank"><img src="{{item.thumb||'#'}}" class="f-vam" alt="" width="70" height="70"/></a>
+          <a href="{{item.url||'#'}}" target="_blank"><span class="u-mask">{{statusMap[item.status]}}</span></a>
+        </div>
+        <div class="p-info f-fl">
+          <a href="{{item.url||'#'}}" target="_blank" class="p-name s-fc11">{{item.name}}</a>
+          <p class="p-param">
+            <span>{{item.color||''}}</span><span>{{item.size||''}}</span>
+          </p>
+        </div>
+      </li>
+    {{/list}}
+    </ul>
+  </div>
+</div>

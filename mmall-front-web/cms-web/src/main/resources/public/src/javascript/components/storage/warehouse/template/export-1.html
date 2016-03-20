@@ -1,0 +1,32 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>日期</th>
+       <th>产生总订单</th>
+       <th>汇总订单</th>
+       <th>取消订单</th>
+       {{#if list && list.length >0}}
+       {{#list (list[0].expressOrder) as express}}
+       <th>{{express.expressCompany}}产生订单</th>
+       <th>{{express.expressCompany}}占比</th>
+       {{/list}}
+       {{/if}}
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.time|format}}</td>
+         <td>{{item.totalOrderNumber}}</td>
+         <td>{{item.collectiveOrderNumber}}</td>
+         <td>{{item.cancelOrderNumber}}</td>
+         {{#list (item.expressOrder) as express}}
+         <th>{{express.number}}</th>
+         <th>{{express.percent}}</th>
+         {{/list}}
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

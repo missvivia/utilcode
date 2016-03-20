@@ -1,0 +1,14 @@
+<td>
+	<a class="" href="/supply/inDetail/${shipOrderId}">详情</a>
+	{if shipState=="UNSHIPPED"}
+	<a class="" href="/supply/invoice/edit?id=${shipOrderId}">修改</a>
+	<a class="j-flag" href="javascript:void(0);">出仓确认</a>
+	{/if}
+</td>
+<td>${shipOrderId}</td>
+<td>${poOrderId}</td>
+<td>${shipTime|format:"yyyy-MM-dd"}</td>
+<td>${expectArrivalTime|format:"yyyy-MM-dd"}</td>
+<td>${arrivalTime|format:"yyyy-MM-dd"}</td>
+<td>{if shipState == "UNSHIPPED"}未出仓{else}已出仓{/if}</td>
+<td>${createTime|format:"yyyy-MM-dd"}</td>

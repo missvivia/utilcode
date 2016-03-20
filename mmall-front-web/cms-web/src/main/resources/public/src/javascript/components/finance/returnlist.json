@@ -1,0 +1,130 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "id":11,
+        "site":"浙江",
+        "products":[{
+                        "name":"裤子",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"L",
+                        "reason":"xxxx"
+                    },{
+                        "name":"衣服",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"XL",
+                        "reason":"xxxx没理由"
+                    }],
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": [{"refundType":"红包","price":"$12"},
+                            {"refundType":"总额","price":"$12"}],
+        "serverhandle": "150xxxxx",
+        "mark": "hehe",
+        "returnMethod": {"name":"xxxxx","bank":"中行","branch":"高新支行","account":"13123123412"},
+        "dealer": "xx",
+        "status": 1,
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "packId": "sdf232234sd",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      },{
+        "id":12,
+        "site":"浙江",
+        "products":[{
+                        "name":"裤子",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"L",
+                        "reason":"xxxx"
+                    },{
+                        "name":"衣服",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"XL",
+                        "reason":"xxxx没理由"
+                    }],
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": [{"refundType":"红包","price":"$12"},
+                            {"refundType":"总额","price":"$12"}],
+        "serverhandle": "150xxxxx",
+        "mark": "hehe",
+        "returnMethod": {"name":"xxxxx","bank":"中行","branch":"高新支行","account":"13123123412"},
+        "dealer": "xx",
+        "status": 1,
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "packId": "sdf232234sd",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      },{
+        "id":14,
+        "site":"浙江",
+        "products":[{
+                        "name":"裤子",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"L",
+                        "reason":"xxxx"
+                    },{
+                        "name":"衣服",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"XL",
+                        "reason":"xxxx没理由"
+                    }],
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": [{"refundType":"红包","price":"$12"},
+                            {"refundType":"总额","price":"$12"}],
+        "serverhandle": "150xxxxx",
+        "mark": "hehe",
+        "returnMethod": {"name":"xxxxx","bank":"中行","branch":"高新支行","account":"13123123412"},
+        "dealer": "xx",
+        "status": 1,
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "packId": "sdf232234sd",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      },{
+        "id":13,
+        "site":"浙江",
+        "products":[{
+                        "name":"裤子",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"L",
+                        "reason":"xxxx"
+                    },{
+                        "name":"衣服",
+                        "brand":"秋水伊人",
+                        "color":"红色",
+                        "size":"XL",
+                        "reason":"xxxx没理由"
+                    }],
+        "pay": 123123,
+        "expressPay": "xxx",
+        "returnPrice": [{"refundType":"红包","price":"$12"},
+                            {"refundType":"总额","price":"$12"}],
+        "serverhandle": "150xxxxx",
+        "mark": "hehe",
+        "returnMethod": {"name":"xxxxx","bank":"中行","branch":"高新支行","account":"13123123412"},
+        "dealer": "xx",
+        "status": 1,
+        "aftersellNum": "123dsfs3423",
+        "orderNum": "SDFDSF",
+        "packId": "sdf232234sd",
+        "requestTime": 1411039440369,
+        "dealTime": 1411039440369
+      }
+    ]
+  }
+}
+  

@@ -1,0 +1,6 @@
+.m-form-polist .sep{position:absolute;left:-7px;top:7px;}
+.table{margin-top:20px;}
+
+/* for msg */
+.m-info div{padding:15px;}
+.m-info p{padding:2px 0;margin:0;}

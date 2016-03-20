@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="mmall-content-app" />
+	<dubbo:protocol name="dubbo" port="-1" />
+	<!-- HelpArticleService -->
+	<dubbo:service interface="com.xyl.mmall.content.service.HelpArticleService"
+		ref="helpArticleService" />
+	<bean id="helpArticleService"
+		class="com.xyl.mmall.content.service.impl.HelpArticleServiceImpl" />
+	<!-- HelpContentCategoryService -->
+	<dubbo:service
+		interface="com.xyl.mmall.content.service.HelpContentCategoryService"
+		ref="helpContentCategoryService" />
+	<bean id="helpContentCategoryService"
+		class="com.xyl.mmall.content.service.impl.HelpContentCategoryServiceImpl" />
+	<!-- OnlineActivityService -->
+	<dubbo:service
+		interface="com.xyl.mmall.content.service.OnlineActivityService"
+		ref="onlineActivityService" />
+	<bean id="onlineActivityService"
+		class="com.xyl.mmall.content.service.impl.OnlineActivityServiceImpl" />
+	<dubbo:service
+		interface="com.xyl.mmall.content.service.HelpContentNCSService"
+		ref="contentNCSService" />
+		<!-- CategoryContentService -->
+	<dubbo:service interface="com.xyl.mmall.content.service.CategoryContentService"
+		ref="categoryContentService" />
+	<bean id="categoryContentService"
+		class="com.xyl.mmall.content.service.impl.CategoryContentServiceImpl" />
+		
+</beans>

@@ -1,0 +1,69 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "id": 1,
+        "department":"杭研",
+        "name": "name",
+        "displayName": "xxname",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969,
+        "group": [{"id":1,"name":"商品运维","checked":true},
+              {"id":1,"name":"运营管理","checked":true},
+              {"id":1,"name":"超级管理员","checked":false},
+              {"id":1,"name":"xxxx","checked":true}]
+      },
+      {
+        "id": 2,
+        "department":"杭研",
+        "name": "name",
+        "displayName": "xxname",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969,
+        "group": [{"id":1,"name":"商品运维","checked":true},
+              {"id":1,"name":"运营管理","checked":true},
+              {"id":1,"name":"超级管理员","checked":false},
+              {"id":1,"name":"xxxx","checked":true}]
+      },
+      {
+        "id": 3,
+        "department":"杭研",
+        "name": "name",
+        "displayName": "xxname",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969,
+        "group": [{"id":1,"name":"商品运维","checked":true},
+              {"id":1,"name":"运营管理","checked":true},
+              {"id":1,"name":"超级管理员","checked":false},
+              {"id":1,"name":"xxxx","checked":true}]
+      },
+      {
+        "id": 4,
+        "department":"杭研",
+        "name": "name",
+        "displayName": "xxname",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969,
+        "group": [{"id":1,"name":"商品运维","checked":true},
+              {"id":1,"name":"运营管理","checked":true},
+              {"id":1,"name":"超级管理员","checked":false},
+              {"id":1,"name":"xxxx","checked":true}]
+      },
+      {
+        "id": 5,
+        "name": "xx",
+        "department":"杭研",
+        "displayName": "xxname",
+        "addTime": 1410436682969,
+        "editTime": 1410436682969,
+        "group": [{"id":1,"name":"商品运维","checked":true},
+              {"id":1,"name":"运营管理","checked":true},
+              {"id":1,"name":"超级管理员","checked":false},
+              {"id":1,"name":"xxxx","checked":true}]
+      }
+    ]
+  }
+}
+  

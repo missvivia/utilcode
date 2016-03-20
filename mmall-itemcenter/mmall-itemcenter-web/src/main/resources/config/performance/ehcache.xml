@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+        <cacheManagerPeerListenerFactory
+		class="org.terracotta.ehcachedx.monitor.probe.ProbePeerListenerFactory"
+		properties="monitorAddress=10.165.124.38, monitorPort=9889" />
+        <!-- DefaultCache setting. -->
+        <defaultCache maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3000"
+                timeToLiveSeconds="3000" overflowToDisk="false" diskPersistent="false" />
+
+        <!-- Special objects setting. -->
+        <!--  <cache name="siftCache" eternal="false" maxElementsInMemory="10"
+                overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="5"
+                timeToLiveSeconds="5" memoryStoreEvictionPolicy="LFU" /> -->
+        <!-- Special objects setting. -->
+        <cache name= "poskuCache"  maxBytesLocalHeap="500M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                
+        <cache name= "searchProdByPO"  maxBytesLocalHeap="500M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+
+		<cache name= "searchProdById"  maxBytesLocalHeap="300M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                
+        <cache name= "productDaoCache"  maxBytesLocalHeap="150M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                
+        <cache name= "searchSkuByPid"  maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                                
+        <cache name= "prodPicDaoCache"  maxBytesLocalHeap="150M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                
+        <cache name= "prodSizeCache"  maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+                
+        <cache name= "sameGoodsNoCache"  maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+                timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+        
+        <cache name="proPriceCache" maxBytesLocalHeap="10M"
+				memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+				timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+			
+		<cache name="categoryNormalCache" maxBytesLocalHeap="10M"
+				memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+				timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+   </ehcache>

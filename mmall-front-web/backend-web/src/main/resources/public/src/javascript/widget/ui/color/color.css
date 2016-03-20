@@ -1,0 +1,6 @@
+.#<uispace> {float:left;position:relative}
+.#<uispace> span{float:left;margin-left:5px;display:inline-block;*zoom:1}
+.#<uispace> .pick{background:url(/res/images/icon.png)  0 0 no-repeat;width:20px;height:20px;}
+.#<uispace> .color{width:60px}
+.#<uispace> .m-colorpick{position:absolute;top:14px;left:0;background:#fff}
+.#<uispace> .colordemo{height:16px;width:16px;border:1px solid #ccc;}

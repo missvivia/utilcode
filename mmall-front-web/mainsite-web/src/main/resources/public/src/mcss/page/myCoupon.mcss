@@ -1,0 +1,17 @@
+@abstract '../_config.mcss';
+.m-box{
+	position:relative;margin:0 0 20px;background:#fff;
+	&-1{min-height:324px;_height:324px;}
+	.bd{
+		position:relative;zoom:1;padding:20px 20px 26px;
+		&-empt{padding:75px 0 110px;}
+		.u-empt{padding:55px 0 84px;}
+	}
+}
+.m-tabl td a{color:#5893cd;}
+
+.m-info{
+	padding:17px 39px;color:#666;font-size:14px;line-height:26px;vertical-align:bottom;
+}
+
+.w-select{color:#666;font-size:14px;width:90px;padding-left:5px;}

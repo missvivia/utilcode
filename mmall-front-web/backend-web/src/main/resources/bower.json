@@ -1,0 +1,12 @@
+{
+  "name": "fedtpl",
+  "version": "0.0.1",
+  "dependencies": {
+    "nej": "0.2.*",
+    "jquery": "1.11.1",
+    "uploadify":"3.2.1",
+    "bootstrap": "^3.2.0",
+    "regularjs": "~0.2.10",
+    "regular-hub": "*"
+  }
+}

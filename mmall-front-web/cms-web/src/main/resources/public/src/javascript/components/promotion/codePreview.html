@@ -1,0 +1,23 @@
+<div class="orderbox" style="width:460px;max-height:300px;overflow:auto;padding:20px 20px 10px 20px;">
+{if item.code == 414}
+	{list item.list as message}
+	<p>${message}</p>
+	{/list}
+{elseif item.code == 200}
+	{list item.result as coupon}
+	<div class="coupon">
+		<div class="coupon_inner  clearfix">
+			<div class="col-sm-5" style="border-right:1px dashed #ccc;padding:10px 0 0 26px;">
+				<p style="color:#ff6e6e;font-size:40px;margin:0;padding:0;"><span style="font-size:20px;">￥</span>${coupon.items[0]}</p>
+				<p style="color:#666;font-size:14px;padding-left:5px;">(满${coupon.items[1]}使用)</p>
+			</div>
+			<div class="col-sm-7">
+				<p style="font-size:16px;color:#3276d6;margin:15px 10px 0 5px;">${coupon.couponCode}</p>
+				<p style="font-size:12px;color:#333;margin:10px 10px 0 5px;font-size:#666;">有效时间：<br/><span id="validTime">${coupon.validTime}</span></p>
+			</div>
+		</div>
+	</div>
+	{/list}
+{/if}
+<div class="f-tac winbnts" style="margin-top:20px;"><span class="btn btn-default j-flag">关闭</span></div>
+</div>

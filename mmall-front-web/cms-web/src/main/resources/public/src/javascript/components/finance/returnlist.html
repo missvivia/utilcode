@@ -1,0 +1,85 @@
+<ul class="nav nav-tabs" id="j-tab-box">
+  <li class="{{status==7?'active':''}}" on-click={{this.changeStatus(7)}}><a>全部</a></li>
+  <li class="{{status==9?'active':''}}" on-click={{this.changeStatus(9)}}><a>已退款</a></li>
+  <li class="{{status==8?'active':''}}" on-click={{this.changeStatus(8)}}><a>待退款</a></li>
+</ul>
+<div class="row f-mgtb">
+  <div class="col-sm-7">
+      <div class="col-sm-12 form-inline">
+        按申请时间
+        <datepicker select={{startTime}}> </datepicker>
+        至
+        <datepicker select={{endTime}}></datepicker>
+        <button class="btn btn-primary" on-click={{this.search(0)}}>查找</button>
+      </div>
+  </div>
+</div>
+<div>
+  <button class="btn btn-primary {{status==8?'':'f-dn'}}" on-click={{this.confirm(0)}}>批量确认退款</button>
+</div>
+<div class="m-wtable m-wtable-1" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><input type="checkbox" on-click={{this.checkAll($event)}}></th>
+        <th>销售站点</th>
+        <th>退款商品及原因</th>
+        <th>实付金额</th>
+        <th>运费</th>
+        <th>应退款金额</th>
+        <th>客服处理人</th>
+        <th>客服备注</th>
+        <th>退款方式</th>
+        <th>财务操作人</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td rowspan=2><input data-userid="{{tpl.userId}}" data-retid="{{tpl.retId}}" type="checkbox" class="j-check"></td>
+          <td colspan=11>
+            <div>
+              <div class="col-sm-2">售后编号:{{tpl.retId}}</div>
+              <div class="col-sm-2">原订单号:<a target="_blank" href="/order/orderdetail?type=0&key={{tpl.orderId}}">{{tpl.orderId}}</a></div>
+              <div class="col-sm-2">原包裹号:<a target="_blank" href="/order/orderdetail?type=0&key={{tpl.orderId}}">{{tpl.ordPkgId}}</a></div>
+              <div class="col-sm-3">申请时间:{{tpl.requestTime|format}}</div>
+              <div class="col-sm-3">最后处理时间:{{tpl.dealTime|format}}</div>
+            </div>
+          </td>
+        </tr> 
+        <tr>
+          <td>{{tpl.saleArea}}</td>
+          <td>
+            <div class="u-wtd">
+              {{#list tpl.products as item}}
+              <div>【{{item.product.brand}}】 {{item.product.name}} {{item.product.color}} {{item.product.size}} ({{item.product.reason}})</div>
+              {{/list}}
+            </div>
+          </td>
+          <td>{{tpl.pay}}</td>
+          <td>{{tpl.expressPay}}</td>
+          <td>
+            {{#list tpl.returnMethod as item}}
+              <div>{{item.refundType}}：￥{{item.price}}</div>
+            {{/list}}
+          </td>
+          <td>{{tpl.dealer}}</td>
+          <td>{{tpl.explainOption}}</td>
+          <td>{{tpl.bankCard}}</td>
+          <td>{{tpl.cwDealer}}</td>
+          <td>{{statusMap[tpl.status.intValue]}}</td>
+          <td>
+            {{#if tpl.status.intValue === 9 && tpl.canCWConfirmReturn}}
+            <div><a on-click={{this.confirm(tpl)}}>确认已退款</a></div>
+            {{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

@@ -1,0 +1,248 @@
+<#escape x as x?html>
+<@compress>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>重阳活动</title>
+	<#include "../../wrap/common.ftl">
+    <@css/>
+<style>
+body, .bwd-contont * {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+
+.clearfix:after{content:" ";display:block;height:0;clear:both;}
+.clearfix{*zoom:1;}
+
+.bwd-contont a:hover {
+	text-decoration: underline;
+}
+
+.bwd-wrap {
+	width: 100%;
+	max-width: 1920px;
+	min-width: 1190px;
+	margin: 0 auto;
+	background: url(/src/activity-img/20151020/00_01.jpg) center 0 repeat-y;
+}
+
+.bwd-contont {
+	position: relative;
+	width: 100%;
+	min-width: 1190px;
+	margin: 0 auto;
+	background: url(/src/activity-img/20151020/00_02.jpg) center 0 no-repeat;
+	font-family: tahoma, arial, "\5FAE\8F6F\96C5\9ED1", sans-serif;
+	font-size: 12px;
+	overflow: hidden;
+}
+.bwd-contont img {
+	border: none;
+}
+.bwd-banner {
+	position: relative;
+	width: 1190px;
+	height: 536px;
+	margin: 0 auto;
+}
+.btn-actInfo {
+	display: block;
+	position: absolute;
+	left: 430px;
+    top: 436px;
+    width: 320px;
+    height: 66px;
+	background-color: #FFf;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+.bwd-actCont {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	background: #fad443 url(/src/activity-img/20151020/11_00.jpg) no-repeat center top;
+}
+.bwd-actInfo {
+	width: 1190px;
+	margin: 0 auto;
+	padding-top: 128px;
+}
+.bwd-actInfo img {
+	margin-bottom: 50px;
+}
+.bwd-actInfoTxt {
+	margin: -30px 36px 36px;
+	font-size: 14px;
+	color: #fff;
+	text-align: right;
+}
+
+/*商品模块*/
+.bwd-listCont {
+	padding: 63px 0;
+}
+.bwd-module {
+	width: 1190px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.bwd-h3 {
+	position: relative;
+	background-color: #c03b5f;
+	font-size: 40px;
+	color: #fff;
+	line-height: 72px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 30px 30px 0 0;
+}
+.bwd-more {
+	font-weight: normal;
+	position: absolute;
+	right: 30px;
+	padding: 0 20px;
+	font-size: 20px;
+	color: #e0e0e0;
+	text-decoration: none;
+	z-index: 3;
+}
+
+.bwd-items {
+	position: relative;
+	width: 1020px;
+	padding-left: 191px;
+}
+.bwd-items li {
+	background-color: #fff;
+}
+.bwd-itemBanner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #fff;
+}
+.bwd-itemBanner:hover {
+	border-color: #f00;
+}
+/*item*/
+.bwd-item {
+	position: relative;
+	float: left;
+	width: 238px;
+	height: 318px;
+	margin: 0 13px 13px 0;
+	background-color: #fff;
+	border: 1px solid #fff;
+	overflow: hidden;
+}
+.bwd-item:hover {
+	border-color: #f00;
+}
+.bwd-tit, .bwd-pri {
+	padding: 0 19px;
+}
+.bwd-tit {
+	height: 30px;
+	font-weight: bold;
+	line-height: 15px;
+	overflow: hidden;
+}
+.bwd-tit a {
+	color: #444;
+	text-decoration: none;
+}
+.bwd-pri {
+	font-size: 14px;
+	color: #db0000;
+}
+.bwd-pri b {
+	font-weight: normal;
+	font-size: 18px;
+}
+.bwd-buy {
+	position: absolute;
+	right: 20px;
+	bottom: 16px;
+	width: 34px;
+	height: 34px;
+	background-image: url(/src/activity-img/20151020/cart_ico.png);
+	text-indent: -333em;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+	<@fixedTop />
+	<@topbar />
+	<@top />
+	<@mainCategory />
+<div class="bwd-wrap">
+	<div class="bwd-contont">
+
+		<div class="bwd-banner">
+			<a class="btn-actInfo" href="#actInfo" target="_self"></a>
+		</div>
+
+		<!-- 商品模块 -->
+		<div class="bwd-listCont">
+
+			<!-- 瑞悅酒水 -->
+			<div class="bwd-module">
+				<h3 class="bwd-h3">
+					瑞悅酒水
+					<a class="bwd-more" href="/store/1000033/" target="_blank">更多></a>
+				</h3>
+				<!-- 瑞悅酒水 | 统一 -->
+				<ul class="bwd-items clearfix"><li class="bwd-itemBanner"><a href="/search?%E7%BB%9F%E4%B8%80" title="统一" target="_blank"><img src="/src/activity-img/20151020/img_1_00.jpg" width="175" height="320" alt="统一" /></a></li><li class="bwd-item"><a href="/product/detail?skuId=1015112" title="统一阿萨姆奶茶/500ml*15" target="_blank"><img src="/src/activity-img/20151020/img_1_01.jpg" width="240" height="240" alt="统一阿萨姆奶茶/500ml*15" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1015112" title="统一阿萨姆奶茶/500ml*15" target="_blank">统一阿萨姆奶茶/500ml*15</a></p><p class="bwd-pri">&yen;<b>46</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018490" title="统一冰红茶/500ml*15" target="_blank"><img src="/src/activity-img/20151020/img_1_02.jpg" width="240" height="240" alt="统一冰红茶/500ml*15" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018490" title="统一冰红茶/500ml*15" target="_blank">统一冰红茶/500ml*15</a></p><p class="bwd-pri">&yen;<b>30</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018559" title="统一来一桶酸菜牛肉125ｇ*12" target="_blank"><img src="/src/activity-img/20151020/img_1_03.jpg" width="240" height="240" alt="统一来一桶酸菜牛肉125ｇ*12" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018559" title="统一来一桶酸菜牛肉125ｇ*12" target="_blank">统一来一桶酸菜牛肉125ｇ*12</a></p><p class="bwd-pri">&yen;<b>37.50</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018599" title="统一袋面（红烧牛肉）103克1*24" target="_blank"><img src="/src/activity-img/20151020/img_1_04.jpg" width="240" height="240" alt="统一袋面（红烧牛肉）103克1*24" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018599" title="统一袋面（红烧牛肉）103克1*24" target="_blank">统一袋面（红烧牛肉）103克1*24</a></p><p class="bwd-pri">&yen;<b>48</b></p></li></ul>
+				<!-- 瑞悅酒水 | 酒品上新 -->
+				<ul class="bwd-items clearfix"><li class="bwd-itemBanner"><a href="/list/1000471" title="酒品上新" target="_blank"><img src="/src/activity-img/20151020/img_2_00.jpg" width="175" height="320" alt="酒品上新" /></a></li><li class="bwd-item"><a href="/product/detail?skuId=1018503" title="听装青岛经典啤酒330ml*24" target="_blank"><img src="/src/activity-img/20151020/img_2_01.jpg" width="240" height="240" alt="听装青岛经典啤酒330ml*24" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018503" title="听装青岛经典啤酒330ml*24" target="_blank">听装青岛经典啤酒330ml*24</a></p><p class="bwd-pri">&yen;<b>80</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018498" title="听装山城啤酒330ml*24" target="_blank"><img src="/src/activity-img/20151020/img_2_02.jpg" width="240" height="240" alt="听装山城啤酒330ml*24" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018498" title="听装山城啤酒330ml*24" target="_blank">听装山城啤酒330ml*24</a></p><p class="bwd-pri">&yen;<b>41</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018513" title="45度小郎酒100ml*24" target="_blank"><img src="/src/activity-img/20151020/img_2_03.jpg" width="240" height="240" alt="45度小郎酒100ml*24" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018513" title="45度小郎酒100ml*24" target="_blank">45度小郎酒100ml*24</a></p><p class="bwd-pri">&yen;<b>240</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018577" title="锐澳青柠味朗姆鸡尾酒275ml*24" target="_blank"><img src="/src/activity-img/20151020/img_2_04.jpg" width="240" height="240" alt="锐澳青柠味朗姆鸡尾酒275ml*24" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018577" title="锐澳青柠味朗姆鸡尾酒275ml*24" target="_blank">锐澳青柠味朗姆鸡尾酒275ml*24</a></p><p class="bwd-pri">&yen;<b>215</b></p></li></ul>
+			</div>
+
+			<!-- 星作副食 -->
+			<div class="bwd-module">
+				<h3 class="bwd-h3">
+					星作副食
+					<a class="bwd-more" href="/store/1000034/" target="_blank">更多></a>
+				</h3>
+				<!-- 星作副食 | 达利园 -->
+				<ul class="bwd-items clearfix"><li class="bwd-itemBanner"><a href="/search?%E8%BE%BE%E5%88%A9%E5%9B%AD" title="达利园" target="_blank"><img src="/src/activity-img/20151020/img_3_00.jpg" width="175" height="320" alt="达利园" /></a></li><li class="bwd-item"><a href="/product/detail?skuId=1017256" title="达利园软面包（香奶）200g" target="_blank"><img src="/src/activity-img/20151020/img_3_01.jpg" width="240" height="240" alt="达利园软面包（香奶）200g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1017256" title="达利园软面包（香奶）200g" target="_blank">达利园软面包（香奶）200g</a></p><p class="bwd-pri">&yen;<b>4.4</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1015417" title="达利园蛋黄派（原味）500g" target="_blank"><img src="/src/activity-img/20151020/img_3_02.jpg" width="240" height="240" alt="达利园蛋黄派（原味）500g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1015417" title="达利园蛋黄派（原味）500g" target="_blank">达利园蛋黄派（原味）500g</a></p><p class="bwd-pri">&yen;<b>9.5</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1017278" title="达利园瑞士卷(草莓味）160g" target="_blank"><img src="/src/activity-img/20151020/img_3_03.jpg" width="240" height="240" alt="达利园瑞士卷(草莓味）160g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1017278" title="达利园瑞士卷(草莓味）160g" target="_blank">达利园瑞士卷(草莓味）160g</a></p><p class="bwd-pri">&yen;<b>4.3</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1015478" title="达利园软面包（香橙）160g" target="_blank"><img src="/src/activity-img/20151020/img_3_04.jpg" width="240" height="240" alt="达利园软面包（香橙）160g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1015478" title="达利园软面包（香橙）160g" target="_blank">达利园软面包（香橙）160g</a></p><p class="bwd-pri">&yen;<b>3.6</b></p></li></ul>
+				<!-- 星作副食 | 有友 -->
+				<ul class="bwd-items clearfix"><li class="bwd-itemBanner"><a href="/search?%E6%9C%89%E5%8F%8B" title="有友" target="_blank"><img src="/src/activity-img/20151020/img_4_00.jpg" width="175" height="320" alt="有友" /></a></li><li class="bwd-item"><a href="/product/detail?skuId=1017259" title="有友山椒凤爪180g" target="_blank"><img src="/src/activity-img/20151020/img_4_01.jpg" width="240" height="240" alt="有友山椒凤爪180g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1017259" title="有友山椒凤爪180g" target="_blank">有友山椒凤爪180g</a></p><p class="bwd-pri">&yen;<b>6.2</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1016618" title="有友竹笋120g" target="_blank"><img src="/src/activity-img/20151020/img_4_02.jpg" width="240" height="240" alt="有友竹笋120g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1016618" title="有友竹笋120g" target="_blank">有友竹笋120g</a></p><p class="bwd-pri">&yen;<b>2.4</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1016620" title="有友卤香鸡翅120g" target="_blank"><img src="/src/activity-img/20151020/img_4_03.jpg" width="240" height="240" alt="有友卤香鸡翅120g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1016620" title="有友卤香鸡翅120g" target="_blank">有友卤香鸡翅120g</a></p><p class="bwd-pri">&yen;<b>7.5</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1016675" title="有友卤香豆干100g" target="_blank"><img src="/src/activity-img/20151020/img_4_04.jpg" width="240" height="240" alt="有友卤香豆干100g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1016675" title="有友卤香豆干100g" target="_blank">有友卤香豆干100g</a></p><p class="bwd-pri">&yen;<b>2.6</b></p></li></ul>
+			</div>
+			
+			<!-- 飞恒贸易 -->
+			<div class="bwd-module">
+				<h3 class="bwd-h3">
+					飞恒贸易
+					<a class="bwd-more" href="/store/1000035/" target="_blank">更多></a>
+				</h3>
+				<!-- 飞恒贸易 | 立白 -->
+				<ul class="bwd-items clearfix"><li class="bwd-itemBanner"><a href="/search?%E7%AB%8B%E7%99%BD" title="立白" target="_blank"><img src="/src/activity-img/20151020/img_5_00.jpg" width="175" height="320" alt="立白" /></a></li><li class="bwd-item"><a href="/product/detail?skuId=1017998" title="立白金桔洗洁精408g" target="_blank"><img src="/src/activity-img/20151020/img_5_01.jpg" width="240" height="240" alt="立白金桔洗洁精408g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1017998" title="立白金桔洗洁精408g" target="_blank">立白金桔洗洁精408g</a></p><p class="bwd-pri">&yen;<b>2.75</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018375" title="立白透明皂202g（3+1）" target="_blank"><img src="/src/activity-img/20151020/img_5_02.jpg" width="240" height="240" alt="立白透明皂202g（3+1）" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018375" title="立白透明皂202g（3+1）" target="_blank">立白透明皂202g（3+1）</a></p><p class="bwd-pri">&yen;<b>12.2</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018105" title="立白全效馨香亮白洗衣粉950g" target="_blank"><img src="/src/activity-img/20151020/img_5_03.jpg" width="240" height="240" alt="立白全效馨香亮白洗衣粉950g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018105" title="立白全效馨香亮白洗衣粉950g" target="_blank">立白全效馨香亮白洗衣粉950g</a></p><p class="bwd-pri">&yen;<b>9.13</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1017665" title="立白洗衣粉2.118kg" target="_blank"><img src="/src/activity-img/20151020/img_5_04.jpg" width="240" height="240" alt="立白洗衣粉2.118kg" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1017665" title="立白洗衣粉2.118kg" target="_blank">立白洗衣粉2.118kg</a></p><p class="bwd-pri">&yen;<b>19</b></p></li></ul>
+				<!-- 飞恒贸易 | 亮荘 -->
+				<ul class="bwd-items clearfix"><li class="bwd-itemBanner"><a href="/search?%E4%BA%AE%E8%8D%98" title="亮荘" target="_blank"><img src="/src/activity-img/20151020/img_6_00.jpg" width="175" height="320" alt="亮荘" /></a></li><li class="bwd-item"><a href="/product/detail?skuId=1017962" title="亮荘珍珠活性洗发露（焗油亮发）400ml" target="_blank"><img src="/src/activity-img/20151020/img_6_01.jpg" width="240" height="240" alt="亮荘珍珠活性洗发露（焗油亮发）400ml" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1017962" title="亮荘珍珠活性洗发露（焗油亮发）400ml" target="_blank">亮荘珍珠活性洗发露（焗油亮发）400ml</a></p><p class="bwd-pri">&yen;<b>15.5</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018104" title="亮荘天然花香沐浴露(丝质柔肤)938ml" target="_blank"><img src="/src/activity-img/20151020/img_6_02.jpg" width="240" height="240" alt="亮荘天然花香沐浴露(丝质柔肤)938ml" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018104" title="亮荘天然花香沐浴露(丝质柔肤)938ml" target="_blank">亮荘天然花香沐浴露(丝质柔肤)938ml</a></p><p class="bwd-pri">&yen;<b>14.5</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018349" title="亮荘魔幻动感弹力素(丰盈弹性造型)280g" target="_blank"><img src="/src/activity-img/20151020/img_6_03.jpg" width="240" height="240" alt="亮荘魔幻动感弹力素(丰盈弹性造型)280g" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018349" title="亮荘魔幻动感弹力素(丰盈弹性造型)280g" target="_blank">亮荘魔幻动感弹力素(丰盈弹性造型)280g</a></p><p class="bwd-pri">&yen;<b>11.5</b></p></li><li class="bwd-item"><a href="/product/detail?skuId=1018348" title="亮荘魔力定型啫喱水(清爽保湿)150ml" target="_blank"><img src="/src/activity-img/20151020/img_6_04.jpg" width="240" height="240" alt="亮荘魔力定型啫喱水(清爽保湿)150ml" /></a><p class="bwd-tit"><a href="/product/detail?skuId=1018348" title="亮荘魔力定型啫喱水(清爽保湿)150ml" target="_blank">亮荘魔力定型啫喱水(清爽保湿)150ml</a></p><p class="bwd-pri">&yen;<b>7.5</b></p></li></ul>
+			</div>
+		</div>
+	</div>
+	<div class="bwd-actCont">
+		<div class="bwd-actInfo" id="actInfo">
+			<img src="/src/activity-img/20151020/11_01.jpg" alt="新用户首次下单，即送好礼！" />
+			<img src="/src/activity-img/20151020/11_02.jpg" alt="千种商品促销让利，新老用户下单满再送，新用户礼同时享受。" />
+			<img src="/src/activity-img/20151020/11_03.jpg" alt="回馈老用户，下单还送话费卡。" />
+		</div>
+	</div>
+</div>
+	<@footer />
+	<@copyright />
+	<@fixedSide />
+	<@cityChange />
+    <@js />
+</body>
+</html>
+</@compress>
+</#escape>

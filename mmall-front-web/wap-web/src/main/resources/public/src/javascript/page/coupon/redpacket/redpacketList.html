@@ -1,0 +1,49 @@
+{{#if loading}}
+<div class="g-load">
+    <div class="m-load">
+        <span class="icon u-loading-2"></span>
+        <span class="text">加载中...</span>
+    </div>
+</div>
+{{/if}}
+<div {{#if loading}}class="f-dn"{{/if}}>
+    <div id="redpacketSelect" {{#if !!hasRedpacket }}class="g-select"{{#else}}class="g-select f-dn"{{/if}}></div>
+    {{#if list.length > 0}}
+    <div class="g-redpacketlist">
+        {{#list list as item}}
+        <div  on-click="{{this.__tap(item_index)}}" {{#if item.state ==0}}class="m-redpacket"{{#else}}class="m-redpacket m-redpacket-1"{{/if}}>
+            <div class="icon">
+                <span>&yen;{{item.remainCash}}</span>
+            </div>
+            <div class="info">
+                    <div class="status">
+                        {{#if item.state ==0}}
+                            <p>有效期</p>
+                            <p>从{{item.validStartTime|format}}</p>
+                            <p>至{{item.validEndTime|format}}</p>
+                        {{#elseif item.state ==2}}
+                            <p>已过期</p>
+                        {{#elseif item.state ==3}}
+                            <p>已使用</p>
+                        {{#elseif item.state ==5}}
+                            <p>已失效</p>
+                        {{#elseif item.state ==8}}
+                            <p>未生效</p>
+                        {{/if}}
+                    </div>
+                    <div class="detail">
+                        <span class="u-arrow-right"></span>
+                    </div>
+            </div>
+        </div>
+        {{/list}}
+    </div>
+    {{#else}}
+    <div class="g-norecord">
+        <div class="m-noredpacket">
+            <div class="icon"></div>
+            <p class="desc">您还没有{{#if state==0}}可用的{{#elseif state==2}}已过期的{{#elseif state==3}}已使用的{{#elseif state==5}}已失效的{{#elseif state==8}}未生效的{{/if}}红包</p>
+        </div>
+    </div>
+    {{/if}}
+</div>

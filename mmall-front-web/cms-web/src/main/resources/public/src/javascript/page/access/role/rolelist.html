@@ -1,0 +1,38 @@
+<div class="card_c">
+    <div class="row">
+      <div class="col-sm-2">
+        <button class="btn btn-primary"
+          on-click={{this.edit()}}>新增角色</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12" id="rolelistbox">
+   <div class="m-wtable" id="wtable">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>角色名称</th>
+          <th>创建时间</th>
+          <th>编辑人</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#list list as tpl}}
+          <tr>
+            <td>{{tpl.name}}</td>
+            <td>{{tpl.addTime|format}}</td>
+            <td>{{tpl.editor}}</td>
+            <td>
+              <a href="javascript:void(0)" on-click={{this.edit(tpl)}}>修改</a>
+              <a href="javascript:void(0)" on-click={{this.remove(tpl)}}>删除</a>
+            </td>
+          </tr>
+        {{/list}}
+      </tbody>
+    </table>
+  </div>
+  <div class="text-right m-wpager">
+    <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+  </div>
+  </div>

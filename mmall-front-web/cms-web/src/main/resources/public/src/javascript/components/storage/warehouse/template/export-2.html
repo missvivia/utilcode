@@ -1,0 +1,32 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>日期</th>
+       <th>物流商</th>
+       <th>仓库</th>
+       <th>产生订单单量</th>
+       <th>生产订单占比</th>
+       <th>已汇总单量</th>
+       <th>已汇总占比</th>
+       <th>已取消单量</th>
+       <th>已取消占比</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.time|format}}</td>
+         <td>{{item.expressCompany}}</td>
+         <td>{{item.warehouseName}}</td>
+         <td>{{item.totalOrderNumber}}</td>
+         <td>{{item.totalOrderPercent}}</td>
+         <td>{{item.collectiveOrderNumber}}</td>
+         <td>{{item.collectiveOrderPercent}}</td>
+         <td>{{item.cancelOrderNumber}}</td>
+         <td>{{item.cancelOrderPercent}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

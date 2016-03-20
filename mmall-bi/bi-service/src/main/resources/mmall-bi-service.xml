@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<description>nqs消费端配置</description>
+	<!--
+	<bean id="advancedQueueContainer"
+		class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="destination" ref="biLogQueue" />
+		<property name="messageListener" ref="notifyMessageListener" />
+		<property name="concurrentConsumers" value="5" />
+		<property name="maxConcurrentConsumers" value="10" />
+		<property name="sessionAcknowledgeModeName" value="CLIENT_ACKNOWLEDGE" />
+	</bean>
+
+	<bean id="notifyMessageListener" class="com.xyl.mmall.bi.listener.BILogListener" />
+ 	-->
+	<!-- <bean id="nqsBILogListener" class="com.xyl.mmall.bi.listener.NQSBILogListener">
+		<property name="nqsTemplate" ref="nqsTemplate" />
+		<property name="queueName" value="${nqs.biLog.queueName}" />
+		<property name="nqsMessageHandler" ref="nqsMessageHandler" />
+	</bean> -->
+	
+	<bean id="nqsMessageHandler" class="com.xyl.mmall.bi.listener.NQSMessageHandler" >
+		<property name="biLogClient" ref="biLogClient" />
+	</bean>
+	
+	<bean id="biListenerContainer" parent="baseListenerContainer">
+		<property name="queueNames" value="${nqs.biLog.queueName}"></property>
+		<property name="messageListener" ref="nqsMessageHandler"></property>
+	</bean>
+
+</beans>

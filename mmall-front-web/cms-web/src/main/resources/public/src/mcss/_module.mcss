@@ -1,0 +1,371 @@
+// main header in .g-bd
+
+body .m-snav{
+  z-index: 2;
+  h4{
+    position: relative;
+    $lh: 42px;
+    font-size: 20px;
+    padding-left: 40px;
+    margin:0;
+    background-color: l-adjust($side-bg, 10%);
+    border-top: 1px solid l-adjust($side-bg, 15%);
+    border-bottom: 1px solid l-adjust($side-bg, -12%);
+    margin-right: -8px;
+    &::after{
+      position: absolute;
+      content:"";
+      right: 0px;
+      bottom: -8px;
+      $size: 0px;
+      $border: 4px solid l-adjust($side-bg, -12%); 
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+
+    }
+  }
+  .glyphicon{
+    width: 25px;
+    position: relative;
+    top: 2px;
+  }
+  .snav_item{
+    border-top: 1px solid l-adjust($side-bg, 6%);
+    border-bottom: 1px solid l-adjust($side-bg, -6%);
+    > a{
+      font-size: 16px;
+      background-color: l-adjust($side-bg, 4%);
+      border-left: 3px solid transparent;
+    }
+    .nav{
+      display: none;
+    }
+    &.active .nav,&.open .nav{
+      display: block;
+    }
+    &.open > a, > a:hover{
+      background-color: l-adjust($side-bg, 4%);
+      //background-color: #624870;
+      border-left-color: #3d4a5e;
+    }
+    &.active > a, > a:hover{
+      color: #fff;
+      background-color: l-adjust($side-bg, 4%);
+      border-left-color: $brand-inverse;
+    }
+    &.active > a, > a:active{
+      border-left-color: $brand-inverse;
+    }
+    li{
+      a{
+        padding-left: 50px;
+        background-color:  l-adjust($side-bg, 12%);
+        color: #fff;
+        &:hover{
+          color: $brand-inverse;
+        }
+      }
+      &.active a{
+        color: $brand-inverse;
+      }
+    }
+  }
+}
+
+
+$head-height = 48px;
+.m-header{
+  background-color: #dfdfdf;
+  height: $head-height;
+  border-bottom: 3px solid #bbb;
+  a{
+    height: $head-height - 3px;
+    $state-color: $gray-light;
+    &:hover{
+      background-color: #fff;
+    }
+  }
+  .glyphicon{
+    margin-right: 6px;
+  }
+}
+
+
+$bar-height = 48px;
+.m-card{
+  margin-top: 12px;
+  background-color: #fff;
+  $border-radius: 3px;
+  $box-shadow: 0px 1px 1px rgba(#ddd, 0.6);
+  border: 1px solid $gray-lighter;
+  .card_b{
+    $border-radius: 3px , top;
+    height: $bar-height;
+    padding: 14px 15px;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    background-color: $gray;
+    color: #fff;
+    font-size: 18px;
+  }
+  // card bar 不同颜色
+  .card_b-inverse{
+    background-color: $brand-inverse;
+  }
+  .card_b-primary{
+    background-color: $brand-primary;
+  }
+  .card_c{
+    padding: 10px 15px;
+  }
+}
+
+.m-card-bread{
+  padding: 10px 0px;
+  .breadcrumb{
+    background-color: transparent;
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+}
+
+.m-datepicker{
+  z-index: 10;
+}
+
+.m-card-btn{
+  border: 1px solid #bbb;
+  $clearfix();
+  .cbtn_left, .cbtn_right{
+    .btn{
+      display: block;
+      border:none;
+    }
+    float: left;
+    width: 50%;
+    text-align: center;
+    display: block;
+  }
+}
+
+
+.m-form-product{
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+
+.m-table{
+  border: 1px solid $gray-lighter;
+}
+
+
+.m-imgview{
+  $clearfix();
+  .imgwrap{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    width: 124px;
+    height: 220px;
+    text-align: center;
+
+  }
+  .progress{
+    position: relative;
+    height: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+  }
+  .img{
+    float: left;
+    $animation: fadeIn .4s;
+    /* 图片居中溢出隐藏  */  
+    margin-right: 24px;
+    margin-bottom: 12px;
+    background-color: #eee;
+    position: relative;
+    border: 3px solid $gray-lighter;
+    &:hover{
+      .del{display: block;}
+    }
+    img{
+      width: 124px;
+      min-height: 100%;
+    }
+
+
+  }
+  .del{
+    $dsize = 20px;
+    $lh: $dsize;
+    $border-radius: 50%;
+
+    display: none;
+    font-weight:bold;
+    font-family:arial;
+    color:#fff;
+    font-size: 20px;
+    text-align: center;
+    width: 20px;
+    background-color: #d62e2a;
+    cursor: pointer;
+
+    position: absolute;
+    top: -$dsize / 2 + 2;
+    right: -$dsize / 2 + 2 ;
+  }
+  .img-void{
+      background: url(/res/defaults/dimg.png) 50% 50% no-repeat #eee;
+      border: 3px dashed #ccc;
+      position: relative;
+      &:hover{
+        border-color: $brand-primary;
+      }
+      // input{
+      //   cursor: pointer;
+      //   display: block;
+      //   position: absolute;
+      //   left:0;
+      //   top:0;
+      //   $size:100%;
+      //   $opacity: 0;
+      // }
+      label, img{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+  }
+}
+
+.m-imgview-2{
+  .imgwrap{
+    $size: 120px;
+  }
+  .img{
+    img{
+      width: 120px;
+    }
+  }
+}
+
+
+// m-schelist
+
+
+.m-schelist{
+  $clearfix();
+  .u-picked{
+    margin-bottom: 4px;
+  }
+}
+
+
+.m-clst{
+  margin-bottom: 0px;
+}
+
+// 优惠券
+
+.m-couponcond{
+  padding: 10px 15px;
+  .cond{
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    background-color: l-adjust($side-bg , 60%);
+  }
+  .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .cond-add{
+    .btn{
+      border: 2px dotted #ccc;
+    }
+    
+  }
+}
+
+.m-mask{
+  $opacity:0.5;
+  background:#000;
+}
+
+.m-datepicker{
+  .zbtn {
+    font-family: "宋体";
+    font-weight: bold;
+  }
+
+  padding: 6px;
+  margin-top: 10px;
+  direction: ltr;
+  display: block;
+  th,td{
+    text-align: center;
+    $size: 28px;
+  }
+  .zday th{
+    font-weight: bold;
+  }
+  .zday td a.js-selected{
+    background-color: $brand-primary;
+    $border-radius: 2px;
+    color: #fff;
+    &:hover{
+      background-color: l-adjust($brand-primary, 2%);
+    }
+    &.js-disabled{background: #fff;color: #eee;cursor: default;}
+  }
+  .act{
+
+  }
+  .zcard{
+    border:none;
+  }
+  // top right
+  &-tr:before {
+  top: -7px;
+  right: 6px;
+  }
+  &:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #cccccc;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+  }
+  &-tr:after {
+    top: -6px;
+    right: 7px;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    position: absolute;
+  }
+}
+
+
+@import "partials/_wjf";
+@import "partials/_effect";
+@import "notify/notify";
+
+
+// effect
+@import "partials/_xys";
+
+.m-important{margin:0 5px;color:red}

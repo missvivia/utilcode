@@ -1,0 +1,1749 @@
+﻿/**
+    *
+    * @author E盘 http://fuzhongkuo.com
+    *
+**/
+
+/**
+    *
+    * 重置标签
+    *
+**/
+html, body, div, span, object, iframe, input, h1, h2, h3, h4, h5, h6, p, a, em, img, strong, sub, sup, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, footer, header, hgroup, menu, nav, audio, video, time {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: \5FAE\8F6F\96C5\9ED1, \9ED1\4F53, arial, \5B8B\4F53, sans-serif;
+}
+article, aside, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    width: 100%;
+    font-size: 12px;
+    background: #fff;
+}
+ol, ul, li {
+    list-style: none;
+}
+em, i {
+    font-style: normal;
+}
+a {
+    color: #444;
+    text-decoration: none;
+}
+a:hover {
+    color: #f00;
+    text-decoration: underline;
+}
+a:focus, input:focus, button:focus, textarea:focus, select:focus {
+    outline: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*********************************************************** E 重置标签 ***********************************************************/
+
+/**
+    *
+    * 全局样式
+    *
+**/
+.clear {
+    clear: both;
+    overflow: hidden;
+    height: 1px;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+.abs {
+    position: absolute;
+}
+.rel {
+    position: relative;
+}
+.l {
+    float: left;
+}
+.r {
+    float: right;
+}
+.number {
+    font-family: "Arial";
+}
+.wrap {
+    width: 1190px;
+    margin: 0 auto;
+}
+.b-font {
+    font-size: 12px;
+}
+.mt {
+    margin-top: 0;
+}
+.mr {
+    margin-right: 0;
+}
+.mb {
+    margin-bottom: 0;
+}
+.ml {
+    margin-left: 0;
+}
+.pt {
+    padding-top: 0;
+}
+.pr {
+    padding-right: 0;
+}
+.pb {
+    padding-bottom: 0;
+}
+.pl {
+    padding-left: 0;
+}
+.p-b {
+    padding-bottom: 20px;
+}
+/*********************************************************** E 全局样式 ***********************************************************/
+
+/**
+    *
+    * @ font color 字体颜色
+    *
+    * @ name space c 命名空间为c
+    *
+    * @ c-public  整站的主题颜色
+    *
+    * @ expand 拓展：命名空间（c）+ 状态以“-”颜色。
+    *
+**/
+
+.c-public {
+    color: #ff5f25; /* 根据网站风格修改 */
+}
+.c-red {
+    color: #f00;
+}
+.c-green {
+    color: #0f0;
+}
+.c-blue {
+    color: #00f;
+}
+.c-orange {
+    color: #f80;
+}
+.c-darkGray {
+    color: #333;
+}
+.c-gray {
+    color: #666;
+}
+.c-frenchGray {
+    color: #999;
+}
+/*********************************************************** E 字体颜色 ***********************************************************/
+
+
+/**
+    *
+    * @ background  背景颜色
+    *
+    * @ name space bg       命名空间 bg
+    *
+    * @ odd background      奇数行背景 bg-odd
+    *
+    * @ even background     偶数行背景 bg-even
+    *
+    * @ frenchGray background     偶数行背景 bg-frenchGray
+    *
+    * @ selected background 选中行背景 bg-selected
+    *
+    * @ expand 拓展：命名空间（bg）+ 状态以“-”连接。
+    *
+**/
+
+.bg-odd {
+    background: #f9f9f9;
+}
+.bg-even {
+    background: #fff;
+}
+.bg-selected {
+    background: #f2f2f2;
+}
+.bg-french-gray {
+    background: #f9f9f9;
+}
+.bg-red {
+    background: #f00;
+}
+.bg-black {
+    background: #151515;
+}
+.bg-gray{
+	background: #dddddd;
+}
+/*********************************************************** E 背景颜色 ***********************************************************/
+
+
+/**
+    *
+    * @ input size and get lost focus       input大小和得失焦点
+    *
+    * @ name space input    命名空间为 input
+    *
+    * @ input text or password      input输入框为文本或密码
+    *
+    * @ input size      input大小 max为大  min为小
+    *
+    * @ input focus     input得到焦点时添加的效果
+    *
+    * @ input error     input输入错误时添加的效果
+    *
+    * @ input disable   input禁用时加的效果
+    *
+    * @ expand 拓展：命名空间（input） + 状态以“-”连接。
+    *
+**/
+.input-text {
+    height: 18px;
+    line-height: 18px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    color: #999;
+    padding: 6px 10px;
+    letter-spacing: 1px;
+}
+.input-max {
+    width: 220px;
+}
+.input-min {
+    width: 70px;
+}
+.input-focus {
+    border: 1px solid #999;
+    color: #000;
+    font-size: 14px;
+}
+.input-error {
+    border: 1px solid #f00;
+}
+.input-disable {
+    border: 1px solid #ddd;
+    cursor: not-allowed;
+}
+/*********************************************************** E 输入框 ***********************************************************/
+
+
+/**
+    *
+    * @ tips  备注说明
+    *
+    * @ name space tips     命名空间 tips
+    *
+    * @ success tips        成功提示 tips-success
+    *
+    * @ error tips          错误提示 tips-error
+    *
+    * @ error close         错误提示 tips-close
+    *
+    * @ expand 拓展：命名空间（tips）+ 状态以“-”连接。
+    *
+**/
+.tips {
+    padding: 20px 30px;
+    margin: 10px 0;
+    line-height: 150%;
+    font-size: 14px;
+    position: relative;
+    border-radius: 3px;
+}
+.tips-success {
+    border: 1px solid #0f0;
+    border-left: 5px solid #0f0;
+}
+.tips-error {
+    border: 1px solid #edcc92;
+    border-left: 5px solid #edcc92;
+    background: #fcf3e3;
+    color: #a79068;
+}
+.tips-other {
+    border: 1px solid #ddd;
+    border-left: 5px solid #ddd;
+}
+.tips-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+/*********************************************************** E 备注说明 ***********************************************************/
+
+
+/**
+    *
+    * @ 下拉框 select
+    *
+    * @ name space select   命名空间 select
+    *
+    * @ max select          大的下拉框 select-max
+    *
+    * @ min select          小的下拉框 select-min
+    *
+    * @ expand 拓展：命名空间（select）+ 状态以“-”连接。
+    *
+**/
+.select {
+    width: 140px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: baseline;
+    zoom: 1;
+    *display: inline;
+    *vertical-align: auto;
+    position: relative;
+    border: 1px solid #d3d3d3;
+    height: auto \9;
+    *top: 2px;
+    *border: 0;
+}
+.select-max {
+    width: 100px;
+}
+.select-min {
+    width: 50px;
+}
+/*********************************************************** E 下拉框 ***********************************************************/
+
+
+/**
+    *
+    * @ 按钮 button
+    *
+    * @ name space btn      命名空间 btn
+    *
+    * @ button submit       可以提交的按钮 btn-submit
+    *
+    * @ button disable      不可提交的按钮 btn-disable
+    *
+    * @ button max          大按钮 btn-max
+    *
+    * @ button min          大按钮 btn-min
+    *
+    * @ expand 拓展：命名空间（btn）+ 状态以“-”连接。
+    *
+**/
+.btn-base {
+    border: 0;
+    border-radius: 3px;
+    height: 28px;
+    line-height: 28px;
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 10px;
+}
+.btn-base:hover {
+    text-decoration:none;
+}
+.btn-default {
+    background: #f0f0f0;
+    color: #666;
+    border: 1px solid #d3d3d3;
+}
+.btn-default:hover {
+    color: #333;
+}
+.btn-submit {
+    color: #fff;
+    background: #f00;  
+}
+.btn-submit:hover {
+    background: #e40505;
+    color: #fff;
+}
+.btn-cancel {
+    color: #666;
+    background: #f2f2f2;
+}
+.btn-cancel:hover {
+    background: #f5f5f5;
+}
+.btn-disable {
+    color: #aaa;
+    background: #f2f2f2;
+    cursor: not-allowed;
+}
+.btn-disable:hover {
+    background: #f5f5f5;
+}
+.btn-max {
+    width: 270px;
+    display: inline-block;
+}
+.btn-min {
+    width: 170px;
+    display: inline-block;
+}
+/*********************************************************** E 按钮 ***********************************************************/
+
+
+/**
+    *
+    * @ hint  提示
+    *
+    * @ name space hint     命名空间 hint
+    *
+    * @ success hint        成功提示 hint-success
+    *
+    * @ error hint          错误提示 hint-error
+    *
+    * @ begin hint          进行中提示 hint-begin
+    *
+    * @ describe hint       描述提示 hint-describe
+    *
+    * @ close hint          关闭提示 hint-close
+    *
+    * @ expand 拓展：命名空间（hint）+ 状态以“-”连接。
+    *
+**/
+.hint {
+    color: #333;
+    padding: 5px 12px 5px 25px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-left: 10px;
+    position: relative;
+    display: inline;
+}
+img.hint-close {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+}
+.hint-success {
+    background: url(../images/success.png) no-repeat 5px center;
+}
+.hint-error {
+    background: #f2f2f2 url(../images/error.png) no-repeat 5px center;
+}
+/*.hint-being {
+    background: #f2f2f2 url(../images/being.png) no-repeat 5px center;
+}*/
+.hint-describe {
+    color: #999;
+    padding-top: 1%;
+}
+/*********************************************************** E 提示 ***********************************************************/
+
+
+/**
+    *
+    * @ popup 弹出层
+    *
+    * @ name space pop    命名空间为 pop
+    *
+    * @ direction    opacity 不透明层     content 内容区域       close 关闭弹出层
+    *
+**/
+.popup {
+}
+.popup .opacity {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* background: rgba(0,0,0,.3); */
+    background: #000;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+    z-index: 10;
+}
+.popup .box {
+    position: fixed;
+    background: #fff;
+    z-index: 11;
+}
+.popup .max-box {
+    width: 750px;
+}
+.popup .mid-box {
+    width: 550px;
+}
+.popup .min-box {
+    width: 350px;
+}
+.popup .title {
+    height: 40px;
+    line-height: 40px;
+    background: #f0f0f0;
+}
+.popup .title b {
+    font-size: 14px;
+    color: #000;
+    padding-left: 15px;
+}
+.popup .title span {
+    float: right;
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.popup .content {
+    padding: 25px 40px 50px 40px;
+}
+/*********************************************************** E 弹出层 ***********************************************************/
+
+/**
+    *
+    * @ 表格
+    *
+**/
+.table table {
+    width: 100%;
+    color: #666;
+}
+.table td {
+    padding: 10px 5px;
+    font-size: 14px;
+    min-height: 20px;
+}
+.table th {
+    padding: 10px 5px;
+    font-size: 14px;
+    color: #333;
+    vertical-align: top;
+}
+/* E 表格基础形式 */
+.table-tit {
+    display: block;
+    float: right;
+    height: 44px;
+    line-height: 44px;
+    font-weight: normal;
+    color: #666;
+    margin-left: 20px;
+}
+.table-tit em {
+    color: #f00;
+    padding: 5px;
+}
+/* E 表格中固定名称的位置 */
+.table-list table {
+    border: 1px solid #ddd;
+    border-bottom: 0;
+}
+.table-list th {
+    padding: 15px 0 15px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+    border-right: 1px solid #ddd;
+}
+.table-list td {
+    padding: 10px 0 10px 10px;
+    border-bottom: 1px solid #ddd;
+    color: #999;
+}
+/* E 数据是列表形式 */
+.table-null {
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+}
+/*********************************************************** E 表格 ***********************************************************/
+
+/**
+    *
+    * 顶部条
+    *
+**/
+.top-bar {
+    background: #f5f5f5;
+    height: 30px;
+    line-height: 30px;
+}
+.region-select {
+    height: 30px;
+    line-height: 30px;
+}
+.region-select * {
+    display: inline-block;
+    height: 19px;
+    line-height: 19px;
+    float: left;
+    margin-top: 5px;
+}
+.region-select span {
+    color: #888;
+    padding-right: 5px;
+}
+.region-select em {
+    color: #f00;
+    font-size: 14px;
+    padding-right: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.region-select i {
+    background-position: -10px -5px;
+    display: inline-block;
+    width: 40px;
+}
+
+.top-bar-menu li {
+    float: left;
+}
+.top-bar-menu a, .top-bar-menu span {
+    display: inline-block;
+}
+.top-bar-menu span {
+    color: #ccc;
+}
+.top-bar-menu em {
+	padding-left: 5px;
+	color: #888;
+}
+.top-bar-menu a {
+    color: #888;
+    padding: 0 5px;
+}
+.top-bar-menu a:hover {
+    color: #f00;
+}
+.top-bar-menu .no-login {
+    display: none;
+}
+.top-bar-menu .is-login {
+    display: none;
+}
+.pull-down {
+    position: relative;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+}
+.pull-down dl {
+    border-left: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+}
+.pull-down.active dl {
+    border: 1px solid #e7e7e7;
+    border-top: 0;
+    background: #fff;
+}
+.pull-down dl {
+    width: 100px;
+    border-top: 0;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    z-index: 2;
+}
+.pull-down dt span {
+    color: #888;
+    display: inline-block;
+    margin-left: 10px;
+}
+.pull-down.active dt span {
+    color: #f00;
+}
+.pull-down dt a {
+	padding-left: 10px;
+}
+.pull-down dt i {
+    display: inline-block;
+    width: 11px;
+    min-height: 11px;
+    background-position: -60px -5px;
+}
+.pull-down.active dt i {
+    background-position: -60px -16px;
+}
+.pull-down dd {
+    height: 28px;
+    line-height: 28px;
+    display: none;
+}
+.pull-down dd a {
+    color: #444;
+    display: inline-block;
+    text-align: left;
+    padding-left: 20px;
+}
+.pull-down dd i {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+}
+.pull-down .person i {
+    width: 13px;
+    height: 15px;
+    background-position: -150px -5px;
+    margin-top: 8px;
+}
+.pull-down .ticket i {
+    width: 15px;
+    height: 11px;
+    background-position: -170px -5px;
+    margin-top: 9px;
+}
+.pull-down .collect i {
+    width: 15px;
+    height: 13px;
+    background-position: -190px -5px;
+    margin-top: 8px;
+}
+.pull-down .myOrder i {
+    width: 13px;
+    height: 13px;
+    background-position: -210px -5px;
+    margin-top: 7px;
+}
+.pull-down .loginout i {
+    width: 13px;
+    height: 13px;
+    background-position: -210px -5px;
+    margin-top: 7px;
+}
+/*********************************************************** E 顶部条 ***********************************************************/
+
+/**
+    *
+    * 顶部
+    *
+**/
+.top {
+    padding: 15px 0;
+}
+.top .logo {
+    padding-right: 110px;
+    padding-left: 30px;
+}
+.top .search {
+    border: 3px solid #f00;
+    height: 30px;
+    line-height: 30px;
+    width: 548px;
+    margin-top: 15px;
+}
+.top .search i {
+    display: inline-block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 6px 5px;
+    background-position: -10px -10px;
+}
+.top .search input {
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 10px;
+    border: 0;
+    outline: none;
+    color: #888;
+    width: 400px;
+    float: left;
+}
+.top .search button {
+    border: none;
+    outline: none;
+    background: #f00;
+    font-size: 16px;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    text-align: center;
+    font-family: \5FAE\8F6F\96C5\9ED1;
+    float: left;
+    cursor: pointer;
+    font-weight: bold;
+}
+.top .search button:hover {
+    color: #ededed;
+}
+.top .menu {
+    padding-top: 10px;
+}
+.top .menu a {
+    color: #888;
+}
+.top .menu a:hover, .top .menu .active {
+    color: #f00;
+}
+.top .menu span {
+    padding: 0 7px;
+    color: #ccc;
+}
+
+.top .cart {
+    height: 35px;
+    line-height: 35px;
+    width: 120px;
+    color: #f00;
+    font-size: 14px;
+    border: 1px solid #dbdbdb;
+    right: 0;
+    top: 30px;
+}
+.top .cart a {
+    color: #f00;
+}
+.top .cart em {
+    display: inline-block;
+    float: left;
+    width: 24px;
+    height: 20px;
+    margin: 8px 0 0 10px;
+    background-position: -40px -10px;
+}
+.top .cart span {
+    display: inline-block;
+    float: left;
+    padding: 0 5px;
+}
+.top .cart i {
+    display: inline-block;
+    float: left;
+    width: 26px;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 6px;
+    background-position: -70px -10px;
+}
+.top .cart b {
+    color: #fff;
+    font-size: 12px;
+    padding-left: 7px;
+    text-align: center;
+    width: 16px;
+    display: block;
+}
+/*********************************************************** E 顶部 ***********************************************************/
+
+/**
+    *
+    * 主分类
+    *
+**/
+.main-category-box {
+    border-bottom: 1px solid #151515;
+    height: 40px;
+}
+.main-category {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    position: relative;
+}
+.main-category .category-item#add-category  dl {
+	height: 40px;
+	overflow: hidden;
+}
+.main-category .category-item dt {
+    width: 220px;
+    background: #3b3b3b;
+    color: #fff;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.main-category .category-item#add-category dd {
+	float: left;
+}
+.main-category .category-item dd a {
+    float: left;
+    color: #101010;
+    padding: 0 15px;
+}
+.main-category .category-item dt i {
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    margin: 10px 0 0 10px;
+    background-position: -10px -210px;
+}
+.main-category .category-item dt.active i {
+    background-position: -10px -230px;
+}
+
+.home-category .category-side {
+	display: block;
+}
+.category-side {
+    width: 220px;
+    height: 470px;
+    background: #efeded;
+    color: #888;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 2;
+    display: none;
+    overflow: hidden;
+}
+.main-category-top .category-side {
+	display: none;
+}
+.category-side li {
+    border-bottom: 1px solid #e1e1e1;
+    border-right: 1px solid #d1d6d6;
+    height: 58px;
+    line-height: 58px;
+    padding-left: 25px;
+    cursor: pointer;
+    position: relative;
+}
+.category-side li:last-child {
+	border-bottom: 0;
+}
+.category-side .active {
+    background: #df4942;
+    border-right: 0;
+}
+.category-side a {
+    font-size: 14px;
+    color: #333;
+}
+.category-side .active a {
+    color: #fff;
+}
+.category-side a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.category-side em {
+	display: none;
+	width: 6px;
+	height: 12px;
+	position: absolute;
+	right: -1px;
+	top: 20px;
+	background-position: -70px -200px;
+}
+.category-side .active em, .category-side a:hover em {
+	display: block;
+}
+.category-side i {
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    margin-top: 20px;
+    width: 16px;
+    height: 16px;
+}
+.category-side .itme1 i {
+    background-position: -70px -30px;
+}
+.category-side .active.itme1 i {
+    background-position: -100px -30px;
+}
+.category-side .itme2 i {
+   /*  width: 13px;
+    height: 18px; */
+    background-position: -70px -50px;
+}
+.category-side .active.itme2 i {
+    background-position: -100px -50px;
+}
+.category-side .itme3 i {
+   /*  width: 17px;
+    height: 15px; */
+    background-position: -70px -70px;
+}
+.category-side .active.itme3 i {
+    background-position: -100px -70px;
+}
+.category-side .itme4 i {
+   /*  width: 15px;
+    height: 16px; */
+    background-position: -70px -90px;
+}
+.category-side .active.itme4 i {
+    background-position: -100px -90px;
+}
+.category-side .itme5 i {
+    /* width: 12px;
+    height: 21px; */
+    background-position: -70px -110px;
+}
+.category-side .active.itme5 i {
+    background-position: -100px -110px;
+}
+.category-side .itme6 i {
+    /* width: 17px;
+    height: 16px; */
+    background-position: -70px -140px;
+}
+.category-side .active.itme6 i {
+    background-position: -100px -140px;
+}
+.category-side .itme7 i {
+    /* width: 21px;
+    height: 18px; */
+    background-position: -70px -160px;
+}
+.category-side .active.itme7 i {
+    background-position: -100px -160px;
+}
+.category-side .itme8 i {
+    /* width: 16px;
+    height: 18px; */
+    background-position: -70px -180px;
+}
+.category-side .active.itme8 i {
+    background-position: -100px -180px;
+}
+.category-side .itme9 i {
+    /* width: 20px;
+    height: 14px; */
+    background-position: -70px -200px;
+}
+.category-side .active.itme9 i {
+    background-position: -100px -200px;
+}
+.category-side .itme10 i {
+    /* width: 15px;
+    height: 17px; */
+    background-position: -70px -220px;
+}
+.category-side .active.itme10 i {
+    background-position: -100px -220px;
+}
+.category-side .active.itme10 {
+    border-bottom: 1px solid #f7f7f7;
+}
+/* 侧边栏 */
+
+.category-nav {
+    position: absolute;
+    left: 220px;
+    top: 40px;
+    height: 470px;
+    width: 730px;
+    z-index: 3;
+    display: none;
+}
+.main-category-top .category-nav {
+	display: none;
+}
+.category-nav li {
+    border: 1px solid #d1d6d6;
+    background: #fff;
+    width: 705px;
+    padding: 0 0 25px 25px;
+    color: #888;
+    border-left: 0;
+    height: 443px;
+    overflow: hidden;
+    font-size: 12px;
+    display: none;
+}
+.category-nav .active {
+    display: block;
+}
+.category-nav dl {
+	width: 320px;
+	float: left;
+	margin-right: 25px;
+	margin-top: 25px;
+}
+.category-nav dt {
+	float: left;
+	display: block;
+    width: 100%;
+    font-weight: bold;
+    height: 15px;
+    line-height: 15px;
+    padding-bottom: 5px;
+}
+.category-nav dt a {
+    color: #f00;
+}
+.category-nav dd {
+    padding-right: 10px;
+    color: #888;
+    float: left;
+    line-height: 22px;
+    height: 22px;
+}
+.category-nav dd a {
+	color: #505050;
+}
+.category-nav a:hover, .category-nav .active {
+    color: #f00;
+}
+.category-nav em a {
+    color: #f00;
+}
+/* E 二级菜单 */
+/*********************************************************** E 主分类 ***********************************************************/
+
+/**
+    *
+    * 底部
+    *
+**/
+.footer-wrap {
+    margin-top: 20px;
+}
+.footer {
+    padding: 25px 0;
+}
+.footer dl {
+    float: left;
+    color: #666;
+    margin-right: 220px;
+}
+.footer dl:last-child{
+    margin-right: 0; 
+}
+.footer dt {
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.footer a {
+    color: #666;
+    height: 24px;
+    line-height: 24px;
+}
+.footer a:hover {
+    color: #f00;
+}
+/*********************************************************** E 底部 ***********************************************************/
+
+/**
+    *
+    * 版权
+    *
+**/
+.copyright {
+    background: #343434;
+    padding: 30px 0;
+    text-align: center;
+}
+.copyright p {
+	padding: 2px 0;
+}
+.copyright a {
+    color: #888;
+}
+.copyright a:hover {
+    color: #f00;
+}
+.copyright span {
+    color: #888;
+    padding: 0 5px;
+}
+/*********************************************************** E 版权 ***********************************************************/
+
+/**
+    *
+    * 固定头部栏
+    *
+**/
+.fixed-top {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #dfdfdf;
+    box-shadow: 2px 2px 2px #dfdfdf;
+    position: fixed;
+    top: -45px;
+    left: 0;
+    background: #f00;
+    width: 100%;
+    z-index: 9999;
+}
+.fixed-top .search {
+    margin: 5px 20px;
+    background: #fff;
+}
+.fixed-top .search input {
+    float: left;
+}
+.fixed-top .search i {
+	display: inline-block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 5px 5px;
+    background-position: -10px -10px;
+}
+.fixed-top .search .sear-input {
+    width: 382px;
+    border-right: 0;
+    height: 26px;
+    line-height: 26px;
+    color: #999;
+    float: left;
+    padding-left: 10px;
+    border: 0;
+}
+.fixed-top .search .sub-input {
+    height: 30px;
+    line-height: 30px;
+    background: #3b3b3b;
+    color: #fff;
+    font-size: 14px;
+    padding: 0 15px;
+    border: 0;
+    cursor: pointer;
+}
+.fixed-top .search .sub-input:hover {
+    background: #3b3b3b;
+}
+
+.fixed-top .main-category .cart a {
+    color: #fff;
+}
+.fixed-top .main-category .cart em {
+    display: inline-block;
+    float: left;
+    width: 21px;
+    height: 19px;
+    margin: 10px 0 0 10px;
+    background-position: -100px -10px;
+}
+.fixed-top .main-category .cart span {
+    display: inline-block;
+    float: left;
+    padding: 0 5px;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+}
+.fixed-top .main-category .cart i {
+    display: inline-block;
+    float: left;
+    width: 25px;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 8px;
+    background-position: -130px -10px;
+}
+.fixed-top .main-category .cart  b {
+    color: #f00;
+    font-size: 12px;
+    padding-left: 10px;
+}
+/*********************************************************** E 固定头部栏 ***********************************************************/
+
+/**
+    *
+    * 固定侧边栏
+    *
+**/
+.fixed-side {
+    background: #343434;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45px;
+    text-align: center;
+}
+.fixed-side ul {
+    padding-top: 305px;
+}
+.fixed-side a {
+    color: #dbdbdb;
+    display: block;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.fixed-side a:hover {
+    background: #f00;
+    color: #fff;
+    text-decoration: none;
+}
+.fixed-side i {
+    display: block;
+}
+.fixed-side .card {
+    position: relative;
+}
+.fixed-side .card i {
+    width: 31px;
+    height: 26px;
+    background-position: -10px -160px;
+    margin-left: 5px;
+}
+.fixed-side .card span {
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+}
+.fixed-side .card.active {
+    background: #f00;
+}
+.fixed-side .collect {
+    position: relative;
+}
+.fixed-side .collect.active {
+    background: #f00;
+}
+.fixed-side .collect i {
+    width: 24px;
+    height: 23px;
+    background-position: -10px -40px;
+    margin-left: 9px;
+}
+.fixed-side .download {
+    position: relative;
+}
+.fixed-side .download.active {
+    background: #f00;
+}
+.fixed-side .download i {
+    width: 18px;
+    height: 24px;
+    background-position: -10px -100px;
+    margin-left: 12px;
+}
+.fixed-side .num-tip, .top .num-tip{
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	z-index: 10000;
+	display: none;
+}
+.top .num-tip{
+	color: #f00;
+	right: 0px;
+	left: 1510px;
+}
+.fixed-side em {
+    display: block;
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    right: -6px;
+    top: 12px;
+    z-index: 2;
+    background-position: -10px -190px;
+}
+.fixed-side .gotop i {
+    width: 24px;
+    height: 24px;
+    background-position: -10px -130px;
+    padding-bottom: 5px;
+}
+.fixed-side .gotop {
+    color: #888;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 8px;
+}
+/*********************************************************** E 固定侧边栏 ***********************************************************/
+
+/**
+    *
+    * 当前位置
+    *
+**/
+.position {
+    padding: 20px 0 15px 0;
+    color: #666;
+    font-size: 16px;
+    float: left;
+}
+.position span {
+	font-size: 18px;
+	font-weight: bold;
+}
+.position i {
+	font-size: 12px;
+	color: #14px;
+	font-family: \5B8B\4F53;
+	padding: 0 10px;
+}
+.brand-fillter {
+	float: left;
+	 padding: 24px 0 0 20px;
+	 color: #f00;
+	 font-size: 14px;
+}
+.brand-fillter li {
+	float: left;
+	border: 1px solid #f00;
+	margin-right: 10px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+.brand-fillter li * {
+	height: 18px;
+	line-height: 18px;
+	display: inline-block;
+	float: left;
+}
+.brand-fillter span {
+	width: 50px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*********************************************************** E 当前位置 ***********************************************************/
+
+/**
+    *
+    * 分页
+    *
+**/
+.page {
+    float: right;
+    padding: 40px 0 30px 0;
+}
+.page span, .page ul, .page li, .page div, .page input, .page em {
+    float: left;
+    background: #fff;
+}
+.page span, .page em {
+    height: 38px;
+    line-height: 38px;
+}
+.page .prev, .page .next {
+    border: 1px solid #dfdfdf;
+    padding: 0 25px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.page .disable{
+	color: #ccc;
+} 
+.page ul {
+    border: 1px solid #dfdfdf;
+    border-left: none;
+}
+.page li {
+    height: 38px;
+    line-height: 38px;
+    padding: 0 15px;
+    border-left: 1px solid #dfdfdf;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+.page li:hover, .page li.active {
+    background: #f00;
+    color: #fff;
+}
+.page li.num-null {
+	cursor: default;
+}
+.page li.num-null:hover {
+	background: #fff;
+	color: #666;
+}
+.page input[type=button] {
+    border: 0;
+    padding: 0 25px;
+    color: #fff; 
+    cursor: pointer;
+    height: 38px;
+    line-height: 38px;
+    background: #f00;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.page .skip {
+    border: 1px solid #dfdfdf;
+    margin: 0 5px;
+    height: 38px;
+    line-height: 38px;
+}
+.page .skip input {
+    border: 0;
+    width: 18px;
+    height: 18px;
+    padding: 5px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+}
+.page .arrow {
+    border: 1px solid #dfdfdf;
+    padding: 4px 2px;
+    border-radius: 10px;
+    margin: 5px 2px;
+}
+.page .skip i {
+    display: block;
+    width: 7px;
+    height: 4px;
+    cursor: pointer;
+}
+.page .skip .up {
+    background-position: -20px -10px;
+    margin-bottom: 10px;
+}
+.page .skip .down {
+    background-position: -40px -10px;
+}
+/*********************************************************** E 分页 ***********************************************************/
+
+/**
+    *
+    * 登陆窗口
+    *
+**/
+.login-window {}
+.login-window .wy-login, .login-window .qq-login, .login-window .wb-login {
+    display: inline-block;
+    margin-right: 10px;
+    background-image: url(../images/login.png);
+    width: 35px;
+    height: 35px;
+}
+.login-window .wy-login {
+    background-position: -1px 0;
+}
+.login-window .qq-login {
+    background-position: -46px 0;
+}
+.login-window .wb-login {
+    background-position: -91px 0;
+}
+.login-window input {
+    margin-bottom: 12px;
+    width: 250px;
+    height: 18px;
+    padding: 10px;
+}
+.login-window input[type="button"] {
+    width: 270px;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+    background: #f00;
+    color: #fff;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+}
+.login-window .forget-pwd, .login-window .go-register {
+    color: #318dcd;
+}
+.login-window .other-login {
+    color: #333;
+    padding: 30px 0 15px 0;
+}
+/*********************************************************** E 登陆窗口 ***********************************************************/
+
+
+ /**
+    *
+    * @ messagetip 提示信息弹窗
+    *
+    * @ name space message    
+    *
+    * @ messageMask 
+    *
+**/
+.messageMask{
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* background: rgba(0,0,0,.3); */
+    background: #000; 
+    filter: alpha(opacity=30); /*IE*/ 
+    opacity: 0.3; /*FF*/ 
+    display: none;
+}
+
+.messagetip {
+    width: 360px;
+    position: fixed; 
+    background: #fcfdfd;
+    z-index: 11;
+    display: none;
+    border-radius: 3px;
+}
+.messagetip .tiptop {
+    height: 40px;
+    line-height: 40px;
+}
+
+.messagetip .tiptop span{
+    float: right;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background: url(../images/message.png) -25px -202px;
+    margin-right: 11px;
+    margin-top: 11px;
+    cursor: pointer;
+}
+.messagetip .tipinfo {
+    padding: 0px 42px 30px 42px;
+    font-size: 14px;
+    color: #333;
+}
+.messagetip .tipinfo .messageIcon{
+	float: left;
+    width: 29px;
+    height: 29px;
+    margin-top: -7px;
+    margin-right: 14px;  
+}
+.messagetip .tipinfo .messageSuccess{
+	background: url(../images/message.png) -21px -103px;
+}
+.messagetip .tipinfo .messageFail{
+	background: url(../images/message.png) -20px -58px;
+}
+.messagetip .tipinfo .messageInfo{
+    background: url(../images/message.png) -20px -13px;
+}
+.messagetip .tipinfo .messageDel{
+    background: url(../images/message.png) -20px -148px;
+}
+.messagetip .tipbuttom {
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.messagetip .tipbuttom .tipbtn {
+    margin-left: 85px;
+    margin-top: 0px;
+}
+.messagetip .message-btn{
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 14px; 
+    border: 1px solid #cecece;   
+    color: #444;
+    background: #fff;
+    min-width: 80px;
+    text-align: center;
+}
+.messagetip .sure {
+}
+.messagetip .cancel {
+}
+/*********************************************************** E 提示信息弹窗 ***********************************************************/
+
+/**
+	* 暂无产品
+**/
+.null-product {
+	width: 100%;
+	text-align: center;
+	display: block;
+	min-height: 200px;
+	line-height: 200px;
+	font-size: 20px;
+	border: 1px solid #dfdfdf;
+	border-left: 0;
+	border-top: 0;
+}
+.null-product span {
+	color: #f00;
+}
+.null-box {
+	text-align: center;
+	color: #333;
+	font-size: 20px;
+	padding: 50px 0;
+	display: block;
+}
+/*********************************************************** E 暂无产品  ***********************************************************/
+
+/**
+	* 错误页面
+**/
+.err-logo {
+	padding: 20px;
+}
+.err-line {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.err-page {
+	text-align: center;
+	padding: 70px;
+}
+.err-page a {
+	color: #3398cc;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	padding-top: 20px;
+	font-size: 16px;
+}
+/*********************************************************** E 错误页面 ***********************************************************/
+
+/**
+	* 回到顶部
+**/
+.gotop {
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+	cursor: pointer;
+	display: none;
+	background-position: -10px -10px;
+}
+.gotop:hover {
+	background-position: -80px -10px;
+}
+/******************************************************************** E 回到顶部  ********************************************************************/
+
+
+/**
+    *
+    * CSS 精灵
+    *
+**/
+.region-select i, .pull-down dt i  {
+    background-image: url(../images/top-bar.png);
+}
+.top .search i, .top .cart em, .top .cart i, .fixed-top .search i, .fixed-top .main-category .cart em, .fixed-top .main-category .cart i {
+	background-image: url(../images/top.png);
+}
+.gotop {
+	background-image: url(../images/gotop.png);
+}
+.category-side em {
+	background-image: url(../images/category-icon.png); 
+}
+.page .skip i {
+	background-image: url(../images/page.png); 
+}
+/*
+.fixed-side i, .fixed-side em {
+    background-image: url(../images/fixed.png);
+}
+*/
+/*********************************************************** E CSS 精灵 ***********************************************************/

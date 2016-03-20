@@ -1,0 +1,58 @@
+<form id="message-form" method="get" class="form-horizontal m-form-polist">
+  <div class="form-group">
+    <div>
+      <label class="col-sm-3 control-label">标题：</label>
+      <div class="">
+        <div class="col-sm-6">
+          <input data-required="true" type="text" name="title" data-auto-focus="true"  class="form-control" r-model={{message.title}}>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label class="col-sm-3 control-label">通知内容：</label>
+      <div class="">
+        <div class="col-sm-6">
+          <textarea data-required="true" name="content"  class="form-control">{{message.content}}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div>
+      <label class="col-sm-3 control-label">通知链接：</label>
+      <div class="">
+        <div class="col-sm-6">
+          <input data-required="true" type="text" name="link"   class="form-control" r-model={{message.link}}>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">推送时间：</label>
+    <div class="col-sm-4">
+      <datepicker2 select={{message.pushTime}} name="pushTime"></datepicker2>
+    </div>
+  </div>
+  <div  class="form-group">
+    <label class="col-sm-3 control-label">展示站点：</label>
+    <div class="m-sites col-sm-9 f-cb">
+      {{#list provinceList as province}}
+        <div class="col-sm-3">
+          <label class="f-vam"><input {{#if message.areaCode&&(message.areaCode.indexOf(province.id)>-1)}} r-model=true {{/if}} name="areaId" type="checkbox"  id="p-{{province.id}}" value="{{province.id}}"/> {{province.name}}</label>
+        </div>
+      {{/list}}
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">推广平台：</label>
+    <div class=" col-sm-9 f-cb">
+      {{#list os as o}}
+        <div class="col-sm-3">
+          <label class="f-vam"><input {{#if message.platformType&&(message.platformType.indexOf(o.name)>-1)}} r-model=true {{/if}}  name="os" type="checkbox"  value="{{o.name}}" />  {{o.name}}</label>
+        </div>
+      {{/list}}
+    </div>
+  </div>
+</form>

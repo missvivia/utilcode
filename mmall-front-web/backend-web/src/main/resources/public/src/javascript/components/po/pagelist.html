@@ -1,0 +1,60 @@
+<table class="table  table-striped">
+  <thead>
+    <tr>
+      <th>品购页title</th>
+      <th>所属档期</th>
+      <th>PO编号</th>
+      <th>
+        提交时间
+        <span class="glyphicon glyphicon-chevron-{{down?'down':'up'}}"></span>
+      </th>
+      <th>编辑人</th>
+      <th>
+        <select class='form-control form-control-sm' r-model='status'>
+          <option value="0">全部状态</option>
+          {{#list statusList as status}}
+          <option value="{{status.id}}">{{status.name}}</option>
+          {{/list}}
+        </select>
+      </th>
+      <th>备注</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list list as act}}
+      <tr class='animated' r-animation="on: enter; class: fadeIn">
+        <td>{{act.pageTitle}}</td>
+        <td>
+         {{act.startTime|format}}
+         至
+         {{act.endTime|format}} 
+        </td>
+        <td>{{act.id}}</td>
+        <td>{{act.createTimeForLogic|format}}</td>
+        <td>{{act.createUser}}</td>
+        <td>{{act.status|statusMap}}</td>
+        <td>{{#if act.status==4}}{{act.reason}}{{/if}}</td>
+        <td>
+          {{!status: 1-新建  2-审核中  3-审核通过 4-审核未通过 -1失效!}}
+          {{!showFlag:  1-档期结束  2-档期中 3-档期前4天内  4-档期前4填外!}}
+          {{#if act.status ===1||act.status ===4}}
+            {{#if act.showFlag==4}}
+            <a href="/schedule/decorate?id={{act.pageId}}" class='btn btn-dft btn-xs' >编辑</a><a href="#" on-click={{this.submit(act)}} class='btn btn-primary btn-xs'>提交</a>
+            {{/if}}
+            <a href="{{config.MAINSITE}}/schedule/show?pageId={{act.pageId}}" class='btn btn-dft btn-xs' target="_blank">预览</a> 
+          {{#elseif act.status === 2 }}
+            <a href="{{config.MAINSITE}}/schedule/show?pageId={{act.pageId}}" class='btn btn-dft btn-xs' target="_blank">预览</a> 
+          {{#elseif act.status === 3 }}
+            <a href="{{config.MAINSITE}}/schedule/show?pageId={{act.pageId}}" class='btn btn-dft btn-xs' target="_blank">预览</a> 
+          {{#elseif act.status === -1 }}
+            <a href="{{config.MAINSITE}}/schedule/show?pageId={{act.pageId}}" class='btn btn-dft btn-xs' target="_blank">预览</a>
+          {{/if}}
+        </td>
+      </tr>
+    {{/list}}
+  </tbody>
+</table>
+<div class="text-right m-wpager">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

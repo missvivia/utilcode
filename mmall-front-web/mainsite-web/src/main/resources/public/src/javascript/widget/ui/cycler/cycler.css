@@ -1,0 +1,16 @@
+
+.#<uispace> { text-align: center; position: relative; *zoom: 1; overflow: hidden; }
+.#<uispace> .list-box:hover .prev-btn, .#<uispace> .list-box:hover .next-btn { display: block; }
+.#<uispace> .list { height: 390px; margin: 0 -385px; overflow: hidden; }
+.#<uispace> .list .item { -moz-backface-visibility: hidden; -webkit-backface-visibility: hidden; backface-visibility: hidden; -moz-perspective: 1000; -webkit-perspective: 1000; perspective: 1000; position: absolute; left: 0; top: 0; z-index: 0; display: none; }
+.#<uispace> .list .item-exposure { -moz-animation: scaleOUt 3s linear both; -webkit-animation: scaleOUt 3s linear both; animation: scaleOUt 3s linear both; z-index: 1; display: block; }
+.#<uispace> .tab-box { position: absolute;bottom: 40px;left: 50%;margin-left: -40px;}
+.#<uispace> .tab-box ul.tab-list { display: inline-block; vertical-align: middle; *vertical-align: auto; *zoom: 1; *display: inline; color: #000; }
+.#<uispace> .tab-box ul.tab-list li { background: url(/res/images/carticon.png?v=2) 9999px 9999px no-repeat; background-position: -33px -135px; width: 12px; height: 12px; float: left; line-height: 12px;  margin: 0px 5px; cursor: pointer; position: relative; z-index: 10; text-indent: 999px;  }
+.#<uispace> .tab-box ul.tab-list li.selected { background-position: 0 -135px; z-index: 10; color: #feffff; }
+.#<uispace> .tab-box ul.tab-list li.first, .#<uispace> .tab-box ul.tab-list li.last { width: 7px; height: 12px; margin-top: 15px; cursor: default; background-position: -120px 0; }
+.#<uispace> .tab-box ul.tab-list li.last { background-position: -120px -20px; }
+.#<uispace> .prev-btn { background: url(../../../res/images/icon.png) 9999px 9999px no-repeat; width: 42px; height: 81px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; position: absolute; z-index: 10; top: 155px; cursor: pointer; display: none; left: 0; background-position: 0 -60px; -moz-animation: fadeInRight 1s 0.2s ease; -webkit-animation: fadeInRight 1s 0.2s ease; animation: fadeInRight 1s 0.2s ease; }
+.#<uispace> .prev-btn:hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
+.#<uispace> .next-btn { background: url(../../../res/images/icon.png) 9999px 9999px no-repeat; width: 42px; height: 81px; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; position: absolute; z-index: 10; top: 155px; cursor: pointer; display: none; right: 0; background-position: -60px -60px; -moz-animation: fadeInLeft 1s 0.2s ease; -webkit-animation: fadeInLeft 1s 0.2s ease; animation: fadeInLeft 1s 0.2s ease; }
+.#<uispace> .next-btn:hover { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }

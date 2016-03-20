@@ -1,0 +1,65 @@
+<textarea name="txt" id='#<seedTab>'>
+	<div class="layer">
+		<div class="tabs j-flag">
+			<span class="itm first crt j-tab" data-index=0>省份</span><span class="itm  j-tab" data-index=1>城市</span><span class="itm  j-tab" data-index=2>县区</span><span class="itm last  j-tab" data-index=3>街道</span><span class="itm">&nbsp;</span>
+		</div>
+		<div class="cont j-flag"></div>
+	</div>
+</textarea>
+<textarea name="txt" id='#<seedTab1>'>
+	<div class="layer">
+		<div class="tabs f-cb j-flag">
+			<span class="itm first crt j-tab" data-index=0>省份</span><span class="itm  j-tab" data-index=1>城市</span><span class="itm  j-tab" data-index=2>县区</span><span class="itm">&nbsp;</span>
+		</div>
+		<div class="cont j-flag"></div>
+	</div>
+</textarea>
+<textarea name="jst" id='#<seedData>'>
+	{if type==0}
+	<ul class="pro">
+		{list provinceList as item}
+	    <li class="f-cb">
+	      <div class="tit"><span class="s-fc3">${item.key}</span></div>
+	      <div class="itms">
+	        {list item.value as province}<a href="" class="itm j-pro {if data.province&&province.id==data.provinceId}active{/if}" data-id="${province.id}" data-municipality=${province.special?1:0}>${province.name}</a>{/list}
+	      </div>
+	    </li>
+	    {/list}
+	  </ul>
+	{elseif type==1}
+	  <div class="city">
+	  	{if cityList.length!=0}
+		{list cityList as city}
+	    <a href="" class="itm  j-city {if data.city&&city.id==data.cityId}active{/if}" data-id="${city.id}">${city.name}</a>
+	    {/list}
+	    {else}
+	    <div class="btm"><a href="" class="itm">该省没有城市</a></div>
+	    {/if}
+	  </div>
+	{elseif type==2}
+	  <div class="section">
+	  {if sectionList.length!=0}
+		{list sectionList as dictrict}
+	    <a href="" class="itm j-section {if data.section&&dictrict.id==data.sectionId} active {/if}" data-id="${dictrict.id}">${dictrict.name}</a>
+	    {/list}
+	   {else}
+	   <div class="btm"><a href="" class="itm">该市没有区县</a></div>
+	   {/if}
+	  </div>
+	{elseif type==3}
+	  <div class="street">
+	  	{if streetList.length!=0}
+		{list streetList as street}
+	    <a href="" class="itm j-street {if data.street&&street.id==data.streetId}active{/if}" data-id="${street.id}">${street.name}</a>
+	    {/list}
+	    <div class="btm"><a href="javascript:void(0)" class="itm j-street">我不知道</a></div>
+	    {else}
+	    <div class="btm"><a href="javascript:void(0)" class="itm j-street">我不知道</a></div>
+	    {/if}
+	  </div>
+	{elseif type==4}
+	  <div class="street">
+		数据加载中...
+	  </div>
+	{/if}
+</textarea>

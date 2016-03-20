@@ -1,0 +1,12 @@
+{
+	"code": 200,
+	"result": {
+		"total": 100,
+		"list": [{"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":true},
+  				 {"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":false},
+  				 {"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":false},
+  				 {"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":false},
+  				 {"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":false},
+  				 {"id":1234,"userId":123,"province":"浙江省","city":"杭州","section":"江干区","address":"江汉路1785号","zipcode":"310059","consigneeName":"伪品汇","consigneeTel":"13588231066","consigneeMobile":"13588231066","isDefault":false}]
+	}
+}

@@ -1,0 +1,12 @@
+// 工具库
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+@import "../_config";
+@import "../_config";
+@import "../_config";
+@import "../_config";
+
+.m-row{margin-bottom:10px;}
+.m-user .tit{padding:5px 0px;width:100%;font-size:16px;font-weight:bolder;}
+.m-user .tit label{margin:0px 20px 0px 0px;}
+.m-user .table th{background:#ececec;border-bottom-width:1px;}

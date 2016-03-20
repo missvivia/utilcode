@@ -1,0 +1,83 @@
+<div class="m-blst">
+  {{#list list as product}}
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <td class="tt"><label>PO编号：</label><span>{{product.id}}</span></td>
+        <td class="tt"><label>提交时间：</label><span>{{product.createTimeForLogic|format}}</span></td>
+        <td class="tt"><label>档期时间：</label><span>{{product.startTime|format:"yyyy-MM-dd"}}至{{product.endTime|format:"yyyy-MM-dd"}}</span></td>
+        <td class="tt"><label>提交人：</label><span>{{product.poFollowerUserName}}</span></td>
+        <td rowspan="2" class="col-sm-1 tt">
+        	{{!status: 1-待提交  2-审核中  3-审核通过 4-审核未通过!}}
+        	{{!showFlag:  1-档期结束  2-档期中 3-档期前4天内  4-档期前4填外!}}
+          <p class="pd10">状态：{{#if product.status == 1}}待提交{{#elseif product.status == 2}}审核中{{#elseif product.status == 4}}审核未通过 {{#elseif product.status == 3}}审核通过 {{#elseif product.status == -1}}失效{{/if}}</p>
+          {{#if product.banner && product.banner.statusMsg}}
+          <p class="pd10">备注：{{product.banner.statusMsg}}</p>
+           {{/if}}
+           {{#if product.status===1}}
+           	{{#if product.showFlag===4}}
+           	<p class="pd10"><button type="button" class="btn btn-primary btn-sm" on-click={{this.submit(product_index)}}>提交</button></p>
+           	{{/if}}
+           {{#elseif product.status==4}}
+	           {{#if product.showFlag===4}}
+	           	<p class="pd10"><button type="button" class="btn btn-primary btn-sm" on-click={{this.submit(product_index)}}>提交</button></p>
+	           	{{/if}}
+           {{/if}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" class="f-cb">
+          <div class="f-fl f-mr20">
+            <p>上新BANNER</p>
+            <p class="img-box img-box-1">
+              <img src="{{product.banner && product.banner.homeBannerImgUrl}}" width="100%" height="100%"/>
+              <div class="progress" r-hide="!(product.percent) || product.percent == 1">
+                <div class="progress-bar  progress-bar-striped active" role="progressbar" style="width: {{product.percent * 100}}%"></div>
+              </div>
+            </p>
+            <p>
+            {{#if product.status===1}}
+	           	{{#if product.showFlag===4}}
+	           		<label class="btn btn-primary btn-sm" on-upload={{this.handleUpload(product_index,0,$event)}}>本地上传</label>
+	           	{{#else}}
+	           	<label class="btn btn-primary btn-sm disabled">本地上传</label>
+	           	{{/if}}
+           	{{#elseif product.status==4}}
+	           	{{#if product.showFlag===4}}
+	           	<label class="btn btn-primary btn-sm" on-upload={{this.handleUpload(product_index,0,$event)}}>本地上传</label>
+	           	{{#else}}
+	           	<label class="btn btn-primary btn-sm disabled">本地上传</label>
+	           	{{/if}}
+           	{{/if}}上传图片尺寸为1182x380</p>
+            
+          </div>
+          <div class="f-fl">
+            <p>预告BANNER</p>
+            <p class="img-box img-box-2">
+              {{#if product.banner && (product.banner.preBannerImgUrl)}}<img src="{{product.banner && (product.banner.preBannerImgUrl)}}?imageView&thumbnail=165x108" width="100%" height="100%"/>{{/if}}
+              <div class="progress" r-hide="!(product.percent) || product.percent == 1">
+              <div class="progress-bar  progress-bar-striped active" role="progressbar" style="width: {{product.percent * 100}}%"></div>
+            </div>
+            </p>
+            <p>
+			{{#if product.status===1}}
+	           	{{#if product.showFlag===4}}
+	           		<label class="btn btn-primary btn-sm" on-upload={{this.handleUpload(product_index,1,$event)}}>本地上传</label>
+	           	{{#else}}
+	           	<label class="btn btn-primary btn-sm disabled">本地上传</label>
+	           	{{/if}}
+           	{{#elseif product.status==4}}
+	           	{{#if product.showFlag===4}}
+	           	<label class="btn btn-primary btn-sm" on-upload={{this.handleUpload(product_index,1,$event)}}>本地上传</label>
+	           	{{#else}}
+	           	<label class="btn btn-primary btn-sm disabled">本地上传</label>
+	           	{{/if}}
+           	{{/if}} 上传图片尺寸为165x108</p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {{/list}}
+</div>
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

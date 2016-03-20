@@ -1,0 +1,26 @@
+/*尺码列表*/
+.m-szlist{background:#e6f4f9;padding:10px 10px 10px 30px;}
+.m-szlist .btn{padding:1px 10px;}
+.m-szlist .m-btns{margin:6px 5px;}
+.m-szlist .hd_b li{background:#ccc;border:1px solid #bbb;border-right:0px;}
+.m-szlist .hd_b li:last-child{border-right:1px solid #bbb;}
+.m-szlist li{list-style:none;text-align:center;}
+.m-szlist ul{margin-left:-40px;}
+.m-szlist li li{float:left;width:80px;height:36px;line-height:36px;}
+.m-szlist input{width:60px;height:24px;line-height:24px;}
+/*尺码参照图*/
+.m-referpic img{width:100%;height:300px;margin:10px 0;}
+/*table*/
+.m-wtable .u-img{width:40px; height: auto;}
+.m-wtable td{vertical-align:middle;}
+#wtable td{vertical-align:middle;}
+.m-wpager .u-delbtn{float:left;margin:20px 0;}
+/*window公共部分样式*/
+body .m-window{border:5px solid #ccc;border-radius:5px;}
+body .m-window .zcnt{padding:10px;min-width:300px;}
+body .m-window .zbar{padding-left:10px;background:#fff;border-bottom:1px solid #ccc}
+body .m-window .zcls{font-size:20px;font-weight:bold;height:30px;line-height:30px;}
+body .m-window .zcls:hover{color:#666;}
+body .m-window .zttl{height:40px;line-height:40px;}
+body .m-window .m-winform{padding:10px;}
+body .m-window .m-winbot .btns{text-align:center;}

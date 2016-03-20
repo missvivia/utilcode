@@ -1,0 +1,8 @@
+/*container*/
+body{background:#ededed;}
+.g-container{position:relative;}
+
+/*错误提示*/
+.m-error{margin-top:100px;text-align:center;}
+.m-error img{display:block;margin:15px auto;}
+.m-error .msg{margin-top:60px;font-size:20px;}

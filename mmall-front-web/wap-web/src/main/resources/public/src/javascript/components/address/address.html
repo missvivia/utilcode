@@ -1,0 +1,36 @@
+{{#if list.length>0}}
+{{#if list.length<10}}
+<div class="btnbox f-tac"><span href="javascript:void();" class="btn" on-click={{this.addAddress($event)}}>新增地址</span></div>
+{{/if}}
+<ul class="m-address">
+	{{#list list as item}}
+    		<li class="f-cb" on-click={{this.onselect(item)}}>
+    			<div class="info">
+    				<div class="uname s-fc1">
+    					<span class="">{{item.consigneeName}}</span>{{#if item.isDefault}}<span class="default">[默认]</span>{{/if}}
+    				<div class="s-fc1">
+    					  <span class="mobile">{{item.consigneeMobile}}</span>{{item.consigneeTel}}</div>
+    				</div>
+    				<div class="s-fc3">{{item.province}}{{#if !this.isZhixiashi(item.province)}}{{item.city}}{{/if}}{{#if item.sectionId>0}}{{item.section}}{{/if}}{{item.street}} {{item.address}}</div>
+    			</div>
+    			<div  class="act f-cb">
+    				<ul class="f-fr">
+    					<li class="f-fr"  on-click={{this.removeItem($event,item,item_index)}}><i class="u-remove"></i>删除</li>
+    					<li class="f-fr"><span href="javascript:void();" on-click={{this.editAddress($event,item)}}><i class="u-change"></i>修改</span></li>
+    				</ul>
+    			</div>
+    			{{#if item.id==id}}<i class="u-current">当前选中</i>{{/if}}
+    		</li>
+    {{/list}}
+</ul>
+{{#elseif loading}}
+<div class="m-lstloading f-tac"><img src="/res/3g/images/loading-2.gif" class="f-vam"><span class="lbl">数据加载中</span></div>
+{{#else}}
+	<div class="m-empty">
+	<div class="f-tac">
+		<i class="u-addressempty"></i>
+		<div class="lbl">地址为空</div>
+	</div>
+	<div class="btnbox f-tac"><span on-click={{this.addAddress($event)}} class="btn">新增地址</span></div>
+	</div>
+{{/if}}

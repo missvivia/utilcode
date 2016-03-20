@@ -1,0 +1,40 @@
+<meta charset="utf-8"/>
+<textarea name="txt" id="builder-module-product">
+    <div class="m-bd-lst m-bd-pxd">
+      <form class="m-bd-sch">
+        <div class="form-group f-cb">
+          <div class="col1 col-md-5">
+            <select class="form-control" name="categoryId">
+              <option value="">全部</option>
+            </select>
+          </div>
+          <div class="col2 col-md-7">
+            <div class="input-group">
+              <input type="text" class="form-control" name="productName">
+              <span class="input-group-btn">
+                <button class="sch btn btn-default" type="button" name="btn-submit">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="m-bd-scroll">
+        <div class="sbar j-sbar">&nbsp;</div>
+        <div class="sbdy lbox f-cb j-mbox j-sbody"></div>
+      </div>
+      <div class="pbox j-mbox"></div>
+    </div>
+</textarea>
+<textarea name="jst" id="builder-module-product-list">
+  {list beg..end as y}
+    {var x=xlist[y]}
+    <div class="item col-md-4 {if !!cache[x.id]} j-disabled{/if}" title="${x.productName}" data-res-type="2" data-res-id="${x.id}" id="side-prd-${x.id}">
+      {var url = x.thumb||'/res/builder/thumb.png'}
+      <div class="img-thumbnail"><img src="${url}${url.indexOf('?')<0?'?':'&'}imageView&thumbnail=80x100" /></div>
+      <p class="f-toe">${x.productName}</p>
+    </div>
+  {/list}
+</textarea>
+<!-- @TEMPLATE -->
+<textarea name="js" data-src="./module.js"></textarea>
+<!-- /@TEMPLATE -->

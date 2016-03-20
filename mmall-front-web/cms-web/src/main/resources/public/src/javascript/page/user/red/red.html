@@ -1,0 +1,34 @@
+<div class="m-user">
+  <div class="tit">红包</div>
+  <div class="tbbox">
+      <ul class="nav nav-tabs" role="tablist">
+          <li class={{currentState ==0 ? 'active': ''}} on-click={{this.setCurrentState(0)}}><a href="javascript:void(0);">可用</a></li>
+          <li class={{currentState ==8 ? 'active': ''}} on-click={{this.setCurrentState(8)}}><a href="javascript:void(0);">未生效</a></li>
+          <li class={{currentState ==3 ? 'active': ''}} on-click={{this.setCurrentState(3)}}><a href="javascript:void(0);">已使用</a></li>
+          <li class={{currentState ==2 ? 'active': ''}} on-click={{this.setCurrentState(2)}}><a href="javascript:void(0);">已过期</a></li>
+          <li class={{currentState ==5 ? 'active': ''}} on-click={{this.setCurrentState(5)}}><a href="javascript:void(0);">已失效</a></li>
+      </ul>
+      <div>
+          <table class="table table-hover">
+             <thead>
+                 <tr>
+                   <th>金额</th>
+                   <th>有效期</th>
+                   <th>名称</th>
+                   <th>备注</th>
+                 </tr>
+             </thead>
+             <tbody>
+             {{#list list as item}}
+                 <tr>
+                   <td><span class="cash">&yen;{{item.remainCash}}</span>（初始：&yen;{{item.cash}}）</td>
+                   <td>{{item.validStartTime|format}} - {{item.validEndTime|format}}</td>
+                   <td>{{item.name}}</td>
+                   <td>{{#if !!item.dtos && item.dtos.length>0}}<div class="f-fl">使用订单：</div>{{#list item.dtos as o}}<div class="f-fl"><a target="_blank" href="/order/orderdetail?type=0&key={{o.orderId}}">{{o.orderId}}</a></div>{{/list}}{{/if}}</td>
+                 </tr>
+              {{/list}}
+             </tbody>
+           </table>
+      </div>
+  </div>
+</div>

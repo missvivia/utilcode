@@ -1,0 +1,9 @@
+.#<uispace>{}
+.#<uispace> table{table-layout: fixed;}
+.#<uispace> th{text-align:center;border:1px solid #ccc;}
+.#<uispace> td{height:100px;border:1px solid #ccc;}
+.#<uispace> .dis{color:#ccc;}
+.#<uispace> .lbl{float:left;}
+.#<uispace> .polist{margin-left:20px;position:relative}
+.#<uispace> .polist .itm{border:1px solid #ccc;margin:5px 0;text-indent:5px;max-height:66px;line-height:22px;overflow:hidden;}
+.#<uispace> .polist .def{border:1px solid #ccc;background:blue;height:3px;position:absolute}

@@ -1,0 +1,98 @@
+{{#if isLogin}}
+<div class="m-ab-box" r-hide={{closeFlag}}>
+	<section class="m-cd-box">
+	<a class="f-db u-bubble-close" href="javascript:void(0)" on-click={{this.onCloseIcon()}}></a>
+	<div class="u-tip-box">
+	{{#if currentEndTime}}
+		<div calss="u-tip u-tip-1">此轮mmall消失仅剩</div>
+	{{#elseif nextStartTime}}
+		<div calss="u-tip u-tip-1">距下波mmall来袭还有</div>
+	{{/if}}
+	<div class="u-tip u-tip-2"></div>
+	</div>
+	<div class="f-p1">
+		<div class="f-p2">
+			<h2>已戳mmall</h2>
+			<h2 class="s-s2">{{bubbleNum}}个</h2>
+		</div>
+	</div>
+	<a class="u-rule" href="/activity/rule" target="_blank">查看规则 &gt;</a>
+	<div class="m-w1">
+		<div class="m-tx-box">
+			<div class="m-tx-box-1">
+				<h2 class="s-s1">下单即抽奖</h2>
+				<h2>你还有<span class="s-s3">{{lotteryNum}}</span>次</h2>
+				<h2>抽奖机会</h2>
+			</div>
+			
+		</div>
+		<a  href="javascript:void(0)" r-hide={{!this.data.lotteryNum}} class="f-fw1" on-click={{this.onLottery()}}>点击抽奖 &gt;</a>
+		
+	</div>
+	</section>
+	<section class="m-users-box">
+		<header class="title">新宠会中奖名单</header>
+		<div class="m-users-list">
+			<ul class="m-users-ul">
+			{{#list lotteryRecords as item}}
+				<li>
+					<div class="m-user-box">
+						<div>{{item.userName}}</div>
+						<div>{{item.name}}</div>
+					</div>
+				</li>
+			{{/list}}
+			</ul>
+		</div>
+		
+	</section>
+</div>
+{{#else}}
+<div class="m-ab-box" r-hide={{closeFlag}}>
+	<section class="m-cd-box">
+	<a class="f-db u-bubble-close" href="javascript:void(0)" on-click={{this.onCloseIcon()}}></a>
+		<div class="u-tip-box">
+		{{#if currentEndTime}}
+		<div calss="u-tip u-tip-1">此轮mmall消失仅剩</div>
+	{{#elseif nextStartTime}}
+		<div calss="u-tip u-tip-1">距下波mmall来袭还有</div>
+	{{/if}}
+	<div class="u-tip u-tip-2"></div>
+		</div>
+		<div class="f-p1">
+			<div class="f-p2">
+				<h2>找mmall</h2>
+				<h2>有惊喜哦</h2>
+			</div>
+		</div>
+		<a class="u-rule" href="/activity/rule" target="_blank">查看规则 &gt;</a>
+		<div class="m-w1">
+			<div class="m-tx-box">
+				<div class="m-tx-box-1">
+					<h2 class="s-s1">下单即抽奖</h2>
+					<h2>登陆后显示</h2>
+					<h2>抽奖机会</h2>
+				</div>
+				
+			</div>
+			<a class="f-fw1" href="javascript:void(0)" on-click={{this.onLogin()}}>立即登录 &gt;</a>
+		</div>
+	</section>
+	<section class="m-users-box">
+		<header class="title">新宠会中奖名单</header>
+		<div class="m-users-list">
+			<ul class="m-users-ul">
+			{{#list lotteryRecords as item}}
+				<li>
+					<div class="m-user-box">
+						<div>{{item.userName}}</div>
+						<div>{{item.name}}</div>
+					</div>
+				</li>
+			{{/list}}
+			</ul>
+		</div>
+		
+	</section>
+</div>
+{{/if}}

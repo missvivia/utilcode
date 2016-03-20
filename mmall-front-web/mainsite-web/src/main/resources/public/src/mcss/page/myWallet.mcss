@@ -1,0 +1,23 @@
+@abstract '../_config.mcss';
+.m-box{
+	position:relative;margin:0 0 20px;background:#fff;
+	.hd{
+		padding:0 39px;border-bottom:1px solid #eaeaea;line-height:40px;@extend clearfix;
+		h3{float:left;font-size:14px;font-weight:bold;}
+		a,a:hover{float:right;font-size:12px;color:#666;}
+	}
+	.bd{
+		position:relative;zoom:1;padding:20px 20px 26px;
+		
+		/* for the future */
+		.empt{
+			color:$fc2;line-height:106px;text-align:center;
+			a,a:hover{color:$fc10;text-decoration:underline;}
+		}
+	}
+}
+
+.m-info{
+	padding:17px 39px;color:#666;font-size:14px;line-height:26px;vertical-align:bottom;
+	.w-btn{margin:0 0 0 23px;}
+}

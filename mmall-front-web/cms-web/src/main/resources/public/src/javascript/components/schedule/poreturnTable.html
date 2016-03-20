@@ -1,0 +1,30 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <tr>
+      <th>PO编号</th>
+      <th>商家账号</th>
+      <th>品牌名称</th>
+      <th>公司名称</th>
+      <th>所在仓库</th>
+      <th>档期时间</th>
+      <th>操作</th>
+    </tr>
+    <tbody>
+    {{#list list as tpl}}
+    <tr>
+      <td>{{tpl.scheduleId}}</td>
+      <td>{{tpl.supplierAcct}}</td>
+      <td>{{tpl.brandName}}</td>
+      <td>{{tpl.companyName}}</td>
+      <td>{{tpl.warehouseNames}}</td>
+      <td>{{tpl.startTime|format}}-{{tpl.endTime|format}}</td>
+      <td>{{#if !!tpl.ableCreate }}<a on-click="{{this.createReturnedNote(tpl_index)}}" href="javascript:void(0)">生成退货单</a>{{/if}}</td>
+    </tr>
+    {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

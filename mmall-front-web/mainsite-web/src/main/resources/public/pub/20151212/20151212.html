@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>年终感恩回馈-进货返你过节费</title>
+<!-- @IGNORE -->
+<!-- /@IGNORE -->
+<link rel="stylesheet" href="http://023.baiwandian.cn/src/css/base.css?20151126"/>
+
+<style type="text/css">
+.city-change{display:none}.city-change .opacity{width:100%;height:100%;position:fixed;left:0;top:0;background:#000;filter:alpha(opacity=30);opacity:.3;z-index:2}.city-change .content{width:660px;background:#fff;position:fixed;z-index:3;font-size:14px}.city-change .tit{height:45px;line-height:45px}.city-change .tit dd{width:330px;float:left;text-align:center;background:#f0f0f0;font-weight:bold;cursor:pointer}.city-change .tit dd span{font-size:16px}.city-change .tit .close{position:absolute;z-index:10;right:-15px;top:-15px;width:32px;height:32px;background-position:-50px -10px}.city-change .tit .uparrow{position:absolute;z-index:10;width:17px;height:8px;top:38px;right:157px;background-position:-30px -10px}.city-change .tit .arr1{top:38px;right:489px}.city-change .tit .arr2{top:38px;right:157px;display:none}.city-change .tit .active{background:#df4942;color:#fff}.city-change span{cursor:pointer}.city-change .con span:hover{background:#df4942;color:#fff}.city-change .current-area{margin:40px 30px;height:140px}.city-change .current-area p{font-weight:bold;font-size:16px;margin-bottom:15px;margin-left:10px}.city-change .current-area span{display:inline-block;padding:5px 10px}.city-change .selected{color:#df4942;font-weight:bold}.city-change .other-city{margin:20px 20px;display:none}.city-change .other-city .tab{float:left;border-bottom:2px solid #e9e9e9;margin-bottom:15px;cursor:pointer}.city-change .other-city .tab dd{float:left;padding:5px 15px}.city-change .other-city .tab dd.active{border-bottom:2px solid #df4942}.city-change .other-city .hot{clear:left;margin-left:10px;margin-right:10px}.city-change .other-city .hot span{display:inline-block;padding:3px 15px;margin:0 17px}.city-change .other-city .common{clear:left;text-align:center;font-size:16px;color:#333;padding:50px 0}.city-change .other-city .common .dist p{float:left;color:red;font-weight:bold}.city-change .other-city .common .dist .cities{margin-bottom:20px;margin-left:30px}.city-change .other-city .common .dist span{display:inline-block;padding:3px 10px;margin:0 10px}.city-change .area-float{position:fixed;width:580px;background:#f5f5f5;padding:10px 40px;display:none}.city-change .area-float span{display:inline-block;padding:3px 20px}.city-change .uparrow2{position:fixed;width:16px;height:9px;background-position:-10px -10px;display:none}
+
+
+.clearfix:after{content:" ";display:block;height:0;clear:both;}
+.clearfix{*zoom:1;}
+
+.bwd-wrap a, .bwd-wrap a:hover {
+	text-decoration: none;
+}
+.bwd-wrap img {
+	border: none;
+	vertical-align: top;
+}
+
+.bwd-wrap {
+	width: 100%;
+	max-width: 1920px;
+	min-width: 1190px;
+	margin: 0 auto;
+	background: url(images/00_01.jpg) center top repeat-y;
+}
+.bwd-wrapBg {
+	background: url(images/00_02.jpg) center top no-repeat;
+}
+
+.bwd-headBanner {
+	width: 1190px;
+	margin: 0 auto;
+}
+
+
+/*商品模块*/
+.bwd-listCont {
+	background: url(images/00_05.jpg) center top no-repeat;
+}
+.bwd-module {
+	width: 1190px;
+	margin: 0 auto;
+	padding-top: 50px;
+	overflow: hidden;
+}
+/*title*/
+.bwd-h3 {
+	position: relative;
+	height: 69px;
+	background-color: #e71f18;
+	font-size: 34px;
+	color: #fff;
+	line-height: 69px;
+	text-align: center;
+}
+.bwd-more {
+	font-weight: normal;
+	position: absolute;
+	right: 30px;
+	top: 0;
+	padding: 0 20px;
+	font-size: 20px;
+	color: #e0e0e0;
+	text-decoration: none;
+	z-index: 3;
+}
+.bwd-h3 i {
+	display: block;
+	position: absolute;
+	left: 36px;
+	bottom: 0;
+	width: 112px;
+	height: 75px;
+	background-image: url(images/00_06.png);
+}
+.bwd-i1 {
+	background-position: 0 0;
+}
+
+.bwd-i2 {
+	background-position: 0 -95px;
+}
+
+.bwd-i3 {
+	background-position: 0 -190px;
+}
+
+
+.ls-items {
+	width: 1220px;
+}
+.ls-item {
+	position: relative;
+	float: left;
+	width: 320px;
+	height: 450px;
+	margin-top: 12px;
+	margin-right: 12px;
+	padding: 0 33px;
+	background-color: #fff;
+	border: 1px solid #adacac;
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+}
+.ls-item:hover{
+	border-color: red;
+	box-shadow: rgba(0,0,0,0.6) 0 0 8px;
+	transform: translateY(-3px);
+	-webkit-transform: translateY(-3px);
+	z-index: 5;
+}
+.ls-name {
+	padding: 10px 30px 30px;
+}
+.ls-name b, .ls-name span {
+	display: block;
+	font-size: 18px;
+	color: #514f4e;
+}
+.ls-name b {
+	font-size: 18px;
+	color: #d31e16;
+	line-height: 28px;
+}
+.ls-name em {
+	font-weight: bold;
+}
+
+/*item*/
+.bwd-items {
+	width: 1210px;
+}
+.bwd-item {
+	position: relative;
+	float: left;
+	width: 288px;
+	margin-top: 12px;
+	margin-right: 12px;
+	background-color: #fff;
+	/*border: 1px solid #fff;*/
+	overflow: hidden;
+
+	transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+}
+.bwd-item:hover{
+	box-shadow: rgba(0,0,0,0.6) 0 0 8px;
+	transform: translateY(-3px);
+	-webkit-transform: translateY(-3px);
+	z-index: 5;
+}
+.bwd-items-3 .bwd-item {
+	width: 387px;
+}
+.bwd-item img {
+	width: 288px;
+	height: 393px;
+}
+.item-name {
+	height: 86px;
+	padding-top: 6px;
+	background-color: #f25d27;
+	font-size: 16px;
+	color: #FAFAFA;
+	line-height: 24px;
+	text-align: center;
+}
+.item-name b, .item-name span {
+	display: block;
+}
+.item-name b {
+	font-size: 28px;
+	color: #fff;
+	line-height: 50px;
+}
+.bwd-items-3 img {
+	width: 387px;
+	height: 393px;
+}
+.bwd-items-3 .item-name {
+	height: 110px;
+}
+
+/*Banner*/
+.bwd-itemBannerModule {
+	width: 1190px;
+	margin: 50px auto 0;
+}
+.bwd-itemBanner {
+	float: left;
+	width: 595px;
+	height: 198px;
+	overflow: hidden;
+}
+/*活动介绍*/
+.bwd-rCont {
+	position: relative;
+	width: 900px;
+	height: 210px;
+	margin: 36px auto 0;
+	padding-top: 30px;
+	padding-left: 280px;
+	z-index: 2;
+}
+.bwd-rCont p {
+	font-size: 30px;
+	color: #262424;
+	line-height: 56px;
+}
+.bwd-rCont b {
+	color: #E52D4A;
+}
+.bwd-rMask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1180px;
+	height: 240px;
+	background-color: #FFF;
+	opacity: .5;
+	filter: alpha(opacity=50);
+	z-index: -1;
+}
+.bwd-rTitle {
+	position: absolute;
+	left: 172px;
+	top: 40px;
+	font-size: 36px;
+	color: #D51C2F;
+	line-height: 40px;
+}
+/*活动详情*/
+.bwd-rules {
+	width: 100%;
+	min-width: 1190px;
+	margin-top: 100px;
+	padding-top: 200px;
+	background: #ff592e url(images/00_08.jpg) center top repeat-x;
+}
+.bwd-ruleBox {
+	width: 1190px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+	font-size: 18px;
+	color: #fff;
+	font-family: 'Microsoft Yahei';
+	line-height: 40px;
+}
+
+.bwd-ruleBox dd {
+	padding-left: 66px;
+}
+.bwd-ruleBox em {
+	display: inline-block;
+	width: 30px;
+	margin-left: -30px;
+}
+.bwd-ruleBox i {
+	display: inline-block;
+	width: 30px;
+}
+.bwd-h3s {
+	background-color: transparent;
+	text-align: left;
+}
+.bwd-yellow {
+	color: #faf069;
+}
+.bwd-pl24 {
+	padding-left: 24px;
+}
+
+
+.wireless {
+	display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 100px;
+    margin-left: 595px;
+}
+.wireless a {
+	display: block;
+	position: absolute;
+	width: 143px;
+	height: 150px;
+	background-color: #fff;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- Header Start  -->
+<div class="fixed-top"><div class="wrap"><div class="main-category wrap main-category-top"><div class="category-wrap"><div class="category-item"><dl><dt>全部分类<i></i></dt></dl></div><div class="category-side"><ul></ul></div><div class="category-nav"><ul></ul></div></div><div class="l search"><i></i><input type="text" placeholder="请输入关键词" class="sear-input" /><input type="button" value="搜索" class="sub-input" /></div><div class="cart r"><a href="/cartlist/"><em></em><span>进货单</span><i><b class="js-cart-num">0</b></i></a></div></div></div></div><div class="clearfix top-bar"><div class="wrap"><div class="l region-select"><span>送货至</span><em></em><i></i></div><div class="r top-bar-menu"><ul><li class="no-login"><a href="/login">请登录！</a></li><li class="is-login"><a href="/profile/basicinfo" class="username"></a></li><li class="pull-down"><dl><dt><a style="cursor: default; color: #888; text-decoration: none;">我的百万店</a><i></i></dt><dd class="myOrder"><a href="/myorder">我的订单</a></dd><dd class="ticket"><a href="/cartlist/">我的进货单</a></dd><dd class="coupon"><a href="/coupon/">我的优惠券</a></dd><dd class="focus"><a href="/profile/focus">我的收藏</a></dd><dd class="loginout"><a>退出登录</a></dd></dl></li><li><span>｜</span></li><li><em>客服热线：0571-87651759</em></li></ul></div></div></div><div class="wrap clearfix top rel"><h1 class="l logo"><a href="/" title="百万店"><img src="/src/images/logo.png" alt="百万店" /></a></h1><div class="l"><div class="search"><i></i><input type="text" placeholder="热门搜索" class="sear-input" /><button id="search" class="sub-input">搜 索</button></div></div><div class="cart abs"><a href="/cartlist/"><em></em><span>进货单</span><i><b class="js-cart-num">0</b></i></a></div><div class="num-tip">+1</div></div><div class="main-category-box"><div class="main-category wrap"><div class="category-wrap"><div class="category-item"><dl class="active"><dt>全部分类<i></i></dt></dl></div><div class="category-side"><ul></ul></div><div class="category-nav"><ul></ul></div></div></div></div>
+<!-- Header End -->
+
+
+<!-- @Content -->
+<!-- @Content -->
+
+<div class="bwd-wrap">
+	<div class="bwd-wrapBg">
+		<!-- bannner -->
+		<div class="bwd-headBanner">
+			<img src="images/00_03.jpg" width="1190" height="300" alt="年终感恩回馈进货返你过节费 优惠叠加享受！！！">
+			<img src="images/00_04.jpg" width="1190" height="300" alt="023.baiwandian.cn 2015.12.11~2016.01.11">
+		</div>
+
+		<!-- 商品模块 -->
+		<div class="bwd-listCont">
+
+			<!-- 瑞悅酒水 -->
+			<div class="bwd-module">
+				<h3 class="bwd-h3">
+					<i class="bwd-i1"></i>
+					临期商品清仓区
+				</h3>
+				<ul class="ls-items clearfix">
+					<li class="ls-item">
+						<a href="http://023.baiwandian.cn/product/detail?skuId=1017555" target="_blank">
+							<img src="images/s.gif" data-original="images/img_11_01.jpg" width="320" height="280" alt="饮料" />
+							<p class="ls-name">
+								<b>纸盒劲凉红茶250ml*24</b>
+								<span><em>价格：</em>20元/件</span>
+								<span><em>库存：</em>50件</span>
+								<span><em>生产日期：</em>2015/04/15</span>
+								<span><em>保质期：</em>12个月</span>
+							</p>
+						</a>
+					</li>
+					<li class="ls-item">
+						<a href="http://023.baiwandian.cn/product/detail?skuId=1017554" target="_blank">
+							<img src="images/s.gif" data-original="images/img_11_02.jpg" width="320" height="280" alt="盒装康师傅冰糖雪梨250ml*24" />
+							<p class="ls-name">
+								<b>盒装康师傅冰糖雪梨250ml*24</b>
+								<span><em>价格：</em>20元/件</span>
+								<span><em>库存：</em>50件</span>
+								<span><em>生产日期：</em>2015/04/15</span>
+								<span><em>保质期：</em>12个月</span>
+							</p>
+						</a>
+					</li>
+					<li class="ls-item">
+						<a href="http://023.baiwandian.cn/product/detail?skuId=1017545" target="_blank">
+							<img src="images/s.gif" data-original="images/img_11_03.jpg" width="320" height="280" alt="纸盒康师傅冰红茶250ml*24" />
+							<p class="ls-name">
+								<b>纸盒康师傅冰红茶250ml*24</b>
+								<span><em>价格：</em>20元/件</span>
+								<span><em>库存：</em>50件</span>
+								<span><em>生产日期：</em>2015/04/15</span>
+								<span><em>保质期：</em>12个月</span>
+							</p>
+						</a>
+					</li>
+
+					<li class="ls-item">
+						<a href="http://023.baiwandian.cn/product/detail?skuId=1017516" target="_blank">
+							<img src="images/s.gif" data-original="images/img_11_04.jpg" width="320" height="280" alt="瓶装王老吉500ml*15" />
+							<p class="ls-name">
+								<b>瓶装王老吉500ml*15</b>
+								<span><em>价格：</em>36元/件</span>
+								<span><em>库存：</em>100件</span>
+								<span><em>生产日期：</em>2015/06/18</span>
+								<span><em>保质期：</em>12个月</span>
+							</p>
+						</a>
+					</li>
+					<li class="ls-item">
+						<a href="http://023.baiwandian.cn/product/detail?skuId=1020526" target="_blank">
+							<img src="images/s.gif" data-original="images/img_11_05.jpg" width="320" height="280" alt="娃哈哈c柠檬碳酸饮料1*24" />
+							<p class="ls-name">
+								<b>娃哈哈c柠檬碳酸饮料1*24</b>
+								<span><em>价格：</em>28元/件</span>
+								<span><em>库存：</em>50件</span>
+								<span><em>生产日期：</em>2015/05/13</span>
+								<span><em>保质期：</em>12个月</span>
+							</p>
+						</a>
+					</li>
+					<li class="ls-item">
+						<a href="http://023.baiwandian.cn/product/detail?skuId=1019428" target="_blank">
+							<img src="images/s.gif" data-original="images/img_11_06.jpg" width="320" height="280" alt="来一桶酸菜（铁路版）*12" />
+							<p class="ls-name">
+								<b>来一桶酸菜（铁路版）*12</b>
+								<span><em>价格：</em>34元/件</span>
+								<span><em>库存：</em>100件</span>
+								<span><em>生产日期：</em>2015/09/22</span>
+								<span><em>保质期：</em>6个月</span>
+							</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="bwd-itemBannerModule">
+				<ul class="bwd-itemBanners-inner">
+					<li class="bwd-itemBanner">
+						<a href="http://023.baiwandian.cn/store/1001004/" target="_blank">
+							<img src="images/s.gif" data-original="images/banner_1.jpg" width="595" height="198" alt="蓝月亮banner">
+						</a>
+					</li>
+					<li class="bwd-itemBanner">
+						<a href="http://023.baiwandian.cn/store/1001003/" target="_blank">
+							<img src="images/s.gif" data-original="images/banner_2.jpg" width="595" height="198" alt="安昌饮品Banner">
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 飞恒洗化 -->
+			<div class="bwd-module">
+				<h3 class="bwd-h3">
+					<i class="bwd-i2"></i>
+					供应商专区
+				</h3>
+				<ul class="bwd-items bwd-items-3 clearfix">
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1000033/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_12_01.jpg" alt="瑞悦酒水" />
+							<p class="item-name">
+								<b>瑞悦酒水</b>
+								<span>回兴/双凤桥/两路/双龙湖/<br/>宝圣湖/龙塔/鸳鸯/翠云/天宫殿街道</span>
+							</p>
+						</a>
+					</li>
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1000034/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_12_02.jpg" alt="星作副食" />
+							<p class="item-name">
+								<b>星作副食</b>
+								<span>回兴/双凤桥/两路/双龙湖/<br/>宝圣湖/龙塔/鸳鸯/翠云/天宫殿街道</span>
+							</p>
+						</a>
+					</li>
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1001005/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_12_03.jpg" alt="问天副食" />
+							<p class="item-name">
+								<b>小夏副食</b>
+								<span>龙山/龙溪/人和/大竹林/礼嘉/康美街道</span>
+							</p>
+						</a>
+					</li>
+				</ul>
+				<ul class="bwd-items clearfix">
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1001003/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_22_01.jpg" alt="安昌饮料" />
+							<p class="item-name">
+								<b>安昌饮料</b>
+								<span>全渝北区</span>
+							</p>
+						</a>
+					</li>
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1001001/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_22_02.jpg" alt="憨豆酒水" />
+							<p class="item-name">
+								<b>憨豆酒水</b>
+								<span>龙溪/龙山街道</span>
+							</p>
+						</a>
+					</li>
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1001002/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_22_03.jpg" alt="全财酒水" />
+							<p class="item-name">
+								<b>全财酒水</b>
+								<span>人和/大竹林/礼嘉/康美街道</span>
+							</p>
+						</a>
+					</li>
+					<li class="bwd-item">
+						<a href="http://023.baiwandian.cn/store/1000035/" target="_blank">
+							<img src="images/s.gif" data-original="images/img_22_04.jpg" alt="飞恒洗化" />
+							<p class="item-name">
+								<b>飞恒洗化</b>
+								<span>全渝北区</span>
+							</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 星作副食 -->
+			<div class="bwd-module">
+				<h3 class="bwd-h3">
+					<i class="bwd-i3"></i>
+					送您“过节费”
+				</h3>
+				<div class="bwd-rCont">
+					<div class="bwd-rMask"></div>
+					<h5 class="bwd-rTitle">活<br/>动<br/>期<br/>间</h5>
+					<p>累积采购满5天，满8000元，返<b>200</b>元“过节费”</p>
+					<p>累积采购满5天，满15000元，返<b>500</b>元“过节费”</p>
+					<p>累积采购满5天，满30000元，返<b>1200</b>元“过节费”</p>
+				</div>
+			</div>
+			
+		</div>
+
+		<!-- 活动详情 -->
+		<div class="bwd-rules" id="r">
+			<div class="bwd-ruleBox">
+				<h3 class="bwd-h3 bwd-h3s">活动详情</h3>
+				<p>
+					<span class="bwd-yellow">活动时间：</span>2015年12月11日10：00：00~2016年1月11日10：00：00
+				</p>
+				<p class="bwd-yellow" style="text-indent: -14px;">
+					“过节费”红包发放规则：
+				</p>
+
+				<dl>
+					<dd>
+						<em>1.</em>
+						活动期间内：
+						<br/>用户累积采购天数满5天，累积实付金额满8000元，返200元无门槛红包；
+						<br/>
+						用户累积采购天数满5天，累积实付金额满15000元，返500元无门槛红包；
+						<br/>
+						用户累积采购天数满5天，累积实付金额满30000元，返1200元无门槛红包。
+						<br/>
+					</dd>
+					<dd>
+						<em>2.</em>
+						红包发放时间：
+						<br/>活动结束后三个工作日内，将会把对应面值的红包发放到用户账户，用户可进入“我的百万店——我的优惠券”中查看
+						<br/>
+						已发放的红包，红包在相应有效期内可以使用。<br/>
+					</dd>
+					<dd>
+						<em>3.</em>
+						红包有效期：自发放之日起30天内有效，过期自动作废。
+						<br/>
+					</dd>
+					<dd>
+						<em>4.</em>
+						注意事项：
+						
+						<br/>
+						<i>a.</i>活动期间内，同一个用户ID、用户姓名限享有一次获得“过节费”红包的机会。
+						
+						<br/>
+						<i>b.</i>每个订单可以使用一张红包，用户可以自主选择使用不同面值红包，系统默认优先使用面值最高红包进行抵扣，一个
+						<br/><span class="bwd-pl24">&nbsp;</span>
+						订单不可以叠加使用多个红包。
+
+            			<br/>
+			            <i>c.</i>任何面值红包不得提现，不得转借他人，不得为他人付款。
+			      		
+			      		<br/>
+			      		<i>d.</i>本次活动后发放的“过节费”大额红包，若在使用过程中，发生取消订单或退货的情况，红包将作废并且不再补发。
+			      		
+			      		<br/>
+			      		<i>e.</i>在获取和使用“过节费”红包过程中，如果用户出现违规行为（如作弊领取、恶意套现、恶意囤货，扰乱市场价格体系
+			      		<br/><span class="bwd-pl24">&nbsp;</span>
+			      		等 ），百万店将取消违规用户的红包资格，并有权撤销违规交易，并收回全部红包（含已使用的及未使用的）,必要时
+			      		<br/><span class="bwd-pl24">&nbsp;</span>
+			      		追究法律责任。
+       					
+       					<br/>
+       					<i>f.</i>最终解释权归百万店所有。
+					</dd>
+				</dl>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="wireless" id="J_wireless">
+		<a href="#r" target="_self">活动详情</a>
+		<img src="images/wireless.png" width="143" height="360" alt="百万店" />
+	</div>
+
+</div>
+
+<!-- @Content -->
+<!-- @Content -->
+
+
+<!-- Footer Start -->
+<div class="footer-wrap"><div class="wrap clearfix footer"><dl><dt>购物指南</dt><dd><a href="/src/html/helpcenter/article/a-1.htm">购物流程</a></dd><dd><a href="/src/html/helpcenter/article/a-2.htm">满送活动</a></dd><dd><a href="/src/html/helpcenter/article/a-3.htm">订单查询</a></dd><dd><a href="/src/html/helpcenter/article/a-4.htm">我的进货单</a></dd></dl><dl><dt>支付帮助</dt><dd><a href="/src/html/helpcenter/article/b-1.htm">在线支付</a></dd><dd><a href="/src/html/helpcenter/article/b-2.htm">货到付款</a></dd><dd><a href="/src/html/helpcenter/article/b-3.htm">优惠券使用</a></dd></dl><dl><dt>配送服务</dt><dd><a href="/src/html/helpcenter/article/c-1.htm">配送方式</a></dd><dd><a href="/src/html/helpcenter/article/c-2.htm">配送范围</a></dd><dd><a href="/src/html/helpcenter/article/c-3.htm">配送费用</a></dd><dd><a href="/src/html/helpcenter/article/c-4.htm">验货与签收</a></dd></dl><dl><dt>售后服务</dt><dd><a href="/src/html/helpcenter/article/d-1.htm">退货流程</a></dd><dd><a href="/src/html/helpcenter/article/d-2.htm">常见问题</a></dd><dd><a href="/src/html/helpcenter/article/d-3.htm">建议反馈</a></dd><dd><a href="/src/html/helpcenter/article/d-4.htm">联系客服</a></dd></dl></div></div><div class="copyright"><p><a href="/src/html/helpcenter/article/about.htm">关于我们</a><span>|</span><a href="/src/html/helpcenter/article/cooperation.htm">合作提案</a></p><p><span>&copy;2014-2015 023.baiwandian.cn 版权所有 浙ICP备 14037458号</span></p></div><div class="gotop"></div><div class="city-change"><div class="opacity"></div><div class="content"><div class="tit"><dl><dd class="cur active">您当前的位置：&nbsp;&nbsp;<span>[<em></em> ]</span><span class="uparrow arr1"></span></dd><dd class="oth">选择其他城市<span class="uparrow arr2"></span></dd></dl><span class="close"></span></div><div class="con"><div class="current-area"><p>请选择一个区</p><div class="ars"><span data-code="500112">渝北区</span></div></div><div class="other-city"><div class="common">该地区暂未开放！</div></div><div class="area-float"></div><div class="uparrow2"></div></div></div></div>
+<!-- Footer End -->
+
+<script src="http://023.baiwandian.cn/src/js/jquery.js" type="text/javascript"></script>
+<script src="http://023.baiwandian.cn/src/js/common.js?20151126" type="text/javascript"></script>
+<script src="http://023.baiwandian.cn/src/js/front.js?20151126" type="text/javascript"></script>
+<script src="js/jquery.lazyload.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var _hmt=_hmt||[];(function(){var b=document.createElement("script");b.src="//hm.baidu.com/hm.js?ffcb9a21693bb5c40a3277cdddfff680";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();$(function(){$(".bwd-wrap img").lazyload({placeholder:"images/s.gif",effect:"fadeIn"});$(window).scroll(function(){var b=$(window).height();if($(document).scrollTop()>b/2){$("#J_wireless").fadeIn()}else{$("#J_wireless").fadeOut()}})});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div class="m-addpic f-cb">
+  
+</div>
+<table class="table table-bordered">
+   <thead>
+      <tr>
+        <th>序号</th>
+        <th>ID</th>
+        <th>反馈内容</th>
+        <th>地区</th>
+        <th>系统</th>
+        <th>版本</th>
+        <th>用户帐号</th>
+        <th>联系方式</th>
+        <th>提交时间</th>
+      </tr>
+   </thead>
+   <tbody>
+   	  {{#if list&&list.length==0}}
+   	  <tr>
+        <td colspan="9" class="f-tac">
+       	 查询记录为空
+        </td>
+      </tr>
+   	  {{#else}}
+      {{#list list as x}}
+      <tr>
+        <td>{{x_index}}</td>
+        <td>{{x.id}}</td>
+        <td>{{x.feedBackContent}}</td>
+        <td>{{x.areaName}}</td>
+        <td>{{x.system}}</td>
+        <td>{{x.version}}</td>
+        <td>{{x.userAccount}}</td>
+        <td>{{x.userContact}}</td>
+        <td>{{x.submitTime|format:'yyyy-MM-dd'}}</td>
+      </tr>
+      {{/list}}
+      {{/if}}
+   </tbody>
+</table>
+<div class="f-cb">
+	<div class="f-fr">
+		<pager total={{Math.ceil(total/5)}} current={{current}} on-nav={{this.onPageChange($event)}}></pager>
+	</div>
+</div>

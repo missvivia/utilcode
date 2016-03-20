@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>商品货号</th>
+      <th>商品名称</th>
+      <th>尺码</th>
+      <th>颜色</th>
+      <th>数量</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#list this.getCurrents(current) as tpl}}
+      <tr>
+        <td>{{tpl.skuId}}</td>
+        <td>{{tpl.codeNO}}</td>
+        <td>{{tpl.productName}}</td>
+        <td>{{tpl.size}}</td>
+        <td>{{tpl.color}}</td>
+        <td>{{tpl.skuQuantity}}</td>
+      </tr>
+    {{/list}}
+  </tbody>
+</table>
+<div class="text-right">
+  <pager total={{Math.ceil(lists.length / 10)}} current={{current}} ></pager>
+</div>

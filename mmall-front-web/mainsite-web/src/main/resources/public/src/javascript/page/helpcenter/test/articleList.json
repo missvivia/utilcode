@@ -1,0 +1,19 @@
+{
+    "code":200,
+    "result":{
+        "categoryId":"1",
+        "title":"常见问题",
+        "articleList":[
+           {
+               "articleId":"1",
+               "title":"新云联秀品的商品都是正品吗？",
+               "cont":"<div>绝对是正品</div>" 
+           },
+           {
+               "articleId":"2",
+               "title":"新云联秀品的商品都是电商吗？",
+               "cont":"<div>绝对是正品</div>" 
+           }
+        ]
+    }
+}

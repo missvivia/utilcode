@@ -1,0 +1,26 @@
+<div {{#if length > 1}}class="m-package"{{#else}}class="m-package up-arrow"{{/if}}>
+  <p class="package">
+    包裹号 {{pid}}{{#if result.orderPackageState && (result.orderPackageState.intValue == 15 || result.orderPackageState.intValue == 16 || result.orderPackageState.intValue == 18)}}(已取消){{/if}}<i class="arrow" data-action="unfold"></i>
+  </p>
+  <div {{#if length > 1}}class="box f-dn"{{#else}}class="box up-arrow"{{/if}}>
+    <div class="msg-box">
+      <div class="msg">
+        <section class="u-msg"><i>快递公司</i> {{result.expressCompanyReturn}}</section>
+        <section class="u-msg"><i>运单号</i> {{result.mailNO}}</section>
+      </div>
+    </div>
+    <div class="cnt-box">
+      <div class="cnt">
+        {{#if result.trackVOList}}
+          {{#list result.trackVOList as r}}
+          <div {{#if r_index + 1 == result.trackVOList.length}}class="details active"{{#else}}class="details"{{/if}}>
+            <div class="address">{{r.acceptAddress}}   {{r.remark}}</div>
+            <div class="time">{{r.acceptDate}}</div>
+            <p class="circle"><i></i></p>
+          </div>
+          {{/list}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

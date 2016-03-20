@@ -1,0 +1,99 @@
+{"code": 200, "message": null, "result": {
+  "userId": 47480,
+  "activations": [
+    {
+      "id": 38394,
+      "type": "active",
+      "tagList": [
+        {
+          "title": "满减",
+          "desc": "满1000打五折"
+        }
+      ],
+      "effectDesc": "再买465.00元即可享5.00折",
+      "discountUrl": "http://023.baiwandian.cn/store/200217",
+      "poList": [
+        {
+          "id": 0,
+          "type": "po",
+          "skulist": [
+            {
+              "id": 18604,
+              "type": "cartsku",
+              "status": "overtime",
+              "name": "NBY江南布衣春装纯棉女士新品长袖衬衫",
+              "url": "/detail?id=18603",
+              "productId": 18603,
+              "thumb": "http://vstore-photocenter-bucket2.nos.netease.com/b6eb68c6-5093-414c-87ba-c54aca2a2a5d",
+              "color": "绿色",
+              "size": "均码",
+              "originalPrice": 535.00,
+              "retailPrice": 535.00,
+              "cartPrice": 535.00,
+              "marketPrice": 268.00,
+              "promotionDiscountAmount": null,
+              "count": 1,
+              "inventroyCount": 0,
+              "selected": false,
+              "overTime": true,
+              "deleted": false
+            }
+          ],
+          "title": "JNBY-yxqPO5-1105",
+          "poId": 18598,
+          "selected": false,
+          "brandName": "江南布衣-yxq",
+          "deleted": false,
+          "name": "江南布衣-yxq JNBY-yxqPO5-1105"
+        }
+      ],
+      "activatonName": "yxq单个PO的活动（JNBYPO5）",
+      "selected": false,
+      "deleted": false
+    }
+  ],
+  "poList": [
+    {
+      "id": 0,
+      "type": "po",
+      "skulist": [
+        {
+          "id": 51722,
+          "type": "cartsku",
+          "status": "deleted",
+          "name": "yxq商品33-多尺码商品",
+          "url": "/detail?id=51720",
+          "productId": 51720,
+          "thumb": "http://vstore-photocenter-bucket2.nos.netease.com/a8baf0cb-f69f-447c-ba31-bb373a6c0ab3",
+          "color": "ABC色",
+          "size": "38",
+          "originalPrice": 38.00,
+          "retailPrice": 38.00,
+          "cartPrice": 38.00,
+          "marketPrice": 88.00,
+          "promotionDiscountAmount": null,
+          "count": 2,
+          "inventroyCount": 0,
+          "selected": false,
+          "overTime": false,
+          "deleted": true
+        }
+      ],
+      "title": "balabala档期12",
+      "poId": 25456,
+      "selected": false,
+      "brandName": "巴拉巴拉",
+      "deleted": true,
+      "name": "巴拉巴拉 balabala档期12"
+    }
+  ],
+  "cartInfoVO": {
+    "leftTime": 1190640,
+    "totalPrice": 0,
+    "disCountUrl": null,
+    "free": false
+  },
+  "invalidCartItemList": [],
+  "invalidatedCount": 0,
+  "retCode": 0
+}}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>商铺地图</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <link rel="stylesheet" href="../../../../css/base.css" />
+    <link rel="stylesheet" href="../../../../css/grid.css" />
+    <link rel="stylesheet" href="../../../../css/unit.css" />
+    <link rel="stylesheet" href="../../../../css/module.css" />
+    <style>
+      body{
+          font-family:'微软雅黑',helvetica,'Hiragino Sans GB','Microsoft YaHei','宋体';
+      }
+      #parent{width:1090px;}
+    </style>
+  </head>
+  <body>
+    
+    <div id="parent"></div>
+      
+      
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=e2b435804fdaf1de44d3e1fea8382954"></script>
+    <script>window.NEJ_CONF={root:'../../../../../res/'};</script>
+    <script src="http://fed.hz.netease.com/git/nej2/src/define.js?pro=./"></script>
+    <script>
+        NEJ.define([
+            './shop.js',
+            'json!./shop.json'
+        ],function(_i,shops){
+            _i._$$ShopMap._$allocate({
+                brandId:234,
+                parent:'parent',
+                shops:shops.result.list
+            });
+        });
+    </script>
+  </body>
+</html>

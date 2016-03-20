@@ -1,0 +1,41 @@
+<div class="m-clst table">
+  <div class="clst_action form-inline u-vmargin">
+    <div class="form-group">
+      <datepicker select={{startTime}} disable={{!0}}></datepicker>至<datepicker select={{endTime}} disable={{!0}}></datepicker>
+      <province-select value={{provinceCode}}></province-select>
+      <button class="btn btn-primary" on-click='updatelist' type="button">搜索</button>
+    </div>
+  </div>
+  <div class="panel panel-info">
+    <div class="panel-heading">已选档期 {{selected.length}}个</div>
+    <div class="panel-body">
+      <div class="m-schelist row">
+      {{#list selected as sche}}
+      <div class="col-sm-4" r-animation="on:enter;class:bounceIn animated;on:leave;class:bounceOut animated">
+        <a href="#" class="u-picked u-picked-1 z-active" on-click={{this.select(sche)}}>
+          <span>{{sche.startTime|format}}</span>
+          <span>{{sche.areaName}}</span><br/>
+          <span>{{@(sche.title)}}</span>
+        </a>
+       </div>
+      {{/list}}
+        
+      </div>
+    </div>
+  </div>
+  <div class="well">
+    <div class="m-schelist row">
+      {{#list list as sche}}
+      <div class="col-sm-4">
+        <a href="#" class="u-picked u-picked-1 {{this.isChecked(sche)? 'z-active': ''}}"  on-click={{this.select(sche)}}>
+          <span>{{sche.startTime|format}}</span>
+          <span>{{sche.areaName}}</span><br/>
+          <span>{{@(sche.title)}}</span>
+        </a>  
+      </div>
+      
+      {{/list}}
+    </div>
+  </div>
+  <pager total={{Math.ceil(total/limit)}} current={{current}}></pager> 
+</div>

@@ -1,0 +1,6 @@
+.#<uispace>{width:310px;font-size:18px;}
+.#<uispace> .txt{text-align:center;padding:57px 0;}
+.#<uispace> .btns{border-top:1px solid #dedede}
+.#<uispace> .btns a{border-right:1px solid #dedede;display:block;padding:17px 0;border-right:1px solid #dedede;color:#007aff;}
+.#<uispace> .btns a.nb{border:none;}
+.#<uispace> select{height:2rem;line-height:2rem;}

@@ -1,0 +1,79 @@
+<table class="table">
+	<tr>
+		
+		<td>商家ID</td>
+		<td>账号</td>
+    	<td>店铺名</td>
+    	<td>区域</td>
+		<td>首页权重</td>
+		<td>联系人</td>
+		<td>联系电话</td>
+		<td>状态</td>
+		<td>操作</td>
+	</tr>
+  <tbody>
+  	{{#list list as item}}
+  		<tr>
+  		
+   		<td>{{@(item.id)}}</td>
+   		<td>{{@(item.businessAccount)}}</td>
+        <td>{{@(item.storeName)}}</td>
+        <td>
+        	
+        	<div class="btn-group" on-click={{this.distcitClick("districtListId"+item_index)}} id={{"districtListId"+item_index}}>
+        	{{#if item.sendDistrictDTOs}}
+        		{{#if item.sendDistrictDTOs.length > 1}}
+        			<label>
+      				{{@(item.sendDistrictDTOs[0].districtName)}}
+      				<span class="caret"></span>
+    				</label>
+    			
+        			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+        			{{#list item.sendDistrictDTOs as district}}
+        			<li><a>{{@(district.districtName)}}</a></li>
+        			{{! 最多显示5条数据 !}}
+        			{{#if district_index == 4}}
+        				{{break}}
+        			{{/if}}
+        			{{/list}}
+        			
+        			{{#if (item.sendDistrictDTOs.length - (district_index+1)) >= 1}}
+        			<li>还有{{item.sendDistrictDTOs.length - (district_index+1)}}}条，<a class="btn btn-link" href="/business/edit/{{item.id}}">查看详情</a></li>
+        			{{/if}}
+        			</ul>
+        		{{#else}}
+        			<label>
+      				{{@(item.sendDistrictDTOs[0].districtName)}}
+    				</label>
+        		{{/if}}
+        	{{#else}}
+        	{{/if}}
+        	</div>
+        	
+        </td>
+        <td>{{@(item.indexWeight)}}</td>
+   		<td>{{@(item.contactName)}}</td>
+   		<td>{{@(item.contactTel)}}</td>
+   		<td>
+        {{#if item.isActive === 0}}
+          正常
+        {{#elseif item.isActive ===1}}
+          已冻结
+        {{/if}}
+      </td>
+   		<td>
+   			<a href="/business/edit/{{item.id}}" class="f-mgl">修改</a>
+   			{{#if item.isActive==0}}
+   			<a on-click={{this.lock(item)}} class="f-mgl">冻结</a>
+   			{{#elseif item.isActive==1}}
+   			<a on-click={{this.unlock(item)}} class="f-mgl">激活</a>
+   			{{/if}}
+   		</td>
+  		</tr>
+  	{{/list}}
+  </tbody>
+</table>
+
+<div class="text-right m-wpager f-cb">
+	<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>
+</div>

@@ -1,0 +1,40 @@
+<div class="m-user">
+  <div class="tit">优惠券</div>
+  <div class="tbbox">
+      <ul class="nav nav-tabs" role="tablist">
+         <li class={{currentState == 'active' ? 'active': ''}} on-click={{this.setCurrentState('active')}}><a href="javascript:void(0);">有效</a></li>
+         <li class={{currentState == 'inactive' ? 'active': ''}} on-click={{this.setCurrentState('inactive')}}><a href="javascript:void(0);">未生效</a></li>
+         <li class={{currentState == 'over' ? 'active': ''}} on-click={{this.setCurrentState('over')}}><a href="javascript:void(0);">已使用</a></li>
+         <li class={{currentState == 'past' ? 'active': ''}} on-click={{this.setCurrentState('past')}}><a href="javascript:void(0);">已过期</a></li>
+         <li class={{currentState == 'lose' ? 'active': ''}} on-click={{this.setCurrentState('lose')}}><a href="javascript:void(0);">已失效</a></li>
+      </ul>
+      <div>
+        <table class="table table-hover">
+           <thead>
+               <tr>
+                  <th>代码</th>
+                  <th>描述</th>
+                  <th>有效期</th>
+                  <!--th>可用范围</th>
+                  <th>所属品牌</th>
+                  <th>POID</th-->
+                  <th>备注</th>
+               </tr>
+           </thead>
+           <tbody>
+              {{#list list as item}}
+               <tr>
+                  <td>{{item.couponCode}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.startTime|format}} - {{item.endTime|format}}</td>
+                  <!--td>{{item.items}}</td>
+                  <td>{{item.items}}</td>
+                  <td>{{item.POID}}</td-->
+                  <td>{{#if item.couponState == 3}}<div class="f-fl">使用订单：</div>{{#list item.orderSerial as o}}<div class="f-fl"><a target="_blank" href="/order/orderdetail?type=0&key={{o}}">{{o}}</a></div>{{/list}}{{/if}}</td>
+               </tr>
+               {{/list}}
+           </tbody>
+         </table>
+      </div>
+  </div>
+</div>

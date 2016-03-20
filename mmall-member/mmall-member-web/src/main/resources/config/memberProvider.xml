@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="mmall-member-app" />
+	<dubbo:protocol name="dubbo" port="-1" />
+	<!-- UserProfile -->
+	<dubbo:service interface="com.xyl.mmall.member.service.UserProfileService"
+		ref="userProfileService" />
+	<bean id="userProfileService"
+		class="com.xyl.mmall.member.service.impl.UserProfileServiceImpl" />
+	<!-- Agent -->
+	<dubbo:service interface="com.xyl.mmall.member.service.AgentService"
+		ref="agentService" />
+	<bean id="agentService" class="com.xyl.mmall.member.service.impl.AgentServiceImpl" />
+	<!-- Dealer -->
+	<dubbo:service interface="com.xyl.mmall.member.service.DealerService"
+		ref="dealerProfileService" />
+	<bean id="dealerProfileService"
+		class="com.xyl.mmall.member.service.impl.DealerServiceImpl" />
+	<!-- Permission -->
+	<dubbo:service interface="com.xyl.mmall.member.service.PermissionService"
+		ref="permissionService" />
+	<bean id="permissionService"
+		class="com.xyl.mmall.member.service.impl.PermissionServiceImpl" />
+	<!-- FilterChainResourceService -->
+	<dubbo:service
+		interface="com.xyl.mmall.member.service.FilterChainResourceService"
+		ref="filterChainResourceService" />
+	<bean id="filterChainResourceService"
+		class="com.xyl.mmall.member.service.impl.FilterChainResourceServiceImpl" />
+	<!-- MobileInfoService -->
+	<dubbo:service interface="com.xyl.mmall.member.service.MobileInfoService"
+		ref="mobileInfoService" />
+	<bean id="mobileInfoService"
+		class="com.xyl.mmall.member.service.impl.MobileInfoServiceImpl" />
+	<!-- RoleService -->
+	<dubbo:service interface="com.xyl.mmall.member.service.RoleService"
+		ref="roleService" />
+	<bean id="roleService" class="com.xyl.mmall.member.service.impl.RoleServiceImpl" />
+	<!-- AccountService -->
+	<dubbo:service interface="com.xyl.mmall.member.service.AccountService"
+		ref="accountService" />
+	<bean id="accountService" class="com.xyl.mmall.member.service.impl.AccountServiceImpl" />
+	<!-- ERPAccountService -->
+	<dubbo:service interface="com.xyl.mmall.member.service.ERPAccountService"
+		ref="erpAccountService" />
+	<bean id="erpAccountService"
+		class="com.xyl.mmall.member.service.impl.ERPAccountServiceImpl" />
+</beans>

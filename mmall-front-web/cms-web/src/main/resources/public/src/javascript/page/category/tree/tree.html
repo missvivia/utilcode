@@ -1,0 +1,166 @@
+<textarea name="jst" id='#<seedTree>'>
+    <div class="tree-head">
+    	 <div class="col-sm-6">内容分类名称</div>
+    	 <div class="col-sm-6">操作</div>
+    </div>
+    <ul class="row tree j-flag"   id="tree">
+      {list items as item1}
+        <li data-parentid="${item1.rootId}" id="${item1.id}" data-district="${item1.districtNames}" data-districtIds="${item1.districtIds}" {if !!item1.subCategoryContentDTOs} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="${isopen}">
+          <div class="col-sm-6 level1" treenode="switch">
+	          <input type="checkbox" class="chk">
+	          <span class="glyphicon glyphicon-folder-open" treenode="switch"></span>
+	          <span treenode="switch">${item1.name}</span>
+          </div>
+          
+          <div class="col-sm-6">
+          	  <span class="make col-sm-2" treenode="add"><span class="glyphicon glyphicon-plus"></span>添加子分类</span>
+          	  <span class="make col-sm-1" treenode="edit"><span class="glyphicon glyphicon-edit"></span>编辑</span>
+          	  <span class="make col-sm-1" treenode="del"><span class="glyphicon glyphicon-trash"></span>删除</span>
+          </div>
+
+          {if !!item1.subCategoryContentDTOs}
+          <ul>
+          {list item1.subCategoryContentDTOs as item2}
+              <li data-parentid="${item2.rootId}" id="${item2.id}" {if !!item2.subCategoryContentDTOs} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="${isopen}">
+              	 <div class="col-sm-3 level2" treenode="switch">
+	                <input type="checkbox" class="chk">
+	                <span class="glyphicon glyphicon-folder-open" treenode="switch"></span>
+	                <span treenode="switch">${item2.name}</span>
+	             </div>
+		          <div class="col-sm-3">
+		          </div>
+		          <div class="col-sm-6">
+		          	  <span class="make col-sm-2" treenode="add"><span class="glyphicon glyphicon-plus"></span>添加子分类</span>
+		          	  <span class="make col-sm-1" treenode="edit"><span class="glyphicon glyphicon-edit"></span>编辑</span>
+		          	  <span class="make col-sm-1" treenode="del"><span class="glyphicon glyphicon-trash"></span>删除</span>
+		          </div>
+             	  {if !!item2.subCategoryContentDTOs}
+	              <ul>
+		              {list item2.subCategoryContentDTOs as item3}
+		              <li class="childnode pl30" data-parentid="${item3.parent}" id="${item3.id}" {if !!item3.subCategoryContentDTOs} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="${isopen}">
+		              	 <div class="col-sm-3 level3" treenode="switch">
+			                  <input type="checkbox"  class="chk" >
+			                  <span class="glyphicon glyphicon-folder-close" treenode="switch"></span>
+			                  <span treenode="switch">${item3.name}</span>
+			             </div>
+			             <div class="col-sm-3">
+				          </div>
+				          <div class="col-sm-6">
+				          	  <span class="make col-sm-2"></span>
+				          	  <span class="make col-sm-1" treenode="edit"><span class="glyphicon glyphicon-edit"></span>编辑</span>
+				          	  <span class="make col-sm-1" treenode="del"><span class="glyphicon glyphicon-trash"></span>删除</span>
+				          </div>
+				      </li>
+		              {/list}
+	              </ul>
+                  {/if}
+               </li>
+          {/list}
+          </ul>
+          {/if}
+         </li>
+      {/list}
+    </ul>
+</textarea>
+<textarea name="jst" id='#<cateTree>'>
+<div class="tree-box">
+    <ul class="row tree j-flag" id="tree">
+      {list items as item1}
+        <li data-parentid="${item1.parentId}" id="${item1.categoryId}" data-name="${item1.categoryName}" data-level="${item1.categoryDepth}" {if !!item1.subCategoryList} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="${isopen}">
+          <div class="level1" treenode="switch">
+	          <input type="checkbox" class="chk" data-id="${item1.categoryId}">
+	          <span class="glyphicon glyphicon-folder-open" treenode="switch"></span>
+	          <span treenode="switch">${item1.categoryName}</span>
+          </div>         
+          {if !!item1.subCategoryList}
+          <ul>
+          {list item1.subCategoryList as item2}
+              <li data-parentid="${item2.parentId}" id="${item2.categoryId}" data-name="${item2.categoryName}" data-level="${item2.categoryDepth}" {if !!item2.subCategoryList} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="${isopen}">
+              	 <div class="level2" treenode="switch">
+	                <input type="checkbox" class="chk" data-id="${item2.categoryId}">
+	                <span class="glyphicon glyphicon-folder-open" treenode="switch"></span>
+	                <span treenode="switch">${item2.categoryName}</span>
+	             </div>
+             	  {if !!item2.subCategoryList}
+	              <ul>
+		              {list item2.subCategoryList as item3}
+		              <li class="childnode pl30" data-parentid="${item3.parentId}" id="${item3.categoryId}" data-name="${item3.categoryName}" data-level="${item3.categoryDepth}" {if !!item3.subCategoryList} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="${isopen}">
+		              	 <div class="level3" treenode="switch">
+			                  <input type="checkbox"  class="chk" data-id="${item3.categoryId}">
+			                  <span class="glyphicon glyphicon-folder-close" treenode="switch"></span>
+			                  <span treenode="switch">${item3.categoryName}</span>
+			             </div>
+				      </li>
+		              {/list}
+	              </ul>
+                  {/if}
+               </li>
+          {/list}
+          </ul>
+          {/if}
+         </li>
+      {/list}
+    </ul>
+    <div class="form-group btnfixed">
+	      <span class="btn btn-primary"  treenode="submit">确定</span>
+    </div>
+</div>
+</textarea>
+<textarea  name="jst" id='#<cateTreeList>'>
+    {list items as item1}
+    <div class="panel panel-default" itemId = '${item1.id}'>
+    	<div class="panel-heading">
+    		<a href="/category/content/editContentTree?rootId=${item1.id}">${item1.name}</a>
+    		<a href="javascript:;" class='remove'>删除</a>
+    	</div>
+    	<div class="panel-body">
+			<div class="panel-inner">
+	          {if !!item1.subCategoryContentDTOList}
+		          <ul class="row tree j-flag">
+		          {list item1.subCategoryContentDTOList as item2}
+		              <li data-parentid="${item2.parent}" id="${item2.id}" {if !!item2.subCategoryContentDTOs} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="false">
+		              	 <div class="level2" treenode="switch">
+			                <input type="checkbox" class="chk">
+			                <span class="glyphicon glyphicon-folder-open" treenode="switch"></span>
+			                <span treenode="switch">${item2.name}</span>
+			             </div>
+		             	  {if !!item2.subCategoryContentDTOs}
+			              <ul>
+				              {list item2.subCategoryContentDTOs as item3}
+				              <li class="childnode pl30" data-parentid="${item3.parent}" id="${item3.id}" {if !!item3.subCategoryContentDTOs} data-parent="true" {else} data-parent="false"{/if} data-check="${check.ischeck}" data-open="false">
+				              	 <div class="level3" treenode="switch">
+					                  <input type="checkbox"  class="chk" >
+					                  <span class="glyphicon glyphicon-folder-close" treenode="switch"></span>
+					                  <span treenode="switch">${item3.name}</span>
+					             </div>
+						      </li>
+				              {/list}
+			              </ul>
+		                  {/if}
+		               </li>
+		          {/list}
+		          </ul>
+	          {/if}
+	    	</div>
+    	</div>
+    	<div class="district">
+    		<span>
+    			{if item1.sendDistrictDTOs}
+    				{if item1.sendDistrictDTOs.length  > 1}
+    					<span class="multiArea">多地区</span>
+    					<div class="multiArealist">
+    					{list item1.sendDistrictDTOs as area}
+    						${area.districtName};
+    					{/list}
+    					</div>
+    				{else}
+    					${item1.sendDistrictDTOs[0].districtName}
+    				{/if}
+    			{else}
+    				未分配
+    			{/if}
+    		</span>
+    	</div>
+    </div>
+    {/list}
+</textarea>

@@ -1,0 +1,187 @@
+{{#if !!orderPermitted}}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="m-card">
+      <h2 class="card_b">
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        订单数据查询
+      </h2>
+      <div class="card_c f-cb">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">订单信息查询</div>
+            <div class="panel-body">
+              <div class="row form-inline f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">下单时间：</label>
+                  <div class="col-sm-10">
+                    <datepicker select={{startTime0}}></datepicker>
+                    至
+                    <datepicker select={{endTime0}}></datepicker>
+                  </div>
+                </div>
+                <a on-click={{this.search(0,$event)}} href="" target="_self" class="btn btn-primary col-sm-1">导出Excel</a>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">交易信息查询</div>
+            <div class="panel-body">
+              <div class="row form-inline f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">付款时间：</label>
+                  <div class="col-sm-10">
+                    <datepicker select={{startTime1}}></datepicker>
+                    至
+                    <datepicker select={{endTime1}}></datepicker>
+                  </div>
+                </div>
+                <a on-click={{this.search(1,$event)}} href="" target="_self" class="btn btn-primary col-sm-1">导出Excel</a>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">订单取消/退货查询(已在线付款&货到付款)</div>
+            <div class="panel-body">
+              <div class="row form-inline f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">下单时间：</label>
+                  <div class="col-sm-10">
+                    <datepicker select={{startTime2}}></datepicker>
+                    至
+                    <datepicker select={{endTime2}}></datepicker>
+                  </div>
+                </div>
+                <a on-click={{this.search(2,$event)}} href="" target="_self" class="btn btn-primary col-sm-1">导出Excel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+{{#if !!freightPermitted}}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="m-card">
+      <h2 class="card_b">
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        物流商结算信息查询
+      </h2>
+      <div class="card_c f-cb">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">应收COD货款查询（货到付款订单）</div>
+            <div class="panel-body">
+              <div class="row f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">物流公司：</label>
+                  <div class="col-sm-4">
+                    <select r-model={{express1}} class="form-control">
+                      {{#list companyList as item}}
+                        <option value="{{item.code}}">{{item.desc}}</option>
+                      {{/list}}
+                    </select>
+                  </div>
+                  <label class="u-label col-sm-2">仓库：</label>
+                  <div class="col-sm-4">
+                    <select r-model={{store1}} class="form-control">
+                      {{#list storeList as item}}
+                        <option value="{{item.id}}">{{item.name}}</option>
+                      {{/list}}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-inline f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">用户签收时间：</label>
+                  <div class="col-sm-10">
+                    <datepicker select={{startTime3}}></datepicker>
+                    至
+                    <datepicker select={{endTime3}}></datepicker>
+                  </div>
+                </div>
+                <a on-click={{this.search(3,$event)}} href="" target="_self" class="btn btn-primary col-sm-1">导出Excel</a>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">应付物流费用查询（正向/反向/顾客退货）</div>
+            <div class="panel-body">
+              <div class="row f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">物流公司：</label>
+                  <div class="col-sm-4">
+                    <select r-model={{express2}} class="form-control">
+                      {{#list companyList as item}}
+                        <option value="{{item.code}}">{{item.desc}}</option>
+                      {{/list}}
+                    </select>
+                  </div>
+                  <label class="u-label col-sm-2">仓库：</label>
+                  <div class="col-sm-4">
+                    <select r-model={{store2}} class="form-control">
+                      {{#list storeList as item}}
+                        <option value="{{item.id}}">{{item.name}}</option>
+                      {{/list}}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-inline f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">时间：</label>
+                  <div class="col-sm-10">
+                    <datepicker select={{startTime4}}></datepicker>
+                    至
+                    <datepicker select={{endTime4}}></datepicker>
+                  </div>
+                </div>
+                <a on-click={{this.search(4,$event)}} href="" target="_self" class="btn btn-primary col-sm-1">导出Excel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+{{#if !!payPermitted}}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="m-card">
+      <h2 class="card_b">
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+        供应商对账单查询
+      </h2>
+      <div class="card_c f-cb">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">供应商对账信息查询</div>
+            <div class="panel-body">
+              <div class="row f-mgtb col-sm-12">
+                <div class="col-sm-8">
+                  <label class="u-label col-sm-2">PO编号：</label>
+                  <div class="col-sm-4">
+                    <input r-model={{poNum}} on-blur={{this.checkId($event)}} on-focus={{this.onInput($event)}} class="form-control">
+                  </div>
+                <button on-click={{this.searchPay(0)}} class="btn btn-primary col-sm-offset-1 col-sm-2">首付款查询</button>
+                <button on-click={{this.searchPay(1)}} class="btn btn-primary col-sm-offset-1 col-sm-2">全款查询</button>
+                </div>
+              </div>
+              <div class="row f-mgtb col-sm-10 f-fc1">
+                <p class="col-sm-offset-1">首付款查询——必须在PO档期结束后，查询的数据才是正式数据（完整数据），否则查询的数据只是部分数据（不完整）。</p>
+                <p class="col-sm-offset-1">全款查询——建议在PO档期结束后30天后再查询，此时用户退货数据更完整，否则可能会缺失比较多的用户退货数据。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}

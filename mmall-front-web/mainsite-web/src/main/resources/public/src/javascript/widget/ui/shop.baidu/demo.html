@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>商铺地图</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    
+    <link rel="stylesheet" href="../../../../css/base.css" />
+    <link rel="stylesheet" href="../../../../css/grid.css" />
+    <link rel="stylesheet" href="../../../../css/unit.css" />
+    <link rel="stylesheet" href="../../../../css/module.css" />
+    <style>
+      body{
+          font-family:'微软雅黑',helvetica,'Hiragino Sans GB','Microsoft YaHei','宋体';
+      }
+      #parent{width:1090px;}
+    </style>
+  </head>
+  <body>
+    
+    <div id="parent"></div>
+      
+      
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qNExjyNPgLx3suxG9sfZdqIW"></script>
+    <script>window.NEJ_CONF={root:'../../../../../res/'};</script>
+    <script src="http://fed.hz.netease.com/git/nej2/src/define.js?pro=../../../"></script>
+    <script>
+        NEJ.define([
+            './shop.js'
+        ],function(_i){
+            _i._$$ShopMap._$allocate({
+                brandId:234,
+                parent:'parent',
+                shops:[
+                    {
+                        "id":1,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "北京市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.3786889372559,
+                        "latitude": 39.90762965106183
+                    },
+                    {
+                        "id":2,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "北京市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.38632786853032,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":3,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.39534009082035,
+                        "latitude": 39.907432133833574
+                    },
+                    {
+                        "id":4,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.40624058825688,
+                        "latitude": 39.90789300648029
+                    },
+                    {
+                        "id":5,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":6,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":7,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":8,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":9,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":10,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":11,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    },
+                    {
+                        "id":12,
+                        "shopName": "杭州金桥家乐福店",
+                        "shopTel": "50305310",
+                        "shopZone": "0571",
+                        "shopContact": "张三",
+                        "city": "杭州市",
+                        "district": "滨江区",
+                        "shopAddr": "金桥碧云路555号金桥家乐福1楼",
+                        "longitude": 116.41413701159672,
+                        "latitude": 39.90795884517671
+                    }
+                ]
+            });
+        });
+    </script>
+  </body>
+</html>

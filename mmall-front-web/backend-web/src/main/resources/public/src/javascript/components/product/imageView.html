@@ -1,0 +1,20 @@
+<div class="m-imgview {{clazz}}">
+  {{#list imgs as img}}
+    <div class="img  animated" >
+      <div class="imgwrap" >
+        <img src={{img.src}} ></div>
+      <span class="del" on-click={{imgs.splice(img_index,1)}}>×</span>
+      <div class="btns">
+        <label class="local btn  btn-primary btn-sm" on-upload={{this.handleUpload($event,img_index)}}>本地上传</label>
+        <span class="space btn  btn-primary btn-sm" on-click={{this.getFromSpace(img_index)}}>空间引用</span>
+      </div>
+    </div>
+  {{/list}}
+  <div class="img" r-hide="imgs.length >= limit">
+    <div class="imgwrap img-void"></div>
+      <div class="btns">
+      <label class="local btn  btn-primary btn-sm" on-upload={{this.handleUpload($event)}} >本地上传</label>
+      <label class="space btn  btn-primary btn-sm" on-click={{this.getFromSpace()}}>空间引用</label>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+/*global*/
+body{font-family:'华文细黑','microsoft yahei',Verdana,Arial,Helvetica,sans-serif;font-size:13px;background:#f2f2f2;color:#999;}
+
+/*模块修正*/
+*{margin:0;padding:0;border:none;outline:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+a:link, a:active, a:visited{text-decoration:none;opacity:1;background:none;}
+
+/*functions*/
+.f-tal{text-align:left;}
+.f-tar{text-align:right;}
+
+/*container*/
+.g-container{min-height:450px;}
+.g-container a{color:#999;}
+
+/*login 头部banner*/
+.g-banner{position:absolute;top:0;left:0;width:100%;height:165px;background:#ff554c url(/mobile/images/loginbanner_01.jpg) no-repeat center 0;background-size:375px;z-index:-999;}
+.m-banner-sawtooth{position:absolute;top:162px;left:0;width:100%;height:5px;background:url(/mobile/images/loginbanner_02.png) repeat-x;background-size:6px;z-index:-2;}
+
+/*form wrap*/
+.g-login{padding:120px 0 0 0;}
+.m-login-err{display:none;margin-left:17px;color:#fff;}
+.m-input-container{margin:0 17px;background:#fff;box-shadow:0 1px 2px rgba(219,219,219,.8);}
+.m-login-input{margin:0 17px;height:55px;}
+.m-login-input:first-child{border-bottom:1px solid #dedede;}
+.m-tip-log{display:inline-block;margin:20px 15px 0 17px;width:15px;height:16px;background:url(/mobile/images/login.png) no-repeat;background-size:193px;}
+/*input*/
+.m-input-tip{position:relative;float:left;width:47px;height:55px;margin-right:-47px;}
+.m-input-wrap{float:right;width:100%;}
+.m-wrap-data{margin:7px 0 0 47px;}
+.m-wrap-data input{width:100%;height:40px;font-size:15px;}
+/*username*/
+.username{background-position: -23px -1px;}
+/*password*/
+.password{background-position: -2px -1px;}
+/*login register*/
+.g-login-register{padding:10px 30px;}
+.m-register-table{display:table;width:100%;}
+.m-register-cell{display:table-cell;}
+/*submit*/
+.m-submit-wrap{width:100%;padding:0 17px 20px 17px;}
+#m-login-submit{display:block;border-radius:2px;width:100%;height:50px;text-align:center;line-height:50px;color:#fff;font-size:18px;background:#d951b5;}
+
+/*其他方式登录*/
+.g-login-other{margin-top:10px;padding:0 17px;}
+.m-lother-title{height:1px;border-top:1px solid #ddd;text-align:center;}
+.m-lother-title span{position:relative;top:-9px;background:#f2f2f2;padding:0 15px;}
+.loginLogo{margin-top:27px;display:table;width:100%;}
+.g-login-other a{display:table-cell;text-align:center;}
+.m-lother{display:inline-block;width:60px;height:60px;background:url(/mobile/images/login.png) center 0 no-repeat;background-size:193px;}
+.m-lother + p{margin-top:5px;}
+.yixin{background-position: -2px -24px;}
+.qq{background-position: -68px -24px;}
+.weibo{background-position: -133px -24px;}
+
+
+
+
+

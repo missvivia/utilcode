@@ -1,0 +1,14 @@
+@abstract '../_config.mcss';
+.m-box{
+	position:relative;background:#fff;min-height:324px;_height:324px;
+	.hd{
+		padding:0 20px;border-bottom:1px solid #eaeaea;line-height:40px;@extend clearfix;
+		h3{float:left;font-size:14px;font-weight:bold;}
+		a,a:hover{float:right;font-size:12px;color:#666;}
+	}
+	.bd{
+		position:relative;zoom:1;padding:0 14px 28px 20px;
+		.u-empt{padding:80px 0;}
+	}
+}
+

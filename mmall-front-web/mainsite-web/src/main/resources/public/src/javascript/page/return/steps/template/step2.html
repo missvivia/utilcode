@@ -1,0 +1,98 @@
+<div id="step2-template-box" class="f-dn">
+<textarea name='ntp' id='step2-ntp-returngoods'>
+<div class="m-box">
+    <div class="m-returnnotice">
+        <div class="hd">
+            <h2>您的退货申请已提交，请您在收货后七天内寄回商品</h2>
+        </div>
+        <div class="bd">  
+          <ol>
+            <li>寄回的包裹中包括退货的商品、所有单据（如遗失送货单可用白纸注明订单号，退货人联系电话）、发票（如有）、赠品（如有）、包装，如有遗漏将可能无法
+   办理退货，敬请原谅！</li>
+            <li>请您先垫付运费，办理退款时最高可补贴10元运费，以红包形式发放至您账户。</li>
+            <li>寄回的商品必须为原订购商品，请勿调换商品，否则将无法办理退款。</li>
+          </ol>
+          <div class="cancel w-btn">
+          	如不需要退货，您还可以 
+          	<a class="f-ib btn j-cancelreturn"><span>取消退货</span></a>
+          </div>
+        </div>
+    </div>
+  </div>
+</textarea>
+
+<textarea name="jst" id="step2-jst-returnaddr">
+   <div class="m-box">
+    <div class="m-returnaddr">
+        <div class="hd">
+            <h2>请按如下地址退货,并选择快递公司和填写运单号<span class="s-fc5">（请务必填写运单信息，否则将造成退货失败）</span></h2>
+        </div>
+        <div class="bd"> 
+          <div class="m-form"> 
+            <div class="fitm">
+              <label class="flab">退货途径</label>
+              <div class="fipt">
+                <p class="val">请通过快递退回商品，邮政普通包裹或者快递货到付款将被拒收</p>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab">退货地址</label>
+              <div class="fipt">
+                <p class="val">${returnInfo.returnAddress}</p>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab">收件人</label>
+              <div class="fipt">
+                <p class="val">${returnInfo.returnPerson}</p>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab">邮编</label>
+              <div class="fipt">
+                <p class="val">${returnInfo.returnZip}</p>
+              </div>
+            </div>
+            <div class="fitm">
+              <label class="flab">联系电话</label>
+              <div class="fipt">
+                <p class="val">${returnInfo.returnPhone}</p>
+              </div>
+            </div>
+            <form class="expForm" data-focus-mode="1">
+            <div class="fitm fitm-1">
+              <label class="flab"><span class="important">*</span>快递公司</label>
+              <div class="fipt">
+                    <select class="w-select w-select-2" data-required="true" data-message="必须选择物流" name="expValue">
+                    {list expCompanies as exp}
+                      <option value="${exp.intValue}">${exp.name}</option>
+                    {/list}
+                    </select>
+              </div>
+            </div>
+            <div class="fitm fitm-2">
+              <label class="flab"><span class="important">*</span>快递单号</label>
+              <div class="fipt">
+                <input type="text" class="w-ipt w-ipt-6" data-required="true" name="expNO" data-pattern="^[\w\d]+$" data-message="请输入正确的物流单号">
+              </div>
+            </div>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</textarea>
+<textarea name='ntp' id='step2-ntp-returntime'>
+<div class="m-box">
+      <div class="m-returntime">
+          <div class="hd">
+              <h2>退款时间</h2>
+          </div>
+          <div class="bd">  
+            <p>我们将在收到退货包裹3天内根据您选择的方式进行退款。退款至网易宝金额即时到账；货到付款退至您填写的银行账户，在线支付（网银、支付平台等）原路退款，<br/>3-15个工作日到账。补贴运费将会以红包形式发放至您的百万店账户，即时到账。</p>
+          </div>
+      </div>
+    </div>
+</textarea>
+
+</div>

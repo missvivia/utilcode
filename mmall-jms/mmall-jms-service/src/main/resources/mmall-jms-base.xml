@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/rabbit
+           https://raw.github.com/SpringSource/spring-amqp/master/spring-rabbit/src/main/resources/org/springframework/amqp/rabbit/config/spring-rabbit-1.0.xsd
+	 http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	">
+
+	<description>NQS配置</description>
+
+	<bean id="defaultConnectionFactory"
+		class="com.xyl.mmall.jms.service.base.DefaultConnectionFactory"></bean>
+
+	<bean id="rabbitTemplate" class="org.springframework.amqp.rabbit.core.RabbitTemplate">
+		<property name="connectionFactory" ref="defaultConnectionFactory" />
+	</bean>
+
+	<bean id="baseListenerContainer"
+		class="com.xyl.mmall.jms.service.base.VistoreSimpleMessageListenerContainer"
+		abstract="true" init-method="logsAfterInit">
+		<property name="connectionFactory" ref="defaultConnectionFactory"></property>
+	</bean>
+
+	<!-- sms和email用的线上连接等 -->
+	<bean id="connectionFactoryForSmsOrEmail"
+		class="com.xyl.mmall.jms.service.base.DefaultConnectionFactoryForSmsOrMail">
+	</bean>
+
+	<bean id="rabbitTemplateForSmsOrEmail" class="org.springframework.amqp.rabbit.core.RabbitTemplate">
+		<property name="connectionFactory" ref="connectionFactoryForSmsOrEmail" />
+	</bean>
+
+	<bean id="baseListenerContainerForSmsOrEmail"
+		class="com.xyl.mmall.jms.service.base.VistoreSimpleMessageListenerContainer"
+		abstract="true" init-method="logsAfterInit">
+		<property name="autoStartup" value="${mail.queue.consume}"></property>
+		<property name="connectionFactory" ref="connectionFactoryForSmsOrEmail"></property>
+	</bean>
+	
+	<bean id="jmsMessageSendUtilForSmsOrMail" class="com.xyl.mmall.jms.service.base.JmsMessageSendUtilForSmsOrMail"></bean>
+	
+	
+	<bean id="jmsMessageSendUtil" class="com.xyl.mmall.jms.service.base.JmsMessageSendUtil"></bean>
+
+</beans>

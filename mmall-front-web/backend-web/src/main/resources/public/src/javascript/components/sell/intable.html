@@ -1,0 +1,50 @@
+ <div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><input type="checkbox" r-model="allChecked" r-hide="stateInt!=0"></th>
+        <th>so编号</th>
+        <th>收件人</th>
+        <th>联系电话</th>
+        <th>抬头</th>
+        <th>收票地址</th>
+        <th>发票金额</th>
+        <th>商品</th>
+        <th>索取时间</th>
+        <th>物流单号</th>
+        <th>物流公司</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{#if stateInt==0}}<input r-model={{tpl.checked}} type="checkbox">{{/if}}</td>
+          <td>{{@(tpl.orderId)}}</td>
+          <td>{{@(tpl.consigneeName)}}</td>
+          <td>{{@(tpl.consigneePhone)}}</td>
+          <td>{{@(tpl.title)}}</td>
+          <td>{{@(tpl.fullAddress)}}</td>
+          <td>{{@(tpl.cash)}}</td>
+          <td>{{@(tpl.goods)}}</td>
+          <td>{{@(tpl.orderDate|format)}}</td>
+          <td>
+            {{#if stateInt==1 && tpl.stateInt!==0 }}{{tpl.barCode}}{{#else}}<input class="form-control form-control-sm" r-model={{tpl.barCode}}>{{/if}}
+          </td>
+          <td>
+            {{#if stateInt==1 && tpl.stateInt!==0 }}{{tpl.expressCompanyName}}{{#else}}<input class="form-control form-control-sm" r-model={{tpl.expressCompanyName}}>{{/if}}
+          </td>
+          <td>
+            {{#if stateInt === 0 || tpl.stateInt === 0}}<a href="javascript:;" class="btn btn-primary btn-sm" on-click={{this.submit(tpl)}}>提交</a>{{#else}}<a href="javascript:;" class="btn btn-primary btn-sm" on-click={{tpl.stateInt=0}}>修改</a>{{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager f-cb">
+    <div class="col-sm-2">
+    <button r-hide={{stateInt!=0}} class="btn btn-primary btn-block" on-click={{this.submit()}}>提交选中</button>
+  </div>
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

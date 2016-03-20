@@ -1,0 +1,10 @@
+.#<uispace>{
+    text-align:center;
+    width:100%;
+    background: #fff;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    font-size:1.125rem;
+}
+.#<uispace> .txt{padding:17px 0;}
+.#<uispace> .w-btn3{display:block;padding:17px 0;border-top:1px solid #dedede;color:#007aff;}

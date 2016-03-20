@@ -1,0 +1,143 @@
+<form method="get" class="form-horizontal m-form-product">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">商品类目</label>
+    <div class="col-sm-3">
+      <select name="" id="" class="form-control" r-model="haha">
+        <option value="1">女装</option>
+        <option value="2">女装</option>
+        <option value="3">女装</option>
+      </select>
+    </div>
+    <div class="col-sm-3">
+      <select name="" id="" class="form-control">
+        <option value="">女装</option>
+        <option value="">女装</option>
+        <option value="">女装</option>
+      </select>
+    </div>
+    <div class="col-sm-3">
+      <select name="" id="" class="form-control">
+        <option value="">女装</option>
+        <option value="">女装</option>
+        <option value="">女装</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">商品品牌</label>
+    <div class="col-sm-3">
+      <select name="" id="" class="form-control">
+        <option value="">女装</option>
+        <option value="">女装</option>
+        <option value="">女装</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">增值税率</label>
+    <div class="col-sm-3">
+      <select name="" id="" class="form-control">
+        <option value="">女装</option>
+        <option value="">女装</option>
+        <option value="">女装</option>
+      </select>
+    </div>
+  </div>
+  <div class="hr-dashed"></div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">商品货号</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control"></div>
+    <label class="col-sm-2 control-label">商品色号</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="text"></div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">商品名称</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="text"></div>
+    <label class="col-sm-2 control-label">商品描述</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="text"></div>
+  </div>
+  <div class="hr-dashed"></div>
+  <div class="form-group form-group-vertical">
+    <label class="col-sm-2 control-label">价格</label>
+    <div class="col-sm-3">
+      <div class="input-group">
+        <div class="input-group-addon">正品</div>
+        <input class="form-control" type="email" placeholder="Enter email">
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        <div class="input-group-addon">销售</div>
+        <input class="form-control" type="email" placeholder="Enter email"></div>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        <div class="input-group-addon">供货</div>
+        <input class="form-control" type="email" placeholder="Enter email"></div>
+    </div>
+  </div>
+
+  <div class="hr-dashed"></div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">条件</label>
+    <div class="col-sm-3">
+      <select name="" id="" class="form-control" on-change={{this.select($event)}}>
+        <option value="1">模板1</option>
+        <option value="2">模板2</option>
+        <option value="3">模板3</option>
+      </select>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        <div class="input-group-addon">尺码</div>
+        <input class="form-control" type="email" placeholder="Enter email" r-model="size">
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="input-group">
+        <div class="input-group-addon">条形码</div>
+        <input class="form-control" type="email" placeholder="Enter email" r-model="code">
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-3 col-sm-offset-2">
+      <a class="btn btn-primary btn-block" on-click={{this.addTemplate(code, size)}}>
+        <span class="glyphicon glyphicon-plus"></span>
+        新增
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-2">
+      <div class="m-table">
+        <table class="table  table-striped">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>条形码</th>
+              <th>尺码</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#list templates as tpl}}
+              <tr r-animated="on: enter; class: fadeIn;">
+                <td>{{tpl_index}}</td>
+                <td>{{@(tpl.code)}}</td>
+                <td>{{@(tpl.size)}}</td>
+                <td><a class='btn btn-xs btn-default' href="#" on-click={{templates.splice(tpl_index,1)}}>删除</a></td>
+              </tr>
+            {{/list}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</form>

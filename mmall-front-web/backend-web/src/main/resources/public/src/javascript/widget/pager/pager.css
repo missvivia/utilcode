@@ -1,0 +1,13 @@
+.pagination span.js-disabled, .pagination span.js-disabled:hover, .pagination span.js-disabled:focus, .pagination a.js-disabled, .pagination a.js-disabled:hover, .pagination a.js-disabled:focus {
+	cursor: not-allowed;
+	color: #777;
+	border-color: #ddd;
+	background-color: #fff;
+}
+.pagination a.js-selected, .pagination span.js-selected, .pagination a.js-selected:hover, .pagination span.js-selected:hover, .pagination a.js-selected:focus, .pagination span.js-selected:focus {
+	z-index: 2;
+	cursor: default;
+	color: #fff;
+	border-color: #333;
+	background-color: #333;
+}

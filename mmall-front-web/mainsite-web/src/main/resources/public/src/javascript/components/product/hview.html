@@ -1,0 +1,39 @@
+<div class="w-htable {{preview?'z-preview': ''}}">
+<div class="colors">
+  {{#list colors as color}}
+  <div class="color" r-animation="on:enter;class:animated bounceIn; on:leave;class:animated bounceOut;"
+    on-mouseover={{this.select(color)}} on-mouseout={{this.select(null)}}
+  >
+    <span class="u-color" style="background-color: {{colorMap[color_index]||colorMap[0]}}"></span>
+    {{color}}
+  </div>
+  {{/list}}
+</div>
+<table class="m-table m-table-bordered {{selected?'z-selected': ''}}">
+  <thead>
+    <tr>
+      <th class='u-corner'>
+        <div class="corner"></div>
+        <div class="corner corner-2"></div>
+        <span class="bottom">{{vaxis.name || "身高cm"}}</span>
+        <span class="top">{{haxis.name || "体重kg"}}</span>
+      </th>
+      {{#list @(haxis.list) as item}}
+      <th>{{@(item)}}</th>
+      {{/list}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#list @(body) as bd}}
+    <tr>
+      <td>{{@(vaxis.list[bd_index])}}</td>
+      {{#list 0..(bd.length-1) as b}}
+        <td class="box {{selected==bd[b]?'box-selected':''}}" style="background-color: {{colorHash[bd[b]] || (bd[b]? colorMap[0] :'')}}" title={{bd[b]}} >
+          {{#if !preview}}<input type="text" class='form-control form-control-sm' value={{@(bd[b])}} on-change={{this.change(bd_index,b_index,$event)}}>{{/if}}
+         </td>
+      {{/list}}
+    </tr>
+    {{/list}}
+  </tbody>
+</table>
+</div>

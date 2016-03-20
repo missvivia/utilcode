@@ -1,0 +1,76 @@
+<div class="attrwin row">
+<form method="get" class="form-horizontal" id="attrForm">
+	<div class="form-group">
+		<label class="col-sm-3 control-label" ><span class="u-required">*</span>属性名称:</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" name="parameterName" data-focus="true" data-required="true" data-message="必填" placeholder="请输入名称" {if !!item.parameterName} value="${item.parameterName}" {/if}>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label"><span class="u-required">*</span>操作样式：</label>
+		<div class="col-sm-4">
+			<select  class="form-control" name="single">
+				<option value="1" {if !!item.single && item.single=='1'} selected="selected" {/if}>单选</option>
+				<option value="2" {if !!item.single && item.single=='2'} selected="selected" {/if}>多选</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label"><span class="u-required">*</span>属性数据：</label>
+		<div class="col-sm-4">
+			<div class="input-group">
+		      <input type="text" class="form-control" data-message="必填添加" placeholder="请输入数据内容进行添加"/>
+		      {if !item.parameterId}
+		      	<div class="btn input-group-addon" id="addAttrOption">添加属性数据</div>
+		      {/if}
+		      {if !!item.parameterId}
+		      	<div class="btn input-group-addon" id="subAttrOption" data-parame="${item.parameterId}" data-model="${item.itemModelId}">提交属性数据</div>
+		      {/if}
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-8 col-sm-offset-3">
+			<p>还没有数据哦，赶快添加吧。</p>
+			<div class="addattr-box">
+			{if !!item.optionList}
+				{list item.optionList as ol}
+					<span><label>${ol.paramOption}</label><span class="close" {if !!ol.paramOptionId} data-option="${ol.paramOptionId}" data-parame="${ol.modelParameterId}"{/if}>×</span></span>
+				{/list}
+			{/if}
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label"><span class="u-required">*</span>作为商品筛选项：</label>
+		<div class="col-sm-4">
+			<div class="radio-inline">
+		        <label>
+		          <input type="radio" value="1" name="show" {if !!item.show && item.show=='1'|| !item.show} checked="checked" {/if}>是
+		        </label>
+		    </div>
+		    <div class="radio-inline">
+		        <label>
+		          <input type="radio" value="2" name="show" {if !!item.show && item.show=='2'} checked="checked" {/if}>否
+		        </label>
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">
+	    <div class="col-sm-12 col-sm-offset-3">
+	      {if !!item.itemModelId}
+	      	  <input type="hidden" name="itemModelId"  value="${item.itemModelId}"/>
+	      {/if}
+	      {if !!item.parameterId}
+	      	  <input type="hidden" name="parameterId"  value="${item.parameterId}"/>
+	      {/if}
+	      {if modelId==""}
+	      <span class="btn btn-primary j-flag" id="confrimattr">确定</span>
+	      {/if}
+	      {if modelId!=""}
+	      <span class="btn btn-primary j-flag" id="attrsubmit">提交</span>
+	      {/if}
+	    </div>
+	</div>
+</form>
+</div>

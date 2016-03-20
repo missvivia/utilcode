@@ -1,0 +1,42 @@
+<#uispace> .p-presell{margin:0 0 30px;}
+<#uispace> .p-brand{margin:0 -1px;}
+<#uispace> .m-list1 .logo .fav{opacity:0;filter:alpha(opacity = 0);}
+<#uispace> .m-list1 .logo:hover .fav{opacity:1;filter:alpha(opacity = 100);}
+<#uispace> .m-list1 .logo .fav-ok{opacity:1;filter:alpha(opacity = 100);}
+<#uispace> .m-list3 .pic .fav-ok{opacity:1;filter:alpha(opacity = 100);}
+<#uispace> .m-banner-img a{position:absolute;top:0;left:0;overflow:hidden;height:390px;}
+<#uispace> .pre-tram{opacity:0;filter:alpha(opacity = 0);-webkit-transition:opacity 1s;-moz-transition:opacity 1s;-ms-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s;}
+<#uispace> .do-tram{opacity:1;filter:alpha(opacity = 100);}
+<#uispace> .pre-transform{opacity:0;filter:alpha(opacity = 0);}
+<#uispace> .pre-transform img{-webkit-transform:scaleX(1) scaleY(1);-moz-transform:scaleX(1) scaleY(1);-ms-transform:scaleX(1) scaleY(1);-o-transform:scaleX(1) scaleY(1);transform:scaleX(1) scaleY(1);}
+<#uispace> .do-transform img{-webkit-transition:transform 4s linear;-moz-transition:transform 4s linear;-ms-transition:transform 4s linear;-o-transition:transform 4s linear;transition:transform 4s linear;-webkit-transform:scaleX(1.05) scaleY(1.05);-moz-transform:scaleX(1.05) scaleY(1.05);-ms-transform:scaleX(1.05) scaleY(1.05);-o-transform:scaleX(1.05) scaleY(1.05);transform:scaleX(1.05) scaleY(1.05);}
+
+<#uispace> .m-list3{padding-top:1px;zoom:1;}
+<#uispace> .m-list3 ul{margin-top:-17px;}
+<#uispace> .m-list3 li{position:relative;float:left;width:100%;margin-top:16px;height:240px;background:#fff;}
+<#uispace> .m-list3 li:hover,<#uispace> .m-list3 li.j-hover{-webkit-box-shadow:0 0 8px rgba(0,0,0,0.2);box-shadow:0 0 8px rgba(0,0,0,0.2);}
+<#uispace> .m-list3 li:hover .u-icon2,<#uispace> .m-list3 li.j-hover .u-icon2{opacity:1;visibility:visible;}
+<#uispace> .m-list3 .pic{position:absolute;left:0;top:0;width:100%;height:100%;}
+<#uispace> .m-list3 .pic img{display:block;width:100%;height:100%;}
+<#uispace> .m-list3 .pic .fav{-webkit-transition: 1s;-moz-transition: 1s;transition: 1s;}
+<#uispace> .m-list3 .pic .fav{filter:alpha(opacity = 0);opacity:0;position:absolute;bottom:20px;right:15px;width:25px;height:25px;color:#e878b2;border-radius:50%;background:#fff;}
+<#uispace> .m-list3 .pic .fav i{display:block;font-size:16px;text-align:center;line-height:28px;}
+<#uispace> .m-list3 .pic:hover .fav{filter:alpha(opacity = 100);opacity:1;}
+<#uispace> .m-list3 .aside{position:absolute;left:0;top:0;height:100%;width:190px;color:#fff;font-size:14px;text-align:center;background:rgba(51,31,52,0.9);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e5331f34, endColorstr=#e5331f34);}
+<#uispace> .m-list3 .logo{position:relative;display:block;width:100px;height:100px;margin:15px auto 0;overflow:hidden;border-radius:50%;background:#fff;background:url("/res/images/logobg.png") 50% 50% no-repeat\9;}
+<#uispace> .m-list3 .logo .logobox{position:absolute;top:50%;left:0;margin:-18px auto 0 auto;height:36px;width:100%;}
+<#uispace> .m-list3 .logo img{display:block;position:absolute;top:50%;left:0;margin:-30px auto 0;}
+<#uispace> .m-list3 .xicon{display:block;width:13px;height:13px;margin:10px auto 0;text-align:center;color:#a292a0;background-position:-130px -20px;}
+<#uispace> .m-list3 .info{margin-top:10px;}
+<#uispace> .m-list3 .selloff{line-height:30px;}
+<#uispace> .m-list3 .selloff .num{margin-right:3px;font-family:arial,"simsun";font-size:28px;color:#d6aff7;}
+<#uispace> .m-list3 .countdown{font-family:"simsun",arial;font-size:12px;color:#a090b8;}
+<#uispace> .m-list3 .countdown i{margin-right:3px;font-size:13px;}
+<#uispace> .m-list3 .u-icon2{position:absolute;right:16px;bottom:16px;filter:alpha(opacity = 0);opacity:0;visibility:hidden;-webkit-transition:opacity 0.3s linear;-moz-transition:opacity 0.3s linear;transition:opacity 0.3s linear;}
+<#uispace> .m-list3-2 li{height:306px;}
+<#uispace> .m-list3-2 .aside{width:240px;}
+<#uispace> .m-list3-2 .logo{margin-top:38px;}
+<#uispace> .m-list3-2 .x{margin-top:22px;}
+<#uispace> .m-list3-2 .info{margin-top:18px;}
+<#uispace> .m-list3-2 .selloff{margin-top:5px;}
+<#uispace> .m-list3-2 .countdown{margin-top:2px;}

@@ -1,0 +1,87 @@
+<form method="get" class="form-horizontal m-form-polist" id="searchform">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">站点：</label>
+    <div class="col-sm-2">
+      <select name="provinceId" id="poid" class="form-control" r-model={{provinceId}}>
+        <option value="-1">请选择</option>
+        {{#list provinceList as item}}
+          <option value="{{item.id}}">{{item.name}}</option>
+        {{/list}}
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">推广位在线日期：</label>
+    <div class="col-sm-4">
+      <datepicker select={{searchTime}}></datepicker>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-1 col-sm-offset-2">
+      <a class="btn btn-primary btn-block j-flag" id="submitBtn" on-click={{this.getList()}}>查询</a>
+    </div>
+  </div>
+</form>
+{{#if (result.length > 0)}}
+<div class="alert alert-info" role="alert">
+  当前日期推广位：
+  {{#list result as item}}
+    {{item.name}}{{item.list.length}}个
+  {{/list}}
+</div>
+<ul class="nav nav-tabs" id="j-tab-box">
+  {{#list result as item}}
+    <li on-click={{this.setCurrentCategory(item)}} class={{currentCategory == item? 'active': ''}}><a>{{item.name}}</a></li>
+  {{/list}}
+</ul>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>序号</th>
+    <th>类型</th>
+    <th>上线时间</th>
+    <th>下线时间</th>
+    <th>PO编号</th>
+    <th>品牌名称</th>
+    <th>商家帐号</th>
+    <th>图片</th>
+    {{#if currentCategory.type == 1}}<th>前景图</th>{{/if}}
+    <th class="th-xl">链接</th>
+    <th>状态</th>
+    <th width="8%">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#if !!currentCategory && (currentCategory.list.length>0) }}
+  {{#list currentCategory && currentCategory.list as record}}
+  <tr>
+    <td>{{record_index}}</td>
+    <td>{{promotionTypeMap[record.promotionType]}}</td>
+    <td>{{record.startTime| format: 'yyyy-MM-dd HH:mm'}}</td>
+    <td>{{record.endTime| format: 'yyyy-MM-dd HH:mm'}}</td>
+    <td>{{record.scheduleId || ''}}</td>
+    <td>{{record.brandName}}</td>
+    <td>{{record.supplierName}}</td>
+    <td class="f-wwb"><img src="{{record.imgUrl}}" alt="" width="192" height="39"/></td>
+    {{#if currentCategory.type == 1}}<td><img src="{{record.imgUrl2}}" alt="" width="55" height="39"/></td>{{/if}}
+    <td class="f-wwb">{{record.activityUrl}}</td>
+    <td>{{statusMap[record.status]}}</td>
+    <td>
+      <span class="link" on-click={{this.showModal(record)}}>编辑</span>
+      <span class="link" on-click={{this.delete(record_index)}}>删除</span>
+      {{#if record_index !== 0}}<span class="link" on-click={{this.move(record_index, !0)}}>上移</span>{{/if}}
+      {{#if record_index !== currentCategory.list.length-1 }}<span class="link" on-click={{this.move(record_index, !1)}}>下移</span>{{/if}}
+    </td>
+  </tr>
+  {{/list}}
+  {{#else}}
+  <tr>
+    <td colspan="11" style="padding: 100px 0;text-align: center">暂无数据</td>
+  </tr>
+  {{/if}}
+  </tbody>
+</table>
+<h3>
+  <a class="btn btn-primary" id="submitBtn" on-click={{this.showModal()}}>新建推广位</a>
+</h3>
+{{/if}}

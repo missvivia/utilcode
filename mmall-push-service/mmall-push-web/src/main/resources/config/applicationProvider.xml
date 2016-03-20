@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="mmall-push-web" />
+	<dubbo:protocol name="dubbo" port="-1" />
+	<dubbo:service
+		interface="com.xyl.mmall.task.service.PushManagementService"
+		ref="pushManagementService" />
+	<dubbo:service
+		interface="com.xyl.mmall.task.service.DriverService"
+		ref="driverService" />
+	<dubbo:service
+		interface="com.xyl.mmall.task.service.MobileConfigService"
+		ref="mobileConfigService" />
+	<dubbo:service
+		interface="com.xyl.mmall.task.service.PushService"
+		ref="pushService" />
+	<dubbo:service
+		interface="com.xyl.mmall.task.service.VerificationCodeService"
+		ref="verificationCodeService" />
+	<dubbo:service
+		interface="com.xyl.mmall.task.service.PushTaskService"
+		ref="pushTaskService" />
+		
+	<bean id="pushTaskService"
+		class="com.xyl.mmall.task.service.impl.PushTaskServiceImpl" />
+	<bean id="pushManagementService"
+		class="com.xyl.mmall.task.service.impl.PushManagementServiceImpl" />
+	<bean id="driverService"
+		class="com.xyl.mmall.task.service.impl.DriverServiceImpl" />
+		
+	<bean id="pushService"
+		class="com.xyl.mmall.task.service.impl.PushServiceImpl" />
+	<bean id="mobileConfigService"
+		class="com.xyl.mmall.task.service.impl.MobileConfigServiceImpl" />
+	
+	<bean id="springContextUtil" class="com.xyl.mmall.task.bean.SpringContextUtil"/>
+	
+	<bean id="pushServiceConfig"
+		class="com.xyl.mmall.task.bean.PushServiceConfig">
+		<property name="tempFileFolder">
+			<value>/tmp/</value>
+		</property>
+		<!-- 测试用时间间隔，线上不可用 -->
+		<property name="sleepInterval">
+			<value>10000</value>
+		</property>
+		<property name="taskInterval">
+			<value>20000</value>
+		</property>
+		<!-- 是否开启定时功能，默认关闭，不会群发广告消息 -->
+		<property name="startOn">
+			<value>true</value>
+		</property>
+		<!-- <property name="propertyConfiguration" ref="propertyConfiguration"/> -->
+		<!-- end -->
+	</bean>
+</beans>

@@ -1,0 +1,97 @@
+<div class="m-clst table">
+  <div class="clst_action form-inline">
+    <a class="btn btn-primary" href="/promotion/activityEdit">添加活动</a>
+    <select class='form-control' on-change={{this.onChangeCity($event)}} >
+    	{{#list areaList as area}}
+      		<option value="{{area.id}}">{{area.areaName}}</option>
+      	{{/list}}
+    </select>
+  </div>
+  <table class="table  table-striped">
+    <thead>
+      <tr>
+        <th>活动名称</th>
+        <th class='th-xl' >标签描述</th>
+        <th class='th-xl' >站点</th>
+        <th class='th-xl'>活动时间</th>
+        <th>编辑人</th>
+        <th>
+          <select class='form-control form-control-sm' on-change={{this.onChangeAudit($event)}} >
+          	{{#if audit == 0}}
+          	<option value="-1">全部状态</option>
+            <option value="0">新建</option>
+            <option value="1">审核中</option>
+            <option value="2">审核通过</option>
+            <option value="3">审核拒绝</option>
+            <option value="4">已删除</option>
+            {{#else}}
+            <option value="1">审核中</option>
+            <option value="2">审核通过</option>
+            {{/if}}
+          </select>
+        </th>
+        <th>审核说明</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as act}}
+        <tr class='animated' r-animation="on: enter; class: fadeIn">
+          <td>{{ act.name }}</td>
+          <td>
+            <ul>
+              {{#list @(act.labelList) as label}}
+              	{{#if label.select}}
+                	<li>【{{label.name}}】{{(label.desc)?'：'+label.desc:''}};</li>
+                {{/if}}
+              {{/list}}
+            </ul>
+          </td>
+          <td>
+ 				{{#list act.provinceList as area}}
+ 					{{area.areaName}}
+ 				{{/list}}
+		  </td>
+          <td>
+           {{ @(act.startTime|format) }}
+           至
+           {{ @(act.endTime|format) }} 
+          </td>
+          <td>{{@(act.applyUserName)}}</td>
+          <td>
+          	{{#if act.auditState ===0}}
+          		新建
+          	{{#elseif act.auditState === 1 }}
+              	提交审核
+            {{#elseif act.auditState === 2 }}
+				审核通过
+            {{#elseif act.auditState === 3 }}
+            	  拒绝
+            {{#elseif act.auditState === 4 }}
+              	删除
+            {{/if}}
+          </td>
+          <td>{{@(act.reason)}}</td>
+          <td>
+            <a href="/promotion/activityEdit?id={{act.id}}&editable={{(act.auditState===0||act.auditState===3)?1:0}}" class='btn btn-primary btn-xs'>{{(act.auditState===0||act.auditState===3)?'编辑': '查看'}}</a>
+            {{#if act.auditState ===0}} 
+              <a href="#" on-click={{this.operate(act.id,"auditcommit",1)}} class='btn btn-primary btn-xs'>提交</a>
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"delete",4)}}>删除</a>
+            {{#elseif act.auditState === 1 && audit ==1}}
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"audit",2)}}>通过</a>
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"audit",3)}}>拒绝</a>
+            {{#elseif act.auditState === 2 && audit ==1}}
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"discard",5)}}>撤销</a> 
+            {{#elseif act.auditState === 3 }}
+            <a href="#" on-click={{this.operate(act.id,"auditcommit",1)}} class='btn btn-primary btn-xs'>重新提交</a>
+              <a href="#" class='btn btn-dft btn-xs' on-click={{this.operate(act.id,"delete",4)}}>删除</a>
+            {{/if}}
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+  <pager total={{Math.ceil(total/10)}} current={{current}}></pager> 
+</div>
+
+

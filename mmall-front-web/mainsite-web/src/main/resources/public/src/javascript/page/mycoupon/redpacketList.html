@@ -1,0 +1,37 @@
+<table class="m-table" border="0" cellspacing="0" cellpadding="0">
+	<tbody>
+    <tr>
+      <th style="width:240px;">名称</th><th style="width:184px;">金额</th><th style="width:210px;">有效期</th>
+      <th>
+        <select class='w-select' on-change={{this.onChange($event)}}>
+           <option value="-1">全部状态</option>
+           <option value="0">可用</option>
+           <option value="8">未生效</option>
+           <option value="3">已使用</option>
+           <option value="2">已过期</option>
+           <option value="5">已失效</option>
+         </select>
+      </th>
+      <th>详情</th>
+    </tr>
+    {{#if list.length > 0}}
+    {{#list list as item}}
+    <tr {{#if item.state ==3}}class="used"{{#elseif item.state ==2}}class="old"{{/if}}>
+      <td>{{item.name}}</td>
+      <td>总额￥{{item.cash}}，<span class="s-fc19">剩余{{item.remainCash}}</span></td>
+      <td>{{#if item.state ==8}}\{{#else}}{{item.validStartTime|format}}至{{item.validEndTime|format}}{{/if}}</td>
+      <td>{{#if item.state ==0}}<span class="s-fc17">可用</span>{{#elseif item.state == 8}}未生效{{#elseif item.state == 5}}已失效{{#elseif item.state ==3}}已使用{{#else}}已过期{{/if}}</td>
+      <td><a class="s-fc20" href="javascript:void(0);" on-click={{this.showDetailWin(item)}}>查看</a></td>
+    </tr>
+    {{/list}}
+    {{/if}}
+    </tbody>
+</table>
+{{#if list.length > 0}}
+<ucenterpager total={{Math.ceil(total/limit)}} current={{current}}></ucenterpager>
+{{#else}}
+<div class="u-empt">
+  <span class="u-icon3 u-icon3-1">&nbsp;</span>
+  <p class="txt">您暂时还没有{{#if state ==0}}可用的{{#elseif state == 8}}未生效的{{#elseif state == 5}}已失效的{{#elseif state ==3}}已使用的{{#elseif state ==2}}已过期的{{/if}}红包哦！</p>
+</div>
+{{/if}}

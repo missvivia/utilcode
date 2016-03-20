@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">     
+	<dubbo:application name="mmall-oms-web" />     
+	<dubbo:protocol name="dubbo" port="-1" />      
+	<dubbo:service interface="com.xyl.mmall.oms.service.OmsOutsideService" ref="outService"/>
+	<bean id="outService" class="com.xyl.mmall.oms.service.impl.OmsOutsideServiceImpl"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.PickOrderService" ref="pickOrderService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.PickSkuService" ref="pickSkuService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.PoOrderService" ref="poOrderService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.PoReturnService" ref="poReturnService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.ShipOrderService" ref="shipOrderService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.ShipSkuService" ref="shipSkuService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.WarehouseService" ref="warehouseService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.BusinessPhoneService" ref="businessPhoneService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.OmsOrderFormService" ref="omsOrderFormService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.OmsReturnOrderFormService" ref="omsReturnOrderFormService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.OmsOrderPackageService" ref="omsOrderPackageService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.WarehouseStockInService" ref="warehouseStockInService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.OrderTraceService" ref="orderTraceService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.RejectPackageService" ref="rejectPackageService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.FreightService" ref="freightService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.WarehouseReturnService" ref="warehouseReturnService" />
+	
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsMakerReportService" ref="omsMakerReportService"/>
+	<bean id="omsMakerReportService" class="com.xyl.mmall.oms.report.service.impl.OmsMakerReportServiceImpl"/>
+	
+	<dubbo:service interface="com.xyl.mmall.oms.service.OmsFeeService" ref="omsFeeService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.service.OmsFeeService" ref="omsFeeService"/>
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsNoReceiptService" ref="omsNoReceiptService" />
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsReceiptService" ref="omsReceiptService" />
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsReturnService" ref="omsReturnService" />
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsSendOutService" ref="omsSendOutService" />	
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsShipOutReportService" ref="omsShipOutReportService" />
+	<dubbo:service interface="com.xyl.mmall.oms.report.service.OmsOrderReportService" ref="omsOrderReportService" />
+	<!-- 服务引用也在这里定义了 -->
+	<dubbo:reference interface="com.xyl.mmall.ip.service.LocationService" id="locationService"/>
+	<dubbo:reference interface="com.xyl.mmall.task.service.PushService" id="pushService"/>
+</beans>

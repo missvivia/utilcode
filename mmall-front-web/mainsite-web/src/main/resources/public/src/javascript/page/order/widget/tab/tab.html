@@ -1,0 +1,16 @@
+<div {{#if selectedIndex == 0}}class="tab selected"{{#else}}class="tab"{{/if}}>
+<!-- <div class="top"></div>  -->
+    <div class="bottom" on-click={{this.go(0)}}>全部订单</div>
+</div>
+<div {{#if selectedIndex == 1}}class="tab selected"{{#else}}class="tab"{{/if}}>
+<!-- <div class="top"></div>  -->
+    <div class="bottom" on-click={{this.go(1)}}>待付款(<span {{#if num[1] > 0}}class="numbers"{{/if}}>{{num[1]}}</span>)</div>
+</div>
+<div {{#if selectedIndex == 2}}class="tab selected"{{#else}}class="tab"{{/if}}>
+<!-- <div class="top"></div>  -->
+    <div class="bottom" on-click={{this.go(2)}}>待发货(<span {{#if num[2] > 0}}class="numbers"{{/if}}>{{num[2]}}</span>)</div>
+</div>
+<div {{#if selectedIndex == 3}}class="tab selected"{{#else}}class="tab"{{/if}}>
+<!-- <div class="top"></div>  -->
+    <div class="bottom" on-click={{this.go(3)}}>待收货(<span {{#if num[3] > 0}}class="numbers"{{/if}}>{{num[3]}}</span>)</div>
+</div>

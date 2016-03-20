@@ -1,0 +1,8 @@
+{
+  "input": "./",  
+  "outport": "../css",
+  "format": 3,
+  "watch": true,
+  "exclude": "(\\\\|\\/)_",
+  "include": "../javascript/components"
+}

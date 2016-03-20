@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- 典型的日志pattern -->
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="businessLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH:-${java.io.tmpdir:-/tmp}}/logs/mmall-bi.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH:-${java.io.tmpdir:-/tmp}}/logs/mmall-bi.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 保留 20天数据，默认无限-->
+			<maxHistory>20</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="com.xyl.mmall" level="INFO" />
+
+	<!-- bi log info level -->
+	<logger name="com.xyl.mmall.bi.service.impl" level="INFO" additivity="false" >
+		<level value="INFO" />
+		<appender-ref ref="console" />
+		<appender-ref ref="businessLogFile" />
+	</logger>
+
+	<!-- root -->
+	<root level="INFO">
+		<appender-ref ref="console" />
+	</root>
+</configuration>

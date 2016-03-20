@@ -1,0 +1,8 @@
+.#<uispace>{width:600px}
+.#<uispace> .m-title{border-bottom:1px solid #ccc;padding-bottom:10px}
+.#<uispace> .sitm{padding:10px 20px}
+
+.#<uispace> .m-fontpick{margin-top:10px}
+.#<uispace> .m-fontpick .m-colorpick{z-index:9;}
+.#<uispace> .m-bgpick .m-colorpick{z-index:8}
+.#<uispace> .m-bdpick .m-colorpick{z-index:7}

@@ -1,0 +1,91 @@
+{{#if !!firstLoad}}
+<div class="p-cart-load">
+  <div class="w-loading"></div>
+  <div class="text f-fs1 s-fc2">努力加载中...</div>
+</div>
+{{#else}}
+  {{#if (!!activations && activations.length>0) || (!!poList && poList.length>0)}}
+  <div class="m-tipbar f-fs1">
+    {{#if cartInfoVO.leftTime>0}}
+    <b class="i-time"></b>
+    <span class="text">请在</span>
+    <m-countdown time={{cartInfoVO.leftTime}} content='{{format}}' on-onchange={{this.onCountDown($event)}}></m-countdown>
+    <span class="text">内提交订单，超时您的商品就被别人抢走啦</span>
+    <b class="i-warn f-cp" data-clazz="u-tooltip-1" data-placement="right" data-content="由于库存有限，购物袋内商品库存最多为您锁定20分钟，
+  请尽快结算" r-tooltip></b>
+    {{#elseif cartInfoVO.leftTime==0 && !firstLoad}}
+    <span>逛超时啦，重新添加有库存的商品，尽快结算哦！</span>
+    {{/if}}
+  </div>
+  <div class="p-cart">
+    <div class="p-cart-table {{cartInfoVO.selectALl? 'allcheck': ''}}">
+      <div class="cart-hd">
+        <ul class="f-fs1 s-fc3 f-cb">
+          <li class="chk col0 f-fl">
+            <label class="i-check" on-click={{this.onSelectALL()}}></label>
+            <div class="text">全选</div>
+          </li>
+          <li class="col1 f-fl">
+            <div>商品</div>
+          </li>
+          <li class="col2 f-fl">
+            <div>闪购价</div>
+          </li>
+          <li class="col3 f-fl">
+            <div>数量</div>
+          </li>
+          <li class="col4 f-fl">
+            <div>小计</div>
+          </li>
+          <li class="col5 f-fl">
+            <div>操作</div>
+          </li>
+        </ul>
+      </div>
+      <div class="cart-bd">
+        {{#list activations as item}}
+          <wgt-item-product-list item={{item}} cartInfoVO={{cartInfoVO}} on-change={{this.refresh($event)}} on-error={{this.error($event)}}></wgt-item-product-list>
+        {{/list}}
+        {{#list poList as item}}
+          <wgt-item-product-list item={{item}} cartInfoVO={{cartInfoVO}} on-change={{this.refresh($event)}} on-error={{this.error($event)}}></wgt-item-product-list>
+        {{/list}}
+      </div>
+      <div class="cart-ft f-fs1 s-fc3 ">
+        <div class="promobar s-fc1 f-cb">
+          <span class="text0 f-fl">订单优惠</span>
+          <span class="text1 tag-cart f-fl">免邮</span>
+          <span class="text1 f-fs0 f-fl">订单实付满288元免运费</span>
+          <!--<span class="f-fs0 f-fl" r-html={{'再买&yen;300即免邮'}}> <a href="#" target="_blank" class="s-fc12" r-html={{'去凑单&gt;&gt;'}}></a></span>-->
+        </div>
+        <div class="accountbar f-fs0" id="accountbar">
+          <div class="float f-cb j-flag">
+            <div class="chk col0 f-fl">
+              <label class="i-check" for=""  on-click={{this.onSelectALL()}}></label>
+              <div class="text">全选</div>
+            </div>
+            <div class="f-fl">
+              <span class="btn-del f-cp s-fc9" on-click={{this.onDelete()}}>删除</span>
+            </div>
+            <div class="f-fr">
+              <a class="text0 f-fl f-cp s-fc9" href="/">继续购物</a>
+              <span class="text1 f-fl">总计</span>
+              <span class="f-fl s-fc5"><span class="f-fs1 f-fl" r-html={{'&yen;'}}></span><span class="account f-fw1 f-fl">{{(cartInfoVO.totalPrice|fixed).split('.')[0] || '0'}}</span><span class="f-fs1 f-fw1 f-fl">.{{(cartInfoVO.totalPrice|fixed).split('.')[1]||'00'}}</span></span>
+              <span class="w-btn4 pay f-fl f-cp {{cartInfoVO.payAble? '': 'w-btn4-dis'}}" on-click={{this.pay()}}>结算</span>
+            </div>
+          </div>
+          <form action="/purchase/index" method="post" target="_self" id="postForm">
+          <input type="hidden" name="cartIds" value={{form.cartIds}}/>
+          <input type="hidden" name="cartEndTime" value={{form.cartEndTime}}/>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{#else}}
+  <div class="p-cart-none u-empt">
+    <span class="u-icon3 u-icon3-4">&nbsp;</span>
+    <p class="txt">购物袋还是空的哦，再<a href="/">去逛逛</a>吧！</p>
+  </div>
+  {{/if}}
+  {{#if (!!invalidCartItemList && invalidCartItemList.length>0)}}<wgt-product-invalid invalidList={{invalidCartItemList}}></wgt-product-invalid>{{/if}}
+{{/if}}

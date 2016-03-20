@@ -1,0 +1,54 @@
+<div class="m-table-poreport">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th colspan="4">基本信息</th>
+          <th colspan="2">销售</th>
+          <th colspan="2">拣货</th>
+          <th colspan="1">发货</th>
+          <th colspan="3">退供</th>
+        </tr>
+        <tr>
+          <th>PO单号</th>
+          <th>物流信息查询</th>
+          <th>上线日期</th>
+          <th>下线日期</th>
+          
+          <th>有效销售数</th>
+          <th>取消数</th>
+
+          <th>最后拣货时间</th>
+          <th>累积拣货数</th>
+          
+          <!-- <th>累计发货数</th> -->
+          <th>累计到货数</th>
+          
+          <th>一退数量</th>
+          <th>二退数量</th>
+          <th>三退数量</th>
+        </tr>
+      </thead>
+      <tbody id="poreportlist">
+          {{#list currentlist as tpl}}
+          <tr>
+              <td>{{tpl.poOrderId}}</td>
+              <td class="nowrap"><!-- <a {{#if tpl.cumulativeShipNumber==0}}class="disb" onclick="javascript:void(0)" {{#else}}href="/jit/posupply/{{tpl.poOrderId}}"{{/if}}>来货物流</a> --><a {{#if tpl.oneReturnNumber==0 && tpl.twoReturnNumber==0 && tpl.threeReturnNumber==0}}class="disb" onclick="javascript:void(0)" {{#else}}href="/jit/poreturn/{{tpl.poOrderId}}" {{/if}}>退供物流</a></td>
+              <td>{{(tpl.onlineTime)|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+              <td>{{(tpl.offlineTime)|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+              <td>{{tpl.effectiveOrdersNumber}}</td>
+              <td>{{tpl.cancelOrdersNumber}}</td>
+              <td>{{#if tpl.lastPickTime==''}}--{{#else}}{{(tpl.lastPickTime)|format:"yyyy-MM-dd HH:mm:ss"}}{{/if}}</td>
+              <td>{{tpl.cumulativePickNumber}}</td>
+              <!--  <td>{{tpl.cumulativeShipNumber}}</td> -->
+              <td>{{tpl.cumulativeArrivalNumber}}</td>
+              <td>{{tpl.oneReturnNumber}}</td>
+              <td>{{tpl.twoReturnNumber}}</td>
+              <td>{{tpl.threeReturnNumber}}</td>
+          </tr>
+          {{/list}}
+      </tbody>
+    </table>
+</div>
+<div class="text-right">
+    <pager total={{Math.ceil(total / limit)}} current={{current}} ></pager>
+</div>

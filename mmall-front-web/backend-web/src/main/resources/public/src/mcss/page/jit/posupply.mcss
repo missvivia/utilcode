@@ -1,0 +1,12 @@
+/* 统一清除浮动 */
+.m-supply .group{
+    zoom:1;
+    &:after{display:block;content:'.';clear:both;overflow:hidden;visibility:hidden;height:0;}
+}
+
+.m-box{
+	border:1px solid #ccc;padding:0 20px;margin:20px 0;
+    .cont{padding:10px 0;}
+    .item{float:left;width:30%;}  
+    .table{border:0;}
+}

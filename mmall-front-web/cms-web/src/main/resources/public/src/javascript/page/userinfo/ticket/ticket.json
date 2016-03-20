@@ -1,0 +1,7 @@
+{"result":
+    {
+    "active":[{"codeid":"20","desc":"描述描述","time":"2014.01.01 - 2014.01.01","range":"xxxxx-xxxx","POID":"384738","brand":"xxx","note":"备注备注备注备注"},{"codeid":"20","desc":"描述描述","time":"2014.01.01 - 2014.01.01","range":"xxxxx-xxxx","POID":"384738","brand":"xxx","note":"备注备注备注备注"}],
+    "over":[{"codeid":"21","desc":"描述描述","time":"2014.01.01 - 2014.01.01","range":"xxxxx-xxxx","POID":"384738","brand":"xxx","note":"备注备注备注备注"},{"codeid":"20","desc":"描述描述","time":"2014.01.01 - 2014.01.01","range":"xxxxx-xxxx","POID":"384738","brand":"xxx","note":"备注备注备注备注"}],
+    "past":[{"codeid":"22","desc":"描述描述","time":"2014.01.01 - 2014.01.01","range":"xxxxx-xxxx","POID":"384738","brand":"xxx","note":"备注备注备注备注"},{"codeid":"20","desc":"描述描述","time":"2014.01.01 - 2014.01.01","range":"xxxxx-xxxx","POID":"384738","brand":"xxx","note":"备注备注备注备注"}]
+    }
+}

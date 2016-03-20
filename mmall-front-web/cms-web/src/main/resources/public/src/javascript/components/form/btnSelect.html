@@ -1,0 +1,13 @@
+<div class="btn-group drop{{direct||'down'}} {{show?'open':''}}" on-click={{show=!show}} >
+  <button type="button" class="btn btn-{{theme||'default'}}">{{value? selectName: (placeholder||"请选择")}}</button>
+  <button type="button" class="btn btn-{{theme||'default'}} dropdown-toggle" >
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-fix2" role="menu">
+    {{#list options as opt}}
+      <li><a href="#" on-click={{this.select(opt)}}>{{opt.name}}</a></li>
+    {{/list}}
+  </ul>
+  <input type="text" name={{name}} value={{value}} style="display:none">
+</div>

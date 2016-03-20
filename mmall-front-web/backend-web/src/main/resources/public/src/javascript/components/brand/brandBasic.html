@@ -1,0 +1,43 @@
+<form method="get" class="form-horizontal m-form-basic" role="form" id="webForm" data-focus-mode="1">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">LOGO</label>
+
+        <div class="col-sm-2">
+            <img src="{{basic.logoUrl}}" width="80" height="80" name="logo">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">品牌介绍<span class="f-ib js-error">*</span></label>
+
+        <div class="col-sm-6">
+            <textarea placeholder="最多300个字" rows="3" cols="50" data-auto-focus="false" data-required="true"
+                      data-message="最多300个字" name="intro" maxlength="300" r-model={{basic.intro}}></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">品牌介绍2<span class="f-ib js-error">*</span></label>
+
+        <div class="col-sm-6">
+            <textarea placeholder="最多90个字移动端" rows="1" cols="50" data-auto-focus="false" data-required="true"
+                      data-message="最多90个字" name="intro2" maxlength="90" r-model={{basic.intro2}}></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">品牌形象图<span class="f-ib js-error">*</span>
+            <p class="help-block">提示：可上传1-3张</p>
+            <p class="help-block">尺寸:1242x546 px</p>
+            <p class="help-block">单张2M以内</p>
+        </label>
+
+        <div class="col-sm-10 m-uplodbox" id="maximages"></div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">橱窗展示图<span class="f-ib js-error">*</span>
+            <p class="help-block">提示：必须上传6张</p>
+            <p class="help-block">尺寸:300x300 px</p>
+            <p class="help-block">单张2M以内</p>
+        </label>
+
+        <div class="col-sm-10 m-uplodbox" id="fiximages"></div>
+    </div>
+</form>

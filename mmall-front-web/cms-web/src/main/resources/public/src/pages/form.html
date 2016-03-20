@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/javascript/lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/page/product_manage.css"></head>
+<body>
+  <div class="g-sd col-sm-2">
+    <div class="m-nav">
+      <div class="u-logo">
+        <img src="https://avatars1.githubusercontent.com/u/731333?v=2&s=460" alt="xx">
+        <h3>新云联-伪品汇</h3>
+      </div>
+      <div class="m-snav">
+        <h4>配置</h4>
+        <ul class="nav">
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-inbox"></span>
+              商品管理
+              <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            </a>
+            <ul class='nav'>
+              <li>
+                <a href="">商品列表</a>
+              </li>
+              <li>
+                <a href="">商品添加</a>
+              </li>
+              <li>
+                <a href="">尺寸模板</a>
+              </li>
+            </ul>
+          </li>
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-record"></span>
+              JIT管理
+              <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            </a>
+            <ul></ul>
+          </li>
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-briefcase"></span>
+              商务管理
+            </a>
+            <ul></ul>
+          </li>
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-picture"></span>
+              图片空间
+            </a>
+            <ul></ul>
+          </li>
+          <li class="snav_item">
+            <a href="" class='active'>
+              <span class="glyphicon glyphicon-wrench"></span>
+              权限管理
+            </a>
+            <ul></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="m-snav">
+        <h4>统计</h4>
+        <ul class="nav">
+          <li class="snav_item">
+            <a href="">
+              <span class="glyphicon glyphicon-inbox"></span>
+              商品统计
+            </a>
+            <ul class="nav"></ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="g-bd col-sm-10">
+    <!-- 顶栏 -->
+    <div class="row m-header">
+      <ul class="nav navbar-right">
+        <li class="dropdown">
+          <a href="/logout"> <i class="glyphicon glyphicon-log-out"></i>
+            登出
+          </a>
+
+        </li>
+      </ul>
+    </div>
+    <!-- 面包削 -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="m-card m-card-bread">
+          <ul class="breadcrumb">
+            <li>
+              <a href="">
+                <span class="glyphicon glyphicon-home"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">商品管理</a>
+            </li>
+            <li class="active">商品添加</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- card -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="m-card">
+          <h2 class="card_b">
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            商品基本信息
+          </h2>
+          <div class="card_c j-form">
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="m-card">
+          <h2 class="card_b">
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            规格图片上传
+          </h2>
+          <div class="card_c">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="m-card">
+          <h2 class="card_b">
+            <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            详情自定义
+          </h2>
+          <div class="card_c">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="template/regular" id="form">
+
+<form name="myForm">
+    User name: <input type="text" name="userName" r-model="user.name" required class="form-control">
+    <span class="error" r-hide="!myForm.userName.$error.required">
+      Required!</span><br>
+    Last name: <input type="text" name="lastName" r-model="user.last"
+      r-minlength="3" r-maxlength="10" class="form-control">
+    <span class="error" r-hide="!myForm.lastName.$error.minlength">
+      Too short!</span>
+    <span class="error" r-hide="!myForm.lastName.$error.maxlength">
+      Too long!</span><br>
+  </form>
+  <hr>
+  <tt>user = {{JSON.stringify(user)}}</tt><br/>
+  <tt>myForm.userName.$valid = {{myForm.userName.$valid}}</tt><br>
+  <tt>myForm.userName.$error = {{JSON.stringify(myForm.userName.$error)}}</tt><br>
+  <tt>myForm.lastName.$valid = {{myForm.lastName.$valid}}</tt><br>
+  <tt>myForm.lastName.$error = {{JSON.stringify(myForm.lastName.$error)}}</tt><br>
+  <tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+  <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br>
+  <tt>myForm.$error.minlength = {{!!myForm.$error.minlength}}</tt><br>
+  <tt>myForm.$error.maxlength = {{!!myForm.$error.maxlength}}</tt><br>
+  
+</script>
+<script src="/src/javascript/lib/nej/src/define.js?pro=/src/javascript/"></script>
+<script type="text/javascript">
+  
+  define([
+    "pro/components/form/form",
+    "pro/widget/BaseComponent"
+    ],function (formModule, BaseComponent){
+      var TestForm = Regular.extend({
+        template: "#form"
+      }).use("$form");
+
+      var component = new TestForm({
+        data: {user : {}}
+      }).$inject(".j-form");
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<div class="w-vhelper">
+{{#if !preview}}
+<div class="well form-horizontal">
+  <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label">模板助手名称</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" r-model='name'>
+      </div>
+  </div>
+</div>
+{{/if}}
+<div class="w-htable  {{preview?'z-preview': ''}}">
+<div class="colors">
+  {{#list colors as color}}
+  <div class="color" r-animation="on:enter;class:animated bounceIn; on:leave;class:animated bounceOut;"
+    on-mouseover={{this.select(color)}} on-mouseout={{this.select(null)}}
+  >
+    <span class="u-color" style="background-color: {{colorMap[color_index]||colorMap[0]}}"></span>
+    {{color}}
+  </div>
+  {{/list}}
+</div>
+<table class="table table-bordered  {{selected?'z-selected': ''}}">
+  <thead>
+    <tr>
+      <th class='u-corner'>
+        <div class="corner"></div>
+        <div class="corner corner-2"></div>
+        <span class="bottom">{{vaxis.name || "身高cm"}}</span>
+        <span class="top">{{haxis.name || "体重kg"}}</span>
+      </th>
+      {{#list haxis.list as item}}
+      <th>{{@(item)}}</th>
+      {{/list}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#list body as bd}}
+    <tr>
+      <td>{{vaxis.list[bd_index]}}</td>
+      {{#list 0..(bd.length-1) as b}}
+        <td title={{bd[b]}} class="box {{selected==bd[b]?'box-selected':''}}" style="background-color: {{colorHash[bd[b]] || (bd[b]? colorMap[0] :'')}}" >
+          {{#if !preview}}<input type="text" class='form-control form-control-sm' value={{@(bd[b])}} on-change={{this.change(bd_index,b_index,$event)}}>{{/if}}
+         </td>
+      {{/list}}
+    </tr>
+    {{/list}}
+  </tbody>
+</table>
+</div>
+{{#if @(!hidebar)}}
+<div class="btns row">
+  <a href="javascript:;" class="btn btn-primary {{disabled?'disabled':''}}" on-click={{this.save()}}>保存</a>
+  <a href="javascript:;" class="btn btn-primary" on-click={{preview = !preview}}>{{!preview? '预览': '编辑'}}</a>
+  <a href="/product/helper" class="btn btn-default">取消</a>
+</div>
+{{/if}}
+</div>

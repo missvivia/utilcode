@@ -1,0 +1,30 @@
+<textarea name="ntp" id="#<mid>">
+    <div class="modal w-bd-setting w-bd-setting-sort">
+      <div class="modal-dialog">
+        <div class="modal-content form-horizontal">
+          <div class="modal-header j-dragger">
+            <button type="button" class="close" data-action="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">所有商品排序</h4>
+          </div>
+          <div class="modal-body m-bd-sot f-cb">
+            <div class="lbox j-flag f-cb"></div>
+            <div class="more j-flag">加载更多</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-action="close">取消</button>
+            <button type="button" class="btn btn-primary" data-action="submit">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+</textarea>
+<textarea name="jst" id="#<jid>">
+    {list beg..end as y}
+    {var x = xlist[y]}
+    <div class="m-bd-spd j-item" title="${x.productName}" data-value="${x.id}">
+      {var url = x.thumb||''}
+      <img src="${url}${url.indexOf('?')<0?'?':'&'}imageView&thumbnail=70x88"/>
+      <div class="ln f-toe">${x.productName}</div>
+    </div>
+    {/list}
+</textarea>

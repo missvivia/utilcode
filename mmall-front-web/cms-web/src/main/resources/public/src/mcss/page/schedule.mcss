@@ -1,0 +1,6 @@
+// 工具库
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+@import "../_config";
+
+.m-empty{text-align:center;padding:40px 0}

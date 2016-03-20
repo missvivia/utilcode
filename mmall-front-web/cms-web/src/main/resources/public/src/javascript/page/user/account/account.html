@@ -1,0 +1,32 @@
+<div class="m-user">
+    <div class="tit">账户信息</div>
+    <div class="cnt">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>类型</th>
+                    <th>内容/金额</th>
+                    <th>邮编</th>
+                    <th>收货人电话</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if !list}}
+           		<tr><td colspan="4">还没有任何信息</td></tr>
+            	{{#else}}
+                {{#list list as item}}
+                <tr>
+                    <td>
+                    	{{#if item.type=="1"}}优惠券{{/if}}
+	                    {{#if item.type=="2"}}红包{{/if}}
+	                </td>
+                    <td>{{item.content}}</td>
+                    <td>{{item.postcode}}</td>
+                    <td>{{item.tel}}</td>
+                </tr>
+                {{/list}}
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+</div>

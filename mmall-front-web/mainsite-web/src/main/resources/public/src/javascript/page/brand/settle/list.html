@@ -1,0 +1,55 @@
+<div class="m-brandsett">
+  <div class="m-alphalist">
+    <ul class="f-cb">
+      <li class="itm first"><span>按字母</span></li>
+      <li class='itm second {{type=="all"? "active": ""}}' on-click={{ this.getListByType("all")}}><a href="javascript:void(0);">全部</a></li>
+      <li class='itm {{type=="a"? "active": ""}}' on-click={{ this.getListByType("a")}}><a href="javascript:void(0);">A</a></li>
+      <li class='itm {{type=="b"? "active": ""}}' on-click={{ this.getListByType("b")}}><a href="javascript:void(0);">B</a></li>
+      <li class='itm {{type=="c"? "active": ""}}' on-click={{ this.getListByType("c")}}><a href="javascript:void(0);">C</a></li>
+      <li class='itm {{type=="d"? "active": ""}}' on-click={{ this.getListByType("d")}}><a href="javascript:void(0);">D</a></li>
+      <li class='itm {{type=="e"? "active": ""}}' on-click={{ this.getListByType("e")}}><a href="javascript:void(0);">E</a></li>
+      <li class='itm {{type=="f"? "active": ""}}' on-click={{ this.getListByType("f")}}><a href="javascript:void(0);">F</a></li>
+      <li class='itm {{type=="g"? "active": ""}}' on-click={{ this.getListByType("g")}}><a href="javascript:void(0);">G</a></li>
+      <li class='itm {{type=="h"? "active": ""}}' on-click={{ this.getListByType("h")}}><a href="javascript:void(0);">H</a></li>
+      <li class='itm {{type=="i"? "active": ""}}' on-click={{ this.getListByType("i")}}><a href="javascript:void(0);">I</a></li>
+      <li class='itm {{type=="j"? "active": ""}}' on-click={{ this.getListByType("j")}}><a href="javascript:void(0);">J</a></li>
+      <li class='itm {{type=="k"? "active": ""}}' on-click={{ this.getListByType("k")}}><a href="javascript:void(0);">K</a></li>
+      <li class='itm {{type=="l"? "active": ""}}' on-click={{ this.getListByType("l")}}><a href="javascript:void(0);">L</a></li>
+      <li class='itm {{type=="m"? "active": ""}}' on-click={{ this.getListByType("m")}}><a href="javascript:void(0);">M</a></li>
+      <li class='itm {{type=="n"? "active": ""}}' on-click={{ this.getListByType("n")}}><a href="javascript:void(0);">N</a></li>
+      <li class='itm {{type=="o"? "active": ""}}' on-click={{ this.getListByType("o")}}><a href="javascript:void(0);">O</a></li>
+      <li class='itm {{type=="p"? "active": ""}}' on-click={{ this.getListByType("p")}}><a href="javascript:void(0);">P</a></li>
+      <li class='itm {{type=="q"? "active": ""}}' on-click={{ this.getListByType("q")}}><a href="javascript:void(0);">Q</a></li>
+      <li class='itm {{type=="r"? "active": ""}}' on-click={{ this.getListByType("r")}}><a href="javascript:void(0);">R</a></li>
+      <li class='itm {{type=="s"? "active": ""}}' on-click={{ this.getListByType("s")}}><a href="javascript:void(0);">S</a></li>
+      <li class='itm {{type=="t"? "active": ""}}' on-click={{ this.getListByType("t")}}><a href="javascript:void(0);">T</a></li>
+      <li class='itm {{type=="u"? "active": ""}}' on-click={{ this.getListByType("u")}}><a href="javascript:void(0);">U</a></li>
+      <li class='itm {{type=="v"? "active": ""}}' on-click={{ this.getListByType("v")}}><a href="javascript:void(0);">V</a></li>
+      <li class='itm {{type=="w"? "active": ""}}' on-click={{ this.getListByType("w")}}><a href="javascript:void(0);">W</a></li>
+      <li class='itm {{type=="x"? "active": ""}}' on-click={{ this.getListByType("x")}}><a href="javascript:void(0);">X</a></li>
+      <li class='itm {{type=="y"? "active": ""}}' on-click={{ this.getListByType("y")}}><a href="javascript:void(0);">Y</a></li>
+      <li class='itm {{type=="z"? "active": ""}}' on-click={{ this.getListByType("z")}}><a href="javascript:void(0);">Z</a></li>
+      <li class='itm last {{type=="other"? "active": ""}}' on-click={{ this.getListByType("other")}}><a href="javascript:void(0);">其他</a></li>
+    </ul>
+  </div>
+  <div class="bd">
+    {{#if list.length>0}}
+    <div class="m-list2">
+      <ul>
+        {{#list list as item}}
+        <li>
+          <span class="u-brandlogo">
+            <a href="/mainbrand/story?id={{item.brandId}}"><img src="{{item.logo}}" width="153px" height="70px"/></a>
+            <span class="name">{{item.brandNameEn}} {{item.brandNameZh}}</span>
+            <a class="u-btn4 {{item.favorited?'u-btn4-1':''}}" href="javascript:void(0);" on-click={{this.focus(item,$event)}}>{{item.favorited?'取消关注':'关注品牌'}}</a>
+          </span>
+        </li>
+        {{/list}}
+      </ul>
+    </div>
+    <ucenterpager total={{Math.ceil(total/limit)}} current={{current}}></ucenterpager>
+    {{#else}}
+    <div style="text-align:center;padding:120px 0;">暂无入驻品牌</div>
+    {{/if}}
+  </div>
+</div>

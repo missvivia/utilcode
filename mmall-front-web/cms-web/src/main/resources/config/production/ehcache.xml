@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<!-- DefaultCache setting. -->
+	<defaultCache maxBytesLocalHeap="50M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="bannerCache" maxBytesLocalHeap="20M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="allProvinceCache" maxBytesLocalHeap="20M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="siteAreaCache" maxBytesLocalHeap="50M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+
+	<cache name="businessBreifCache" maxBytesLocalHeap="100M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="businessCache" maxBytesLocalHeap="100M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+</ehcache>

@@ -1,0 +1,241 @@
+body{
+	background:#ffeaf4;
+}
+.g-hd{
+	background:#f5f5f5;
+}
+.g-activity{
+    position:relative;
+    background:#ffeaf4;
+}
+.pg_part{
+    position:relative;
+    background:#fb3fa1 no-repeat center 0;
+}
+.cnt_part{
+    position:relative;
+    margin:0 auto;
+    width:1090px;
+    background:no-repeat;
+}
+.m-banner{
+    height:360px;
+    background-image:url('/res/images/activity/activity_banner_bg.jpg');
+    .cnt{
+        height:360px;
+        background-image:url('/res/images/activity/activity_banner_cnt_v2.jpg');
+    }
+}
+.m-activity1{
+	margin-top:60px;
+	height:639px;
+	background-image:url('/res/images/activity/activity_part_1_v2.jpg');
+	.exchange{
+		margin:95px 30px 0 30px;
+		.loading{
+			width:1090px;
+		}
+		.check{
+			height:50px;
+			.signal{
+				padding:13px 0px 12px 12px;
+				width:492px;
+				height:23px;
+				border:1px solid #d951b5;
+				input{
+					width:476px;
+					height:19px;
+					font-size:16px;
+					color:#d951b5;
+					border:1px solid #ffeaf4;
+					background:#ffeaf4;
+				}
+			}
+			.subSignal{
+				padding-left:20px;
+				width:110px;
+				height:50px;
+				background:#d951b5;
+				cursor:pointer;
+				label{
+					margin:13px 0 0 0px;
+					width:72px;
+					height:27px;
+					line-height:27px;
+					font-size:18px;
+					color:#fff;
+					cursor:pointer;
+				}
+				.icon{
+					margin:11px 8px;
+					width:14px;
+					height:26px;
+					background:url('/res/images/activity/activity_icon.png') no-repeat -5px -2px;
+				}
+			}
+		}
+		.show{
+			width:1090px;
+			p{
+				font-size:16px;
+				color:#85025e;
+			}
+			a{
+				font-size:16px;
+				color:#fb44a9;
+				text-decoration:underline;
+			}
+		}
+	}
+	.j-coupon{
+		position:absolute;
+		top:328px;
+		left:427px;
+		width:235px;
+		height:49px;
+		cursor:pointer;
+	}
+	.rules{
+		margin:445px 30px 0 30px;
+		width:655px;
+		h1{
+			font-size:16px;
+			line-height:35px;
+			font-weight:bold;
+		}
+		.rule{
+			font-size:14px;
+			line-height:25px;
+			padding-left:15px;
+			text-indent:-12pt;
+		}
+		.getSignal{
+			margin-top:8px;
+			p{
+				font-size:14px;
+				line-height:25px;
+				color:#af1b86;
+				em{
+					font-size:16px;
+					font-weight:bold;
+				}
+				span{
+					padding:3px;
+					background:url('/res/images/activity/activity_icon.png') no-repeat -26px -7px;
+				}
+			}
+			.pics{
+				.pic{
+					margin-left:38px;
+					width:106px;
+					height:170px;
+					text-align:center;
+					img{
+						margin-top:23px;
+					}
+					p{
+						color:#989094;
+					}
+				}
+				.pic+.pic{
+					margin-left:135px;
+				}
+			}
+		}
+	}
+}
+.m-activity2{
+	height:597px;
+	background-image:url('/res/images/activity/activity_part_2.jpg');
+	.rules{
+		margin:280px 30px 0 30px;
+		width:1030px;
+		color:#333;
+		h1{
+			font-size:16px;
+			line-height:35px;
+			font-weight:bold;
+		}
+		.rule{
+			font-size:14px;
+			line-height:30px;
+			padding-left:15px;
+			text-indent:-12pt;
+		}
+	}
+}
+.m-activity3{
+	height:370px;
+	background-image:url('/res/images/activity/activity_part_3.jpg');
+	.rules{
+        margin:158px 30px 0 30px;
+		width:515px;
+		color:#333;
+		h1{
+			font-size:16px;
+			line-height:35px;
+			font-weight:bold;
+		}
+		.rule{
+			font-size:14px;
+			line-height:30px;
+			padding-left:15px;
+			text-indent:-12pt;
+		}
+	}
+}
+.m-activity4{
+	height:816px;
+	background-image:url('/res/images/activity/activity_part_4.jpg');
+	.rules{
+        margin:197px 30px 0 30px;
+		width:545px;
+		color:#333;
+		h1{
+			font-size:16px;
+			line-height:35px;
+			font-weight:bold;
+		}
+		.rule{
+			font-size:14px;
+			line-height:30px;
+			padding-left:15px;
+			text-indent:-12pt;
+		}
+	}
+	.lottery{
+		margin:195px 0 0 145px;
+		width:250px;
+		h1{
+			margin-bottom:12px;
+			color:#a03b89;
+			text-align:center;
+			font-size:24px;
+			font-weight:bold;
+		}
+		.gift{
+			padding-left:22px;
+			font-size:15px;
+			line-height:27px;
+			color:#fff;
+			span{
+				font-weight:bold;
+			}
+		}
+	}
+	.explains{
+		margin:155px 30px 0 30px;
+		width:1030px;
+		.explain{
+			font-size:14px;
+			color:#333;
+			line-height:30px;
+		}
+	}
+}
+.m-3d-share{
+	width:592px;
+	height:1095px;
+	background:url(/res/images/activity/0117/3dshare.png?v=2) no-repeat;
+	margin:0 auto;
+}

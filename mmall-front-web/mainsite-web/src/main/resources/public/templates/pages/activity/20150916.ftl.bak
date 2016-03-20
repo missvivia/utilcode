@@ -1,0 +1,399 @@
+<#escape x as x?html>
+<@compress>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>百万店重庆站盛大开幕</title>
+	<#include "../../wrap/common.ftl">
+    <@css/>
+<style>
+body, .bwd-contont * {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+
+.clearfix:after{content:" ";display:block;height:0;clear:both;}
+.clearfix{*zoom:1;}
+.bwd-contont a:hover {
+	text-decoration: underline;
+}
+
+.bwd-contont {
+	position: relative;
+	width: 100%;
+	min-width: 1190px;
+	background: #f4ad03;
+	font-family: tahoma, arial, "\5FAE\8F6F\96C5\9ED1", sans-serif;
+	font-size: 12px;
+	overflow: hidden;
+}
+.bwd-contont img {
+	border: none;
+}
+.bwd-banner {
+	position: relative;
+	left: 50%;
+	width: 1920px;
+	margin-left: -960px;
+}
+.bwd-banner img {
+	display: block;
+	width: 100%;
+}
+.bwd-actInfo {
+	width: 1190px;
+	margin: 0 auto;
+}
+.bwd-actInfo img {
+	margin-bottom: 50px;
+}
+.bwd-actInfoTxt {
+	margin: -30px 36px 36px;
+	font-size: 14px;
+	color: #fff;
+	text-align: right;
+}
+
+/*商品模块*/
+.bwd-listCont {
+	padding: 63px 0;
+	background-color: #f7e7c1;
+}
+.bwd-module {
+	width: 1190px;
+	margin: 0 auto;
+	background-color: #f7e7c1;
+	overflow: hidden;
+}
+.bwd-h3 {
+	position: relative;
+	background-color: #f4ad03;
+	font-size: 40px;
+	color: #fff;
+	line-height: 72px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 30px 30px 0 0;
+}
+.bwd-more {
+	font-weight: normal;
+	position: absolute;
+	right: 30px;
+	padding: 0 20px;
+	font-size: 20px;
+	color: #452701;
+	text-decoration: none;
+	z-index: 3;
+}
+
+.bwd-items {
+	position: relative;
+	width: 1020px;
+	padding-left: 191px;
+}
+.bwd-itemBanner {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+/*item*/
+.bwd-item {
+	position: relative;
+	float: left;
+	width: 238px;
+	height: 318px;
+	margin: 0 13px 13px 0;
+	background-color: #fff;
+	border: 1px solid #fff;
+	overflow: hidden;
+}
+.bwd-item:hover {
+	border-color: #f00;
+}
+.bwd-tit, .bwd-pri {
+	padding: 0 19px;
+}
+.bwd-tit {
+	height: 30px;
+	font-weight: bold;
+	line-height: 15px;
+	overflow: hidden;
+}
+.bwd-tit a {
+	color: #444;
+	text-decoration: none;
+}
+.bwd-pri {
+	font-size: 14px;
+	color: #db0000;
+}
+.bwd-pri b {
+	font-weight: normal;
+	font-size: 18px;
+}
+.bwd-buy {
+	position: absolute;
+	right: 20px;
+	bottom: 16px;
+	width: 34px;
+	height: 34px;
+	background-image: url(images/cart_ico.png);
+	text-indent: -333em;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+	<@fixedTop />
+	<@topbar />
+	<@top />
+	<@mainCategory />
+<div class="bwd-contont">
+	<div class="bwd-banner">
+		<img src="/src/activity-img/20150916/00_01.jpg" alt="开业三重礼，订货最高可省15%">
+		<img src="/src/activity-img/20150916/00_02.jpg" alt="百万店重庆站盛大开幕9.21-10.7">
+	</div>
+	<div class="bwd-actInfo">
+		<img src="/src/activity-img/20150916/11_01.jpg" alt="见面礼" />
+		<img src="/src/activity-img/20150916/11_02.jpg" alt="回馈礼" />
+		<img src="/src/activity-img/20150916/11_03.jpg" alt="感恩礼" />
+		<p class="bwd-actInfoTxt">最终解释权归本公司所有</p>
+	</div>
+	<!-- 商品模块 -->
+	<div class="bwd-listCont">
+
+		<!-- 酒水饮料 -->
+		<div class="bwd-module">
+			<h3 class="bwd-h3">酒水饮料</h3>
+			<!-- 酒水饮料 | 康师傅 -->
+			<ul class="bwd-items clearfix">
+				<li class="bwd-itemBanner">
+					<img src="/src/activity-img/20150916/img_1_00.png" width="175" height="320" alt="康师傅" />
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015108" title="康师傅冰红茶600ml（1*15）" target="_blank">
+						<img src="/src/activity-img/20150916/img_1_01.jpg" width="240" height="240" alt="康师傅冰红茶600ml（1*15）" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015108" title="康师傅冰红茶600ml（1*15）" target="_blank">康师傅冰红茶600ml（1*15）</a></p>
+					<p class="bwd-pri">&yen;<b>29.5</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015728" title="康师傅冰糖雪梨500ml（1*15）" target="_blank">
+						<img src="/src/activity-img/20150916/img_1_02.jpg" width="240" height="240" alt="康师傅冰糖雪梨500ml（1*15）" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015728" title="康师傅冰糖雪梨500ml（1*15）" target="_blank">康师傅冰糖雪梨500ml（1*15）</a></p>
+					<p class="bwd-pri">&yen;<b>30.0</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015729" title="康师傅矿物质水550ml（1*24）" target="_blank">
+						<img src="/src/activity-img/20150916/img_1_03.jpg" width="240" height="240" alt="康师傅矿物质水550ml（1*24）" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015729" title="康师傅矿物质水550ml（1*24）" target="_blank">康师傅矿物质水550ml（1*24）</a></p>
+					<p class="bwd-pri">&yen;<b>14.0</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015730" title="康师傅劲凉冰绿茶600ml（1*15）" target="_blank">
+						<img src="/src/activity-img/20150916/img_1_04.jpg" width="240" height="240" alt="康师傅劲凉冰绿茶600ml（1*15）" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015730" title="康师傅劲凉冰绿茶600ml（1*15）" target="_blank">康师傅劲凉冰绿茶600ml（1*15）</a></p>
+					<p class="bwd-pri">&yen;<b>30.0</b></p>
+				</li>
+			</ul>
+			<!-- 酒水饮料 | 怡宝 -->
+			<ul class="bwd-items clearfix">
+				<li class="bwd-itemBanner">
+					<img src="/src/activity-img/20150916/img_2_00.png" width="175" height="320" alt="怡宝" />
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015733" title="怡宝饮用纯净水350ml（1*24）" target="_blank">
+						<img src="/src/activity-img/20150916/img_2_01.jpg" width="240" height="240" alt="怡宝饮用纯净水350ml（1*24）" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015733" title="怡宝饮用纯净水350ml（1*24）" target="_blank">怡宝饮用纯净水350ml（1*24）</a></p>
+					<p class="bwd-pri">&yen;<b>20.0</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015111" title="怡宝饮用纯净水555ml（1*24）" target="_blank">
+						<img src="/src/activity-img/20150916/img_2_02.jpg" width="240" height="240" alt="怡宝饮用纯净水555ml（1*24）" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015111" title="怡宝饮用纯净水555ml（1*24）" target="_blank">怡宝饮用纯净水555ml（1*24）</a></p>
+					<p class="bwd-pri">&yen;<b>23.0</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015732" title="怡宝饮用纯净水1.55L(1*12)" target="_blank">
+						<img src="/src/activity-img/20150916/img_2_03.jpg" width="240" height="240" alt="怡宝饮用纯净水1.55L(1*12)" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015732" title="怡宝饮用纯净水1.55L(1*12)" target="_blank">怡宝饮用纯净水1.55L(1*12)</a></p>
+					<p class="bwd-pri">&yen;<b>28.0</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015731" title="怡宝饮用纯净水4.5L (1*4)" target="_blank">
+						<img src="/src/activity-img/20150916/img_2_04.jpg" width="240" height="240" alt="怡宝饮用纯净水4.5L (1*4)" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015731" title="怡宝饮用纯净水4.5L (1*4)" target="_blank">怡宝饮用纯净水4.5L (1*4)</a></p>
+					<p class="bwd-pri">&yen;<b>28.0</b></p>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 休闲副食 -->
+		<div class="bwd-module">
+			<h3 class="bwd-h3">休闲副食</h3>
+			<!-- 休闲副食 | 旺旺 -->
+			<ul class="bwd-items clearfix">
+				<li class="bwd-itemBanner">
+					<img src="/src/activity-img/20150916/img_3_00.png" width="175" height="320" alt="旺旺" />
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015608" title="旺旺雪饼118g" target="_blank">
+						<img src="/src/activity-img/20150916/img_3_01.jpg" width="240" height="240" alt="旺旺雪饼118g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015608" title="旺旺雪饼118g" target="_blank">旺旺雪饼118g</a></p>
+					<p class="bwd-pri">&yen;<b>4.9</b></p>
+					
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015352" title="旺旺小小酥(葱香鸡肉味)35g" target="_blank">
+						<img src="/src/activity-img/20150916/img_3_02.jpg" width="240" height="240" alt="旺旺小小酥(葱香鸡肉味)35g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015352" title="旺旺小小酥(葱香鸡肉味)35g" target="_blank">旺旺小小酥(葱香鸡肉味)35g</a></p>
+					<p class="bwd-pri">&yen;<b>1.6</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015421" title="旺旺仙贝400g" target="_blank">
+						<img src="/src/activity-img/20150916/img_3_03.jpg" width="240" height="240" alt="旺旺仙贝400g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015421" title="旺旺仙贝400g" target="_blank">旺旺仙贝400g</a></p>
+					<p class="bwd-pri">&yen;<b>14.5</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015609" title="旺旺厚烧海苔118g" target="_blank">
+						<img src="/src/activity-img/20150916/img_3_04.jpg" width="240" height="240" alt="旺旺厚烧海苔118g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015609" title="旺旺厚烧海苔118g" target="_blank">旺旺厚烧海苔118g</a></p>
+					<p class="bwd-pri">&yen;<b>6.5</b></p>
+				</li>
+			</ul>
+			<!-- 休闲副食 | 怡宝 -->
+			<ul class="bwd-items clearfix">
+				<li class="bwd-itemBanner">
+					<img src="/src/activity-img/20150916/img_4_00.png" width="175" height="320" alt="上好佳" />
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015603" title="上好佳糖（薄荷味）120g" target="_blank">
+						<img src="/src/activity-img/20150916/img_4_01.jpg" width="240" height="240" alt="上好佳糖（薄荷味）120g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015603" title="上好佳糖（薄荷味）120g" target="_blank">上好佳糖（薄荷味）120g</a></p>
+					<p class="bwd-pri">&yen;<b>2.8</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015734" title="上好佳薯片（经典原味）50g" target="_blank">
+						<img src="/src/activity-img/20150916/img_4_02.jpg" width="240" height="240" alt="上好佳薯片（经典原味）50g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015734" title="上好佳薯片（经典原味）50g" target="_blank">上好佳薯片（经典原味）50g</a></p>
+					<p class="bwd-pri">&yen;<b>2.6</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015735" title="上好佳 荷兰豆 50g" target="_blank">
+						<img src="/src/activity-img/20150916/img_4_03.jpg" width="240" height="240" alt="上好佳 荷兰豆 50g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015735" title="上好佳 荷兰豆 50g" target="_blank">上好佳 荷兰豆 50g</a></p>
+					<p class="bwd-pri">&yen;<b>2.6</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015668" title="上好佳虾条50g" target="_blank">
+						<img src="/src/activity-img/20150916/img_4_04.jpg" width="240" height="240" alt="上好佳虾条50g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015668" title="上好佳虾条50g" target="_blank">上好佳虾条50g</a></p>
+					<p class="bwd-pri">&yen;<b>2.5</b></p>
+				</li>
+			</ul>
+		</div>
+		
+		<!-- 个人洗护 -->
+		<div class="bwd-module">
+			<h3 class="bwd-h3">个人洗护</h3>
+			<!-- 个人洗护 | 蓝月亮 -->
+			<ul class="bwd-items clearfix">
+				<li class="bwd-itemBanner">
+					<img src="/src/activity-img/20150916/img_5_00.png" width="175" height="320" alt="蓝月亮" />
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1014838" title="蓝月亮手洗专用洗衣液瓶装-风清白兰（翻盖）500g" target="_blank">
+						<img src="/src/activity-img/20150916/img_5_01.jpg" width="240" height="240" alt="蓝月亮手洗专用洗衣液瓶装-风清白兰（翻盖）500g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1014838" title="蓝月亮手洗专用洗衣液瓶装-风清白兰（翻盖）500g" target="_blank">蓝月亮手洗专用洗衣液瓶装-风清白兰（翻盖）500g</a></p>
+					<p class="bwd-pri">&yen;<b>10.75</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1014483" title="蓝月亮手洗洗衣液立袋-薰衣草 1kg" target="_blank">
+						<img src="/src/activity-img/20150916/img_5_02.jpg" width="240" height="240" alt="蓝月亮手洗洗衣液立袋-薰衣草 1kg" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1014483" title="蓝月亮手洗洗衣液立袋-薰衣草 1kg" target="_blank">蓝月亮手洗洗衣液立袋-薰衣草 1kg</a></p>
+					<p class="bwd-pri">&yen;<b>14.20</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015736" title="蓝月亮洗手液-芦荟 500ml" target="_blank">
+						<img src="/src/activity-img/20150916/img_5_03.jpg" width="240" height="240" alt="蓝月亮洗手液-芦荟 500ml" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015736" title="蓝月亮洗手液-芦荟 500ml" target="_blank">蓝月亮洗手液-芦荟 500ml</a></p>
+					<p class="bwd-pri">&yen;<b>10.80</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1014960" title="蓝月亮衣领净 500ml" target="_blank">
+						<img src="/src/activity-img/20150916/img_5_04.jpg" width="240" height="240" alt="蓝月亮衣领净 500ml" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1014960" title="蓝月亮衣领净 500ml" target="_blank">蓝月亮衣领净 500ml</a></p>
+					<p class="bwd-pri">&yen;<b>14.44</b></p>
+				</li>
+			</ul>
+			<!-- 个人洗护 | 六神 -->
+			<ul class="bwd-items clearfix">
+				<li class="bwd-itemBanner">
+					<img src="/src/activity-img/20150916/img_6_00.png" width="175" height="320" alt="六神" />
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1014553" title="六神喷雾止痒花露水 80ml" target="_blank">
+						<img src="/src/activity-img/20150916/img_6_01.jpg" width="240" height="240" alt="六神喷雾止痒花露水 80ml" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1014553" title="六神喷雾止痒花露水 80ml" target="_blank">六神喷雾止痒花露水 80ml</a></p>
+					<p class="bwd-pri">&yen;<b>9.20</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1014565" title="六神冰片香皂 90g" target="_blank">
+						<img src="/src/activity-img/20150916/img_6_02.jpg" width="240" height="240" alt="六神冰片香皂 90g" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1014565" title="六神冰片香皂 90g" target="_blank">六神冰片香皂 90g</a></p>
+					<p class="bwd-pri">&yen;<b>2.65</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1016316" title="六神清新滋润沐浴露（芦荟）200ml" target="_blank">
+						<img src="/src/activity-img/20150916/img_6_03.jpg" width="240" height="240" alt="六神清新滋润沐浴露（芦荟）200ml" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1016316" title="六神清新滋润沐浴露（芦荟）200ml" target="_blank">六神清新滋润沐浴露（芦荟）200ml</a></p>
+					<p class="bwd-pri">&yen;<b>7.90</b></p>
+				</li>
+				<li class="bwd-item">
+					<a href="http://023.baiwandian.cn/product/detail?skuId=1015003" title="六神沐冰凉爽肤沐浴露（冰片）750ml" target="_blank">
+						<img src="/src/activity-img/20150916/img_6_04.jpg" width="240" height="240" alt="六神沐冰凉爽肤沐浴露（冰片）750ml" />
+					</a>
+					<p class="bwd-tit"><a href="http://023.baiwandian.cn/product/detail?skuId=1015003" title="六神沐冰凉爽肤沐浴露（冰片）750ml" target="_blank">六神沐冰凉爽肤沐浴露（冰片）750ml</a></p>
+					<p class="bwd-pri">&yen;<b>24.9</b></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	<@footer />
+	<@copyright />
+	<@fixedSide />
+	<@cityChange />
+    <@js />
+</body>
+</html>
+</@compress>
+</#escape>

@@ -1,0 +1,42 @@
+{{#if list.length>0}}
+<div style="width: 100%; text-align: right; padding-bottom: 10px;">
+	信息有误？请联系0571-87651759
+</div>
+<table class="m-table m-table-1" border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tbody>
+    <tr>
+	    <th width="15%">地址类型</th>
+	    <th width="55%">地址</th>
+    </tr>
+    {{#list list as item}}
+    <tr>
+    	{{#if item.isDefault}}
+		    <td>
+		    	<span class="sep s-fc3" on-click={{this.setDefault(item,item_index)}}><em style="padding-left: 20px;">默认地址</em></span>
+		    </td>
+	    {{#else}}
+	    	<td>
+	    		<a class="sep" href="javascript:void(0)" on-click={{this.setDefault(item,item_index)}}><em style="padding-left: 20px;">设为默认</em></a>
+	    	</td>
+	    {{/if}}
+	    <td>
+	    	<p>
+	    		{{item.province}}{{#if !this.isZhixiashi(item.province)}}{{item.city}}{{/if}}{{#if item.sectionId>0}}{{item.section}}{{/if}}{{item.street}} {{item.address}}
+	    	</p>
+	    	<p>
+	    		{{item.consigneeName}}{{#if item.consigneeMobile!=''}}<span class="sep">{{item.consigneeMobile}}</span>{{/if}}<span class="sep">{{item.consigneeTel}}</span>
+	    	</p>
+	    </td>
+    </tr>
+    {{/list}}
+    </tbody>
+</table>
+{{#elseif loading}}
+
+{{#else}}
+<div class="u-empt">
+	<span class="u-icon3 u-icon3-5">&nbsp;</span>
+	<p class="txt">您暂时没有收货地址</p>
+	<span class="w-btn w-btn-2" on-click={{this.addItem()}}><a href="javascript:void(0)"><span>新增地址</span></a></span>
+</div>
+{{/if}}

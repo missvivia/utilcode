@@ -1,0 +1,81 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "id": 12,
+        "serialNum": "xxxxx",
+        "status": 1,
+        "buyTime": 1410922176302,
+        "logisticsBegin": 1410922176302,
+        "price": 10.00,
+        "expressPrice": 12.00,
+        "platformPay": 2.00,
+        "pay": 10.00,
+        "number": 1,
+        "weight": "12kg",
+        "expressCompany": "EMS",
+        "expressNum": "xxxxxx"
+      },
+      {
+        "id": 15,
+        "serialNum": "xxxxxxxx",
+        "status": 2,
+        "buyTime": 1410922176302,
+        "logisticsBegin": 1410922176302,
+        "price": 10.00,
+        "expressPrice": 12.00,
+        "platformPay": 2.00,
+        "pay": 10.00,
+        "number": 1,
+        "weight": "12kg",
+        "expressCompany": "EMS",
+        "expressNum": "xxxxxx"
+      },{
+        "id": 13,
+        "serialNum": "xxxxxxxxx",
+        "status": 3,
+        "buyTime": 1410922176302,
+        "logisticsBegin": 1410922176302,
+        "price": 10.00,
+        "expressPrice": 12.00,
+        "platformPay": 2.00,
+        "pay": 10.00,
+        "number": 1,
+        "weight": "12kg",
+        "expressCompany": "EMS",
+        "expressNum": "xxxxxx"
+      },{
+        "id": 14,
+        "serialNum": "xxxxxxxxx",
+        "status": 4,
+        "buyTime": 1410922176302,
+        "logisticsBegin": 1410922176302,
+        "price": 10.00,
+        "expressPrice": 12.00,
+        "platformPay": 2.00,
+        "pay": 10.00,
+        "number": 1,
+        "weight": "12kg",
+        "expressCompany": "EMS",
+        "expressNum": "xxxxxx"
+      },{
+        "id": 17,
+        "serialNum": "xxxxxxxxxxxx",
+        "status": 5,
+        "buyTime": 1410922176302,
+        "logisticsBegin": 1410922176302,
+        "price": 10.00,
+        "expressPrice": 12.00,
+        "platformPay": 2.00,
+        "pay": 10.00,
+        "number": 1,
+        "weight": "12kg",
+        "expressCompany": "EMS",
+        "expressNum": "xxxxxx"
+      }
+    ]
+  }
+}
+  

@@ -1,0 +1,509 @@
+{
+  "code": 200,
+  "result": {
+    "cartRPrice": 4000.00,
+    "cartOriRPrice": 8000.00,
+    "expOriPrice": 12,
+    "expUserPrice": 12,
+    "expSysPayPrice": 0,
+    "actionList": [
+      {
+        "actId": 1,
+        "title": "白给不要钱的活动",
+        "effectDesc": "活动效果说明-------",
+        "tagList": [
+          {
+            "title": "满减",
+            "desc": "描述描述描述描述描述描述描述"
+          },
+          {
+            "title": "返券",
+            "desc": "描述描述描述描述描述描述描述"
+          }
+        ],
+        "cartList": [
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "actId": 1,
+        "title": "白给不要钱的活动",
+        "effectDesc": "活动效果说明-------",
+        "tagList": [
+          {
+            "title": "满减",
+            "desc": "描述描述描述描述描述描述描述"
+          },
+          {
+            "title": "返券",
+            "desc": "描述描述描述描述描述描述描述"
+          }
+        ],
+        "cartList": [
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "noActionList": [
+      {
+        "title": "品牌名称1",
+        "cartList": [
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "品牌名称2",
+        "cartList": [
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          },
+          {
+            "retailPrice": 250.00,
+            "originalPrice": 500.00,
+            "count": 1,
+            "orderSkuList": [
+              {
+                "oriRPrice": 500.00,
+                "rprice": 250.00,
+                "hdSPrice": 0.00,
+                "couponSPrice": 0.00,
+                "totalCount": 1,
+                "productId": 1,
+                "skuId": 1,
+                "skuSPVO": {
+                  "productName": "产品名----",
+                  "picUrl": "http://ystore.nos.netease.com/56716d1d6b49d78a958d23ee24834d5e.jpg?imageView&thumbnail=358y358",
+                  "colorName": "红色",
+                  "skuSpecValueMap": {
+                    "尺寸": "s"
+                  },
+                  "linkUrl": "http://023.baiwandian.cn",
+                  "brandName": "小品牌"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "couponList": [
+      {
+        "code": "code1",
+        "title": "满300,减100",
+        "isSelected": true,
+        "selected": false
+      },
+      {
+        "code": "code2",
+        "title": "7折优惠",
+        "isSelected": false,
+        "selected": false
+      }
+    ],
+    "payMethodArray": [
+      {
+        "value": 1,
+        "desc": "货到付款",
+        "isSelected": false,
+        "isValid": false,
+        "invalidMess": "订单金额超过2000元",
+        "valid": false,
+        "selected": false
+      },
+      {
+        "value": 0,
+        "desc": "网易宝支付",
+        "isSelected": true,
+        "isValid": true,
+        "invalidMess": "",
+        "valid": true,
+        "selected": true
+      }
+    ]
+  }
+
+}

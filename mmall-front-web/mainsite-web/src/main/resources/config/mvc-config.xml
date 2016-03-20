@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="defaultContentType" value="text/html" />
+		<!-- 扩展名至mimeType的映射,即 /user.json => application/json -->
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="json" value="application/json" />
+				<entry key="xls" value="application/vnd.ms-excel"/>
+				<entry key="xlsx" value="application/vnd.ms-excel"/>
+			</map>
+		</property>
+		<!-- 用于开启 /userinfo/123?format=json 的支持 -->
+		<property name="favorParameter" value="false" />
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+				<bean
+					class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+				<!--  	<property name="viewClass" value="com.xyl.mmall.framework.freemarker.MyFreeMarkerView" />-->
+					<property name="cache" value="true" />
+					<property name="suffix" value=".ftl" />
+					<property name="contentType" value="text/html;charset=utf-8" />
+					<property name="exposeRequestAttributes" value="true" />
+					<property name="exposeSessionAttributes" value="true" />
+					<property name="exposeSpringMacroHelpers" value="true" />
+					<property name="allowSessionOverride" value="true" />
+				</bean>
+			</list>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="${spring.freemarker.templateLoaderPath}" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">0</prop>
+				<prop key="default_encoding">utf-8</prop>
+				<prop key="locale">zh_cn</prop>
+				<prop key="number_format">0.##########</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="template_exception_handler">html_debug</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthenticatedException">pages/403</prop>
+				<prop key="org.apache.shiro.authz.UnauthorizedException">pages/403</prop>
+				<prop key="org.apache.shiro.authc.LockedAccountException">pages/locked</prop>
+				<!--  <prop key="java.lang.Throwable">pages/500</prop> -->
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+		<property name="config">  
+			<bean class="com.google.code.kaptcha.util.Config"> 
+				<constructor-arg>
+					<props>
+						<prop key="kaptcha.border">yes</prop>  
+						<prop key="kaptcha.border.color">105,179,90</prop>  
+						<prop key="kaptcha.textproducer.font.color">blue</prop>  
+						<prop key="kaptcha.image.width">180</prop>  
+						<prop key="kaptcha.image.height">60</prop>  
+						<prop key="kaptcha.textproducer.font.size">45</prop>  
+						<prop key="kaptcha.session.key">code</prop>  
+						<prop key="kaptcha.textproducer.char.length">4</prop>  
+						<prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>
+					</props>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+	
+	<mvc:interceptors>
+ 		<ref bean="tokenInterceptor" />
+ 	</mvc:interceptors>
+</beans>

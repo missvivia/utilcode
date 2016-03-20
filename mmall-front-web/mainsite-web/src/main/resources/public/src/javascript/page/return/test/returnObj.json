@@ -1,0 +1,58 @@
+{
+	//最好是整个Product对象
+	id:0,
+	thumb:""//图片
+	productName："EIN言100%苎麻时尚印花上衣2014女装秋款新品",
+	salePrice：1111,//单价
+	quantity:2,//数量
+	subtotal:2222,//小计 必须
+	sum:2100,//金额 必须
+	colorName:"黑色",//颜色分类
+	sizeType：{
+		intValue:1,
+		desc:"M" //M，L码
+	}
+	status：{
+		intValue:0,//类型
+		desc:"拒收"//说明
+	},
+	promotion:{//最好是promoteiong整个对象
+		name:"满200减40",
+		description:"满200减40"
+	},
+	couponCode:{//最好是整个cupon对象
+		id:1111,
+		couponCode:"eee",
+		description:"ddd"
+	}
+	payMethod:1,//支付方式，(0:网易宝,1:货到付款,2:红包+网易宝)",
+	returnForm:{ //必须
+		returnPrice:{
+			expPrice:8,//扣除的运费
+			couponPrice:99,//扣除优惠券费用
+			promotion：100,//扣除的活动费用
+			goodsTotalRPrice：20000,//商品总金额
+			hbPrice：2937.20，//退款金额
+		},
+		returnWay:[//退回的类型
+			{
+				returnType:"优惠券",
+				sum:10,//签
+				account:""
+			},
+			{
+				returnType:"招商银行",
+				sum:100,//签
+				account:"6225 **** **** 5648"
+			},
+			{
+				returnType:"网易宝",
+				sum:100,//签
+				account:"6225 **** **** 5648"
+
+			}
+		]
+
+	}
+
+}

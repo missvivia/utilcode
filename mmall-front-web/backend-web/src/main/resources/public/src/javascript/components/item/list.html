@@ -1,0 +1,111 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <tbody>
+	    <tr>
+	        <td width="20"><input type="checkbox" r-model="allChecked"></td>
+	        <td width="60">缩略图</td>
+	        <td width="80">商品货号</td>
+	        <td>商品名称</td>
+	        <td width="150">商品分类</td>
+	        <td width="70">库存</td>
+	        <td width="50">售价</td>
+	        <td width="80">
+	        	{{!1未审核，2审核中，3审核未通过，4已上架，5已下架!}}
+	        	{{#if type==1}}
+	        	<select class='form-control form-control-sm' r-model='status'  on-change={{this.onChange($event)}}>
+	        		<option value='0'>所有状态</option>
+              		<option value='4'>已上架</option>
+              		<option value='5'>未上架</option>
+	        	</select>
+	        	{{#else}}
+	        	状态
+	        	{{/if}}
+	        </td>
+	        <td width="160">更新日期</td>
+	        <td width="110">操作</td>
+	      </tr>
+      {{#list list as tpl}}
+        <tr>
+          	<td><input type="checkbox" r-model="tpl.checked"></td>
+          	<td><img class="u-img" src="{{tpl.showPicPath}}" alt=""></td>
+          	<td>{{tpl.skuId}}</td>
+          	<td>
+          	    {{#if tpl.isSKULimited==1}}
+          	        {{#if nowTime < tpl.skuLimitConfigVO.limitStartTime}}
+          	            <span class="pd l-unstart">限</span>&nbsp;
+          	        {{#elseif nowTime >= tpl.skuLimitConfigVO.limitStartTime && nowTime <= tpl.skuLimitConfigVO.limitEndTime}}
+          	            <span class="pd l-active">限</span>&nbsp;
+          	        {{#elseif nowTime > tpl.skuLimitConfigVO.limitEndTime}}
+          	            <span class="l-end">限</span>&nbsp;
+          	        {{/if}}
+          	    {{/if}}
+          	    <a href="/item/product/scan?skuId={{tpl.skuId}}&type={{type}}">{{tpl.productName}}</a>
+          	</td>
+          	<td>{{tpl.categoryFullName}}</td>
+          	<td>
+          	<div id="{{tpl.skuId}}">
+          	<div class="show" on-click={{this.modifyStockClick(tpl.skuId)}}>{{tpl.skuNum}}/{{tpl.prodUnit}}</div>
+          	<div class="hide"><input type="text" value="{{tpl.skuNum}}" maxlength="10" class="number" on-blur={{this.updateStock(tpl.skuId)}}></div>
+          	</div>
+          	</td>
+          	
+          	<td>
+          	{{!这里去批发价格，不是建议零售价，目前只要一个批发价格区间!}}
+          	{{#if tpl.priceList}}
+          	{{#list tpl.priceList as price}}
+          		{{#if price_index == 0}}
+          			{{price.prodPrice}}
+          		{{/if}}          		
+          	{{/list}}
+          	{{/if}}
+          	</td>
+	      	<td>{{tpl.prodStatus|statusName}}</td>
+	      	<td>{{tpl.updateTimeStr}}</td>
+          	
+          	
+          	<td>
+          	{{!商品状态 : 1未审核，2审核中，3审核未通过，4已上架，5已下架!}}
+          	{{#if tpl.prodStatus ==5}}
+          	<a href="/item/product/edit?skuId={{tpl.skuId}}&type={{type}}">编辑</a>
+            <a on-click={{this.onShelve(tpl)}}>上架</a>
+            
+            
+            {{#elseif tpl.prodStatus == 4}}
+            <a href="/item/product/edit?skuId={{tpl.skuId}}&type={{type}}" >编辑</a> 
+            <a on-click={{this.unShelve(tpl)}}>下架</a>
+            
+            
+            {{#elseif tpl.prodStatus ==3}}
+            <a href="/item/product/edit?skuId={{tpl.skuId}}&type={{type}}">编辑</a>
+            <a on-click={{this.onShelve(tpl)}}>上架</a>
+            
+            
+            {{#elseif tpl.prodStatus ==2}}
+            
+            
+            {{#elseif tpl.prodStatus ==1}}
+            <a href="/item/product/edit?skuId={{tpl.skuId}}&type={{type}}">编辑</a>
+            <a>提交审核</a>
+            
+            {{#else}}
+            {{/if}}
+          	</td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+
+<div class="form-group">
+	{{#if type==3}}
+	<button class="btn btn-danger" on-click={{this.batchUnShelve()}}>下架</button>
+	{{#elseif type==4}}
+	<button class="btn btn-danger" on-click={{this.batchOnShelve()}}>上架</button>
+	<button class="btn btn-danger u-delbtn" on-click={{this.batchRemove()}}>删除</button>
+	{{/if}}
+	
+  	
+	<div class="text-right m-wpager">
+	  <pager total={{Math.ceil(total / limit)}} current={{current}} ></pager>
+	</div>
+</div>

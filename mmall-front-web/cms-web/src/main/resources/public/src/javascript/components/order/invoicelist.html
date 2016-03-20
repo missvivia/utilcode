@@ -1,0 +1,23 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>品牌名</th>
+        <th>物流公司</th>
+        <th>快递单号</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{tpl.brandName}}</td>
+          <td>{{tpl.expressCompany}}</td>
+          <td>{{tpl.expressNO}}</td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

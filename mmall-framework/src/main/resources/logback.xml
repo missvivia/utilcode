@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--
+
+	This file is the default logback configuration for Spring Boot. To use the same
+	defaults and add custom logger levels you can copy this file and add additional
+	overrides, e.g:
+
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	<logger name="org.springframework.web" level="DEBUG"/>
+	...
+
+    -->
+
+	<include resource="org/springframework/boot/logging/logback/basic.xml"/>
+ 
+	<!-- 按照每天生成日志文件 -->
+   <appender name="traceAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+           <!--日志文件输出的文件名-->
+           <FileNamePattern>${LOG_PATH:-${java.io.tmpdir:-/tmp}}/tracelogs/trace.log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+           <!--日志文件保留天数-->
+           <MaxHistory>1</MaxHistory>
+           <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+	        	<!-- 每个日志文件最大的size限制在100MB -->
+	        	<!-- 当前logback不支持针对每日log的上限设置 -->
+	        	<maxFileSize>50MB</maxFileSize>
+      		</timeBasedFileNamingAndTriggeringPolicy>
+       </rollingPolicy>
+ 
+       <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+           <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+           <pattern>%msg%n</pattern>
+       </encoder>
+        
+   </appender>
+
+	<logger name="traceLogger" additivity="false">
+		<level value="INFO"/>
+    	<appender-ref ref="traceAppender" />
+  	</logger>
+  	
+  	<logger name="com.alibaba.dubbo" level="INFO">
+        <appender-ref ref="traceAppender"/>
+    </logger>
+  	
+  	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</configuration>

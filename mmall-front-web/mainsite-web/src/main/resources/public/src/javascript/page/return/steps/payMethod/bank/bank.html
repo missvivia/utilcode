@@ -1,0 +1,56 @@
+ <div class="m-returnway1" r-hide='!isEdit'>
+              <h3>请填写银行卡信息</h3>
+              <form class="m-form m-form-bank" data-focus-mode="1" id="webForm">
+                <div class="cont">
+                  <div class="fitm">
+                    <label class="flab flab-2"><span class="important">*</span>开户银行所在地</label>
+                    <div class="fipt fipt-addr">
+                      <div class="w-select-addr w-select-addr-1">
+                          <input type="text" class="select addressslt" placeholder="请选择城市" name="bankCardAddress"  data-required="true" data-error="请填写开户银行所在地" disabled>
+                          <span class="arrow"> </span>
+                          <div class="fipt fipt-addr" id="addrCard"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fitm">
+                    <label class="flab"><span class="important">*</span>开户银行</label>
+                    <div class="fipt">
+                      <input type="text" class="w-ipt w-ipt-5" data-required="true"  placeholder="请填写银行" name="bankType" data-error="请填写开户银行">
+                    </div>
+                  </div>
+                  <div class="fitm fitm-last">
+                    <label class="flab"><span class="important">*</span>开户支行</label>
+                    <div class="fipt">
+                      <input type="text" class="w-ipt w-ipt-5" data-required="true" placeholder="请填写支行" name="bankBranch" data-error="请填写开户支行">
+                    </div>
+                  </div>
+                  <div class="fitm">
+                    <label class="flab flab-2"><span class="important">*</span>开户人姓名</label>
+                    <div class="fipt">
+                      <input type="text" class="w-ipt w-ipt-5" name="bankCardOwnerName" data-required="true" data-error="请填写开户人姓名">
+                    </div>
+                  </div>
+                  <div class="fitm fitm-1">
+                    <label class="flab"><span class="important">*</span>银行卡号</label>
+                    <div class="fipt">
+                      <input type="text" class="w-ipt w-ipt-5"  data-required="true" data-pattern="^[0-9]+$" name="bankCardNO" data-error="请填写银行卡号">
+                      <p>请使用借记卡帐户</p>
+                    </div>
+                  </div>
+                  <div class="fitm fitem-error js-error" name="bankCardNO-error">
+                  </div>
+                </div>
+                <div class="fitm fitm-btns">
+                  <a href="javascript:void(0)" class="w-btn3 w-btn3-2" on-click="{{this.save()}}">保存帐户</a>
+                </div>
+               
+              </form>
+</div>
+
+<div class="m-returnway1" r-hide="isEdit">
+              <h3>银行卡信息<a class="lnk" href="javascript:;" on-click={{isEdit=true}}>修改帐户</a></h3>
+              <div class="m-bankinfo">
+                <p><span class="itm">开户银行所在地： {{bankCard.bankCardAddress}} </span><span class="itm">开户银行： {{bankCard.bankType}}</span><span class="itm">开户支行： {{bankCard.bankBranch}}</span></p>
+                <p><span class="itm">开户人姓名： {{bankCard.bankCardOwnerName}}</span><span class="itm">银行卡号：{{bankCard.bankCardNO}}</span></p>
+             </div>
+</div>

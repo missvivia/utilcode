@@ -1,0 +1,63 @@
+<h2 class="card_b">
+{{#list this.getCurrents(current) as poSupply}}
+{{#if poSupply_index==0}}
+<span class="glyphicon glyphicon-chevron-down pull-right"></span>PO单号：{{poSupply.poOrderId}}
+{{/if}}
+{{/list}}
+</h2>
+<div class="card_c">
+  <div class="m-supply">
+	{{#list this.getCurrents(current) as poSupply}}
+	<div class="m-box">
+	   <h3>货单信息</h3>
+	   <div class="cont">
+	       <div class="group">
+	          <p class="item"><label>发货单号：</label><span class="val">{{poSupply.shipOrderId}}</span></p>
+	          <p class="item"><label>PO单号：</label><span class="val">{{poSupply.poOrderId}}</span></p>
+	       </div>
+	       <div class="group">
+	          <p class="item"><label>发货时间：</label><span class="val">{{poSupply.shipTime|format}}</span></p>
+	          <p class="item"><label>预计到货时间：</label><span class="val">{{poSupply.expectedArrivalTime|format}}</span></p>
+	          <p class="item"><label>实际到货时间：</label><span class="val">{{(poSupply.actualArrivalTime)|format:"yyyy-MM-dd HH:mm:ss"}}</span></p>
+	       </div>
+	       <div class="group">
+	          <p class="item"><label>承运商公司名称：</label><span class="val">{{poSupply.courierCompanyName}}</span></p>
+	          <p class="item"><label>运单号：</label><span class="val">{{poSupply.waybillNO}}</span></p>
+	          <p class="item"><label>发货箱数：</label><span class="val">{{poSupply.shippedQTY}}</span></p>
+	       </div>
+	       <div class="group">
+	          <p class="item"><label>送货箱数：</label><span class="val">{{poSupply.deliverBoxQTY}}</span></p>
+	          <p class="item"><label>送货总数量：</label><span class="val">{{poSupply.deliverTotalQTY}}</span></p>
+	          <p class="item"><label>送货SKU品种数：</label><span class="val">{{poSupply.deliverSkuTypeQTY}}</span></p>
+	       </div>
+	   </div> 
+	   <h3>物流信息</h3>
+	   {{#if (poSupply.shipInfoList) && (poSupply.shipInfoList).length>0}}
+	   <table class="table table-striped">
+	     <thead>
+	       <tr>
+	         <th>时间</th>
+	         <th>操作描述</th>
+	         <th>操作人</th>
+	       </tr>
+	     </thead>
+	     <tbody>
+	       {{#list poSupply.shipInfoList as shipInfoItem}}
+	       <tr>
+	         <td>{{(shipInfoItem.actTime)|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+	         <td>{{shipInfoItem.actDesc}}</td>
+	         <td>{{shipInfoItem.actPerson}}</td>
+	       </tr>
+	       {{/list}}
+	     </tbody>
+	   </table>
+	   {{#else}}
+	   <p>目前没有在途物流信息</p>
+	   {{/if}}
+	 </div>
+	{{/list}}
+	<div class="text-right">
+		<pager total={{Math.ceil(lists.length / 3)}} current={{current}}></pager>
+	</div>
+  </div>
+</div>

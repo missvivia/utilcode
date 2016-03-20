@@ -1,0 +1,7 @@
+<div id="tab" {{#if currentType==0 || currentType==1}}class="g-hd"{{#else}}class="g-hd f-dn"{{/if}}></div>
+<div id="couponList" {{#if currentType==0 }}class="g-bd"{{#else}}class="g-bd f-dn"{{/if}}></div>
+
+<div id="redPacketList" {{#if currentType==1 }}class="g-bd"{{#else}}class="g-bd f-dn"{{/if}}></div>
+
+<div id="couponDetail" {{#if currentType==2}}class="g-bd f-toe"{{#else}}class="g-bd f-toe f-dn"{{/if}}></div>
+<div id="redpacketDetail" {{#if currentType==3}}class="g-bd f-toe"{{#else}}class="g-bd f-toe f-dn"{{/if}}></div>

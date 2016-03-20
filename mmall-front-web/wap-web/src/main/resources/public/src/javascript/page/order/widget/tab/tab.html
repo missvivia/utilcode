@@ -1,0 +1,8 @@
+<table>
+  <tr>
+    <td {{#if selectedIndex == 0}}class="active"{{/if}}><i on-click={{this.go(0)}}>全部订单</i></td>
+    <td {{#if selectedIndex == 1}}class="active"{{/if}}><i  on-click={{this.go(1)}}>待支付</i></td>
+    <td {{#if selectedIndex == 2}}class="active"{{/if}}><i on-click={{this.go(2)}}>待发货</i></td>
+    <td {{#if selectedIndex == 3}}class="active"{{/if}}><i on-click={{this.go(3)}}>待收货</i></td>
+  </tr>
+</table>

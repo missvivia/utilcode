@@ -1,0 +1,37 @@
+<div class="title orderinfo orderinfo-2">
+  <div class="bd s-fc1 f-fs2 f-fw1">
+    <span class="slash">&nbsp;</span>优惠方式
+  </div>
+</div>
+<div class="bd f-cb p-coupon">
+  <div class="coupon">
+    <div class="tt f-fs2"><i class="i-coupon f-vam"></i><span class="f-vam">使用优惠券</span> <span class="s-fc40 f-fwb f-vam" r-hide={{orderdetail.couponSPrice <=0 }}>已减免 ￥{{orderdetail.couponSPrice|fixed}}</span></div>
+    <div class="desc">
+      <div class="row f-cb">
+        <div class="box f-fl">
+          <div class="innerbox iptbox" on-click={{this.bindCoupon()}}>
+            <span class="text">输入优惠码</span><i class="i-add"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row f-cb" r-hide={{(!orderdetail.couponList)}}>
+        {{#list 0 .. (viewCount-1) as i}}
+        {{#if !!orderdetail.couponList && !!orderdetail.couponList[i]}}
+        <div class="box f-fl{{orderdetail.couponList[i].isSelected?' box-selected':''}}">
+          <i class="i-check"></i>
+          <div class="innerbox" on-click={{this.useCoupon(orderdetail.couponList[i].userCouponId)}}>
+            <p class="f-fwb f-toe">{{orderdetail.couponList[i].title||''}}</p>
+            <p class="f-toe">有效期：{{orderdetail.couponList[i].startDate||''}}至{{orderdetail.couponList[i].endDate||''}}</p>
+          </div>
+        </div>
+        {{/if}}
+        {{/list}}
+      </div>
+      {{!-- 列表数量<4也不显示更多 --!}}
+      <div class="row row-1" r-hide={{!orderdetail.couponList || !!orderdetail.couponList && orderdetail.couponList.length<=4 || viewCount>4}}>
+        <span class="f-cp" on-click={{this.show()}}>更多优惠券 <i class="i-more"></i></span>
+      </div>
+      <div class="border"></div>
+    </div>
+  </div>
+</div>

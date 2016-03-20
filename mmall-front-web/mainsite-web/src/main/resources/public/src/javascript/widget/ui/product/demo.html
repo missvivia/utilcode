@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>产品列表</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../css/base.css" />
+    <link rel="stylesheet" href="../../../../css/grid.css" />
+    <link rel="stylesheet" href="../../../../css/unit.css" />
+    <link rel="stylesheet" href="../../../../css/module.css" />
+    <link rel="stylesheet" href="../../../../css/page/schedule.css" />
+    <style>
+      body{
+          font-family:'微软雅黑',helvetica,'Hiragino Sans GB','Microsoft YaHei','宋体';
+      }
+    </style>
+  </head>
+  <body>
+    <script>window.NEJ_CONF={root:'../../../../../res/'};</script>
+    <script src="http://fed.hz.netease.com/git/nej2/src/define.js?pro=../../../"></script>
+    <script>
+        NEJ.define([
+            './product.js'
+        ],function(_i){
+            _i._$$ProductList._$allocate({
+                scheduleId:3,
+                lkey:'schedule',
+                parent:document.body,
+                showPriced:true
+            });
+        });
+    </script>
+  </body>
+</html>

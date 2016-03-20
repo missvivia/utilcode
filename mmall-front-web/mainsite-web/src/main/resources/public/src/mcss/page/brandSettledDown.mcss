@@ -1,0 +1,60 @@
+@abstract '../_config.mcss';
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+.m-brandsett{
+	background:#fff;min-height:420px;_height:420px;
+	.bd{padding:30px 30px 40px;}
+	.m-page2{margin:20px 10px 0;}
+}
+.m-alphalist{
+	height:50px;background:#f8f8f8;
+	.itm{
+		float:left;width:34px;margin-right:1px;text-align:center;line-height:46px;font-size:14px;color:#999;
+		a,span{display:block;width:100%;background:#eaeaea;border-top:4px solid #eaeaea;color:#999;}
+		a:hover{color:#333;}
+	}
+	.first{width:67px;}
+	.second{width:60px;}
+	.last{margin:0;width:51px;}
+	.active a{background:#fff;border-top:4px solid #9144ae;color:#333;}
+}
+.m-list2{
+	li{
+		width:256px;height:248px;
+		.u-brandlogo{margin-top:45px;}
+		img{display:inline-block;width:153px;height:70px;position:relative;top:0;margin:0px;left:0;padding:0;}
+		&:hover,&.j-hover{z-index:2;border-color:#9144ae;}
+	}
+}
+.u-win-follow{
+  h2{
+    color: #333;
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    span{
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+  }
+  p{
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .btns{
+    text-align: center;
+    .ok{
+      background: #e878b2;
+      $size: 80px 26px;
+      cursor: pointer;
+      &:hover{
+        background-color: l-adjust(#e878b2, -5%);
+      }
+    }
+  }
+  .btns .cc{
+    display: none;
+  }
+
+}

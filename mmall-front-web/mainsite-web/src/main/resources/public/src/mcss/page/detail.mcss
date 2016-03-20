@@ -1,0 +1,423 @@
+@abstract '../_config.mcss';
+
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+// 工具库
+
+h3{
+  font-size: 16px;
+}
+
+.p-dbody{
+  background-color: #fff;
+
+}
+
+.p-section{
+  border-bottom: 1px solid #e7e7e7;
+  padding: 10px 40px 20px;
+  h2.title{
+    font-size: 18px;
+    border-left: 2px solid #d951b5;
+    padding-left: 4px;
+    line-height: 14px;
+    margin: 10px 0px 16px -6px;
+  }
+  h3.title{
+    margin: .5em 0;
+  }
+  .cnt{
+    width: 940px;
+    margin: 20px auto;
+  }
+}
+.p-section-tp{
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+  height: 64px ;
+  p{
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .logo{
+    position: absolute;
+    left: 24px;
+    top: 24px;
+  }
+  .desc{
+    line-height: 1.6;
+  }
+}
+
+.p-section-2{
+  .sizeimg{
+    width: 900px;
+    display: block;
+    margin: 20px auto;
+  }
+
+}
+
+.m-tform{
+  font-size: 14px;  
+  td{
+    color: #444;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+/* 简易数据表格-格边框 */
+.p-table{table-layout:fixed;width:100%;line-height:1.5;}
+.p-table th,.p-table td{padding:10px;border:1px solid #ddd;}
+.p-table th{font-weight:bold;}
+.p-table tbody tr:hover{background:#f0f0f0;}
+
+.m-table-size{
+  width: 900px;
+  margin: 0 auto 10px;
+  th{
+    background-color: #f8f8f8;
+  }
+  th,td{
+    border: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+    
+  }
+  td.tip{
+    text-align: left;
+    padding-left: 20px;
+  }
+  tbody{
+    tr:hover{background:#f0f0f0;}
+  }
+
+}
+
+.p-piclist{
+  $fixed-container: 800px;
+  ul.pic{
+    $clearfix();
+    li{
+      float:left;
+      margin-right: 10px;
+      margin-top: 10px;
+      img{
+        display: block;
+        $size: 390px;
+      }
+    }
+  }
+  .html{
+    margin-top: 20px;
+    font-size: 14px;
+    white-space: normal;
+    div,p,pre, li {
+      word-break: break-all;
+    }
+    b,strong{
+      font-weight: bold;
+    }
+    i{
+      font-style: italic;
+    }
+    ul,ol{
+      padding-left: 40px;
+    }
+    ul li{
+      list-style-type: disc;
+      margin: 2px 0px;
+    }
+    ol li{
+      list-style-type: decimal;
+    }
+    p{
+      margin: 12px 0px;
+    }
+    a{
+      color: #8055bf;
+      text-decoration: underline;
+      &:hover, &:active{
+         color: l-adjust(#8055bf, 5%);
+      }
+    }
+    img{
+      max-width: 790px;
+      vertical-align: bottom;
+      margin:0;
+    }
+  }
+}
+
+.p-section-info{
+  border-bottom: none;
+}
+
+.p-info{
+  dl,dt{
+    word-break: break-all;
+  }
+
+  dl{
+    margin-bottom: 22px;
+    font-size: 14px;
+  }
+  dt{
+    font-weight: bold;
+    color: #333;
+  }
+  dl.normal dt{
+    font-weight: normal;
+    a {$state-color: $lcolor-blue;}
+  }
+  dd{
+    color: #666;
+  }
+}
+
+
+.m-tab1-2{
+  $active-border = $fc5;
+  overflow: hidden;
+  li{
+    width: 180px;
+    line-height: 48px;
+    border-right: 1px solid #d1d1d1;
+    a{
+      border-top: 4px solid #eaeaea;
+    }
+    &.active{
+      border-right: none;
+      margin-left: -1px;
+      a, a:hover{ border-color: $active-border;}
+    }
+    &.active + li{
+      border-left: none;
+    }
+  }
+  .more{
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    display: none;
+  }
+
+  &.z-fixed{
+    position: fixed;
+    width: 1090px;
+    top: 0;
+    left: 50%;
+    margin-left: -1090px / 2;
+    z-index: 50;
+    .more{
+      display: block;
+    }
+  }
+}
+.u-btn3-s2{
+  width: 122px;
+  font-size: 12px;
+  line-height: 32px;
+  height: 32px;
+}
+
+.u-win-follow{
+  h2{
+    color: #333;
+    font-size: 20px;
+    margin-top: 24px;
+    span{
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+  }
+  p{
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .btns{
+    text-align: center;
+    .ok{
+      background: #e878b2;
+      $size: 80px 26px;
+      cursor: pointer;
+      &:hover{
+        background-color: l-adjust(#e878b2, -5%);
+      }
+    }
+  }
+  .btns .cc{
+    display: none;
+  }
+
+}
+
+.w-htable{
+  $fixed-container: 900px;
+  &.z-preview{
+    input{
+      display: none;
+    }
+    td.box{
+      $opacity: 0.5;
+    }
+  }
+  table{
+    table-layout: fixed;
+  }
+  th{
+    border-bottom: 1px !important;
+    font-size: 14px;
+  }
+
+  td{
+    background-color: #f5f5f5;
+  }
+
+  td:first-child,th{
+    font-weight: normal;
+    text-align: center;
+    white-space:nowrap;
+    vertical-align: middle;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    background-color: #fff;
+  }
+  th:first-child{
+    background-color: #ccc;
+    $box-sizing: border-box;
+  }
+  td input{
+    padding: 4px;
+    max-width: 100px;
+  }
+
+  td.box{
+    $opacity: 0.8;
+  }
+  .z-selected{
+    td.box-selected{
+      $opacity: 1;
+    }
+  }
+  tbody > td{
+    padding: 6px;
+  }
+  .colors{
+    margin: 12px 0 12px;
+    $clearfix();
+    .color{
+      cursor: pointer;
+      color: #666;
+      font-size: 16px;
+      float: left;
+      margin-right: 24px;
+    }
+    .u-color{
+      margin-right: 4px;
+    }
+  }
+}
+
+.w-vhelper{
+
+  .well{
+    .form-group{
+      margin-bottom: 0px;
+    }
+  }
+  .btns{
+    text-align: center;
+    margin: 12px 0px;
+    .btn{
+      margin-left: 12px;
+      width: 20%;
+    }
+  }
+}
+
+.u-color{
+  $size: 16px;
+  $display: inline-block;
+  $transform: rotate(45deg);
+}
+
+.u-corner{
+  padding: 0px !important;
+  position: relative;
+  width:120px;
+  height:48px;
+  
+  &th{
+    background-color: #ddd;
+  }
+  .corner{
+    position: absolute;
+    left:0;
+    bottom:0;
+    height: 0;
+    width:0;
+    border-width: 23px 59px;
+    border-color: transparent transparent #fff #fff;
+    border-style:   solid solid ;
+  }
+  .corner-2{
+    left:auto;
+    bottom: auto;
+    right: 0;
+    top: 0;
+    border-width: 23px 59px;
+    border-color: #fff #fff transparent transparent;
+    border-style: solid solid  ;
+  }
+  .bottom, .top{
+    position: absolute;
+  }
+  .bottom{
+    bottom: 4px; left: 4px;
+  }
+  .top{
+    top:4px; right: 4px;
+  }
+}
+
+.m-tparam{
+  ul{
+    $clearfix();
+
+  }
+  li{
+    float: left;
+    width: 280px;
+    $txt-ellipsis();
+    font-size: 12px;
+    line-height: 2;
+    margin-right: 30px;
+    margin-bottom: 4px;
+    .key{
+      color: #999;
+    }
+    &.line{
+      width: 940px;
+      text-overflow: inherit;
+      white-space: normal;
+    }
+  }
+  .desc{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    background-color: #fafafa;
+    border-left: 4px solid #ddd;
+    padding: 4px 12px;
+    margin-left: -16px;
+  }
+}
+
+
+

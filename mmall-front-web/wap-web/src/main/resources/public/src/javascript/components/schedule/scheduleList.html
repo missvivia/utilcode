@@ -1,0 +1,35 @@
+<textarea name='jst' id='#<seedList>'>
+  {list beg..end as x}
+    {var s = xlist[x]}
+    <section class='w-schedule j-li'>
+      <a href='/schedule?scheduleId=${s.banner.scheduleId}'>
+        <div class='img'>
+          <div class='time'><i class='u-time'></i>
+          {var now = new Date().getTime()}
+          <span data-countdown='${s.endTime-now}' class='j-bcd'></span>后结束</div>
+          <div class='m-img'>
+            <img class='u-loading-1' data-src='${s.banner.homeBannerImgUrl}' />
+          </div>
+        </div>
+      </a>
+      <div class='cnt f-cb'>
+        <img class='logo u-loading-1' data-src='${s.brandLogo}' />
+        <div class='word'>
+          <p title='${s.title}'>${s.title}</p>
+          <p>含${s.prdDetail.productTotalCnt}款新品<i class='price'>${s.prdDetail.minDiscount/10}折起</i></p>
+        </div>
+      </div>
+    </section>
+  {/list}
+</textarea>
+<textarea name='ntp' id='#<seedBox>'>
+<div></div>
+</textarea>
+<textarea name='ntp' id='#<seedLoading>'>
+<div class="m-schedule-loading">
+  <div class="load">
+    <div class="w-loading"></div>
+    <div class="text f-fs1 s-fc2">努力加载中...</div>
+  </div>
+</div>
+</textarea>

@@ -1,0 +1,14 @@
+<textarea name="ntp" id="#<mdl>">
+  <div class="m-bd-toolbar">
+    <div class="ttl"></div>
+    <div class="act"></div>
+  </div>
+</textarea>
+<textarea name="jst" id="#<act>">
+  {list xlist as x}
+    {var cg = xmap[x]||xmap[x.n]}
+    {if !!cg}
+    <span class="ait i-${x.n||x} glyphicon glyphicon-${cg.c}" data-action="${cg.a||x.n||x}" title="${x.t||cg.t}">&nbsp;</span>
+    {/if}
+  {/list}
+</textarea>

@@ -1,0 +1,19 @@
+<!-- Modal -->
+{{#if type==1}}
+  <label>您共选择了{{allCount}}个即将删除的商品</label>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="onShelveCheck"> 删除上架商品{{onShelveCount}}个<br/>商品目前正在出售中，删除后将不能出售
+    </label>
+  </div>
+  
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="unShelveCheck"> 删除未上架商品{{unShelveCount}}个
+    </label>
+  </div>
+{{#elseif type==2}}
+  <label>确定删除{{unShelveCount}}个商品吗？</label>
+{{#else}}
+  <label>确定删除{{onShelveCount}}个上架的商品吗？<br/>商品目前正在出售中，删除后将不能出售</label>
+{{/if}}

@@ -1,0 +1,34 @@
+@abstract '../_config.mcss';
+
+.m-box{
+	position:relative;margin:0 0 20px;background:#fff;
+	.hd{
+		padding:16px 20px;border-bottom:1px solid #eaeaea;line-height:18px;
+		h2{font-size:16px;font-weight:bold;border-left:2px solid #9944ae;padding-left:5px;}
+	}
+	.bd{
+		position:relative;zoom:1;padding:35px 49px;
+		.line{position:absolute;left:49px;top:124px;width:992px;border-top:2px solid #666;}
+	}
+	&-1 .bd{padding:15px 30px;}
+}
+.m-returnsteps{
+	ul{position:relative;z-index:1;height:130px;}
+	li{float:left;width:248px;height:130px;text-align:center;}
+	.circle{margin:20px 0 16px;font-size:0;line-height:0;}
+	h3{font-size:14px;}
+	.icon{
+		$inline-block();width:64px;height:64px;@extend bg-icon2;background-position:0 -428px;
+		&-2{background-position:-86px -428px;}
+		&-3{background-position:0 -513px;}
+		&-4{background-position:-86px -513px;}
+	}
+	.icon2{$inline-block();width:13px;height:13px;@extend bg-icon2;background-position:-68px -385px;}
+}
+.m-returnrule{
+	line-height:22px;
+	ol ol{color:#666;}
+	ol li{margin-bottom:20px;font-weight:bold;}
+	ol ol li{margin:0;font-weight:normal;}
+}
+.m-btnblk{padding:10px 0 0;text-align:center;}

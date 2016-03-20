@@ -1,0 +1,94 @@
+<div class="m-box">
+	<div class="m-order">
+	    <div class="hd">
+	        <h3 class="main">我的订单</h3><a class="more" href="/myorder">查看更多 <span class="f-ff2">&gt;</span></a>
+	    </div>
+	    <div class="bd">
+		 {{#if orderList.length>0}}
+		 <table class="m-table" border="0" cellspacing="0" cellpadding="0">
+		 <tbody>
+		 	<tr>
+			   <th>订单号</th><th>下单时间</th><th>商品</th><th>消费金额</th><th>状态</th>
+			 </tr>
+		  {{#list orderList as item}}
+			<tr>
+		      <td><a href="/myorder/detail?orderId={{item.orderId}}" target="_blank">{{item.orderId}}</a></td>
+		      <td>{{item.orderTime}}</td>
+		      <td>{{item.orderSkuList[0].skuSPVO.productName}}</td>
+		      <td>¥{{item.orderSkuList[0].totalRPrice}}</td>
+		      {{#if item.orderFormState.intValue==0}}<td class="s-fc16">{{item.orderFormState.desc}}</td>{{#else}}<td class="">{{item.orderFormState.desc}}</td>{{/if}}
+		    </tr>
+		  {{/list}}
+		 </tbody>
+		 </table>
+		{{#else}}
+		<p class="empt">暂时没有订单哦，快去<a href="/">抢购</a>吧！</p>
+		{{/if}}
+		</div>
+	</div>
+</div>
+
+
+<div class="m-box">
+    <div class="m-coupon">
+        <div class="hd">
+            <h3 class="main">我的优惠券</h3><a class="more" href="/coupon">查看更多 <span class="f-ff2">&gt;</span></a>
+        </div>
+        <div class="bd">  
+         {{#if couponList.length>0}}
+          <table class="m-table" border="0" cellspacing="0" cellpadding="0">
+          	<tbody>
+              <tr>
+                <th width=200px>名称</th>
+                <th width=300px>描述</th>
+                <th>代码</th>
+                <th>有效期</th>
+                <th>状态</th>
+              </tr>
+               {{#list couponList as item}}
+              <tr {{#if item.state ==1}}class="used"{{#elseif item.state ==2}}class="old"{{/if}}>
+			      <td>{{item.name}}</td>
+			      <td>{{item.description}}</td>
+			      <td>{{item.couponCode}}</td>
+			      <td>{{item.startTime|format}}至{{item.endTime|format}}</td>
+			      <td>{{item.couponState|couponStatus}}</td>
+			    </tr>
+              {{/list}}
+              </tbody>
+          </table>
+          {{#else}}
+          	<p class="empt">还没有优惠券，加油哦~</p>
+          {{/if}}
+        </div>
+    </div>
+</div>
+
+
+<div class="m-box">
+    <div class="m-focus">
+        <div class="hd">
+            <h3 class="main">我的收藏</h3><a class="more" href="/profile/focus">查看更多 <span class="f-ff2">&gt;</span></a>
+        </div>
+        <div class="bd bd-1">  
+        {{#if focusList.length>0}}
+          <ul class="list">
+          	{{#list focusList as item}}
+			 <li class="brand">
+				  <a href="/product/detail?skuId={{item.skuId}}" target="_blank">
+				    <div class="imgbox">
+				    	<img src="{{item.showPicPath}}?imageView&thumbnail=140x60&quality=90"/>
+				    </div>
+				    <span class="desc desc-1" title="{{item.productName}}">
+				        {{item.productName}}
+				    </span>
+				  </a>
+				  <span class="u-btn2" on-click={{this.unfollow(item,item_index)}}>取消收藏</span>
+			 </li>
+	 		{{/list}}
+          </ul>
+          {{#else}}
+          	<p class="empt">还没有收藏的商品信息和店铺信息！</p>
+          {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+/* 统一清除浮动 */
+.m-return .group{
+    zoom:1;
+    &:after{display:block;content:'.';clear:both;overflow:hidden;visibility:hidden;height:0;}
+}
+
+.m-box{
+	padding:0 20px;margin:20px 0;
+    .cont{padding:10px 0;}
+    .item{float:left;width:45%;}  
+    .table{border:0;}
+}

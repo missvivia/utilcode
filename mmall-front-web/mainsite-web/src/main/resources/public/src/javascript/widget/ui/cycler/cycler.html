@@ -1,0 +1,24 @@
+{trim}
+<div class="list-box">
+  <div class="g-center f-pr">
+    <ul class="list f-pr">
+      {list data as x}
+      <li class="item ${'js-c-'|seed}">
+        <a href="" style="display: block;"><img src="${x.picUrl}" alt="" width="1860" height="390" class="f-vmt" style="display: block;"/></a>
+      </li>
+      {/list}
+    </ul>
+    <span class="prev-btn ${'js-p-'|seed}"></span>
+    <span class="next-btn ${'js-n-'|seed}"></span>
+  </div>
+</div>
+<div class="tab-box">
+  <ul class="tab-list">
+    <li class="first"></li>
+    {list data as x}
+    <li class="${'js-i-'|seed}"></li>
+    {/list}
+    <li class="last"></li>
+  </ul>
+</div>
+{trim}

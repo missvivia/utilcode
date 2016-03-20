@@ -1,0 +1,99 @@
+{
+    "returnList": {
+        "total": 100,
+        "list": [
+            {
+                "id": 0,
+                "thumb": "../../res/images/temp/demo.png",
+                "productName":"EIN言100%苎麻时尚印花上衣2014女装秋款新品",
+                "salePrice":1111,
+                "quantity": 2,
+                "sum": 2100,
+                "colorName": "黑色",
+                "sizeType":{
+                    "intValue": 1,
+                    "desc": "M"
+                },
+                "status":{
+                    "intValue": 5,
+                    "desc": "已申请"
+                },
+                "promotion": {
+                    "name": "满200减40",
+                    "description": "joan&david满200送连衣裙"
+                },
+                "coupon": {
+                    "id": 1111,
+                    "couponCode": "eee",
+                    "name": "joan&david满200减20",
+                    "description": "全站7折"
+                },
+                "comment": ""
+            },
+            {
+                "id": 2,
+                "thumb": "../../res/images/temp/demo.png",
+                "productName":"EIN言100%苎麻时尚印花上衣2014女装秋款新品",
+                "salePrice":1111,
+                "quantity": 2,
+                "sum": 2100,
+                "colorName": "黑色",
+                "sizeType":{
+                    "intValue": 1,
+                    "desc": "M"
+                },
+                "status":{
+                    "intValue": 5,
+                    "desc": "已申请"
+                },
+                "promotion": {
+                    "name": "满200减40",
+                    "description": "joan&david满200送连衣裙"
+                },
+                "coupon": {
+                    "id": 1111,
+                    "couponCode": "eee",
+                    "name": "joan&david满200减20",
+                    "description": "全站7折"
+                },
+                "comment": ""
+            },
+            {
+            "id":1,
+                 "thumb": "../../res/images/temp/demo.png",
+                "productName":"专柜正品代购 STACCATO思加图 2014年夏款女鞋拖鞋9DZ41 9DZ41D",
+                "salePrice":1111,
+                "quantity": 2,
+                "sum": 2100,
+                "colorName": "深兰滚蜡羊二层皮",
+                "sizeType":{
+                    "intValue": 1,
+                    "desc": "M"
+                },
+                "status":{
+                    "intValue": 9,
+                    "desc": "已拒收"
+                },
+                "promotion": {
+                    "name": "满200减40",
+                    "description": "joan&david满200送连衣裙"
+                },
+                "coupon": {
+                    "id": 1111,
+                    "couponCode": "eee",
+                    "name": "joan&david满200减20",
+                    "description": "全站7折"
+                },
+                "comment": "退货理由无理由"
+            }
+        ]
+    },
+    "payMethod":{
+         "intValue": 1,
+         "desc": "原路返回"
+    },
+    "returnFail":{
+        "failReason":"已经过期"
+    },
+    "orderId": 1111
+}

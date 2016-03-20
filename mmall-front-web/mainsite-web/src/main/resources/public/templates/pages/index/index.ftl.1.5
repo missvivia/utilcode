@@ -1,0 +1,761 @@
+<#escape x as x?html>
+<@compress>
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../../wrap/common.ftl">
+    <#include "../../wrap/front.ftl">
+    <@title type="index" />
+    <meta charset="utf-8"/>
+  	<link rel="shortcut icon" href="/favicon.ico?v=2" />
+    <@css/>
+</head>
+<body>
+	<@fixedTop />
+	<@topbar />
+	<div class="top-ads"></div>
+	<@top />
+	<div class="main-category wrap">
+		<div class="category-item" id='add-category'>
+			<dl class="active">
+				<dt>
+					全部分类<i></i>
+				</dt>
+			</dl>
+		</div>
+		<div class='home-category'>
+			<#include "../../category/category.html">
+		</div>
+	</div>
+	<div class="bg-french-gray ">
+		<div class="banner">
+			<div class="pic">
+				<ul>
+				</ul>
+			</div>
+			<div class="btn round">
+				<ul>
+				</ul>
+			</div>
+		</div>
+		<div class="wrap clearfix">
+			<div class="new-pro">
+				<i>新品上架</i>
+				<div class="box"></div>
+			</div>
+			<div class="hot-pro">
+				<i>热销商品</i>
+				<ul></ul>
+			</div>
+		</div>
+		<div class="wrap clearfix brand-pro">
+			<h2>品牌专区</h2>
+			<div class="bg"></div>
+			<ul></ul>
+		</div>
+		<div class="wrap clearfix module" id='itme1'>
+			<div class='title clearfix'></div>
+			<div class="list">
+			</div>
+		</div>
+		<div class="wrap clearfix module" id='itme2'>
+			<div class='title clearfix'></div>
+			<div class="list">
+			</div>
+		</div>
+		<div class="wrap clearfix module" id='itme3'>
+			<div class='title clearfix'></div>
+			<div class="list">
+			</div>
+		</div>
+		<div class="wrap clearfix module" id='itme4'>
+			<div class='title clearfix'></div>
+			<div class="list">
+			</div>
+		</div>
+		<div class="wrap clearfix module" id='itme5'>
+			<div class='title clearfix'></div>
+			<div class="list">
+			</div>
+		</div>
+	</div>
+	<@footer />
+	<@copyright />
+	<@fixedSide />
+	<@fixedSideOrder />
+	<@fixedSideReplenish />
+	<@cityChange />
+    <@js />
+    <script type="text/javascript">
+    	$(function () {
+
+			// 首页模版数据
+			//-----start repalce----
+			var obj = {
+				topAds : {
+					url : [], //0
+					link : [] //1
+				},
+				notice : {
+					name : [
+						"###"   //2
+					],
+					link : [
+						  //3
+					]
+				},
+				category: {
+					name: [
+						"瑞悦酒水","星作副食","飞恒洗化","安昌酒水","蓝月亮热卖" //4
+					],
+					link: [
+						"/store/1000033/","/store/1000034/","/store/1000035/","/store/1001003/","/store/1001004/" //5
+					]
+				},
+				banner : {
+					url : [
+						"http://paopao.nosdn.127.net/d4d4f69a-d5ad-485d-b87a-b412b011a05f","http://paopao.nosdn.127.net/7199eca2-c35c-49f6-8ff9-eda51a7a4204","http://paopao.nosdn.127.net/f76c7108-2101-4c72-9f24-4da29de8b31d","http://paopao.nosdn.127.net/70895d8a-a5ea-4c82-a8ff-e930bdcaa73f","http://paopao.nosdn.127.net/30869bff-fb97-4c9e-9601-c3c963790524" //6
+					],
+					link : [
+						"http://023.baiwandian.cn/pub/20151212/20151212.html","####","/store/1001003/","/store/1001004/","http://023.baiwandian.cn/activity/20150916" //7
+					]
+				},
+				newPro : {
+					url : ["http://paopao.nosdn.127.net/2f191ef9-ff6f-4d1d-bb1a-eea159c16bfd"], //8
+					skuId : ["1020519"], //9
+					name : ["皇轩贵族波尔多干红(蓝标)礼盒750ml*6"], //10
+					title : [""], //11
+					storeName : ["渝北区安昌食品批发部"], //12
+					storeLink : ["http://023.baiwandian.cn/store/1001003/"], //13
+					price : ["110.00"], //14
+					tag : [
+						  //15
+					]
+				},
+				hotPro : {
+					url : [
+						"http://paopao.nosdn.127.net/03ae5a31-a6da-44c3-9048-22e12300a0a7","http://paopao.nosdn.127.net/e18103c4-123f-4aab-ab71-1d65061e379d","http://paopao.nosdn.127.net/8859f880-81c9-4a44-aa12-66da7fa66fb8","http://paopao.nosdn.127.net/76b4a40e-b426-451c-9397-26e716e5255b"  //16
+					],
+					skuId : [
+						"1015114","1016593","1017658","1020490" //17
+					],
+					name : [
+						"红牛饮料(原味型)/250ml*24","旺仔牛奶糖18g*30","蓝月亮亮白增艳洗衣液立袋-薰衣草1kg","台湾原装进口芒果汁1*24" //18
+					],
+					title : [
+						"","","","" //19
+					],
+					storeName : [
+						"渝北区瑞悅食品经营部","重庆星作贸易有限公司","重庆飞恒贸易有限公司","渝北区安昌食品批发部"  //20
+					],
+					storeLink : [
+						"http://023.baiwandian.cn/store/1000033/","http://023.baiwandian.cn/store/1000034/","http://023.baiwandian.cn/store/1000035/","http://023.baiwandian.cn/store/1001003/" //21
+					],
+					price : [
+						"112.00","0.75","14.20","118.00" //22
+					],
+					tag : [
+						 //23
+					]
+				},
+				brandPro : {
+					bakground: ["http://paopao.nosdn.127.net/6c766d12-551b-4057-a2cb-f37d6eb137b3"], //24
+					list : {
+						url : [
+							"http://paopao.nosdn.127.net/f52a0832-3bb4-4c65-8037-5ed974f887a9","http://paopao.nosdn.127.net/59bc235e-fa35-4fa0-8076-9be3f9457840","http://paopao.nosdn.127.net/824df981-e208-4569-a0f7-27c36245a084" //25
+						],
+						skuId : [
+							"1020527","1020535","1020551" //26
+						],
+						name : [
+							"自然清香3kg蓝月亮洁净洗衣液瓶装","自然清香3kg蓝月亮洁净洗衣液瓶装","自然清香3kg蓝月亮洁净洗衣液瓶装" //27
+						],
+						title : [
+							"","","" //28
+						],
+						storeName : [
+							"飞恒洗化蓝月亮劲爆专卖","飞恒洗化蓝月亮劲爆专卖","飞恒洗化蓝月亮劲爆专卖" //29
+						],
+						storeLink : [
+							"http://023.baiwandian.cn/store/1001004/","http://023.baiwandian.cn/store/1001004/","http://023.baiwandian.cn/store/1001004/" //30
+						],
+						price : [
+							"38.00","36.00","35.00" //31
+						],
+						tag : [
+							 //32
+						]
+					}
+				},
+				item1 : {
+					titleName : ["饮料酒水"],  //33
+					ads : {
+						name : [], //34
+						link  : [] //35
+					},
+					titleLink : ["/store/1000033/"], //36
+					background : ["http://paopao.nosdn.127.net/95b8f57c-3029-4bfe-8c12-59ab96db9e88"], //37
+					backgroundLink : ["/store/1000033/"], //38
+					main : {
+						url : [
+							"http://paopao.nosdn.127.net/0e13ab22-9a4f-442b-b2de-bd595ffa4581","http://paopao.nosdn.127.net/b0d46c0e-c86d-41ad-8a40-e365810b2d1e","http://paopao.nosdn.127.net/040ae314-cde0-45eb-a4e9-284e1c0327bd","http://paopao.nosdn.127.net/26451f80-91e1-4de2-b211-5ab71c7d0407" //39
+						],
+						skuId : [
+							"1017555","1017554","1017545","1019428" //40
+						],
+						name : [
+							"盒装康师傅劲凉冰红茶250ml*24","盒装康师傅冰糖雪梨250ml*24","纸盒康师傅冰红茶250ml*24","来一桶酸菜（铁路版）*12" //41
+						],
+						title : [
+							"特价距保质期还有4个月","特价距保质期还有4个月","特价距保质期还有4个月","特价距离保质期还有3个月" //42
+						],
+						storeName : [
+							"渝北区瑞悅食品经营部","渝北区瑞悅食品经营部","渝北区瑞悅食品经营部","渝北区瑞悅食品经营部" //43
+						],
+						storeLink : [
+							"http://023.baiwandian.cn/store/1000033/","http://023.baiwandian.cn/store/1000033/","http://023.baiwandian.cn/store/1000033/","http://023.baiwandian.cn/store/1000033/" //44
+						],
+						price : [
+							"20.00","20.00","20.00","34.00" //45
+						],
+						tag : [
+							 //46
+						]
+					}
+				},
+				item2 : {
+					titleName :["安昌酒水"], //47
+					ads : {
+						name : [], //48
+						link  : [] //49
+					},
+					titleLink : ["/store/1001003/"], //50
+					background : ["http://paopao.nosdn.127.net/67c7afbd-5460-473a-9b37-d1f7708f7f29"], //51
+					backgroundLink : ["/store/1001003/"], //52
+					main : {
+						url : [
+							"http://paopao.nosdn.127.net/a2a4c283-5ce9-4539-aaf6-a3a1ef1a50a2","http://paopao.nosdn.127.net/e0d64409-0a2e-4590-a064-9c9a8628fae7","http://paopao.nosdn.127.net/6c99ac28-5ce3-41f0-87a9-2baf8751c18c","http://paopao.nosdn.127.net/f7112b65-77e4-496d-b18a-dddc84f655a4" //53
+						],
+						skuId : [
+							"1020877","1020874","1020503","1020510" //54
+						],
+						name : [
+							"椰泰-阿方索果肉芒果汁1.25L*6","众参HEISHUI黑水","颜之堂-樱桃汁500ml*15","蓝岸-梦幻摩卡25g*24" //55
+						],
+						title : [
+							"","","买一件送一件含新旧包装","" //56
+						],
+						storeName : [
+							"渝北区安昌食品批发部","渝北区安昌食品批发部","渝北区安昌食品批发部","渝北区安昌食品批发部" //57
+						],
+						storeLink : [
+							"http://023.baiwandian.cn/store/1001003/","http://023.baiwandian.cn/store/1001003/","http://023.baiwandian.cn/store/1001003/","http://023.baiwandian.cn/store/1001003/" //58
+						],
+						price : [
+							"60.00","51.00","45.00","80.00" //59
+						],
+						tag : [
+							 //60
+						]
+					}
+				},
+				item3 : {
+					titleName :["星作副食"], //61
+					ads : {
+						name : [], //62
+						link  : [] //63
+					},
+					titleLink : ["/store/1000034/"], //64
+					background : ["http://paopao.nosdn.127.net/2db6a953-8bff-44a4-bbaa-f49514b05048"], //65
+					backgroundLink : ["/store/1000034/"], //66
+					main : {
+						url : [
+							"http://paopao.nosdn.127.net/a3ccbaa5-b598-4d54-b1a4-883fb05f6e01","http://paopao.nosdn.127.net/0cbb49a4-f0d3-48d4-b3aa-ba1bd2daf0dc","http://paopao.nosdn.127.net/dfe8026e-9646-44cd-91a9-ab746a8d9260","http://paopao.nosdn.127.net/90665417-590f-4698-a2b0-eaaf0f1f0227" //67
+						],
+						skuId : [
+							"1017090","1017299","1016370","1017259"  //68
+						],
+						name : [
+							"牛浪汉牛肉干（五香）60g","奥利奥草莓夹心饼干130g*1","阿尔卑斯棒棒糖（香橙味）1*24","有友山椒凤爪180g*1" //69
+						],
+						title : [
+							"","","1件24个","" //70
+						],
+						storeName : [
+							"重庆星作贸易有限公司","重庆星作贸易有限公司","重庆星作贸易有限公司","重庆星作贸易有限公司" //71
+						],
+						storeLink : [
+							"http://023.baiwandian.cn/store/1000034/","http://023.baiwandian.cn/store/1000034/","http://023.baiwandian.cn/store/1000034/","http://023.baiwandian.cn/store/1000034/" //72
+						],
+						price : [
+							"7.20","4.80","7.50","6.20" //73
+						],
+						tag : [
+							 //74
+						]
+					}
+				},
+				item4 : {
+					titleName :["飞恒洗化"],  //75
+					ads : {
+						name : [], //76
+						link  : []  //77
+					},
+					titleLink : ["/store/1000035/"], //78
+					background : ["http://paopao.nosdn.127.net/ce4e9da5-75c5-4bfa-a3cc-7e4ae70b9c40"], //79
+					backgroundLink : ["/store/1000035/"], //80
+					main : {
+						url : [
+							"http://paopao.nosdn.127.net/8859f880-81c9-4a44-aa12-66da7fa66fb8","http://paopao.nosdn.127.net/1c748462-9cdb-4df8-ab0c-f2fc068d8279","http://paopao.nosdn.127.net/7f6b5211-632b-4f22-b498-937b0c1c6d3c","http://paopao.nosdn.127.net/9846d068-da37-452b-99ed-2f627c88b63b" //81
+						],
+						skuId : [
+							"1017658","1017806","1017667","1018065" //82
+						],
+						name : [
+							"蓝月亮亮白增艳洗衣液立袋-薰衣草1kg","舒客专业清新牙膏劲爽薄荷120g 1*12","汰渍净白去渍无磷洗衣粉2.8Kg*4","欧莱雅透明质酸去屑洗发水700ml" //83
+						],
+						title : [
+							"","1打12支","1件4包","" //84
+						],
+						storeName : [
+							"重庆飞恒贸易有限公司","重庆飞恒贸易有限公司","重庆飞恒贸易有限公司","重庆飞恒贸易有限公司" //85
+						],
+						storeLink : [
+							"http://023.baiwandian.cn/store/1000035/","http://023.baiwandian.cn/store/1000035/","http://023.baiwandian.cn/store/1000035/","http://023.baiwandian.cn/store/1000035/" //86
+						],
+						price : [
+							"14.20","151.68","68.00","49.50" //87
+						],
+						tag : [
+							 //88
+						]
+					}
+				},
+				item5 : {
+					titleName :["####"], //89
+					ads : {
+						name : ["####"], //90
+						link  : ["####"] //91
+					},
+					titleLink : ["####"], //92
+					background : ["####"], //93
+					backgroundLink : ["####"], //94
+					main : {
+						url : [
+							 //95
+						],
+						skuId : [
+							 //96
+						],
+						name : [
+							 //97
+						],
+						title : [
+							 //98
+						],
+						storeName : [
+							 //99
+						],
+						storeLink : [
+							  //100
+						],
+						price : [
+							 //101
+						],
+						tag : [
+							 //102
+						]
+					}
+				}
+			};
+			//-----end repalce----
+
+			// 创建头部广告
+			function createTopAds(list) {
+				//console.log(list);
+				if (list.url.length != 0) {
+					var dom = "<a href='"+ list.link +"' target='_blank'><img src='"+ list.url +"' />";
+					$(".top-ads").show().append(dom);
+				}
+			};
+			createTopAds(obj.topAds);
+			// 创建公告
+			function createNotice(list) {
+				var dom = "";
+				for (var i = 0; i < list.name.length; i++) {
+					dom += "<li><a href='"+ list.link[i] +"' title='"+ list.name[i] +"' target='_blank'>"+ list.name[i] +"</a></li>"
+				}
+				$(".notice ul").append(dom);
+			}
+			createNotice(obj.notice);
+			// 创建主分类旁分类
+			function createCate(list) {
+				var dom = '',
+					len = list.name.length;
+				if (len != 0) {
+					for (var i = 0; i < len; i++) {
+						dom += "<dd><a href='"+ list.link[i] +"'>"+ list.name[i] +"</a></dd>";
+					}
+				} else {
+					dom = "";
+				}
+				$("#add-category dl").append(dom);
+			}
+			createCate(obj.category);
+			// banner模块
+			var bannerBox = $(".banner"),
+				bannerBtn = bannerBox.find(".btn li"),
+    			scrollBox = bannerBox.find(".pic ul"),
+    			flag = 0;;
+    		// 创建banner列表和按钮
+			function createBanner(data) {
+				var len = data.url.length,
+					listDom = "",
+					btnDom = "";
+				for (var i = 0; i < len; i++) {
+					listDom += "<li><a href='"+ data.link[i] +"' style='background-image: url("+ data.url[i] +");'></a></li>";
+				}
+				bannerBox.find(".pic ul").append(listDom);
+				if (len >= 2) {
+					for (var i = 0; i < len; i++) {
+						btnDom += "<li></li>";
+					}
+				} else {
+					btnDom = "";
+				}
+				bannerBox.find(".btn ul").append(btnDom);
+				bannerBox.find(".btn li").eq(0).addClass("active");
+			}
+			createBanner(obj.banner);
+			$(window).resize(function() {
+				windowW = $(window).width();
+				scrollBox.find("li").css({
+					width : windowW
+				});
+				$(".banner .btn").css({
+					right : (windowW - 1190) / 2 + 300
+				});
+				bannerBox.on("click", ".btn li", function () {
+					var index = $(this).index();
+					flag = index;
+					$(this).addClass("active").siblings().removeClass("active");
+					scrollBox.animate({ left : -index * windowW}, 400);
+				});
+			});
+			scrollBox.find("li").css({
+				width : windowW
+			});
+			$(".banner .btn").css({
+				right : (windowW - 1190) / 2 + 300
+			});
+			// banner切换
+			bannerBox.on("click", ".btn li", function () {
+				var index = $(this).index();
+				flag = index;
+				$(this).addClass("active").siblings().removeClass("active");
+				scrollBox.animate({ left : -index * windowW}, 400);
+			});
+			// 自动执行banner切换
+			var timer = setInterval(bannerSwitch, 5000);
+			function bannerSwitch() {
+				var len = scrollBox.find("li").length;
+				flag++;
+				if (flag >= len) flag = 0;
+				$(".banner").find(".btn li").eq(flag).trigger("click");
+			}
+			$(".banner").hover( function () {
+				clearInterval(timer);
+			}, function () {
+				timer = setInterval(bannerSwitch, 5000);
+			});
+			// 新品上架
+			function createNewPro(list) {
+				var dom = "",
+					tag = list.tag,
+					tagArr = [];
+				if (list.skuId.length != 0) {
+					if (tag != null && tag.length != 0) {
+						tagArr = tag.split("/");
+					} else {
+						tagArr = [];
+					}
+					dom += "<div class='pro-box' data-skuid='"+ list.skuId +"' data-skunum='99999'>"+
+					"<span class='pic'>"+
+						"<a href='/product/detail?skuId="+ list.skuId +"' target='_blank'>"+
+							"<img src='"+ list.url +"'>"+
+						"</a>"+
+						"</span>"+
+						"<a href='/product/detail?skuId="+ list.skuId +"' class='tit' target='_blank' title='"+ list.name +"'>"+ list.name +"</a>"+
+						"<span class='des' title='"+ list.title +"'>"+ list.title +"</span>"+
+						"<span class='price'><em>¥</em>"+ list.price +"</span>"+
+						"<a href='"+ list.storeLink +"' class='store-name'>"+ list.storeName +"</a>"+
+						"<p class='tag'>";
+					for (var i = 0; i < tagArr.length; i++) {
+						dom += "<span>"+ tagArr[i] +"</span>";
+					}
+					dom += "</p>"+
+						"<div class='action'>"+
+							"<div class='jump'>"+
+								"<span class='minus'>-</span>"+
+								"<input class='num' value='1'>"+
+								"<span class='add'>+</span>"+
+							"</div>"+
+							"<div class='add-cart'>加入进货单</div>"+
+							"</div>"+
+						"</div>";
+					$(".new-pro .box").html(dom);
+				}
+			}
+			createNewPro(obj.newPro);
+			// 热销商品
+			function createHotPro(list) {
+				var dom = "",
+					tag = "",
+					tagArr = [],
+					len = list.url.length;
+				if ( len > 4) {
+					len = 4;
+				}
+				for (var i = 0; i < len; i++) {
+					dom += "<li><div class='pro-box' data-skuid='"+ list.skuId[i] +"' data-skunum='99999'>"+
+					"<span class='pic'>"+
+					"<a href='/product/detail?skuId="+ list.skuId[i] +"' target='_blank'>"+
+						"<img src='"+ list.url[i] +"'>"+
+					"</a>"+
+					"</span>"+
+					"<a href='/product/detail?skuId="+ list.skuId[i] +"' class='tit' target='_blank' title='"+ list.name[i] +"'>"+ list.name[i] +"</a>"+
+					"<span class='des' title='"+ list.title[i] +"'>"+ list.title[i] +"</span>"+
+					"<span class='price'><em>¥</em>"+ list.price[i] +"</span>"+
+					"<a href='"+ list.storeLink[i] +"' class='store-name'>"+ list.storeName[i] +"</a>"+
+					"<p class='tag'>";
+					tag = list.tag[i];
+					if (tag != undefined && tag.length != 0) {
+						tagArr = tag.split("/");
+						for (var j = 0; j < tagArr.length; j++) {
+							dom += "<span>"+ tagArr[j] +"</span>";
+						}
+					}
+					dom +=	"</p>"+
+					"<div class='action'>"+
+						"<div class='jump'>"+
+							"<span class='minus'>-</span>"+
+							"<input class='num' value='1'>"+
+							"<span class='add'>+</span>"+
+						"</div>"+
+						"<div class='add-cart'>加入进货单</div>"+
+						"</div>"+
+					"</div></li>";
+				}
+				$(".hot-pro ul").html(dom);
+			}
+			createHotPro(obj.hotPro);
+			// 品牌专区
+			function createBrandList(data) {
+				var dom = "",
+				    list = data.list;
+					tag = "",
+					tagArr = [],
+					len = list.url.length;
+				if ( len > 3) {
+					len = 3;
+				}
+				for (var i = 0; i < len; i++) {
+					dom += "<li><div class='pro-box' data-skuid='"+ list.skuId[i] +"' data-skunum='99999'>"+
+					"<span class='pic'>"+
+					"<a href='/product/detail?skuId="+ list.skuId[i] +"' target='_blank'>"+
+						"<img src='"+ list.url[i] +"'>"+
+					"</a>"+
+					"</span>"+
+					"<a href='/product/detail?skuId="+ list.skuId[i] +"' class='tit' target='_blank' title='"+ list.name[i] +"'>"+ list.name[i] +"</a>"+
+					"<span class='des' title='"+ list.title[i] +"'>"+ list.title[i] +"</span>"+
+					"<span class='price'><em>¥</em>"+ list.price[i] +"</span>"+
+					"<a href='"+ list.storeLink[i] +"' class='store-name'>"+ list.storeName[i] +"</a>"+
+					"<p class='tag'>";
+					tag = list.tag[i];
+					if (tag != undefined && tag.length != 0) {
+						tagArr = tag.split("/");
+						for (var j = 0; j < tagArr.length; j++) {
+							dom += "<span>"+ tagArr[j] +"</span>";
+						}
+					}
+					dom +=	"</p>"+
+					"<div class='action'>"+
+						"<div class='jump'>"+
+							"<span class='minus'>-</span>"+
+							"<input class='num' value='1'>"+
+							"<span class='add'>+</span>"+
+						"</div>"+
+						"<div class='add-cart'>加入进货单</div>"+
+						"</div>"+
+					"</div></li>";
+				}
+				$(".brand-pro ul").html(dom);
+				$(".brand-pro .bg").html("<img src='"+ data.bakground +"' />");
+			}
+			createBrandList(obj.brandPro);
+			// 分类模块
+			var item1 = $("#itme1"),
+				item2 = $("#itme2"),
+				item3 = $("#itme3"),
+				item4 = $("#itme4"),
+				item5 = $("#itme5");
+			// 创建分类模块下面的名称、广告、更多、主列表
+			function createItem(box, list) {
+				var titleDom = "",
+					mainDom = "",
+					tag = "",
+					tagArr = [],
+					len = list.main.name.length;
+				if (len > 4) len = 4;
+				// 创建title包含 模块名称、广告、更多连接
+				titleDom += "<i></i><span>"+ list.titleName +"</span>";
+				for (var i = 0; i < list.ads.link.length; i++) {
+					titleDom += "<a href='"+ list.ads.link[i] +"' target='_blank'>"+ list.ads.name[i] +"</a>";
+				}
+				titleDom += "<a href='"+ list.titleLink +"' target='_blank' class='more'>更多></a>";
+				box.find(".title").append(titleDom);
+				// 创建主列表包含广告图
+				mainDom += "<div class='bg'><a href='"+ list.backgroundLink +"' target='_blank'><img src='"+ list.background +"'></a></div><ul>";
+				for (var i = 0; i < len; i++) {
+					mainDom += "<li><div class='pro-box' data-skuid='"+ list.main.skuId[i] +"' data-skunum='99999'>"+
+					"<span class='pic'>"+
+					"<a href='/product/detail?skuId="+ list.main.skuId[i] +"' target='_blank'>"+
+						"<img src='"+ list.main.url[i] +"'>"+
+					"</a>"+
+					"</span>"+
+					"<a href='/product/detail?skuId="+ list.main.skuId[i] +"' class='tit' target='_blank' title='"+ list.main.name[i] +"'>"+ list.main.name[i] +"</a>"+
+					"<span class='des' title='"+ list.main.title[i] +"'>"+ list.main.title[i] +"</span>"+
+					"<span class='price'><em>¥</em>"+ list.main.price[i] +"</span>"+
+					"<a href='"+ list.main.storeLink[i] +"' class='store-name'>"+ list.main.storeName[i] +"</a>"+
+					"<p class='tag'>";
+					tag = list.main.tag[i];
+					if (tag != undefined && tag.length != 0) {
+						tagArr = tag.split("/");
+						for (var j = 0; j < tagArr.length; j++) {
+							mainDom += "<span>"+ tagArr[j] +"</span>";
+						}
+					}
+					mainDom += "</p>"+
+					"<div class='action'>"+
+						"<div class='jump'>"+
+							"<span class='minus'>-</span>"+
+							"<input class='num' value='1'>"+
+							"<span class='add'>+</span>"+
+						"</div>"+
+						"<div class='add-cart'>加入进货单</div>"+
+						"</div>"+
+					"</div></li>";
+				}
+				mainDom += "</ul>";
+				box.find(".list").append(mainDom);
+			}
+			createItem(item1, obj.item1);
+			createItem(item2, obj.item2);
+			createItem(item3, obj.item3);
+			createItem(item4, obj.item4);
+			//createItem(item5, obj.item5);
+			// 加入购物车
+			function resetListaction(box) {
+				box.on("mousemove", ".pro-box", function () {
+					$(this).addClass("active").siblings().removeClass("active");
+					if (!$(this).find(".action").is(":animated")) {
+						$(this).find(".action").animate({
+							bottom: -1 + "px",
+							opacity: 1,
+							zIndex : 2
+						}, 200);
+					}
+				});
+				box.on("mouseleave", ".pro-box", function () {
+					$(this).removeClass("active");
+					$(this).find(".action").animate({
+						bottom: 40 + "px",
+						opacity: 0,
+						zIndex : -1
+					}, 200);
+				});
+				box.on("click", ".add", function () {
+					var numInput = $(this).siblings(".num"),
+						numVal = numInput.val(),
+						maxNum = $(this).closest(".pro-box").data("skunum");
+					if (numVal < maxNum) {
+						numVal++;
+						numInput.val(numVal);
+					} else {
+						$.message.alert("库存不足！", "info");
+						numInput.val(maxNum);
+					}
+				});
+				box.on("click", ".minus", function () {
+					var numInput = $(this).siblings(".num"),
+						numVal = numInput.val();
+					if (numVal <= 1) {
+						return;
+					} else {
+						numVal--;
+						numInput.val(numVal);
+					}
+				});
+				box.on("change", ".num", function () {
+					var numInput = $(this),
+						numVal = numInput.val(),
+						maxNum = $(this).closest(".pro-box").data("skunum");
+					if (numVal < 1 || isNaN(numVal)) {
+						numVal = 1;
+						numInput.val(numVal);
+					}
+					if (numVal <= maxNum) {
+						numInput.val(numVal);
+					} else {
+						$.message.alert("库存不足！", "info");
+						numInput.val(maxNum);
+					}
+				});
+				// 加入进货单
+				box.on("click", ".add-cart", function () {
+					var skuId = $(this).closest(".pro-box").data("skuid"),
+						numVal = $(this).siblings(".jump").find(".num").val(),
+						maxNum = $(this).closest(".pro-box").data("skunum");
+					if (maxNum > 0) {
+						addToCart(skuId, numVal);
+					} else {
+						$.message.alert("库存不足！", "info");
+					}
+				});
+				function addToCart(id, num) {
+					$.ajax({
+						type : "POST",
+						url: "/cart/addToCart",
+						async: false,
+						contentType: "application/json",
+						data : JSON.stringify({
+							"skuId" : id,
+							"diff" : num
+						}),
+						success: function (data) {
+							if (data.code == 200) {
+								$.message.alert("加入进货单成功！", "success");
+								getCartNum();
+	                        } else if(data.code == 403){
+							    $.message.alert("您尚未登录，请先登录！", "info", function(){
+							        window.location.href = "/login?redirectURL="+encodeURIComponent(url);
+							    });
+							} else if(data.code == 404){
+							    $.message.alert("进货单中最多只能加入50件不同的商品！", "info");
+							} else {
+								$.message.alert(data.message, "info");
+							}
+						}
+					});
+				}
+			}
+			resetListaction($(".new-pro"));
+			resetListaction($(".hot-pro"));
+			resetListaction($(".brand-pro"));
+			resetListaction($(".module"));
+    	});
+    </script>
+</body>
+</html>
+</@compress>
+</#escape>

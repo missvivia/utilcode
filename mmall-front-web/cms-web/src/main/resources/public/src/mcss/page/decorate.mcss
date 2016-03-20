@@ -1,0 +1,31 @@
+// 工具库
+@import 'http://nec.netease.com/download/framework/mass/mass/index.mcss';
+
+@import "../_config";
+/* function */
+
+.m-top{height:73px;background:#eeeeee;border-bottom:3px solid #c90a71}
+.m-decorate {font-size:10px}
+.m-decorate a,.m-decorate a:hover{color:#666;cursor:pointer}
+.m-decoratemdl{height:300px;border:1px solid blue;position:relative}
+.m-decoratemdl .mdlact{text-align:right;margin-top:5px;margin-right:5px;position:absolute;right:5px;top:5px}
+.m-decoratemdl .lbl{margin:0 auto;display:block;width:100px;margin-top:150px;font-size:20px}
+.m-imgchs{height:80%;left:20px;width:305px;top:95px;position:fixed;border:1px solid blue;$transition: all .1s ease-in-out;z-index:999;background:#fff}
+.j-min{height:40px;width:20px}
+.j-min .m-tab,.j-min .imgs,.j-min .goods{display:none}
+.m-imgs li{height:90px;width:72px;float:left;margin-right:15px;margin-top:10px;text-align:center;list-style:none}
+.m-imgs li img{border:1px solid #ccc;$size:72px,72px;}
+.m-imgchs .act{}
+.m-cut{position:relative;height:1000px;width:100%}
+
+.m-savact{position:absolute;right:20px;top:25px;z-index: 999;}
+.m-savact .m-save{}
+.m-bgset{margin-right:10px;width:225px;padding:10px}
+.m-bgset .lbl{color:#c90a71}
+.m-bgset .form-control{width:140px;display:inline-block}
+.m-savact .m-cp .zinf label{display:none}
+.m-savact .m-cp .zinf  .zbtn{margin-left:10px}
+.m-imgs{height:350px}
+.m-shortbtn{width:60px}
+div.m-window .zbar{background:#666;color:#fff}
+.m-countdown .coundown{padding:10px 20px;}

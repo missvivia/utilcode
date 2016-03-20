@@ -1,0 +1,38 @@
+{
+    "code": 200,
+    "result": {
+        "total": 100,
+        "list": [
+            {
+                "id": 1,
+                "message": "message",
+                "createTime": 1410436682969,
+                "important": true
+            },
+            {
+                "id": 2,
+                "message": "message",
+                "createTime": 1410436682969,
+                "important": false
+            },
+            {
+                "id": 3,
+                "message": "message",
+                "createTime": 141046682969,
+                "important": true
+            },
+            {
+                "id": 4,
+                "message": "message",
+                "createTime": 1410436682969,
+                "important": false
+            },
+            {
+                "id": 5,
+                "message": "message",
+                "createTime": 1410436682969,
+                "important": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,96 @@
+<div class="infowin row">
+<form method="get" class="form-horizontal" id="infoForm">
+	{if item.uid}
+	<input type="hidden" name="uid" value="${item.uid}"/>
+	{/if}
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >账号:<span class="required">*</span></label>
+		<div class="col-sm-4">
+			{if !!item.account}
+			<input type="text" class="form-control" name="account"  value="${item.account}" disabled />
+			{else}
+			<input type="text" class="form-control" name="account"  maxlength="20" data-required="true"  data-message="必填项">
+			{/if}
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >密码:<span class="required">*</span></label>
+		<div class="col-sm-4">
+			{if !!item.uid}
+			<input type="password" class="form-control" name="password" id="password"  value="******"  maxlength="20" data-required="true" placeholder="6-20位字符"  data-message="必填项">
+			{else}
+			<input type="password" class="form-control" name="password" id="password"  value=""   data-required="true" maxlength="20" placeholder="6-20位字符"  data-message="必填项">
+			{/if}
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >手机号码:<span class="required">*</span></label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" name="mobileNumber" {if !!item.mobileNumber} value="${item.mobileNumber}" {/if} id="mobile" maxlength="11" data-required="true" data-message="必填项">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >许可证号:</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" name="licence" id="licence" {if !!item.licence} value="${item.licence}"{/if} maxlength="20" >
+		</div>
+	</div>	
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >邮箱地址:</label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" name="emailAddress" {if !!item.emailAddress} value="${item.emailAddress}" {/if} id="email" maxlength="20">
+		</div>
+	</div>	
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >昵称:<span class="required">*</span></label>
+		<div class="col-sm-4">
+			<input type="text" class="form-control" name="nick" {if !!item.nick} value="${item.nick}"{/if} maxlength="20" data-required="true"  data-message="必填项">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label">用户类型：</label>
+		<div class="col-sm-4">
+			<div class="radio-inline">
+		        <label>
+		          <input type="radio" value="0" name="userType" {if !!item.userType && item.userType==0|| !item.userType} checked="checked" {/if}>普通用户
+		        </label>
+		    </div>
+		    <div class="radio-inline">
+		        <label>
+		          <input type="radio" value="1" name="userType" {if !!item.userType && item.userType==1} checked="checked" {/if}>中烟用户
+		        </label>
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label">性别：</label>
+		<div class="col-sm-4">
+			<div class="radio-inline">
+		        <label>
+		          <input type="radio" value="0" name="sex" {if !!item.sex && item.sex==0|| !item.sex} checked="checked" {/if}>男
+		        </label>
+		    </div>
+		    <div class="radio-inline">
+		        <label>
+		          <input type="radio" value="1" name="sex" {if !!item.sex && item.sex==1} checked="checked" {/if}>女
+		        </label>
+		    </div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-3 control-label" >生日:</label>
+		<div style="display:inline-block;"><select id="year" class="form-control"></select></div>
+		<div style="display:inline-block;">年</div>
+		<div style="display:inline-block;"><select id="month" class="form-control"></select></div>
+		<div style="display:inline-block;">月</div>
+		<div style="display:inline-block;"><select id="day" class="form-control"></select></div>
+		<div style="display:inline-block;">日</div>
+	</div>
+
+	<div class="form-group">
+	    <div class="col-sm-12 col-sm-offset-3">
+	      <span class="btn btn-primary j-flag" id="infosubmit">确定</span>
+	    </div>
+	</div>
+</form>
+</div>

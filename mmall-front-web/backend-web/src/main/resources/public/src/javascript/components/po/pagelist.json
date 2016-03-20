@@ -1,0 +1,69 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "name":"冬季新品大促销",
+        "startTime":1410436682969,
+        "endTime": 1410436682969,
+        "ponum":1,
+        "time": 1410436682969,
+        "author": "oushutian",
+        "style": 400,
+        "status": 1,
+        "id": 1,
+        "备注":" "
+      },
+      {
+        "name":"冬季新品大促销",
+        "startTime":1410436682969,
+        "endTime": 1410436682969,
+        "ponum":2,
+        "time": 1410436682969,
+        "author": "oushutian",
+        "style": 400,
+        "status": 2,
+        "id": 2,
+        "备注":" "
+        },
+        {
+          "name":"冬季新品大促销",
+        "startTime":1410436682969,
+        "endTime": 1410436682969,
+        "ponum":3,
+        "time": 1410436682969,
+        "author": "oushutian",
+        "style": 400,
+        "status": 3,
+        "id": 3,
+        "备注":" "
+        },
+        {
+          "name":"冬季新品大促销",
+        "startTime":1410436682969,
+        "endTime": 1410436682969,
+        "ponum":4,
+        "time": 1410436682969,
+        "author": "oushutian",
+        "style": 400,
+        "status": 4,
+        "id": 4,
+        "备注":" "
+        },
+        {
+          "name":"冬季新品大促销",
+        "startTime":1410436682969,
+        "endTime": 1410436682969,
+        "ponum":5,
+        "time": 1410436682969,
+        "author": "oushutian",
+        "style": 400,
+        "status": 5,
+        "id": 5,
+        "备注":" "
+        }
+    ]
+  }
+}
+  

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+        <!-- DefaultCache setting. -->
+        <defaultCache maxBytesLocalHeap="200M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+                timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+
+        <!-- Special objects setting. -->
+        <cache name= "bannerCache"  maxBytesLocalHeap="50M"
+                memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+                timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+   </ehcache>

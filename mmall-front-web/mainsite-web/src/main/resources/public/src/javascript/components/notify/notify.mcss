@@ -1,0 +1,15 @@
+// 暂时用这个代替 后续等视觉
+.m-notify{position:fixed;top:12px;right:12px;min-width:240px;z-index:9999;}
+.m-notify .notify_close{cursor:pointer;position:absolute;font-size:16px;top:6px;right:6px;}
+.m-notify .notify_close:hover{font-weight:bold;}
+.m-notify .notify{position:relative;margin:6px 12px;padding:12px 20px 12px 40px;-moz-border-radius:1px;border-radius:1px;-webkit-box-shadow:1px 1px 1px rgba(1,1,1,0.5);box-shadow:1px 1px 1px rgba(1,1,1,0.5);*zoom:1;}
+.m-notify .notify:before,.m-notify .notify:after{display:table;content:"";line-height:0;}
+.m-notify .notify:after{clear:both;}
+.m-notify .notify:hover{-webkit-box-shadow:1px 1px 3px rgba(1,1,1,0.5);box-shadow:1px 1px 3px rgba(1,1,1,0.5);}
+.m-notify .notify .glyphicon{position:absolute;height:32px;line-height:32px;top:50%;left:12px;margin-top:-16px;font-size:20px;margin-right:4px;}
+.m-notify .notify-error{color:#fff;border:#d43f3a;background-color:#d9534f;}
+.m-notify .notify-info{color:#fff;border:#46b8da;background-color:#5bc0de;}
+.m-notify .notify-success{color:#fff;border:#4cae4c;background-color:#5cb85c;}
+.m-notify .notify-warning{color:#fff;border:#eea236;background-color:#f0ad4e;}
+.m-notify-left{left:12px;right:auto;}
+.m-notify-middle{left:50%;}

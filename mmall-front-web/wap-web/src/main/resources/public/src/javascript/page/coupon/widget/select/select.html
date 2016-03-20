@@ -1,0 +1,16 @@
+<div class="w-select" on-click={{showList=true}}>
+    <span class="current">{{list[currentIndex].name}}</span>
+    <span class="more u-arrow-down"></span>
+</div>
+{{#if !!showList}}
+<div class="w-mask" on-click="{{showList=false}}">
+    <div class="wrap">
+        <div class="list">
+            <div class="title"><span>筛选</span></div>
+            {{#list list as item}}
+            <div class="item" on-click={{this.select(item_index)}}><span>{{item.name}}</span></div>
+            {{/list}}
+        </div>
+    </div>
+</div>
+{{/if}}

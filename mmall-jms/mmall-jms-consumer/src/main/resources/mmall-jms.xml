@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/rabbit
+           https://raw.github.com/SpringSource/spring-amqp/master/spring-rabbit/src/main/resources/org/springframework/amqp/rabbit/config/spring-rabbit-1.0.xsd
+	 http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	">
+	
+	<!-- mail -->
+	<bean id="mailListenerContainer" parent="baseListenerContainerForSmsOrEmail">
+		<property name="queueNames" value="${mail.queue}"></property>
+		<property name="messageListener" ref="mailListener"></property>
+	</bean>
+	<bean id="mailListener" class="com.xyl.mmall.jms.consumer.MaillMessageListener"/>
+	
+	<bean id="sendEmailUtil" class="com.xyl.mmall.jms.util.SendEmailUtil"
+		init-method="init">
+	</bean>
+
+	<!-- sms -->
+	<bean id="sendSmsUtil" class="com.xyl.mmall.jms.util.SendSmsUtil"/>
+	<bean id="smsListenerContainer" parent="baseListenerContainerForSmsOrEmail">
+		<property name="queueNames" value="${sms.queue}"></property>
+		<property name="messageListener" ref="smsListener"></property>
+	</bean>
+	<bean id="smsListener" class="com.xyl.mmall.jms.consumer.SmsMessageListener"/>
+
+</beans>

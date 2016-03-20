@@ -1,0 +1,22 @@
+<div class="m-table">
+  <table class="table  table-striped" r-table>
+    <thead>
+      <tr>
+        <th>条形码</th>
+        {{#list sizeHeader as hd}}
+          <th>{{@(hd.name)}}</th>
+        {{/list}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#list skuList as sku}}
+      <tr r-animated="on: enter; class: fadeIn;">
+        <td><input type="text" r-model={{sku.code}}></td>
+        {{#list sku.body as item}}
+          <td><input type="text" r-model={{item.value}}></td>
+        {{/list}}
+      </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>

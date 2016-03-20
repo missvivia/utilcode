@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 1999-2011 Alibaba Group.
+ -  
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -  
+ -      http://www.apache.org/licenses/LICENSE-2.0
+ -  
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.CouponOrderService" id="couponOrderService"/>     
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.CouponService" id="couponService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.PromotionService" id="promotionService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.PointService" id="pointService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.RedPacketDetailService" id="redPacketDetailService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.RedPacketOrderService" id="redPacketOrderService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.RedPacketService" id="redPacketService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.UserCouponService" id="userCouponService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.UserPointService" id="userPointService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.UserRedPacketService" id="userRedPacketService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.FavorCaculateService" id="favorCaculateService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.RebateService" id="rebateService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.RedPacketShareRecordService" id="redPacketShareRecordService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.UserReceiveRecordService" id="userReceiveRecordService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.ActivationRecordService" id="activationRecordService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.RedPacketRefundDetailService" id="redPacketRefundDetailService"/>
+	
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.CouponOrderTCCService" id="couponOrderTCCService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.RedPacketOrderTCCService" id="redPacketOrderTCCService"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.ActivityTCCService" id="activityTCCService">
+		<dubbo:method name="tryAddActivityTCC" async="true" />
+	</dubbo:reference>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.RecycleTCCService" id="recycleTCCService" >
+		<dubbo:method name="tryAddRecycleTCC" async="true" />
+	</dubbo:reference>
+	
+	<!-- Participant -->
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.AddActivityParticipant" id="addActivityParticipant"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.RecycleActivityParticipant" id="recycleActivityParticipant"/>
+	<dubbo:reference interface="com.xyl.mmall.promotion.service.tcc.ReturnRecycleCouponHbParticipant" id="returnRecycleCouponHbParticipant"/>
+</beans>

@@ -1,0 +1,40 @@
+<div>
+  <button type="button" class="btn btn-primary" on-click={{this.batchAudit(true)}}>批量审核通过</button>
+  <button type="button" class="btn btn-primary" on-click={{this.batchAudit(false)}}>批量审核不通过</button>
+</div>
+<table class="table table-hover table-product table-condensed table-fixed">
+  <tr><th width=20px><input type="checkbox" r-model="allChecked"/></th><th width=60px>PO编号</th><th width=60px>货号</th><th  width=60px>条形码</th><th>商品名称</th><th>尺码</th><th width="60px">正品价</th><th width="85px">折后价(售卖)</th><th width="60px">供货价</th><th>缩略图</th><th>总供货量</th><th  width="80px">审核状态</th><th>审核理由</th><th>操作</th></tr>
+  <tbody>
+  {{!商品资料审核的时候加了两个属性：isScheduleStart（档期是否开始，1是已经开始，0未开始） skuStatus(审核状态，2待审核，3审核通过，4审核不通过 5 失效)!}}
+  {{#list list as product}}
+    <tr>
+      <td><input type="checkbox" r-model="product.checked"/></td>
+      <td>{{product.poId}}</td>
+      <td>{{product.goodsNo}}</td>
+      <td>{{product.barCode}}</td>
+      <td>{{product.productName}}</td>
+      <td>{{product.size}}</td>
+      <td>{{product.marketPrice}}</td>
+      <td>{{product.salePrice}}</td>
+      <td>{{product.basePrice}}</td>
+      <td><img src="{{product.thumb}}"/></td>
+      <td>{{product.skuNum}}</td>
+      <td>{{this.statusData(product)}}</td>
+      <td>{{product.reason}}</td>
+      <td>
+       {{#if this.isDisabled()}}
+       		<p><a href="javascript:void(0)" target="_blank" on-click={{this.preview(product)}}>查看商品</a></p>
+       {{#else}}
+       			<p><a href="javascript:void(0)" target="_blank" on-click={{this.preview(product)}}>查看商品</a></p>
+        		{{#if this.isReady()}}
+        		<p><a href="javascript:void(0)" on-click={{this.audit(product,true)}}>审核通过</a></p>
+        		<p><a href="javascript:void(0)" on-click={{this.audit(product,false)}}>审核不通过</a></p>
+        		{{/if}}
+       {{/if}}
+        
+      </td>
+    </tr>
+  {{/list}}
+  </tbody>
+</table>
+<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>

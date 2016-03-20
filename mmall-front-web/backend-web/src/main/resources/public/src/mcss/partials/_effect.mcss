@@ -1,0 +1,21 @@
+
+$fadeInX();
+$fadeOutX();
+
+$fadeIn();
+$fadeOut();
+
+$bounceIn();
+$bounceOut();
+
+.animated{
+  $animation-duration: .8s;
+}
+
+.animated{
+  $animation-duration: .7s;
+}
+.animated.fast{
+  $animation-duration: .4s;
+}
+

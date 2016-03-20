@@ -1,0 +1,58 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "id":11,
+        "serialNum": 11,
+        "userId": 123123,
+        "name": "xxx",
+        "telp": "150xxxxx",
+        "address": "xxxxxxxxxx号",
+        "orderPay": "￥23.0",
+        "orderId": 222,
+        "status": 6,
+        "checkName": "大叔",
+        "account": "xx"
+      },{
+        "id":12,
+        "serialNum": 12,
+        "userId": 123123,
+        "name": "xxx",
+        "telp": "150xxxxx",
+        "address": "xxxxxxxxxx号",
+        "orderPay": "￥23.0",
+        "orderId": 222,
+        "status": 7,
+        "checkName": "大叔",
+        "account": "xx"
+      },{
+        "id":13,
+        "serialNum": 13,
+        "userId": 123123,
+        "name": "xxx",
+        "telp": "150xxxxx",
+        "address": "xxxxxxxxxx号",
+        "orderPay": "￥23.0",
+        "orderId": 222,
+        "status": 8,
+        "checkName": "大叔",
+        "account": "xx"
+      },{
+        "id":14,
+        "serialNum": 14,
+        "userId": 123123,
+        "name": "xxx",
+        "telp": "150xxxxx",
+        "address": "xxxxxxxxxx号",
+        "orderPay": "￥23.0",
+        "orderId": 222,
+        "status": 6,
+        "checkName": "大叔",
+        "account": "xx"
+      }
+    ]
+  }
+}
+  

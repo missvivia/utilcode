@@ -1,0 +1,26 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>发货日期</th>
+       <th>物流商</th>
+       <th>仓库</th>
+       <th>发货量总计</th>
+       <th>COD占比</th>
+       <th>仓库占比</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.date|format}}</td>
+         <td>{{item.expressName}}</td>
+         <td>{{item.warehouse}}</td>
+         <td>{{item.num}}</td>
+         <td>{{item.codRate|toFixed}}</td>
+         <td>{{item.warehouseRate|toFixed}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

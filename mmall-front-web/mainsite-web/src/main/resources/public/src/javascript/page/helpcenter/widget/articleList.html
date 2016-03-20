@@ -1,0 +1,18 @@
+<div class="hd">
+    <h3>{{title}}</h3>
+</div>
+<div class="bd">
+  <dl>
+  {{#if articleList}}
+    {{#list articleList as article}}
+   <dt class="tit {{article_index==0?'first':(article_index==articleList.length-1?'last':'')}}">
+      <h4>{{article.title}}</h4>
+      <a href="javascript:void(0);" class="lnk lnk-more" on-click={{this.toggle(article)}}>{{article.flag?'收起':'展开'}}<i class="u-icon6 {{article.flag?'u-icon6-1':''}}">&nbsp;</i></a>
+   </dt>
+   <dd class="desc" r-hide={{!article.flag}} r-html={{article.content}}>
+     
+   </dd>
+    {{/list}} 
+  {{/if}}
+  </dl>
+</div>

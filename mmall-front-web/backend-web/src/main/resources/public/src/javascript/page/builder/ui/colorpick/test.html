@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>颜色选择器</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../javascript/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../../../css/page/builder.css" />
+    <style>body{padding:50px;}</style>
+  </head>
+  <body>
+    <script>window.NEJ_CONF={root:'../../../../../../res/'};</script>
+    <script src="../../../../../javascript/lib/nej/src/define.js?pro=../../../../../javascript/"></script>
+    <script>
+        NEJ.define([
+            './colorpick.js'
+        ],function(_i){
+            _i._$$ColorPicker._$allocate({
+                color:'#fdc',
+                defaultColor:'#fff',
+                parent:document.body
+            });
+        });
+    </script>
+  </body>
+</html>

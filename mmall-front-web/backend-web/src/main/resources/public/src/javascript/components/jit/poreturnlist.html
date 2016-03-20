@@ -1,0 +1,74 @@
+<h2 class="card_b">
+{{#list this.getCurrents(current) as poReturn}}
+{{#if poReturn_index==0}}
+<span class="glyphicon glyphicon-chevron-down pull-right"></span>PO单号：{{poReturn.poOrderId}}
+{{/if}}
+{{/list}}
+</h2>
+<div class="card_c">
+  <div class="m-return">
+	{{#list this.getCurrents(current) as poReturn}}
+	<div class="m-box">
+	   <h3>基本信息</h3>
+	   <div class="cont">
+           <div class="group">
+              <p class="item"><label>退货状态：</label><span class="val">{{poReturn.stateDesc}}</span></p>
+           </div>
+           <div class="group">
+              <p class="item"><label>退供单号：</label><span class="val">{{poReturn.poReturnOrderId}}</span></p>
+              <p class="item"><label>PO单号：</label><span class="val">{{poReturn.poOrderId}}</span></p>
+           </div>
+           <div class="group">
+              <p class="item"><label>退供数量：</label><span class="val">{{poReturn.count}}</span></p>
+              <p class="item"><label>物体体积：</label><span class="val">{{poReturn.volume}}</span></p> 
+           </div>
+           <div class="group">
+              <p class="item"><label>货物重量：</label><span class="val">{{poReturn.weight}}</span></p>
+              <p class="item"><label>品牌：</label><span class="val">{{poReturn.brandName}}</span></p>
+           </div>
+	   </div>
+	   <h3>物流信息</h3>
+	   <div class="cont">
+	   	  <div class="group">
+          	<p class="item"><label>发货地址：</label><span class="val">{{poReturn.warehouseName}}</span></p>
+          </div>
+          <div class="group">
+          	<p class="item"><label>收货地址：</label><span class="val">{{poReturn.receiverAddress}}</span></p>
+          </div>
+          <div class="group">
+          	<p class="item"><label>承运商名称：</label><span class="val">{{poReturn.expressCompany}}</span></p>
+          </div>
+          <div class="group">
+          	<p class="item"><label>运单号：</label><span class="val">{{poReturn.expressNO}}</span></p>
+          </div>
+       </div>
+       <h3>在途信息</h3>
+       {{#if (poReturn.shipInfoList) && (poReturn.shipInfoList).length>0}}
+	   <table class="table table-striped">
+	     <thead>
+	       <tr>
+	         <th>时间</th>
+	         <th>操作描述</th>
+	         <th>操作人</th>
+	       </tr>
+	     </thead>
+	     <tbody>
+	       {{#list poReturn.traceList as shipInfoItem}}
+	       <tr>
+	         <td>{{(shipInfoItem.time)|format:"yyyy-MM-dd HH:mm:ss"}}</td>
+	         <td>{{shipInfoItem.operate}}</td>
+	         <td>{{shipInfoItem.operateOrg}}</td>
+	       </tr>
+	       {{/list}}
+	     </tbody>
+	   </table>
+	   {{#else}}
+	   <p>目前没有在途物流信息</p>
+	   {{/if}}
+	 </div>
+	{{/list}}
+	<div class="text-right">
+		<pager total={{Math.ceil(lists.length / 1)}} current={{current}}></pager>
+	</div>
+  </div>
+</div>

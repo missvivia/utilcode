@@ -1,0 +1,131 @@
+/**
+    *
+    * @ messagetip 提示信息弹窗
+    *
+    * @ name space message
+    *
+    * @ messageMask
+    *
+**/
+.messageMask{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #000;
+    filter: alpha(opacity=30); /*IE*/
+    opacity: 0.3; /*FF*/
+    display: none;
+}
+
+.messagetip {
+    max-width: 550px;
+    position: fixed;
+    background: #fcfdfd;
+    z-index: 11;
+    border-radius:unit(10/50,em);
+    display: none;
+   .tiptop {
+	    font-size:unit(34/50,em);
+	    height: unit(34/50,rem);
+	    line-height: unit(34/50,rem);
+	    margin-top: unit(50/50,rem);
+	    text-align: center;
+	    font-weight: bold;
+	}
+	.tipinfo {
+	    padding: unit(40/50,rem) unit(30/50,rem);
+	    font-size: unit(30/50,rem);
+	    text-align: center;
+	    .message-form{
+	        margin-top:unit(10/50,rem);
+	    }
+	    .message-input{
+	        -webkit-appearance: none;
+	        -moz-appearance: none;
+	        width:90%;
+	        background: #fcfdfd;
+	        height:unit(54/50,rem);
+	        line-height:unit(54/50,rem);
+	        text-indent:unit(10/50,rem);
+	        margin-top:unit(30/50,rem);
+	        font-size: unit(30/50,rem);
+	        border:unit(2/50,rem) solid #dedede;
+	        border-radius:unit(10/50,rem);
+	    }
+	    .error{
+            border:unit(2/50,rem) solid #ec312d;
+        }
+	    /****** add coupon *****/
+	    .coupon-code{
+	        margin-top:0;
+	    }
+	    .verify-group{
+	        position:relative;
+	        border:unit(2/50,rem) solid #dedede;
+	        border-radius:unit(10/50,rem);
+	        margin-top:unit(30/50,rem);
+	        &.error{
+		        border:unit(2/50,rem) solid #ec312d;
+		    }
+	        .verify-code{
+	            border:none;
+	            margin-top:0;
+	        }
+	        .verify-img{
+	            position:absolute;
+	            top:0;
+	            right:unit(57/50,rem);
+	            width:unit(100/50,rem);
+	            height:unit(56/50,rem);
+	        }
+	        .refresh-btn{
+	            display:inline-block;
+	            position:absolute;
+	            top:0;
+	            right:0;
+	            height:unit(56/50,rem);
+	            width:unit(56/50,rem);
+	            background: #f0f0f0 url(/res/3g/images/new/refresh.png) no-repeat center;
+	            background-size: unit(40/50,rem) unit(31/50,rem);
+	            border-left: unit(2/50,rem) solid #dedede;
+	            border-radius: 0 unit(10/50,rem) unit(10/50,rem) 0;
+	            cursor:pointer;
+	        }
+	    }
+	}
+	.tipbuttom {
+	    cursor: pointer;
+		ul.tipbtn {
+		    margin-top: 0px;
+		    border-top: unit(2/50,rem) solid #dedede;
+		    li{
+		        text-align:center;
+		        padding-bottom:unit(15/50,rem);
+		        width:100%;
+		        &.part{
+		           width:50%;
+		           float:right;
+		           border-right: 1px solid #dedede;
+		        }
+		        &.part.br{
+		           border-right: none;
+		        }
+		    }
+		}
+	}
+	.message-btn{
+	    display: inline-block;
+	    font-size: unit(34/50,em);
+	    font-weight:bold;
+	    cursor: pointer;
+	    text-align: center;
+	    background: #fcfdfd;
+	    border:none;
+	}
+	.sure {
+	    color: #0179fa;
+	}
+	.cancel {
+	    color: #999999;
+	}
+}

@@ -1,0 +1,88 @@
+{
+	"code": 200,
+	"result": {
+		"total": 100,
+		"list": [{
+			"id": 1,
+			"brandId": 5478544, 
+			"brandNameZh": "秋水伊人",
+			"brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+			"thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+			"addTime": 1410781001774,
+			"status": 2,
+			"reason": ""
+		},{
+            "id": 2,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 3,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 4,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 5,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 6,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 7,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 8,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        },{
+            "id": 9,
+            "brandId": 5478544, 
+            "brandNameZh": "秋水伊人",
+            "brandDesc": "品牌介绍：与时尚紧密接轨的年轻女装品牌，在淘宝立足不久即登上了电子商务大舞台。妖精的口袋专注于打造独立、自信、优雅、小资以及小暧昧的品牌形象，...",
+            "thumb": "http://img4.imgtn.bdimg.com/it/u=1227507969,1703057131&fm=23&gp=0.jpg",
+            "addTime": 1410781001774,
+            "status": 2,
+            "reason": ""
+        }]
+	}
+}

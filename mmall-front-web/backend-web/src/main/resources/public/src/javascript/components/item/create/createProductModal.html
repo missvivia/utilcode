@@ -1,0 +1,23 @@
+{{#list model.parameterList as item}}
+
+<div class="form-group" data-parameterid="{{item.parameterId}}">
+	<label class="col-sm-1 control-label">{{item.parameterName}}</label>
+	<div class="col-sm-8">
+		{{#if item.single==1}}
+			{{#list item.optionList as option}}
+			<label class="radio-inline">
+			  <input type="radio" class="j-flag" name="{{item.parameterId}}" value={{option.paramOptionId}}> {{option.paramOption}}
+			</label>
+			{{/list}}
+		{{#else}}	
+			{{#list item.optionList as option}}
+			<label class="checkbox-inline">
+			  <input type="checkbox" class="j-flag" name="{{item.parameterId}}" value={{option.paramOptionId}}> {{option.paramOption}}
+			</label>
+			{{/list}}
+		{{/if}}
+	</div>
+</div>
+{{/list}}
+		
+

@@ -1,0 +1,124 @@
+.clearfix:after{
+   content:"";
+   display:table;
+   clear:both;
+}
+
+.hide{
+   display:none;
+}
+   
+.b-d{
+   border:1px solid #ccc;
+}
+
+.hr-dashed{
+   border-top:1px dashed #e7eaec;
+   height:1px;
+   margin:20px 0;
+}
+
+.limitBox{
+    .form-inline{padding: 10px;}
+    .btn{
+       margin-left:15px;
+    }
+    .productList{
+       padding:10px;
+       .storeName{
+	       margin-bottom:10px;
+	   }
+    }
+    .userName{
+       font-weight:bold;
+       margin-bottom:10px;
+       img{
+	       height:40px;
+	       width:40px;
+	   }
+    }
+    .productInfo{
+       float:left;
+       img{
+	       width:80px;
+	       height:80px;
+	       float:left;
+	   }
+	   .proDetail{
+	       float:left;
+	       p{
+		       margin-left:10px;
+		   }
+		   .title{
+		       font-size:16px;
+		   }
+		   .sub_title{
+		       color:#ccc;
+		   }
+		   .price{
+		       font-size:16px;
+		       color:#ff3333;
+		   }
+	   }
+    }
+    .limitInfo{
+       float:right;
+       border-left:1px solid #ccc;
+       padding: 0 60px 0 30px;
+    }
+    .setLimit-tit{
+       margin:10px 0px;
+    }
+    .setLimit{
+       padding:10px;
+       .tip{
+	       display:inline-block;
+	       width:20px;
+	       height:20px;
+	       background:#eee;
+	       border:1px solid #ccc;
+	       text-align:center;
+	       cursor:pointer;
+	   }
+	   .num-left-area{
+	       display:inline-block;
+	       margin-left:80px;
+	   }
+	   .pur-num-area{
+	       display:inline-block;
+	   }
+	   .num-left-area{
+	       display:inline-block;
+	       .inline{
+	          display:inline-block;
+	          #leftNum{
+	             width:100px;
+	          }
+	       }
+	   }
+	   .btn-area{
+	       float:right;
+	   }
+    }
+    #setLimitModify{
+       .num-left-area{
+	       margin-left:180px;
+	   }
+    } 
+    #orderList{
+       .order-tit{
+          margin:10px 0;
+       }
+       .detail{
+          color:#7594b3;
+       }
+    }
+} 
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   

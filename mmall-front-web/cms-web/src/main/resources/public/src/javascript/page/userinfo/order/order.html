@@ -1,0 +1,12 @@
+<div>
+    <div class="tit">订单信息</div>
+    <div class="m-order">
+        <table class="table table-hover">
+            <tbody>
+                <tr><td class="title">未支付</td><td>{{#list list.active as a}}<div class="f-fl"><a target="_blank" href="/order/orderdetail?type=0&key={{a.id}}">{{a.id}}</a></div>{{/list}}</td></tr>
+                <tr><td class="title">已支付</td><td>{{#list list.over as o}}<div class="f-fl"><a target="_blank" href="/order/orderdetail?type=0&key={{o.id}}">{{o.id}}</a></div>{{/list}}</td></tr>
+                <tr><td class="title">已取消</td><td>{{#list list.past as p}}<div class="f-fl"><a target="_blank" href="/order/orderdetail?type=0&key={{p.id}}">{{p.id}}</a></div>{{/list}}</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>

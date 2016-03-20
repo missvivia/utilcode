@@ -1,0 +1,40 @@
+<textarea name="jst" id='#<seedTree>'>
+    
+    <div class="m-tree j-flag" id="tree">
+      {list items as item1}
+        <div class="parentnode">
+          <input type="checkbox" {if item1.checked == 1}checked="checked"{/if} class="chk" data-parent="${item1.parent}" data-id="${item1.id}">
+          <div class="glyphicon glyphicon-folder-open"></div>
+          <strong>${item1.name}</strong>
+        </div>
+        {if !!item1.children}
+          {list item1.children as item2}
+            {if !!item2.children}
+              <div class="parentnode pl15">
+                <input type="checkbox" {if item2.checked == 1}checked="checked"{/if} class="chk" data-parent="${item2.parent}" data-id="${item2.id}">
+                <div class="glyphicon glyphicon-folder-open"></div>
+                <strong>${item2.name}</strong>
+              </div>
+              {list item2.children as item3}
+                <div class="childnode pl30">
+                  <input type="checkbox" {if item3.checked == 1}checked="checked"{/if} class="chk" data-parent="${item3.parent}" data-id="${item3.id}">
+                  <div class="glyphicon glyphicon-folder-close"></div>
+                  <span>${item3.name}</span>
+                </div>
+              {/list}
+            {else}
+              <div class="childnode">
+                <input type="checkbox" {if item2.checked == 1}checked="checked"{/if} class="chk" data-parent="${item2.parent}" data-id="${item2.id}">
+                <div class="glyphicon glyphicon-folder-close"></div>
+                <span>${item2.name}</span>
+              </div>
+            {/if}
+          {/list}
+        {/if}
+      {/list}
+    </div>
+  </textarea>
+
+<textarea name='txt' id='#<seedBox>'>
+  <div></div>
+</textarea>

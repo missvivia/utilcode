@@ -1,0 +1,26 @@
+{{#if loading}}
+   <div class="m-order-loading">
+        <div class="load">
+            <div class="w-loading"></div>
+            <div class="text f-fs1 s-fc2">努力加载中...</div>
+        </div>
+   </div>
+{{#elseif list.length>0}}
+	<ul class="bindedUserList" id="bindedUserList">
+	   {{#list list as item}}
+		<li class="liElement">
+			<label class="label-width">{{item.userName}}</label>
+			<a class="btn btn-link j-flag" data-id="{{item.id}}" data-userId="{{item.userId}}" data-userName="{{item.userName}}" on-click={{this.deleteUser(item.id)}}>删除</a>
+		</li>
+		{{/list}}
+	</ul>
+{{#else}}
+   <div>
+		<p class="txt">还没有指定用户</p>
+  </div>
+{{/if}}
+<hr/>
+<div class="text-right m-wpager f-cb">
+    <div class="total">共{{total}}条记录</div>
+	<pager total={{Math.ceil(total/limit)}} current={{current}}></pager>
+</div>

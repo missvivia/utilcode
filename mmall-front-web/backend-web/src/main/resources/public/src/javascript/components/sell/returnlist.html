@@ -1,0 +1,64 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>单据时间</th>
+        <th>退货单号</th>
+        <th>PO单编号</th>
+        <th>承运商</th>
+        <th>箱数</th>
+        <th>应退件数</th>
+        <th>实退件数</th>
+        <th>运单号</th>
+        <th>承运商联系电话</th>
+        <th>体积/m³</th>
+        <th>重量kg</th>
+        <th>所在仓库</th>
+        <th>退货状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{tpl.createTime|format:'yyyy-MM-dd HH:mm'}}</td>
+          <td>{{tpl.returnPoOrderId}}</td>
+          <td>{{tpl.poOrderId}}</td>
+          <td>{{tpl.expressCompany}}</td>
+          <td>{{tpl.shipBoxQTY}}</td>
+          <td>{{tpl.count}}</td>
+          <td>{{tpl.realCount}}</td>
+          <td>{{tpl.expressNO}}</td>
+          <td>{{tpl.expressPhone}}</td>
+          <td>{{tpl.volume}}</td>
+          <td>{{tpl.weight}}</td>
+          <td>{{tpl.warehouseName}}</td>
+          <td>{{tpl.state|statusMap}}</td>
+          <td>
+          <ul>
+          	{{#if tpl.state=='NEW'}}
+          	<li><a href="/sell/returndetail/{{tpl.returnPoOrderId}}">查看退货明细</a></li>
+            <li><a href="javascript:void(0)" on-click={{this.okreturn(tpl,"确认退货后，新云联百万店会将退货商品打包发货到您的仓库")}}>确认退货</a></li>
+            <li><a href="/oms/returnOrder/export/{{tpl.returnPoOrderId}}" on-click={{this.exportReturn(tpl)}}>导出</a></li>
+          	{{#elseif tpl.state=='CONFIRM'}}
+          	<li><a href="/sell/returndetail/{{tpl.returnPoOrderId}}">查看退货明细</a></li>
+            <li><a href="javascript:void(0)" on-click={{this.receive(tpl,"确认已收到退货商品？")}}>确认收货</a></li>
+            <li><a href="/oms/returnOrder/export/{{tpl.returnPoOrderId}}" on-click={{this.exportReturn(tpl)}}>导出</a></li>
+          	{{#elseif tpl.state=='SHIPPED'}}
+          	<li><a href="/sell/returndetail/{{tpl.returnPoOrderId}}">查看退货明细</a></li>
+            <li><a href="javascript:void(0)" on-click={{this.receive(tpl,"确认已收到退货商品？")}}>确认收货</a></li>
+            <li><a href="/oms/returnOrder/export/{{tpl.returnPoOrderId}}" on-click={{this.exportReturn(tpl)}}>导出</a></li>
+          	{{#elseif tpl.state=='RECEIPTED'}}
+            <li><a href="/sell/returndetail/{{tpl.returnPoOrderId}}">查看退货明细</a></li>
+            <li><a href="/oms/returnOrder/export/{{tpl.returnPoOrderId}}" target="_blank">导出</a></li>
+            {{/if}}
+          </ul>
+          </td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

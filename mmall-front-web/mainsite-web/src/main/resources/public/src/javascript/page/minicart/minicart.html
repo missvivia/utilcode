@@ -1,0 +1,102 @@
+<div class="m-sidebar-cart" r-style={{ {height: height+'px'} }}>
+  <div class="title-bar">
+    <div class="j-cnt f-ib">购物袋</div>
+    {{#if cartInfoVO.leftTime>0 && (!!poList && poList.length>0) || (!!activations && activations.length>0)}}
+    <div class="f-fs0 f-ib">
+      <m-countdown time={{cartInfoVO.leftTime}} content='{{format}}' on-onchange={{this.onCountDown($event)}}></m-countdown>
+    </div>
+    {{#elseif cartInfoVO.leftTime==0 && !firstLoad && (!!poList && poList.length>0) || (!!activations && activations.length>0)}}
+    <div class="f-fs0 f-ib"><span>付款超时</span></div>
+    {{/if}}
+    <div class="u-close j-cnt" on-click={{this.close()}}>&nbsp;</div>
+  </div>
+  <div class="cart-wrap"  r-style={{ {height: (height-60)+'px'} }}>
+    {{#if firstLoad}}
+    <div class="load">
+      <div class="w-loading-s"></div>
+      <div class="text f-fs1 s-fc2">努力加载中...</div>
+    </div>
+    {{#elseif (!poList || poList.length==0) && (!activations || activations.length==0)}}
+    <div class="none">
+      <img src="/res/images/cart_empty.png" alt="" width="140" height="140" class="f-vam"/>
+      <p class="text0">购物袋为空</p>
+      <p class="text1">快去抢购心仪的商品吧</p>
+      <p class="text1">
+      {{#if !!invalidatedCount && invalidatedCount>0}}
+        <a href="/cart" target="_blank" class="s-fc12">查看超时或失效的商品 ({{invalidatedCount}})</a>
+        {{/if}}
+      </p>
+    </div>
+    {{#elseif (!!poList && poList.length>0) || (!!activations && activations.length>0)}}
+    <div class="cart-bd" r-style={{ {height: (height-60-100)+'px'} }}>
+      {{#list activations as act}}
+        <div class="cart-item">
+          <div class="title-wrap f-toe">
+            <span class="f-fs0 s-fc1">{{act.activatonName||''}}</span>
+          </div>
+          <div class="list-wrap">
+            {{#list act.poList as item}}
+            {{#list item.skulist as sku}}
+            <div class="prod-item f-fs0 f-cb">
+              <a href="{{sku.url||'#'}}" target="_blank"><img src="{{sku.thumb||'#'}}" alt="" class="f-fl f-vam" width="70" height="70"/></a>
+              <div class="p-info f-fl">
+                <a href="{{sku.url||'#'}}" target="_blank" class="p-name">{{sku.name}}</a>
+                <div class="p-param s-fc3">
+                  <span class="m0">{{sku.color}}</span><span>{{sku.size}}</span>
+                </div>
+                <div>
+                  <span class="s-fc19" r-html={{'&yen;'}}></span><span class="s-fc19 m1">{{sku.originalPrice|fixed}}</span><span>X{{sku.count}}</span>
+                </div>
+              </div>
+              <i class="del f-cp u-icon-del" on-click={{this.onDelete(sku)}}></i>
+            </div>
+            {{#if sku_index!= item.skulist.length-1}}
+            <div class="split"></div>
+            {{/if}}
+            {{/list}}
+            {{/list}}
+          </div>
+        </div>
+      {{/list}}
+      {{#list poList as item}}
+      <div class="cart-item">
+        <div class="title-wrap f-toe">
+          <span class="f-fs0 s-fc1">{{item.title||''}}</span>
+        </div>
+        <div class="list-wrap">
+          {{#list item.skulist as sku}}
+          <div class="prod-item f-fs0 f-cb">
+            <a href="{{sku.url||'#'}}" target="_blank"><img src="{{sku.thumb||'#'}}" alt="" class="f-fl f-vam" width="70" height="70"/></a>
+            <div class="p-info f-fl">
+              <a href="{{sku.url||'#'}}" target="_blank" class="p-name">{{sku.name}}</a>
+              <div class="p-param s-fc3">
+                <span class="m0">{{sku.color}}</span><span>{{sku.size}}</span>
+              </div>
+              <div>
+                <span class="s-fc19" r-html={{'&yen;'}}></span><span class="s-fc19 m1">{{sku.originalPrice|fixed}}</span><span>X{{sku.count}}</span>
+              </div>
+            </div>
+            <i class="del f-cp u-icon-del" on-click={{this.onDelete(sku)}}></i>
+          </div>
+          {{#if sku_index!= item.skulist.length-1}}
+            <div class="split"></div>
+          {{/if}}
+          {{/list}}
+        </div>
+      </div>
+      {{/list}}
+      <div class="link">
+        {{#if !!invalidatedCount && invalidatedCount>0}}
+        <a href="/cart" target="_blank" class="s-fc12">查看超时或失效的商品 ({{invalidatedCount}})</a>
+        {{/if}}
+      </div>
+    </div>
+    <div class="cart-ft">
+        <span class="cart-total f-fr">
+          <span>共 {{cartInfoVO.totalCount|| '0'}} 件商品<span class="text">总计</span></span><span class="s-fc19" r-html={{'&yen;'}}></span><span class="s-fc19 total">{{(cartInfoVO.totalPrice|fixed) ||'0.00'}}</span>
+        </span>
+      <a href="/cart" target="_blank" class="w-btn4 w-btn4-1 f-cp s-fc0">查看购物袋</a>
+    </div>
+    {{/if}}
+  </div>
+</div>

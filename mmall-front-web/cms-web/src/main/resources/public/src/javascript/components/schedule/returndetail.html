@@ -1,0 +1,29 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>商品条码</th>
+        <th>商品名称</th>
+        <th>退货数量</th>
+        <th>箱号</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{tpl.code}}</td>
+          <td>{{tpl.poname}}</td>
+          <td>{{tpl.much}}</td>
+          <td>{{tpl.num}}</td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+<div class="text-right m-wpager">
+  <button class="btn btn-primary u-delbtn">导出</button>
+  <div class="col-sm-2 ">
+  <button class="btn btn-primary u-delbtn" on-click={{this.showWin("填写发货信息")}}>确认退货</button>
+  </div>
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

@@ -1,0 +1,30 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>发货日期</th>
+       <th>全国发货单量</th>
+       <th>COD</th>
+       <th>非COD</th>
+       <th>COD占比</th>
+       <th>合计</th>
+       <th>占比</th>
+       <th>快递公司</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.date|format}}</td>
+	       <td>{{item.total}}</td>
+	       <td>{{item.cod}}</td>
+	       <td>{{item.noncode}}</td>
+         <td>{{item.codRate|toFixed}}</td>
+	       <td>{{item.num}}</td>
+	       <td>{{item.rate|toFixed}}</td>
+         <td>{{item.expressName}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

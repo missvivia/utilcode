@@ -1,0 +1,50 @@
+<div class="m-wtable" id="wtable">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>退货商品条形码</th>
+        <th>退货商品货号</th>
+        <th>商品名称</th>
+        <th>颜色</th>
+        <th>缩略图</th>
+        <th>推货数量</th>
+        <th>已收货数量</th>
+        <th>所属订单号</th>
+        <th>快递公司</th>
+        <th>快递单号</th>
+        <th>寄送日期</th>
+        <th>收货状态</th>
+        <th>备注</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as tpl}}
+        <tr>
+          <td>{{tpl.barCode}}</td>
+          <td>{{tpl.productCode}}</td>
+          <td>{{tpl.name}}</td>
+          <td>{{tpl.color}}</td>
+          <td>{{tpl.url}}</td>
+          <td>{{tpl.returnNum}}</td>
+          <td>{{tpl.getNum}}</td>
+          <td>{{tpl.orderNum}}</td>
+          <td>{{tpl.expressCompany}}</td>
+          <td>{{tpl.expressNum}}</td>
+          <td>{{tpl.sendTime|format}}</td>
+          <td>
+            {{#if tpl.status == 1}}
+            未收货
+            {{#elseif tpl.status == 0}}
+            已收货
+            {{/if}}
+          </td>
+          <td>{{tpl.remark}}</td>
+        </tr>
+      {{/list}}
+    </tbody>
+  </table>
+</div>
+
+<div class="text-right">
+  <pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

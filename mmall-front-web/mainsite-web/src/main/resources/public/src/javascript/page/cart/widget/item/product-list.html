@@ -1,0 +1,44 @@
+<div class="product-list {{item.selected? 'allcheck': ''}}">
+{{#if item.deleted && item.deleteFlag}}
+<p class="p-alert">您已删除 <span class="s-fc14">{{cartInfoVO.deletedItems.length}}</span> 件商品，如有误，请 <span class="f-cp s-fc12" on-click={{this.onRecover(item)}}>撤销本次删除</span></p>
+{{#elseif !item.deleted}}
+  {{#if item.type=="active"}}
+    <div class="title-wrap f-fs1 s-fc1 f-cb">
+      <div class="col0 chk f-fl">
+        <label class="i-check" on-click={{this.onSelect(item)}}></label>
+      </div>
+      <div class="f-fl">
+        <span class="title f-fl">{{item.activatonName||''}}</span>
+        {{#list item.tagList as tag}}
+          <span class="u-tag-coupon f-mgr10 f-fl f-cp" data-clazz="u-tooltip-2" data-placement="bottom" data-content="{{tag.desc||''}}" r-tooltip><i></i>{{tag.title||''}}</span>
+        {{/list}}
+        <span class="note"><span r-html={{item.effectDesc||''}}></span>{{#if !!item.discountUrl}}<a href="{{item.discountUrl||'#'}}" target="_blank" class="s-fc12" r-html={{'&nbsp;&nbsp;去凑单&gt;&gt;'}}></a>{{/if}}</span>
+      </div>
+    </div>
+    <div class="list-wrap">
+      {{#list item.poList as po}}
+        {{#list po.skulist as sku}}
+          {{#include tpl}}
+        {{/list}}
+      {{#if po_index != item.poList.length-1}}
+      <div class="split"></div>
+      {{/if}}
+      {{/list}}
+    </div>
+  {{#elseif item.type=="po"}}
+    <div class="title-wrap f-fs1 s-fc1 f-cb">
+      <div class="col0 chk f-fl">
+        <label class="i-check" on-click={{this.onSelect(item)}}></label>
+      </div>
+      <div class="f-fl">
+        <span class="title f-fl">{{item.title||''}}</span>
+      </div>
+    </div>
+    <div class="list-wrap">
+      {{#list item.skulist as sku}}
+        {{#include tpl}}
+      {{/list}}
+    </div>
+  {{/if}}
+{{/if}}
+</div>

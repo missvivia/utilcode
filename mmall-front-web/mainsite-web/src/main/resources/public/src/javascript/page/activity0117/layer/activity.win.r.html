@@ -1,0 +1,8 @@
+<!-- Modal -->
+<div class="m-activitymodal">
+	<div class="m-activiywinr {{this.data.clazz}}">
+		<span class="zcls" on-click={{this.close()}}></span>
+	    {{#include this.content || content }}
+	</div>
+</div>
+{{#if this.data.mask}}<div class="m-mask"></div>{{/if}}

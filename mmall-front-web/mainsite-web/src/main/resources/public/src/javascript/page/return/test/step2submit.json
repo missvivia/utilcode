@@ -1,0 +1,116 @@
+{
+  "returns": {
+    "list": [
+      {
+        "id": 444,
+        "thumb": "fake_thumb - to_do_snapshot",
+        "productName": "fake_productName - to_do_snapshot",
+        "colorName": "fake_colorName - to_do_snapshot",
+        "sizeType": {
+          "intValue": 0,
+          "desc": "fake_desc - to_do_snapshot"
+        },
+        "salePrice": 10000,
+        "quantity": 1,
+        "sum": 10000,
+        "promotion": {
+          "name": "fake_anme - to_do_snapshot",
+          "description": "fake_description - to_do_snapshot"
+        },
+        "couponCode": {
+          "id": 0,
+          "couponCode": "fake_couponCode - to_do_snapshot",
+          "name": "fake_name - to_do_snapshot",
+          "description": "fake_description - to_do_snapshot"
+        },
+        "status": {
+          "intValue": 0,
+          "desc": "重启退货超过3天"
+        },
+        "comment": ""
+      },
+      {
+        "id": 333,
+        "thumb": "fake_thumb - to_do_snapshot",
+        "productName": "fake_productName - to_do_snapshot",
+        "colorName": "fake_colorName - to_do_snapshot",
+        "sizeType": {
+          "intValue": 0,
+          "desc": "fake_desc - to_do_snapshot"
+        },
+        "salePrice": 10000,
+        "quantity": 1,
+        "sum": 10000,
+        "promotion": {
+          "name": "fake_anme - to_do_snapshot",
+          "description": "fake_description - to_do_snapshot"
+        },
+        "couponCode": {
+          "id": 0,
+          "couponCode": "fake_couponCode - to_do_snapshot",
+          "name": "fake_name - to_do_snapshot",
+          "description": "fake_description - to_do_snapshot"
+        },
+        "status": {
+          "intValue": 0,
+          "desc": "重启退货超过3天"
+        },
+        "comment": ""
+      },
+      {
+        "id": 777,
+        "thumb": "fake_thumb - to_do_snapshot",
+        "productName": "fake_productName - to_do_snapshot",
+        "colorName": "fake_colorName - to_do_snapshot",
+        "sizeType": {
+          "intValue": 0,
+          "desc": "fake_desc - to_do_snapshot"
+        },
+        "salePrice": 10000,
+        "quantity": 1,
+        "sum": 10000,
+        "promotion": {
+          "name": "fake_anme - to_do_snapshot",
+          "description": "fake_description - to_do_snapshot"
+        },
+        "couponCode": {
+          "id": 0,
+          "couponCode": "fake_couponCode - to_do_snapshot",
+          "name": "fake_name - to_do_snapshot",
+          "description": "fake_description - to_do_snapshot"
+        },
+        "status": {
+          "intValue": 0,
+          "desc": "重启退货超过3天"
+        },
+        "comment": ""
+      }
+    ],
+    "total": 3
+  },
+  "returnForm": {
+    "returnPrice": {
+      "expPrice": 8,
+      "couponPrice": 99,
+      "promotion": 100,
+      "goodsTotalRPrice": 20000,
+      "hbPrice": 2937.2
+    },
+    "returnWay": [
+      {
+        "returnType": "优惠券",
+        "sum": 10,
+        "account": ""
+      }
+    ]
+  },
+  "returnExpress":{
+    "way":"退款方式",
+    "express":"物流公司名字",
+    "logId":11111
+  },
+  "returnFail":{
+    "failReason":"拒绝退货商品遂怀"
+  },
+  "orderId": 322
+}

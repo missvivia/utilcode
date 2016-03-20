@@ -1,0 +1,132 @@
+/**
+    *
+    * @ messagetip 提示信息弹窗
+    *
+    * @ name space message
+    *
+    * @ messageMask
+    *
+**/
+.messageMask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #000;
+  filter: alpha(opacity=30);
+  /*IE*/
+  opacity: 0.3;
+  /*FF*/
+  display: none;
+}
+.messagetip {
+  max-width: 550px;
+  position: fixed;
+  background: #fcfdfd;
+  z-index: 11;
+  border-radius: 0.2em;
+  display: none;
+}
+.messagetip .tiptop {
+  font-size: 0.68em;
+  height: 0.68rem;
+  line-height: 0.68rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+.messagetip .tipinfo {
+  padding: 0.8rem 0.6rem;
+  font-size: 0.6rem;
+  text-align: center;
+  /****** add coupon *****/
+}
+.messagetip .tipinfo .message-form {
+  margin-top: 0.2rem;
+}
+.messagetip .tipinfo .message-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 90%;
+  background: #fcfdfd;
+  height: 1.08rem;
+  line-height: 1.08rem;
+  text-indent: 0.2rem;
+  margin-top: 0.6rem;
+  font-size: 0.6rem;
+  border: 0.04rem solid #dedede;
+  border-radius: 0.2rem;
+}
+.messagetip .tipinfo .error {
+  border: 0.04rem solid #ec312d;
+}
+.messagetip .tipinfo .coupon-code {
+  margin-top: 0;
+}
+.messagetip .tipinfo .verify-group {
+  position: relative;
+  border: 0.04rem solid #dedede;
+  border-radius: 0.2rem;
+  margin-top: 0.6rem;
+}
+.messagetip .tipinfo .verify-group.error {
+  border: 0.04rem solid #ec312d;
+}
+.messagetip .tipinfo .verify-group .verify-code {
+  border: none;
+  margin-top: 0;
+}
+.messagetip .tipinfo .verify-group .verify-img {
+  position: absolute;
+  top: 0;
+  right: 1.14rem;
+  width: 2rem;
+  height: 1.12rem;
+}
+.messagetip .tipinfo .verify-group .refresh-btn {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1.12rem;
+  width: 1.12rem;
+  background: #f0f0f0 url(/res/3g/images/new/refresh.png) no-repeat center;
+  background-size: 0.8rem 0.62rem;
+  border-left: 0.04rem solid #dedede;
+  border-radius: 0 0.2rem 0.2rem 0;
+  cursor: pointer;
+}
+.messagetip .tipbuttom {
+  cursor: pointer;
+}
+.messagetip .tipbuttom ul.tipbtn {
+  margin-top: 0px;
+  border-top: 0.04rem solid #dedede;
+}
+.messagetip .tipbuttom ul.tipbtn li {
+  text-align: center;
+  padding-bottom: 0.3rem;
+  width: 100%;
+}
+.messagetip .tipbuttom ul.tipbtn li.part {
+  width: 50%;
+  float: right;
+  border-right: 1px solid #dedede;
+}
+.messagetip .tipbuttom ul.tipbtn li.part.br {
+  border-right: none;
+}
+.messagetip .message-btn {
+  display: inline-block;
+  font-size: 0.68em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  background: #fcfdfd;
+  border: none;
+}
+.messagetip .sure {
+  color: #0179fa;
+}
+.messagetip .cancel {
+  color: #999999;
+}

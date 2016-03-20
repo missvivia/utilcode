@@ -1,0 +1,33 @@
+<div class="p-section">
+  <div class="p-invoice">
+    <input type="checkbox" id="ivchk" r-model={{receipt}} class="mgr5"/> <label for="ivchk" class="f-vam f-fs16"> 开具发票</label>
+  </div>
+  <div class="p-invoicewin" r-hide="{{!receipt}}">
+    <div class="types">
+      <input type="radio" id="invo" name="invo" class="f-vam" r-model={{receipttype}} checked="checked" value="0"/> <label for="invo" class="mgr70 f-vam">个人</label>
+      <input type="radio" id="invo1" name="invo" class="f-vam" r-model={{receipttype}} value="1"/> <label for="invo1" class="f-vam">公司</label>
+    </div>
+    <div class="areawp" r-hide="{{receipttype==0}}">
+      <textarea name="" class="area" r-model={{receiptValue}} required on-focus="this.onBlur()" maxlength="30"></textarea>
+      <div class="desc f-cb">
+        <div class="f-cb">
+          <i class="u-change f-fl"></i>
+          <div class="f-fl">
+            <div>请填写发票抬头</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="areawp" r-hide="{{receipttype==1}}">
+      <textarea name="" class="area" required disabled></textarea>
+      <div class="desc f-cb">
+        <div class="f-cb">
+          <i class="u-change f-fl"></i>
+          <div class="f-fl">
+            <div>个人无需填写抬头</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+@abstract '_config.mcss';
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;outline:none;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:normal;}
+del,ins,u,s,a,a:hover{text-decoration:none;outline:none;}
+body,textarea,input,button,select,keygen,legend{font-size: 0.75rem;line-height: 1.5;color:$fc1;outline:0;font-family:'Microsoft YaHei','微软雅黑','宋体','Arial';}
+html{font-size:100%;}
+body{background: #ededed;}
+a,a:hover{color:$fc1;}
+input::-ms-clear,input::-ms-reveal{display:none;}
+.z-placeholder{color:#a6a6a6 !important;}
+:-moz-placeholder{color:#a6a6a6 !important;}
+::-moz-placeholder{color:#a6a6a6 !important;}
+:-ms-input-placeholder{color:#a6a6a6 !important;}
+::-webkit-input-placeholder{color:#a6a6a6 !important;}
+:root *{filter:none\9 !important;}
+/* function */
+.f-cb{$clearfix();}
+*, *:before, *:after {  
+    -webkit-box-sizing: border-box;  
+       -moz-box-sizing: border-box;  
+            box-sizing: border-box;  
+    -webkit-text-size-adjust: 100%;   
+        -ms-text-size-adjust: 100%;  
+            text-size-adjust: 100%;  
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+} 
+.f-ib{$inline-block();}
+.f-taj{$justify();}
+.f-wsn{$nowrap();}
+.f-pre{$pre();}
+.f-wwb{$break();}
+.f-toe{$ellipsis();}
+.f-usn{$noselect();}
+.f-fs13{font-size: 13px;}
+.f-fs15{font-size: 15px;}
+.f-fs16{font-size: 16px;}
+.f-fs19{font-size: 19px;}
+.f-dn{display:none!important;}
+.f-db{display: block}
+.f-fl{float:left;}
+.f-fr{float:right;}
+.f-cp{cursor:pointer;}
+.f-pr{position: relative;}
+.f-pa{position: absolute;}
+.f-fwb{font-weight: bold;}
+.f-vam{vertical-align:middle;}
+.f-vat{vertical-align: top;}
+.f-tal{text-align: left;}
+.f-tar{text-align: right;}
+.f-tac{text-align: center;}
+.f-ff0{font-family:'华文细黑';}
+
+/* skin */
+.s-fc0,a.s-fc0:hover{color: $fc0;}
+.s-fc1,a.s-fc1:hover{color: $fc1;}
+.s-fc2,a.s-fc2:hover{color: $fc2;}
+.s-fc3,a.s-fc3:hover{color: $fc3;}
+.s-fc4,a.s-fc4:hover{color: $fc4;}
+.s-fc5,a.s-fc5:hover{color: $fc5;}
+.s-fc6,a.s-fc6:hover{color: $fc6;}
+.s-fc7,a.s-fc7:hover{color: $fc7;}
+.s-fc8,a.s-fc8:hover{color: $fc8;}
+.s-fc9,a.s-fc9:hover{color: $fc9;}
+.s-fc10,a.s-fc10:hover{color: $fc10;}
+.s-fc11,a.s-fc11:hover{color: $fc11;}
+
+
+html,body{
+  height: 100%;
+}

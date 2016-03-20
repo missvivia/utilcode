@@ -1,0 +1,54 @@
+{
+  "code": 200,
+  "result":{
+    "total": 100,
+    "list": [
+      {
+        "ponum":100,
+        "startTime": 1411039440369,
+        "endTime": 1411039440369,
+        "much": 5000,
+        "style": 400,
+        "state":"未提交",
+        "status": 1
+      },
+      {
+        "ponum":2,
+        "startTime":1411039440369,
+        "endTime": 1411039440369,
+        "much": 5000,
+        "style": 400,
+        "state":"审核中",
+        "status": 2
+        },
+        {
+          "ponum":3,
+          "startTime":1411039440369,
+          "endTime": 1411039440369,
+          "much": 5000,
+          "style": 400,
+          "state":"审核通过",
+          "status": 3
+        },
+        {
+          "ponum":4,
+          "startTime":1411039440369,
+          "endTime": 1411039440369,
+          "much": 5000,
+          "style": 400,
+          "state":"审核未通过",
+          "status": 4
+        },
+        {
+          "ponum":5,
+          "startTime":1411039440369,
+          "endTime": 1411039440369,
+          "much": 5000,
+          "style": 400,
+          "state":"未提交",
+          "status": 1
+        }
+    ]
+  }
+}
+  

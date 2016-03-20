@@ -1,0 +1,27 @@
+<div class="{{clazz}}">
+  {{#list imgs as img}}
+    <div class="img " r-animation="on: enter; class: bounceIn; on:leave; class: bounceOut;">
+      <div class="imgwrap animated" >
+        <img src={{img.src}} ></div>
+      {{#if eternal}}
+      {{#else}}
+      <span class="del" on-click={{imgs.splice(img_index,1)}}>×</span>
+      {{/if}}
+      <label class="local btn  btn-primary" on-upload={{this.localReplace($event,img)}}>本地上传</label><span class="space btn  btn-primary" on-click={{this.spaceReplace($event,img)}}>空间引用</span>
+      {{#if descVisible}}
+      <input type="text" class="form-control" r-model="{{img.desc}}" maxlength="20">
+      {{/if}}
+    </div>
+  {{/list}}
+  <div class="img " r-hide="imgs.length >= limit">
+    <div class="imgwrap img-void">
+
+      <img src={{preview}} r-hide="!preview">
+      <div class="progress" r-hide="!percent || percent == 1">
+        <div class="progress-bar  progress-bar-striped active" role="progressbar" style="width: {{percent * 100}}%"></div>
+      </div>
+    </div>
+      <label class="local btn  btn-primary" on-upload={{this.handleUpload($event)}}>本地上传</label>
+      <label class="space btn  btn-primary" on-click={{this.spaceUpload($event)}}>空间引用</label>
+  </div>
+</div>

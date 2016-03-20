@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+	<!-- DefaultCache setting. -->
+	<defaultCache maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="300" overflowToDisk="false" diskPersistent="false" />
+
+	<!-- Special objects setting. -->
+	<cache name="bannerCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="businessCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="mainSiteBrandCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="allProvinceCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="brandPOListCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="mainSiteCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+
+
+	<cache name="detailPageCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+
+	<cache name="prodListCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="3600" overflowToDisk="false" diskPersistent="false" />
+		
+	<cache name="mainSiteFreshCache" maxBytesLocalHeap="10M"
+		memoryStoreEvictionPolicy="LRU" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" />
+</ehcache>

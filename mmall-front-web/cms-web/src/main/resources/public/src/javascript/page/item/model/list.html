@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>模型名称</th>
+			<th>模型ID</th>
+			<th>最后编辑时间</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	{{#list list as item}}
+	<tr>
+		<td>{{item.modelName}}</td>
+		<td>{{item.modelId}}</td>
+		<td>{{item.updateTime|format}}</td>
+		<td><a class="j-update" href="createmodel?modelId={{item.modelId}}">修改</a>&nbsp;&nbsp;<a class="j-update" on-click={{this.removeModel(item,item_index)}}>删除</a></td>
+	</tr>
+  	{{/list}}
+  	</tbody>
+</table>
+<mmallpager totalPages={{totalPages}} currentPage={{currentPage}}></mmallpager>

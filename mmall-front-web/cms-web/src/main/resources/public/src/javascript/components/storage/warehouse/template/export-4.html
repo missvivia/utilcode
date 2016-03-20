@@ -1,0 +1,36 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>日期</th>
+       <th>物流商</th>
+       <th>仓库</th>
+       <th>上期结存</th>
+       <th>已汇总订单</th>
+       <th>取消订单</th>
+       <th>已发货订单</th>
+       <th>缺货订单</th>
+       <th>延迟订单</th>
+       <th>本期结存</th>
+       <th>延迟占比</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.makeTime|format}}</td>
+	       <td>{{item.warehouseOwner}}</td>
+	       <td>{{item.warehouseName}}</td>
+	       <td>{{item.preBalance}}</td>
+	       <td>{{item.gatherCnt}}</td>
+	       <td>{{item.cancelCnt}}</td>
+	       <td>{{item.sentCnt}}</td>
+         <td>{{item.lackCnt}}</td>
+         <td>{{item.delayCnt}}</td>
+         <td>{{item.curBalance}}</td>
+         <td>{{item.delayRate|toFixed}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

@@ -1,0 +1,50 @@
+<meta charset="utf-8"/>
+<textarea name="jst" id="helpcenter-module-index-list">
+<div class="m-question">
+  <div class="hd">
+      <h3>常见问题</h3>
+  </div>
+  <div class="bd">  
+    <ul class="f-cb">
+    {if !!problem}
+      {list problem as article}
+      <li><a href="#/help/articlelist/?categoryId=1&articleId=${article.id}">${article.title}</a></li>
+      {/list}
+    {/if}
+    </ul>
+  </div>
+</div>
+<div class="f-cb">
+  {list sideNav as nav}
+  <div class="m-itmlist {if nav_index%2==0}m-itmlist-1{/if}">
+    <div class="hd">
+        <h3>${nav.name}</h3>
+    </div>
+    {if nav.name == "新手指南"}
+    <div class="bd">  
+      <ul class="f-cb">
+        <li><a href="/help/newer?type=0">注册/登录</a></li>
+        <li><a href="/help/newer?type=1">抢购商品</a></li>
+        <li><a href="/help/newer?type=2">下单支付</a></li>
+        <li><a href="/help/newer?type=3">收货</a></li>
+        <li class="last"><a href="/help/newer?type=4">退货</a></li>
+      </ul>
+    </div>
+    {else}
+    <div class="bd">  
+      <ul class="f-cb">
+      {if !!nav.children}
+        {list nav.children as subNav}
+        <li {if (subNav_index + 1) == subNav_length}class="last"{/if}><a href="#/help/articlelist/?categoryId=${nav.id}&subCategoryId=${subNav.id}">${subNav.name} </a></li>
+        {/list}
+      {/if}
+      </ul>
+    </div>
+    {/if}
+  </div>  
+  {/list}
+</div>
+</textarea>
+<!-- @TEMPLATE -->
+<textarea name="js" data-src="./module.js"></textarea>
+<!-- /@TEMPLATE -->

@@ -1,0 +1,27 @@
+<div class="col-sm-12">
+  <table class='table  table-bordered'>
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>尺码助手名称</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list list as item}}
+      <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        <a href="javascript:;" on-click={{this.preview(item)}} class="btn btn-sm btn-primary">预览</a>
+        <a href="/product/viewhelper?id={{@(item.id)}}" class="btn btn-sm btn-primary">修改</a>
+        <a href="javascript:;" class="btn btn-sm btn-default"
+          on-click={{this.remove(item, item_index)}}
+        >删除</a>
+      </td>
+      </tr>
+      {{/list}}
+    </tbody>
+  </table>
+<pager total={{Math.ceil(total / 10)}} current={{current}} ></pager>
+</div>

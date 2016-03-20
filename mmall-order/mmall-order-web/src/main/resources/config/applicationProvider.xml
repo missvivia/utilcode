@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="mmall-order-web" />
+	<dubbo:protocol name="dubbo" port="-1" />
+	<dubbo:service interface="com.xyl.mmall.order.service.AddOrderParticipant" ref="addOrderParticipant" />
+	<dubbo:service interface="com.xyl.mmall.order.service.CallOffOrderParticipant" ref="callOffOrderParticipant" />
+	<dubbo:service interface="com.xyl.mmall.order.service.TradeService"
+		ref="tradeService" />		
+	<dubbo:service interface="com.xyl.mmall.order.service.SkuOrderStockService"
+		ref="skuOrderStockService" />	
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderBriefService"
+		ref="orderBriefService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderService"
+		ref="orderService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderCalService"
+		ref="orderCalService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderMiscService"
+		ref="orderMiscService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderTCCService"
+		ref="orderTCCServiceRPCImpl" />
+	<dubbo:service interface="com.xyl.mmall.order.service.ReturnQueryService"
+		ref="returnQueryService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.ReturnUpdateService"
+		ref="returnUpdateService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.ConsigneeAddressService"
+		ref="consigneeAddressService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.CODAuditService"
+		ref="CODAuditService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderExpInfoService"
+		ref="orderExpInfoService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.InvoiceService"
+		ref="invoiceService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderUnreadService"
+		ref="orderUnreadService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.ReturnPackageQueryService"
+		ref="returnPackageQueryService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.ReturnPackageUpdateService"
+		ref="returnPackageUpdateService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderPackageSimpleService"
+		ref="orderPackageSimpleService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.ReturnFormService"
+		ref="returnFormService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.TradeInternalProxyService"
+		ref="tradeInternalProxyService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.HBRecycleLogService"
+		ref="hbRecycleLogService" />
+	<dubbo:service interface="com.xyl.mmall.order.service.OrderReplenishService"
+		ref="orderReplenishService" />
+</beans>

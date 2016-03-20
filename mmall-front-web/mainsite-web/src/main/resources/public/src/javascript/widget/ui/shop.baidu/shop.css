@@ -1,0 +1,35 @@
+.#<uispace>{background:#fff;padding:29px 70px 70px;text-align:left;}
+.#<uispace> .ttl{padding-bottom:14px;font-size:18px;color:#000;}
+.#<uispace> .map{float:left;width:670px;height:550px;margin-right:-670px;border:1px solid #c8c8c8;}
+.#<uispace> .lbx{margin-left:670px;padding-left:31px;}
+.#<uispace> .lbox{margin-top:15px;}
+.#<uispace> .pbox{padding-top:30px;text-align:right;}
+.#<uispace> .u-pager-m a{border-color:#dadada;color:#999999;background-color:transparent;}
+.#<uispace> .u-pager-m a:hover,
+.#<uispace> .u-pager-m a.js-selected{border-color:#e878b2;color:#e878b2;}
+.#<uispace> .u-pager-m .js-disabled,
+.#<uispace> .u-pager-m .js-disabled:hover,
+.#<uispace> .u-pager-m .js-disabled.js-selected{border-color:#cccccc;color:#cccccc;}
+.#<uispace> .u-pager-m .zdot{color:#cccccc;}
+.#<uispace> .u-pager-m .zbtn{background:url(#<root>images/pager-shop.png) no-repeat;}
+.#<uispace> .u-pager-m .zprv{background-position:8px 7px;}
+.#<uispace> .u-pager-m .znxt{background-position:-22px 7px;}
+.#<uispace> .city{position:relative;z-index:10;height:28px;line-height:28px;border:1px solid #dadada;cursor:pointer;}
+.#<uispace> .city .t{margin-left:11px;color:#666;}
+.#<uispace> .city .w{position:absolute;top:0;right:0;width:29px;border-left:1px solid #dadada;background:#f0f0f0 url(#<root>images/down.png) no-repeat center center;}
+.#<uispace> .city .l{visibility:hidden;position:absolute;top:28px;left:-1px;width:100%;max-height:280px;overflow:auto;background:#fff;border:1px solid #dadada;}
+.#<uispace> .city .l .i{display:block;color:#666;padding-left:11px;}
+.#<uispace> .city .l .i:hover{background:#eee;}
+.#<uispace> .city.js-toggle .l{visibility:visible;}
+
+.#<uispace>-it{position:relative;padding:15px 0 12px 30px;color:#999999;border-bottom:1px solid #f3f3f3;zoom:1;cursor:pointer;}
+.#<uispace>-it .mxk{position:absolute;top:15px;left:0;width:19px;height:26px;color:#FFFFFF;background:url(#<root>images/marker_list.png) no-repeat 100px 0;text-align:center;}
+.#<uispace>-it .mxk-0{background-position-x:0;}
+.#<uispace>-it .mxk-1{background-position-x:-24px;}
+.#<uispace>-it .mxk-2{background-position-x:-48px;}
+.#<uispace>-it .mxk-3{background-position-x:-72px;}
+.#<uispace>-it .mxk-4{background-position-x:-96px;}
+.#<uispace>-it.js-hover .mxk,
+.#<uispace>-it.js-selected .mxk{background-position-y:-32px;}
+.#<uispace>-it .ln0{font-size:14px;color:#333333;}
+.#<uispace>-it .lnx{line-height:21px;}

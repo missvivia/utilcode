@@ -1,0 +1,11 @@
+<div class="w-win w-win-reason {{clazz}}">
+    <span class="close" on-click={{this.close()}}></span>
+    <div class="title">{{title}}</div>
+    <div class="f-cb">
+        {{#include this.content || content }}
+    </div>
+    <div class="btns">
+        <span class="ok" on-click={{this.confirm()}}>{{confirmText || "保 存"}}</span>
+        <span class="cc" on-click={{this.close()}}>{{concelText || "取 消"}}</span>
+    </div>
+</div>

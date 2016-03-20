@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:reference id="agentService"
+		interface="com.xyl.mmall.member.service.AgentService" />
+	<dubbo:reference id="dealerService"
+		interface="com.xyl.mmall.member.service.DealerService" />
+	<dubbo:reference id="userProfileService"
+		interface="com.xyl.mmall.member.service.UserProfileService" />
+	<dubbo:reference id="permissionService"
+		interface="com.xyl.mmall.member.service.PermissionService" />
+	<dubbo:reference id="filterChainResourceService"
+		interface="com.xyl.mmall.member.service.FilterChainResourceService" />
+	<dubbo:reference id="mobileInfoService"
+		interface="com.xyl.mmall.member.service.MobileInfoService" />
+	<dubbo:reference id="roleService"
+		interface="com.xyl.mmall.member.service.RoleService" />
+	<dubbo:reference id="accountService" 
+		interface="com.xyl.mmall.member.service.AccountService" />
+	<dubbo:reference id="erpAccountService" 
+		interface="com.xyl.mmall.member.service.ERPAccountService" />
+</beans>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">     
+<dubbo:application name="mmall-promotion-app" />     
+<dubbo:protocol name="dubbo" port="-1" />      
+<dubbo:service interface="com.xyl.mmall.promotion.service.CouponOrderService" ref="couponOrderService"/>     
+<dubbo:service interface="com.xyl.mmall.promotion.service.CouponService" ref="couponService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.PromotionService" ref="promotionService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.PointService" ref="pointService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.RedPacketDetailService" ref="redPacketDetailService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.RedPacketOrderService" ref="redPacketOrderService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.RedPacketService" ref="redPacketService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.UserCouponService" ref="userCouponService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.UserPointService" ref="userPointService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.UserRedPacketService" ref="userRedPacketService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.FavorCaculateService" ref="favorCaculateService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.RebateService" ref="rebateService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.RedPacketShareRecordService" ref="redPacketShareRecordService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.UserReceiveRecordService" ref="userReceiveRecordService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.ActivationRecordService" ref="activationRecordService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.RedPacketRefundDetailService" ref="redPacketRefundDetailService"/>
+
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.CouponOrderTCCService" ref="couponOrderTCCService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.RedPacketOrderTCCService" ref="redPacketOrderTCCService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.ActivityTCCService" ref="activityTCCService"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.RecycleTCCService" ref="recycleTCCService"/>
+
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.AddActivityParticipant" ref="addActivityParticipant"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.RecycleActivityParticipant" ref="recycleActivityParticipant"/>
+<dubbo:service interface="com.xyl.mmall.promotion.service.tcc.ReturnRecycleCouponHbParticipant" ref="returnRecycleCouponHbParticipant"/>
+</beans>

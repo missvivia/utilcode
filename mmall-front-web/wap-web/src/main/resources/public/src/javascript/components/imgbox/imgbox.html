@@ -1,0 +1,22 @@
+<div class="m-imgbox {{duration?'z-duration':''}}" ref="mult" >
+  <a  href="javascript:;"class="close" on-click={{this.close($event)}}>&times;</a>
+  <div class="slides" ref=sliders r-style={{ {width: (box.clientWidth * slides.length)+"px"} }} r-transform={{ "translate3d(-" + index * box.clientWidth + "px,0,0)"}}>
+    {{#list slides as slide}}
+    <div class="slide"  r-style={{@(slideStyle)}} r-transform={{ this.transform(slide_index) }}>
+      <div class="inner" r-style={{@(innerStyle)}}>
+        <img src="{{slide}}" >
+      </div>
+    </div>
+    {{/list}}
+  </div>
+  <div class='m-pointer ctrls'>
+    <div class='pointer'>
+      <ul class='j-node'> 
+      {{#list slides as slide}}
+        <li on-tap={{this.nav(slide_index)}} class={{index==slide_index?'z-active':''}}></li>
+      {{/list}}
+      </ul>
+    </div>
+  </div>
+  <div class="opts"></div>
+</div>

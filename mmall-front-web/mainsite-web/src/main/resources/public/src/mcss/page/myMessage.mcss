@@ -1,0 +1,25 @@
+@abstract '../_config.mcss';
+.m-box{
+	position:relative;margin:0 0 20px;background:#fff;
+	.hd{
+		padding:0 20px;border-bottom:1px solid #eaeaea;line-height:40px;@extend clearfix;
+		h3{float:left;font-size:14px;font-weight:bold;}
+		a,a:hover{float:right;font-size:12px;color:#666;}
+	}
+	.bd{
+		position:relative;zoom:1;padding:40px 53px 100px;		
+	}
+}
+
+.m-message{
+	.fitm{
+		@extend clearfix;margin:0 0 20px;height:40px;line-height:40px;font-size:14px;
+		.flab{float:left;width:150px;border:1px solid #f0f0f0;text-align:center;}
+		.fipt{
+			float:left;padding:0 36px;border:1px solid #f5f5f5;background:#f5f5f5;_height:26px;_padding-top:14px;
+			.w-chkbox{padding:0 14px;}
+		}
+
+	}
+	.btns{padding:12px 0 0;}
+}

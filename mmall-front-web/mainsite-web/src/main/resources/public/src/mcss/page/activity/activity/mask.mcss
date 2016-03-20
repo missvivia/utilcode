@@ -1,0 +1,101 @@
+.m-window-exchange{
+	border: 6px solid #f025b0 !important;
+	margin-top:-200px;
+    width:628px;
+    box-shadow:0 0 8px rgba(#000,0.4);
+	.zbar{
+		height:25px !important;
+		line-height:25px !important;
+	    border:none !important;
+	    padding: 10px 15px 0px 15px;
+	}
+	.zcls{
+		top:10px !important;
+		right:10px !important;
+		width:20px !important;
+		height:20px !important;
+		background:url('/res/images/activity/activity_icon.png') no-repeat -49px -8px !important;
+	}
+	.zcnt{
+    	padding: 0px 75px 30px 75px!important;
+    	.error{
+    		h1{
+    			margin-top:70px;
+    			text-align:center;
+    			font-size:28px;
+    			font-weight:bold;
+    			color:#f025b0;
+    		}
+    		label{
+    			display:block;
+    			margin:70px 0px 50px 160px;
+    			width:150px;
+    			height:40px;
+    			line-height:40px;
+    			text-align:center;
+    			font-size:18px;
+    			color:#fff;
+    			cursor:pointer;
+    			background:#f025b0;
+    		}
+    	}
+    	.success{
+    		h1{
+    			text-align:center;
+    			font-size:28px;
+    			font-weight:bold;
+    			color:#f025b0;
+			}
+			img{
+				margin-top:20px;
+			}
+			.go{
+				display:block;
+				font-size:14px;
+				color:#333;
+				text-align:center;
+				text-decoration:underline;
+			}
+			.btn-close{
+				display:block;
+    			margin:10px 0px 0px 164px;
+    			width:150px;
+    			height:40px;
+    			line-height:40px;
+    			text-align:center;
+    			font-size:18px;
+    			color:#fff;
+    			background:#f025b0;
+			}
+    	}
+    	.fail{
+    		h1{
+    			text-align:center;
+    			font-size:28px;
+    			font-weight:bold;
+    			color:#f025b0;
+			}
+			img{
+				margin-top:20px;
+			}
+			.go{
+				display:block;
+				font-size:14px;
+				color:#333;
+				text-align:center;
+				text-decoration:underline;
+			}
+			.btn-close{
+				display:block;
+    			margin:10px 0px 0px 164px;
+    			width:150px;
+    			height:40px;
+    			line-height:40px;
+    			text-align:center;
+    			font-size:18px;
+    			color:#fff;
+    			background:#f025b0;
+			}
+    	}	
+    }
+}

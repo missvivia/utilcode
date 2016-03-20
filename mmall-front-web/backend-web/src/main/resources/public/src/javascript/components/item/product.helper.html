@@ -1,0 +1,21 @@
+ <h4>
+  <input type="checkbox" {{#if helpers && helpers.length}} r-model="useHelper"{{#else}} disabled{{/if}} />尺码助手（勾选使用）
+</h4>
+ <div class="row">
+  {{#if helpers!=null}}
+  <div class="col-sm-3">
+   <select name="selected" r-model="helperId" class="form-control">
+    {{#if @(!helpers.length)}}<option value="">无</option>{{/if}}
+    {{#list helpers as helper}}
+      <option value={{@(helper.id)}}>{{@(helper.name)}}</option>
+    {{/list}}
+   </select>
+   </div>
+   <div class="col-sm-3">
+     <a href="/product/viewhelper" target="_blank" class="btn btn-primary" r-hide={{@(helpers.length)}}>添加尺码助手</a>
+   </div>
+   {{/if}}
+ </div>
+{{#if selected}}
+  <helper-view preview=1 hidebar=1 vaxis={{selected.vaxis}} haxis={{selected.haxis}} body={{selected.body}}></helper-view>
+{{/if}}  

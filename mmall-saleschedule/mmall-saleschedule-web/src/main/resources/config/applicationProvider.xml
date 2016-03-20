@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd"> 
+<dubbo:application name="mmall-saleschedule-web" />     
+<dubbo:protocol name="dubbo" port="-1" />  
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.BrandService" ref="brandService"/>     
+<bean id="brandService" class="com.xyl.mmall.saleschedule.service.impl.BrandServiceImpl"/>
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.ScheduleService" ref="scheduleService"/>
+<bean id="scheduleService" class="com.xyl.mmall.saleschedule.service.impl.ScheduleServiceImpl" />
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.SchedulePageService" ref="schedulePageService"/>
+<bean id="schedulePageService" class="com.xyl.mmall.saleschedule.service.impl.SchedulePageServiceImpl" />
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.ScheduleBannerService" ref="scheduleBannerService"/>
+<bean id="scheduleBannerService" class="com.xyl.mmall.saleschedule.service.impl.ScheduleBannerServiceImpl" />
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.ScheduleLikeService" ref="scheduleLikeService"/>
+<bean id="scheduleLikeService" class="com.xyl.mmall.saleschedule.service.impl.ScheduleLikeServiceImpl" />
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.ScheduleMagicCubeService" ref="scheduleMagicCubeService"/>
+<bean id="scheduleMagicCubeService" class="com.xyl.mmall.saleschedule.service.impl.ScheduleMagicCubeServiceImpl" />
+
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.ActiveTellService" ref="activeTellService"/>
+<bean id="activeTellService" class="com.xyl.mmall.saleschedule.service.impl.ActiveTellServiceImpl" />
+
+<dubbo:service interface="com.xyl.mmall.saleschedule.service.ProductSKULimitService" ref="productSKULimitService"/>
+<bean id="productSKULimitService" class="com.xyl.mmall.saleschedule.service.impl.ProductSKULimitServiceImpl" />
+
+<bean id="scheduleServiceConfigBean" class = "com.xyl.mmall.saleschedule.enums.ScheduleServiceConfigBean" >
+	<property name="home" value="首页" />
+	<property name="women" value="女装" />
+	<property name="men" value="男装" />
+	<property name="shoebag" value="鞋包" />
+	<property name="children" value="童装" />
+	<property name="weave" value="家纺" />
+</bean>
+
+</beans>

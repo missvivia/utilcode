@@ -1,0 +1,60 @@
+@abstract '_prefix.mcss';
+
+$fc0  = #fff;   /* 白色系 */
+$fc1  = #333;   /* 灰色系 */
+$fc2  = grey;/* 主色调  玫红改为深灰*/
+$fc3  = #666;   /* 灰色系 */
+$fc4  = #999;   /* 灰色系 */
+$fc5  = #68449e;/* 深灰3 */
+$fc6  = #ccc;   /* 灰色系 */
+$fc7  = #3d383d;/* 咖啡色 */
+$fc8  = #5893cd;/* 蓝色 */
+$fc9  = #f00;/* 红 */
+$fc10 = #32b777;/* 绿 */
+$fc11 = #9f32b7;/* 紫 */
+$fc30 = #ededed;/* 浅灰1 */
+$fc31 = #e6e6e6;/* 灰，下划线 */
+$fc32 = #000;   /* 黑 */
+$fc34 = #777f7e;/* 灰色系 */
+$fc35 = #888;   /* 灰色系 */
+$fc37 = #cbcbcb;/* 浅灰 */
+$fc42 = #f8f8f8;/* 浅灰 */
+$fc43 = #1a7fc5;/* 蓝色  */
+$fc46 = #dedede;/* 浅灰 */
+$fc36 = #000;/* 玫红改为深灰  */
+$fc40 = #9144ae; /* 紫色 */
+$fc41 = #1a7fc7; /* 链接色 */
+$fc50 = #f7f7f7;
+bg-icon{background: url(/res/3g/images/icon.png?v=1) 9999px 9999px no-repeat;background-size:500px;}
+
+/* to be extended */
+clearfix{
+    zoom:1;
+    &:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+$clearfix = {
+    zoom:1;
+	&:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
+}
+$inline-block = {display:inline-block;*display:inline;*zoom:1;}
+$justify = {text-align:justify;text-justify:inter-ideograph;}
+$nowrap = {word-wrap:normal;white-space:nowrap;}
+$pre = {overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+$break = {white-space:normal;word-wrap:break-word;word-break:break-all;}
+$ellipsis = {overflow:hidden;word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;}
+$noselect = {$user-select:none;}
+$opacity = ($oc=0){opacity:$oc;filter:alpha(opacity=round($oc * 100));}
+
+
+
+$brand-primary = #9144ae;
+$brand-inverse = #d951b5;
+
+$zindex-xs=-1;
+$zindex-sm=1;
+$zindex-md=10;
+$zindex-lg=100;
+$zindex-xl=1000;
+
+$ease-in-out = cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$ease-out-in = cubic-bezier( 0.175,0.000, 0.770, 1.000);

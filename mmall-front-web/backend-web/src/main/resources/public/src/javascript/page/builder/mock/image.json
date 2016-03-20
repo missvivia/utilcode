@@ -1,0 +1,99 @@
+{
+    "code": 200,
+    "result": {
+        "total": 13,
+        "list": [
+            {
+                "width": 1920,
+                "height": 700,
+                "imgUrl":"/res/test/1.png",
+                "imgName":"image imgName 1",
+                "imgId":1
+            },
+            {
+                "width": 1920,
+                "height": 687,
+                "imgUrl":"/res/test/0.png",
+                "imgName":"image imgName 0",
+                "imgId":0
+            },
+            {
+                "width": 1090,
+                "height": 390,
+                "imgUrl":"/res/test/2.png",
+                "imgName":"image imgName 2",
+                "imgId":2
+            },
+            {
+                "width": 1090,
+                "height": 621,
+                "imgUrl":"/res/test/11.png",
+                "imgName":"image imgName 11",
+                "imgId":11
+            },
+            {
+                "width": 1090,
+                "height": 1195,
+                "imgUrl":"/res/test/12.png",
+                "imgName":"image imgName 12",
+                "imgId":12
+            },
+            {
+                "width": 352,
+                "height": 445,
+                "imgUrl":"/res/test/4.jpg",
+                "imgName":"image imgName 4",
+                "imgId":4
+            },
+            {
+                "width": 352,
+                "height": 445,
+                "imgUrl":"/res/test/15.jpg",
+                "imgName":"image imgName 15",
+                "imgId":15
+            },
+            {
+                "width": 352,
+                "height": 445,
+                "imgUrl":"/res/test/16.jpg",
+                "imgName":"image imgName 16",
+                "imgId":16
+            },
+            {
+                "width": 283,
+                "height": 426,
+                "imgUrl":"/res/test/5.jpg",
+                "imgName":"image imgName 5",
+                "imgId":5
+            },
+            {
+                "width": 283,
+                "height": 426,
+                "imgUrl":"/res/test/17.jpg",
+                "imgName":"image imgName 17",
+                "imgId":17
+            },
+            {
+                "width": 254,
+                "height": 320,
+                "imgUrl":"/res/test/6.png",
+                "imgName":"image imgName 6",
+                "imgId":6
+            },
+            {
+                "width": 537,
+                "height": 370,
+                "imgUrl":"/res/test/13.jpg",
+                "imgName":"image imgName 13",
+                "imgId":13
+            },
+            {
+                "width": 537,
+                "height": 370,
+                "imgUrl":"/res/test/14.jpg",
+                "imgName":"image imgName 14",
+                "imgId":14
+            }
+        ]
+    }
+}

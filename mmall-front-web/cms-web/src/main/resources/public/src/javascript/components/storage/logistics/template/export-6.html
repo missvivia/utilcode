@@ -1,0 +1,28 @@
+ <table class="table  table-striped">
+   <thead>
+     <tr>
+       <th>发货日期</th>
+       <th>物流商</th>
+       <th>仓库</th>
+       <th>返货单量</th>
+       <th>返回单量</th>
+       <th>返回占比</th>
+       <th>未返回单量</th>
+     </tr>
+   </thead>
+   <tbody>
+     {{#list list as item}}
+       <tr class='animated' r-animation="on: enter; class: fadeIn">
+         <td>{{item.date|format}}</td>
+         <td>{{item.expressCompany}}</td>
+         <td>{{item.warehouseName}}</td>
+         <td>{{item.returnProduct}}</td>
+         <td>{{item.returnCount}}</td>
+         <td>{{item.returnRate|toFixed}}</td>
+         <td>{{item.noreturnCount}}</td>
+       </tr>
+     {{/list}}
+   </tbody>
+ </table>
+
+

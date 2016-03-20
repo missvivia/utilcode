@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>分页器</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../javascript/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../../../css/page/builder.css" />
+  </head>
+  <body>
+    
+    <script src="../../../../../javascript/lib/nej/src/define.js?pro=../../../../../javascript/"></script>
+    <script>
+        NEJ.define([
+            './pager.js'
+        ],function(_i){
+            _i._$$Pager._$allocate({
+                parent:document.body,
+                index:2,
+                total:100
+            });
+        });
+    </script>
+  </body>
+</html>

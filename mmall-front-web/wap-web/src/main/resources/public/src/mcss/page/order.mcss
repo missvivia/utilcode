@@ -1,0 +1,218 @@
+@abstract '../_config.mcss';
+
+.m-order-detail{
+    font-size:0.56rem;
+    margin-bottom:10px;
+    .store{
+  		border-bottom: solid 1px #e6e6e6;
+  		height: 45px;
+  		line-height: 3.2; 
+  		margin:0 20px;   	
+    }
+}
+.m-state{
+    background:$fc0;
+    .u-btn{
+        height:30px;
+        margin-left:5px;
+        line-height:2;
+    }
+    .last{
+        position:relative;
+        height:72px;
+        border-bottom:solid 1px $fc31;
+        .u-state{
+            height:36px;
+            padding:0 0 0 20px;
+            border-bottom:none;
+            .middle{
+                .high{
+                    color:$fc9;
+                    font-weight:bolder;
+                }
+            }
+        }
+        .btnbox{
+            position:absolute;
+            top:50%;
+            right:5px;
+            margin-top:-8px;
+            .u-btn{height:36px;line-height:2.4;}
+            .u-btn-two{padding:0 20px;}
+        }
+    }
+    .u-state{
+        .paytime{
+            float:right;
+            color:$fc4;
+            span{color:$fc2;}
+        }
+        padding:0 20px;
+        border-bottom:solid 1px $fc31;
+        height:45px;
+        line-height:45px;
+        .ticket{
+            width: 70%;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            line-height: 3;
+        }
+        i:first-child{
+            color:$fc4;
+            width:75px;
+            $inline-block();
+        }
+        i.address{line-height:1.5;position:absolute;left:20px;}
+    }
+    .u-state-1{
+        padding:10px 20px 10px 95px;
+        position:relative;
+        height:auto;
+        .address{
+            .one{font-weight:bolder;}
+            p{line-height:1.5;}
+        }
+
+    }
+}
+
+.m-promotion{
+    background:$fc0;
+    .item{
+        padding:0 20px;
+        border-bottom:solid 1px $fc31;
+        height:45px;
+        line-height:3.2;
+        .tt{float:left;width:104px;}
+        .price{float:left;width:160px;}
+    }
+}
+
+.m-fav{
+    padding:0 20px;
+    background:$fc0;
+    height:46px;
+    line-height:3.3;
+    width:100%;
+    .pirce{
+        padding-left:20px;
+    }
+    margin-top:-1px;
+    border-top:solid 1px $fc37;
+    border-bottom:solid 1px $fc37;
+}
+.u-quan{
+    @extend bg-icon;
+    background-size: 500px 1000px;
+    background-position:-129px -200px;
+    float:left;width:14px;height:100%;
+}
+.w-order{
+    width:100%;
+    background:$fc0;
+    .look{float:right;
+        i{color:$fc4;}
+    }
+    .ok{color:$fc2;}
+    .down{color:$fc10;}
+}
+
+.u-package{
+    position:relative;
+    .btnbox{
+        position:absolute;
+        top:50%;
+        right:20px;
+        margin-top:-22px;
+        .u-btn{
+            height:30px;
+            margin-left:5px;
+            line-height:2;
+            padding:0 10px;
+        }
+    }
+
+    height:45px;
+    line-height:3.2;
+    padding:0 20px;
+    border-bottom:solid 1px $fc31;
+    .arrow{
+        @extend bg-icon;
+        background-size: 500px 1000px;
+        background-position:-45px -400px;
+        float:right;width:12px;height:45px;
+    }
+}
+
+.m-pkgnote{
+    margin:10px 0;
+    background:$fc9;
+    padding:15px 20px;
+    color:$fc0;
+    font-size:0.875rem;
+}
+
+.m-pkgnote-hb{
+    .hb{margin-left:25px;@extend bg-icon;width:35px;height:42px;background-position:-205px -762px;}
+    .hbnote{margin-left:1rem;}
+    background:$fc0;
+    padding:15px 20px;
+    color:$fc9;
+    .arrow{
+        @extend bg-icon;
+        background-size: 500px 1000px;
+        background-position:-45px -400px;
+        float:right;width:12px;height:45px;
+    }
+}
+.m-order-detail .right{
+	float:right;
+}
+.m-order-detail .red{
+	color:#ec312d;
+}
+.m-order-detail .realPay{
+	padding: 15px 20px 10px 20px;	
+	text-align:right;
+	color:#f00;
+	font-size:1.25em;
+}
+.m-order-detail .orderTime{
+	text-align:right;
+	padding:0 20px;
+	color:#959595;
+	padding-bottom:10px;
+}
+.btn-box{
+	padding:20px;
+	background:#ededed;
+	border-top:1px solid #ccc;
+    width: 100%;
+    position: fixed;
+	left: 0;
+	bottom: 0;	
+	.u-btn{
+	  float:right;
+	  height: 32px;
+	  line-height: 32px;
+	  background-color: #fff;
+	  border-radius:4px;
+	  font-size:14px;	
+	}
+}
+.btn-box .pay-btn{
+	background: none;
+    color: #ec312d;
+    border: none;
+    float: left;
+    margin-left: 0;
+    padding-left: 0;
+}
+.m-order-box .w-good{ 
+	.goods{width:80%;}
+	.note .snapShot{color:#959595;}
+}

@@ -1,0 +1,37 @@
+<div class="w-htable {{preview?'z-preview': ''}}">
+<div class="colors">
+  {{#list @(colors) as color}}
+  <div class="color">
+    <span class="u-color" style="background-color: {{ @(colorMap[color_index]||colorMap[0])}}"></span>
+    {{color}}
+  </div>
+  {{/list}}
+</div>
+<table class="m-table m-table-bordered {{selected?'z-selected': ''}}">
+  <thead>
+    <tr>
+      <th class='u-corner'>
+        <div class="corner"></div>
+        <div class="corner corner-2"></div>
+        <span class="bottom">kg</span>
+        <span class="top">cm</span>
+      </th>
+      {{#list @(vaxis.list) as item}}
+      <th>{{@(item)}}</th>
+      {{/list}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#list @(haxis.list) as bd}}
+      <tr>
+        <td>{{@(haxis.list[bd_index])}}</td>
+        {{#list @(vaxis.list) as b}}
+          <td class="box {{selected==body[b_index][bd_index]?'box-selected':''}}" style="background-color: {{@(colorHash[body[b_index][bd_index]] || (body[b_index][bd_index]? colorMap[0] :''))}}" >
+            {{@(body[b_index][bd_index])}}
+           </td>
+        {{/list}}
+      </tr>
+    {{/list}}
+  </tbody>
+</table>
+</div>

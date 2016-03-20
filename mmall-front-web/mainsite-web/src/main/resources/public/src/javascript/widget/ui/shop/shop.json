@@ -1,0 +1,205 @@
+{
+    "code":200,
+    "result":{
+        "total":20,
+        "list":[
+            {
+                "brandShopId": 1004084,
+                "supplierBrandId": 1004056,
+                "shopName": "111111",
+                "province": {
+                  "id": 11,
+                  "name": "北京"
+                },
+                "city": {
+                  "id": -1101,
+                  "name": "市辖区"
+                },
+                "district": {
+                  "id": 110102,
+                  "name": "西城区"
+                },
+                "street": {
+                  "id": 110102001,
+                  "name": "西长安街街道办事处"
+                },
+                "shopAddr": "1111",
+                "shopZone": "11",
+                "shopTel": "111",
+                "shopContact": "123123",
+                "status": {
+                  "intValue": 1,
+                  "desc": "新建"
+                },
+                "longitude": 116.38,
+                "latitude": 39.9,
+                "statusUpdateDate": 1419407749486,
+                "shopUpdateDate": 0
+              },{
+                  "brandShopId": 1004084,
+                  "supplierBrandId": 1004056,
+                  "shopName": "222222",
+                  "province": {
+                    "id": 11,
+                    "name": "北京"
+                  },
+                  "city": {
+                    "id": -1101,
+                    "name": "市辖区"
+                  },
+                  "district": {
+                    "id": 110102,
+                    "name": "西城区"
+                  },
+                  "street": {
+                    "id": 110102001,
+                    "name": "西长安街街道办事处"
+                  },
+                  "shopAddr": "2222222",
+                  "shopZone": "1122",
+                  "shopTel": "111222",
+                  "shopContact": "123123",
+                  "status": {
+                    "intValue": 1,
+                    "desc": "新建"
+                  },
+                  "longitude": 117.38,
+                  "latitude": 49.9,
+                  "statusUpdateDate": 1419407749486,
+                  "shopUpdateDate": 0
+              },
+              {
+                "brandShopId": 1004085,
+                "supplierBrandId": 1004056,
+                "shopName": "afaf",
+                "province": {
+                  "id": 33,
+                  "name": "浙江省"
+                },
+                "city": {
+                  "id": 3301,
+                  "name": "杭州市"
+                },
+                "district": {
+                  "id": 330102,
+                  "name": "上城区"
+                },
+                "street": {
+                  "id": 330102001,
+                  "name": "清波街道"
+                },
+                "shopAddr": "123132123",
+                "shopZone": "66",
+                "shopTel": "666",
+                "shopContact": "6666666",
+                "status": {
+                  "intValue": 1,
+                  "desc": "新建"
+                },
+                "longitude": 120.16,
+                "latitude": 30.24,
+                "statusUpdateDate": 1419407749486,
+                "shopUpdateDate": 0
+              },
+              {
+                "brandShopId": 1004086,
+                "supplierBrandId": 1004056,
+                "shopName": "555",
+                "province": {
+                  "id": 31,
+                  "name": "上海市"
+                },
+                "city": {
+                  "id": -3101,
+                  "name": "市辖区"
+                },
+                "district": {
+                  "id": 310109,
+                  "name": "虹口区"
+                },
+                "street": {
+                  "id": -111,
+                  "name": "无名小路"
+                },
+                "shopAddr": "12222222",
+                "shopZone": "55",
+                "shopTel": "555555",
+                "shopContact": "555",
+                "status": {
+                  "intValue": 1,
+                  "desc": "新建"
+                },
+                "longitude": 121.49,
+                "latitude": 31.26,
+                "statusUpdateDate": 1419407749486,
+                "shopUpdateDate": 0
+            },
+              {
+                "brandShopId": 1004085,
+                "supplierBrandId": 1004056,
+                "shopName": "afaf",
+                "province": {
+                  "id": 33,
+                  "name": "浙江省"
+                },
+                "city": {
+                  "id": 3302,
+                  "name": "宁波市"
+                },
+                "district": {
+                  "id": 330102,
+                  "name": "上城区"
+                },
+                "street": {
+                  "id": 330102001,
+                  "name": "清波街道"
+                },
+                "shopAddr": "555555",
+                "shopZone": "55",
+                "shopTel": "555555",
+                "shopContact": "6666666",
+                "status": {
+                  "intValue": 1,
+                  "desc": "新建"
+                },
+                "longitude": 140.16,
+                "latitude": 20.24,
+                "statusUpdateDate": 1419407749486,
+                "shopUpdateDate": 0
+              },
+              {
+                "brandShopId": 1004086,
+                "supplierBrandId": 1004056,
+                "shopName": "555",
+                "province": {
+                  "id": 31,
+                  "name": "上海市"
+                },
+                "city": {
+                  "id": -3101,
+                  "name": "市辖区"
+                },
+                "district": {
+                  "id": 310109,
+                  "name": "虹口区"
+                },
+                "street": {
+                  "id": -111,
+                  "name": "无名小路"
+                },
+                "shopAddr": "12222222",
+                "shopZone": "9999",
+                "shopTel": "9999999999",
+                "shopContact": "555",
+                "status": {
+                  "intValue": 1,
+                  "desc": "新建"
+                },
+                "longitude": 121.49,
+                "latitude": 31.26,
+                "statusUpdateDate": 1419407749486,
+                "shopUpdateDate": 0
+            }
+        ]
+    }
+}

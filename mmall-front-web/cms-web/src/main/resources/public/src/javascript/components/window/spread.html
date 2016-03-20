@@ -1,0 +1,92 @@
+<form method="get" class="form-horizontal m-form-polist" id="webform" >
+  <div class="form-group">
+    <label class="col-sm-3 control-label">类型：</label>
+    <div class="col-sm-9">
+      <label class="radio-inline">
+        <input type="radio" name="promotionType"  value="0" r-model={{spread.promotionType}}> PO
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="promotionType" value="1" r-model={{spread.promotionType}}> 活动/其他
+      </label>
+    </div>
+  </div>
+  {{#if spread.promotionType == 0}}
+  <div class="form-group">
+    <label class="col-sm-3 control-label">PO编号：</label>
+    <div class="{{poInvalidate || form.scheduleId.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="scheduleId" placeholder="PO编号" r-model={{spread.scheduleId}} on-change={{this.checkPo(spread.scheduleId)}}>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{#if spread.promotionType == 1}}
+  <div class="form-group">
+    <label class="col-sm-3 control-label">活动链接：</label>
+    <div class="{{form.activityUrl.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-6">
+        <input type="url" class="form-control" name="activityUrl" placeholder="活动链接" r-model={{spread.activityUrl}}>
+      </div>
+      <div class="col-sm-3">
+        <label class="text f-dn">链接格式错误</label>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  <div class="form-group">
+    <label class="col-sm-3 control-label">图片(1920x390)：</label>
+    <div class="{{form.imgUrl.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-6">
+        <div class="u-upload">
+          <input type="url" class="form-control" readonly placeholder="图片链接" r-model={{spread.imgUrl}}>
+          <label class="btn btn-primary" on-upload={{this.handleUpload($event, 'imgUrl')}}>上传</label>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <label class="text f-dn">请上传图片</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">前景图(545x390)：</label>
+    <div class="{{form.imgUrl2.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-6">
+        <div class="u-upload">
+          <input type="url" class="form-control" readonly placeholder="图片链接" r-model={{spread.imgUrl2}}>
+          <label class="btn btn-primary" on-upload={{this.handleUpload($event, 'imgUrl2')}}>上传</label>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <label class="text f-dn">请上传图片</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">上线日期：</label>
+    <div class="col-sm-6">
+      <datepicker select="{{spread.startTime}}"></datepicker>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">下线日期：</label>
+    <div class="{{form.endTime.$inValidate? 'm-error': ''}}">
+      <div class="col-sm-6">
+        <datepicker select="{{spread.endTime}}" start="{{spread.startTime}}"></datepicker>
+      </div>
+      <div class="col-sm-3">
+        <label class="text f-dn">上线日期不能大于下线日期</label>
+      </div>
+    </div>
+  </div>
+  {{#if spread.id != null}}
+  <input type="hidden" name="id" r-model={{spread.id}}/>
+  <input type="hidden" name="sequence" r-model={{spread.sequence}}/>
+  {{/if}}
+  <input type="hidden" name="imgUrl" r-model={{spread.imgUrl}}/>
+  <input type="hidden" name="imgUrl2" r-model={{spread.imgUrl2||''}}/>
+  <input type="hidden" name="startTime" r-model={{spread.startTime}}/>
+  <input type="hidden" name="endTime" r-model={{spread.endTime}}/>
+  <input type="hidden" name="provinceId" r-model={{provinceId}}/>
+  <input type="hidden" name="searchTime" r-model={{searchTime}}/>
+  <input type="hidden" name="positionId" r-model={{positionId}}/>
+</form>

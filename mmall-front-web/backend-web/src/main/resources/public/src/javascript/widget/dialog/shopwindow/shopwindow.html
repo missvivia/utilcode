@@ -1,0 +1,79 @@
+<div class="card_c f-cb" style="width: 850px">
+	<form method="post" class="form-horizontal m-form-basic f-cb"
+		role="form" id="shopForm" data-focus-mode="1" autoComplete="off">
+		<div class="col-sm-6 left">
+			<div class="form-group"></div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">门店名 <span
+					class="f-ib ness">*</span>
+				</label>
+				<div class="col-sm-8">
+					<input data-auto-focus="false" data-required="true" type="text"
+						name="shopName" maxlength="20" class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">联系电话 <span
+					class="f-ib ness">&nbsp;</span>
+				</label>
+				<div class="col-sm-3">
+					<input name="shopZone" type="text" class="form-control" />
+				</div>
+				<div class="col-sm-5">
+					<input data-pattern="^+[\\d]+$" type="text" name="shopTel"
+						class="form-control" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">联系人 </label>
+				<div class="col-sm-8">
+					<input data-auto-focus="false" class="form-control" type="text"
+						name="shopContact" data-required="false" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">联系地址 <span
+					class="f-ib ness">*</span>
+				</label>
+				<div class="col-sm-9">
+				<div class="w-select-addr ">
+					<input type="text" name="cardAddress" class="form-control select select-1 j-flag" placeholder="请选择城市" data-required="true">
+						<span class="glyphicon glyphicon-chevron-down pull-right arrow">&nbsp;</span>
+						<div class="fipt fipt-addr" id="addrCard"></div>
+					<!--<label class="s-fc3">请选择城市</label>-->
+				</div>
+				</div>
+				
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">&nbsp;</label>
+				<div class="col-sm-8">
+					<textarea name="shopAddr" class="form-control j-area j-addr"
+						data-min-length="1" placeholder="详细地址" data-required="true"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">&nbsp;</label>
+				<div class="col-sm-3">
+					<a href="javascript:void(0)" class="btn btn-primary j-orientation">定位</a>
+				</div>
+				<div class="col-sm-5 js-error js-errorMsg" data-error="">
+				</div>
+			</div>
+		</div>
+
+		<div class=" col-sm-6  f-fr bmmap">
+			<div class="form-group"></div>
+			<div id="allmap" placerholder="地图展示区域" class="bmmap">暂无地图</div>
+		</div>
+		<input type="hidden" name="longitude" class="j-hidden j-coordinate" /> 
+		<input type="hidden" name="latitude" class="j-hidden j-coordinate" />
+		<input type="hidden" name="brandShopId" class="j-hidden"/>
+	</form>
+
+	<div class="f-cb winbnts">
+		<span class="col-sm-2 btn btn-primary col-sm-offset-4 j-action">确定</span><span
+			class=" col-sm-offset-1 col-sm-2 btn btn-primary j-action">取消</span>
+	</div>
+	<div class="form-group">&nbsp;</div>
+</div>

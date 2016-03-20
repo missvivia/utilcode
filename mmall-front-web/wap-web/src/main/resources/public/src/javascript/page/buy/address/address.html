@@ -1,0 +1,8 @@
+<div class="p-section">
+      <div class="p-address">
+        <i class="u-location"></i>
+        <p class="f-fs15">收货地址</p>
+        <p><span class="f-fs16"><span class="name">{{address.consigneeName}}</span>{{#if !!address.consigneeMobile}}{{address.consigneeMobile}}<br>{{/if}}{{#if address.consigneeTel!='--'}}{{address.consigneeTel}}{{/if}}</span></p>
+        <p class="ads s-fc3 f-fs13">{{address.province}}{{#if (address.cityId>0)}}{{address.city}}{{/if}}{{#if (address.sectionId>0)}}{{address.section}}{{/if}}{{#if (address.streetId>0)}}{{address.street}}{{/if}}{{address.address}}</p>
+      </div>
+</div>
